@@ -867,6 +867,9 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                             await UsuariosTable().insert({
                                               'user_uidd': currentUserUid,
                                               'tipo_usuario_id': 9,
+                                              'created_at':
+                                                  supaSerialize<DateTime>(
+                                                      getCurrentTimestamp),
                                             });
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
