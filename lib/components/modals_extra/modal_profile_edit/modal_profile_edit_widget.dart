@@ -119,7 +119,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
               child: FutureBuilder<List<UsuariosRow>>(
                 future: UsuariosTable().querySingleRow(
                   queryFn: (q) => q.eq(
-                    'user_uidd',
+                    'user_id',
                     currentUserUid,
                   ),
                 ),
@@ -223,7 +223,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                             Duration(milliseconds: 500),
                                         fadeOutDuration:
                                             Duration(milliseconds: 500),
-                                        imageUrl: columnUsuariosRow!.fotoPath!,
+                                        imageUrl:
+                                            columnUsuariosRow!.usuarioFoto!,
                                         fit: BoxFit.fitWidth,
                                       ),
                                     ),
@@ -370,7 +371,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             child: TextFormField(
                               controller: _model.yourNameTextController2 ??=
                                   TextEditingController(
-                                text: columnUsuariosRow?.bio,
+                                text: columnUsuariosRow?.displayName,
                               ),
                               focusNode: _model.yourNameFocusNode2,
                               autofocus: false,
@@ -486,7 +487,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                       FormFieldController<int>(null),
                                   options: List<int>.from(
                                       dropDownTiposUsuariosRowList
-                                          .map((e) => e.id)
+                                          .map((e) => e.tipoUsuarioId)
                                           .toList()),
                                   optionLabels: dropDownTiposUsuariosRowList
                                       .map((e) => e.descricao)
@@ -602,7 +603,10 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                             16.0, 4.0, 0.0, 0.0),
                                         child: SelectionArea(
                                             child: Text(
-                                          currentUserEmail,
+                                          valueOrDefault<String>(
+                                            columnUsuariosRow?.email,
+                                            'email',
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -725,7 +729,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                             child: Text(
                                           dateTimeFormat(
                                             "relative",
-                                            columnUsuariosRow!.ultimaAtividade!,
+                                            columnUsuariosRow!.atividadeAt!,
                                             locale: FFLocalizations.of(context)
                                                 .languageCode,
                                           ),

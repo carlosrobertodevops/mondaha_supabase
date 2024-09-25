@@ -141,7 +141,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                   child: FutureBuilder<List<UsuariosRow>>(
                                     future: UsuariosTable().querySingleRow(
                                       queryFn: (q) => q.eq(
-                                        'user_uidd',
+                                        'user_id',
                                         currentUserUid,
                                       ),
                                     ),
@@ -208,7 +208,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                                       milliseconds: 500),
                                                   imageUrl:
                                                       containerUsuariosRow!
-                                                          .fotoPath!,
+                                                          .usuarioFoto!,
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -229,7 +229,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                                       milliseconds: 500),
                                                   imageUrl:
                                                       containerUsuariosRow!
-                                                          .fotoPath!,
+                                                          .usuarioFoto!,
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),

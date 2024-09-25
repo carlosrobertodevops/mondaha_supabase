@@ -14,8 +14,8 @@ class ValidacoesRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => ValidacoesTable();
 
-  int get id => getField<int>('id')!;
-  set id(int value) => setField<int>('id', value);
+  int get validacaoId => getField<int>('validacao_id')!;
+  set validacaoId(int value) => setField<int>('validacao_id', value);
 
   String? get descricao => getField<String>('descricao');
   set descricao(String? value) => setField<String>('descricao', value);

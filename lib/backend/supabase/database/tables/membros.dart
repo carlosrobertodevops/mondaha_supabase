@@ -14,8 +14,8 @@ class MembrosRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => MembrosTable();
 
-  int get id => getField<int>('id')!;
-  set id(int value) => setField<int>('id', value);
+  int get membroId => getField<int>('membro_id')!;
+  set membroId(int value) => setField<int>('membro_id', value);
 
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
@@ -36,4 +36,7 @@ class MembrosRow extends SupabaseDataRow {
   List<String> get tatuagensPath => getListField<String>('tatuagens_path');
   set tatuagensPath(List<String>? value) =>
       setListField<String>('tatuagens_path', value);
+
+  int? get funcaoId => getField<int>('funcao_id');
+  set funcaoId(int? value) => setField<int>('funcao_id', value);
 }

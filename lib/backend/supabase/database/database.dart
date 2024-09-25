@@ -10,4 +10,5 @@ export 'tables/usuarios.dart';
 export 'tables/membros.dart';
 export 'tables/funcoes.dart';
 export 'tables/tipos_usuarios.dart';
+export 'tables/agencias.dart';
 export 'tables/faccoes.dart';

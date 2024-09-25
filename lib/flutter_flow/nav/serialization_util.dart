@@ -216,6 +216,8 @@ dynamic deserializeParam<T>(
             return FuncoesRow(data);
           case TiposUsuariosRow:
             return TiposUsuariosRow(data);
+          case AgenciasRow:
+            return AgenciasRow(data);
           case FaccoesRow:
             return FaccoesRow(data);
           default:

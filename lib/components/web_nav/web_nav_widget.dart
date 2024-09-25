@@ -637,10 +637,15 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       ),
                       FutureBuilder<List<UsuariosRow>>(
                         future: UsuariosTable().querySingleRow(
-                          queryFn: (q) => q.eq(
-                            'user_uidd',
-                            currentUserUid,
-                          ),
+                          queryFn: (q) => q
+                              .eq(
+                                'user_id',
+                                currentUserUid,
+                              )
+                              .eq(
+                                'user_id',
+                                currentUserUid,
+                              ),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -713,7 +718,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                                   fadeOutDuration: Duration(
                                                       milliseconds: 500),
                                                   imageUrl: columnUsuariosRow!
-                                                      .fotoPath!,
+                                                      .usuarioFoto!,
                                                   width: 44.0,
                                                   height: 44.0,
                                                   fit: BoxFit.cover,
@@ -741,7 +746,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                                     valueOrDefault<String>(
                                                       columnUsuariosRow
                                                           ?.nomeCompleto,
-                                                      'Nome completo',
+                                                      'nome_completo',
                                                     ),
                                                     textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
@@ -774,7 +779,11 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        currentUserEmail,
+                                                        valueOrDefault<String>(
+                                                          columnUsuariosRow
+                                                              ?.email,
+                                                          'email',
+                                                        ),
                                                         textAlign:
                                                             TextAlign.start,
                                                         style:

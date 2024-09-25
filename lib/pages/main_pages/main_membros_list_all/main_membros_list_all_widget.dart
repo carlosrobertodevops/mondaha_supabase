@@ -864,7 +864,8 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                             content:
                                                 FutureBuilder<List<MembrosRow>>(
                                               future: MembrosTable().queryRows(
-                                                queryFn: (q) => q,
+                                                queryFn: (q) =>
+                                                    q.order('nome_completo'),
                                               ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -1005,7 +1006,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                               Text(
                                                                             valueOrDefault<String>(
                                                                               listViewMembrosRow.nomeCompleto,
-                                                                              'Nome Completo',
+                                                                              'nome_ completo',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
@@ -1013,6 +1014,43 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                 ),
                                                                           ),
+                                                                        ),
+                                                                      ),
+                                                                      Flexible(
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.start,
+                                                                          children: [
+                                                                            Container(
+                                                                              height: 32.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).accent2,
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                border: Border.all(
+                                                                                  color: FlutterFlowTheme.of(context).secondary,
+                                                                                ),
+                                                                              ),
+                                                                              child: Align(
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                  child: Text(
+                                                                                    FFLocalizations.of(context).getText(
+                                                                                      'hjpemxpa' /* New */,
+                                                                                    ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ),
                                                                       Expanded(
@@ -1039,7 +1077,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                   child: FutureBuilder<List<FaccoesRow>>(
                                                                                     future: FaccoesTable().querySingleRow(
                                                                                       queryFn: (q) => q.eq(
-                                                                                        'id',
+                                                                                        'faccao_id',
                                                                                         listViewMembrosRow.faccaoId,
                                                                                       ),
                                                                                     ),
@@ -1508,6 +1546,43 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            children: [
+                                                                              Container(
+                                                                                height: 32.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).accent2,
+                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  border: Border.all(
+                                                                                    color: FlutterFlowTheme.of(context).secondary,
+                                                                                  ),
+                                                                                ),
+                                                                                child: Align(
+                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                    child: Text(
+                                                                                      FFLocalizations.of(context).getText(
+                                                                                        'd2orhcas' /* New */,
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Expanded(
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
                                                                                 MainAxisAlignment.end,
                                                                             children: [
                                                                               Container(
@@ -1526,7 +1601,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                     child: FutureBuilder<List<FaccoesRow>>(
                                                                                       future: FaccoesTable().querySingleRow(
                                                                                         queryFn: (q) => q.eq(
-                                                                                          'id',
+                                                                                          'faccao_id',
                                                                                           listViewMembrosRow.faccaoId,
                                                                                         ),
                                                                                       ),
@@ -1991,6 +2066,43 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            children: [
+                                                                              Container(
+                                                                                height: 32.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).accent1,
+                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  border: Border.all(
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                  ),
+                                                                                ),
+                                                                                child: Align(
+                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                    child: Text(
+                                                                                      FFLocalizations.of(context).getText(
+                                                                                        '5d8kozo5' /* Contacted */,
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Expanded(
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
                                                                                 MainAxisAlignment.end,
                                                                             children: [
                                                                               Container(
@@ -2009,7 +2121,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                     child: FutureBuilder<List<FaccoesRow>>(
                                                                                       future: FaccoesTable().querySingleRow(
                                                                                         queryFn: (q) => q.eq(
-                                                                                          'id',
+                                                                                          'faccao_id',
                                                                                           listViewMembrosRow.faccaoId,
                                                                                         ),
                                                                                       ),

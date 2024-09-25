@@ -1,4 +1,4 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/main_logo/main_logo_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -33,6 +33,10 @@ class AuthCreateModel extends FlutterFlowModel<AuthCreateWidget> {
   late bool passwordConfirmVisibility;
   String? Function(BuildContext, String?)?
       passwordConfirmTextControllerValidator;
+  // Stores action output result for [Backend Call - API (inserir usuario)] action in Button-Login widget.
+  ApiCallResponse? outUsers;
+  // Stores action output result for [Backend Call - Insert Row] action in Button-Login widget.
+  UsuariosRow? ou;
 
   @override
   void initState(BuildContext context) {

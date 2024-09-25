@@ -15,8 +15,8 @@ class TiposUsuariosRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => TiposUsuariosTable();
 
-  int get id => getField<int>('id')!;
-  set id(int value) => setField<int>('id', value);
+  int get tipoUsuarioId => getField<int>('tipo_usuario_id')!;
+  set tipoUsuarioId(int value) => setField<int>('tipo_usuario_id', value);
 
   String? get descricao => getField<String>('descricao');
   set descricao(String? value) => setField<String>('descricao', value);

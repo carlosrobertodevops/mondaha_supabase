@@ -89,7 +89,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
           child: FutureBuilder<List<UsuariosRow>>(
             future: UsuariosTable().querySingleRow(
               queryFn: (q) => q.eq(
-                'user_uidd',
+                'user_id',
                 currentUserUid,
               ),
             ),
@@ -155,7 +155,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 child: CachedNetworkImage(
                                   fadeInDuration: Duration(milliseconds: 500),
                                   fadeOutDuration: Duration(milliseconds: 500),
-                                  imageUrl: containerUsuariosRow!.fotoPath!,
+                                  imageUrl: containerUsuariosRow!.usuarioFoto!,
                                   fit: BoxFit.fitWidth,
                                 ),
                               ),

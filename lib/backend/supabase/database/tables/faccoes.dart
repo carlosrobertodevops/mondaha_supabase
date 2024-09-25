@@ -14,8 +14,8 @@ class FaccoesRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => FaccoesTable();
 
-  int get id => getField<int>('id')!;
-  set id(int value) => setField<int>('id', value);
+  int get faccaoId => getField<int>('faccao_id')!;
+  set faccaoId(int value) => setField<int>('faccao_id', value);
 
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);

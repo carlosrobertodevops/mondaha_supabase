@@ -14,17 +14,14 @@ class UsuariosRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => UsuariosTable();
 
-  int get id => getField<int>('id')!;
-  set id(int value) => setField<int>('id', value);
-
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
-  String? get userUidd => getField<String>('user_uidd');
-  set userUidd(String? value) => setField<String>('user_uidd', value);
-
   String? get nomeCompleto => getField<String>('nome_completo');
   set nomeCompleto(String? value) => setField<String>('nome_completo', value);
+
+  String? get displayName => getField<String>('display_name');
+  set displayName(String? value) => setField<String>('display_name', value);
 
   int? get agenciaId => getField<int>('agencia_id');
   set agenciaId(int? value) => setField<int>('agencia_id', value);
@@ -32,16 +29,18 @@ class UsuariosRow extends SupabaseDataRow {
   int? get tipoUsuarioId => getField<int>('tipo_usuario_id');
   set tipoUsuarioId(int? value) => setField<int>('tipo_usuario_id', value);
 
-  String? get fotoPath => getField<String>('foto_path');
-  set fotoPath(String? value) => setField<String>('foto_path', value);
-
-  String? get bio => getField<String>('bio');
-  set bio(String? value) => setField<String>('bio', value);
-
   String? get email => getField<String>('email');
   set email(String? value) => setField<String>('email', value);
 
-  DateTime? get ultimaAtividade => getField<DateTime>('ultima_atividade');
-  set ultimaAtividade(DateTime? value) =>
-      setField<DateTime>('ultima_atividade', value);
+  String? get usuarioFoto => getField<String>('usuario_foto');
+  set usuarioFoto(String? value) => setField<String>('usuario_foto', value);
+
+  int get usuarioId => getField<int>('usuario_id')!;
+  set usuarioId(int value) => setField<int>('usuario_id', value);
+
+  String? get userId => getField<String>('user_id');
+  set userId(String? value) => setField<String>('user_id', value);
+
+  DateTime? get atividadeAt => getField<DateTime>('atividade_at');
+  set atividadeAt(DateTime? value) => setField<DateTime>('atividade_at', value);
 }

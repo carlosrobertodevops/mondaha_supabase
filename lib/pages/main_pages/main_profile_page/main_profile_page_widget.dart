@@ -143,7 +143,7 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                   child: FutureBuilder<List<UsuariosRow>>(
                     future: UsuariosTable().querySingleRow(
                       queryFn: (q) => q.eq(
-                        'user_uidd',
+                        'user_id',
                         currentUserUid,
                       ),
                     ),
@@ -326,7 +326,7 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                                 fadeOutDuration:
                                                     Duration(milliseconds: 500),
                                                 imageUrl: containerUsuariosRow!
-                                                    .fotoPath!,
+                                                    .usuarioFoto!,
                                                 width: 44.0,
                                                 height: 44.0,
                                                 fit: BoxFit.cover,
@@ -376,7 +376,10 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: Text(
-                                                  currentUserEmail,
+                                                  valueOrDefault<String>(
+                                                    containerUsuariosRow?.email,
+                                                    'email',
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall

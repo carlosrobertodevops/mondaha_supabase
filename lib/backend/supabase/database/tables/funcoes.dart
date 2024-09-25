@@ -14,12 +14,18 @@ class FuncoesRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => FuncoesTable();
 
-  int get id => getField<int>('id')!;
-  set id(int value) => setField<int>('id', value);
+  int get funcaoId => getField<int>('funcao_id')!;
+  set funcaoId(int value) => setField<int>('funcao_id', value);
 
   String? get descricao => getField<String>('descricao');
   set descricao(String? value) => setField<String>('descricao', value);
 
   int? get grauHierarquico => getField<int>('grau_hierarquico');
   set grauHierarquico(int? value) => setField<int>('grau_hierarquico', value);
+
+  int? get faccaoId => getField<int>('faccao_id');
+  set faccaoId(int? value) => setField<int>('faccao_id', value);
+
+  String? get nome => getField<String>('nome');
+  set nome(String? value) => setField<String>('nome', value);
 }

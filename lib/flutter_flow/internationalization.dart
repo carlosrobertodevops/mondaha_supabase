@@ -912,6 +912,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Facción',
       'pt': 'Facção',
     },
+    'hjpemxpa': {
+      'en': 'New',
+      'es': '',
+      'pt': '',
+    },
     '4em6l00i': {
       'en': 'James Wiseman',
       'es': '',
@@ -1082,6 +1087,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Facción',
       'pt': 'Facção',
     },
+    'd2orhcas': {
+      'en': 'New',
+      'es': '',
+      'pt': '',
+    },
     'vf8k6phv': {
       'en': 'Ignacious Rodriguez',
       'es': '',
@@ -1251,6 +1261,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Status',
       'es': 'Estado',
       'pt': 'Status',
+    },
+    '5d8kozo5': {
+      'en': 'Contacted',
+      'es': '',
+      'pt': '',
     },
     'ca0d1ekl': {
       'en': 'Elena Williams',
@@ -2504,18 +2519,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4vfeafxc': {
       'en': 'The email associated with this account is:',
-      'es': '',
-      'pt': '',
+      'es': 'El correo electrónico asociado a esta cuenta es:',
+      'pt': 'O e-mail associado a esta conta é:',
     },
     'javg82xt': {
       'en': 'Created On:',
-      'es': '',
-      'pt': '',
+      'es': 'Creado el:',
+      'pt': 'Criado em:',
     },
     'vqytc8j7': {
       'en': 'Last Active:',
-      'es': '',
-      'pt': '',
+      'es': 'Última actividad:',
+      'pt': 'Última atividade:',
     },
     'z7iguyi2': {
       'en': 'Cancel',
