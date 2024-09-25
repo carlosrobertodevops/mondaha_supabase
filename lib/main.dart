@@ -27,6 +27,9 @@ void main() async {
 
   await FFLocalizations.initialize();
 
+  final environmentValues = FFDevEnvironmentValues();
+  await environmentValues.initialize();
+
   runApp(MyApp());
 }
 

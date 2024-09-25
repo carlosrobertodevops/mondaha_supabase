@@ -912,21 +912,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Facción',
       'pt': 'Facção',
     },
-    'bx4jigs0': {
-      'en': 'Option 1',
-      'es': '',
-      'pt': '',
-    },
-    'ud2aoens': {
-      'en': 'Option 2',
-      'es': '',
-      'pt': '',
-    },
-    '2dozx0jh': {
-      'en': 'Option 3',
-      'es': '',
-      'pt': '',
-    },
     '4em6l00i': {
       'en': 'James Wiseman',
       'es': '',
@@ -1097,21 +1082,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Facción',
       'pt': 'Facção',
     },
-    '4powc1j6': {
-      'en': 'Option 1',
-      'es': 'Opción 1',
-      'pt': 'Opção 1',
-    },
-    'c6dplf9y': {
-      'en': 'Option 2',
-      'es': '',
-      'pt': '',
-    },
-    'i4x03sg3': {
-      'en': 'Option 3',
-      'es': '',
-      'pt': '',
-    },
     'vf8k6phv': {
       'en': 'Ignacious Rodriguez',
       'es': '',
@@ -1281,21 +1251,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Status',
       'es': 'Estado',
       'pt': 'Status',
-    },
-    'm2rw5wjp': {
-      'en': 'Option 1',
-      'es': '',
-      'pt': '',
-    },
-    'rf42b8wb': {
-      'en': 'Option 2',
-      'es': '',
-      'pt': '',
-    },
-    'bs4dgda2': {
-      'en': 'Option 3',
-      'es': '',
-      'pt': '',
     },
     'ca0d1ekl': {
       'en': 'Elena Williams',

@@ -4,12 +4,10 @@ import '/components/modals/command_palette/command_palette_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
 import '/actions/actions.dart' as action_blocks;
 import 'package:sticky_headers/sticky_headers.dart';
@@ -1019,71 +1017,6 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                       ),
                                                                       Expanded(
                                                                         child:
-                                                                            FlutterFlowChoiceChips(
-                                                                          options: listViewMembrosRow
-                                                                              .vulgo
-                                                                              .map((label) => ChipData(label))
-                                                                              .toList(),
-                                                                          onChanged: (val) =>
-                                                                              safeSetState(() => _model.choiceChipsValues1 = val),
-                                                                          selectedChipStyle:
-                                                                              ChipStyle(
-                                                                            backgroundColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  color: FlutterFlowTheme.of(context).info,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                            iconColor:
-                                                                                FlutterFlowTheme.of(context).info,
-                                                                            iconSize:
-                                                                                16.0,
-                                                                            elevation:
-                                                                                0.0,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(18.0),
-                                                                          ),
-                                                                          unselectedChipStyle:
-                                                                              ChipStyle(
-                                                                            backgroundColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  color: FlutterFlowTheme.of(context).info,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                            iconColor:
-                                                                                FlutterFlowTheme.of(context).info,
-                                                                            iconSize:
-                                                                                16.0,
-                                                                            elevation:
-                                                                                0.0,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                          chipSpacing:
-                                                                              8.0,
-                                                                          rowSpacing:
-                                                                              8.0,
-                                                                          multiselect:
-                                                                              true,
-                                                                          initialized:
-                                                                              _model.choiceChipsValues1 != null,
-                                                                          alignment:
-                                                                              WrapAlignment.start,
-                                                                          controller: _model.choiceChipsValueController1 ??=
-                                                                              FormFieldController<List<String>>(
-                                                                            [],
-                                                                          ),
-                                                                          wrapped:
-                                                                              true,
-                                                                        ),
-                                                                      ),
-                                                                      Expanded(
-                                                                        child:
                                                                             Row(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
@@ -1571,57 +1504,6 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                         ),
                                                                         Expanded(
                                                                           child:
-                                                                              FlutterFlowChoiceChips(
-                                                                            options:
-                                                                                listViewMembrosRow.vulgo.map((label) => ChipData(label)).toList(),
-                                                                            onChanged: (val) =>
-                                                                                safeSetState(() => _model.choiceChipsValue2 = val?.firstOrNull),
-                                                                            selectedChipStyle:
-                                                                                ChipStyle(
-                                                                              backgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    color: FlutterFlowTheme.of(context).info,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                              iconColor: FlutterFlowTheme.of(context).info,
-                                                                              iconSize: 16.0,
-                                                                              elevation: 0.0,
-                                                                              borderRadius: BorderRadius.circular(18.0),
-                                                                            ),
-                                                                            unselectedChipStyle:
-                                                                                ChipStyle(
-                                                                              backgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    color: FlutterFlowTheme.of(context).info,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                              iconColor: FlutterFlowTheme.of(context).info,
-                                                                              iconSize: 16.0,
-                                                                              elevation: 0.0,
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
-                                                                            chipSpacing:
-                                                                                8.0,
-                                                                            rowSpacing:
-                                                                                8.0,
-                                                                            multiselect:
-                                                                                false,
-                                                                            alignment:
-                                                                                WrapAlignment.start,
-                                                                            controller: _model.choiceChipsValueController2 ??=
-                                                                                FormFieldController<List<String>>(
-                                                                              [],
-                                                                            ),
-                                                                            wrapped:
-                                                                                true,
-                                                                          ),
-                                                                        ),
-                                                                        Expanded(
-                                                                          child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
@@ -2101,57 +1983,6 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                   ),
                                                                             ),
-                                                                          ),
-                                                                        ),
-                                                                        Expanded(
-                                                                          child:
-                                                                              FlutterFlowChoiceChips(
-                                                                            options:
-                                                                                listViewMembrosRow.vulgo.map((label) => ChipData(label)).toList(),
-                                                                            onChanged: (val) =>
-                                                                                safeSetState(() => _model.choiceChipsValue3 = val?.firstOrNull),
-                                                                            selectedChipStyle:
-                                                                                ChipStyle(
-                                                                              backgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    color: FlutterFlowTheme.of(context).info,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                              iconColor: FlutterFlowTheme.of(context).info,
-                                                                              iconSize: 16.0,
-                                                                              elevation: 0.0,
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
-                                                                            unselectedChipStyle:
-                                                                                ChipStyle(
-                                                                              backgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    color: FlutterFlowTheme.of(context).info,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                              iconColor: FlutterFlowTheme.of(context).info,
-                                                                              iconSize: 16.0,
-                                                                              elevation: 0.0,
-                                                                              borderRadius: BorderRadius.circular(18.0),
-                                                                            ),
-                                                                            chipSpacing:
-                                                                                8.0,
-                                                                            rowSpacing:
-                                                                                8.0,
-                                                                            multiselect:
-                                                                                false,
-                                                                            alignment:
-                                                                                WrapAlignment.start,
-                                                                            controller: _model.choiceChipsValueController3 ??=
-                                                                                FormFieldController<List<String>>(
-                                                                              [],
-                                                                            ),
-                                                                            wrapped:
-                                                                                true,
                                                                           ),
                                                                         ),
                                                                         Expanded(
