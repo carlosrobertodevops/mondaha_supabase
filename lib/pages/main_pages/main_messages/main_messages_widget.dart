@@ -223,22 +223,8 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                             .primaryText,
                                         size: 30.0,
                                       ),
-                                      onPressed: () async {
-                                        logFirebaseEvent(
-                                            'MAIN_MESSAGES_search_rounded_ICN_ON_TAP');
-
-                                        context.pushNamed(
-                                          'search_page',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 250),
-                                            ),
-                                          },
-                                        );
+                                      onPressed: () {
+                                        print('IconButton pressed ...');
                                       },
                                     ),
                                   ),

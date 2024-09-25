@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
 
 import '/backend/supabase/supabase.dart';
 
@@ -159,12 +158,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => ProjectDetailsWidget(),
             ),
             FFRoute(
-              name: 'search_page',
-              path: 'searchPage',
-              requireAuth: true,
-              builder: (context, params) => SearchPageWidget(),
-            ),
-            FFRoute(
               name: 'messages_details',
               path: 'messagesDetails',
               requireAuth: true,
@@ -312,7 +305,6 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
-    List<String>? collectionNamePath,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -330,7 +322,6 @@ class FFParameters {
       param,
       type,
       isList,
-      collectionNamePath: collectionNamePath,
     );
   }
 }

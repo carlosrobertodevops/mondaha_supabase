@@ -809,39 +809,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Lar',
     },
   },
-  // search_page
-  {
-    'ao46xsuv': {
-      'en': 'Add Members',
-      'es': 'Agregar miembros',
-      'pt': 'Adicionar membros',
-    },
-    'g8rv8zhr': {
-      'en': 'Search members...',
-      'es': 'Buscar miembros...',
-      'pt': 'Pesquisar membros...',
-    },
-    'op7ngmsb': {
-      'en': 'Option 1',
-      'es': 'Opción 1',
-      'pt': 'Opção 1',
-    },
-    '5x8u4g0u': {
-      'en': 'All Members',
-      'es': 'Todos los miembros',
-      'pt': 'Todos os membros',
-    },
-    '4cek35uo': {
-      'en': 'View',
-      'es': 'Vista',
-      'pt': 'Visualizar',
-    },
-    'mvx2sb5k': {
-      'en': 'Home',
-      'es': 'Hogar',
-      'pt': 'Lar',
-    },
-  },
   // messages_details
   {
     '67tv84ak': {
@@ -940,15 +907,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Nombre común',
       'pt': 'Vulgo',
     },
-    'es8ud6ei': {
-      'en': 'Function',
-      'es': 'Función',
-      'pt': 'Função',
-    },
     '7siq4kx2': {
       'en': 'Status',
       'es': 'Facción',
       'pt': 'Facção',
+    },
+    'bx4jigs0': {
+      'en': 'Option 1',
+      'es': '',
+      'pt': '',
+    },
+    'ud2aoens': {
+      'en': 'Option 2',
+      'es': '',
+      'pt': '',
+    },
+    '2dozx0jh': {
+      'en': 'Option 3',
+      'es': '',
+      'pt': '',
     },
     '4em6l00i': {
       'en': 'James Wiseman',
@@ -1115,18 +1092,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Nombre común',
       'pt': 'Vulgo',
     },
-    '2u8x2sq8': {
-      'en': 'Company',
-      'es': 'Compañía',
-      'pt': 'Empresa',
-    },
     '7gyw39bi': {
-      'en': 'Status',
-      'es': 'Estado',
-      'pt': 'Status',
+      'en': 'Faction',
+      'es': 'Facción',
+      'pt': 'Facção',
     },
-    'd4ipkpdq': {
-      'en': 'ACME Co.',
+    '4powc1j6': {
+      'en': 'Option 1',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
+    },
+    'c6dplf9y': {
+      'en': 'Option 2',
+      'es': '',
+      'pt': '',
+    },
+    'i4x03sg3': {
+      'en': 'Option 3',
       'es': '',
       'pt': '',
     },
@@ -1285,38 +1267,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Líderes',
       'pt': 'Líderes',
     },
-    'l5l3qp02': {
+    'd1pexjyp': {
       'en': 'Name',
       'es': 'Nombre',
       'pt': 'Nome',
     },
-    '3pg0v198': {
-      'en': 'Title',
-      'es': '',
-      'pt': '',
-    },
     '6xop9wnq': {
-      'en': 'Company',
-      'es': '',
-      'pt': '',
-    },
-    'cqwn3ezt': {
-      'en': 'Company',
-      'es': '',
-      'pt': '',
+      'en': 'custon name',
+      'es': 'nombre personalizado',
+      'pt': 'Alcunha',
     },
     '2jbsz4tt': {
       'en': 'Status',
+      'es': 'Estado',
+      'pt': 'Status',
+    },
+    'm2rw5wjp': {
+      'en': 'Option 1',
       'es': '',
       'pt': '',
     },
-    '0s61gurc': {
-      'en': 'ACME Co.',
+    'rf42b8wb': {
+      'en': 'Option 2',
       'es': '',
       'pt': '',
     },
-    '2jwhxg80': {
-      'en': 'ACME Co.',
+    'bs4dgda2': {
+      'en': 'Option 3',
       'es': '',
       'pt': '',
     },

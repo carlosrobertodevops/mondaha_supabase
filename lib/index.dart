@@ -20,7 +20,6 @@ export '/pages/project_details_health_ai/project_details_health_ai_widget.dart'
     show ProjectDetailsHealthAiWidget;
 export '/pages/project_details/project_details_widget.dart'
     show ProjectDetailsWidget;
-export '/pages/search_page/search_page_widget.dart' show SearchPageWidget;
 export '/pages/messages_details/messages_details_widget.dart'
     show MessagesDetailsWidget;
 export '/pages/main_pages/main_membros_list_all/main_membros_list_all_widget.dart'

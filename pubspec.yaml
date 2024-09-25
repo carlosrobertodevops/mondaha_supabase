@@ -30,12 +30,8 @@ dependencies:
   app_links_platform_interface: 1.1.0
   auto_size_text: 3.0.0
   cached_network_image: 3.3.1
-  cloud_firestore: 4.17.3
-  cloud_firestore_platform_interface: 6.2.3
-  cloud_firestore_web: 3.12.3
   collection: 1.18.0
   dropdown_button2: 2.3.9
-  easy_debounce: 2.0.1
   emoji_flag_converter: 1.1.0
   firebase_analytics: 10.10.5
   firebase_analytics_platform_interface: 3.10.6
@@ -79,11 +75,8 @@ dependencies:
   sqflite: 2.2.6
   sticky_headers: 0.3.0+2
   storage_client: 1.5.4
-  stream_transform: 2.1.0
-  substring_highlight: 1.0.33
   supabase: 1.11.11
   supabase_flutter: 1.10.24
-  text_search: 1.0.1
   timeago: 3.6.1
   url_launcher: 6.3.0
   url_launcher_android: 6.3.4

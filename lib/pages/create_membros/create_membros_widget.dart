@@ -1,4 +1,4 @@
-import '/backend/backend.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -139,9 +139,9 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
       ),
       body: SafeArea(
         top: true,
-        child: StreamBuilder<List<MembrosRecord>>(
-          stream: queryMembrosRecord(
-            singleRecord: true,
+        child: FutureBuilder<List<MembrosRow>>(
+          future: MembrosTable().querySingleRow(
+            queryFn: (q) => q,
           ),
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
@@ -158,13 +158,10 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                 ),
               );
             }
-            List<MembrosRecord> columnMembrosRecordList = snapshot.data!;
-            // Return an empty Container when the item does not exist.
-            if (snapshot.data!.isEmpty) {
-              return Container();
-            }
-            final columnMembrosRecord = columnMembrosRecordList.isNotEmpty
-                ? columnMembrosRecordList.first
+            List<MembrosRow> columnMembrosRowList = snapshot.data!;
+
+            final columnMembrosRow = columnMembrosRowList.isNotEmpty
+                ? columnMembrosRowList.first
                 : null;
 
             return Column(
@@ -424,141 +421,116 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 20.0, 24.0, 8.0),
-                                          child: StreamBuilder<
-                                              List<FuncoesRecord>>(
-                                            stream: queryFuncoesRecord(
-                                              queryBuilder: (funcoesRecord) =>
-                                                  funcoesRecord
-                                                      .orderBy('descricao'),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                      ),
+                                          child: FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropDownValueController ??=
+                                                FormFieldController<String>(
+                                                    null),
+                                            options: List<String>.from([
+                                              'Option 1',
+                                              'Option 2',
+                                              'Option 3'
+                                            ]),
+                                            optionLabels: [
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ddwbvns2' /* Option 1 */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9hs51lix' /* Option 2 */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ntfz21nk' /* Option 3 */,
+                                              )
+                                            ],
+                                            onChanged: (val) => safeSetState(
+                                                () =>
+                                                    _model.dropDownValue = val),
+                                            height: 60.0,
+                                            maxHeight: 60.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily),
                                                     ),
-                                                  ),
-                                                );
-                                              }
-                                              List<FuncoesRecord>
-                                                  dropDownFuncoesRecordList =
-                                                  snapshot.data!;
-
-                                              return FlutterFlowDropDown<
-                                                  String>(
-                                                controller: _model
-                                                        .dropDownValueController ??=
-                                                    FormFieldController<String>(
-                                                        null),
-                                                options: List<String>.from(
-                                                    dropDownFuncoesRecordList
-                                                        .map((e) =>
-                                                            e.reference.id)
-                                                        .toList()),
-                                                optionLabels:
-                                                    dropDownFuncoesRecordList
-                                                        .map((e) => e.descricao)
-                                                        .toList(),
-                                                onChanged: (val) =>
-                                                    safeSetState(() => _model
-                                                        .dropDownValue = val),
-                                                height: 60.0,
-                                                maxHeight: 60.0,
-                                                searchHintTextStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
+                                            searchTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .labelMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
-                                                        ),
-                                                searchTextStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .bodyMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
-                                                hintText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'ezb6otvv' /* Select one Faction ... */,
-                                                ),
-                                                searchHintText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'oe7yokrp' /* Search... */,
-                                                ),
-                                                icon: Icon(
-                                                  Icons
-                                                      .keyboard_arrow_down_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'ezb6otvv' /* Select one Faction ... */,
+                                            ),
+                                            searchHintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'oe7yokrp' /* Search... */,
+                                            ),
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                                  size: 24.0,
-                                                ),
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                elevation: 2.0,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                borderWidth: 2.0,
-                                                borderRadius: 12.0,
-                                                margin: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        20.0, 0.0, 20.0, 0.0),
-                                                hidesUnderline: true,
-                                                isOverButton: false,
-                                                isSearchable: true,
-                                                isMultiSelect: false,
-                                              );
-                                            },
+                                              size: 24.0,
+                                            ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            elevation: 2.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderWidth: 2.0,
+                                            borderRadius: 12.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 0.0, 20.0, 0.0),
+                                            hidesUnderline: true,
+                                            isOverButton: false,
+                                            isSearchable: true,
+                                            isMultiSelect: false,
                                           ),
                                         ),
                                         Padding(

@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/edit_profile_photo/edit_profile_photo_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

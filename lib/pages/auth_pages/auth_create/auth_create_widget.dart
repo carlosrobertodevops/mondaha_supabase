@@ -864,13 +864,6 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                               return;
                                             }
 
-                                            await UsuariosTable().insert({
-                                              'user_uidd': currentUserUid,
-                                              'tipo_usuario_id': 9,
-                                              'created_at':
-                                                  supaSerialize<DateTime>(
-                                                      getCurrentTimestamp),
-                                            });
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(
@@ -904,6 +897,13 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                                         .secondary,
                                               ),
                                             );
+                                            await UsuariosTable().insert({
+                                              'user_uidd': currentUserUid,
+                                              'tipo_usuario_id': 9,
+                                              'created_at':
+                                                  supaSerialize<DateTime>(
+                                                      getCurrentTimestamp),
+                                            });
 
                                             context.goNamedAuth(
                                                 'main_home', context.mounted);

@@ -1,13 +1,15 @@
-import '/backend/backend.dart';
+import '/backend/supabase/supabase.dart';
 import '/components/dropdown_user_edit/dropdown_user_edit_widget.dart';
 import '/components/modals/command_palette/command_palette_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
+import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
 import '/actions/actions.dart' as action_blocks;
 import 'package:sticky_headers/sticky_headers.dart';
@@ -804,48 +806,6 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                           ),
                                                         ),
                                                       ),
-                                                    if (responsiveVisibility(
-                                                      context: context,
-                                                      phone: false,
-                                                      tablet: false,
-                                                    ))
-                                                      Expanded(
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -1.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        16.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'es8ud6ei' /* Function */,
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMediumFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
@@ -903,9 +863,11 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                 ),
                                               ),
                                             ),
-                                            content: StreamBuilder<
-                                                List<MembrosRecord>>(
-                                              stream: queryMembrosRecord(),
+                                            content:
+                                                FutureBuilder<List<MembrosRow>>(
+                                              future: MembrosTable().queryRows(
+                                                queryFn: (q) => q,
+                                              ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
@@ -926,8 +888,8 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                     ),
                                                   );
                                                 }
-                                                List<MembrosRecord>
-                                                    listViewMembrosRecordList =
+                                                List<MembrosRow>
+                                                    listViewMembrosRowList =
                                                     snapshot.data!;
 
                                                 return ListView.builder(
@@ -942,12 +904,12 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                   scrollDirection:
                                                       Axis.vertical,
                                                   itemCount:
-                                                      listViewMembrosRecordList
+                                                      listViewMembrosRowList
                                                           .length,
                                                   itemBuilder:
                                                       (context, listViewIndex) {
-                                                    final listViewMembrosRecord =
-                                                        listViewMembrosRecordList[
+                                                    final listViewMembrosRow =
+                                                        listViewMembrosRowList[
                                                             listViewIndex];
                                                     return Padding(
                                                       padding:
@@ -1017,8 +979,9 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                               8.0),
                                                                   child: Image
                                                                       .network(
-                                                                    listViewMembrosRecord
-                                                                        .photoPath,
+                                                                    listViewMembrosRow
+                                                                        .fotosPath
+                                                                        .first,
                                                                     width: 70.0,
                                                                     height:
                                                                         70.0,
@@ -1042,7 +1005,10 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            listViewMembrosRecord.nomeCompleto,
+                                                                            valueOrDefault<String>(
+                                                                              listViewMembrosRow.nomeCompleto,
+                                                                              'Nome Completo',
+                                                                            ),
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                   letterSpacing: 0.0,
@@ -1051,68 +1017,71 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                      if (responsiveVisibility(
-                                                                        context:
-                                                                            context,
-                                                                        phone:
-                                                                            false,
-                                                                        tablet:
-                                                                            false,
-                                                                      ))
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      Expanded(
+                                                                        child:
+                                                                            FlutterFlowChoiceChips(
+                                                                          options: listViewMembrosRow
+                                                                              .vulgo
+                                                                              .map((label) => ChipData(label))
+                                                                              .toList(),
+                                                                          onChanged: (val) =>
+                                                                              safeSetState(() => _model.choiceChipsValues1 = val),
+                                                                          selectedChipStyle:
+                                                                              ChipStyle(
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  color: FlutterFlowTheme.of(context).info,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                ),
+                                                                            iconColor:
+                                                                                FlutterFlowTheme.of(context).info,
+                                                                            iconSize:
                                                                                 16.0,
+                                                                            elevation:
                                                                                 0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              valueOrDefault<String>(
-                                                                                listViewMembrosRecord.vulgo.first,
-                                                                                'Vulgo',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    fontSize: 14.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(18.0),
                                                                           ),
-                                                                        ),
-                                                                      if (responsiveVisibility(
-                                                                        context:
-                                                                            context,
-                                                                        phone:
-                                                                            false,
-                                                                        tablet:
-                                                                            false,
-                                                                      ))
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          unselectedChipStyle:
+                                                                              ChipStyle(
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  color: FlutterFlowTheme.of(context).info,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                ),
+                                                                            iconColor:
+                                                                                FlutterFlowTheme.of(context).info,
+                                                                            iconSize:
                                                                                 16.0,
+                                                                            elevation:
                                                                                 0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              valueOrDefault<String>(
-                                                                                listViewMembrosRecord.funcaoId?.id,
-                                                                                'Funcao',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    fontSize: 14.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
+                                                                          chipSpacing:
+                                                                              8.0,
+                                                                          rowSpacing:
+                                                                              8.0,
+                                                                          multiselect:
+                                                                              true,
+                                                                          initialized:
+                                                                              _model.choiceChipsValues1 != null,
+                                                                          alignment:
+                                                                              WrapAlignment.start,
+                                                                          controller: _model.choiceChipsValueController1 ??=
+                                                                              FormFieldController<List<String>>(
+                                                                            [],
+                                                                          ),
+                                                                          wrapped:
+                                                                              true,
                                                                         ),
+                                                                      ),
                                                                       Expanded(
                                                                         child:
                                                                             Row(
@@ -1134,16 +1103,44 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                 alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      listViewMembrosRecord.faccaoId?.id,
-                                                                                      'Faccao',
+                                                                                  child: FutureBuilder<List<FaccoesRow>>(
+                                                                                    future: FaccoesTable().querySingleRow(
+                                                                                      queryFn: (q) => q.eq(
+                                                                                        'id',
+                                                                                        listViewMembrosRow.faccaoId,
+                                                                                      ),
                                                                                     ),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                          letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                    builder: (context, snapshot) {
+                                                                                      // Customize what your widget looks like when it's loading.
+                                                                                      if (!snapshot.hasData) {
+                                                                                        return Center(
+                                                                                          child: SizedBox(
+                                                                                            width: 50.0,
+                                                                                            height: 50.0,
+                                                                                            child: CircularProgressIndicator(
+                                                                                              valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                FlutterFlowTheme.of(context).primary,
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        );
+                                                                                      }
+                                                                                      List<FaccoesRow> textFaccoesRowList = snapshot.data!;
+
+                                                                                      final textFaccoesRow = textFaccoesRowList.isNotEmpty ? textFaccoesRowList.first : null;
+
+                                                                                      return Text(
+                                                                                        valueOrDefault<String>(
+                                                                                          textFaccoesRow?.nome,
+                                                                                          'CV',
                                                                                         ),
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      );
+                                                                                    },
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -1355,48 +1352,6 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                             ),
                                                           ),
                                                         ),
-                                                      if (responsiveVisibility(
-                                                        context: context,
-                                                        phone: false,
-                                                        tablet: false,
-                                                      ))
-                                                        Expanded(
-                                                          child: Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    -1.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '2u8x2sq8' /* Company */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
@@ -1414,7 +1369,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '7gyw39bi' /* Status */,
+                                                                '7gyw39bi' /* Faction */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1453,13 +1408,11 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                   ),
                                                 ),
                                               ),
-                                              content: StreamBuilder<
-                                                  List<MembrosRecord>>(
-                                                stream: queryMembrosRecord(
-                                                  queryBuilder:
-                                                      (membrosRecord) =>
-                                                          membrosRecord.orderBy(
-                                                              'nome_completo'),
+                                              content: FutureBuilder<
+                                                  List<MembrosRow>>(
+                                                future:
+                                                    MembrosTable().queryRows(
+                                                  queryFn: (q) => q,
                                                 ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
@@ -1481,8 +1434,8 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                       ),
                                                     );
                                                   }
-                                                  List<MembrosRecord>
-                                                      listViewMembrosRecordList =
+                                                  List<MembrosRow>
+                                                      listViewMembrosRowList =
                                                       snapshot.data!;
 
                                                   return ListView.builder(
@@ -1498,12 +1451,12 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                     scrollDirection:
                                                         Axis.vertical,
                                                     itemCount:
-                                                        listViewMembrosRecordList
+                                                        listViewMembrosRowList
                                                             .length,
                                                     itemBuilder: (context,
                                                         listViewIndex) {
-                                                      final listViewMembrosRecord =
-                                                          listViewMembrosRecordList[
+                                                      final listViewMembrosRow =
+                                                          listViewMembrosRowList[
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
@@ -1577,8 +1530,9 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                             8.0),
                                                                     child: Image
                                                                         .network(
-                                                                      listViewMembrosRecord
-                                                                          .photoPath,
+                                                                      listViewMembrosRow
+                                                                          .fotosPath
+                                                                          .first,
                                                                       width:
                                                                           70.0,
                                                                       height:
@@ -1603,7 +1557,10 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                 0.0),
                                                                             child:
                                                                                 Text(
-                                                                              listViewMembrosRecord.nomeCompleto,
+                                                                              valueOrDefault<String>(
+                                                                                listViewMembrosRow.nomeCompleto,
+                                                                                'nome_completo',
+                                                                              ),
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                     letterSpacing: 0.0,
@@ -1612,56 +1569,57 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                        if (responsiveVisibility(
-                                                                          context:
-                                                                              context,
-                                                                          phone:
-                                                                              false,
-                                                                          tablet:
-                                                                              false,
-                                                                        ))
-                                                                          Expanded(
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                valueOrDefault<String>(
-                                                                                  listViewMembrosRecord.vulgo.first,
-                                                                                  'Vulgo',
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                              ),
+                                                                        Expanded(
+                                                                          child:
+                                                                              FlutterFlowChoiceChips(
+                                                                            options:
+                                                                                listViewMembrosRow.vulgo.map((label) => ChipData(label)).toList(),
+                                                                            onChanged: (val) =>
+                                                                                safeSetState(() => _model.choiceChipsValue2 = val?.firstOrNull),
+                                                                            selectedChipStyle:
+                                                                                ChipStyle(
+                                                                              backgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    color: FlutterFlowTheme.of(context).info,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
+                                                                              iconColor: FlutterFlowTheme.of(context).info,
+                                                                              iconSize: 16.0,
+                                                                              elevation: 0.0,
+                                                                              borderRadius: BorderRadius.circular(18.0),
                                                                             ),
-                                                                          ),
-                                                                        if (responsiveVisibility(
-                                                                          context:
-                                                                              context,
-                                                                          phone:
-                                                                              false,
-                                                                          tablet:
-                                                                              false,
-                                                                        ))
-                                                                          Expanded(
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'd4ipkpdq' /* ACME Co. */,
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      fontSize: 14.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                              ),
+                                                                            unselectedChipStyle:
+                                                                                ChipStyle(
+                                                                              backgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    color: FlutterFlowTheme.of(context).info,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
+                                                                              iconColor: FlutterFlowTheme.of(context).info,
+                                                                              iconSize: 16.0,
+                                                                              elevation: 0.0,
+                                                                              borderRadius: BorderRadius.circular(8.0),
                                                                             ),
+                                                                            chipSpacing:
+                                                                                8.0,
+                                                                            rowSpacing:
+                                                                                8.0,
+                                                                            multiselect:
+                                                                                false,
+                                                                            alignment:
+                                                                                WrapAlignment.start,
+                                                                            controller: _model.choiceChipsValueController2 ??=
+                                                                                FormFieldController<List<String>>(
+                                                                              [],
+                                                                            ),
+                                                                            wrapped:
+                                                                                true,
                                                                           ),
+                                                                        ),
                                                                         Expanded(
                                                                           child:
                                                                               Row(
@@ -1683,17 +1641,44 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                   alignment: AlignmentDirectional(0.0, 0.0),
                                                                                   child: Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                    child: Text(
-                                                                                      dateTimeFormat(
-                                                                                        "relative",
-                                                                                        listViewMembrosRecord.dtAlteracao!,
-                                                                                        locale: FFLocalizations.of(context).languageCode,
+                                                                                    child: FutureBuilder<List<FaccoesRow>>(
+                                                                                      future: FaccoesTable().querySingleRow(
+                                                                                        queryFn: (q) => q.eq(
+                                                                                          'id',
+                                                                                          listViewMembrosRow.faccaoId,
+                                                                                        ),
                                                                                       ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                            letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                      builder: (context, snapshot) {
+                                                                                        // Customize what your widget looks like when it's loading.
+                                                                                        if (!snapshot.hasData) {
+                                                                                          return Center(
+                                                                                            child: SizedBox(
+                                                                                              width: 50.0,
+                                                                                              height: 50.0,
+                                                                                              child: CircularProgressIndicator(
+                                                                                                valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                  FlutterFlowTheme.of(context).primary,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          );
+                                                                                        }
+                                                                                        List<FaccoesRow> textFaccoesRowList = snapshot.data!;
+
+                                                                                        final textFaccoesRow = textFaccoesRowList.isNotEmpty ? textFaccoesRowList.first : null;
+
+                                                                                        return Text(
+                                                                                          valueOrDefault<String>(
+                                                                                            textFaccoesRow?.nome,
+                                                                                            'CV',
                                                                                           ),
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                letterSpacing: 0.0,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                              ),
+                                                                                        );
+                                                                                      },
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -1839,7 +1824,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'l5l3qp02' /* Name */,
+                                                                'd1pexjyp' /* Name */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1881,91 +1866,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  '3pg0v198' /* Title */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (responsiveVisibility(
-                                                        context: context,
-                                                        phone: false,
-                                                        tablet: false,
-                                                      ))
-                                                        Expanded(
-                                                          child: Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    -1.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '6xop9wnq' /* Company */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (responsiveVisibility(
-                                                        context: context,
-                                                        phone: false,
-                                                        tablet: false,
-                                                      ))
-                                                        Expanded(
-                                                          child: Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    -1.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'cqwn3ezt' /* Company */,
+                                                                  '6xop9wnq' /* custon name */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -2041,13 +1942,11 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                   ),
                                                 ),
                                               ),
-                                              content: StreamBuilder<
-                                                  List<MembrosRecord>>(
-                                                stream: queryMembrosRecord(
-                                                  queryBuilder:
-                                                      (membrosRecord) =>
-                                                          membrosRecord.orderBy(
-                                                              'nome_completo'),
+                                              content: FutureBuilder<
+                                                  List<MembrosRow>>(
+                                                future:
+                                                    MembrosTable().queryRows(
+                                                  queryFn: (q) => q,
                                                 ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
@@ -2069,8 +1968,8 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                       ),
                                                     );
                                                   }
-                                                  List<MembrosRecord>
-                                                      listViewMembrosRecordList =
+                                                  List<MembrosRow>
+                                                      listViewMembrosRowList =
                                                       snapshot.data!;
 
                                                   return ListView.builder(
@@ -2086,12 +1985,12 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                     scrollDirection:
                                                         Axis.vertical,
                                                     itemCount:
-                                                        listViewMembrosRecordList
+                                                        listViewMembrosRowList
                                                             .length,
                                                     itemBuilder: (context,
                                                         listViewIndex) {
-                                                      final listViewMembrosRecord =
-                                                          listViewMembrosRecordList[
+                                                      final listViewMembrosRow =
+                                                          listViewMembrosRowList[
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
@@ -2159,68 +2058,22 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                     CrossAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  StreamBuilder<
-                                                                      List<
-                                                                          MembrosRecord>>(
-                                                                    stream:
-                                                                        queryMembrosRecord(
-                                                                      singleRecord:
-                                                                          true,
+                                                                  ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      listViewMembrosRow
+                                                                          .fotosPath
+                                                                          .first,
+                                                                      width:
+                                                                          70.0,
+                                                                      height:
+                                                                          70.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
                                                                     ),
-                                                                    builder:
-                                                                        (context,
-                                                                            snapshot) {
-                                                                      // Customize what your widget looks like when it's loading.
-                                                                      if (!snapshot
-                                                                          .hasData) {
-                                                                        return Center(
-                                                                          child:
-                                                                              SizedBox(
-                                                                            width:
-                                                                                50.0,
-                                                                            height:
-                                                                                50.0,
-                                                                            child:
-                                                                                CircularProgressIndicator(
-                                                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      }
-                                                                      List<MembrosRecord>
-                                                                          imageMembrosRecordList =
-                                                                          snapshot
-                                                                              .data!;
-                                                                      // Return an empty Container when the item does not exist.
-                                                                      if (snapshot
-                                                                          .data!
-                                                                          .isEmpty) {
-                                                                        return Container();
-                                                                      }
-                                                                      final imageMembrosRecord = imageMembrosRecordList
-                                                                              .isNotEmpty
-                                                                          ? imageMembrosRecordList
-                                                                              .first
-                                                                          : null;
-
-                                                                      return ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                        child: Image
-                                                                            .network(
-                                                                          imageMembrosRecord!
-                                                                              .photoPath,
-                                                                          width:
-                                                                              70.0,
-                                                                          height:
-                                                                              70.0,
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                        ),
-                                                                      );
-                                                                    },
                                                                   ),
                                                                   Expanded(
                                                                     child: Row(
@@ -2238,7 +2091,10 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                 0.0),
                                                                             child:
                                                                                 Text(
-                                                                              listViewMembrosRecord.nomeCompleto,
+                                                                              valueOrDefault<String>(
+                                                                                listViewMembrosRow.nomeCompleto,
+                                                                                'nome_completo',
+                                                                              ),
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                     letterSpacing: 0.0,
@@ -2247,81 +2103,57 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                        if (responsiveVisibility(
-                                                                          context:
-                                                                              context,
-                                                                          phone:
-                                                                              false,
-                                                                          tablet:
-                                                                              false,
-                                                                        ))
-                                                                          Expanded(
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                valueOrDefault<String>(
-                                                                                  listViewMembrosRecord.vulgo.first,
-                                                                                  'Vulgo',
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                              ),
+                                                                        Expanded(
+                                                                          child:
+                                                                              FlutterFlowChoiceChips(
+                                                                            options:
+                                                                                listViewMembrosRow.vulgo.map((label) => ChipData(label)).toList(),
+                                                                            onChanged: (val) =>
+                                                                                safeSetState(() => _model.choiceChipsValue3 = val?.firstOrNull),
+                                                                            selectedChipStyle:
+                                                                                ChipStyle(
+                                                                              backgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    color: FlutterFlowTheme.of(context).info,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
+                                                                              iconColor: FlutterFlowTheme.of(context).info,
+                                                                              iconSize: 16.0,
+                                                                              elevation: 0.0,
+                                                                              borderRadius: BorderRadius.circular(8.0),
                                                                             ),
-                                                                          ),
-                                                                        if (responsiveVisibility(
-                                                                          context:
-                                                                              context,
-                                                                          phone:
-                                                                              false,
-                                                                          tablet:
-                                                                              false,
-                                                                        ))
-                                                                          Expanded(
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '0s61gurc' /* ACME Co. */,
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      fontSize: 14.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                              ),
+                                                                            unselectedChipStyle:
+                                                                                ChipStyle(
+                                                                              backgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    color: FlutterFlowTheme.of(context).info,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
+                                                                              iconColor: FlutterFlowTheme.of(context).info,
+                                                                              iconSize: 16.0,
+                                                                              elevation: 0.0,
+                                                                              borderRadius: BorderRadius.circular(18.0),
                                                                             ),
-                                                                          ),
-                                                                        if (responsiveVisibility(
-                                                                          context:
-                                                                              context,
-                                                                          phone:
-                                                                              false,
-                                                                          tablet:
-                                                                              false,
-                                                                        ))
-                                                                          Expanded(
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '2jwhxg80' /* ACME Co. */,
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      fontSize: 14.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                              ),
+                                                                            chipSpacing:
+                                                                                8.0,
+                                                                            rowSpacing:
+                                                                                8.0,
+                                                                            multiselect:
+                                                                                false,
+                                                                            alignment:
+                                                                                WrapAlignment.start,
+                                                                            controller: _model.choiceChipsValueController3 ??=
+                                                                                FormFieldController<List<String>>(
+                                                                              [],
                                                                             ),
+                                                                            wrapped:
+                                                                                true,
                                                                           ),
+                                                                        ),
                                                                         Expanded(
                                                                           child:
                                                                               Row(
@@ -2343,17 +2175,44 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                                   alignment: AlignmentDirectional(0.0, 0.0),
                                                                                   child: Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                    child: Text(
-                                                                                      dateTimeFormat(
-                                                                                        "relative",
-                                                                                        listViewMembrosRecord.dtAlteracao!,
-                                                                                        locale: FFLocalizations.of(context).languageCode,
+                                                                                    child: FutureBuilder<List<FaccoesRow>>(
+                                                                                      future: FaccoesTable().querySingleRow(
+                                                                                        queryFn: (q) => q.eq(
+                                                                                          'id',
+                                                                                          listViewMembrosRow.faccaoId,
+                                                                                        ),
                                                                                       ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                            letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                      builder: (context, snapshot) {
+                                                                                        // Customize what your widget looks like when it's loading.
+                                                                                        if (!snapshot.hasData) {
+                                                                                          return Center(
+                                                                                            child: SizedBox(
+                                                                                              width: 50.0,
+                                                                                              height: 50.0,
+                                                                                              child: CircularProgressIndicator(
+                                                                                                valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                  FlutterFlowTheme.of(context).primary,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          );
+                                                                                        }
+                                                                                        List<FaccoesRow> textFaccoesRowList = snapshot.data!;
+
+                                                                                        final textFaccoesRow = textFaccoesRowList.isNotEmpty ? textFaccoesRowList.first : null;
+
+                                                                                        return Text(
+                                                                                          valueOrDefault<String>(
+                                                                                            textFaccoesRow?.nome,
+                                                                                            'CV',
                                                                                           ),
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                letterSpacing: 0.0,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                              ),
+                                                                                        );
+                                                                                      },
                                                                                     ),
                                                                                   ),
                                                                                 ),
