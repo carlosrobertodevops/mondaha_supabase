@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/edit_profile_photo/edit_profile_photo_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -223,16 +224,32 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                             Duration(milliseconds: 500),
                                         fadeOutDuration:
                                             Duration(milliseconds: 500),
-                                        imageUrl:
-                                            columnUsuariosRow!.usuarioFoto!,
+                                        imageUrl: valueOrDefault<String>(
+                                          columnUsuariosRow?.fotoPath,
+                                          'https://www.flaticon.com/br/icone-gratis/perfil-de-usuario_6073873?related_id=6073873&origin=search&k=1727375791189&log-in=google',
+                                        ),
                                         fit: BoxFit.fitWidth,
                                       ),
                                     ),
                                   ),
                                 ),
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'MODAL_PROFILE_EDIT_CHANGE_PHOTO_BTN_ON_T');
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: EditProfilePhotoWidget(),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'nx89dnuw' /* Change Photo */,
@@ -285,7 +302,10 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             child: TextFormField(
                               controller: _model.yourNameTextController1 ??=
                                   TextEditingController(
-                                text: columnUsuariosRow?.nomeCompleto,
+                                text: valueOrDefault<String>(
+                                  columnUsuariosRow?.nomeCompleto,
+                                  'nome_completo',
+                                ),
                               ),
                               focusNode: _model.yourNameFocusNode1,
                               autofocus: false,
@@ -371,7 +391,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             child: TextFormField(
                               controller: _model.yourNameTextController2 ??=
                                   TextEditingController(
-                                text: columnUsuariosRow?.displayName,
+                                text: columnUsuariosRow?.descricao,
                               ),
                               focusNode: _model.yourNameFocusNode2,
                               autofocus: false,
@@ -727,11 +747,15 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                             16.0, 4.0, 0.0, 0.0),
                                         child: SelectionArea(
                                             child: Text(
-                                          dateTimeFormat(
-                                            "relative",
-                                            columnUsuariosRow!.atividadeAt!,
-                                            locale: FFLocalizations.of(context)
-                                                .languageCode,
+                                          valueOrDefault<String>(
+                                            dateTimeFormat(
+                                              "relative",
+                                              columnUsuariosRow?.acessoAt,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
+                                            'há alguns segundos',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge

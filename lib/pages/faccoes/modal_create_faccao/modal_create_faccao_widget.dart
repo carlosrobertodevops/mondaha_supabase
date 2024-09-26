@@ -1,8 +1,10 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 'dart:math';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -13,20 +15,20 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:provider/provider.dart';
-import 'modal_create_project_model.dart';
-export 'modal_create_project_model.dart';
+import 'modal_create_faccao_model.dart';
+export 'modal_create_faccao_model.dart';
 
-class ModalCreateProjectWidget extends StatefulWidget {
-  const ModalCreateProjectWidget({super.key});
+class ModalCreateFaccaoWidget extends StatefulWidget {
+  const ModalCreateFaccaoWidget({super.key});
 
   @override
-  State<ModalCreateProjectWidget> createState() =>
-      _ModalCreateProjectWidgetState();
+  State<ModalCreateFaccaoWidget> createState() =>
+      _ModalCreateFaccaoWidgetState();
 }
 
-class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
+class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
     with TickerProviderStateMixin {
-  late ModalCreateProjectModel _model;
+  late ModalCreateFaccaoModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -39,10 +41,10 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ModalCreateProjectModel());
+    _model = createModel(context, () => ModalCreateFaccaoModel());
 
-    _model.projectNameTextController ??= TextEditingController();
-    _model.projectNameFocusNode ??= FocusNode();
+    _model.faccaoNameTextController ??= TextEditingController();
+    _model.faccaoNameFocusNode ??= FocusNode();
 
     _model.descriptionTextController ??= TextEditingController();
     _model.descriptionFocusNode ??= FocusNode();
@@ -163,7 +165,7 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                                             0.0, 0.0, 0.0, 4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '5tdm3cpv' /* Create Project */,
+                                            '5i7vrdwq' /* Add Faction */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
@@ -185,7 +187,7 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'vlg015ed' /* Please enter the information b... */,
+                                            'ndzubj6c' /* Please enter the information b... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
@@ -219,7 +221,7 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                                   ),
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_CREATE_PROJECT_close_rounded_ICN_O');
+                                        'MODAL_CREATE_FACCAO_close_rounded_ICN_ON');
                                     Navigator.pop(context);
                                   },
                                 ),
@@ -270,7 +272,7 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'dqo5yhdb' /* Add Photo */,
+                                                  't6k190ot' /* Add Photo */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -294,18 +296,95 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                                         ),
                                         Padding(
                                           padding: EdgeInsets.all(6.0),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                            child: CachedNetworkImage(
-                                              fadeInDuration:
-                                                  Duration(milliseconds: 500),
-                                              fadeOutDuration:
-                                                  Duration(milliseconds: 500),
-                                              imageUrl: '',
-                                              width: double.infinity,
-                                              height: double.infinity,
-                                              fit: BoxFit.cover,
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              logFirebaseEvent(
+                                                  'MODAL_CREATE_FACCAO_Image_nkpoka5f_ON_TA');
+                                              final selectedMedia =
+                                                  await selectMediaWithSourceBottomSheet(
+                                                context: context,
+                                                storageFolderPath:
+                                                    _model.uploadedFileUrl,
+                                                allowPhoto: true,
+                                              );
+                                              if (selectedMedia != null &&
+                                                  selectedMedia.every((m) =>
+                                                      validateFileFormat(
+                                                          m.storagePath,
+                                                          context))) {
+                                                safeSetState(() => _model
+                                                    .isDataUploading = true);
+                                                var selectedUploadedFiles =
+                                                    <FFUploadedFile>[];
+
+                                                var downloadUrls = <String>[];
+                                                try {
+                                                  selectedUploadedFiles =
+                                                      selectedMedia
+                                                          .map((m) =>
+                                                              FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                          .toList();
+
+                                                  downloadUrls =
+                                                      await uploadSupabaseStorageFiles(
+                                                    bucketName:
+                                                        _model.uploadedFileUrl,
+                                                    selectedFiles:
+                                                        selectedMedia,
+                                                  );
+                                                } finally {
+                                                  _model.isDataUploading =
+                                                      false;
+                                                }
+                                                if (selectedUploadedFiles
+                                                            .length ==
+                                                        selectedMedia.length &&
+                                                    downloadUrls.length ==
+                                                        selectedMedia.length) {
+                                                  safeSetState(() {
+                                                    _model.uploadedLocalFile =
+                                                        selectedUploadedFiles
+                                                            .first;
+                                                    _model.uploadedFileUrl =
+                                                        downloadUrls.first;
+                                                  });
+                                                } else {
+                                                  safeSetState(() {});
+                                                  return;
+                                                }
+                                              }
+                                            },
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                              child: CachedNetworkImage(
+                                                fadeInDuration:
+                                                    Duration(milliseconds: 500),
+                                                fadeOutDuration:
+                                                    Duration(milliseconds: 500),
+                                                imageUrl: '',
+                                                width: double.infinity,
+                                                height: double.infinity,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -320,13 +399,16 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
                             child: TextFormField(
-                              controller: _model.projectNameTextController,
-                              focusNode: _model.projectNameFocusNode,
+                              controller: _model.faccaoNameTextController,
+                              focusNode: _model.faccaoNameFocusNode,
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
+                                labelText: FFLocalizations.of(context).getText(
+                                  'eggnalls' /* Name */,
+                                ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '426hn69e' /* Project Name */,
+                                  'jj979xf0' /* Project Name */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -398,7 +480,7 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                                                 .headlineMediumFamily),
                                   ),
                               validator: _model
-                                  .projectNameTextControllerValidator
+                                  .faccaoNameTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -411,6 +493,9 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
+                                labelText: FFLocalizations.of(context).getText(
+                                  'cjt13jln' /* Description */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
@@ -423,7 +508,7 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                                                   .labelLargeFamily),
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'uqziqhmg' /* Description here... */,
+                                  'kysprs44' /* Description here... */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -503,11 +588,34 @@ class _ModalCreateProjectWidgetState extends State<ModalCreateProjectWidget>
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'MODAL_CREATE_FACCAO_CREATE_FACTION_BTN_O');
+                                    await FaccoesTable().insert({
+                                      'nome':
+                                          _model.faccaoNameTextController.text,
+                                      'descricao':
+                                          _model.descriptionTextController.text,
+                                      'imagem_path': _model.uploadedFileUrl,
+                                    });
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Facção adicionado com sucesso!',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondary,
+                                      ),
+                                    );
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    'ul04ft9v' /* Create Project */,
+                                    'popyb3h7' /* Create Faction */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 52.0,

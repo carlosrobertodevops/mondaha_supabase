@@ -125,34 +125,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'edit_profile',
-              path: 'editProfile',
-              requireAuth: true,
-              builder: (context, params) => EditProfileWidget(),
-            ),
-            FFRoute(
-              name: 'project_details_health_ai',
-              path: 'projectDetailsHealthAi',
-              requireAuth: true,
-              builder: (context, params) => ProjectDetailsHealthAiWidget(),
-            ),
-            FFRoute(
-              name: 'project_details',
-              path: 'projectDetails',
-              requireAuth: true,
-              builder: (context, params) => ProjectDetailsWidget(),
-            ),
-            FFRoute(
               name: 'messages_details',
               path: 'messagesDetails',
               requireAuth: true,
               builder: (context, params) => MessagesDetailsWidget(),
             ),
             FFRoute(
-              name: 'main_membros_list_all',
-              path: 'mainMembrosListAll',
+              name: 'main_membros_list',
+              path: 'mainMembrosList',
               requireAuth: true,
-              builder: (context, params) => MainMembrosListAllWidget(),
+              builder: (context, params) => MainMembrosListWidget(),
             ),
             FFRoute(
               name: 'create_membros',
@@ -161,20 +143,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => CreateMembrosWidget(),
             ),
             FFRoute(
-              name: 'user_detailsCopy',
-              path: 'userDetailsCopy',
-              requireAuth: true,
-              builder: (context, params) => UserDetailsCopyWidget(
-                showBack: params.getParam(
-                  'showBack',
-                  ParamType.bool,
-                ),
-              ),
-            ),
-            FFRoute(
               name: 'auth_mondaha',
               path: 'authMondaha',
               builder: (context, params) => AuthMondahaWidget(),
+            ),
+            FFRoute(
+              name: 'faccao_create',
+              path: 'faccaoCreate',
+              requireAuth: true,
+              builder: (context, params) => FaccaoCreateWidget(),
+            ),
+            FFRoute(
+              name: 'create_faccao',
+              path: 'createFaccao',
+              requireAuth: true,
+              builder: (context, params) => CreateFaccaoWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

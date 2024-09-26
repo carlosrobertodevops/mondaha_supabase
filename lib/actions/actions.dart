@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 Future openUserDetails(BuildContext context) async {
   if (MediaQuery.sizeOf(context).width <= 991.0) {
-    context.pushNamed('main_membros_list_all');
+    context.pushNamed('main_membros_list');
   } else {
     await showDialog(
       barrierColor: FlutterFlowTheme.of(context).accent4,

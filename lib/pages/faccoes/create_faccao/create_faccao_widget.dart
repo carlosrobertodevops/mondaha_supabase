@@ -1,33 +1,33 @@
-import '/components/modal_sections/project_details_alt/project_details_alt_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/faccoes/modal_create_faccao/modal_create_faccao_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'project_details_model.dart';
-export 'project_details_model.dart';
+import 'create_faccao_model.dart';
+export 'create_faccao_model.dart';
 
-class ProjectDetailsWidget extends StatefulWidget {
-  const ProjectDetailsWidget({super.key});
+class CreateFaccaoWidget extends StatefulWidget {
+  const CreateFaccaoWidget({super.key});
 
   @override
-  State<ProjectDetailsWidget> createState() => _ProjectDetailsWidgetState();
+  State<CreateFaccaoWidget> createState() => _CreateFaccaoWidgetState();
 }
 
-class _ProjectDetailsWidgetState extends State<ProjectDetailsWidget> {
-  late ProjectDetailsModel _model;
+class _CreateFaccaoWidgetState extends State<CreateFaccaoWidget> {
+  late CreateFaccaoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProjectDetailsModel());
+    _model = createModel(context, () => CreateFaccaoModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'project_details'});
+        parameters: {'screen_name': 'create_faccao'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -46,7 +46,7 @@ class _ProjectDetailsWidgetState extends State<ProjectDetailsWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -59,20 +59,31 @@ class _ProjectDetailsWidgetState extends State<ProjectDetailsWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              logFirebaseEvent('PROJECT_DETAILS_arrow_back_rounded_ICN_O');
+              logFirebaseEvent('CREATE_FACCAO_arrow_back_rounded_ICN_ON_');
               context.pop();
             },
           ),
+          title: Text(
+            FFLocalizations.of(context).getText(
+              'mu37uqta' /* Faction */,
+            ),
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                  letterSpacing: 0.0,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey(
+                      FlutterFlowTheme.of(context).headlineMediumFamily),
+                ),
+          ),
           actions: [],
-          centerTitle: true,
+          centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: wrapWithModel(
-            model: _model.projectDetailsAltModel,
+            model: _model.modalCreateFaccaoModel,
             updateCallback: () => safeSetState(() {}),
-            child: ProjectDetailsAltWidget(),
+            child: ModalCreateFaccaoWidget(),
           ),
         ),
       ),

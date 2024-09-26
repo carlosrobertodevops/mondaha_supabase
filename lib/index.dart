@@ -4,22 +4,19 @@ export '/pages/main_pages/main_faccoes/main_faccoes_widget.dart'
     show MainFaccoesWidget;
 export '/pages/main_pages/main_messages/main_messages_widget.dart'
     show MainMessagesWidget;
-export '/pages/main_pages/main_profile_page/main_profile_page_widget.dart'
+export '/pages/users/main_profile_page/main_profile_page_widget.dart'
     show MainProfilePageWidget;
 export '/pages/users/user_details/user_details_widget.dart'
     show UserDetailsWidget;
-export '/pages/users/edit_profile/edit_profile_widget.dart'
-    show EditProfileWidget;
-export '/pages/project_details_health_ai/project_details_health_ai_widget.dart'
-    show ProjectDetailsHealthAiWidget;
-export '/pages/project_details/project_details_widget.dart'
-    show ProjectDetailsWidget;
-export '/pages/messages_details/messages_details_widget.dart'
+export '/pages/main_pages/messages_details/messages_details_widget.dart'
     show MessagesDetailsWidget;
-export '/pages/main_pages/main_membros_list_all/main_membros_list_all_widget.dart'
-    show MainMembrosListAllWidget;
-export '/pages/create_membros/create_membros_widget.dart'
+export '/pages/main_pages/main_membros_list/main_membros_list_widget.dart'
+    show MainMembrosListWidget;
+export '/pages/membros/create_membros/create_membros_widget.dart'
     show CreateMembrosWidget;
-export '/pages/users/user_details_copy/user_details_copy_widget.dart'
-    show UserDetailsCopyWidget;
-export '/auth_mondaha/auth_mondaha_widget.dart' show AuthMondahaWidget;
+export '/pages/auth_pages/auth_mondaha/auth_mondaha_widget.dart'
+    show AuthMondahaWidget;
+export '/pages/faccoes/faccao_create/faccao_create_widget.dart'
+    show FaccaoCreateWidget;
+export '/pages/faccoes/create_faccao/create_faccao_widget.dart'
+    show CreateFaccaoWidget;

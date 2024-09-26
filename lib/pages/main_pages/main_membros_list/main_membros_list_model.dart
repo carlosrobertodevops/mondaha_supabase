@@ -10,7 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import '/actions/actions.dart' as action_blocks;
-import 'main_membros_list_all_widget.dart' show MainMembrosListAllWidget;
+import 'main_membros_list_widget.dart' show MainMembrosListWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +19,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class MainMembrosListAllModel
-    extends FlutterFlowModel<MainMembrosListAllWidget> {
+class MainMembrosListModel extends FlutterFlowModel<MainMembrosListWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for web_nav component.

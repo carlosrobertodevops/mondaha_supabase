@@ -17,20 +17,19 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'main_membros_list_all_model.dart';
-export 'main_membros_list_all_model.dart';
+import 'main_membros_list_model.dart';
+export 'main_membros_list_model.dart';
 
-class MainMembrosListAllWidget extends StatefulWidget {
-  const MainMembrosListAllWidget({super.key});
+class MainMembrosListWidget extends StatefulWidget {
+  const MainMembrosListWidget({super.key});
 
   @override
-  State<MainMembrosListAllWidget> createState() =>
-      _MainMembrosListAllWidgetState();
+  State<MainMembrosListWidget> createState() => _MainMembrosListWidgetState();
 }
 
-class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
+class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
     with TickerProviderStateMixin {
-  late MainMembrosListAllModel _model;
+  late MainMembrosListModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -39,10 +38,10 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MainMembrosListAllModel());
+    _model = createModel(context, () => MainMembrosListModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'main_membros_list_all'});
+        parameters: {'screen_name': 'main_membros_list'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 3,
@@ -534,7 +533,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                           FFButtonWidget(
                             onPressed: () async {
                               logFirebaseEvent(
-                                  'MAIN_MEMBROS_LIST_ALL_MEMBER_ADD_BTN_ON_');
+                                  'MAIN_MEMBROS_LIST_MEMBER_ADD_BTN_ON_TAP');
 
                               context.pushNamed('create_membros');
                             },
@@ -591,7 +590,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                           ),
                           onPressed: () async {
                             logFirebaseEvent(
-                                'MAIN_MEMBROS_LIST_ALL_search_rounded_ICN');
+                                'MAIN_MEMBROS_LIST_search_rounded_ICN_ON_');
                             await showModalBottomSheet(
                               isScrollControlled: true,
                               backgroundColor: Colors.transparent,
@@ -929,7 +928,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           logFirebaseEvent(
-                                                              'MAIN_MEMBROS_LIST_ALL_Container_gl3nhhmq');
+                                                              'MAIN_MEMBROS_LIST_Container_gl3nhhmq_ON_');
                                                           await action_blocks
                                                               .openUserDetails(
                                                                   context);
@@ -1149,7 +1148,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                       onTap:
                                                                           () async {
                                                                         logFirebaseEvent(
-                                                                            'MAIN_MEMBROS_LIST_ALL_Icon_hswsslcr_ON_T');
+                                                                            'MAIN_MEMBROS_LIST_Icon_hswsslcr_ON_TAP');
                                                                         await showAlignedDialog(
                                                                           barrierColor:
                                                                               Colors.transparent,
@@ -1448,7 +1447,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                               .transparent,
                                                           onTap: () async {
                                                             logFirebaseEvent(
-                                                                'MAIN_MEMBROS_LIST_ALL_Container_opn71abx');
+                                                                'MAIN_MEMBROS_LIST_Container_opn71abx_ON_');
                                                             await action_blocks
                                                                 .openUserDetails(
                                                                     context);
@@ -1668,7 +1667,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                         onTap:
                                                                             () async {
                                                                           logFirebaseEvent(
-                                                                              'MAIN_MEMBROS_LIST_ALL_Icon_9hhwpx3l_ON_T');
+                                                                              'MAIN_MEMBROS_LIST_Icon_9hhwpx3l_ON_TAP');
                                                                           await showAlignedDialog(
                                                                             barrierColor:
                                                                                 Colors.transparent,
@@ -1968,7 +1967,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                               .transparent,
                                                           onTap: () async {
                                                             logFirebaseEvent(
-                                                                'MAIN_MEMBROS_LIST_ALL_Container_8w17yk2k');
+                                                                'MAIN_MEMBROS_LIST_Container_8w17yk2k_ON_');
                                                             await action_blocks
                                                                 .openUserDetails(
                                                                     context);
@@ -2188,7 +2187,7 @@ class _MainMembrosListAllWidgetState extends State<MainMembrosListAllWidget>
                                                                         onTap:
                                                                             () async {
                                                                           logFirebaseEvent(
-                                                                              'MAIN_MEMBROS_LIST_ALL_Icon_9ml339yk_ON_T');
+                                                                              'MAIN_MEMBROS_LIST_Icon_9ml339yk_ON_TAP');
                                                                           await showAlignedDialog(
                                                                             barrierColor:
                                                                                 Colors.transparent,

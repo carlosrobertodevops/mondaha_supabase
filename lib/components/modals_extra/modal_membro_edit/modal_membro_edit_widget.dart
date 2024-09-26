@@ -229,8 +229,10 @@ class _ModalMembroEditWidgetState extends State<ModalMembroEditWidget>
                                                 Duration(milliseconds: 500),
                                             fadeOutDuration:
                                                 Duration(milliseconds: 500),
-                                            imageUrl:
-                                                columnUsuariosRow!.usuarioFoto!,
+                                            imageUrl: valueOrDefault<String>(
+                                              columnUsuariosRow?.fotoPath,
+                                              'https://www.flaticon.com/br/icone-gratis/perfil-de-usuario_6073873?related_id=6073873&origin=search&k=1727375791189&log-in=google',
+                                            ),
                                             fit: BoxFit.fitWidth,
                                           ),
                                         ),
@@ -393,7 +395,10 @@ class _ModalMembroEditWidgetState extends State<ModalMembroEditWidget>
                                 child: TextFormField(
                                   controller: _model.yourNameTextController2 ??=
                                       TextEditingController(
-                                    text: columnUsuariosRow?.displayName,
+                                    text: valueOrDefault<String>(
+                                      columnUsuariosRow?.descricao,
+                                      'descrição',
+                                    ),
                                   ),
                                   focusNode: _model.yourNameFocusNode2,
                                   autofocus: false,
@@ -712,7 +717,7 @@ class _ModalMembroEditWidgetState extends State<ModalMembroEditWidget>
                                             child: SelectionArea(
                                                 child: Text(
                                               dateTimeFormat(
-                                                "d/M/y",
+                                                "MMMMEEEEd",
                                                 columnUsuariosRow!.createdAt,
                                                 locale:
                                                     FFLocalizations.of(context)
@@ -780,12 +785,15 @@ class _ModalMembroEditWidgetState extends State<ModalMembroEditWidget>
                                                     16.0, 4.0, 0.0, 0.0),
                                             child: SelectionArea(
                                                 child: Text(
-                                              dateTimeFormat(
-                                                "relative",
-                                                columnUsuariosRow!.atividadeAt!,
-                                                locale:
-                                                    FFLocalizations.of(context)
-                                                        .languageCode,
+                                              valueOrDefault<String>(
+                                                dateTimeFormat(
+                                                  "relative",
+                                                  columnUsuariosRow?.acessoAt,
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
+                                                ),
+                                                'há alguns segundos',
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)

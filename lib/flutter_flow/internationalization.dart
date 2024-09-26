@@ -252,25 +252,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Facciones',
       'pt': 'Facções',
     },
-    'sqmgdsam': {
-      'en': 'PCC',
-      'es': 'PCC',
-      'pt': 'PCC',
-    },
-    '8t72ssfn': {
-      'en': 'First Capital Command',
-      'es': 'Primer Comando Capital',
-      'pt': 'Primeiro Comando da Capital',
-    },
     'h9kiq8rj': {
       'en': 'Next Action',
       'es': 'Próxima acción',
       'pt': 'Próxima ação',
-    },
-    '7mjz03wi': {
-      'en': 'Tuesday, 10:00am',
-      'es': 'Martes, 10:00 horas',
-      'pt': 'Terça-feira, 10:00 da manhã',
     },
     '8e820p1r': {
       'en': 'In Progress',
@@ -493,6 +478,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Finalizar la sesión',
       'pt': 'Sair',
     },
+    'x4mz362n': {
+      'en': 'Edit User',
+      'es': 'Editar usuario',
+      'pt': 'Editar usuário',
+    },
     'o3dp9tss': {
       'en': '__',
       'es': '__',
@@ -502,121 +492,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // user_details
   {
     '9t913b44': {
-      'en': 'Home',
-      'es': 'Hogar',
-      'pt': 'Lar',
-    },
-  },
-  // edit_profile
-  {
-    'mk8nnw94': {
-      'en': 'Change Photo',
-      'es': 'Cambiar foto',
-      'pt': 'Alterar foto',
-    },
-    '4no7ue4a': {
-      'en': 'Your Name',
-      'es': 'Su nombre',
-      'pt': 'Seu nome',
-    },
-    '2rqce1pj': {
-      'en': 'The email associated with this account is:',
-      'es': 'El correo electrónico asociado a esta cuenta es:',
-      'pt': 'O e-mail associado a esta conta é:',
-    },
-    'rr8ksatz': {
-      'en': 'Save Changes',
-      'es': 'Guardar cambios',
-      'pt': 'Salvar alterações',
-    },
-    '20uycztj': {
-      'en': 'Edit Profile',
-      'es': 'Editar perfil',
-      'pt': 'Editar Perfil',
-    },
-  },
-  // project_details_health_ai
-  {
-    'mxf4vrjw': {
-      'en': 'HealthAi',
-      'es': 'SaludAi',
-      'pt': 'SaúdeAi',
-    },
-    'wsgonkz2': {
-      'en': 'Client Acquisition for Q3',
-      'es': 'Adquisición de clientes para el tercer trimestre',
-      'pt': 'Aquisição de clientes para o terceiro trimestre',
-    },
-    'ynyuwhqo': {
-      'en': 'Next Action',
-      'es': 'Próxima acción',
-      'pt': 'Próxima ação',
-    },
-    'zk7z07v0': {
-      'en': 'Tuesday, 10:00am',
-      'es': 'Martes, 10:00 horas',
-      'pt': 'Terça-feira, 10:00 da manhã',
-    },
-    'xmahzs1v': {
-      'en': 'In Progress',
-      'es': 'En curso',
-      'pt': 'Em andamento',
-    },
-    'ry6jvd0g': {
-      'en': 'Contract Details',
-      'es': 'Detalles del contrato',
-      'pt': 'Detalhes do contrato',
-    },
-    'hu32scl5': {
-      'en': '\$125,000',
-      'es': '\$125,000',
-      'pt': '\$ 125.000',
-    },
-    'sfu6o269': {
-      'en':
-          'Additional Details around this contract and who is working on it in this card!',
-      'es':
-          '¡Detalles adicionales sobre este contrato y quién está trabajando en él en esta tarjeta!',
-      'pt':
-          'Detalhes adicionais sobre este contrato e quem está trabalhando nele neste card!',
-    },
-    '5sv9a4ka': {
-      'en': 'Mark as Complete',
-      'es': 'Marcar como completo',
-      'pt': 'Marcar como concluído',
-    },
-    'rrgcwkj1': {
-      'en': 'Contract Details',
-      'es': 'Detalles del contrato',
-      'pt': 'Detalhes do contrato',
-    },
-    '8bwk4oui': {
-      'en': '\$67,000',
-      'es': '\$67,000',
-      'pt': '\$ 67.000',
-    },
-    'p2hoxaq9': {
-      'en':
-          'Additional Details around this contract and who is working on it in this card!',
-      'es':
-          '¡Detalles adicionales sobre este contrato y quién está trabajando en él en esta tarjeta!',
-      'pt':
-          'Detalhes adicionais sobre este contrato e quem está trabalhando nele neste card!',
-    },
-    'ww95wm3k': {
-      'en': 'Mark as Complete',
-      'es': 'Marcar como completo',
-      'pt': 'Marcar como concluído',
-    },
-    '54l7ivhw': {
-      'en': 'Home',
-      'es': 'Hogar',
-      'pt': 'Lar',
-    },
-  },
-  // project_details
-  {
-    'c0s3jdsy': {
       'en': 'Home',
       'es': 'Hogar',
       'pt': 'Lar',
@@ -693,7 +568,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Lar',
     },
   },
-  // main_membros_list_all
+  // main_membros_list
   {
     'c21nlyqi': {
       'en': 'Members',
@@ -1302,21 +1177,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Aba 3',
     },
   },
-  // user_detailsCopy
-  {
-    't4i12okd': {
-      'en': 'Home',
-      'es': '',
-      'pt': '',
-    },
-  },
   // auth_mondaha
   {
-    'sre8jmof': {
-      'en': 'mondaha',
-      'es': 'mondaha',
-      'pt': 'mondaha',
-    },
     'vtarneam': {
       'en': 'Sign In',
       'es': 'Iniciar sesión',
@@ -1350,7 +1212,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'j19triel': {
       'en': 'Sign Up',
       'es': 'Inscribirse',
-      'pt': 'Inscrever-se',
+      'pt': 'Cadastrar-se',
     },
     'yossuiqm': {
       'en': 'Let\'s get started by filling out the form below.',
@@ -1358,9 +1220,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Vamos começar preenchendo o formulário abaixo.',
     },
     '3rr9ncwq': {
-      'en': 'Email',
-      'es': 'Correo electrónico',
-      'pt': 'E-mail',
+      'en': 'Full  Name',
+      'es': 'Nombre completo',
+      'pt': 'Nome completo',
     },
     'ozzg0ojq': {
       'en': 'Full Name',
@@ -1369,13 +1231,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3y77uv1m': {
       'en': 'Email',
-      'es': '',
-      'pt': '',
+      'es': 'Correo electrónico',
+      'pt': 'e-mail',
     },
     'eu5x1ad8': {
       'en': 'Email',
       'es': 'Correo electrónico',
-      'pt': 'E-mail',
+      'pt': 'e-mail',
     },
     'gydy2izg': {
       'en': 'Password',
@@ -1393,6 +1255,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Criar uma conta',
     },
     '51xsvdsd': {
+      'en': 'Home',
+      'es': '',
+      'pt': '',
+    },
+  },
+  // faccao_create
+  {
+    'yf0nuy3o': {
+      'en': 'Page Title',
+      'es': '',
+      'pt': '',
+    },
+    '7bec4wh0': {
+      'en': 'Home',
+      'es': '',
+      'pt': '',
+    },
+  },
+  // create_faccao
+  {
+    'mu37uqta': {
+      'en': 'Faction',
+      'es': 'Facción',
+      'pt': 'Facção',
+    },
+    'txjsby79': {
       'en': 'Home',
       'es': '',
       'pt': '',
@@ -1778,59 +1666,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Excluir',
     },
   },
-  // modal_create_project
-  {
-    '5tdm3cpv': {
-      'en': 'Create Project',
-      'es': 'Crear proyecto',
-      'pt': 'Criar Projeto',
-    },
-    'vlg015ed': {
-      'en': 'Please enter the information below to add a project.',
-      'es': 'Ingrese la información a continuación para agregar un proyecto.',
-      'pt': 'Insira as informações abaixo para adicionar um projeto.',
-    },
-    'dqo5yhdb': {
-      'en': 'Add Photo',
-      'es': 'Añadir foto',
-      'pt': 'Adicionar foto',
-    },
-    '426hn69e': {
-      'en': 'Project Name',
-      'es': 'Nombre del proyecto',
-      'pt': 'Nome do Projeto',
-    },
-    'uqziqhmg': {
-      'en': 'Description here...',
-      'es': 'Descripción aquí...',
-      'pt': 'Descrição aqui...',
-    },
-    'ul04ft9v': {
-      'en': 'Create Project',
-      'es': 'Crear proyecto',
-      'pt': 'Criar Projeto',
-    },
-    '4spmowtt': {
-      'en': 'Please enter a project name...',
-      'es': 'Por favor, introduzca un nombre de proyecto...',
-      'pt': 'Por favor, insira um nome de projeto...',
-    },
-    '32kj9709': {
-      'en': 'Please choose an option from the dropdown',
-      'es': 'Por favor, seleccione una opción del menú desplegable.',
-      'pt': 'Selecione uma opção no menu suspenso',
-    },
-    'wfu6up0n': {
-      'en': 'Please enter a short description...',
-      'es': 'Por favor, introduzca una breve descripción...',
-      'pt': 'Insira uma breve descrição...',
-    },
-    'qt5dp4ez': {
-      'en': 'Please choose an option from the dropdown',
-      'es': 'Por favor, seleccione una opción del menú desplegable.',
-      'pt': 'Selecione uma opção no menu suspenso',
-    },
-  },
   // project_details_alt
   {
     'zgyw4s95': {
@@ -2137,74 +1972,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Verificar código',
     },
   },
-  // modal_share_project
-  {
-    '4tx2ru39': {
-      'en': 'Share your project',
-      'es': 'Comparte tu proyecto',
-      'pt': 'Compartilhe seu projeto',
-    },
-    'u6t74zsp': {
-      'en': 'Your project has been created, now invite your team to continue.',
-      'es': 'Tu proyecto ha sido creado, ahora invita a tu equipo a continuar.',
-      'pt': 'Seu projeto foi criado, agora convide sua equipe para continuar.',
-    },
-    'a5x5r8z2': {
-      'en': 'Randy Peterson',
-      'es': 'Randy Peterson',
-      'pt': 'Randy Peterson',
-    },
-    '0hlgten0': {
-      'en': 'name@domainname.com',
-      'es': 'nombre@nombrededominio.com',
-      'pt': 'nome@nomedodomínio.com',
-    },
-    'wfv5m0m2': {
-      'en': 'Randy Peterson',
-      'es': 'Randy Peterson',
-      'pt': 'Randy Peterson',
-    },
-    'z4rocyop': {
-      'en': 'name@domainname.com',
-      'es': 'nombre@nombrededominio.com',
-      'pt': 'nome@nomedodomínio.com',
-    },
-    'f9bgnoni': {
-      'en': 'Randy Peterson',
-      'es': 'Randy Peterson',
-      'pt': 'Randy Peterson',
-    },
-    'bthcky9u': {
-      'en': 'name@domainname.com',
-      'es': 'nombre@nombrededominio.com',
-      'pt': 'nome@nomedodomínio.com',
-    },
-    'pgq1r8ah': {
-      'en': 'Add User',
-      'es': 'Agregar usuario',
-      'pt': 'Adicionar usuário',
-    },
-    'x8i2mu80': {
-      'en': 'Project Link',
-      'es': 'Enlace del proyecto',
-      'pt': 'Link do Projeto',
-    },
-    'jzdr6k9x': {
-      'en': 'https://project.flutterflow.io/?quizRef=T7c8mXvkYFFCWjqyhxKe',
-      'es': 'https://project.flutterflow.io/?quizRef=T7c8mXvkYFFCWjqyhxKe',
-      'pt': 'https://project.flutterflow.io/?quizRef=T7c8mXvkYFFCWjqyhxKe',
-    },
-    'jz45d8an': {
-      'en': 'Cancel',
-      'es': 'Cancelar',
-      'pt': 'Cancelar',
-    },
-    'ubopypxm': {
-      'en': 'Send Invites',
-      'es': 'Enviar invitaciones',
-      'pt': 'Enviar convites',
-    },
-  },
   // modal_profile_details
   {
     'xt43uwzp': {
@@ -2447,9 +2214,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // modal_create_faccao
   {
     '5i7vrdwq': {
-      'en': 'Add Factions',
-      'es': 'Añadir facciones',
-      'pt': 'Adicionar Facções',
+      'en': 'Add Faction',
+      'es': 'Añadir facción',
+      'pt': 'Adicionar Facção',
     },
     'ndzubj6c': {
       'en': 'Please enter the information below to add a project.',
@@ -2482,9 +2249,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'popyb3h7': {
-      'en': 'Create Project',
-      'es': 'Crear proyecto',
-      'pt': 'Criar Projeto',
+      'en': 'Create Faction',
+      'es': 'Crear facción',
+      'pt': 'Criar Facção',
     },
     'gxl81j2c': {
       'en': 'Please enter a project name...',

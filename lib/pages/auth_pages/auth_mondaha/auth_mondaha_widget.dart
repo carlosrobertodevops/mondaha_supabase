@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/main_logo/main_logo_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -150,7 +151,7 @@ class _AuthMondahaWidgetState extends State<AuthMondahaWidget>
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
@@ -185,9 +186,7 @@ class _AuthMondahaWidgetState extends State<AuthMondahaWidget>
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'sre8jmof' /* mondaha */,
-                                          ),
+                                          FFDevEnvironmentValues().EMPLOYER,
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
@@ -203,6 +202,17 @@ class _AuthMondahaWidgetState extends State<AuthMondahaWidget>
                                                         .headlineMediumFamily),
                                               ),
                                         ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, -1.0),
+                                      child: wrapWithModel(
+                                        model: _model.mainLogoAModel,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        updateOnChange: true,
+                                        child: MainLogoWidget(),
                                       ),
                                     ),
                                   ],
@@ -870,7 +880,7 @@ class _AuthMondahaWidgetState extends State<AuthMondahaWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                            '3rr9ncwq' /* Email */,
+                                                            '3rr9ncwq' /* Full  Name */,
                                                           ),
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
@@ -1483,7 +1493,7 @@ class _AuthMondahaWidgetState extends State<AuthMondahaWidget>
                                                                   .createAccountWithEmail(
                                                             context,
                                                             _model
-                                                                .signupNomeCompletoTextController
+                                                                .signupEmailTextController
                                                                 .text,
                                                             _model
                                                                 .signupPasswordTextController
@@ -1497,12 +1507,17 @@ class _AuthMondahaWidgetState extends State<AuthMondahaWidget>
                                                               'main_home',
                                                               context.mounted);
 
+                                                          await Future.delayed(
+                                                              const Duration(
+                                                                  milliseconds:
+                                                                      1000));
                                                           await UsuariosTable()
                                                               .insert({
                                                             'user_id':
                                                                 currentUserUid,
-                                                            'email':
-                                                                currentUserEmail,
+                                                            'email': _model
+                                                                .signupEmailTextController
+                                                                .text,
                                                             'nome_completo': _model
                                                                 .signupNomeCompletoTextController
                                                                 .text,
@@ -1623,7 +1638,7 @@ class _AuthMondahaWidgetState extends State<AuthMondahaWidget>
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: CachedNetworkImageProvider(
-                          'https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
+                          'https://images.unsplash.com/photo-1488751045188-3c55bbf9a3fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8dGVjaHxlbnwwfHx8fDE3MjczNjI0NjF8MA&ixlib=rb-4.0.3&q=80&w=1080',
                         ),
                       ),
                       borderRadius: BorderRadius.circular(0.0),

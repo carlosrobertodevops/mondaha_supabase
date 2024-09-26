@@ -1,4 +1,3 @@
-import '/components/modals/modal_create_project/modal_create_project_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -556,20 +555,6 @@ class _CommandPaletteWidgetState extends State<CommandPaletteWidget>
                                         logFirebaseEvent(
                                             'COMMAND_PALETTE_contentView_1_ON_TAP');
                                         Navigator.pop(context);
-                                        await showModalBottomSheet(
-                                          isScrollControlled: true,
-                                          backgroundColor: Colors.transparent,
-                                          barrierColor: Colors.transparent,
-                                          enableDrag: false,
-                                          context: context,
-                                          builder: (context) {
-                                            return Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: ModalCreateProjectWidget(),
-                                            );
-                                          },
-                                        ).then((value) => safeSetState(() {}));
                                       },
                                       child: Container(
                                         width: double.infinity,

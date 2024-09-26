@@ -1,4 +1,3 @@
-import '/components/modals/modal_create_project/modal_create_project_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

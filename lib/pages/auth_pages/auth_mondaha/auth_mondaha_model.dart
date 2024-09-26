@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/main_logo/main_logo_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -16,6 +17,8 @@ import 'package:provider/provider.dart';
 class AuthMondahaModel extends FlutterFlowModel<AuthMondahaWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Model for main_Logo_A.
+  late MainLogoModel mainLogoAModel;
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -54,6 +57,7 @@ class AuthMondahaModel extends FlutterFlowModel<AuthMondahaWidget> {
 
   @override
   void initState(BuildContext context) {
+    mainLogoAModel = createModel(context, () => MainLogoModel());
     loginPasswordVisibility = false;
     signupPasswordVisibility = false;
     signupPasswordConfirmeVisibility = false;
@@ -61,6 +65,7 @@ class AuthMondahaModel extends FlutterFlowModel<AuthMondahaWidget> {
 
   @override
   void dispose() {
+    mainLogoAModel.dispose();
     tabBarController?.dispose();
     loginEmailFocusNode?.dispose();
     loginEmailTextController?.dispose();
