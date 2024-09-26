@@ -230,10 +230,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                                   fadeOutDuration: Duration(
                                                       milliseconds: 500),
                                                   imageUrl:
-                                                      valueOrDefault<String>(
-                                                    columnUsuariosRow?.fotoPath,
-                                                    'foto_path',
-                                                  ),
+                                                      _model.uploadedFileUrl,
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -259,6 +256,8 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                               final selectedMedia =
                                                   await selectMediaWithSourceBottomSheet(
                                                 context: context,
+                                                storageFolderPath:
+                                                    columnUsuariosRow?.fotoPath,
                                                 allowPhoto: true,
                                               );
                                               if (selectedMedia != null &&
@@ -271,6 +270,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                                 var selectedUploadedFiles =
                                                     <FFUploadedFile>[];
 
+                                                var downloadUrls = <String>[];
                                                 try {
                                                   selectedUploadedFiles =
                                                       selectedMedia
@@ -291,17 +291,30 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                                                     m.blurHash,
                                                               ))
                                                           .toList();
+
+                                                  downloadUrls =
+                                                      await uploadSupabaseStorageFiles(
+                                                    bucketName:
+                                                        columnUsuariosRow!
+                                                            .fotoPath!,
+                                                    selectedFiles:
+                                                        selectedMedia,
+                                                  );
                                                 } finally {
                                                   _model.isDataUploading =
                                                       false;
                                                 }
                                                 if (selectedUploadedFiles
-                                                        .length ==
-                                                    selectedMedia.length) {
+                                                            .length ==
+                                                        selectedMedia.length &&
+                                                    downloadUrls.length ==
+                                                        selectedMedia.length) {
                                                   safeSetState(() {
                                                     _model.uploadedLocalFile =
                                                         selectedUploadedFiles
                                                             .first;
+                                                    _model.uploadedFileUrl =
+                                                        downloadUrls.first;
                                                   });
                                                 } else {
                                                   safeSetState(() {});
@@ -371,9 +384,8 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                                   'EDIT_PROFILE_PHOTO_SAVE_CHANGES_BTN_ON_T');
                                               await UsuariosTable().update(
                                                 data: {
-                                                  'foto_path': _model
-                                                      .uploadedLocalFile
-                                                      .blurHash,
+                                                  'foto_path':
+                                                      _model.uploadedFileUrl,
                                                 },
                                                 matchingRows: (rows) => rows,
                                               );

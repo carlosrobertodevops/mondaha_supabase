@@ -489,14 +489,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '__',
     },
   },
-  // user_details
-  {
-    '9t913b44': {
-      'en': 'Home',
-      'es': 'Hogar',
-      'pt': 'Lar',
-    },
-  },
   // messages_details
   {
     '67tv84ak': {

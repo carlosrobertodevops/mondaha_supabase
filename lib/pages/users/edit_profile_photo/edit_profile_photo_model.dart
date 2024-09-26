@@ -16,6 +16,7 @@ class EditProfilePhotoModel extends FlutterFlowModel<EditProfilePhotoWidget> {
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {}

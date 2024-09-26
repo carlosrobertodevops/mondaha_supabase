@@ -114,17 +114,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => MainProfilePageWidget(),
             ),
             FFRoute(
-              name: 'user_details',
-              path: 'userDetails',
-              requireAuth: true,
-              builder: (context, params) => UserDetailsWidget(
-                showBack: params.getParam(
-                  'showBack',
-                  ParamType.bool,
-                ),
-              ),
-            ),
-            FFRoute(
               name: 'messages_details',
               path: 'messagesDetails',
               requireAuth: true,

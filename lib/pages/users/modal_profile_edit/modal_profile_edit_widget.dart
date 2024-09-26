@@ -1,12 +1,12 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/edit_profile_photo/edit_profile_photo_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/pages/users/edit_profile_photo/edit_profile_photo_widget.dart';
 import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -41,9 +41,9 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
     super.initState();
     _model = createModel(context, () => ModalProfileEditModel());
 
-    _model.yourNameFocusNode1 ??= FocusNode();
+    _model.nomeCompletoFocusNode ??= FocusNode();
 
-    _model.yourNameFocusNode2 ??= FocusNode();
+    _model.descricaoFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -300,14 +300,14 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: TextFormField(
-                              controller: _model.yourNameTextController1 ??=
+                              controller: _model.nomeCompletoTextController ??=
                                   TextEditingController(
                                 text: valueOrDefault<String>(
                                   columnUsuariosRow?.nomeCompleto,
                                   'nome_completo',
                                 ),
                               ),
-                              focusNode: _model.yourNameFocusNode1,
+                              focusNode: _model.nomeCompletoFocusNode,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -381,7 +381,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                                 .bodyMediumFamily),
                                   ),
                               cursorColor: FlutterFlowTheme.of(context).primary,
-                              validator: _model.yourNameTextController1Validator
+                              validator: _model
+                                  .nomeCompletoTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -389,11 +390,14 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: TextFormField(
-                              controller: _model.yourNameTextController2 ??=
+                              controller: _model.descricaoTextController ??=
                                   TextEditingController(
-                                text: columnUsuariosRow?.descricao,
+                                text: valueOrDefault<String>(
+                                  columnUsuariosRow?.descricao,
+                                  'descricao',
+                                ),
                               ),
-                              focusNode: _model.yourNameFocusNode2,
+                              focusNode: _model.descricaoFocusNode,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -471,7 +475,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                               maxLines: 4,
                               minLines: 3,
                               cursorColor: FlutterFlowTheme.of(context).primary,
-                              validator: _model.yourNameTextController2Validator
+                              validator: _model.descricaoTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -499,22 +503,24 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                   );
                                 }
                                 List<TiposUsuariosRow>
-                                    dropDownTiposUsuariosRowList =
+                                    dropDownTipoUsuarioTiposUsuariosRowList =
                                     snapshot.data!;
 
                                 return FlutterFlowDropDown<int>(
-                                  controller: _model.dropDownValueController ??=
+                                  controller: _model
+                                          .dropDownTipoUsuarioValueController ??=
                                       FormFieldController<int>(null),
                                   options: List<int>.from(
-                                      dropDownTiposUsuariosRowList
+                                      dropDownTipoUsuarioTiposUsuariosRowList
                                           .map((e) => e.tipoUsuarioId)
                                           .toList()),
-                                  optionLabels: dropDownTiposUsuariosRowList
-                                      .map((e) => e.descricao)
-                                      .withoutNulls
-                                      .toList(),
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropDownValue = val),
+                                  optionLabels:
+                                      dropDownTipoUsuarioTiposUsuariosRowList
+                                          .map((e) => e.descricao)
+                                          .withoutNulls
+                                          .toList(),
+                                  onChanged: (val) => safeSetState(() =>
+                                      _model.dropDownTipoUsuarioValue = val),
                                   width: double.infinity,
                                   height: 58.0,
                                   searchHintTextStyle:
@@ -841,8 +847,44 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.05),
                               child: FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  logFirebaseEvent(
+                                      'MODAL_PROFILE_EDIT_SAVE_CHANGES_BTN_ON_T');
+                                  await UsuariosTable().update(
+                                    data: {
+                                      'nome_completo': '',
+                                      'descricao': '',
+                                    },
+                                    matchingRows: (rows) => rows,
+                                  );
+                                  Navigator.pop(context);
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Informaçõe atualizadas com sucesso !',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLargeFamily),
+                                            ),
+                                      ),
+                                      duration: Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context).accent2,
+                                    ),
+                                  );
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'gz2xhplu' /* Save Changes */,
