@@ -541,7 +541,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
 
-                    context.goNamedAuth('auth_login', context.mounted);
+                    context.goNamedAuth('auth_mondaha', context.mounted);
                   },
                   child: Container(
                     width: double.infinity,
@@ -635,81 +635,84 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                         thickness: 2.0,
                         color: FlutterFlowTheme.of(context).alternate,
                       ),
-                      FutureBuilder<List<UsuariosRow>>(
-                        future: UsuariosTable().querySingleRow(
-                          queryFn: (q) => q
-                              .eq(
-                                'user_id',
-                                currentUserUid,
-                              )
-                              .eq(
-                                'user_id',
-                                currentUserUid,
-                              ),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<UsuariosRow> columnUsuariosRowList =
-                              snapshot.data!;
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(4.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                logFirebaseEvent(
+                                    'WEB_NAV_COMP_Row_fqtl9ien_ON_TAP');
 
-                          final columnUsuariosRow =
-                              columnUsuariosRowList.isNotEmpty
-                                  ? columnUsuariosRowList.first
-                                  : null;
-
-                          return Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(4.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    logFirebaseEvent(
-                                        'WEB_NAV_COMP_Row_fqtl9ien_ON_TAP');
-
-                                    context.pushNamed('edit_profile');
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
+                                context.pushNamed('edit_profile');
+                              },
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Container(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .accent1,
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent1,
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(2.0),
+                                          child:
+                                              FutureBuilder<List<UsuariosRow>>(
+                                            future:
+                                                UsuariosTable().querySingleRow(
+                                              queryFn: (q) => q.eq(
+                                                'user_id',
+                                                currentUserUid,
                                               ),
                                             ),
-                                            child: Padding(
-                                              padding: EdgeInsets.all(2.0),
-                                              child: ClipRRect(
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<UsuariosRow>
+                                                  imageUsuariosRowList =
+                                                  snapshot.data!;
+
+                                              final imageUsuariosRow =
+                                                  imageUsuariosRowList
+                                                          .isNotEmpty
+                                                      ? imageUsuariosRowList
+                                                          .first
+                                                      : null;
+
+                                              return ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                                 child: CachedNetworkImage(
@@ -717,34 +720,74 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                                       milliseconds: 500),
                                                   fadeOutDuration: Duration(
                                                       milliseconds: 500),
-                                                  imageUrl: columnUsuariosRow!
+                                                  imageUrl: imageUsuariosRow!
                                                       .usuarioFoto!,
                                                   width: 44.0,
                                                   height: 44.0,
                                                   fit: BoxFit.cover,
                                                 ),
-                                              ),
-                                            ),
+                                              );
+                                            },
                                           ),
-                                        ],
+                                        ),
                                       ),
-                                      Expanded(
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
-                                            child: SingleChildScrollView(
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
+                                    ],
+                                  ),
+                                  Expanded(
+                                    child: Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 0.0, 0.0),
+                                        child: SingleChildScrollView(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              FutureBuilder<List<UsuariosRow>>(
+                                                future: UsuariosTable()
+                                                    .querySingleRow(
+                                                  queryFn: (q) => q.eq(
+                                                    'user_id',
+                                                    currentUserUid,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<UsuariosRow>
+                                                      textUsuariosRowList =
+                                                      snapshot.data!;
+
+                                                  final textUsuariosRow =
+                                                      textUsuariosRowList
+                                                              .isNotEmpty
+                                                          ? textUsuariosRowList
+                                                              .first
+                                                          : null;
+
+                                                  return Text(
                                                     valueOrDefault<String>(
-                                                      columnUsuariosRow
+                                                      textUsuariosRow
                                                           ?.nomeCompleto,
                                                       'nome_completo',
                                                     ),
@@ -765,64 +808,53 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                                                           context)
                                                                       .bodyMediumFamily),
                                                         ),
-                                                  ),
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            -1.0, 0.0),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  4.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          columnUsuariosRow
-                                                              ?.email,
-                                                          'email',
-                                                        ),
-                                                        textAlign:
-                                                            TextAlign.start,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelSmallFamily),
-                                                                ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                                  );
+                                                },
                                               ),
-                                            ),
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    currentUserEmail,
+                                                    textAlign: TextAlign.start,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily),
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
+                                ],
                               ),
-                            ],
-                          );
-                        },
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

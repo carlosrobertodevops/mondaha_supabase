@@ -80,30 +80,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? MainHomeWidget() : AuthLoginWidget(),
+          appStateNotifier.loggedIn ? MainHomeWidget() : AuthMondahaWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? MainHomeWidget() : AuthLoginWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? MainHomeWidget()
+              : AuthMondahaWidget(),
           routes: [
-            FFRoute(
-              name: 'auth_login',
-              path: 'authLogin',
-              builder: (context, params) => AuthLoginWidget(),
-            ),
-            FFRoute(
-              name: 'forgot_password',
-              path: 'forgotPassword',
-              requireAuth: true,
-              builder: (context, params) => ForgotPasswordWidget(),
-            ),
-            FFRoute(
-              name: 'auth_create',
-              path: 'authCreate',
-              builder: (context, params) => AuthCreateWidget(),
-            ),
             FFRoute(
               name: 'main_home',
               path: 'mainHome',
@@ -185,6 +170,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   ParamType.bool,
                 ),
               ),
+            ),
+            FFRoute(
+              name: 'auth_mondaha',
+              path: 'authMondaha',
+              builder: (context, params) => AuthMondahaWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -355,7 +345,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/authLogin';
+            return '/authMondaha';
           }
           return null;
         },

@@ -106,193 +106,6 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // auth_login
-  {
-    '6bp977ao': {
-      'en': ' CHEGII/SSPAL',
-      'es': ' CHEGII/SSPAL',
-      'pt': ' CHEGII/SSPAL',
-    },
-    '3p97u62u': {
-      'en': 'Welcome!',
-      'es': '¡Bienvenido!',
-      'pt': 'Bem vindo!',
-    },
-    'xkz4xjo6': {
-      'en': 'Use the form below to access your account.',
-      'es': 'Utilice el siguiente formulario para acceder a su cuenta.',
-      'pt': 'Informe os dados abaixo para acessar sua conta.',
-    },
-    'k9u5spqi': {
-      'en': 'Email Address',
-      'es': 'Dirección de correo electrónico',
-      'pt': 'Endereço de email',
-    },
-    'f4xxyrqv': {
-      'en': 'Enter your email here...',
-      'es': 'Introduce tu email aquí...',
-      'pt': 'Insira seu e-mail aqui...',
-    },
-    'lfzvgi5q': {
-      'en': 'Password',
-      'es': 'Contraseña',
-      'pt': 'Senha',
-    },
-    'wt8sx5du': {
-      'en': 'Enter your password here...',
-      'es': 'Introduzca su contraseña aquí...',
-      'pt': 'Digite sua senha aqui...',
-    },
-    's8bicxzh': {
-      'en': 'Forgot Password?',
-      'es': '¿Has olvidado tu contraseña?',
-      'pt': 'Esqueceu sua senha?',
-    },
-    'm9klj9ah': {
-      'en': 'Login',
-      'es': 'Acceso',
-      'pt': 'Acesso',
-    },
-    'tcu0c8bu': {
-      'en': 'Don\'t have an account?',
-      'es': '¿No tienes una cuenta?',
-      'pt': 'Não tem uma conta?',
-    },
-    'kk2rdqi2': {
-      'en': 'Create Account',
-      'es': 'Crear una cuenta',
-      'pt': 'Cadastre-se',
-    },
-    'kfm1khsu': {
-      'en': 'Field is required',
-      'es': 'El campo es obligatorio',
-      'pt': 'Campo é obrigatório',
-    },
-    'p7rdh4r8': {
-      'en': 'Please choose an option from the dropdown',
-      'es': 'Por favor, seleccione una opción del menú desplegable',
-      'pt': 'Selecione uma opção no menu suspenso',
-    },
-    'ud7wd8di': {
-      'en': 'Field is required',
-      'es': 'El campo es obligatorio',
-      'pt': 'Campo é obrigatório',
-    },
-    'bwbzfuju': {
-      'en': 'Please choose an option from the dropdown',
-      'es': 'Por favor, seleccione una opción del menú desplegable',
-      'pt': 'Selecione uma opção no menu suspenso',
-    },
-    'iha5socs': {
-      'en': 'Home',
-      'es': 'Hogar',
-      'pt': 'Início',
-    },
-  },
-  // forgot_password
-  {
-    '3hcuc8v6': {
-      'en': 'Forgot Password',
-      'es': 'Has olvidado tu contraseña',
-      'pt': 'Esqueceu sua senha',
-    },
-    'sjjd1jb9': {
-      'en':
-          'Don\'t remember your password? Enter the email associated with your account below and we will send you a new link.',
-      'es':
-          '¿No recuerdas tu contraseña? Introduce el email asociado a tu cuenta a continuación y te enviaremos un nuevo enlace.',
-      'pt':
-          'Não lembra da sua senha? Insira o e-mail associado à sua conta abaixo e nós lhe enviaremos um novo link.',
-    },
-    'tzm5opaa': {
-      'en': 'Email Address',
-      'es': 'Dirección de correo electrónico',
-      'pt': 'Endereço de email',
-    },
-    'uvsotzng': {
-      'en': 'Please enter a valid email...',
-      'es': 'Por favor ingrese un correo electrónico válido...',
-      'pt': 'Insira um e-mail válido...',
-    },
-    '3sdzjivm': {
-      'en': 'Send Reset Link',
-      'es': 'Enviar enlace de restablecimiento',
-      'pt': 'Enviar link de redefinição',
-    },
-    '8p6xd6cl': {
-      'en': 'Home',
-      'es': 'Hogar',
-      'pt': 'Lar',
-    },
-  },
-  // auth_create
-  {
-    'mzb4u79c': {
-      'en': 'CHEGII/SSPAL',
-      'es': 'Chegi/SSPAL',
-      'pt': 'CHEGII/SSPAL',
-    },
-    'l2xxy1gf': {
-      'en': 'Get Started',
-      'es': 'Empezar',
-      'pt': 'Cadastre -se',
-    },
-    '59g0bt96': {
-      'en': 'Use the form below to get started.',
-      'es': 'Utilice el formulario a continuación para comenzar.',
-      'pt': 'Use o formulário abaixo para começar.',
-    },
-    'seheok8a': {
-      'en': 'Email Address',
-      'es': 'Dirección de correo electrónico',
-      'pt': 'Endereço de email',
-    },
-    '0uknk55c': {
-      'en': 'Enter your email here...',
-      'es': 'Introduce tu email aquí...',
-      'pt': 'Insira seu e-mail aqui...',
-    },
-    'wwxuev1r': {
-      'en': 'Password',
-      'es': 'Contraseña',
-      'pt': 'Senha',
-    },
-    'eextb60x': {
-      'en': 'Create your password...',
-      'es': 'Crea tu contraseña...',
-      'pt': 'Crie sua senha...',
-    },
-    'kx2trk1o': {
-      'en': 'Confirm Password',
-      'es': 'confirmar Contraseña',
-      'pt': 'Confirme sua senha',
-    },
-    'k8c3y3u7': {
-      'en': 'Create your password...',
-      'es': 'Crea tu contraseña...',
-      'pt': 'Crie sua senha...',
-    },
-    '29ut49wi': {
-      'en': 'Create Account',
-      'es': 'Crear una cuenta',
-      'pt': 'Criar uma conta',
-    },
-    'ysqhbhpe': {
-      'en': 'Already have an account?',
-      'es': '¿Ya tienes una cuenta?',
-      'pt': 'Já tem uma conta?',
-    },
-    'ud92zl8z': {
-      'en': 'Login',
-      'es': 'Acceso',
-      'pt': 'Accese sua conta',
-    },
-    'zuuuklky': {
-      'en': 'Home',
-      'es': 'Hogar',
-      'pt': 'Lar',
-    },
-  },
   // main_home
   {
     '3bi54x5g': {
@@ -1492,6 +1305,94 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // user_detailsCopy
   {
     't4i12okd': {
+      'en': 'Home',
+      'es': '',
+      'pt': '',
+    },
+  },
+  // auth_mondaha
+  {
+    'sre8jmof': {
+      'en': 'mondaha',
+      'es': 'mondaha',
+      'pt': 'mondaha',
+    },
+    'vtarneam': {
+      'en': 'Sign In',
+      'es': 'Iniciar sesión',
+      'pt': 'Login',
+    },
+    'gvtw0uxt': {
+      'en': 'Let\'s get started by filling out the form below.',
+      'es': 'Comencemos llenando el formulario a continuación.',
+      'pt': 'Vamos começar preenchendo o formulário abaixo.',
+    },
+    'jrgkv2ku': {
+      'en': 'Email',
+      'es': 'Correo electrónico',
+      'pt': 'E-mail',
+    },
+    '0pn607g6': {
+      'en': 'Password',
+      'es': 'Contraseña',
+      'pt': 'Senha',
+    },
+    'pqo642r7': {
+      'en': 'Sign In',
+      'es': 'Iniciar sesión',
+      'pt': 'Entrar',
+    },
+    'eercobhk': {
+      'en': 'Forgot Password',
+      'es': 'Has olvidado tu contraseña',
+      'pt': 'Esqueceu sua senha',
+    },
+    'j19triel': {
+      'en': 'Sign Up',
+      'es': 'Inscribirse',
+      'pt': 'Inscrever-se',
+    },
+    'yossuiqm': {
+      'en': 'Let\'s get started by filling out the form below.',
+      'es': 'Comencemos llenando el formulario a continuación.',
+      'pt': 'Vamos começar preenchendo o formulário abaixo.',
+    },
+    '3rr9ncwq': {
+      'en': 'Email',
+      'es': 'Correo electrónico',
+      'pt': 'E-mail',
+    },
+    'ozzg0ojq': {
+      'en': 'Full Name',
+      'es': 'Nombre completo',
+      'pt': 'Nome completo',
+    },
+    '3y77uv1m': {
+      'en': 'Email',
+      'es': '',
+      'pt': '',
+    },
+    'eu5x1ad8': {
+      'en': 'Email',
+      'es': 'Correo electrónico',
+      'pt': 'E-mail',
+    },
+    'gydy2izg': {
+      'en': 'Password',
+      'es': 'Contraseña',
+      'pt': 'Senha',
+    },
+    '3l1cths4': {
+      'en': 'Confirm Password',
+      'es': 'confirmar Contraseña',
+      'pt': 'Confirme sua senha',
+    },
+    '4lvs0hm4': {
+      'en': 'Create Account',
+      'es': 'Crear una cuenta',
+      'pt': 'Criar uma conta',
+    },
+    '51xsvdsd': {
       'en': 'Home',
       'es': '',
       'pt': '',

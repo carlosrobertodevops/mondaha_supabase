@@ -55,61 +55,6 @@ class InserirUsuarioCall {
       ));
 }
 
-class AtualizarUsuarioCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'atualizar usuario',
-      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/auth/v1/user',
-      callType: ApiCallType.PUT,
-      headers: {},
-      params: {},
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class LoginUsuarioCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'login usuario',
-      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/auth/v1/magiclink',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class DeletarUsuarioCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'deletar usuario',
-      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/auth/v1/magiclink',
-      callType: ApiCallType.DELETE,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;
