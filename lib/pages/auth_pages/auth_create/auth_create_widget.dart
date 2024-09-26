@@ -1027,7 +1027,6 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                       child: Image.network(
                         'https://images.unsplash.com/photo-1488751045188-3c55bbf9a3fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8dGVjaHxlbnwwfHx8fDE3MjY4NDEyMDh8MA&ixlib=rb-4.0.3&q=80&w=1080',
                         width: double.infinity,
-                        height: 906.0,
                         fit: BoxFit.cover,
                         alignment: Alignment(0.0, 0.0),
                       ),
