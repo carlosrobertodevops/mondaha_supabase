@@ -1118,25 +1118,23 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
               ],
             ),
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Flexible(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(0.0),
-                        child: Image.network(
-                          'https://images.unsplash.com/photo-1488751045188-3c55bbf9a3fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8dGVjaHxlbnwwfHx8fDE3MjY4NDEyMDh8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                          alignment: Alignment(0.0, 0.0),
-                        ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Flexible(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(0.0),
+                      child: Image.network(
+                        'https://images.unsplash.com/photo-1488751045188-3c55bbf9a3fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8dGVjaHxlbnwwfHx8fDE3MjY4NDEyMDh8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                        alignment: Alignment(0.0, 0.0),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],
