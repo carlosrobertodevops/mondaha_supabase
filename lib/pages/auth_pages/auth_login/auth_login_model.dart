@@ -22,16 +22,41 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  String? _emailAddressTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'kfm1khsu' /* Field is required */,
+      );
+    }
+
+    if (!RegExp('').hasMatch(val)) {
+      return 'Invalid text';
+    }
+    return null;
+  }
+
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  String? _passwordTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'ud7wd8di' /* Field is required */,
+      );
+    }
+
+    return null;
+  }
 
   @override
   void initState(BuildContext context) {
     mainLogoModel = createModel(context, () => MainLogoModel());
+    emailAddressTextControllerValidator = _emailAddressTextControllerValidator;
     passwordVisibility = false;
+    passwordTextControllerValidator = _passwordTextControllerValidator;
   }
 
   @override
