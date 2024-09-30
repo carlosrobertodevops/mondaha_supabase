@@ -9,18 +9,18 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'edit_profile_photo_model.dart';
-export 'edit_profile_photo_model.dart';
+import 'edit_membro_photo_model.dart';
+export 'edit_membro_photo_model.dart';
 
-class EditProfilePhotoWidget extends StatefulWidget {
-  const EditProfilePhotoWidget({super.key});
+class EditMembroPhotoWidget extends StatefulWidget {
+  const EditMembroPhotoWidget({super.key});
 
   @override
-  State<EditProfilePhotoWidget> createState() => _EditProfilePhotoWidgetState();
+  State<EditMembroPhotoWidget> createState() => _EditMembroPhotoWidgetState();
 }
 
-class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
-  late EditProfilePhotoModel _model;
+class _EditMembroPhotoWidgetState extends State<EditMembroPhotoWidget> {
+  late EditMembroPhotoModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +31,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EditProfilePhotoModel());
+    _model = createModel(context, () => EditMembroPhotoModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -119,7 +119,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, 1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
                                       borderRadius: 30.0,
@@ -132,7 +132,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                       ),
                                       onPressed: () async {
                                         logFirebaseEvent(
-                                            'EDIT_PROFILE_PHOTO_close_rounded_ICN_ON_');
+                                            'EDIT_MEMBRO_PHOTO_close_rounded_ICN_ON_T');
                                         Navigator.pop(context);
                                       },
                                     ),
@@ -142,7 +142,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                         0.0, 4.0, 16.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '6bnefz1c' /* Change Photo */,
+                                        'tcswc723' /* Change Photo */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
@@ -163,7 +163,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'yaxe7q8v' /* Upload a new photo below in or... */,
+                                        'dlf5b2vi' /* Upload a new photo below in or... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -268,14 +268,16 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               logFirebaseEvent(
-                                                  'EDIT_PROFILE_PHOTO_UPLOAD_IMAGE_BTN_ON_T');
+                                                  'EDIT_MEMBRO_PHOTO_UPLOAD_IMAGE_BTN_ON_TA');
                                               final selectedMedia =
-                                                  await selectMediaWithSourceBottomSheet(
-                                                context: context,
-                                                storageFolderPath: 'usuarios',
+                                                  await selectMedia(
+                                                storageFolderPath:
+                                                    'uploads/usuarios/',
                                                 maxWidth: 100.00,
                                                 maxHeight: 100.00,
-                                                allowPhoto: true,
+                                                mediaSource:
+                                                    MediaSource.photoGallery,
+                                                multiImage: false,
                                               );
                                               if (selectedMedia != null &&
                                                   selectedMedia.every((m) =>
@@ -336,21 +338,10 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                                   return;
                                                 }
                                               }
-
-                                              await UsuariosTable().update(
-                                                data: {
-                                                  'foto_path':
-                                                      _model.uploadedFileUrl,
-                                                },
-                                                matchingRows: (rows) => rows.eq(
-                                                  'user_id',
-                                                  currentUserUid,
-                                                ),
-                                              );
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
-                                              're4x0sz7' /* Upload Image */,
+                                              '3zl6e5ln' /* Upload Image */,
                                             ),
                                             options: FFButtonOptions(
                                               height: 44.0,
@@ -407,7 +398,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               logFirebaseEvent(
-                                                  'EDIT_PROFILE_PHOTO_SAVE_CHANGES_BTN_ON_T');
+                                                  'EDIT_MEMBRO_PHOTO_SAVE_CHANGES_BTN_ON_TA');
                                               await UsuariosTable().update(
                                                 data: {
                                                   'foto_path':
@@ -422,7 +413,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
-                                              'sr54fsk6' /* Save Changes */,
+                                              'odfnwlgx' /* Save Changes */,
                                             ),
                                             options: FFButtonOptions(
                                               height: 44.0,

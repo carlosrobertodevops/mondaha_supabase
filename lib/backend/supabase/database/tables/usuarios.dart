@@ -37,4 +37,7 @@ class UsuariosRow extends SupabaseDataRow {
 
   DateTime? get acessoAt => getField<DateTime>('acesso_at');
   set acessoAt(DateTime? value) => setField<DateTime>('acesso_at', value);
+
+  int? get tipoUsuarioId => getField<int>('tipo_usuario_id');
+  set tipoUsuarioId(int? value) => setField<int>('tipo_usuario_id', value);
 }

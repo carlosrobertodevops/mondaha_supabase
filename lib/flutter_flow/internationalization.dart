@@ -478,11 +478,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Finalizar la sesión',
       'pt': 'Sair',
     },
-    'x4mz362n': {
-      'en': 'Edit User',
-      'es': 'Editar usuario',
-      'pt': 'Editar usuário',
-    },
     'o3dp9tss': {
       'en': '__',
       'es': '__',
@@ -1060,113 +1055,472 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // create_membros
   {
-    'pdzoq4yt': {
-      'en': 'Edit Profile',
-      'es': 'Editar perfil',
-      'pt': 'Editar Perfil',
+    'zt5b7d9p': {
+      'en': 'Add Member',
+      'es': 'Agregar miembro',
+      'pt': 'Adicionar membro',
     },
-    'blzbu1lb': {
-      'en': 'Tab 1',
-      'es': 'Pestaña 1',
-      'pt': 'Aba 1',
+    'd42cp4ch': {
+      'en': 'Perfil',
+      'es': 'Perfil',
+      'pt': 'Perfil',
     },
-    'cmmw7oq1': {
-      'en': 'Create Company Profile',
-      'es': 'Crear perfil de empresa',
-      'pt': 'Criar Perfil da Empresa',
-    },
-    'wajv0aoe': {
+    '398bi6zs': {
       'en':
-          'Upload images about your company and fill out the information below.',
+          'Upload images about the member  and fill out the information below.',
       'es':
-          'Sube imágenes sobre tu empresa y completa la información a continuación.',
-      'pt':
-          'Carregue imagens sobre sua empresa e preencha as informações abaixo.',
+          'Sube imágenes sobre el miembro y completa la información a continuación.',
+      'pt': 'Carregue imagens sobre o membro e preencha as informações abaixo.',
     },
-    'ddwbvns2': {
+    'hd1zq2vg': {
       'en': 'Option 1',
       'es': '',
       'pt': '',
     },
-    '9hs51lix': {
+    '601q3mqo': {
       'en': 'Option 2',
       'es': '',
       'pt': '',
     },
-    'ntfz21nk': {
+    'p6oecncj': {
       'en': 'Option 3',
       'es': '',
       'pt': '',
     },
-    'ezb6otvv': {
+    'x6mky7qo': {
       'en': 'Select one Faction ...',
       'es': 'Seleccione una facción...',
       'pt': 'Selecione uma facção...',
     },
-    'oe7yokrp': {
+    'bhtndv36': {
+      'en': 'Search...',
+      'es': '',
+      'pt': '',
+    },
+    '23oa8nqa': {
+      'en': 'Option 1',
+      'es': '',
+      'pt': '',
+    },
+    'qmnpzcz2': {
+      'en': 'Option 2',
+      'es': '',
+      'pt': '',
+    },
+    '964man1i': {
+      'en': 'Option 3',
+      'es': '',
+      'pt': '',
+    },
+    'pklsojyd': {
+      'en': 'Select one Function',
+      'es': 'Seleccione una Función',
+      'pt': 'Selecione uma função',
+    },
+    'k2hripax': {
+      'en': 'Search...',
+      'es': '',
+      'pt': '',
+    },
+    'g5cc4pxm': {
+      'en': 'Male',
+      'es': '',
+      'pt': '',
+    },
+    'i6epv2gh': {
+      'en': 'Female',
+      'es': '',
+      'pt': '',
+    },
+    '6givblnf': {
+      'en': 'Others',
+      'es': '',
+      'pt': '',
+    },
+    'oilq80u5': {
+      'en': 'Select one Sex ...',
+      'es': 'Seleccione un Sexo...',
+      'pt': 'Selecione um sexo ...',
+    },
+    'kx5e00wb': {
+      'en': 'Search...',
+      'es': '',
+      'pt': '',
+    },
+    'sphccniy': {
+      'en': 'A+',
+      'es': '',
+      'pt': '',
+    },
+    '4qy7groc': {
+      'en': 'A-',
+      'es': '',
+      'pt': '',
+    },
+    'qi9bptnr': {
+      'en': 'B+',
+      'es': '',
+      'pt': '',
+    },
+    '33axhdsz': {
+      'en': 'B-',
+      'es': '',
+      'pt': '',
+    },
+    'sltd6l9q': {
+      'en': 'O+',
+      'es': '',
+      'pt': '',
+    },
+    '2xmhmsma': {
+      'en': 'O-',
+      'es': '',
+      'pt': '',
+    },
+    'xu4rgnqy': {
+      'en': 'AB+',
+      'es': '',
+      'pt': '',
+    },
+    '7xhb8fgz': {
+      'en': 'AB-',
+      'es': '',
+      'pt': '',
+    },
+    '77rkki8e': {
+      'en': 'Blood type ...',
+      'es': 'Tipo de sangre...',
+      'pt': 'Tipo sanguíneo ...',
+    },
+    'anxapn2i': {
+      'en': 'Search...',
+      'es': '',
+      'pt': '',
+    },
+    'wrnn3dpp': {
+      'en': 'Full Name of Member',
+      'es': 'Nombre completo del miembro',
+      'pt': 'Nome completo do membro',
+    },
+    'ap4evi76': {
+      'en': 'Full Name of Member',
+      'es': '',
+      'pt': '',
+    },
+    '88zmsnd2': {
+      'en': 'Date of birth',
+      'es': 'Fecha de nacimiento',
+      'pt': 'Data de nascimento',
+    },
+    'xy10hy0e': {
+      'en': 'Date of last arrest',
+      'es': 'Fecha del último arresto',
+      'pt': 'Data da última prisão',
+    },
+    'wdgae0rc': {
+      'en': 'Infopen number',
+      'es': 'Número de Infopen',
+      'pt': 'Número Infopen',
+    },
+    'eaakj3m3': {
+      'en': 'Option 1',
+      'es': '',
+      'pt': '',
+    },
+    'm5iymkyr': {
+      'en': 'Option 2',
+      'es': '',
+      'pt': '',
+    },
+    'u8na1z7w': {
+      'en': 'Option 3',
+      'es': '',
+      'pt': '',
+    },
+    'q0lyli0d': {
+      'en': 'Process situaction',
+      'es': 'Situación del proceso',
+      'pt': 'Situação do processo',
+    },
+    'z2yglpw9': {
+      'en': 'Search...',
+      'es': '',
+      'pt': '',
+    },
+    'qkkgfo6c': {
+      'en': 'Option 1',
+      'es': '',
+      'pt': '',
+    },
+    'p1rl94m1': {
+      'en': 'Option 2',
+      'es': '',
+      'pt': '',
+    },
+    'bm5w0ytr': {
+      'en': 'Option 3',
+      'es': '',
+      'pt': '',
+    },
+    '93et3kgp': {
+      'en': 'Color/Skin/Ethnicity ...',
+      'es': 'Color/Piel/Etnicidad...',
+      'pt': 'Cor/Pele/Etnia...',
+    },
+    'imlpdzfi': {
       'en': 'Search...',
       'es': 'Buscar...',
       'pt': 'Procurar...',
     },
-    'blc4txs6': {
-      'en': 'Company Name',
-      'es': 'nombre de empresa',
-      'pt': 'nome da empresa',
+    'aw983q3g': {
+      'en': 'Mother',
+      'es': 'Madre',
+      'pt': 'Mãe',
     },
-    '3po8kih9': {
-      'en': 'Company City',
-      'es': 'Ciudad de la empresa',
-      'pt': 'Cidade da empresa',
-    },
-    'y6feavdk': {
-      'en': 'Company City',
-      'es': 'Ciudad de la empresa',
-      'pt': 'Cidade da empresa',
-    },
-    '1iu3c6qw': {
-      'en': 'Company City',
-      'es': 'Ciudad de la empresa',
-      'pt': 'Cidade da empresa',
-    },
-    'obkktjsl': {
-      'en': 'Company City',
-      'es': '',
-      'pt': '',
-    },
-    'lk8jjy5r': {
-      'en': 'Website',
-      'es': '',
-      'pt': '',
-    },
-    'lkp261n5': {
+    'n8fg5v4y': {
       'en': 'Enter in your website without \"https://\"...',
       'es': '',
       'pt': '',
     },
-    'aliym2zw': {
+    '33s26mkh': {
       'en': '',
       'es': '',
       'pt': '',
     },
-    'ohqxjk0r': {
+    '00ygo4e8': {
+      'en': 'Option 1',
+      'es': '',
+      'pt': '',
+    },
+    'g9r8g63w': {
+      'en': 'Option 2',
+      'es': '',
+      'pt': '',
+    },
+    '2pbnl68y': {
+      'en': 'Option 3',
+      'es': '',
+      'pt': '',
+    },
+    'qjk0q0ej': {
+      'en': 'Mother Situation ...',
+      'es': 'Situación Madre...',
+      'pt': 'Situação da Mãe...',
+    },
+    'orcfcnrt': {
+      'en': 'Search...',
+      'es': '',
+      'pt': '',
+    },
+    '1zd5646m': {
+      'en': 'Father',
+      'es': 'Padre',
+      'pt': 'Pai',
+    },
+    '1mb13ovl': {
+      'en': 'Enter in your website without \"https://\"...',
+      'es': '',
+      'pt': '',
+    },
+    't28q4mrq': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
+    '10z2t8bw': {
+      'en': 'Option 1',
+      'es': '',
+      'pt': '',
+    },
+    'vhhcvtqn': {
+      'en': 'Option 2',
+      'es': '',
+      'pt': '',
+    },
+    'pzsndih4': {
+      'en': 'Option 3',
+      'es': '',
+      'pt': '',
+    },
+    '6pb9t2yl': {
+      'en': 'Father Situation ...',
+      'es': 'Situación del padre...',
+      'pt': 'Situação do Pai...',
+    },
+    'ck86kowm': {
+      'en': 'Search...',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
+    },
+    'u5o3gw5t': {
+      'en': 'Brazilian Born',
+      'es': 'Nacido en Brasil',
+      'pt': 'Nascido no Brasil',
+    },
+    'my7pwr8a': {
+      'en': 'Brazilian Naturalized',
+      'es': 'Naturalizado brasileño',
+      'pt': 'Brasileiro Naturalizado',
+    },
+    '77flygss': {
+      'en': 'Foreigner',
+      'es': 'Extranjero',
+      'pt': 'Estrangeiro',
+    },
+    '2ky1fnhf': {
+      'en': 'State ...',
+      'es': 'Estado ...',
+      'pt': 'Estado ...',
+    },
+    'y2uo2ocn': {
+      'en': 'State...',
+      'es': '',
+      'pt': '',
+    },
+    '002xztjg': {
+      'en': 'Municipality...',
+      'es': 'Municipio...',
+      'pt': 'Município...',
+    },
+    'wi0rpub7': {
+      'en': 'Municipality...',
+      'es': '',
+      'pt': '',
+    },
+    'fcnebsya': {
+      'en': 'District',
+      'es': 'Distrito',
+      'pt': 'Distrito',
+    },
+    '9ea2ilm3': {
+      'en': 'District',
+      'es': '',
+      'pt': '',
+    },
+    'bdi531mz': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
+    'd17rwpfj': {
+      'en': 'Field is required',
+      'es': '',
+      'pt': '',
+    },
+    '8tyiltqw': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'c0rcahpd': {
+      'en': 'Field is required',
+      'es': '',
+      'pt': '',
+    },
+    'pmmtcff4': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    '4lx7xev8': {
+      'en': 'Field is required',
+      'es': '',
+      'pt': '',
+    },
+    'vgf4amv7': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    '0e27dh7x': {
+      'en': 'Field is required',
+      'es': '',
+      'pt': '',
+    },
+    '8t6014m0': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'ejjbl7zh': {
+      'en': 'Field is required',
+      'es': '',
+      'pt': '',
+    },
+    'zrx0bqep': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'rny7smlx': {
+      'en': 'Field is required',
+      'es': '',
+      'pt': '',
+    },
+    'h36igoyj': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    '9ks2rd0i': {
+      'en': 'Field is required',
+      'es': '',
+      'pt': '',
+    },
+    'jov7ea33': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'm29cw784': {
+      'en': 'Historic',
+      'es': 'Histórico',
+      'pt': 'Histórico',
+    },
+    'lm32ioyv': {
+      'en': 'Procedures',
+      'es': 'Procedimientos',
+      'pt': 'Procedimentos',
+    },
+    '0prey7w1': {
+      'en': 'Processis',
+      'es': 'Proceso',
+      'pt': 'Processos',
+    },
+    '5c8skmyl': {
+      'en': 'Faction',
+      'es': 'Facción',
+      'pt': 'Facção',
+    },
+    '8r89pwle': {
+      'en': 'Crime Action',
+      'es': 'Acción criminal',
+      'pt': 'Ação Criminal',
+    },
+    'ikkmo8ny': {
+      'en': 'Alert',
+      'es': 'Alerta',
+      'pt': 'Alerta',
+    },
+    '5f6ql4l7': {
       'en': 'Cancel',
       'es': 'Cancelar',
       'pt': 'Cancelar',
     },
-    'ngdh62l1': {
-      'en': 'Create Company',
-      'es': 'Crear empresa',
-      'pt': 'Criar empresa',
+    'imd8zz6k': {
+      'en': 'Save Member',
+      'es': 'Guardar miembro',
+      'pt': 'Salvar Membro',
     },
-    'fu58qaod': {
-      'en': 'Tab 2',
-      'es': 'Pestaña 2',
-      'pt': 'Aba 2',
+    'a4oprhwn': {
+      'en': 'Relationships',
+      'es': 'Relaciones',
+      'pt': 'Relacionamentos',
     },
-    'sny5oraa': {
-      'en': 'Tab 3',
-      'es': 'Pestaña 3',
-      'pt': 'Aba 3',
+    'tu5xy9mp': {
+      'en': 'Groups',
+      'es': 'Grupos',
+      'pt': 'Grupos',
     },
   },
   // auth_mondaha
@@ -1267,12 +1621,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // create_faccao
   {
-    'mu37uqta': {
-      'en': 'Faction',
-      'es': 'Facción',
-      'pt': 'Facção',
-    },
-    'txjsby79': {
+    'rswm1tpi': {
       'en': 'Home',
       'es': '',
       'pt': '',
@@ -2054,6 +2403,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Descripción breve',
       'pt': 'Descrição curta',
     },
+    'r755roc4': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
     '5bl6mh8m': {
       'en': 'Admin',
       'es': 'Administración',
@@ -2089,6 +2443,41 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Buscar un artículo...',
       'pt': 'Pesquisar um item...',
     },
+    'h1z1l2nl': {
+      'en': 'Admin',
+      'es': '',
+      'pt': '',
+    },
+    'k5p34i5y': {
+      'en': 'Admin',
+      'es': '',
+      'pt': '',
+    },
+    'lt6aqoc5': {
+      'en': 'Manager',
+      'es': '',
+      'pt': '',
+    },
+    'sfqjnhm0': {
+      'en': 'Editor',
+      'es': '',
+      'pt': '',
+    },
+    '9fbb5zid': {
+      'en': 'Viewer',
+      'es': '',
+      'pt': '',
+    },
+    'yn2wm3dr': {
+      'en': 'Please select...',
+      'es': '',
+      'pt': '',
+    },
+    'p740b6dm': {
+      'en': 'Search for an item...',
+      'es': '',
+      'pt': '',
+    },
     'p1lquhce': {
       'en': 'The email associated with this account is:',
       'es': 'El correo electrónico asociado a esta cuenta es:',
@@ -2115,95 +2504,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Salvar alterações',
     },
   },
-  // modal_membro_edit
-  {
-    'lzo8ohth': {
-      'en': 'Edit Profile',
-      'es': 'Editar perfil',
-      'pt': 'Editar Perfil',
-    },
-    'h4j1isw2': {
-      'en': 'Below are your profile details',
-      'es': '',
-      'pt': '',
-    },
-    'wmdiznix': {
-      'en': 'Change Photo',
-      'es': 'Cambiar foto',
-      'pt': 'Alterar foto',
-    },
-    '7vrj0xbc': {
-      'en': 'Your Name',
-      'es': '',
-      'pt': '',
-    },
-    'frlq3e4c': {
-      'en': 'Short Description',
-      'es': '',
-      'pt': '',
-    },
-    '2rc5htso': {
-      'en': 'Admin',
-      'es': '',
-      'pt': '',
-    },
-    'ccx2fc7e': {
-      'en': 'Admin',
-      'es': 'Administración',
-      'pt': 'Administrador',
-    },
-    '8szdbinx': {
-      'en': 'Manager',
-      'es': '',
-      'pt': '',
-    },
-    'gnknf1rx': {
-      'en': 'Editor',
-      'es': '',
-      'pt': '',
-    },
-    'ep5cskno': {
-      'en': 'Viewer',
-      'es': '',
-      'pt': '',
-    },
-    '0h96rpr5': {
-      'en': 'Please select...',
-      'es': 'Por favor seleccione...',
-      'pt': 'Por favor selecione...',
-    },
-    '2rvqw833': {
-      'en': 'Search for an item...',
-      'es': 'Buscar un artículo...',
-      'pt': 'Pesquisar um item...',
-    },
-    '4vfeafxc': {
-      'en': 'The email associated with this account is:',
-      'es': 'El correo electrónico asociado a esta cuenta es:',
-      'pt': 'O e-mail associado a esta conta é:',
-    },
-    'javg82xt': {
-      'en': 'Created On:',
-      'es': 'Creado el:',
-      'pt': 'Criado em:',
-    },
-    'vqytc8j7': {
-      'en': 'Last Active:',
-      'es': 'Última actividad:',
-      'pt': 'Última atividade:',
-    },
-    'z7iguyi2': {
-      'en': 'Cancel',
-      'es': 'Cancelar',
-      'pt': 'Cancelar',
-    },
-    'rear3tma': {
-      'en': 'Save Changes',
-      'es': 'Guardar cambios',
-      'pt': 'Salvar alterações',
-    },
-  },
-  // modal_create_faccao
+  // modal_faccao_create
   {
     '5i7vrdwq': {
       'en': 'Add Faction',
@@ -2320,6 +2621,130 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't6z1pz5k': {
       'en': 'Logout',
+      'es': '',
+      'pt': '',
+    },
+    'fivz15wv': {
+      'en': 'Menu',
+      'es': '',
+      'pt': '',
+    },
+    'txjsby79': {
+      'en': 'Home',
+      'es': '',
+      'pt': '',
+    },
+    '372mso7l': {
+      'en': 'Search',
+      'es': '',
+      'pt': '',
+    },
+    'khvzziih': {
+      'en': 'Favorites',
+      'es': '',
+      'pt': '',
+    },
+    '47srsg26': {
+      'en': 'Settings',
+      'es': '',
+      'pt': '',
+    },
+    'x8mv7t3p': {
+      'en': 'John Doe',
+      'es': '',
+      'pt': '',
+    },
+    'lrlltwzz': {
+      'en': 'john.doe@example.com',
+      'es': '',
+      'pt': '',
+    },
+  },
+  // edit_membro_photo
+  {
+    'tcswc723': {
+      'en': 'Change Photo',
+      'es': 'Cambiar foto',
+      'pt': 'Alterar foto',
+    },
+    'dlf5b2vi': {
+      'en':
+          'Upload a new photo below in order to change your avatar seen by others.',
+      'es':
+          'Sube una nueva foto a continuación para cambiar tu avatar visto por otros.',
+      'pt':
+          'Carregue uma nova foto abaixo para alterar seu avatar visto por outros.',
+    },
+    '3zl6e5ln': {
+      'en': 'Upload Image',
+      'es': 'Subir imagen',
+      'pt': 'Carregar imagem',
+    },
+    'odfnwlgx': {
+      'en': 'Save Changes',
+      'es': 'Guardar cambios',
+      'pt': 'Salvar alterações',
+    },
+  },
+  // modal_faccao_edit
+  {
+    '6kpkufph': {
+      'en': 'Edit Faction',
+      'es': 'Editar facción',
+      'pt': 'Editar Facção',
+    },
+    'j4r8cbw7': {
+      'en': 'Please enter the information below to edita Faction.',
+      'es': 'Ingrese la siguiente información para editar una facción.',
+      'pt': 'Insira as informações abaixo para editar a Facção.',
+    },
+    '88bp0ssl': {
+      'en': 'Add Photo',
+      'es': 'Añadir foto',
+      'pt': 'Adicionar foto',
+    },
+    'lw623n8z': {
+      'en': 'Name',
+      'es': 'Nombre',
+      'pt': 'Nome',
+    },
+    'vfvgol0e': {
+      'en': 'Project Name',
+      'es': '',
+      'pt': '',
+    },
+    'kcxsvd9t': {
+      'en': 'Description',
+      'es': 'Descripción',
+      'pt': 'Descrição',
+    },
+    '7qt3rcmx': {
+      'en': 'Description here...',
+      'es': '',
+      'pt': '',
+    },
+    'ri4wg0yx': {
+      'en': 'Create Faction',
+      'es': 'Crear facción',
+      'pt': 'Criar Facção',
+    },
+    'pavy0iyx': {
+      'en': 'Please enter a project name...',
+      'es': '',
+      'pt': '',
+    },
+    'iwei9man': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    '2lg69dy6': {
+      'en': 'Please enter a short description...',
+      'es': '',
+      'pt': '',
+    },
+    'x1lc19e8': {
+      'en': 'Please choose an option from the dropdown',
       'es': '',
       'pt': '',
     },

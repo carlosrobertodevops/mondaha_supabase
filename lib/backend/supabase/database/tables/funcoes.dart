@@ -23,9 +23,6 @@ class FuncoesRow extends SupabaseDataRow {
   int? get grauHierarquico => getField<int>('grau_hierarquico');
   set grauHierarquico(int? value) => setField<int>('grau_hierarquico', value);
 
-  int? get faccaoId => getField<int>('faccao_id');
-  set faccaoId(int? value) => setField<int>('faccao_id', value);
-
   String? get nome => getField<String>('nome');
   set nome(String? value) => setField<String>('nome', value);
 }

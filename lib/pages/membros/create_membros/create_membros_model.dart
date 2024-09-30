@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -12,43 +13,83 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 
 class CreateMembrosModel extends FlutterFlowModel<CreateMembrosWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
 
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  // State field(s) for yourName widget.
-  FocusNode? yourNameFocusNode;
-  TextEditingController? yourNameTextController;
-  String? Function(BuildContext, String?)? yourNameTextControllerValidator;
-  // State field(s) for city widget.
-  FocusNode? cityFocusNode1;
-  TextEditingController? cityTextController1;
-  String? Function(BuildContext, String?)? cityTextController1Validator;
-  // State field(s) for city widget.
-  FocusNode? cityFocusNode2;
-  TextEditingController? cityTextController2;
-  String? Function(BuildContext, String?)? cityTextController2Validator;
-  // State field(s) for city widget.
-  FocusNode? cityFocusNode3;
-  TextEditingController? cityTextController3;
-  String? Function(BuildContext, String?)? cityTextController3Validator;
-  // State field(s) for city widget.
-  FocusNode? cityFocusNode4;
-  TextEditingController? cityTextController4;
-  String? Function(BuildContext, String?)? cityTextController4Validator;
-  // State field(s) for myBio widget.
-  FocusNode? myBioFocusNode;
-  TextEditingController? myBioTextController;
-  String? Function(BuildContext, String?)? myBioTextControllerValidator;
+  // State field(s) for DropDown-faccao widget.
+  int? dropDownFaccaoValue;
+  FormFieldController<int>? dropDownFaccaoValueController;
+  // State field(s) for DropDown-funcao widget.
+  int? dropDownFuncaoValue;
+  FormFieldController<int>? dropDownFuncaoValueController;
+  // State field(s) for DropDown-sexo widget.
+  String? dropDownSexoValue;
+  FormFieldController<String>? dropDownSexoValueController;
+  // State field(s) for DropDown-tipo-sanguineo widget.
+  String? dropDownTipoSanguineoValue;
+  FormFieldController<String>? dropDownTipoSanguineoValueController;
+  // State field(s) for nome-completo widget.
+  FocusNode? nomeCompletoFocusNode;
+  TextEditingController? nomeCompletoTextController;
+  String? Function(BuildContext, String?)? nomeCompletoTextControllerValidator;
+  // State field(s) for data-nascimento widget.
+  FocusNode? dataNascimentoFocusNode;
+  TextEditingController? dataNascimentoTextController;
+  final dataNascimentoMask = MaskTextInputFormatter(mask: '##/##/####');
+  String? Function(BuildContext, String?)?
+      dataNascimentoTextControllerValidator;
+  // State field(s) for data-ultima-prissao widget.
+  FocusNode? dataUltimaPrissaoFocusNode;
+  TextEditingController? dataUltimaPrissaoTextController;
+  final dataUltimaPrissaoMask = MaskTextInputFormatter(mask: '##/##/####');
+  String? Function(BuildContext, String?)?
+      dataUltimaPrissaoTextControllerValidator;
+  // State field(s) for no-infopen-nacional widget.
+  FocusNode? noInfopenNacionalFocusNode;
+  TextEditingController? noInfopenNacionalTextController;
+  String? Function(BuildContext, String?)?
+      noInfopenNacionalTextControllerValidator;
+  // State field(s) for DropDown-situacao-processual widget.
+  String? dropDownSituacaoProcessualValue;
+  FormFieldController<String>? dropDownSituacaoProcessualValueController;
+  // State field(s) for DropDown-cor-pele-etnia widget.
+  String? dropDownCorPeleEtniaValue;
+  FormFieldController<String>? dropDownCorPeleEtniaValueController;
+  // State field(s) for mae widget.
+  FocusNode? maeFocusNode;
+  TextEditingController? maeTextController;
+  String? Function(BuildContext, String?)? maeTextControllerValidator;
+  // State field(s) for DropDown-situacao-mae widget.
+  String? dropDownSituacaoMaeValue;
+  FormFieldController<String>? dropDownSituacaoMaeValueController;
+  // State field(s) for pai widget.
+  FocusNode? paiFocusNode;
+  TextEditingController? paiTextController;
+  String? Function(BuildContext, String?)? paiTextControllerValidator;
+  // State field(s) for DropDown-situacao-pai widget.
+  String? dropDownSituacaoPaiValue;
+  FormFieldController<String>? dropDownSituacaoPaiValueController;
+  // State field(s) for RadioButton widget.
+  FormFieldController<String>? radioButtonValueController;
+  // State field(s) for DropDown-estado widget.
+  int? dropDownEstadoValue;
+  FormFieldController<int>? dropDownEstadoValueController;
+  // State field(s) for DropDown-municipio widget.
+  int? dropDownMunicipioValue;
+  FormFieldController<int>? dropDownMunicipioValueController;
+  // State field(s) for distrito widget.
+  FocusNode? distritoFocusNode;
+  TextEditingController? distritoTextController;
+  String? Function(BuildContext, String?)? distritoTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -56,22 +97,28 @@ class CreateMembrosModel extends FlutterFlowModel<CreateMembrosWidget> {
   @override
   void dispose() {
     tabBarController?.dispose();
-    yourNameFocusNode?.dispose();
-    yourNameTextController?.dispose();
+    nomeCompletoFocusNode?.dispose();
+    nomeCompletoTextController?.dispose();
 
-    cityFocusNode1?.dispose();
-    cityTextController1?.dispose();
+    dataNascimentoFocusNode?.dispose();
+    dataNascimentoTextController?.dispose();
 
-    cityFocusNode2?.dispose();
-    cityTextController2?.dispose();
+    dataUltimaPrissaoFocusNode?.dispose();
+    dataUltimaPrissaoTextController?.dispose();
 
-    cityFocusNode3?.dispose();
-    cityTextController3?.dispose();
+    noInfopenNacionalFocusNode?.dispose();
+    noInfopenNacionalTextController?.dispose();
 
-    cityFocusNode4?.dispose();
-    cityTextController4?.dispose();
+    maeFocusNode?.dispose();
+    maeTextController?.dispose();
 
-    myBioFocusNode?.dispose();
-    myBioTextController?.dispose();
+    paiFocusNode?.dispose();
+    paiTextController?.dispose();
+
+    distritoFocusNode?.dispose();
+    distritoTextController?.dispose();
   }
+
+  /// Additional helper methods.
+  String? get radioButtonValue => radioButtonValueController?.value;
 }

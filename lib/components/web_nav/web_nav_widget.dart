@@ -5,7 +5,6 @@ import '/components/modals/command_palette/command_palette_widget.dart';
 import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/users/modal_profile_edit/modal_profile_edit_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -115,13 +114,15 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
-                            child: wrapWithModel(
-                              model: _model.mainLogoAModel,
-                              updateCallback: () => safeSetState(() {}),
-                              updateOnChange: true,
-                              child: MainLogoWidget(),
+                          Expanded(
+                            child: Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: wrapWithModel(
+                                model: _model.mainLogoAModel,
+                                updateCallback: () => safeSetState(() {}),
+                                updateOnChange: true,
+                                child: MainLogoWidget(),
+                              ),
                             ),
                           ),
                         ],
@@ -233,7 +234,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.dashboard_rounded,
+                                Icons.dashboard_outlined,
                                 color: widget!.selectedNav == 1
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
@@ -309,7 +310,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.account_tree_rounded,
+                                Icons.account_tree_outlined,
                                 color: widget!.selectedNav == 3
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
@@ -385,7 +386,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.badge,
+                                Icons.supervisor_account_outlined,
                                 color: widget!.selectedNav == 2
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
@@ -537,7 +538,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.account_circle_rounded,
+                                Icons.account_circle_outlined,
                                 color: widget!.selectedNav == 5
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
@@ -687,171 +688,113 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             thickness: 2.0,
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
-                          InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              logFirebaseEvent(
-                                  'WEB_NAV_COMP_Column_0cjaej8g_ON_TAP');
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                enableDrag: false,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: ModalProfileEditWidget(),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
-                            },
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(4.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      logFirebaseEvent(
-                                          'WEB_NAV_COMP_Row_fqtl9ien_ON_TAP');
-                                      await showModalBottomSheet(
-                                        isScrollControlled: true,
-                                        backgroundColor: Colors.transparent,
-                                        enableDrag: false,
-                                        context: context,
-                                        builder: (context) {
-                                          return Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: ModalProfileEditWidget(),
-                                          );
-                                        },
-                                      ).then((value) => safeSetState(() {}));
-                                    },
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(4.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Container(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent1,
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                                border: Border.all(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
+                                        Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .accent1,
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .primary,
+                                            ),
+                                          ),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(2.0),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                              child: CachedNetworkImage(
+                                                fadeInDuration:
+                                                    Duration(milliseconds: 500),
+                                                fadeOutDuration:
+                                                    Duration(milliseconds: 500),
+                                                imageUrl:
+                                                    valueOrDefault<String>(
+                                                  webNavBgUsuariosRow?.fotoPath,
+                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mordaha-82tfq0/assets/tfmnoqxvcrqn/perfil-de-usuario.png',
                                                 ),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(2.0),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                  child: CachedNetworkImage(
-                                                    fadeInDuration: Duration(
-                                                        milliseconds: 500),
-                                                    fadeOutDuration: Duration(
-                                                        milliseconds: 500),
-                                                    imageUrl: webNavBgUsuariosRow
-                                                                    ?.fotoPath !=
-                                                                null &&
-                                                            webNavBgUsuariosRow
-                                                                    ?.fotoPath !=
-                                                                ''
-                                                        ? valueOrDefault<
-                                                            String>(
-                                                            webNavBgUsuariosRow
-                                                                ?.fotoPath,
-                                                            'https://www.flaticon.com/br/icone-gratis/perfil-de-usuario_6073873?related_id=6073873&origin=search&k=1727375791189&log-in=google',
-                                                          )
-                                                        : 'https://www.flaticon.com/br/icone-gratis/perfil-de-usuario_6073873?related_id=6073873&origin=search&k=1727375791189&log-in=google',
-                                                    width: 44.0,
-                                                    height: 44.0,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
+                                                width: 44.0,
+                                                height: 44.0,
+                                                fit: BoxFit.contain,
                                               ),
                                             ),
-                                          ],
+                                          ),
                                         ),
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: SingleChildScrollView(
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
+                                      ],
+                                    ),
+                                    Expanded(
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(-1.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  valueOrDefault<String>(
+                                                    webNavBgUsuariosRow
+                                                        ?.nomeCompleto,
+                                                    'nome_completo',
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
+                                                      ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 4.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
                                                       valueOrDefault<String>(
                                                         webNavBgUsuariosRow
-                                                            ?.nomeCompleto,
-                                                        'nome_completo',
+                                                            ?.email,
+                                                        'email',
                                                       ),
                                                       textAlign:
                                                           TextAlign.start,
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                              ),
-                                                    ),
-                                                    Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    4.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            webNavBgUsuariosRow
-                                                                ?.nomeCompleto,
-                                                            'nome_completo',
-                                                          ),
-                                                          textAlign:
-                                                              TextAlign.start,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
                                                               .labelSmall
                                                               .override(
                                                                 fontFamily: FlutterFlowTheme.of(
@@ -869,21 +812,19 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .labelSmallFamily),
                                                               ),
-                                                        ),
-                                                      ),
                                                     ),
-                                                  ],
+                                                  ),
                                                 ),
-                                              ),
+                                              ],
                                             ),
                                           ),
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

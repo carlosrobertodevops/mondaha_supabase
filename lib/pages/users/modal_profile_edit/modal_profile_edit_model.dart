@@ -28,8 +28,11 @@ class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
   TextEditingController? descricaoTextController;
   String? Function(BuildContext, String?)? descricaoTextControllerValidator;
   // State field(s) for DropDown-tipo-usuario widget.
-  int? dropDownTipoUsuarioValue;
-  FormFieldController<int>? dropDownTipoUsuarioValueController;
+  int? dropDownTipoUsuarioValue1;
+  FormFieldController<int>? dropDownTipoUsuarioValueController1;
+  // State field(s) for DropDown-tipo-usuario widget.
+  int? dropDownTipoUsuarioValue2;
+  FormFieldController<int>? dropDownTipoUsuarioValueController2;
 
   @override
   void initState(BuildContext context) {}

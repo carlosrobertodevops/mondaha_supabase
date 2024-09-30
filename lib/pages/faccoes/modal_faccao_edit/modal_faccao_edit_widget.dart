@@ -15,20 +15,19 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:provider/provider.dart';
-import 'modal_create_faccao_model.dart';
-export 'modal_create_faccao_model.dart';
+import 'modal_faccao_edit_model.dart';
+export 'modal_faccao_edit_model.dart';
 
-class ModalCreateFaccaoWidget extends StatefulWidget {
-  const ModalCreateFaccaoWidget({super.key});
+class ModalFaccaoEditWidget extends StatefulWidget {
+  const ModalFaccaoEditWidget({super.key});
 
   @override
-  State<ModalCreateFaccaoWidget> createState() =>
-      _ModalCreateFaccaoWidgetState();
+  State<ModalFaccaoEditWidget> createState() => _ModalFaccaoEditWidgetState();
 }
 
-class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
+class _ModalFaccaoEditWidgetState extends State<ModalFaccaoEditWidget>
     with TickerProviderStateMixin {
-  late ModalCreateFaccaoModel _model;
+  late ModalFaccaoEditModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -41,7 +40,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ModalCreateFaccaoModel());
+    _model = createModel(context, () => ModalFaccaoEditModel());
 
     _model.faccaoNameTextController ??= TextEditingController();
     _model.faccaoNameFocusNode ??= FocusNode();
@@ -165,7 +164,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                             0.0, 0.0, 0.0, 4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '5i7vrdwq' /* Add Faction */,
+                                            '6kpkufph' /* Edit Faction */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
@@ -187,7 +186,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'ndzubj6c' /* Please enter the information b... */,
+                                            'j4r8cbw7' /* Please enter the information b... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
@@ -221,7 +220,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                   ),
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_CREATE_FACCAO_close_rounded_ICN_ON');
+                                        'MODAL_FACCAO_EDIT_close_rounded_ICN_ON_T');
                                     Navigator.pop(context);
                                   },
                                 ),
@@ -235,143 +234,129 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
-                                child: Container(
-                                  width: 160.0,
-                                  height: 160.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    border: Border.all(
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    logFirebaseEvent(
+                                        'MODAL_FACCAO_EDIT_COMP_heroImage_ON_TAP');
+                                    final selectedMedia =
+                                        await selectMediaWithSourceBottomSheet(
+                                      context: context,
+                                      storageFolderPath: 'usuarios',
+                                      allowPhoto: true,
+                                    );
+                                    if (selectedMedia != null &&
+                                        selectedMedia.every((m) =>
+                                            validateFileFormat(
+                                                m.storagePath, context))) {
+                                      safeSetState(
+                                          () => _model.isDataUploading = true);
+                                      var selectedUploadedFiles =
+                                          <FFUploadedFile>[];
+
+                                      var downloadUrls = <String>[];
+                                      try {
+                                        selectedUploadedFiles = selectedMedia
+                                            .map((m) => FFUploadedFile(
+                                                  name: m.storagePath
+                                                      .split('/')
+                                                      .last,
+                                                  bytes: m.bytes,
+                                                  height: m.dimensions?.height,
+                                                  width: m.dimensions?.width,
+                                                  blurHash: m.blurHash,
+                                                ))
+                                            .toList();
+
+                                        downloadUrls =
+                                            await uploadSupabaseStorageFiles(
+                                          bucketName: 'uploads',
+                                          selectedFiles: selectedMedia,
+                                        );
+                                      } finally {
+                                        _model.isDataUploading = false;
+                                      }
+                                      if (selectedUploadedFiles.length ==
+                                              selectedMedia.length &&
+                                          downloadUrls.length ==
+                                              selectedMedia.length) {
+                                        safeSetState(() {
+                                          _model.uploadedLocalFile =
+                                              selectedUploadedFiles.first;
+                                          _model.uploadedFileUrl =
+                                              downloadUrls.first;
+                                        });
+                                      } else {
+                                        safeSetState(() {});
+                                        return;
+                                      }
+                                    }
+                                  },
+                                  child: Container(
+                                    width: 160.0,
+                                    height: 160.0,
+                                    decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      width: 2.0,
+                                          .primaryBackground,
+                                      borderRadius: BorderRadius.circular(16.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        width: 2.0,
+                                      ),
                                     ),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(2.0),
-                                    child: Stack(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.add_a_photo_outlined,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 72.0,
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 12.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  't6k190ot' /* Add Photo */,
-                                                ),
-                                                style:
+                                    child: Padding(
+                                      padding: EdgeInsets.all(2.0),
+                                      child: Stack(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        children: [
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.add_a_photo_outlined,
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
-                                                        ),
+                                                        .secondaryText,
+                                                size: 72.0,
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'MODAL_CREATE_FACCAO_Image_nkpoka5f_ON_TA');
-                                              final selectedMedia =
-                                                  await selectMediaWithSourceBottomSheet(
-                                                context: context,
-                                                storageFolderPath:
-                                                    _model.uploadedFileUrl,
-                                                allowPhoto: true,
-                                              );
-                                              if (selectedMedia != null &&
-                                                  selectedMedia.every((m) =>
-                                                      validateFileFormat(
-                                                          m.storagePath,
-                                                          context))) {
-                                                safeSetState(() => _model
-                                                    .isDataUploading = true);
-                                                var selectedUploadedFiles =
-                                                    <FFUploadedFile>[];
-
-                                                var downloadUrls = <String>[];
-                                                try {
-                                                  selectedUploadedFiles =
-                                                      selectedMedia
-                                                          .map((m) =>
-                                                              FFUploadedFile(
-                                                                name: m
-                                                                    .storagePath
-                                                                    .split('/')
-                                                                    .last,
-                                                                bytes: m.bytes,
-                                                                height: m
-                                                                    .dimensions
-                                                                    ?.height,
-                                                                width: m
-                                                                    .dimensions
-                                                                    ?.width,
-                                                                blurHash:
-                                                                    m.blurHash,
-                                                              ))
-                                                          .toList();
-
-                                                  downloadUrls =
-                                                      await uploadSupabaseStorageFiles(
-                                                    bucketName:
-                                                        _model.uploadedFileUrl,
-                                                    selectedFiles:
-                                                        selectedMedia,
-                                                  );
-                                                } finally {
-                                                  _model.isDataUploading =
-                                                      false;
-                                                }
-                                                if (selectedUploadedFiles
-                                                            .length ==
-                                                        selectedMedia.length &&
-                                                    downloadUrls.length ==
-                                                        selectedMedia.length) {
-                                                  safeSetState(() {
-                                                    _model.uploadedLocalFile =
-                                                        selectedUploadedFiles
-                                                            .first;
-                                                    _model.uploadedFileUrl =
-                                                        downloadUrls.first;
-                                                  });
-                                                } else {
-                                                  safeSetState(() {});
-                                                  return;
-                                                }
-                                              }
-                                            },
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 12.0, 0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '88bp0ssl' /* Add Photo */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.all(6.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(10.0),
@@ -387,8 +372,8 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -405,10 +390,10 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'eggnalls' /* Name */,
+                                  'lw623n8z' /* Name */,
                                 ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'jj979xf0' /* Project Name */,
+                                  'vfvgol0e' /* Project Name */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -494,7 +479,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'cjt13jln' /* Description */,
+                                  'kcxsvd9t' /* Description */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -508,7 +493,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                                   .labelLargeFamily),
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'kysprs44' /* Description here... */,
+                                  '7qt3rcmx' /* Description here... */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -590,7 +575,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                 FFButtonWidget(
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_CREATE_FACCAO_CREATE_FACTION_BTN_O');
+                                        'MODAL_FACCAO_EDIT_CREATE_FACTION_BTN_ON_');
                                     await FaccoesTable().insert({
                                       'nome':
                                           _model.faccaoNameTextController.text,
@@ -615,7 +600,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                     );
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    'popyb3h7' /* Create Faction */,
+                                    'ri4wg0yx' /* Create Faction */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 52.0,

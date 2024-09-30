@@ -5,10 +5,14 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
+export 'tables/estados.dart';
+export 'tables/wappler_migrations.dart';
 export 'tables/validacoes.dart';
 export 'tables/usuarios.dart';
 export 'tables/membros.dart';
 export 'tables/funcoes.dart';
 export 'tables/tipos_usuarios.dart';
+export 'tables/wappler_migrations_lock.dart';
+export 'tables/municipios.dart';
 export 'tables/agencias.dart';
 export 'tables/faccoes.dart';
