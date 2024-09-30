@@ -1502,6 +1502,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Alerta',
       'pt': 'Alerta',
     },
+    'uc1iggrb': {
+      'en': 'Validation',
+      'es': 'Validación',
+      'pt': 'Validação',
+    },
     '5f6ql4l7': {
       'en': 'Cancel',
       'es': 'Cancelar',
