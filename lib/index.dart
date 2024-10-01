@@ -18,3 +18,4 @@ export '/pages/faccoes/faccao_create/faccao_create_widget.dart'
     show FaccaoCreateWidget;
 export '/pages/faccoes/create_faccao/create_faccao_widget.dart'
     show CreateFaccaoWidget;
+export '/buscar_c_e_p/buscar_c_e_p_widget.dart' show BuscarCEPWidget;

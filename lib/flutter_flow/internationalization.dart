@@ -1210,17 +1210,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '88zmsnd2': {
       'en': 'Date of birth',
       'es': 'Fecha de nacimiento',
-      'pt': 'Data de nascimento',
+      'pt': 'Nascimento',
     },
     'xy10hy0e': {
       'en': 'Date of last arrest',
       'es': 'Fecha del último arresto',
-      'pt': 'Data da última prisão',
+      'pt': 'Última prisão',
     },
     'wdgae0rc': {
       'en': 'Infopen number',
       'es': 'Número de Infopen',
-      'pt': 'Número Infopen',
+      'pt': 'No. Infopen',
     },
     'eaakj3m3': {
       'en': 'Option 1',
@@ -1628,6 +1628,199 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'rswm1tpi': {
       'en': 'Home',
+      'es': '',
+      'pt': '',
+    },
+  },
+  // BuscarCEP
+  {
+    'pi0qywju': {
+      'en': 'Consultar CEP',
+      'es': '',
+      'pt': '',
+    },
+    '9zbkbllu': {
+      'en': 'CEP',
+      'es': 'CEP',
+      'pt': 'CEP',
+    },
+    'z2q020id': {
+      'en': 'Buscar CEP',
+      'es': 'Buscar CEP',
+      'pt': 'Buscar CEP',
+    },
+    'ue52tpnn': {
+      'en': 'Rua/Av',
+      'es': 'Calle/Av',
+      'pt': 'Rua/Av',
+    },
+    'w4se4rcw': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
+    'or67eoj7': {
+      'en': 'Número',
+      'es': 'Número',
+      'pt': 'Número',
+    },
+    'sjiaa9j8': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
+    'ctl0n0nh': {
+      'en': 'Complemento',
+      'es': 'Complemento',
+      'pt': 'Complemento',
+    },
+    'xw0t82ap': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
+    'ujibtd29': {
+      'en': 'Bairro',
+      'es': 'Barrio',
+      'pt': 'Bairro',
+    },
+    '0gke9r65': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
+    'lnfa3bap': {
+      'en': 'Cidade',
+      'es': 'Ciudad',
+      'pt': 'Cidade',
+    },
+    'tc2xbvl4': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
+    'muzbscqw': {
+      'en': 'Estado',
+      'es': 'Estado',
+      'pt': 'Estado',
+    },
+    'fgx9c66t': {
+      'en': '',
+      'es': '',
+      'pt': '',
+    },
+    '4s9o54wd': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'spxdozri': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'x10gaml7': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'lh761y3x': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'gcar9xbk': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'c608513y': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    '5ux7xod3': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'uglk637f': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'wfiunfia': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'gmt8k8uk': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'mpys5f0s': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'giadzdwb': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'irc87mb7': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    '34f18mi1': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'ncvidtrh': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'hdcw3dqz': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'y8haddaa': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    '1mcpuyi3': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'bc2bthg8': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'uddgq9u9': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    '2bcei9mw': {
+      'en': 'Campo obrigatório',
+      'es': '',
+      'pt': '',
+    },
+    'bf7keq8f': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+      'pt': '',
+    },
+    'e3doank6': {
+      'en': '__',
       'es': '',
       'pt': '',
     },

@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -1101,6 +1102,13 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                               _model.nomeCompletoTextController,
                                                                           focusNode:
                                                                               _model.nomeCompletoFocusNode,
+                                                                          onChanged: (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                            '_model.nomeCompletoTextController',
+                                                                            Duration(milliseconds: 2000),
+                                                                            () =>
+                                                                                safeSetState(() {}),
+                                                                          ),
                                                                           autofocus:
                                                                               true,
                                                                           obscureText:
@@ -1166,6 +1174,19 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                                 24.0,
                                                                                 20.0,
                                                                                 24.0),
+                                                                            suffixIcon: _model.nomeCompletoTextController!.text.isNotEmpty
+                                                                                ? InkWell(
+                                                                                    onTap: () async {
+                                                                                      _model.nomeCompletoTextController?.clear();
+                                                                                      safeSetState(() {});
+                                                                                    },
+                                                                                    child: Icon(
+                                                                                      Icons.clear,
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      size: 22.0,
+                                                                                    ),
+                                                                                  )
+                                                                                : null,
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -1209,7 +1230,7 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                           .start,
                                                                   children: [
                                                                     Expanded(
-                                                                      flex: 2,
+                                                                      flex: 3,
                                                                       child:
                                                                           Container(
                                                                         decoration:
@@ -1223,6 +1244,13 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                               _model.dataNascimentoTextController,
                                                                           focusNode:
                                                                               _model.dataNascimentoFocusNode,
+                                                                          onChanged: (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                            '_model.dataNascimentoTextController',
+                                                                            Duration(milliseconds: 2000),
+                                                                            () =>
+                                                                                safeSetState(() {}),
+                                                                          ),
                                                                           onFieldSubmitted:
                                                                               (_) async {
                                                                             logFirebaseEvent('CREATE_MEMBROS_data-nascimento_ON_TEXTFI');
@@ -1290,6 +1318,19 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                                 24.0,
                                                                                 20.0,
                                                                                 24.0),
+                                                                            suffixIcon: _model.dataNascimentoTextController!.text.isNotEmpty
+                                                                                ? InkWell(
+                                                                                    onTap: () async {
+                                                                                      _model.dataNascimentoTextController?.clear();
+                                                                                      safeSetState(() {});
+                                                                                    },
+                                                                                    child: Icon(
+                                                                                      Icons.clear,
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      size: 22.0,
+                                                                                    ),
+                                                                                  )
+                                                                                : null,
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -1316,7 +1357,7 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                       ),
                                                                     ),
                                                                     Expanded(
-                                                                      flex: 2,
+                                                                      flex: 3,
                                                                       child:
                                                                           Container(
                                                                         decoration:
@@ -1330,6 +1371,13 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                               _model.dataUltimaPrissaoTextController,
                                                                           focusNode:
                                                                               _model.dataUltimaPrissaoFocusNode,
+                                                                          onChanged: (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                            '_model.dataUltimaPrissaoTextController',
+                                                                            Duration(milliseconds: 2000),
+                                                                            () =>
+                                                                                safeSetState(() {}),
+                                                                          ),
                                                                           autofocus:
                                                                               true,
                                                                           obscureText:
@@ -1391,6 +1439,19 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                                 24.0,
                                                                                 20.0,
                                                                                 24.0),
+                                                                            suffixIcon: _model.dataUltimaPrissaoTextController!.text.isNotEmpty
+                                                                                ? InkWell(
+                                                                                    onTap: () async {
+                                                                                      _model.dataUltimaPrissaoTextController?.clear();
+                                                                                      safeSetState(() {});
+                                                                                    },
+                                                                                    child: Icon(
+                                                                                      Icons.clear,
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      size: 22.0,
+                                                                                    ),
+                                                                                  )
+                                                                                : null,
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -1413,7 +1474,7 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                       ),
                                                                     ),
                                                                     Expanded(
-                                                                      flex: 2,
+                                                                      flex: 3,
                                                                       child:
                                                                           Container(
                                                                         decoration:
@@ -1427,6 +1488,13 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                               _model.noInfopenNacionalTextController,
                                                                           focusNode:
                                                                               _model.noInfopenNacionalFocusNode,
+                                                                          onChanged: (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                            '_model.noInfopenNacionalTextController',
+                                                                            Duration(milliseconds: 2000),
+                                                                            () =>
+                                                                                safeSetState(() {}),
+                                                                          ),
                                                                           autofocus:
                                                                               true,
                                                                           obscureText:
@@ -1488,6 +1556,19 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                                 24.0,
                                                                                 20.0,
                                                                                 24.0),
+                                                                            suffixIcon: _model.noInfopenNacionalTextController!.text.isNotEmpty
+                                                                                ? InkWell(
+                                                                                    onTap: () async {
+                                                                                      _model.noInfopenNacionalTextController?.clear();
+                                                                                      safeSetState(() {});
+                                                                                    },
+                                                                                    child: Icon(
+                                                                                      Icons.clear,
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      size: 22.0,
+                                                                                    ),
+                                                                                  )
+                                                                                : null,
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -1505,7 +1586,7 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                       ),
                                                                     ),
                                                                     Expanded(
-                                                                      flex: 5,
+                                                                      flex: 4,
                                                                       child:
                                                                           Container(
                                                                         decoration:
@@ -1747,6 +1828,12 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                                 _model.maeTextController,
                                                                             focusNode:
                                                                                 _model.maeFocusNode,
+                                                                            onChanged: (_) =>
+                                                                                EasyDebounce.debounce(
+                                                                              '_model.maeTextController',
+                                                                              Duration(milliseconds: 2000),
+                                                                              () => safeSetState(() {}),
+                                                                            ),
                                                                             autofocus:
                                                                                 true,
                                                                             obscureText:
@@ -1800,6 +1887,19 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                               filled: true,
                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                              suffixIcon: _model.maeTextController!.text.isNotEmpty
+                                                                                  ? InkWell(
+                                                                                      onTap: () async {
+                                                                                        _model.maeTextController?.clear();
+                                                                                        safeSetState(() {});
+                                                                                      },
+                                                                                      child: Icon(
+                                                                                        Icons.clear,
+                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                        size: 22.0,
+                                                                                      ),
+                                                                                    )
+                                                                                  : null,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -1961,6 +2061,13 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                               _model.paiTextController,
                                                                           focusNode:
                                                                               _model.paiFocusNode,
+                                                                          onChanged: (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                            '_model.paiTextController',
+                                                                            Duration(milliseconds: 2000),
+                                                                            () =>
+                                                                                safeSetState(() {}),
+                                                                          ),
                                                                           autofocus:
                                                                               true,
                                                                           obscureText:
@@ -2026,6 +2133,19 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                                 24.0,
                                                                                 20.0,
                                                                                 24.0),
+                                                                            suffixIcon: _model.paiTextController!.text.isNotEmpty
+                                                                                ? InkWell(
+                                                                                    onTap: () async {
+                                                                                      _model.paiTextController?.clear();
+                                                                                      safeSetState(() {});
+                                                                                    },
+                                                                                    child: Icon(
+                                                                                      Icons.clear,
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      size: 22.0,
+                                                                                    ),
+                                                                                  )
+                                                                                : null,
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -2451,6 +2571,12 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                                 _model.distritoTextController,
                                                                             focusNode:
                                                                                 _model.distritoFocusNode,
+                                                                            onChanged: (_) =>
+                                                                                EasyDebounce.debounce(
+                                                                              '_model.distritoTextController',
+                                                                              Duration(milliseconds: 2000),
+                                                                              () => safeSetState(() {}),
+                                                                            ),
                                                                             autofocus:
                                                                                 true,
                                                                             obscureText:
@@ -2504,6 +2630,19 @@ class _CreateMembrosWidgetState extends State<CreateMembrosWidget>
                                                                               filled: true,
                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                              suffixIcon: _model.distritoTextController!.text.isNotEmpty
+                                                                                  ? InkWell(
+                                                                                      onTap: () async {
+                                                                                        _model.distritoTextController?.clear();
+                                                                                        safeSetState(() {});
+                                                                                      },
+                                                                                      child: Icon(
+                                                                                        Icons.clear,
+                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                        size: 22.0,
+                                                                                      ),
+                                                                                    )
+                                                                                  : null,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,

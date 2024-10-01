@@ -147,6 +147,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'createFaccao',
               requireAuth: true,
               builder: (context, params) => CreateFaccaoWidget(),
+            ),
+            FFRoute(
+              name: 'BuscarCEP',
+              path: 'buscarCEP',
+              requireAuth: true,
+              builder: (context, params) => BuscarCEPWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
