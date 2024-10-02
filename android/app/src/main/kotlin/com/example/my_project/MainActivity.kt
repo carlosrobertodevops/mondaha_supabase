@@ -1,4 +1,4 @@
-package com.mondaha.mondahaapp
+package com.mycompany.mordaha
 
 import io.flutter.embedding.android.FlutterActivity
 

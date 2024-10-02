@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:from_css_color/from_css_color.dart';
 
-import '/backend/supabase/supabase.dart';
-
 import '../../flutter_flow/lat_lng.dart';
 import '../../flutter_flow/place.dart';
 import '../../flutter_flow/uploaded_file.dart';
@@ -71,9 +69,6 @@ String? serializeParam(
         data = uploadedFileToString(param as FFUploadedFile);
       case ParamType.JSON:
         data = json.encode(param);
-
-      case ParamType.SupabaseRow:
-        return json.encode((param as SupabaseDataRow).data);
 
       default:
         data = null;
@@ -150,8 +145,6 @@ enum ParamType {
   FFPlace,
   FFUploadedFile,
   JSON,
-
-  SupabaseRow,
 }
 
 dynamic deserializeParam<T>(
@@ -169,8 +162,8 @@ dynamic deserializeParam<T>(
         return null;
       }
       return paramValues
-          .where((p) => p is String)
-          .map((p) => p as String)
+          .whereType<String>()
+          .map((p) => p)
           .map((p) => deserializeParam<T>(p, paramType, false))
           .where((p) => p != null)
           .map((p) => p! as T)
@@ -202,35 +195,6 @@ dynamic deserializeParam<T>(
         return uploadedFileFromString(param);
       case ParamType.JSON:
         return json.decode(param);
-
-      case ParamType.SupabaseRow:
-        final data = json.decode(param) as Map<String, dynamic>;
-        switch (T) {
-          case EstadosRow:
-            return EstadosRow(data);
-          case WapplerMigrationsRow:
-            return WapplerMigrationsRow(data);
-          case ValidacoesRow:
-            return ValidacoesRow(data);
-          case UsuariosRow:
-            return UsuariosRow(data);
-          case MembrosRow:
-            return MembrosRow(data);
-          case FuncoesRow:
-            return FuncoesRow(data);
-          case TiposUsuariosRow:
-            return TiposUsuariosRow(data);
-          case WapplerMigrationsLockRow:
-            return WapplerMigrationsLockRow(data);
-          case MunicipiosRow:
-            return MunicipiosRow(data);
-          case AgenciasRow:
-            return AgenciasRow(data);
-          case FaccoesRow:
-            return FaccoesRow(data);
-          default:
-            return null;
-        }
 
       default:
         return null;
