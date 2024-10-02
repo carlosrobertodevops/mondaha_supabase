@@ -1636,8 +1636,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'pi0qywju': {
       'en': 'Consultar CEP',
-      'es': '',
-      'pt': '',
+      'es': 'Consultar CEP',
+      'pt': 'Consultar CEP',
     },
     '9zbkbllu': {
       'en': 'CEP',
