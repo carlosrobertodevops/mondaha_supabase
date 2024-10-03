@@ -1,4 +1,4 @@
-package com.mycompany.mordaha
+package com.mycompany.crmapp
 
 import io.flutter.embedding.android.FlutterActivity
 
