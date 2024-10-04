@@ -792,7 +792,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                       future: AgenciasTable()
                                                           .queryRows(
                                                         queryFn: (q) => q.order(
-                                                            'nome',
+                                                            'agencia_id',
                                                             ascending: true),
                                                       ),
                                                       builder:
