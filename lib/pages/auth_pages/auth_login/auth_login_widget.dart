@@ -1543,7 +1543,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                           GoRouter.of(context)
                                                               .prepareAuthEvent();
                                                           if (_model
-                                                                  .txtLoginPasswordTextController
+                                                                  .txtSinginPasswordTextController
                                                                   .text !=
                                                               _model
                                                                   .txtSinginPasswordConfirmTextController
@@ -1568,7 +1568,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                 .txtLoginEmailTextController
                                                                 .text,
                                                             _model
-                                                                .txtLoginPasswordTextController
+                                                                .txtSinginPasswordTextController
                                                                 .text,
                                                           );
                                                           if (user == null) {
@@ -1585,6 +1585,11 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                 currentUserUid,
                                                             'email':
                                                                 currentUserEmail,
+                                                            'nome_completo': _model
+                                                                .txtSigninNomeTextController
+                                                                .text,
+                                                            'agencia_id': _model
+                                                                .dropAgenciaValue,
                                                           });
                                                           ScaffoldMessenger.of(
                                                                   context)
