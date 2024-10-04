@@ -1,6 +1,7 @@
 import '/backend/supabase/supabase.dart';
-import '/components/modal_sections/modal_project_details/modal_project_details_widget.dart';
 import '/components/modals/command_palette/command_palette_widget.dart';
+import '/components/modals/modal_create_faccao/modal_create_faccao_widget.dart';
+import '/components/modals/modal_edit_faccao/modal_edit_faccao_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

@@ -9,20 +9,20 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'modal_project_details_model.dart';
-export 'modal_project_details_model.dart';
+import 'modal_faccao_details_model.dart';
+export 'modal_faccao_details_model.dart';
 
-class ModalProjectDetailsWidget extends StatefulWidget {
-  const ModalProjectDetailsWidget({super.key});
+class ModalFaccaoDetailsWidget extends StatefulWidget {
+  const ModalFaccaoDetailsWidget({super.key});
 
   @override
-  State<ModalProjectDetailsWidget> createState() =>
-      _ModalProjectDetailsWidgetState();
+  State<ModalFaccaoDetailsWidget> createState() =>
+      _ModalFaccaoDetailsWidgetState();
 }
 
-class _ModalProjectDetailsWidgetState extends State<ModalProjectDetailsWidget>
+class _ModalFaccaoDetailsWidgetState extends State<ModalFaccaoDetailsWidget>
     with TickerProviderStateMixin {
-  late ModalProjectDetailsModel _model;
+  late ModalFaccaoDetailsModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -35,7 +35,7 @@ class _ModalProjectDetailsWidgetState extends State<ModalProjectDetailsWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ModalProjectDetailsModel());
+    _model = createModel(context, () => ModalFaccaoDetailsModel());
 
     animationsMap.addAll({
       'iconButtonOnPageLoadAnimation': AnimationInfo(
@@ -110,7 +110,7 @@ class _ModalProjectDetailsWidgetState extends State<ModalProjectDetailsWidget>
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              logFirebaseEvent('MODAL_PROJECT_DETAILS_Column_m8ypy7lz_ON');
+              logFirebaseEvent('MODAL_FACCAO_DETAILS_Column_m8ypy7lz_ON_');
               Navigator.pop(context);
             },
             child: Column(
@@ -134,7 +134,7 @@ class _ModalProjectDetailsWidgetState extends State<ModalProjectDetailsWidget>
                       ),
                       onPressed: () async {
                         logFirebaseEvent(
-                            'MODAL_PROJECT_DETAILS_close_outlined_ICN');
+                            'MODAL_FACCAO_DETAILS_close_outlined_ICN_');
                         Navigator.pop(context);
                       },
                     ).animateOnPageLoad(

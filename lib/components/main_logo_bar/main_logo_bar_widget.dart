@@ -3,19 +3,18 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'main_logo_small_copy_model.dart';
-export 'main_logo_small_copy_model.dart';
+import 'main_logo_bar_model.dart';
+export 'main_logo_bar_model.dart';
 
-class MainLogoSmallCopyWidget extends StatefulWidget {
-  const MainLogoSmallCopyWidget({super.key});
+class MainLogoBarWidget extends StatefulWidget {
+  const MainLogoBarWidget({super.key});
 
   @override
-  State<MainLogoSmallCopyWidget> createState() =>
-      _MainLogoSmallCopyWidgetState();
+  State<MainLogoBarWidget> createState() => _MainLogoBarWidgetState();
 }
 
-class _MainLogoSmallCopyWidgetState extends State<MainLogoSmallCopyWidget> {
-  late MainLogoSmallCopyModel _model;
+class _MainLogoBarWidgetState extends State<MainLogoBarWidget> {
+  late MainLogoBarModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -26,7 +25,7 @@ class _MainLogoSmallCopyWidgetState extends State<MainLogoSmallCopyWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MainLogoSmallCopyModel());
+    _model = createModel(context, () => MainLogoBarModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -46,7 +45,7 @@ class _MainLogoSmallCopyWidgetState extends State<MainLogoSmallCopyWidget> {
         Theme.of(context).brightness == Brightness.dark
             ? 'assets/images/app_launcher_icon.png'
             : 'assets/images/app_launcher_icon.png',
-        width: 170.0,
+        width: 100.0,
         height: 100.0,
         fit: BoxFit.cover,
       ),

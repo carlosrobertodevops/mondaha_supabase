@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/components/dropdown_user_edit/dropdown_user_edit_widget.dart';
 import '/components/modals/command_palette/command_palette_widget.dart';
 import '/components/modals_extra/modal_create_membro/modal_create_membro_widget.dart';

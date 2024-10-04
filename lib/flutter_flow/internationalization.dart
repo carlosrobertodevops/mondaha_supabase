@@ -178,7 +178,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'saxskj92': {
       'en': 'Addy. in the Map',
       'es': 'Addy. en el mapa',
-      'pt': 'Addy. no mapa',
+      'pt': 'Addy. no Mapa',
     },
     '2wlrr5lg': {
       'en': '4300',
@@ -726,55 +726,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Facciones',
       'pt': 'Facções',
     },
+    '0qpozsrf': {
+      'en': 'Add Faction',
+      'es': 'Añadir facción',
+      'pt': 'Adicionar Facção',
+    },
     't967eizl': {
       'en': 'Projects',
       'es': 'Proyectos',
       'pt': 'Projetos',
-    },
-    '2a7y5e2w': {
-      'en': 'Design Team Docs',
-      'es': 'Documentos del equipo de diseño',
-      'pt': 'Documentação da equipe de design',
     },
     'dlt46loo': {
       'en': 'Factions',
       'es': 'Facciones',
       'pt': 'Facções',
     },
+    '64zuuiop': {
+      'en': 'View',
+      'es': 'Vista',
+      'pt': 'Visualizar',
+    },
     'h9kiq8rj': {
-      'en': 'Next Action',
-      'es': 'Próxima acción',
-      'pt': 'Próxima ação',
+      'en': 'Edit',
+      'es': 'Editar',
+      'pt': 'Editar',
+    },
+    'ynj4vhll': {
+      'en': 'Delete',
+      'es': 'Borrar',
+      'pt': 'Excluir',
     },
     '8e820p1r': {
-      'en': 'In Progress',
-      'es': 'En curso',
-      'pt': 'Em andamento',
-    },
-    '7wcrhzda': {
-      'en': 'HealthAi',
-      'es': 'SaludAi',
-      'pt': 'SaúdeAi',
-    },
-    'sen48p1q': {
-      'en': 'Client Acquisition for Q3',
-      'es': 'Adquisición de clientes para el tercer trimestre',
-      'pt': 'Aquisição de clientes para o terceiro trimestre',
-    },
-    'u6ek8ogi': {
-      'en': 'Next Action',
-      'es': 'Próxima acción',
-      'pt': 'Próxima ação',
-    },
-    'zz9ma01i': {
-      'en': 'Tuesday, 10:00am',
-      'es': 'Martes, 10:00 horas',
-      'pt': 'Terça-feira, 10:00 da manhã',
-    },
-    'nanoxp6w': {
-      'en': 'In Progress',
-      'es': 'En curso',
-      'pt': 'Em andamento',
+      'en': 'Members numbers ###',
+      'es': 'Número de miembros ###',
+      'pt': 'Número de membros ###',
     },
     'j08eiorc': {
       'en': '__',
@@ -1697,6 +1682,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Perfil',
       'pt': 'Perfil',
     },
+    'kfrv5rp5': {
+      'en': 'Logout',
+      'es': 'Cerrar sesión',
+      'pt': 'Sair',
+    },
   },
   // command_palette
   {
@@ -1892,14 +1882,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // modal_create_faccao
   {
     '5tdm3cpv': {
-      'en': 'Create Project',
-      'es': 'Crear proyecto',
-      'pt': 'Criar Projeto',
+      'en': 'Create Faction',
+      'es': 'Crear facción',
+      'pt': 'Criar Facção',
     },
     'vlg015ed': {
-      'en': 'Please enter the information below to add a project.',
-      'es': 'Ingrese la información a continuación para agregar un proyecto.',
-      'pt': 'Insira as informações abaixo para adicionar um projeto.',
+      'en': 'Please enter the information below to add a Faction.',
+      'es': 'Ingrese la información a continuación para agregar una facción.',
+      'pt': 'Insira as informações abaixo para adicionar uma facção.',
     },
     'dqo5yhdb': {
       'en': 'Add Photo',
@@ -1907,9 +1897,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Adicionar foto',
     },
     '426hn69e': {
-      'en': 'Project Name',
-      'es': 'Nombre del proyecto',
-      'pt': 'Nome do Projeto',
+      'en': 'Faction Name',
+      'es': 'Nombre de la facción',
+      'pt': 'Nome da Facção',
+    },
+    'gvgwcy4p': {
+      'en': 'Descrition',
+      'es': 'Descripción',
+      'pt': 'Descrição',
     },
     'uqziqhmg': {
       'en': 'Description here...',
@@ -1917,9 +1912,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Descrição aqui...',
     },
     '2g54ptaj': {
-      'en': 'Create Project',
-      'es': 'Crear proyecto',
-      'pt': 'Criar Projeto',
+      'en': 'Create Faction',
+      'es': 'Crear facción',
+      'pt': 'Criar Facção',
     },
     '4spmowtt': {
       'en': 'Please enter a project name...',
@@ -2870,6 +2865,64 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Groups',
       'es': 'Grupos',
       'pt': 'Grupos',
+    },
+  },
+  // modal_edit_faccao
+  {
+    'ze3l1q4r': {
+      'en': 'Edit Faction',
+      'es': 'Editar facción',
+      'pt': 'Editar Facção',
+    },
+    '7tuc4kk2': {
+      'en': 'Please enter the information below to edit a Faction.',
+      'es': 'Ingrese la información a continuación para editar una facción.',
+      'pt': 'Insira as informações abaixo para editar uma Facção.',
+    },
+    'xscprapi': {
+      'en': 'Add Photo',
+      'es': 'Añadir foto',
+      'pt': 'Adicionar foto',
+    },
+    '2huj2jzx': {
+      'en': 'Faction Name',
+      'es': 'Nombre de la facción',
+      'pt': 'Nome da Facção',
+    },
+    '0lr3g0go': {
+      'en': 'Descrition',
+      'es': 'Descripción',
+      'pt': 'Descrição',
+    },
+    'krgsdp6s': {
+      'en': 'Description here...',
+      'es': 'Descripción aquí...',
+      'pt': 'Descrição aqui...',
+    },
+    '2d3lr93u': {
+      'en': 'Edit Faction',
+      'es': 'Editar facción',
+      'pt': 'Editar Facção',
+    },
+    'yg28k56i': {
+      'en': 'Please enter a project name...',
+      'es': 'Por favor, introduzca un nombre de proyecto...',
+      'pt': 'Por favor, insira um nome de projeto...',
+    },
+    '59ol7bwt': {
+      'en': 'Please choose an option from the dropdown',
+      'es': 'Por favor, seleccione una opción del menú desplegable',
+      'pt': 'Selecione uma opção no menu suspenso',
+    },
+    'fwvtuuff': {
+      'en': 'Please enter a short description...',
+      'es': 'Por favor, introduzca una breve descripción...',
+      'pt': 'Insira uma breve descrição...',
+    },
+    '9bj3lmc0': {
+      'en': 'Please choose an option from the dropdown',
+      'es': 'Por favor, seleccione una opción del menú desplegable',
+      'pt': 'Selecione uma opção no menu suspenso',
     },
   },
   // Miscellaneous

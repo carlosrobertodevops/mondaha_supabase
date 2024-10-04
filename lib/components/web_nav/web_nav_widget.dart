@@ -1,6 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/main_logo_small/main_logo_small_widget.dart';
+import '/components/main_logo_bar/main_logo_bar_widget.dart';
 import '/components/modals/command_palette/command_palette_widget.dart';
 import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -83,10 +83,10 @@ class _WebNavWidgetState extends State<WebNavWidget> {
               : null;
 
           return Container(
-            width: 250.0,
+            width: FFAppState().WEBBARRETRATIL.toDouble(),
             height: double.infinity,
             constraints: BoxConstraints(
-              minWidth: 100.0,
+              minWidth: 30.0,
               maxWidth: 250.0,
             ),
             decoration: BoxDecoration(
@@ -114,6 +114,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Plus Jakarta Sans',
                             letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
                           ),
                     ),
                   ),
@@ -128,9 +129,71 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                           child: Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: wrapWithModel(
-                              model: _model.mainLogoSmallModel,
+                              model: _model.mainLogoBarModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: MainLogoSmallWidget(),
+                              child: MainLogoBarWidget(),
+                            ),
+                          ),
+                        ),
+                        if (FFAppState().WEBBARRETRATIL >= 250 ? true : false)
+                          Container(
+                            width: 30.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                logFirebaseEvent(
+                                    'WEB_NAV_COMP_Icon_bmal396o_ON_TAP');
+                                FFAppState().WEBBARRETRATIL =
+                                    FFAppState().WEBBARRETRATIL >= 250
+                                        ? 80
+                                        : 250;
+                                FFAppState().update(() {});
+                              },
+                              child: Icon(
+                                Icons.arrow_back_ios_new_outlined,
+                                color: FlutterFlowTheme.of(context).accent1,
+                                size: 30.0,
+                              ),
+                            ),
+                          ),
+                        Container(
+                          width: 30.0,
+                          height: 30.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                          child: Visibility(
+                            visible: FFAppState().WEBBARRETRATIL <= 50
+                                ? true
+                                : false,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                logFirebaseEvent(
+                                    'WEB_NAV_COMP_Icon_jkg3e8ng_ON_TAP');
+                                FFAppState().WEBBARRETRATIL =
+                                    FFAppState().WEBBARRETRATIL <= 80
+                                        ? 250
+                                        : 80;
+                                FFAppState().update(() {});
+                              },
+                              child: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: FlutterFlowTheme.of(context).accent1,
+                                size: 30.0,
+                              ),
                             ),
                           ),
                         ),
@@ -540,6 +603,71 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
                                         color: widget!.selectedNav == 5
+                                            ? FlutterFlowTheme.of(context)
+                                                .primaryText
+                                            : FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
+                        GoRouter.of(context).prepareAuthEvent();
+                        await authManager.signOut();
+                        GoRouter.of(context).clearRedirectLocation();
+
+                        context.goNamedAuth('auth_login', context.mounted);
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: widget!.selectedNav == 6
+                              ? FlutterFlowTheme.of(context).alternate
+                              : FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.login_outlined,
+                                color: widget!.selectedNav == 6
+                                    ? FlutterFlowTheme.of(context).primary
+                                    : FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                size: 28.0,
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'kfrv5rp5' /* Logout */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: widget!.selectedNav == 6
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)

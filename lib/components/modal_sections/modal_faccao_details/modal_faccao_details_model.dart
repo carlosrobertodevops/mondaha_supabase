@@ -4,15 +4,15 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:math';
-import 'modal_project_details_widget.dart' show ModalProjectDetailsWidget;
+import 'modal_faccao_details_widget.dart' show ModalFaccaoDetailsWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class ModalProjectDetailsModel
-    extends FlutterFlowModel<ModalProjectDetailsWidget> {
+class ModalFaccaoDetailsModel
+    extends FlutterFlowModel<ModalFaccaoDetailsWidget> {
   ///  Local state fields for this component.
 
   bool? showBack = false;

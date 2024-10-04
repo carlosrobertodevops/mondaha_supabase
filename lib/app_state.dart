@@ -24,6 +24,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _USUARIOFOTO = prefs.getString('ff_USUARIOFOTO') ?? _USUARIOFOTO;
     });
+    _safeInit(() {
+      _WEBBARRETRATIL = prefs.getInt('ff_WEBBARRETRATIL') ?? _WEBBARRETRATIL;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -45,6 +48,19 @@ class FFAppState extends ChangeNotifier {
   set USUARIOFOTO(String value) {
     _USUARIOFOTO = value;
     prefs.setString('ff_USUARIOFOTO', value);
+  }
+
+  int _WEBBARRETRATIL = 250;
+  int get WEBBARRETRATIL => _WEBBARRETRATIL;
+  set WEBBARRETRATIL(int value) {
+    _WEBBARRETRATIL = value;
+    prefs.setInt('ff_WEBBARRETRATIL', value);
+  }
+
+  int _EDITFACCAOID = 0;
+  int get EDITFACCAOID => _EDITFACCAOID;
+  set EDITFACCAOID(int value) {
+    _EDITFACCAOID = value;
   }
 }
 

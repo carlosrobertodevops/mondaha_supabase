@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:math';
 import 'dart:ui';
-import 'modal_create_faccao_widget.dart' show ModalCreateFaccaoWidget;
+import 'modal_edit_faccao_widget.dart' show ModalEditFaccaoWidget;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -17,7 +17,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:provider/provider.dart';
 
-class ModalCreateFaccaoModel extends FlutterFlowModel<ModalCreateFaccaoWidget> {
+class ModalEditFaccaoModel extends FlutterFlowModel<ModalEditFaccaoWidget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -34,7 +34,7 @@ class ModalCreateFaccaoModel extends FlutterFlowModel<ModalCreateFaccaoWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '4spmowtt' /* Please enter a project name... */,
+        'yg28k56i' /* Please enter a project name... */,
       );
     }
 
@@ -49,7 +49,7 @@ class ModalCreateFaccaoModel extends FlutterFlowModel<ModalCreateFaccaoWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'wfu6up0n' /* Please enter a short descripti... */,
+        'fwvtuuff' /* Please enter a short descripti... */,
       );
     }
 

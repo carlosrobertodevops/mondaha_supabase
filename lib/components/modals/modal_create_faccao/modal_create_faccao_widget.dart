@@ -1,8 +1,10 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 'dart:math';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -41,8 +43,8 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
     super.initState();
     _model = createModel(context, () => ModalCreateFaccaoModel());
 
-    _model.projectNameTextController ??= TextEditingController();
-    _model.projectNameFocusNode ??= FocusNode();
+    _model.txtNomeFaccaoTextController ??= TextEditingController();
+    _model.txtNomeFaccaoFocusNode ??= FocusNode();
 
     _model.descriptionTextController ??= TextEditingController();
     _model.descriptionFocusNode ??= FocusNode();
@@ -163,7 +165,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                             0.0, 0.0, 0.0, 4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '5tdm3cpv' /* Create Project */,
+                                            '5tdm3cpv' /* Create Faction */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
@@ -271,18 +273,96 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                         ),
                                         Padding(
                                           padding: EdgeInsets.all(6.0),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                            child: CachedNetworkImage(
-                                              fadeInDuration:
-                                                  Duration(milliseconds: 500),
-                                              fadeOutDuration:
-                                                  Duration(milliseconds: 500),
-                                              imageUrl: '',
-                                              width: double.infinity,
-                                              height: double.infinity,
-                                              fit: BoxFit.cover,
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              logFirebaseEvent(
+                                                  'MODAL_CREATE_FACCAO_Image_r5bsf0oi_ON_TA');
+                                              final selectedMedia =
+                                                  await selectMediaWithSourceBottomSheet(
+                                                context: context,
+                                                storageFolderPath: 'faccoes',
+                                                maxWidth: 100.00,
+                                                maxHeight: 100.00,
+                                                allowPhoto: true,
+                                              );
+                                              if (selectedMedia != null &&
+                                                  selectedMedia.every((m) =>
+                                                      validateFileFormat(
+                                                          m.storagePath,
+                                                          context))) {
+                                                safeSetState(() => _model
+                                                    .isDataUploading = true);
+                                                var selectedUploadedFiles =
+                                                    <FFUploadedFile>[];
+
+                                                var downloadUrls = <String>[];
+                                                try {
+                                                  selectedUploadedFiles =
+                                                      selectedMedia
+                                                          .map((m) =>
+                                                              FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                          .toList();
+
+                                                  downloadUrls =
+                                                      await uploadSupabaseStorageFiles(
+                                                    bucketName: 'uploads',
+                                                    selectedFiles:
+                                                        selectedMedia,
+                                                  );
+                                                } finally {
+                                                  _model.isDataUploading =
+                                                      false;
+                                                }
+                                                if (selectedUploadedFiles
+                                                            .length ==
+                                                        selectedMedia.length &&
+                                                    downloadUrls.length ==
+                                                        selectedMedia.length) {
+                                                  safeSetState(() {
+                                                    _model.uploadedLocalFile =
+                                                        selectedUploadedFiles
+                                                            .first;
+                                                    _model.uploadedFileUrl =
+                                                        downloadUrls.first;
+                                                  });
+                                                } else {
+                                                  safeSetState(() {});
+                                                  return;
+                                                }
+                                              }
+                                            },
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                              child: CachedNetworkImage(
+                                                fadeInDuration:
+                                                    Duration(milliseconds: 500),
+                                                fadeOutDuration:
+                                                    Duration(milliseconds: 500),
+                                                imageUrl:
+                                                    _model.uploadedFileUrl,
+                                                width: double.infinity,
+                                                height: double.infinity,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -297,13 +377,13 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
                             child: TextFormField(
-                              controller: _model.projectNameTextController,
-                              focusNode: _model.projectNameFocusNode,
+                              controller: _model.txtNomeFaccaoTextController,
+                              focusNode: _model.txtNomeFaccaoFocusNode,
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
                                 hintText: FFLocalizations.of(context).getText(
-                                  '426hn69e' /* Project Name */,
+                                  '426hn69e' /* Faction Name */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -365,7 +445,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model
-                                  .projectNameTextControllerValidator
+                                  .txtNomeFaccaoTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -378,6 +458,9 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
+                                labelText: FFLocalizations.of(context).getText(
+                                  'gvgwcy4p' /* Descrition */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
@@ -455,11 +538,19 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'MODAL_CREATE_FACCAO_CREATE_FACTION_BTN_O');
+                                    await FaccoesTable().insert({
+                                      'nome': _model
+                                          .txtNomeFaccaoTextController.text,
+                                      'descricao':
+                                          _model.descriptionTextController.text,
+                                      'imagem_path': _model.uploadedFileUrl,
+                                    });
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    '2g54ptaj' /* Create Project */,
+                                    '2g54ptaj' /* Create Faction */,
                                   ),
                                   options: FFButtonOptions(
                                     padding: EdgeInsetsDirectional.fromSTEB(
