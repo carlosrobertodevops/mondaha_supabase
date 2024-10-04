@@ -24,11 +24,11 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
 
-  // State field(s) for txt-login-email widget.
+  // State field(s) for txt_login_email widget.
   FocusNode? txtLoginEmailFocusNode;
   TextEditingController? txtLoginEmailTextController;
   String? Function(BuildContext, String?)? txtLoginEmailTextControllerValidator;
-  // State field(s) for txt-login-password widget.
+  // State field(s) for txt_login_password widget.
   FocusNode? txtLoginPasswordFocusNode;
   TextEditingController? txtLoginPasswordTextController;
   late bool txtLoginPasswordVisibility;
@@ -37,33 +37,33 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
   // State field(s) for drop_agencia widget.
   int? dropAgenciaValue;
   FormFieldController<int>? dropAgenciaValueController;
-  // State field(s) for txt-signin-nome widget.
-  FocusNode? txtSigninNomeFocusNode;
-  TextEditingController? txtSigninNomeTextController;
-  String? Function(BuildContext, String?)? txtSigninNomeTextControllerValidator;
-  // State field(s) for txt-signin-email widget.
-  FocusNode? txtSigninEmailFocusNode;
-  TextEditingController? txtSigninEmailTextController;
+  // State field(s) for txt_signup_nome widget.
+  FocusNode? txtSignupNomeFocusNode;
+  TextEditingController? txtSignupNomeTextController;
+  String? Function(BuildContext, String?)? txtSignupNomeTextControllerValidator;
+  // State field(s) for txt_signup_email widget.
+  FocusNode? txtSignupEmailFocusNode;
+  TextEditingController? txtSignupEmailTextController;
   String? Function(BuildContext, String?)?
-      txtSigninEmailTextControllerValidator;
-  // State field(s) for txt_singin-password widget.
-  FocusNode? txtSinginPasswordFocusNode;
-  TextEditingController? txtSinginPasswordTextController;
-  late bool txtSinginPasswordVisibility;
+      txtSignupEmailTextControllerValidator;
+  // State field(s) for txt_signup_password widget.
+  FocusNode? txtSignupPasswordFocusNode;
+  TextEditingController? txtSignupPasswordTextController;
+  late bool txtSignupPasswordVisibility;
   String? Function(BuildContext, String?)?
-      txtSinginPasswordTextControllerValidator;
-  // State field(s) for txt_singin-password-confirm widget.
-  FocusNode? txtSinginPasswordConfirmFocusNode;
-  TextEditingController? txtSinginPasswordConfirmTextController;
-  late bool txtSinginPasswordConfirmVisibility;
+      txtSignupPasswordTextControllerValidator;
+  // State field(s) for txt_signup_confirm widget.
+  FocusNode? txtSignupConfirmFocusNode;
+  TextEditingController? txtSignupConfirmTextController;
+  late bool txtSignupConfirmVisibility;
   String? Function(BuildContext, String?)?
-      txtSinginPasswordConfirmTextControllerValidator;
+      txtSignupConfirmTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
     txtLoginPasswordVisibility = false;
-    txtSinginPasswordVisibility = false;
-    txtSinginPasswordConfirmVisibility = false;
+    txtSignupPasswordVisibility = false;
+    txtSignupConfirmVisibility = false;
   }
 
   @override
@@ -75,16 +75,16 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
     txtLoginPasswordFocusNode?.dispose();
     txtLoginPasswordTextController?.dispose();
 
-    txtSigninNomeFocusNode?.dispose();
-    txtSigninNomeTextController?.dispose();
+    txtSignupNomeFocusNode?.dispose();
+    txtSignupNomeTextController?.dispose();
 
-    txtSigninEmailFocusNode?.dispose();
-    txtSigninEmailTextController?.dispose();
+    txtSignupEmailFocusNode?.dispose();
+    txtSignupEmailTextController?.dispose();
 
-    txtSinginPasswordFocusNode?.dispose();
-    txtSinginPasswordTextController?.dispose();
+    txtSignupPasswordFocusNode?.dispose();
+    txtSignupPasswordTextController?.dispose();
 
-    txtSinginPasswordConfirmFocusNode?.dispose();
-    txtSinginPasswordConfirmTextController?.dispose();
+    txtSignupConfirmFocusNode?.dispose();
+    txtSignupConfirmTextController?.dispose();
   }
 }

@@ -49,17 +49,17 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
     _model.txtLoginPasswordTextController ??= TextEditingController();
     _model.txtLoginPasswordFocusNode ??= FocusNode();
 
-    _model.txtSigninNomeTextController ??= TextEditingController();
-    _model.txtSigninNomeFocusNode ??= FocusNode();
+    _model.txtSignupNomeTextController ??= TextEditingController();
+    _model.txtSignupNomeFocusNode ??= FocusNode();
 
-    _model.txtSigninEmailTextController ??= TextEditingController();
-    _model.txtSigninEmailFocusNode ??= FocusNode();
+    _model.txtSignupEmailTextController ??= TextEditingController();
+    _model.txtSignupEmailFocusNode ??= FocusNode();
 
-    _model.txtSinginPasswordTextController ??= TextEditingController();
-    _model.txtSinginPasswordFocusNode ??= FocusNode();
+    _model.txtSignupPasswordTextController ??= TextEditingController();
+    _model.txtSignupPasswordFocusNode ??= FocusNode();
 
-    _model.txtSinginPasswordConfirmTextController ??= TextEditingController();
-    _model.txtSinginPasswordConfirmFocusNode ??= FocusNode();
+    _model.txtSignupConfirmTextController ??= TextEditingController();
+    _model.txtSignupConfirmFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'columnOnPageLoadAnimation1': AnimationInfo(
@@ -936,13 +936,13 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                       width: double.infinity,
                                                       child: TextFormField(
                                                         controller: _model
-                                                            .txtSigninNomeTextController,
+                                                            .txtSignupNomeTextController,
                                                         focusNode: _model
-                                                            .txtSigninNomeFocusNode,
+                                                            .txtSignupNomeFocusNode,
                                                         onChanged: (_) =>
                                                             EasyDebounce
                                                                 .debounce(
-                                                          '_model.txtSigninNomeTextController',
+                                                          '_model.txtSignupNomeTextController',
                                                           Duration(
                                                               milliseconds:
                                                                   2000),
@@ -1036,14 +1036,14 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                               EdgeInsets.all(
                                                                   24.0),
                                                           suffixIcon: _model
-                                                                  .txtSigninNomeTextController!
+                                                                  .txtSignupNomeTextController!
                                                                   .text
                                                                   .isNotEmpty
                                                               ? InkWell(
                                                                   onTap:
                                                                       () async {
                                                                     _model
-                                                                        .txtSigninNomeTextController
+                                                                        .txtSignupNomeTextController
                                                                         ?.clear();
                                                                     safeSetState(
                                                                         () {});
@@ -1075,7 +1075,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                     context)
                                                                 .primary,
                                                         validator: _model
-                                                            .txtSigninNomeTextControllerValidator
+                                                            .txtSignupNomeTextControllerValidator
                                                             .asValidator(
                                                                 context),
                                                       ),
@@ -1090,13 +1090,13 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                       width: double.infinity,
                                                       child: TextFormField(
                                                         controller: _model
-                                                            .txtSigninEmailTextController,
+                                                            .txtSignupEmailTextController,
                                                         focusNode: _model
-                                                            .txtSigninEmailFocusNode,
+                                                            .txtSignupEmailFocusNode,
                                                         onChanged: (_) =>
                                                             EasyDebounce
                                                                 .debounce(
-                                                          '_model.txtSigninEmailTextController',
+                                                          '_model.txtSignupEmailTextController',
                                                           Duration(
                                                               milliseconds:
                                                                   2000),
@@ -1190,14 +1190,14 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                               EdgeInsets.all(
                                                                   24.0),
                                                           suffixIcon: _model
-                                                                  .txtSigninEmailTextController!
+                                                                  .txtSignupEmailTextController!
                                                                   .text
                                                                   .isNotEmpty
                                                               ? InkWell(
                                                                   onTap:
                                                                       () async {
                                                                     _model
-                                                                        .txtSigninEmailTextController
+                                                                        .txtSignupEmailTextController
                                                                         ?.clear();
                                                                     safeSetState(
                                                                         () {});
@@ -1229,7 +1229,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                     context)
                                                                 .primary,
                                                         validator: _model
-                                                            .txtSigninEmailTextControllerValidator
+                                                            .txtSignupEmailTextControllerValidator
                                                             .asValidator(
                                                                 context),
                                                       ),
@@ -1244,15 +1244,15 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                       width: double.infinity,
                                                       child: TextFormField(
                                                         controller: _model
-                                                            .txtSinginPasswordTextController,
+                                                            .txtSignupPasswordTextController,
                                                         focusNode: _model
-                                                            .txtSinginPasswordFocusNode,
+                                                            .txtSignupPasswordFocusNode,
                                                         autofocus: false,
                                                         autofillHints: [
                                                           AutofillHints.password
                                                         ],
                                                         obscureText: !_model
-                                                            .txtSinginPasswordVisibility,
+                                                            .txtSignupPasswordVisibility,
                                                         decoration:
                                                             InputDecoration(
                                                           labelText:
@@ -1338,15 +1338,15 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                             onTap: () =>
                                                                 safeSetState(
                                                               () => _model
-                                                                      .txtSinginPasswordVisibility =
+                                                                      .txtSignupPasswordVisibility =
                                                                   !_model
-                                                                      .txtSinginPasswordVisibility,
+                                                                      .txtSignupPasswordVisibility,
                                                             ),
                                                             focusNode: FocusNode(
                                                                 skipTraversal:
                                                                     true),
                                                             child: Icon(
-                                                              _model.txtSinginPasswordVisibility
+                                                              _model.txtSignupPasswordVisibility
                                                                   ? Icons
                                                                       .visibility_outlined
                                                                   : Icons
@@ -1373,7 +1373,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                     context)
                                                                 .primary,
                                                         validator: _model
-                                                            .txtSinginPasswordTextControllerValidator
+                                                            .txtSignupPasswordTextControllerValidator
                                                             .asValidator(
                                                                 context),
                                                       ),
@@ -1388,15 +1388,15 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                       width: double.infinity,
                                                       child: TextFormField(
                                                         controller: _model
-                                                            .txtSinginPasswordConfirmTextController,
+                                                            .txtSignupConfirmTextController,
                                                         focusNode: _model
-                                                            .txtSinginPasswordConfirmFocusNode,
+                                                            .txtSignupConfirmFocusNode,
                                                         autofocus: false,
                                                         autofillHints: [
                                                           AutofillHints.password
                                                         ],
                                                         obscureText: !_model
-                                                            .txtSinginPasswordConfirmVisibility,
+                                                            .txtSignupConfirmVisibility,
                                                         decoration:
                                                             InputDecoration(
                                                           labelText:
@@ -1482,15 +1482,15 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                             onTap: () =>
                                                                 safeSetState(
                                                               () => _model
-                                                                      .txtSinginPasswordConfirmVisibility =
+                                                                      .txtSignupConfirmVisibility =
                                                                   !_model
-                                                                      .txtSinginPasswordConfirmVisibility,
+                                                                      .txtSignupConfirmVisibility,
                                                             ),
                                                             focusNode: FocusNode(
                                                                 skipTraversal:
                                                                     true),
                                                             child: Icon(
-                                                              _model.txtSinginPasswordConfirmVisibility
+                                                              _model.txtSignupConfirmVisibility
                                                                   ? Icons
                                                                       .visibility_outlined
                                                                   : Icons
@@ -1518,7 +1518,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                     context)
                                                                 .primary,
                                                         validator: _model
-                                                            .txtSinginPasswordConfirmTextControllerValidator
+                                                            .txtSignupConfirmTextControllerValidator
                                                             .asValidator(
                                                                 context),
                                                       ),
@@ -1543,10 +1543,10 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                           GoRouter.of(context)
                                                               .prepareAuthEvent();
                                                           if (_model
-                                                                  .txtSinginPasswordTextController
+                                                                  .txtSignupPasswordTextController
                                                                   .text !=
                                                               _model
-                                                                  .txtSinginPasswordConfirmTextController
+                                                                  .txtSignupConfirmTextController
                                                                   .text) {
                                                             ScaffoldMessenger
                                                                     .of(context)
@@ -1565,10 +1565,10 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                   .createAccountWithEmail(
                                                             context,
                                                             _model
-                                                                .txtLoginEmailTextController
+                                                                .txtSignupEmailTextController
                                                                 .text,
                                                             _model
-                                                                .txtSinginPasswordTextController
+                                                                .txtSignupPasswordTextController
                                                                 .text,
                                                           );
                                                           if (user == null) {
@@ -1586,7 +1586,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                             'email':
                                                                 currentUserEmail,
                                                             'nome_completo': _model
-                                                                .txtSigninNomeTextController
+                                                                .txtSignupNomeTextController
                                                                 .text,
                                                             'agencia_id': _model
                                                                 .dropAgenciaValue,
