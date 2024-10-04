@@ -1498,15 +1498,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Alerta',
       'pt': 'Alerta',
     },
-    'gqh58qvy': {
-      'en': 'Relations',
-      'es': '',
-      'pt': '',
-    },
     '5lwbh8mj': {
+      'en': 'Relations',
+      'es': 'Relaciones',
+      'pt': 'Relações',
+    },
+    '1bduu4ux': {
       'en': 'Groups',
-      'es': '',
-      'pt': '',
+      'es': 'Grupos',
+      'pt': 'Grupos',
     },
     'j0nfxam4': {
       'en': 'Home',

@@ -50,6 +50,8 @@ class _WebNavWidgetState extends State<WebNavWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
       child: FutureBuilder<List<UsuariosRow>>(
@@ -81,10 +83,11 @@ class _WebNavWidgetState extends State<WebNavWidget> {
               : null;
 
           return Container(
-            width: 270.0,
+            width: 250.0,
             height: double.infinity,
             constraints: BoxConstraints(
-              maxWidth: 300.0,
+              minWidth: 100.0,
+              maxWidth: 250.0,
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -104,6 +107,16 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Align(
+                    alignment: AlignmentDirectional(0.0, -1.0),
+                    child: Text(
+                      FFAppState().AGENCIA,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
@@ -296,7 +309,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             children: [
                               Icon(
                                 Icons.account_tree_outlined,
-                                color: widget!.selectedNav == 2
+                                color: widget!.selectedNav == 3
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,

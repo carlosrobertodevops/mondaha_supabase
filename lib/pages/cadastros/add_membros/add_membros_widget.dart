@@ -1042,7 +1042,8 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                 '3jjwznx5' /* Cancel */,
                                                                               ),
                                                                               options: FFButtonOptions(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                height: 44.0,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1051,16 +1052,16 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                     ),
                                                                                 elevation: 0.0,
                                                                                 borderSide: BorderSide(
-                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
                                                                                   width: 2.0,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                hoverColor: FlutterFlowTheme.of(context).alternate,
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                                hoverColor: FlutterFlowTheme.of(context).primary,
                                                                                 hoverBorderSide: BorderSide(
-                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
                                                                                   width: 2.0,
                                                                                 ),
-                                                                                hoverTextColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                hoverTextColor: FlutterFlowTheme.of(context).info,
                                                                                 hoverElevation: 3.0,
                                                                               ),
                                                                             ),
@@ -1077,11 +1078,13 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                 'lwkne6wn' /* Create Company */,
                                                                               ),
                                                                               options: FFButtonOptions(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                height: 44.0,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).primary,
-                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
+                                                                                      color: FlutterFlowTheme.of(context).info,
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 elevation: 3.0,
@@ -1089,7 +1092,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                borderRadius: BorderRadius.circular(12.0),
                                                                                 hoverColor: FlutterFlowTheme.of(context).accent1,
                                                                                 hoverBorderSide: BorderSide(
                                                                                   color: FlutterFlowTheme.of(context).primary,
@@ -1176,7 +1179,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                       children: [
                                         Expanded(
                                           child: Container(
-                                            width: 244.0,
+                                            width: 100.0,
                                             height: 100.0,
                                             decoration: BoxDecoration(
                                               color:
@@ -1189,57 +1192,80 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                 Expanded(
                                                   child: Container(
                                                     decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
                                                     ),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'gqh58qvy' /* Relations */,
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, -1.0),
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '5lwbh8mj' /* Relations */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
-                                                            letterSpacing: 0.0,
-                                                          ),
                                                     ),
                                                   ),
                                                 ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
-                                                      child: GridView(
-                                                        padding:
-                                                            EdgeInsets.zero,
-                                                        gridDelegate:
-                                                            SliverGridDelegateWithFixedCrossAxisCount(
-                                                          crossAxisCount: 3,
-                                                          crossAxisSpacing:
-                                                              10.0,
-                                                          mainAxisSpacing: 10.0,
-                                                          childAspectRatio: 1.0,
+                                                Expanded(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Expanded(
+                                                        child: Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: GridView(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .zero,
+                                                              gridDelegate:
+                                                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                                                crossAxisCount:
+                                                                    3,
+                                                                crossAxisSpacing:
+                                                                    10.0,
+                                                                mainAxisSpacing:
+                                                                    10.0,
+                                                                childAspectRatio:
+                                                                    1.0,
+                                                              ),
+                                                              shrinkWrap: true,
+                                                              scrollDirection:
+                                                                  Axis.vertical,
+                                                              children: [],
+                                                            ),
+                                                          ),
                                                         ),
-                                                        shrinkWrap: true,
-                                                        scrollDirection:
-                                                            Axis.vertical,
-                                                        children: [],
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -1271,24 +1297,35 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                 Expanded(
                                                   child: Container(
                                                     decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
                                                     ),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '5lwbh8mj' /* Groups */,
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, -1.0),
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '1bduu4ux' /* Groups */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
-                                                            letterSpacing: 0.0,
-                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -1297,32 +1334,32 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                        ),
-                                                        child: GridView(
-                                                          padding:
-                                                              EdgeInsets.zero,
-                                                          gridDelegate:
-                                                              SliverGridDelegateWithFixedCrossAxisCount(
-                                                            crossAxisCount: 3,
-                                                            crossAxisSpacing:
-                                                                10.0,
-                                                            mainAxisSpacing:
-                                                                10.0,
-                                                            childAspectRatio:
-                                                                1.0,
+                                                      Expanded(
+                                                        child: Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
                                                           ),
-                                                          shrinkWrap: true,
-                                                          scrollDirection:
-                                                              Axis.vertical,
-                                                          children: [],
+                                                          child: GridView(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            gridDelegate:
+                                                                SliverGridDelegateWithFixedCrossAxisCount(
+                                                              crossAxisCount: 3,
+                                                              crossAxisSpacing:
+                                                                  10.0,
+                                                              mainAxisSpacing:
+                                                                  10.0,
+                                                              childAspectRatio:
+                                                                  1.0,
+                                                            ),
+                                                            shrinkWrap: true,
+                                                            scrollDirection:
+                                                                Axis.vertical,
+                                                            children: [],
+                                                          ),
                                                         ),
                                                       ),
                                                     ],

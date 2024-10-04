@@ -32,6 +32,9 @@ void main() async {
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
 
+  final environmentValues = FFDevEnvironmentValues();
+  await environmentValues.initialize();
+
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
     child: MyApp(),
@@ -138,8 +141,8 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'main_home': MainHomeWidget(),
-      'main_membros_list': MainMembrosListWidget(),
       'main_faccoes': MainFaccoesWidget(),
+      'main_membros_list': MainMembrosListWidget(),
       'main_messages': MainMessagesWidget(),
       'main_profile_page': MainProfilePageWidget(),
     };
@@ -182,20 +185,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.supervised_user_circle_outlined,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.supervised_user_circle_sharp,
-                size: 32.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                '3ourv2w9' /* __ */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
                 Icons.home_work_outlined,
                 size: 24.0,
               ),
@@ -205,6 +194,20 @@ class _NavBarPageState extends State<NavBarPage> {
               ),
               label: FFLocalizations.of(context).getText(
                 'j08eiorc' /* __ */,
+              ),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.supervised_user_circle_outlined,
+                size: 24.0,
+              ),
+              activeIcon: Icon(
+                Icons.supervised_user_circle_sharp,
+                size: 32.0,
+              ),
+              label: FFLocalizations.of(context).getText(
+                '3ourv2w9' /* __ */,
               ),
               tooltip: '',
             ),
