@@ -1033,7 +1033,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                   12.0),
                                                           child: Icon(
                                                             Icons
-                                                                .group_outlined,
+                                                                .groups_outlined,
                                                             color: Colors.white,
                                                             size: 24.0,
                                                           ),
@@ -1059,7 +1059,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'jqevo63s' /* NewMem */,
+                                                              'jqevo63s' /* New Members */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1184,7 +1184,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                   12.0),
                                                           child: Icon(
                                                             Icons
-                                                                .home_work_outlined,
+                                                                .account_tree_outlined,
                                                             color: Colors.white,
                                                             size: 24.0,
                                                           ),
@@ -1335,7 +1335,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                   12.0),
                                                           child: Icon(
                                                             Icons
-                                                                .account_tree_outlined,
+                                                                .add_location_alt_outlined,
                                                             color: Colors.white,
                                                             size: 24.0,
                                                           ),
@@ -1361,7 +1361,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'saxskj92' /* Expired Contracts */,
+                                                              'saxskj92' /* Addy. in the Map */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1513,7 +1513,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                           0.0, 0.0, 0.0, 8.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'xlzf8qqx' /* UI Design Team */,
+                                          'xlzf8qqx' /* Users in  dding registers */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineMedium
@@ -1630,7 +1630,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'puy8obok' /* Contract Activity */,
+                                                              'puy8obok' /* Insert of Activity */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1860,7 +1860,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'g1uaaovn' /* Customer Activity */,
+                                                              'g1uaaovn' /* Update Activity */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)

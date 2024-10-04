@@ -360,7 +360,7 @@ class FFRoute {
                   color: FlutterFlowTheme.of(context).primaryText,
                   child: Image.asset(
                     'assets/images/app_launcher_icon.png',
-                    fit: BoxFit.contain,
+                    fit: BoxFit.none,
                   ),
                 )
               : page;

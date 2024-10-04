@@ -396,7 +396,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                                   letterSpacing: 0.0,
                                 ),
                             hintText: FFLocalizations.of(context).getText(
-                              'qyv4qkb0' /* Please select... */,
+                              '5w6ne1dl' /* Please select... */,
                             ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,

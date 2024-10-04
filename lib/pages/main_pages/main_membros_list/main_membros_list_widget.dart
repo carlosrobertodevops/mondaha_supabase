@@ -1,6 +1,6 @@
 import '/components/dropdown_user_edit/dropdown_user_edit_widget.dart';
 import '/components/modals/command_palette/command_palette_widget.dart';
-import '/components/modals_extra/modal_share_project/modal_share_project_widget.dart';
+import '/components/modals_extra/modal_create_membro/modal_create_membro_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
@@ -383,7 +383,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                 model: _model.webNavModel,
                 updateCallback: () => safeSetState(() {}),
                 child: WebNavWidget(
-                  selectedNav: 2,
+                  selectedNav: 3,
                 ),
               ),
             Expanded(
@@ -445,7 +445,10 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                           onTap: () =>
                                               FocusScope.of(dialogContext)
                                                   .unfocus(),
-                                          child: ModalShareProjectWidget(),
+                                          child: Container(
+                                            height: 60.0,
+                                            child: ModalCreateMembroWidget(),
+                                          ),
                                         ),
                                       );
                                     },

@@ -156,9 +156,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Abaixo está um resumo das atividades da sua equipe.',
     },
     'jqevo63s': {
-      'en': 'NewMem',
-      'es': 'Nuevos clientes',
-      'pt': 'Novos clientes',
+      'en': 'New Members',
+      'es': 'Nuevos miembros',
+      'pt': 'Novos Membros',
     },
     'd0r4w3cc': {
       'en': '24',
@@ -176,9 +176,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '3.200',
     },
     'saxskj92': {
-      'en': 'Expired Contracts',
-      'es': 'Contratos vencidos',
-      'pt': 'Contratos expirados',
+      'en': 'Addy. in the Map',
+      'es': 'Addy. en el mapa',
+      'pt': 'Addy. no mapa',
     },
     '2wlrr5lg': {
       'en': '4300',
@@ -191,9 +191,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Projetos',
     },
     'xlzf8qqx': {
-      'en': 'UI Design Team',
-      'es': 'Equipo de diseño de UI',
-      'pt': 'Equipe de design de interface do usuário',
+      'en': 'Users in  dding registers',
+      'es': 'Usuarios en registros dding',
+      'pt': 'Usuários em registros dding',
     },
     'zt3s5l2s': {
       'en': '4 Members',
@@ -201,9 +201,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '4 membros',
     },
     'puy8obok': {
-      'en': 'Contract Activity',
-      'es': 'Actividad contractual',
-      'pt': 'Atividade de contrato',
+      'en': 'Insert of Activity',
+      'es': 'Inserción de Actividad',
+      'pt': 'Inserção de Atividade',
     },
     'zlovh0zt': {
       'en': 'Below is an a summary of activity.',
@@ -211,9 +211,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Abaixo está um resumo da atividade.',
     },
     'g1uaaovn': {
-      'en': 'Customer Activity',
-      'es': 'Actividad del cliente',
-      'pt': 'Atividade do cliente',
+      'en': 'Update Activity',
+      'es': 'Actualizar actividad',
+      'pt': 'Atividade de atualização',
     },
     'e5q3ows1': {
       'en': 'Below is an a summary of activity.',
@@ -260,8 +260,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qf1tn1nr': {
       'en': 'Add Member',
-      'es': 'Agregar Miembro',
-      'pt': 'Adicionar Membro',
+      'es': 'Agregar miembro',
+      'pt': 'Adicionar membro',
     },
     'lvnskphp': {
       'en': 'All',
@@ -737,9 +737,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Documentação da equipe de design',
     },
     'dlt46loo': {
-      'en': 'Contracts',
-      'es': 'Contratos',
-      'pt': 'Contratos',
+      'en': 'Factions',
+      'es': 'Facciones',
+      'pt': 'Facções',
     },
     'h9kiq8rj': {
       'en': 'Next Action',
@@ -995,18 +995,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'y680yxcf': {
       'en': 'Option 1',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
     },
     'dmbxoaz6': {
       'en': 'Option 2',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
     },
     '2wl1lv9o': {
       'en': 'Option 3',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
     },
     'a3qnnd4d': {
       'en': 'Select one Agency ',
@@ -1025,8 +1025,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bj7cfa5q': {
       'en': 'Your Name',
-      'es': '',
-      'pt': '',
+      'es': 'Su nombre',
+      'pt': 'Seu nome',
     },
     'rr8ksatz': {
       'en': 'Save Changes',
@@ -1244,7 +1244,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ssmdesvy': {
       'en': 'Let\'s get started by filling out the form below.',
-      'es': 'Comencemos rellenando el formulario a continuación.',
+      'es': 'Comencemos llenando el formulario a continuación.',
       'pt': 'Vamos começar preenchendo o formulário abaixo.',
     },
     'bqvjzpge': {
@@ -1270,7 +1270,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'eitkx3bc': {
       'en': 'Sign Up',
       'es': 'Inscribirse',
-      'pt': 'Cadastrar-se',
+      'pt': 'Inscrever-se',
     },
     '7w1voiyg': {
       'en': 'Let\'s get started by filling out the form below.',
@@ -1279,18 +1279,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'x9n98tl7': {
       'en': 'Option 1',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
     },
     '0elh6q8n': {
       'en': 'Option 2',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
     },
     'za9rr007': {
       'en': 'Option 3',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
     },
     'h4i4bwp7': {
       'en': 'Select...',
@@ -1360,18 +1360,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kovjx5qk': {
       'en': 'Option 1',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
     },
     'zftdg7ng': {
       'en': 'Option 2',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
     },
     'bjyl96v1': {
       'en': 'Option 3',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
     },
     '812357rd': {
       'en': 'Select...',
@@ -1385,18 +1385,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5fqmijio': {
       'en': 'Option 1',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
     },
     '1ddlajdn': {
       'en': 'Option 2',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
     },
     'gdhq0dq6': {
       'en': 'Option 3',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
     },
     'ohs1bq4j': {
       'en': 'Select...',
@@ -1405,23 +1405,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm99af805': {
       'en': 'Search...',
-      'es': '',
-      'pt': '',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
     },
     '4zstb8xf': {
       'en': 'Option 1',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
     },
     'iy19h9i4': {
       'en': 'Option 2',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
     },
     'by8u8kmd': {
       'en': 'Option 3',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
     },
     '2rro117l': {
       'en': 'Select...',
@@ -1430,8 +1430,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ucwqr3c3': {
       'en': 'Search...',
-      'es': '',
-      'pt': '',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
     },
     'm88zhnhm': {
       'en': 'Full Name',
@@ -1440,28 +1440,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3x41wc8c': {
       'en': 'Website',
-      'es': '',
-      'pt': '',
+      'es': 'Sitio web',
+      'pt': 'Site',
     },
     'ak3nmiz7': {
       'en': 'Enter in your website without \"https://\"...',
-      'es': '',
-      'pt': '',
+      'es': 'Ingresa en tu sitio web sin \"https://\"...',
+      'pt': 'Entre no seu site sem \"https://\"...',
     },
     '6zw9yxni': {
       'en': 'Company City',
-      'es': '',
-      'pt': '',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
     },
     'gfs5j60m': {
       'en': 'Company City',
-      'es': '',
-      'pt': '',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
     },
     '0nignr1c': {
       'en': 'Company City',
-      'es': '',
-      'pt': '',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
     },
     '3jjwznx5': {
       'en': 'Cancel',
@@ -1510,8 +1510,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'j0nfxam4': {
       'en': 'Home',
-      'es': '',
-      'pt': '',
+      'es': 'Hogar',
+      'pt': 'Lar',
     },
   },
   // modal_success
@@ -1938,7 +1938,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qt5dp4ez': {
       'en': 'Please choose an option from the dropdown',
-      'es': 'Por favor, seleccione una opción del menú desplegable.',
+      'es': 'Por favor, seleccione una opción del menú desplegable',
       'pt': 'Selecione uma opção no menu suspenso',
     },
   },
@@ -2154,17 +2154,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // modal_create_membro
   {
-    'bt6jsbq9': {
-      'en': 'Perfil',
+    'c8pk7l6z': {
+      'en': 'Add Members',
+      'es': 'Agregar miembros',
+      'pt': 'Adicionar membros',
+    },
+    'ap8ub3ro': {
+      'en': 'Profile',
       'es': 'Perfil',
       'pt': 'Perfil',
     },
-    '5t2bls76': {
-      'en': 'Create Company Profile',
-      'es': 'Crear perfil de empresa',
-      'pt': 'Criar Perfil da Empresa',
+    '6lyldia3': {
+      'en': 'Create Record of Member',
+      'es': 'Crear registro de miembro',
+      'pt': 'Criar registro de membro',
     },
-    '7nsssfbj': {
+    '2ggy2rd0': {
       'en':
           'Upload images about your company and fill out the information below.',
       'es':
@@ -2172,133 +2177,158 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt':
           'Carregue imagens sobre sua empresa e preencha as informações abaixo.',
     },
-    'a2s25fps': {
+    'b3ledlsz': {
       'en': 'Option 1',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
     },
-    'gbz3v7ur': {
+    'jam7jpdr': {
       'en': 'Option 2',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
     },
-    'v14qjfqu': {
+    'iglkkvts': {
       'en': 'Option 3',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
     },
-    'j5big6km': {
+    'gzt0b7oi': {
       'en': 'Select...',
-      'es': '',
-      'pt': '',
+      'es': 'Seleccionar...',
+      'pt': 'Selecione...',
     },
-    'kaifbwcf': {
+    'ytkhg7nn': {
       'en': 'Search...',
-      'es': '',
-      'pt': '',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
     },
-    '8n9qfdds': {
+    'fpvc68pr': {
       'en': 'Option 1',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
     },
-    'epq3ap40': {
+    'a6mhmaqx': {
       'en': 'Option 2',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
     },
-    'hsunuxhj': {
+    'ie9ipeq5': {
       'en': 'Option 3',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
     },
-    '9dtosz1e': {
+    'm5dstjmu': {
       'en': 'Select...',
-      'es': '',
-      'pt': '',
+      'es': 'Seleccionar...',
+      'pt': 'Selecione...',
     },
-    'tmw2dvqn': {
+    '50jo6bc7': {
       'en': 'Search...',
-      'es': '',
-      'pt': '',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
     },
-    'a5lnd2aw': {
+    '2kh4a9qm': {
       'en': 'Option 1',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
     },
-    'jqx2u1mz': {
+    '3b0pboqu': {
       'en': 'Option 2',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
     },
-    'c6daz893': {
+    'ahjte3j2': {
       'en': 'Option 3',
-      'es': '',
-      'pt': '',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
     },
-    'w2k44c9e': {
+    'prj5f1jr': {
       'en': 'Select...',
-      'es': '',
-      'pt': '',
+      'es': 'Seleccionar...',
+      'pt': 'Selecione...',
     },
-    '8a0dmgjl': {
+    'eafr1737': {
       'en': 'Search...',
-      'es': '',
-      'pt': '',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
     },
-    'nfxjbhv0': {
-      'en': 'Company Name',
-      'es': '',
-      'pt': '',
+    'ps3vgvwa': {
+      'en': 'Full Name',
+      'es': 'Nombre completo',
+      'pt': 'Nome completo',
     },
-    'btop4x1f': {
-      'en': 'Company City',
-      'es': '',
-      'pt': '',
-    },
-    '44rj6s2m': {
+    'gn6sg8mo': {
       'en': 'Website',
-      'es': '',
-      'pt': '',
+      'es': 'Sitio web',
+      'pt': 'Site',
     },
-    'fctbm3d6': {
+    '9ttbiraj': {
       'en': 'Enter in your website without \"https://\"...',
-      'es': '',
-      'pt': '',
+      'es': 'Ingresa en tu sitio web sin \"https://\"...',
+      'pt': 'Entre no seu site sem \"https://\"...',
     },
-    'eov80o61': {
+    'p9mtwk5z': {
+      'en': 'Company City',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
+    },
+    '4cv97pyw': {
+      'en': 'Company City',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
+    },
+    'oywg5xux': {
+      'en': 'Company City',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
+    },
+    'dxxr9u18': {
       'en': 'Cancel',
-      'es': '',
-      'pt': '',
+      'es': 'Cancelar',
+      'pt': 'Cancelar',
     },
-    '89edh2j5': {
+    '8qi4pc3p': {
       'en': 'Create Company',
-      'es': '',
-      'pt': '',
+      'es': 'Crear empresa',
+      'pt': 'Criar empresa',
     },
-    'mzhif3it': {
-      'en': 'Tab 2',
-      'es': 'Pestaña 2',
-      'pt': 'Aba 2',
+    'nvxntirq': {
+      'en': 'History',
+      'es': 'Historia',
+      'pt': 'História',
     },
-    '79jiynqs': {
-      'en': 'Tab 3',
-      'es': 'Pestaña 3',
-      'pt': 'Aba 3',
+    '5got0r9g': {
+      'en': 'Procedures',
+      'es': 'Procedimientos',
+      'pt': 'Procedimentos',
     },
-    'hv1m2z3k': {
+    'zo5mhuuq': {
+      'en': 'Faction',
+      'es': 'Facción',
+      'pt': 'Facção',
+    },
+    'stse0963': {
+      'en': 'Crime Action',
+      'es': 'Acción criminal',
+      'pt': 'Ação Criminal',
+    },
+    'i3nwl1ug': {
+      'en': 'Alert',
+      'es': 'Alerta',
+      'pt': 'Alerta',
+    },
+    'ld0rt7j2': {
       'en': 'Relations',
-      'es': '',
-      'pt': '',
+      'es': 'Relaciones',
+      'pt': 'Relações',
     },
-    'cg2bu50g': {
+    'hikp6nbx': {
       'en': 'Groups',
-      'es': '',
-      'pt': '',
+      'es': 'Grupos',
+      'pt': 'Grupos',
     },
   },
-  // modal_inviteUser
+  // modal_invite_user
   {
     '2c6w1mkp': {
       'en': 'Edit User Details',
@@ -2350,12 +2380,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Espectador',
       'pt': 'Visualizador',
     },
-    'qyv4qkb0': {
+    '7g5fvtiv': {
       'en': 'Please select...',
       'es': 'Por favor seleccione...',
       'pt': 'Por favor selecione...',
     },
-    'o72x1n1t': {
+    'yszzomxi': {
       'en': 'Search for an item...',
       'es': 'Buscar un artículo...',
       'pt': 'Pesquisar um item...',
@@ -2371,7 +2401,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Enviar convites',
     },
   },
-  // modal_enterPin
+  // modal_enter_pin
   {
     'w63lhi44': {
       'en': 'Enter your PIN below',
@@ -2620,12 +2650,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Espectador',
       'pt': 'Visualizador',
     },
-    'r971lmjm': {
+    'naxucoxg': {
       'en': 'Please select...',
       'es': 'Por favor seleccione...',
       'pt': 'Por favor selecione...',
     },
-    '1c8v9uhp': {
+    '8sac0l7x': {
       'en': 'Search for an item...',
       'es': 'Buscar un artículo...',
       'pt': 'Pesquisar um item...',
@@ -2669,6 +2699,177 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Save Changes',
       'es': 'Guardar cambios',
       'pt': 'Salvar alterações',
+    },
+  },
+  // modal_edit_membro
+  {
+    'hhd15u94': {
+      'en': 'Profile',
+      'es': 'Perfil',
+      'pt': 'Perfil',
+    },
+    'ct695psi': {
+      'en': 'Edit Member',
+      'es': 'Editar miembro',
+      'pt': 'Editar Membro',
+    },
+    'n5ncpsg2': {
+      'en':
+          'Upload images about your company and fill out the information below.',
+      'es':
+          'Sube imágenes sobre tu empresa y completa la información a continuación.',
+      'pt':
+          'Carregue imagens sobre sua empresa e preencha as informações abaixo.',
+    },
+    'wpz2votl': {
+      'en': 'Option 1',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
+    },
+    'oc2xrzov': {
+      'en': 'Option 2',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
+    },
+    'scwp2ipr': {
+      'en': 'Option 3',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
+    },
+    'f6uwklii': {
+      'en': 'Select...',
+      'es': 'Seleccionar...',
+      'pt': 'Selecione...',
+    },
+    'h94tohmj': {
+      'en': 'Search...',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
+    },
+    '3onsia79': {
+      'en': 'Option 1',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
+    },
+    'f136bda9': {
+      'en': 'Option 2',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
+    },
+    'i2nztzlx': {
+      'en': 'Option 3',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
+    },
+    'bab4cwx8': {
+      'en': 'Select...',
+      'es': 'Seleccionar...',
+      'pt': 'Selecione...',
+    },
+    'jfw8i7nx': {
+      'en': 'Search...',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
+    },
+    'awqibgmg': {
+      'en': 'Option 1',
+      'es': 'Opción 1',
+      'pt': 'Opção 1',
+    },
+    'docdwfax': {
+      'en': 'Option 2',
+      'es': 'Opción 2',
+      'pt': 'Opção 2',
+    },
+    '05zfi1qo': {
+      'en': 'Option 3',
+      'es': 'Opción 3',
+      'pt': 'Opção 3',
+    },
+    'p4d1q8r1': {
+      'en': 'Select...',
+      'es': 'Seleccionar...',
+      'pt': 'Selecione...',
+    },
+    'wb1xgp2j': {
+      'en': 'Search...',
+      'es': 'Buscar...',
+      'pt': 'Procurar...',
+    },
+    '380pqc7p': {
+      'en': 'Full Name',
+      'es': 'Nombre completo',
+      'pt': 'Nome completo',
+    },
+    'at9q5ufx': {
+      'en': 'Website',
+      'es': 'Sitio web',
+      'pt': 'Site',
+    },
+    'ptsoa3u3': {
+      'en': 'Enter in your website without \"https://\"...',
+      'es': 'Ingresa en tu sitio web sin \"https://\"...',
+      'pt': 'Entre no seu site sem \"https://\"...',
+    },
+    '78chtaa3': {
+      'en': 'Company City',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
+    },
+    'aoyawo2h': {
+      'en': 'Company City',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
+    },
+    'f0cexnba': {
+      'en': 'Company City',
+      'es': 'Ciudad de la empresa',
+      'pt': 'Cidade da empresa',
+    },
+    'n5n67rrb': {
+      'en': 'Cancel',
+      'es': 'Cancelar',
+      'pt': 'Cancelar',
+    },
+    '47dtuht9': {
+      'en': 'Create Company',
+      'es': 'Crear empresa',
+      'pt': 'Criar empresa',
+    },
+    'he83mrqe': {
+      'en': 'History',
+      'es': 'Historia',
+      'pt': 'História',
+    },
+    'fv3r85cu': {
+      'en': 'Procedures',
+      'es': 'Procedimientos',
+      'pt': 'Procedimentos',
+    },
+    'huluoynw': {
+      'en': 'Faction',
+      'es': 'Facción',
+      'pt': 'Facção',
+    },
+    'y0nnz7jv': {
+      'en': 'Crime Action',
+      'es': 'Acción criminal',
+      'pt': 'Ação Criminal',
+    },
+    '6sahwdxn': {
+      'en': 'Alert',
+      'es': 'Alerta',
+      'pt': 'Alerta',
+    },
+    'g5wdxccf': {
+      'en': 'Relations',
+      'es': 'Relaciones',
+      'pt': 'Relações',
+    },
+    '3agfa81o': {
+      'en': 'Groups',
+      'es': 'Grupos',
+      'pt': 'Grupos',
     },
   },
   // Miscellaneous

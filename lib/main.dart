@@ -189,7 +189,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 size: 24.0,
               ),
               activeIcon: Icon(
-                Icons.home_work_rounded,
+                Icons.account_tree_outlined,
                 size: 32.0,
               ),
               label: FFLocalizations.of(context).getText(
@@ -203,7 +203,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 size: 24.0,
               ),
               activeIcon: Icon(
-                Icons.supervised_user_circle_sharp,
+                Icons.groups_outlined,
                 size: 32.0,
               ),
               label: FFLocalizations.of(context).getText(
