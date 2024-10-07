@@ -174,41 +174,30 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                             alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Align(
                                   alignment: AlignmentDirectional(0.0, -1.0),
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, -1.0),
-                                          child: Text(
-                                            FFAppState().AGENCIA,
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineMedium
-                                                .override(
-                                                  fontFamily: 'Outfit',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
+                                  child: Text(
+                                    FFAppState().AGENCIA,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .override(
+                                          fontFamily: 'Outfit',
+                                          letterSpacing: 0.0,
                                         ),
-                                      ],
-                                    ),
                                   ),
                                 ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.asset(
-                                    'assets/images/app_launcher_icon.png',
-                                    width: 200.0,
-                                    height: 150.0,
-                                    fit: BoxFit.cover,
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.asset(
+                                      'assets/images/app_launcher_icon.png',
+                                      width: 200.0,
+                                      height: 150.0,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -609,6 +598,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                     onPressed: () async {
                                                       logFirebaseEvent(
                                                           'AUTH_LOGIN_PAGE_btn-login_ON_TAP');
+                                                      // login
                                                       GoRouter.of(context)
                                                           .prepareAuthEvent();
 
@@ -686,9 +676,12 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: FFButtonWidget(
-                                                    onPressed: () {
-                                                      print(
-                                                          'Button pressed ...');
+                                                    onPressed: () async {
+                                                      logFirebaseEvent(
+                                                          'AUTH_LOGIN_FORGOT_PASSWORD_BTN_ON_TAP');
+
+                                                      context.pushNamed(
+                                                          'forgot_password');
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)
@@ -850,7 +843,6 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                               safeSetState(() =>
                                                                   _model.dropAgenciaValue =
                                                                       val),
-                                                          width: 577.0,
                                                           height: 60.0,
                                                           searchHintTextStyle:
                                                               FlutterFlowTheme.of(
@@ -892,7 +884,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                            'ak53f3yr' /* Search... */,
+                                                            'ak53f3yr' /* Search agency... */,
                                                           ),
                                                           icon: Icon(
                                                             Icons
@@ -917,7 +909,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
-                                                                      24.0,
+                                                                      12.0,
                                                                       0.0),
                                                           hidesUnderline: true,
                                                           isOverButton: false,
@@ -1590,6 +1582,8 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                 .text,
                                                             'agencia_id': _model
                                                                 .dropAgenciaValue,
+                                                            'tipo_usuario_id':
+                                                                2,
                                                           });
                                                           ScaffoldMessenger.of(
                                                                   context)

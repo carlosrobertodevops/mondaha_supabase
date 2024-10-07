@@ -1,5 +1,5 @@
 import '/backend/supabase/supabase.dart';
-import '/components/dropdown_member_edit/dropdown_member_edit_widget.dart';
+import '/components/dropdown_user_edit/dropdown_user_edit_widget.dart';
 import '/components/modals/command_palette/command_palette_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -10,7 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import '/actions/actions.dart' as action_blocks;
-import 'main_membros_list_widget.dart' show MainMembrosListWidget;
+import 'main_profile_list_widget.dart' show MainProfileListWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class MainMembrosListModel extends FlutterFlowModel<MainMembrosListWidget> {
+class MainProfileListModel extends FlutterFlowModel<MainProfileListWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for web_nav component.

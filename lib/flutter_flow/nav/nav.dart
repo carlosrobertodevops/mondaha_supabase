@@ -96,6 +96,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'main_home',
               path: 'mainHome',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'main_home')
                   : MainHomeWidget(),
@@ -110,13 +111,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'main_faccoes',
               path: 'mainFaccoes',
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'main_faccoes')
-                  : MainFaccoesWidget(),
+              requireAuth: true,
+              builder: (context, params) => MainFaccoesWidget(),
             ),
             FFRoute(
               name: 'main_messages',
               path: 'mainMessages',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'main_messages')
                   : MainMessagesWidget(),
@@ -124,6 +125,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'main_profile_page',
               path: 'mainProfilePage',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'main_profile_page')
                   : MainProfilePageWidget(),
@@ -172,6 +174,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'add_membros',
               path: 'addMembros',
               builder: (context, params) => AddMembrosWidget(),
+            ),
+            FFRoute(
+              name: 'main_profile_list',
+              path: 'mainProfileList',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'main_profile_list')
+                  : MainProfileListWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

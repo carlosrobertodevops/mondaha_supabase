@@ -168,7 +168,7 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                         model: _model.webNavModel,
                         updateCallback: () => safeSetState(() {}),
                         child: WebNavWidget(
-                          selectedNav: 5,
+                          selectedNav: 6,
                         ),
                       ),
                     Expanded(
@@ -319,11 +319,22 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                                 fadeOutDuration:
                                                     Duration(milliseconds: 500),
                                                 imageUrl:
-                                                    mainProfilePageUsuariosRow!
-                                                        .fotoPath!,
+                                                    valueOrDefault<String>(
+                                                  mainProfilePageUsuariosRow
+                                                      ?.fotoPath,
+                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
+                                                ),
                                                 width: 44.0,
                                                 height: 44.0,
                                                 fit: BoxFit.cover,
+                                                errorWidget: (context, error,
+                                                        stackTrace) =>
+                                                    Image.asset(
+                                                  'assets/images/error_image.png',
+                                                  width: 44.0,
+                                                  height: 44.0,
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -337,46 +348,98 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 8.0, 0.0, 0.0),
-                                                child: Text(
-                                                  valueOrDefault<String>(
-                                                    mainProfilePageUsuariosRow
-                                                        ?.nomeCompleto,
-                                                    'nome_completo',
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  mainProfilePageUsuariosRow
+                                                      ?.nomeCompleto,
+                                                  'nome_completo',
                                                 ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 8.0, 0.0, 0.0),
-                                                child: Text(
-                                                  currentUserEmail,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodySmall
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        color:
+                                              Text(
+                                                currentUserEmail,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                              ),
+                                              FutureBuilder<
+                                                  List<TiposUsuariosRow>>(
+                                                future: TiposUsuariosTable()
+                                                    .querySingleRow(
+                                                  queryFn: (q) => q.eq(
+                                                    'tipo_usuario_id',
+                                                    mainProfilePageUsuariosRow
+                                                        ?.tipoUsuarioId,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
+                                                          ),
+                                                        ),
                                                       ),
-                                                ),
+                                                    );
+                                                  }
+                                                  List<TiposUsuariosRow>
+                                                      textTiposUsuariosRowList =
+                                                      snapshot.data!;
+
+                                                  final textTiposUsuariosRow =
+                                                      textTiposUsuariosRowList
+                                                              .isNotEmpty
+                                                          ? textTiposUsuariosRowList
+                                                              .first
+                                                          : null;
+
+                                                  return Text(
+                                                    valueOrDefault<String>(
+                                                      textTiposUsuariosRow
+                                                          ?.descricao,
+                                                      'tipo_usuario_descricao',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                  );
+                                                },
                                               ),
                                             ],
                                           ),
@@ -1200,7 +1263,7 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 20.0, 0.0, 20.0),
+                                          0.0, 12.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:

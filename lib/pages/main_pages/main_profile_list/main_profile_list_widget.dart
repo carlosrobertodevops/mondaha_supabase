@@ -1,5 +1,5 @@
 import '/backend/supabase/supabase.dart';
-import '/components/dropdown_member_edit/dropdown_member_edit_widget.dart';
+import '/components/dropdown_user_edit/dropdown_user_edit_widget.dart';
 import '/components/modals/command_palette/command_palette_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -17,19 +17,19 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'main_membros_list_model.dart';
-export 'main_membros_list_model.dart';
+import 'main_profile_list_model.dart';
+export 'main_profile_list_model.dart';
 
-class MainMembrosListWidget extends StatefulWidget {
-  const MainMembrosListWidget({super.key});
+class MainProfileListWidget extends StatefulWidget {
+  const MainProfileListWidget({super.key});
 
   @override
-  State<MainMembrosListWidget> createState() => _MainMembrosListWidgetState();
+  State<MainProfileListWidget> createState() => _MainProfileListWidgetState();
 }
 
-class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
+class _MainProfileListWidgetState extends State<MainProfileListWidget>
     with TickerProviderStateMixin {
-  late MainMembrosListModel _model;
+  late MainProfileListModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -38,13 +38,13 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MainMembrosListModel());
+    _model = createModel(context, () => MainProfileListModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'main_membros_list'});
+        parameters: {'screen_name': 'main_profile_list'});
     _model.tabBarController = TabController(
       vsync: this,
-      length: 3,
+      length: 2,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
     animationsMap.addAll({
@@ -99,7 +99,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                 automaticallyImplyLeading: false,
                 title: Text(
                   FFLocalizations.of(context).getText(
-                    'fcyoodds' /* Customers */,
+                    'xdubtp8a' /* Customers */,
                   ),
                   style: FlutterFlowTheme.of(context).displaySmall.override(
                         fontFamily: 'Outfit',
@@ -123,7 +123,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                 model: _model.webNavModel,
                 updateCallback: () => safeSetState(() {}),
                 child: WebNavWidget(
-                  selectedNav: 3,
+                  selectedNav: 5,
                 ),
               ),
             Expanded(
@@ -149,7 +149,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                           Expanded(
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'n99lg1qh' /* Members */,
+                                'qkmq9xej' /* Adminitration */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -169,7 +169,49 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                 print('Button pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
-                                'qf1tn1nr' /* Add Member */,
+                                'r8vl0ce9' /* Add Profile */,
+                              ),
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).accent1,
+                                hoverBorderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 1.0,
+                                ),
+                                hoverTextColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                hoverElevation: 0.0,
+                              ),
+                            ),
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                            tablet: false,
+                          ))
+                            FFButtonWidget(
+                              onPressed: () {
+                                print('Button pressed ...');
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                'q2wabmua' /* Add Profile Type */,
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
@@ -213,7 +255,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                             ),
                             onPressed: () async {
                               logFirebaseEvent(
-                                  'MAIN_MEMBROS_LIST_search_rounded_ICN_ON_');
+                                  'MAIN_PROFILE_LIST_search_rounded_ICN_ON_');
                               await showModalBottomSheet(
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,
@@ -279,27 +321,18 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                   tabs: [
                                     Tab(
                                       text: FFLocalizations.of(context).getText(
-                                        'lvnskphp' /* All */,
+                                        'i6puusi7' /* All */,
                                       ),
                                     ),
                                     Tab(
                                       text: FFLocalizations.of(context).getText(
-                                        '3g7tqfgx' /* For Faction */,
-                                      ),
-                                    ),
-                                    Tab(
-                                      text: FFLocalizations.of(context).getText(
-                                        '2gdeafbk' /* For Functions */,
+                                        'ppz66xjm' /* Agency */,
                                       ),
                                     ),
                                   ],
                                   controller: _model.tabBarController,
                                   onTap: (i) async {
-                                    [
-                                      () async {},
-                                      () async {},
-                                      () async {}
-                                    ][i]();
+                                    [() async {}, () async {}][i]();
                                   },
                                 ),
                               ),
@@ -319,7 +352,6 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                           Expanded(
                                             child: ListView(
                                               padding: EdgeInsets.zero,
-                                              primary: false,
                                               shrinkWrap: true,
                                               scrollDirection: Axis.vertical,
                                               children: [
@@ -376,7 +408,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'haes0r2l' /* Full Name */,
+                                                                    '5ei4gaxd' /* Full Name */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -413,7 +445,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '5rmzx51f' /* Funcioton */,
+                                                                      'knvrskhd' /* Agency */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -450,7 +482,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'z0huz1sz' /* Faction */,
+                                                                      'q5s6eda3' /* Description */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -487,7 +519,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '04vrv62j' /* Simple Name */,
+                                                                      'rd2ba3as' /* email */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -519,7 +551,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    '4zc3d2m8' /* CPF */,
+                                                                    '5cijyycp' /* User Type */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -554,8 +586,8 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                     ),
                                                   ),
                                                   content: FutureBuilder<
-                                                      List<MembrosRow>>(
-                                                    future: MembrosTable()
+                                                      List<UsuariosRow>>(
+                                                    future: UsuariosTable()
                                                         .queryRows(
                                                       queryFn: (q) => q.order(
                                                           'nome_completo',
@@ -582,8 +614,8 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                           ),
                                                         );
                                                       }
-                                                      List<MembrosRow>
-                                                          listViewMembrosRowList =
+                                                      List<UsuariosRow>
+                                                          listViewUsuariosRowList =
                                                           snapshot.data!;
 
                                                       return ListView.builder(
@@ -594,12 +626,12 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                         scrollDirection:
                                                             Axis.vertical,
                                                         itemCount:
-                                                            listViewMembrosRowList
+                                                            listViewUsuariosRowList
                                                                 .length,
                                                         itemBuilder: (context,
                                                             listViewIndex) {
-                                                          final listViewMembrosRow =
-                                                              listViewMembrosRowList[
+                                                          final listViewUsuariosRow =
+                                                              listViewUsuariosRowList[
                                                                   listViewIndex];
                                                           return Padding(
                                                             padding:
@@ -621,7 +653,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                       .transparent,
                                                               onTap: () async {
                                                                 logFirebaseEvent(
-                                                                    'MAIN_MEMBROS_LIST_Container_sog06zkz_ON_');
+                                                                    'MAIN_PROFILE_LIST_Container_ijixveoe_ON_');
                                                                 await action_blocks
                                                                     .openUserDetails(
                                                                         context);
@@ -674,7 +706,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                             .network(
                                                                           valueOrDefault<
                                                                               String>(
-                                                                            listViewMembrosRow.fotosPath.first,
+                                                                            listViewUsuariosRow.fotoPath,
                                                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
                                                                           ),
                                                                           width:
@@ -682,7 +714,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                           height:
                                                                               70.0,
                                                                           fit: BoxFit
-                                                                              .contain,
+                                                                              .cover,
                                                                         ),
                                                                       ),
                                                                       Expanded(
@@ -696,13 +728,71 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   valueOrDefault<String>(
-                                                                                    listViewMembrosRow.nomeCompleto,
-                                                                                    'nome_completo',
+                                                                                    listViewUsuariosRow.nomeCompleto,
+                                                                                    'nome_compleo',
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                         fontFamily: 'Plus Jakarta Sans',
                                                                                         letterSpacing: 0.0,
                                                                                       ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Expanded(
+                                                                              child: Container(
+                                                                                width: 100.0,
+                                                                                height: 26.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                child: Visibility(
+                                                                                  visible: responsiveVisibility(
+                                                                                    context: context,
+                                                                                    phone: false,
+                                                                                    tablet: false,
+                                                                                  ),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    child: FutureBuilder<List<AgenciasRow>>(
+                                                                                      future: AgenciasTable().querySingleRow(
+                                                                                        queryFn: (q) => q.eq(
+                                                                                          'agencia_id',
+                                                                                          listViewUsuariosRow.agenciaId,
+                                                                                        ),
+                                                                                      ),
+                                                                                      builder: (context, snapshot) {
+                                                                                        // Customize what your widget looks like when it's loading.
+                                                                                        if (!snapshot.hasData) {
+                                                                                          return Center(
+                                                                                            child: SizedBox(
+                                                                                              width: 50.0,
+                                                                                              height: 50.0,
+                                                                                              child: CircularProgressIndicator(
+                                                                                                valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                  FlutterFlowTheme.of(context).primary,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          );
+                                                                                        }
+                                                                                        List<AgenciasRow> textAgenciasRowList = snapshot.data!;
+
+                                                                                        final textAgenciasRow = textAgenciasRowList.isNotEmpty ? textAgenciasRowList.first : null;
+
+                                                                                        return Text(
+                                                                                          valueOrDefault<String>(
+                                                                                            textAgenciasRow?.nome,
+                                                                                            'sem informação',
+                                                                                          ),
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                                letterSpacing: 0.0,
+                                                                                              ),
+                                                                                        );
+                                                                                      },
+                                                                                    ),
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -716,28 +806,8 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     valueOrDefault<String>(
-                                                                                      listViewMembrosRow.funcaoId?.toString(),
-                                                                                      'funcao_id',
-                                                                                    ),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            if (responsiveVisibility(
-                                                                              context: context,
-                                                                              phone: false,
-                                                                              tablet: false,
-                                                                            ))
-                                                                              Expanded(
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      listViewMembrosRow.faccaoId?.toString(),
-                                                                                      'faccao_id',
+                                                                                      listViewUsuariosRow.descricao,
+                                                                                      'sem informação',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Plus Jakarta Sans',
@@ -756,7 +826,10 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                                 child: Padding(
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                   child: Text(
-                                                                                    listViewMembrosRow.alcunha.take(5).toList().first,
+                                                                                    valueOrDefault<String>(
+                                                                                      listViewUsuariosRow.email,
+                                                                                      'usuario_email',
+                                                                                    ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Plus Jakarta Sans',
                                                                                           fontSize: 14.0,
@@ -783,15 +856,43 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                                       alignment: AlignmentDirectional(0.0, 0.0),
                                                                                       child: Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                        child: Text(
-                                                                                          valueOrDefault<String>(
-                                                                                            listViewMembrosRow.cpf,
-                                                                                            'cpf',
+                                                                                        child: FutureBuilder<List<TiposUsuariosRow>>(
+                                                                                          future: TiposUsuariosTable().querySingleRow(
+                                                                                            queryFn: (q) => q.eq(
+                                                                                              'tipo_usuario_id',
+                                                                                              listViewUsuariosRow.tipoUsuarioId,
+                                                                                            ),
                                                                                           ),
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                                letterSpacing: 0.0,
+                                                                                          builder: (context, snapshot) {
+                                                                                            // Customize what your widget looks like when it's loading.
+                                                                                            if (!snapshot.hasData) {
+                                                                                              return Center(
+                                                                                                child: SizedBox(
+                                                                                                  width: 50.0,
+                                                                                                  height: 50.0,
+                                                                                                  child: CircularProgressIndicator(
+                                                                                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                      FlutterFlowTheme.of(context).primary,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            }
+                                                                                            List<TiposUsuariosRow> textTiposUsuariosRowList = snapshot.data!;
+
+                                                                                            final textTiposUsuariosRow = textTiposUsuariosRowList.isNotEmpty ? textTiposUsuariosRowList.first : null;
+
+                                                                                            return Text(
+                                                                                              valueOrDefault<String>(
+                                                                                                textTiposUsuariosRow?.descricao,
+                                                                                                'tipo_usuario_descricao',
                                                                                               ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            );
+                                                                                          },
                                                                                         ),
                                                                                       ),
                                                                                     ),
@@ -823,7 +924,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              logFirebaseEvent('MAIN_MEMBROS_LIST_Icon_tjxgplxc_ON_TAP');
+                                                                              logFirebaseEvent('MAIN_PROFILE_LIST_Icon_mgpftkgm_ON_TAP');
                                                                               await showAlignedDialog(
                                                                                 barrierColor: Colors.transparent,
                                                                                 context: context,
@@ -836,7 +937,7 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                                                                     color: Colors.transparent,
                                                                                     child: GestureDetector(
                                                                                       onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                      child: DropdownMemberEditWidget(),
+                                                                                      child: DropdownUserEditWidget(),
                                                                                     ),
                                                                                   );
                                                                                 },
@@ -869,10 +970,6 @@ class _MainMembrosListWidgetState extends State<MainMembrosListWidget>
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [],
                                     ),
                                     Column(
                                       mainAxisSize: MainAxisSize.max,

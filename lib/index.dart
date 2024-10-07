@@ -24,3 +24,5 @@ export '/pages/auth_pages/auth_login/auth_login_widget.dart'
     show AuthLoginWidget;
 export '/pages/cadastros/add_membros/add_membros_widget.dart'
     show AddMembrosWidget;
+export '/pages/main_pages/main_profile_list/main_profile_list_widget.dart'
+    show MainProfileListWidget;

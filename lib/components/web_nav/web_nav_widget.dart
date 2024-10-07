@@ -83,11 +83,10 @@ class _WebNavWidgetState extends State<WebNavWidget> {
               : null;
 
           return Container(
-            width: FFAppState().WEBBARRETRATIL.toDouble(),
+            width: double.infinity,
             height: double.infinity,
             constraints: BoxConstraints(
-              minWidth: 30.0,
-              maxWidth: 250.0,
+              maxWidth: 255.0,
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -132,68 +131,6 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               model: _model.mainLogoBarModel,
                               updateCallback: () => safeSetState(() {}),
                               child: MainLogoBarWidget(),
-                            ),
-                          ),
-                        ),
-                        if (FFAppState().WEBBARRETRATIL >= 250 ? true : false)
-                          Container(
-                            width: 30.0,
-                            height: 30.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                logFirebaseEvent(
-                                    'WEB_NAV_COMP_Icon_bmal396o_ON_TAP');
-                                FFAppState().WEBBARRETRATIL =
-                                    FFAppState().WEBBARRETRATIL >= 250
-                                        ? 80
-                                        : 250;
-                                FFAppState().update(() {});
-                              },
-                              child: Icon(
-                                Icons.arrow_back_ios_new_outlined,
-                                color: FlutterFlowTheme.of(context).accent1,
-                                size: 30.0,
-                              ),
-                            ),
-                          ),
-                        Container(
-                          width: 30.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
-                          child: Visibility(
-                            visible: FFAppState().WEBBARRETRATIL <= 50
-                                ? true
-                                : false,
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                logFirebaseEvent(
-                                    'WEB_NAV_COMP_Icon_jkg3e8ng_ON_TAP');
-                                FFAppState().WEBBARRETRATIL =
-                                    FFAppState().WEBBARRETRATIL <= 80
-                                        ? 250
-                                        : 80;
-                                FFAppState().update(() {});
-                              },
-                              child: Icon(
-                                Icons.arrow_forward_ios_outlined,
-                                color: FlutterFlowTheme.of(context).accent1,
-                                size: 30.0,
-                              ),
                             ),
                           ),
                         ),
@@ -273,16 +210,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
 
-                        context.pushNamed(
-                          'main_home',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                            ),
-                          },
-                        );
+                        context.pushNamed('main_home');
                       },
                       child: Container(
                         width: double.infinity,
@@ -344,16 +272,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
 
-                        context.pushNamed(
-                          'main_faccoes',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                            ),
-                          },
-                        );
+                        context.pushNamed('main_faccoes');
                       },
                       child: Container(
                         width: double.infinity,
@@ -415,16 +334,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
 
-                        context.pushNamed(
-                          'main_membros_list',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                            ),
-                          },
-                        );
+                        context.pushNamed('main_membros_list');
                       },
                       child: Container(
                         width: double.infinity,
@@ -486,16 +396,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
 
-                        context.pushNamed(
-                          'main_messages',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                            ),
-                          },
-                        );
+                        context.pushNamed('main_messages');
                       },
                       child: Container(
                         width: double.infinity,
@@ -557,16 +458,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
 
-                        context.pushNamed(
-                          'main_profile_page',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                            ),
-                          },
-                        );
+                        context.pushNamed('main_profile_list');
                       },
                       child: Container(
                         width: double.infinity,
@@ -584,8 +476,70 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.account_circle_rounded,
+                                Icons.settings_suggest_outlined,
                                 color: widget!.selectedNav == 5
+                                    ? FlutterFlowTheme.of(context).primary
+                                    : FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                size: 28.0,
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'kfrv5rp5' /* Administration */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: widget!.selectedNav == 5
+                                            ? FlutterFlowTheme.of(context)
+                                                .primaryText
+                                            : FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
+
+                        context.pushNamed('main_profile_page');
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: widget!.selectedNav == 6
+                              ? FlutterFlowTheme.of(context).alternate
+                              : FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.account_circle_rounded,
+                                color: widget!.selectedNav == 6
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
@@ -602,7 +556,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 5
+                                        color: widget!.selectedNav == 6
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -636,7 +590,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: widget!.selectedNav == 6
+                          color: widget!.selectedNav == 7
                               ? FlutterFlowTheme.of(context).alternate
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -650,7 +604,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             children: [
                               Icon(
                                 Icons.login_outlined,
-                                color: widget!.selectedNav == 6
+                                color: widget!.selectedNav == 7
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
@@ -661,13 +615,13 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'kfrv5rp5' /* Logout */,
+                                    'uiv9sien' /* Logout */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 6
+                                        color: widget!.selectedNav == 7
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -752,8 +706,10 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                             Duration(milliseconds: 500),
                                         fadeOutDuration:
                                             Duration(milliseconds: 500),
-                                        imageUrl:
-                                            webNavBgUsuariosRow!.fotoPath!,
+                                        imageUrl: valueOrDefault<String>(
+                                          webNavBgUsuariosRow?.fotoPath,
+                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
+                                        ),
                                         width: 44.0,
                                         height: 44.0,
                                         fit: BoxFit.cover,
@@ -798,6 +754,72 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                                       'Plus Jakarta Sans',
                                                   letterSpacing: 0.0,
                                                 ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 0.0, 0.0),
+                                          child: FutureBuilder<
+                                              List<TiposUsuariosRow>>(
+                                            future: TiposUsuariosTable()
+                                                .querySingleRow(
+                                              queryFn: (q) => q.eq(
+                                                'tipo_usuario_id',
+                                                webNavBgUsuariosRow
+                                                    ?.tipoUsuarioId,
+                                              ),
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<TiposUsuariosRow>
+                                                  textTiposUsuariosRowList =
+                                                  snapshot.data!;
+
+                                              final textTiposUsuariosRow =
+                                                  textTiposUsuariosRowList
+                                                          .isNotEmpty
+                                                      ? textTiposUsuariosRowList
+                                                          .first
+                                                      : null;
+
+                                              return Text(
+                                                valueOrDefault<String>(
+                                                  textTiposUsuariosRow
+                                                      ?.descricao,
+                                                  'tiipo_usuario_descricao',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              );
+                                            },
                                           ),
                                         ),
                                       ],

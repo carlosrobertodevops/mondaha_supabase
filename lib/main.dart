@@ -101,7 +101,6 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [
         Locale('en'),
         Locale('pt'),
-        Locale('es'),
       ],
       theme: ThemeData(
         brightness: Brightness.light,
@@ -141,10 +140,10 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'main_home': MainHomeWidget(),
-      'main_faccoes': MainFaccoesWidget(),
       'main_membros_list': MainMembrosListWidget(),
       'main_messages': MainMessagesWidget(),
       'main_profile_page': MainProfilePageWidget(),
+      'main_profile_list': MainProfileListWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -180,20 +179,6 @@ class _NavBarPageState extends State<NavBarPage> {
               ),
               label: FFLocalizations.of(context).getText(
                 'xdxbdj20' /* __ */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_work_outlined,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.account_tree_outlined,
-                size: 32.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'j08eiorc' /* __ */,
               ),
               tooltip: '',
             ),
@@ -236,6 +221,20 @@ class _NavBarPageState extends State<NavBarPage> {
               ),
               label: FFLocalizations.of(context).getText(
                 'o3dp9tss' /* __ */,
+              ),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.supervised_user_circle_outlined,
+                size: 24.0,
+              ),
+              activeIcon: Icon(
+                Icons.groups_outlined,
+                size: 32.0,
+              ),
+              label: FFLocalizations.of(context).getText(
+                'cl0g3enm' /* __ */,
               ),
               tooltip: '',
             )

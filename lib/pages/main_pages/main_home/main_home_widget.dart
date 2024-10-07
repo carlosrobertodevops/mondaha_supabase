@@ -1033,7 +1033,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                   12.0),
                                                           child: Icon(
                                                             Icons
-                                                                .groups_outlined,
+                                                                .groups_2_outlined,
                                                             color: Colors.white,
                                                             size: 24.0,
                                                           ),

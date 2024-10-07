@@ -3,18 +3,19 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'dropdown_user_edit_model.dart';
-export 'dropdown_user_edit_model.dart';
+import 'dropdown_member_edit_model.dart';
+export 'dropdown_member_edit_model.dart';
 
-class DropdownUserEditWidget extends StatefulWidget {
-  const DropdownUserEditWidget({super.key});
+class DropdownMemberEditWidget extends StatefulWidget {
+  const DropdownMemberEditWidget({super.key});
 
   @override
-  State<DropdownUserEditWidget> createState() => _DropdownUserEditWidgetState();
+  State<DropdownMemberEditWidget> createState() =>
+      _DropdownMemberEditWidgetState();
 }
 
-class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
-  late DropdownUserEditModel _model;
+class _DropdownMemberEditWidgetState extends State<DropdownMemberEditWidget> {
+  late DropdownMemberEditModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -25,7 +26,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DropdownUserEditModel());
+    _model = createModel(context, () => DropdownMemberEditModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -71,7 +72,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                         EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'vqk7im3j' /* Options */,
+                        'u54lnftd' /* Options */,
                       ),
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -118,7 +119,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'ufasy4ju' /* Edit */,
+                                      '3mts0ojl' /* Edit */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -174,7 +175,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '6kc0o458' /* Assign */,
+                                    'bxwf45ar' /* View */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -229,7 +230,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'jqnyu0j6' /* Share */,
+                                    '9sla7wvn' /* Share */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -294,7 +295,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '9qkfsg85' /* Delete */,
+                                    '4nzsvalr' /* Delete */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
