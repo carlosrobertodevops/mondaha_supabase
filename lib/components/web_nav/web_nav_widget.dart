@@ -150,7 +150,6 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                         await showModalBottomSheet(
                           isScrollControlled: true,
                           backgroundColor: Colors.transparent,
-                          barrierColor: Color(0x34000000),
                           context: context,
                           builder: (context) {
                             return Padding(
@@ -272,7 +271,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
 
-                        context.pushNamed('main_faccoes');
+                        context.pushNamed('main_faccoes_list');
                       },
                       child: Container(
                         width: double.infinity,

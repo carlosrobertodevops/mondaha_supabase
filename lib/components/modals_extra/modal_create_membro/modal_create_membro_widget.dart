@@ -102,6 +102,7 @@ class _ModalCreateMembroWidgetState extends State<ModalCreateMembroWidget>
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      primary: false,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -184,6 +185,7 @@ class _ModalCreateMembroWidgetState extends State<ModalCreateMembroWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 24.0, 24.0, 24.0),
                               child: SingleChildScrollView(
+                                primary: false,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -298,6 +300,7 @@ class _ModalCreateMembroWidgetState extends State<ModalCreateMembroWidget>
                                                     _model.tabBarController,
                                                 children: [
                                                   SingleChildScrollView(
+                                                    primary: false,
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,

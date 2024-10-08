@@ -146,6 +146,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 24.0, 24.0, 24.0),
                         child: SingleChildScrollView(
+                          primary: false,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -248,6 +249,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                           controller: _model.tabBarController,
                                           children: [
                                             SingleChildScrollView(
+                                              primary: false,
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:

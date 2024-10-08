@@ -152,6 +152,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                   child: Align(
                     alignment: AlignmentDirectional(-1.0, 1.0),
                     child: SingleChildScrollView(
+                      primary: false,
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,

@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -15,6 +16,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:octo_image/octo_image.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 class ModalEditFaccaoModel extends FlutterFlowModel<ModalEditFaccaoWidget> {
@@ -41,11 +43,12 @@ class ModalEditFaccaoModel extends FlutterFlowModel<ModalEditFaccaoWidget> {
     return null;
   }
 
-  // State field(s) for description widget.
-  FocusNode? descriptionFocusNode;
-  TextEditingController? descriptionTextController;
-  String? Function(BuildContext, String?)? descriptionTextControllerValidator;
-  String? _descriptionTextControllerValidator(
+  // State field(s) for txt_description widget.
+  FocusNode? txtDescriptionFocusNode;
+  TextEditingController? txtDescriptionTextController;
+  String? Function(BuildContext, String?)?
+      txtDescriptionTextControllerValidator;
+  String? _txtDescriptionTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
@@ -60,7 +63,8 @@ class ModalEditFaccaoModel extends FlutterFlowModel<ModalEditFaccaoWidget> {
   void initState(BuildContext context) {
     txtNomeFaccaoTextControllerValidator =
         _txtNomeFaccaoTextControllerValidator;
-    descriptionTextControllerValidator = _descriptionTextControllerValidator;
+    txtDescriptionTextControllerValidator =
+        _txtDescriptionTextControllerValidator;
   }
 
   @override
@@ -68,7 +72,7 @@ class ModalEditFaccaoModel extends FlutterFlowModel<ModalEditFaccaoWidget> {
     txtNomeFaccaoFocusNode?.dispose();
     txtNomeFaccaoTextController?.dispose();
 
-    descriptionFocusNode?.dispose();
-    descriptionTextController?.dispose();
+    txtDescriptionFocusNode?.dispose();
+    txtDescriptionTextController?.dispose();
   }
 }

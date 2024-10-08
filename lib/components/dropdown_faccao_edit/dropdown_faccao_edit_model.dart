@@ -1,3 +1,5 @@
+import '/backend/supabase/supabase.dart';
+import '/components/modals/modal_edit_faccao/modal_edit_faccao_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dropdown_faccao_edit_widget.dart' show DropdownFaccaoEditWidget;

@@ -954,6 +954,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                           44.0,
                                           0,
                                         ),
+                                        primary: false,
                                         shrinkWrap: true,
                                         scrollDirection: Axis.horizontal,
                                         children: [
@@ -1210,7 +1211,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              '8vot9bzj' /* New Contracts */,
+                                                              '8vot9bzj' /* New Factions */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1361,7 +1362,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'saxskj92' /* Addy. in the Map */,
+                                                              'saxskj92' /* Add in the Map */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1630,7 +1631,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'puy8obok' /* Insert of Activity */,
+                                                              'puy8obok' /* Activity de Factions */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)

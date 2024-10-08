@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -14,6 +15,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:octo_image/octo_image.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'modal_edit_faccao_model.dart';
 export 'modal_edit_faccao_model.dart';
@@ -51,9 +53,12 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
         TextEditingController(text: widget!.faccaoid?.nome);
     _model.txtNomeFaccaoFocusNode ??= FocusNode();
 
-    _model.descriptionTextController ??=
-        TextEditingController(text: widget!.faccaoid?.descricao);
-    _model.descriptionFocusNode ??= FocusNode();
+    _model.txtDescriptionTextController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      widget!.faccaoid?.descricao,
+      'descricao',
+    ));
+    _model.txtDescriptionFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
@@ -354,22 +359,82 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                                   return;
                                                 }
                                               }
+
+                                              await Future.delayed(
+                                                  const Duration(
+                                                      milliseconds: 1000));
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Atualizado IMAGEM ...',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 1000),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .success,
+                                                ),
+                                              );
+                                              await Navigator.push(
+                                                context,
+                                                PageTransition(
+                                                  type: PageTransitionType.fade,
+                                                  child:
+                                                      FlutterFlowExpandedImageView(
+                                                    image: CachedNetworkImage(
+                                                      fadeInDuration: Duration(
+                                                          milliseconds: 500),
+                                                      fadeOutDuration: Duration(
+                                                          milliseconds: 500),
+                                                      imageUrl: _model
+                                                              .isDataUploading
+                                                          ? _model
+                                                              .uploadedFileUrl
+                                                          : widget!.faccaoid!
+                                                              .imagemPath!,
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                    allowRotation: false,
+                                                    tag: _model.isDataUploading
+                                                        ? _model.uploadedFileUrl
+                                                        : widget!.faccaoid!
+                                                            .imagemPath!,
+                                                    useHeroAnimation: true,
+                                                  ),
+                                                ),
+                                              );
                                             },
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(10.0),
-                                              child: CachedNetworkImage(
-                                                fadeInDuration:
-                                                    Duration(milliseconds: 500),
-                                                fadeOutDuration:
-                                                    Duration(milliseconds: 500),
-                                                imageUrl: _model.isDataUploading
-                                                    ? _model.uploadedFileUrl
-                                                    : widget!
-                                                        .faccaoid!.imagemPath!,
-                                                width: double.infinity,
-                                                height: double.infinity,
-                                                fit: BoxFit.cover,
+                                            child: Hero(
+                                              tag: _model.isDataUploading
+                                                  ? _model.uploadedFileUrl
+                                                  : widget!
+                                                      .faccaoid!.imagemPath!,
+                                              transitionOnUserGestures: true,
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
+                                                child: CachedNetworkImage(
+                                                  fadeInDuration: Duration(
+                                                      milliseconds: 500),
+                                                  fadeOutDuration: Duration(
+                                                      milliseconds: 500),
+                                                  imageUrl: _model
+                                                          .isDataUploading
+                                                      ? _model.uploadedFileUrl
+                                                      : widget!.faccaoid!
+                                                          .imagemPath!,
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -461,13 +526,13 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: TextFormField(
-                              controller: _model.descriptionTextController,
-                              focusNode: _model.descriptionFocusNode,
+                              controller: _model.txtDescriptionTextController,
+                              focusNode: _model.txtDescriptionFocusNode,
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  '0lr3g0go' /* Descrition */,
+                                  '0lr3g0go' /*  */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -534,7 +599,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                   ),
                               maxLines: 5,
                               validator: _model
-                                  .descriptionTextControllerValidator
+                                  .txtDescriptionTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -546,8 +611,67 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('btn_apagar pressed ...');
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'MODAL_EDIT_FACCAO_COMP_btn_apagar_ON_TAP');
+                                    var confirmDialogResponse =
+                                        await showDialog<bool>(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text('APAGAR'),
+                                                  content: Text(
+                                                      'Deseja APAGAR esta facção'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              false),
+                                                      child: Text('Cancel'),
+                                                    ),
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              true),
+                                                      child: Text('Confirm'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ) ??
+                                            false;
+                                    if (confirmDialogResponse) {
+                                      await FaccoesTable().delete(
+                                        matchingRows: (rows) => rows.eq(
+                                          'faccao_id',
+                                          widget!.faccaoid?.faccaoId,
+                                        ),
+                                      );
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Registo APAGADO com sucesso !',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                        ),
+                                      );
+                                    } else {
+                                      context.safePop();
+                                    }
+
+                                    context.safePop();
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '2d3lr93u' /* Delete */,
@@ -593,7 +717,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                         'nome': _model
                                             .txtNomeFaccaoTextController.text,
                                         'descricao': _model
-                                            .descriptionTextController.text,
+                                            .txtDescriptionTextController.text,
                                         'imagem_path': _model.uploadedFileUrl,
                                       },
                                       matchingRows: (rows) => rows.eq(
@@ -601,6 +725,22 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                         widget!.faccaoid?.faccaoId,
                                       ),
                                     );
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Informações SALVAS com sucesso !',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .success,
+                                      ),
+                                    );
+                                    context.safePop();
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'ntyay3mi' /* Save */,

@@ -26,3 +26,5 @@ export '/pages/cadastros/add_membros/add_membros_widget.dart'
     show AddMembrosWidget;
 export '/pages/main_pages/main_profile_list/main_profile_list_widget.dart'
     show MainProfileListWidget;
+export '/pages/main_pages/main_faccoes_list/main_faccoes_list_widget.dart'
+    show MainFaccoesListWidget;

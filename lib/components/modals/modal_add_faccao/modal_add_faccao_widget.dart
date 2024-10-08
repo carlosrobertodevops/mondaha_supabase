@@ -15,20 +15,19 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:provider/provider.dart';
-import 'modal_create_faccao_model.dart';
-export 'modal_create_faccao_model.dart';
+import 'modal_add_faccao_model.dart';
+export 'modal_add_faccao_model.dart';
 
-class ModalCreateFaccaoWidget extends StatefulWidget {
-  const ModalCreateFaccaoWidget({super.key});
+class ModalAddFaccaoWidget extends StatefulWidget {
+  const ModalAddFaccaoWidget({super.key});
 
   @override
-  State<ModalCreateFaccaoWidget> createState() =>
-      _ModalCreateFaccaoWidgetState();
+  State<ModalAddFaccaoWidget> createState() => _ModalAddFaccaoWidgetState();
 }
 
-class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
+class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
     with TickerProviderStateMixin {
-  late ModalCreateFaccaoModel _model;
+  late ModalAddFaccaoModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -41,7 +40,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ModalCreateFaccaoModel());
+    _model = createModel(context, () => ModalAddFaccaoModel());
 
     _model.txtNomeFaccaoTextController ??= TextEditingController();
     _model.txtNomeFaccaoFocusNode ??= FocusNode();
@@ -206,7 +205,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                   ),
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_CREATE_FACCAO_close_rounded_ICN_ON');
+                                        'MODAL_ADD_FACCAO_close_rounded_ICN_ON_TA');
                                     Navigator.pop(context);
                                   },
                                 ),
@@ -280,7 +279,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               logFirebaseEvent(
-                                                  'MODAL_CREATE_FACCAO_Image_r5bsf0oi_ON_TA');
+                                                  'MODAL_ADD_FACCAO_Image_r5bsf0oi_ON_TAP');
                                               final selectedMedia =
                                                   await selectMediaWithSourceBottomSheet(
                                                 context: context,
@@ -357,8 +356,9 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                                     Duration(milliseconds: 500),
                                                 fadeOutDuration:
                                                     Duration(milliseconds: 500),
-                                                imageUrl:
-                                                    _model.uploadedFileUrl,
+                                                imageUrl: _model.isDataUploading
+                                                    ? _model.uploadedFileUrl
+                                                    : _model.uploadedFileUrl,
                                                 width: double.infinity,
                                                 height: double.infinity,
                                                 fit: BoxFit.cover,
@@ -459,7 +459,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'gvgwcy4p' /* Descrition */,
+                                  'gvgwcy4p' /*  */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -468,7 +468,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'uqziqhmg' /* Description here... */,
+                                  'uqziqhmg' /* Description  */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -540,7 +540,7 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                 FFButtonWidget(
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_CREATE_FACCAO_CREATE_FACTION_BTN_O');
+                                        'MODAL_ADD_FACCAO_CREATE_FACTION_BTN_ON_T');
                                     await FaccoesTable().insert({
                                       'nome': _model
                                           .txtNomeFaccaoTextController.text,
@@ -548,6 +548,22 @@ class _ModalCreateFaccaoWidgetState extends State<ModalCreateFaccaoWidget>
                                           _model.descriptionTextController.text,
                                       'imagem_path': _model.uploadedFileUrl,
                                     });
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Informações SALVAS cm sucesso !',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .success,
+                                      ),
+                                    );
+                                    context.safePop();
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '2g54ptaj' /* Create Faction */,

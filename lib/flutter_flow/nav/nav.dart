@@ -181,6 +181,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'main_profile_list')
                   : MainProfileListWidget(),
+            ),
+            FFRoute(
+              name: 'main_faccoes_list',
+              path: 'mainFaccoesList',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'main_faccoes_list')
+                  : MainFaccoesListWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

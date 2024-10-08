@@ -102,6 +102,7 @@ class _ModalCreateMembroCopyWidgetState
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      primary: false,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -163,8 +164,14 @@ class _ModalCreateMembroCopyWidgetState
                   : null;
 
               return Container(
-                width: 1434.0,
-                height: 920.0,
+                width: 1440.0,
+                height: 900.0,
+                constraints: BoxConstraints(
+                  minWidth: 1440.0,
+                  minHeight: 900.0,
+                  maxWidth: 1440.0,
+                  maxHeight: 900.0,
+                ),
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -184,6 +191,7 @@ class _ModalCreateMembroCopyWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 24.0, 24.0, 24.0),
                               child: SingleChildScrollView(
+                                primary: false,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -298,6 +306,7 @@ class _ModalCreateMembroCopyWidgetState
                                                     _model.tabBarController,
                                                 children: [
                                                   SingleChildScrollView(
+                                                    primary: false,
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,

@@ -153,16 +153,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '24',
     },
     '8vot9bzj': {
-      'en': 'New Contracts',
-      'pt': 'Novos Contratos',
+      'en': 'New Factions',
+      'pt': 'Novas Facções',
     },
     '463rfkem': {
       'en': '3,200',
       'pt': '3.200',
     },
     'saxskj92': {
-      'en': 'Addy. in the Map',
-      'pt': 'Addy. no Mapa',
+      'en': 'Add in the Map',
+      'pt': 'Adicionar no mapa',
     },
     '2wlrr5lg': {
       'en': '4300',
@@ -181,8 +181,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '4 membros',
     },
     'puy8obok': {
-      'en': 'Insert of Activity',
-      'pt': 'Inserção de Atividade',
+      'en': 'Activity de Factions',
+      'pt': 'Atividade de Facções',
     },
     'zlovh0zt': {
       'en': 'Below is an a summary of activity.',
@@ -190,7 +190,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g1uaaovn': {
       'en': 'Update Activity',
-      'pt': 'Atividade de atualização',
+      'pt': 'Atividade de Atualizações',
     },
     'e5q3ows1': {
       'en': 'Below is an a summary of activity.',
@@ -249,7 +249,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '04vrv62j': {
       'en': 'Simple Name',
-      'pt': 'Alcunha',
+      'pt': 'Nome Simples',
     },
     '4zc3d2m8': {
       'en': 'CPF',
@@ -291,12 +291,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Facções',
     },
     'dlt46loo': {
-      'en': 'Factions',
-      'pt': 'Facções',
+      'en': 'Factions List',
+      'pt': 'Lista de Facções',
     },
-    '8e820p1r': {
-      'en': 'Members numbers ###',
-      'pt': 'Número de membros ###',
+    '0xsigbyq': {
+      'en': 'Faction Name',
+      'pt': 'Nome da Facção',
+    },
+    'cltnbu58': {
+      'en': 'Description',
+      'pt': 'Descrição',
+    },
+    'ffcoxk91': {
+      'en': 'Founders',
+      'pt': 'Fundadores',
+    },
+    '06kkqenf': {
+      'en': 'Create date',
+      'pt': 'Data de criação',
+    },
+    '3gykazkx': {
+      'en': 'Number of members',
+      'pt': 'Número de membros',
     },
     'j08eiorc': {
       'en': '__',
@@ -893,6 +909,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // main_profile_list
   {
+    'xdubtp8a': {
+      'en': 'Customers',
+      'pt': 'Clientes',
+    },
     'qkmq9xej': {
       'en': 'Adminitration',
       'pt': 'Administração',
@@ -933,11 +953,54 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Agency',
       'pt': 'Agência',
     },
-    'xdubtp8a': {
+    'cl0g3enm': {
+      'en': '__',
+      'pt': '__',
+    },
+  },
+  // main_faccoes_list
+  {
+    'igm9ah22': {
       'en': 'Customers',
       'pt': 'Clientes',
     },
-    'cl0g3enm': {
+    'r6rxby9f': {
+      'en': 'Factions',
+      'pt': 'Facções',
+    },
+    'glylo9gj': {
+      'en': 'Add faction',
+      'pt': 'Adicionar facção',
+    },
+    '029hzzvv': {
+      'en': 'All',
+      'pt': 'Todos',
+    },
+    'e2orzexv': {
+      'en': 'Faction name',
+      'pt': 'Nome da Facção',
+    },
+    'f59ty26q': {
+      'en': 'Description',
+      'pt': 'Descrição',
+    },
+    'c6hh5dcp': {
+      'en': 'Founders',
+      'pt': 'Fundadores',
+    },
+    'ht73x20m': {
+      'en': 'Creating in',
+      'pt': 'Crianda em',
+    },
+    'ct0a7kev': {
+      'en': 'Add in',
+      'pt': 'Adicionar em',
+    },
+    '3s2bnwt5': {
+      'en': 'Agency',
+      'pt': 'Agência',
+    },
+    'rwyyy8yf': {
       'en': '__',
       'pt': '__',
     },
@@ -1102,33 +1165,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // command_palette
   {
-    'jt9g5o8v': {
+    '8m0o3yfd': {
       'en': 'Search platform...',
       'pt': 'Plataforma de busca...',
     },
-    'b3bd9y8w': {
+    'r2yl8d9a': {
       'en': 'Search',
       'pt': 'Procurar',
     },
-    'pw6kvl1f': {
+    'cb7yd65n': {
       'en': 'Quick Links',
       'pt': 'Links rápidos',
     },
-    'gckukxjv': {
-      'en': 'Add Quiz',
-      'pt': 'Adicionar questionário',
+    'aehlyped': {
+      'en': 'Find Member',
+      'pt': 'Encontrar Membro',
     },
-    'zsq8vj02': {
-      'en': 'Find Customer',
-      'pt': 'Encontrar cliente',
+    'danyvope': {
+      'en': 'Find Faction',
+      'pt': 'Encontrar Facção',
     },
-    'iqxwv326': {
-      'en': 'New Project',
-      'pt': 'Novo Projeto',
+    'bngj5l7i': {
+      'en': 'User Habilit',
+      'pt': 'Habilidade do usuário',
     },
-    's60yfg0g': {
-      'en': 'New Customer',
-      'pt': 'Novo cliente',
+    'aong5an6': {
+      'en': 'New member',
+      'pt': 'Novo membro',
     },
   },
   // edit_profile_photo
@@ -1254,7 +1317,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Excluir',
     },
   },
-  // modal_create_faccao
+  // modal_add_faccao
   {
     '5tdm3cpv': {
       'en': 'Create Faction',
@@ -1273,12 +1336,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Nome da Facção',
     },
     'gvgwcy4p': {
-      'en': 'Descrition',
-      'pt': 'Descrição',
+      'en': '',
+      'pt': '',
     },
     'uqziqhmg': {
-      'en': 'Description here...',
-      'pt': 'Descrição aqui...',
+      'en': 'Description ',
+      'pt': 'Descrição',
     },
     '2g54ptaj': {
       'en': 'Create Faction',
@@ -2067,8 +2130,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Nome da Facção',
     },
     '0lr3g0go': {
-      'en': 'Descrition',
-      'pt': 'Descrição',
+      'en': '',
+      'pt': '',
     },
     'krgsdp6s': {
       'en': 'Description here...',

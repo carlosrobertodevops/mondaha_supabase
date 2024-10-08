@@ -1,3 +1,5 @@
+import '/backend/supabase/supabase.dart';
+import '/components/modals/modal_edit_faccao/modal_edit_faccao_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +9,12 @@ import 'dropdown_faccao_edit_model.dart';
 export 'dropdown_faccao_edit_model.dart';
 
 class DropdownFaccaoEditWidget extends StatefulWidget {
-  const DropdownFaccaoEditWidget({super.key});
+  const DropdownFaccaoEditWidget({
+    super.key,
+    required this.faccaoid,
+  });
+
+  final FaccoesRow? faccaoid;
 
   @override
   State<DropdownFaccaoEditWidget> createState() =>
@@ -87,50 +94,78 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                     child: MouseRegion(
                       opaque: false,
                       cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                      child: AnimatedContainer(
-                        duration: Duration(milliseconds: 150),
-                        curve: Curves.easeInOut,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: _model.mouseRegionHovered1!
-                              ? FlutterFlowTheme.of(context).primaryBackground
-                              : FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 8.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 0.0, 0.0),
-                                child: Icon(
-                                  Icons.edit_sharp,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 20.0,
-                                ),
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'vh5aos42' /* Edit */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          letterSpacing: 0.0,
-                                        ),
+                      child: Builder(
+                        builder: (context) => InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            logFirebaseEvent(
+                                'DROPDOWN_FACCAO_EDIT_replaceWidget_ON_TA');
+                            await showDialog(
+                              context: context,
+                              builder: (dialogContext) {
+                                return Dialog(
+                                  elevation: 0,
+                                  insetPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  alignment: AlignmentDirectional(0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  child: ModalEditFaccaoWidget(
+                                    faccaoid: widget!.faccaoid,
                                   ),
-                                ),
+                                );
+                              },
+                            );
+                          },
+                          child: AnimatedContainer(
+                            duration: Duration(milliseconds: 150),
+                            curve: Curves.easeInOut,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: _model.mouseRegionHovered1!
+                                  ? FlutterFlowTheme.of(context)
+                                      .primaryBackground
+                                  : FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 0.0, 0.0),
+                                    child: Icon(
+                                      Icons.edit_sharp,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 20.0,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'vh5aos42' /* Edit */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
                       ),
