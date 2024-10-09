@@ -9,7 +9,7 @@ class CargosTable extends SupabaseTable<CargosRow> {
 }
 
 class CargosRow extends SupabaseDataRow {
-  CargosRow(Map<String, dynamic> data) : super(data);
+  CargosRow(super.data);
 
   @override
   SupabaseTable get table => CargosTable();

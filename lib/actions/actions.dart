@@ -1,5 +1,3 @@
-import '/backend/api_requests/api_manager.dart';
-import '/backend/supabase/supabase.dart';
 import '/components/modal_sections/modal_user/modal_user_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -25,9 +23,9 @@ Future openUserDetails(BuildContext context) async {
           elevation: 0,
           insetPadding: EdgeInsets.zero,
           backgroundColor: Colors.transparent,
-          alignment: AlignmentDirectional(0.0, 0.0)
+          alignment: const AlignmentDirectional(0.0, 0.0)
               .resolve(Directionality.of(context)),
-          child: ModalUserWidget(),
+          child: const ModalUserWidget(),
         );
       },
     );

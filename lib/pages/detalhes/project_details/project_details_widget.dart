@@ -2,10 +2,7 @@ import '/components/modal_sections/project_details_alt/project_details_alt_widge
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'project_details_model.dart';
 export 'project_details_model.dart';
 
@@ -63,7 +60,7 @@ class _ProjectDetailsWidgetState extends State<ProjectDetailsWidget> {
               context.pop();
             },
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -72,7 +69,7 @@ class _ProjectDetailsWidgetState extends State<ProjectDetailsWidget> {
           child: wrapWithModel(
             model: _model.projectDetailsAltModel,
             updateCallback: () => safeSetState(() {}),
-            child: ProjectDetailsAltWidget(),
+            child: const ProjectDetailsAltWidget(),
           ),
         ),
       ),

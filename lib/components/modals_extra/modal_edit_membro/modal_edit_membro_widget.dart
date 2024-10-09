@@ -5,12 +5,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_edit_membro_model.dart';
 export 'modal_edit_membro_model.dart';
 
@@ -67,8 +63,8 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 100.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 100.0),
+            end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -143,7 +139,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                     Expanded(
                       flex: 4,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 24.0, 24.0, 24.0),
                         child: SingleChildScrollView(
                           primary: false,
@@ -153,7 +149,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height:
@@ -162,11 +158,11 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Column(
                                     children: [
                                       Align(
-                                        alignment: Alignment(0.0, 0),
+                                        alignment: const Alignment(0.0, 0),
                                         child: TabBar(
                                           labelColor:
                                               FlutterFlowTheme.of(context)
@@ -268,7 +264,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(16.0),
+                                                          const EdgeInsets.all(16.0),
                                                       child:
                                                           SingleChildScrollView(
                                                         child: Column(
@@ -283,7 +279,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           16.0,
@@ -308,7 +304,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           4.0,
@@ -339,7 +335,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                 Builder(
                                                                   builder:
                                                                       (context) {
-                                                                    final uploadedImages = (overlayMembrosRow?.fotosPath?.toList() ??
+                                                                    final uploadedImages = (overlayMembrosRow?.fotosPath.toList() ??
                                                                             [])
                                                                         .take(3)
                                                                         .toList();
@@ -355,7 +351,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                         final uploadedImagesItem =
                                                                             uploadedImages[uploadedImagesIndex];
                                                                         return Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                           child:
@@ -376,7 +372,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsets.all(2.0),
+                                                                              padding: const EdgeInsets.all(2.0),
                                                                               child: ClipRRect(
                                                                                 borderRadius: BorderRadius.circular(10.0),
                                                                                 child: Image.network(
@@ -389,7 +385,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                             ),
                                                                           ),
                                                                         );
-                                                                      }).divide(SizedBox(width: 12.0)).addToStart(SizedBox(width: 24.0)).addToEnd(SizedBox(
+                                                                      }).divide(const SizedBox(width: 12.0)).addToStart(const SizedBox(width: 24.0)).addToEnd(const SizedBox(
                                                                           width:
                                                                               24.0)),
                                                                     );
@@ -484,7 +480,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                                 2.0,
                                                                             borderRadius:
                                                                                 8.0,
-                                                                            margin: EdgeInsetsDirectional.fromSTEB(
+                                                                            margin: const EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -582,7 +578,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                                 2.0,
                                                                             borderRadius:
                                                                                 8.0,
-                                                                            margin: EdgeInsetsDirectional.fromSTEB(
+                                                                            margin: const EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -668,7 +664,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                                 2.0,
                                                                             borderRadius:
                                                                                 8.0,
-                                                                            margin: EdgeInsetsDirectional.fromSTEB(
+                                                                            margin: const EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -685,7 +681,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                         },
                                                                       ),
                                                                     ),
-                                                                  ].divide(SizedBox(
+                                                                  ].divide(const SizedBox(
                                                                       width:
                                                                           16.0)),
                                                                 ),
@@ -769,7 +765,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               24.0,
                                                                               20.0,
@@ -872,7 +868,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               24.0,
                                                                               20.0,
@@ -971,7 +967,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               24.0,
                                                                               20.0,
@@ -1070,7 +1066,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               24.0,
                                                                               20.0,
@@ -1169,7 +1165,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               24.0,
                                                                               20.0,
@@ -1191,7 +1187,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                   ],
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           16.0,
@@ -1206,7 +1202,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.05),
                                                                         child:
@@ -1223,12 +1219,12 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 44.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
                                                                                 0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1263,7 +1259,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.05),
                                                                         child:
@@ -1280,12 +1276,12 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 44.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
                                                                                 0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1300,7 +1296,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                             elevation:
                                                                                 3.0,
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 1.0,
                                                                             ),
@@ -1323,11 +1319,11 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                                     ],
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height:
                                                                       16.0)),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 16.0)),
                                                         ),
                                                       ),
@@ -1337,23 +1333,23 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                 ],
                                               ),
                                             ),
-                                            Column(
+                                            const Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [],
                                             ),
-                                            Column(
+                                            const Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [],
                                             ),
-                                            Column(
+                                            const Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [],
                                             ),
-                                            Column(
+                                            const Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [],
                                             ),
-                                            Column(
+                                            const Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [],
                                             ),
@@ -1373,14 +1369,14 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                       flex: 1,
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1404,11 +1400,11 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                           context)
                                                       .primary,
                                                 ),
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
@@ -1440,13 +1436,13 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: GridView(
                                                           padding:
                                                               EdgeInsets.zero,
                                                           gridDelegate:
-                                                              SliverGridDelegateWithFixedCrossAxisCount(
+                                                              const SliverGridDelegateWithFixedCrossAxisCount(
                                                             crossAxisCount: 3,
                                                             crossAxisSpacing:
                                                                 10.0,
@@ -1458,7 +1454,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                           shrinkWrap: true,
                                                           scrollDirection:
                                                               Axis.vertical,
-                                                          children: [],
+                                                          children: const [],
                                                         ),
                                                       ),
                                                     ),
@@ -1474,7 +1470,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1498,11 +1494,11 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                           context)
                                                       .primary,
                                                 ),
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
@@ -1536,7 +1532,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                         padding:
                                                             EdgeInsets.zero,
                                                         gridDelegate:
-                                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                                            const SliverGridDelegateWithFixedCrossAxisCount(
                                                           crossAxisCount: 3,
                                                           crossAxisSpacing:
                                                               10.0,
@@ -1546,7 +1542,7 @@ class _ModalEditMembroWidgetState extends State<ModalEditMembroWidget>
                                                         shrinkWrap: true,
                                                         scrollDirection:
                                                             Axis.vertical,
-                                                        children: [],
+                                                        children: const [],
                                                       ),
                                                     ),
                                                   ),

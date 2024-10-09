@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'web_nav_model.dart';
 export 'web_nav_model.dart';
@@ -53,7 +52,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
       child: FutureBuilder<List<UsuariosRow>>(
         future: UsuariosTable().querySingleRow(
           queryFn: (q) => q.eq(
@@ -85,7 +84,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
           return Container(
             width: double.infinity,
             height: double.infinity,
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxWidth: 255.0,
             ),
             decoration: BoxDecoration(
@@ -93,7 +92,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
               boxShadow: [
                 BoxShadow(
                   color: FlutterFlowTheme.of(context).alternate,
-                  offset: Offset(
+                  offset: const Offset(
                     1.0,
                     0.0,
                   ),
@@ -101,13 +100,13 @@ class _WebNavWidgetState extends State<WebNavWidget> {
               ],
             ),
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Text(
                       FFAppState().AGENCIA,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -119,18 +118,18 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Expanded(
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: wrapWithModel(
                               model: _model.mainLogoBarModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: MainLogoBarWidget(),
+                              child: const MainLogoBarWidget(),
                             ),
                           ),
                         ),
@@ -139,7 +138,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -154,7 +153,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                           builder: (context) {
                             return Padding(
                               padding: MediaQuery.viewInsetsOf(context),
-                              child: CommandPaletteWidget(),
+                              child: const CommandPaletteWidget(),
                             );
                           },
                         ).then((value) => safeSetState(() {}));
@@ -166,7 +165,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -178,7 +177,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -200,7 +199,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -214,28 +213,28 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: widget!.selectedNav == 1
+                          color: widget.selectedNav == 1
                               ? FlutterFlowTheme.of(context).alternate
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.dashboard_rounded,
-                                color: widget!.selectedNav == 1
+                                color: widget.selectedNav == 1
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -245,7 +244,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 1
+                                        color: widget.selectedNav == 1
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -262,7 +261,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -276,28 +275,28 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: widget!.selectedNav == 2
+                          color: widget.selectedNav == 2
                               ? FlutterFlowTheme.of(context).alternate
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.account_tree_outlined,
-                                color: widget!.selectedNav == 2
+                                color: widget.selectedNav == 2
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -307,7 +306,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 2
+                                        color: widget.selectedNav == 2
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -324,7 +323,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -338,28 +337,28 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: widget!.selectedNav == 3
+                          color: widget.selectedNav == 3
                               ? FlutterFlowTheme.of(context).alternate
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.groups_outlined,
-                                color: widget!.selectedNav == 3
+                                color: widget.selectedNav == 3
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -369,7 +368,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 3
+                                        color: widget.selectedNav == 3
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -386,7 +385,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -400,28 +399,28 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: widget!.selectedNav == 4
+                          color: widget.selectedNav == 4
                               ? FlutterFlowTheme.of(context).alternate
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.forum_outlined,
-                                color: widget!.selectedNav == 4
+                                color: widget.selectedNav == 4
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -431,7 +430,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 4
+                                        color: widget.selectedNav == 4
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -448,7 +447,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -457,33 +456,33 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
 
-                        context.pushNamed('main_profile_list');
+                        context.pushNamed('main_admin_list');
                       },
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: widget!.selectedNav == 5
+                          color: widget.selectedNav == 5
                               ? FlutterFlowTheme.of(context).alternate
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.settings_suggest_outlined,
-                                color: widget!.selectedNav == 5
+                                color: widget.selectedNav == 5
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -493,7 +492,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 5
+                                        color: widget.selectedNav == 5
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -510,7 +509,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -524,28 +523,28 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: widget!.selectedNav == 6
+                          color: widget.selectedNav == 6
                               ? FlutterFlowTheme.of(context).alternate
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.account_circle_rounded,
-                                color: widget!.selectedNav == 6
+                                color: widget.selectedNav == 6
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -555,7 +554,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 6
+                                        color: widget.selectedNav == 6
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -572,7 +571,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -589,28 +588,28 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: widget!.selectedNav == 7
+                          color: widget.selectedNav == 7
                               ? FlutterFlowTheme.of(context).alternate
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.login_outlined,
-                                color: widget!.selectedNav == 7
+                                color: widget.selectedNav == 7
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context)
                                         .secondaryText,
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -620,7 +619,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: widget!.selectedNav == 7
+                                        color: widget.selectedNav == 7
                                             ? FlutterFlowTheme.of(context)
                                                 .primaryText
                                             : FlutterFlowTheme.of(context)
@@ -638,13 +637,13 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: FlutterFlowLanguageSelector(
                               width: double.infinity,
@@ -680,7 +679,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -697,14 +696,14 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10.0),
                                       child: CachedNetworkImage(
                                         fadeInDuration:
-                                            Duration(milliseconds: 500),
+                                            const Duration(milliseconds: 500),
                                         fadeOutDuration:
-                                            Duration(milliseconds: 500),
+                                            const Duration(milliseconds: 500),
                                         imageUrl: valueOrDefault<String>(
                                           webNavBgUsuariosRow?.fotoPath,
                                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
@@ -718,7 +717,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -739,7 +738,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -757,7 +756,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: FutureBuilder<
                                               List<TiposUsuariosRow>>(

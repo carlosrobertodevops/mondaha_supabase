@@ -6,17 +6,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:math';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:octo_image/octo_image.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 import 'modal_edit_faccao_model.dart';
 export 'modal_edit_faccao_model.dart';
 
@@ -50,12 +43,12 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
     _model = createModel(context, () => ModalEditFaccaoModel());
 
     _model.txtNomeFaccaoTextController ??=
-        TextEditingController(text: widget!.faccaoid?.nome);
+        TextEditingController(text: widget.faccaoid?.nome);
     _model.txtNomeFaccaoFocusNode ??= FocusNode();
 
     _model.txtDescriptionTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget!.faccaoid?.descricao,
+      widget.faccaoid?.descricao,
       'descricao',
     ));
     _model.txtDescriptionFocusNode ??= FocusNode();
@@ -82,8 +75,8 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
             curve: Curves.easeInOut,
             delay: 250.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 70.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 70.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -123,15 +116,15 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 width: double.infinity,
-                constraints: BoxConstraints(
+                constraints: const BoxConstraints(
                   maxWidth: 670.0,
                 ),
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 3.0,
                       color: Color(0x33000000),
@@ -148,18 +141,18 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(2.0),
+                  padding: const EdgeInsets.all(2.0),
                   child: Form(
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.always,
                     child: Padding(
-                      padding: EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -172,7 +165,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -187,7 +180,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -229,7 +222,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: Container(
                                   width: 160.0,
@@ -245,9 +238,9 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: Stack(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       children: [
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -262,7 +255,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                               size: 72.0,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Text(
@@ -283,7 +276,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                           ],
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(6.0),
+                                          padding: const EdgeInsets.all(6.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -375,7 +368,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                                               .primaryText,
                                                     ),
                                                   ),
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 1000),
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
@@ -390,22 +383,22 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                                   child:
                                                       FlutterFlowExpandedImageView(
                                                     image: CachedNetworkImage(
-                                                      fadeInDuration: Duration(
+                                                      fadeInDuration: const Duration(
                                                           milliseconds: 500),
-                                                      fadeOutDuration: Duration(
+                                                      fadeOutDuration: const Duration(
                                                           milliseconds: 500),
                                                       imageUrl: _model
                                                               .isDataUploading
                                                           ? _model
                                                               .uploadedFileUrl
-                                                          : widget!.faccaoid!
+                                                          : widget.faccaoid!
                                                               .imagemPath!,
                                                       fit: BoxFit.contain,
                                                     ),
                                                     allowRotation: false,
                                                     tag: _model.isDataUploading
                                                         ? _model.uploadedFileUrl
-                                                        : widget!.faccaoid!
+                                                        : widget.faccaoid!
                                                             .imagemPath!,
                                                     useHeroAnimation: true,
                                                   ),
@@ -415,21 +408,21 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                             child: Hero(
                                               tag: _model.isDataUploading
                                                   ? _model.uploadedFileUrl
-                                                  : widget!
+                                                  : widget
                                                       .faccaoid!.imagemPath!,
                                               transitionOnUserGestures: true,
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                                 child: CachedNetworkImage(
-                                                  fadeInDuration: Duration(
+                                                  fadeInDuration: const Duration(
                                                       milliseconds: 500),
-                                                  fadeOutDuration: Duration(
+                                                  fadeOutDuration: const Duration(
                                                       milliseconds: 500),
                                                   imageUrl: _model
                                                           .isDataUploading
                                                       ? _model.uploadedFileUrl
-                                                      : widget!.faccaoid!
+                                                      : widget.faccaoid!
                                                           .imagemPath!,
                                                   width: double.infinity,
                                                   height: double.infinity,
@@ -447,7 +440,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
                             child: TextFormField(
                               controller: _model.txtNomeFaccaoTextController,
@@ -508,7 +501,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                     topRight: Radius.circular(4.0),
                                   ),
                                 ),
-                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -523,7 +516,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: TextFormField(
                               controller: _model.txtDescriptionTextController,
@@ -604,7 +597,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -619,8 +612,8 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: Text('APAGAR'),
-                                                  content: Text(
+                                                  title: const Text('APAGAR'),
+                                                  content: const Text(
                                                       'Deseja APAGAR esta facção'),
                                                   actions: [
                                                     TextButton(
@@ -628,14 +621,14 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               false),
-                                                      child: Text('Cancel'),
+                                                      child: const Text('Cancel'),
                                                     ),
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               true),
-                                                      child: Text('Confirm'),
+                                                      child: const Text('Confirm'),
                                                     ),
                                                   ],
                                                 );
@@ -646,7 +639,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                       await FaccoesTable().delete(
                                         matchingRows: (rows) => rows.eq(
                                           'faccao_id',
-                                          widget!.faccaoid?.faccaoId,
+                                          widget.faccaoid?.faccaoId,
                                         ),
                                       );
                                       ScaffoldMessenger.of(context)
@@ -661,7 +654,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                             ),
                                           ),
                                           duration:
-                                              Duration(milliseconds: 4000),
+                                              const Duration(milliseconds: 4000),
                                           backgroundColor:
                                               FlutterFlowTheme.of(context)
                                                   .success,
@@ -678,9 +671,9 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                   ),
                                   options: FFButtonOptions(
                                     height: 50.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         44.0, 0.0, 44.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
@@ -691,7 +684,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -722,7 +715,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                       },
                                       matchingRows: (rows) => rows.eq(
                                         'faccao_id',
-                                        widget!.faccaoid?.faccaoId,
+                                        widget.faccaoid?.faccaoId,
                                       ),
                                     );
                                     ScaffoldMessenger.of(context).showSnackBar(
@@ -734,22 +727,21 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                                 .primaryText,
                                           ),
                                         ),
-                                        duration: Duration(milliseconds: 4000),
+                                        duration: const Duration(milliseconds: 4000),
                                         backgroundColor:
                                             FlutterFlowTheme.of(context)
                                                 .success,
                                       ),
                                     );
-                                    context.safePop();
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'ntyay3mi' /* Save */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 50.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         44.0, 0.0, 44.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -759,7 +751,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -776,7 +768,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                     hoverElevation: 0.0,
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 50.0)),
+                              ].divide(const SizedBox(width: 50.0)),
                             ),
                           ),
                         ],

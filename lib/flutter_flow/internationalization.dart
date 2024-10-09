@@ -907,7 +907,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Lar',
     },
   },
-  // main_profile_list
+  // main_admin_list
   {
     'xdubtp8a': {
       'en': 'Customers',
@@ -1320,8 +1320,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // modal_add_faccao
   {
     '5tdm3cpv': {
-      'en': 'Create Faction',
-      'pt': 'Criar Facção',
+      'en': 'Add Faction',
+      'pt': 'Adicionar Facção',
     },
     'vlg015ed': {
       'en': 'Please enter the information below to add a Faction.',
@@ -1345,7 +1345,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2g54ptaj': {
       'en': 'Create Faction',
-      'pt': 'Criar Facção',
+      'pt': 'Salvar',
     },
     '4spmowtt': {
       'en': 'Please enter a project name...',

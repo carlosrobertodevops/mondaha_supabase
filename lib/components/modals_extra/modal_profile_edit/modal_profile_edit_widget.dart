@@ -4,13 +4,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_profile_edit_model.dart';
 export 'modal_profile_edit_model.dart';
 
@@ -53,8 +49,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 100.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 100.0),
+            end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -96,15 +92,15 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
             child: Container(
               width: double.infinity,
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 maxWidth: 670.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 12.0,
                     color: Color(0x1E000000),
@@ -122,7 +118,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'qs8serr4' /* Edit Profile */,
@@ -136,7 +132,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'bvy3fs93' /* Below are your profile details */,
@@ -152,7 +148,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -170,18 +166,18 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(2.0),
+                                padding: const EdgeInsets.all(2.0),
                                 child: Container(
                                   width: 90.0,
                                   height: 90.0,
                                   clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
                                   child: CachedNetworkImage(
-                                    fadeInDuration: Duration(milliseconds: 500),
+                                    fadeInDuration: const Duration(milliseconds: 500),
                                     fadeOutDuration:
-                                        Duration(milliseconds: 500),
+                                        const Duration(milliseconds: 500),
                                     imageUrl:
                                         'https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80',
                                     fit: BoxFit.fitWidth,
@@ -197,9 +193,9 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 'nx89dnuw' /* Change Photo */,
                               ),
                               options: FFButtonOptions(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -226,11 +222,11 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 hoverElevation: 3.0,
                               ),
                             ),
-                          ].divide(SizedBox(width: 16.0)),
+                          ].divide(const SizedBox(width: 16.0)),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 0.0),
                         child: TextFormField(
                           controller: _model.yourNameTextController1,
@@ -284,7 +280,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 24.0, 20.0, 24.0),
                           ),
                           style:
@@ -298,7 +294,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 0.0),
                         child: TextFormField(
                           controller: _model.yourNameTextController2,
@@ -352,7 +348,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 24.0, 20.0, 24.0),
                           ),
                           style:
@@ -368,7 +364,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 0.0),
                         child: FlutterFlowDropDown<String>(
                           controller: _model.dropDownValueController ??=
@@ -415,7 +411,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                           borderColor: FlutterFlowTheme.of(context).alternate,
                           borderWidth: 2.0,
                           borderRadius: 12.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
+                          margin: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isSearchable: false,
@@ -423,7 +419,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -435,7 +431,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 0.0, 0.0),
                                     child: SelectionArea(
                                         child: Text(
@@ -451,7 +447,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                     )),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 0.0, 0.0),
                                     child: SelectionArea(
                                         child: Text(
@@ -476,7 +472,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 0.0, 0.0),
                                     child: SelectionArea(
                                         child: Text(
@@ -492,7 +488,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                     )),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 0.0, 0.0),
                                     child: SelectionArea(
                                         child: Text(
@@ -517,7 +513,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 0.0, 0.0),
                                     child: SelectionArea(
                                         child: Text(
@@ -533,7 +529,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                     )),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 0.0, 0.0),
                                     child: SelectionArea(
                                         child: Text(
@@ -551,20 +547,20 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 ],
                               ),
                             ),
-                          ].divide(SizedBox(width: 16.0)),
+                          ].divide(const SizedBox(width: 16.0)),
                         ),
                       ),
                     ],
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 24.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 24.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.05),
+                          alignment: const AlignmentDirectional(0.0, 0.05),
                           child: FFButtonWidget(
                             onPressed: () async {
                               logFirebaseEvent(
@@ -575,9 +571,9 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                               '27w5o6gn' /* Cancel */,
                             ),
                             options: FFButtonOptions(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -606,7 +602,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.05),
+                          alignment: const AlignmentDirectional(0.0, 0.05),
                           child: FFButtonWidget(
                             onPressed: () {
                               print('Button pressed ...');
@@ -615,9 +611,9 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                               'gz2xhplu' /* Save Changes */,
                             ),
                             options: FFButtonOptions(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -627,7 +623,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),

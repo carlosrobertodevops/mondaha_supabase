@@ -8,8 +8,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'main_faccoes_model.dart';
 export 'main_faccoes_model.dart';
 
@@ -62,7 +60,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                         letterSpacing: 0.0,
                       ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: false,
                 elevation: 0.0,
               )
@@ -83,7 +81,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                     wrapWithModel(
                       model: _model.webNavModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: WebNavWidget(
+                      child: const WebNavWidget(
                         selectedNav: 2,
                       ),
                     ),
@@ -95,7 +93,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -103,7 +101,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 1.0, 0.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -112,7 +110,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -122,7 +120,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                         Expanded(
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -142,7 +140,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                         Builder(
                                           builder: (context) => Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -158,7 +156,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -169,7 +167,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                     dialogContext)
                                                                 .unfocus(),
                                                         child:
-                                                            ModalAddFaccaoWidget(),
+                                                            const ModalAddFaccaoWidget(),
                                                       ),
                                                     );
                                                   },
@@ -181,11 +179,11 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -209,7 +207,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderRadius: 30.0,
@@ -232,7 +230,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                 isScrollControlled: true,
                                                 backgroundColor:
                                                     Colors.transparent,
-                                                barrierColor: Color(0x1A000000),
+                                                barrierColor: const Color(0x1A000000),
                                                 context: context,
                                                 builder: (context) {
                                                   return GestureDetector(
@@ -243,7 +241,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                       padding: MediaQuery
                                                           .viewInsetsOf(
                                                               context),
-                                                      child: Container(
+                                                      child: const SizedBox(
                                                         height: double.infinity,
                                                         child:
                                                             CommandPaletteWidget(),
@@ -262,7 +260,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -319,7 +317,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                 listViewIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 12.0, 12.0, 12.0),
                                           child: Container(
                                             width: 230.0,
@@ -327,7 +325,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x34090F13),
@@ -347,7 +345,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 4.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -366,7 +364,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                   context)
                                                               .primary,
                                                       borderRadius:
-                                                          BorderRadius.only(
+                                                          const BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 0.0),
@@ -383,7 +381,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -399,7 +397,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                             height: 36.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0x98FFFFFF),
                                                               borderRadius:
                                                                   BorderRadius
@@ -407,9 +405,9 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                           12.0),
                                                             ),
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
-                                                            child: Icon(
+                                                            child: const Icon(
                                                               Icons
                                                                   .desktop_windows,
                                                               color:
@@ -447,7 +445,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 12.0,
                                                                 12.0,
@@ -460,16 +458,16 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                           MainAxisAlignment
                                                               .spaceBetween,
                                                       children: [
-                                                        Container(
+                                                        SizedBox(
                                                           width: 150.0,
                                                           child: Stack(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -0.91,
                                                                         0.0),
                                                                 child:
@@ -479,7 +477,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                   clipBehavior:
                                                                       Clip.antiAlias,
                                                                   decoration:
-                                                                      BoxDecoration(
+                                                                      const BoxDecoration(
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
@@ -493,7 +491,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -0.62,
                                                                         0.0),
                                                                 child:
@@ -503,7 +501,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                   clipBehavior:
                                                                       Clip.antiAlias,
                                                                   decoration:
-                                                                      BoxDecoration(
+                                                                      const BoxDecoration(
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
@@ -517,7 +515,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -0.35,
                                                                         0.0),
                                                                 child:
@@ -527,7 +525,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                   clipBehavior:
                                                                       Clip.antiAlias,
                                                                   decoration:
-                                                                      BoxDecoration(
+                                                                      const BoxDecoration(
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
@@ -564,7 +562,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -579,7 +577,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -602,10 +600,10 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                 .primaryBackground,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 36.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -617,16 +615,16 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                   Container(
                                                     width: 90.0,
                                                     height: 100.0,
-                                                    decoration: BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                   ),
                                                 Expanded(
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -660,11 +658,11 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -697,11 +695,11 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -734,11 +732,11 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -766,7 +764,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -787,13 +785,13 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Container(
                                                     width: 24.0,
                                                     height: 100.0,
-                                                    decoration: BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                   ),
                                                 ),
                                               ],
@@ -842,7 +840,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                     listViewFaccoesRowList[
                                                         listViewIndex];
                                                 return Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 8.0, 16.0, 0.0),
                                                   child: Container(
@@ -851,7 +849,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
-                                                      boxShadow: [
+                                                      boxShadow: const [
                                                         BoxShadow(
                                                           blurRadius: 3.0,
                                                           color:
@@ -868,7 +866,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   8.0,
@@ -908,7 +906,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -947,7 +945,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                           .secondaryBackground,
                                                                     ),
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                     child:
@@ -963,7 +961,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             0.0,
                                                                             0.0,
@@ -995,7 +993,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           0.0,
@@ -1028,7 +1026,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           0.0,
@@ -1078,12 +1076,12 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                                         ),
                                                                         child:
                                                                             Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 8.0,
                                                                                 0.0,
                                                                                 8.0,
@@ -1110,7 +1108,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
