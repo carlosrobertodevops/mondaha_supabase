@@ -233,146 +233,148 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 16.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Align(
-                                            alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
-                                            child: Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: MediaQuery.sizeOf(context)
-                                                      .height *
-                                                  0.826,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Column(
-                                                  children: [
-                                                    Align(
-                                                      alignment:
-                                                          const Alignment(0.0, 0),
-                                                      child: TabBar(
-                                                        labelColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        unselectedLabelColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        labelStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                        unselectedLabelStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                        indicatorColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        tabs: [
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'ap8ub3ro' /* Profile */,
+                                      child: SingleChildScrollView(
+                                        primary: false,
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height *
+                                                        0.826,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Column(
+                                                    children: [
+                                                      Align(
+                                                        alignment:
+                                                            const Alignment(0.0, 0),
+                                                        child: TabBar(
+                                                          labelColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryText,
+                                                          unselectedLabelColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondaryText,
+                                                          labelStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          unselectedLabelStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          indicatorColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                          tabs: [
+                                                            Tab(
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                'ap8ub3ro' /* Profile */,
+                                                              ),
                                                             ),
-                                                          ),
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'nvxntirq' /* History */,
+                                                            Tab(
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                'nvxntirq' /* History */,
+                                                              ),
                                                             ),
-                                                          ),
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              '5got0r9g' /* Procedures */,
+                                                            Tab(
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                '5got0r9g' /* Procedures */,
+                                                              ),
                                                             ),
-                                                          ),
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'zo5mhuuq' /* Faction */,
+                                                            Tab(
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                'zo5mhuuq' /* Faction */,
+                                                              ),
                                                             ),
-                                                          ),
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'stse0963' /* Crime Action */,
+                                                            Tab(
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                'stse0963' /* Crime Action */,
+                                                              ),
                                                             ),
-                                                          ),
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'i3nwl1ug' /* Alert */,
+                                                            Tab(
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                'i3nwl1ug' /* Alert */,
+                                                              ),
                                                             ),
-                                                          ),
-                                                        ],
-                                                        controller: _model
-                                                            .tabBarController,
-                                                        onTap: (i) async {
-                                                          [
-                                                            () async {},
-                                                            () async {},
-                                                            () async {},
-                                                            () async {},
-                                                            () async {},
-                                                            () async {}
-                                                          ][i]();
-                                                        },
+                                                          ],
+                                                          controller: _model
+                                                              .tabBarController,
+                                                          onTap: (i) async {
+                                                            [
+                                                              () async {},
+                                                              () async {},
+                                                              () async {},
+                                                              () async {},
+                                                              () async {},
+                                                              () async {}
+                                                            ][i]();
+                                                          },
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Expanded(
-                                                      child: TabBarView(
-                                                        controller: _model
-                                                            .tabBarController,
-                                                        children: [
-                                                          Align(
-                                                            alignment:
-                                                                const AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child:
-                                                                  SingleChildScrollView(
+                                                      Expanded(
+                                                        child: TabBarView(
+                                                          controller: _model
+                                                              .tabBarController,
+                                                          children: [
+                                                            Align(
+                                                              alignment:
+                                                                  const AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Padding(
+                                                                padding: const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        16.0,
+                                                                        0.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -422,7 +424,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
-                                                                                MainAxisSize.max,
+                                                                                MainAxisSize.min,
                                                                             mainAxisAlignment:
                                                                                 MainAxisAlignment.center,
                                                                             children:
@@ -1868,7 +1870,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                   ),
                                                                                 ].divide(const SizedBox(width: 10.0)),
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 16.0)),
+                                                                            ].divide(const SizedBox(height: 15.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1877,561 +1879,362 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                 ),
                                                               ),
                                                             ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        16.0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Expanded(
-                                                                  child: Form(
-                                                                    key: _model
-                                                                        .formKey2,
-                                                                    autovalidateMode:
-                                                                        AutovalidateMode
-                                                                            .disabled,
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          1149.0,
-                                                                      height:
-                                                                          701.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Expanded(
+                                                                    child: Form(
+                                                                      key: _model
+                                                                          .formKey2,
+                                                                      autovalidateMode:
+                                                                          AutovalidateMode
+                                                                              .disabled,
                                                                       child:
-                                                                          Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            16.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                          Container(
+                                                                        width:
+                                                                            1149.0,
+                                                                        height:
+                                                                            701.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
                                                                         child:
-                                                                            SingleChildScrollView(
+                                                                            Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              16.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.start,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children:
-                                                                                [
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  FlutterFlowRadioButton(
-                                                                                    options: [
-                                                                                      FFLocalizations.of(context).getText(
-                                                                                        '08f1it9z' /* Brazilian born */,
-                                                                                      ),
-                                                                                      FFLocalizations.of(context).getText(
-                                                                                        '5r7kuicl' /* Naturalized Brazilian */,
-                                                                                      ),
-                                                                                      FFLocalizations.of(context).getText(
-                                                                                        'pjygocz6' /* Foreigner */,
-                                                                                      )
-                                                                                    ].toList(),
-                                                                                    onChanged: (val) => safeSetState(() {}),
-                                                                                    controller: _model.radioButtonValueController ??= FormFieldController<String>(null),
-                                                                                    optionHeight: 32.0,
-                                                                                    textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
+                                                                              SingleChildScrollView(
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.start,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                              children: [
+                                                                                Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    FlutterFlowRadioButton(
+                                                                                      options: [
+                                                                                        FFLocalizations.of(context).getText(
+                                                                                          '08f1it9z' /* Brazilian born */,
                                                                                         ),
-                                                                                    selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
+                                                                                        FFLocalizations.of(context).getText(
+                                                                                          '5r7kuicl' /* Naturalized Brazilian */,
                                                                                         ),
-                                                                                    buttonPosition: RadioButtonPosition.left,
-                                                                                    direction: Axis.horizontal,
-                                                                                    radioButtonColor: FlutterFlowTheme.of(context).primary,
-                                                                                    inactiveRadioButtonColor: FlutterFlowTheme.of(context).secondaryText,
-                                                                                    toggleable: false,
-                                                                                    horizontalAlignment: WrapAlignment.start,
-                                                                                    verticalAlignment: WrapCrossAlignment.start,
-                                                                                  ),
-                                                                                  Expanded(
-                                                                                    flex: 4,
-                                                                                    child: FlutterFlowDropDown<String>(
-                                                                                      controller: _model.ddwEstadoValueController2 ??= FormFieldController<String>(
-                                                                                        _model.ddwEstadoValue2 ??= '',
-                                                                                      ),
-                                                                                      options: List<String>.from(['']),
-                                                                                      optionLabels: const [''],
-                                                                                      onChanged: (val) => safeSetState(() => _model.ddwEstadoValue2 = val),
-                                                                                      height: 60.0,
-                                                                                      searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                        FFLocalizations.of(context).getText(
+                                                                                          'pjygocz6' /* Foreigner */,
+                                                                                        )
+                                                                                      ].toList(),
+                                                                                      onChanged: (val) => safeSetState(() {}),
+                                                                                      controller: _model.radioButtonValueController ??= FormFieldController<String>(null),
+                                                                                      optionHeight: 32.0,
+                                                                                      textStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
                                                                                             letterSpacing: 0.0,
                                                                                           ),
-                                                                                      searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
                                                                                             letterSpacing: 0.0,
                                                                                           ),
-                                                                                      textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      hintText: FFLocalizations.of(context).getText(
-                                                                                        'cbh3ukkw' /* Function */,
-                                                                                      ),
-                                                                                      searchHintText: FFLocalizations.of(context).getText(
-                                                                                        'td986qh3' /* Search... */,
-                                                                                      ),
-                                                                                      icon: Icon(
-                                                                                        Icons.keyboard_arrow_down_rounded,
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        size: 24.0,
-                                                                                      ),
-                                                                                      fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      elevation: 2.0,
-                                                                                      borderColor: FlutterFlowTheme.of(context).alternate,
-                                                                                      borderWidth: 2.0,
-                                                                                      borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                                      hidesUnderline: true,
-                                                                                      isOverButton: false,
-                                                                                      isSearchable: true,
-                                                                                      isMultiSelect: false,
+                                                                                      buttonPosition: RadioButtonPosition.left,
+                                                                                      direction: Axis.horizontal,
+                                                                                      radioButtonColor: FlutterFlowTheme.of(context).primary,
+                                                                                      inactiveRadioButtonColor: FlutterFlowTheme.of(context).secondaryText,
+                                                                                      toggleable: false,
+                                                                                      horizontalAlignment: WrapAlignment.start,
+                                                                                      verticalAlignment: WrapCrossAlignment.start,
                                                                                     ),
-                                                                                  ),
-                                                                                  Expanded(
-                                                                                    flex: 4,
-                                                                                    child: FlutterFlowDropDown<String>(
-                                                                                      controller: _model.ddwMunicipioValueController2 ??= FormFieldController<String>(
-                                                                                        _model.ddwMunicipioValue2 ??= '',
-                                                                                      ),
-                                                                                      options: List<String>.from(['']),
-                                                                                      optionLabels: const [''],
-                                                                                      onChanged: (val) => safeSetState(() => _model.ddwMunicipioValue2 = val),
-                                                                                      height: 60.0,
-                                                                                      searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      hintText: FFLocalizations.of(context).getText(
-                                                                                        'tsjf37kw' /* Function */,
-                                                                                      ),
-                                                                                      searchHintText: FFLocalizations.of(context).getText(
-                                                                                        'el0ub5v2' /* Search... */,
-                                                                                      ),
-                                                                                      icon: Icon(
-                                                                                        Icons.keyboard_arrow_down_rounded,
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        size: 24.0,
-                                                                                      ),
-                                                                                      fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      elevation: 2.0,
-                                                                                      borderColor: FlutterFlowTheme.of(context).alternate,
-                                                                                      borderWidth: 2.0,
-                                                                                      borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                                      hidesUnderline: true,
-                                                                                      isOverButton: false,
-                                                                                      isSearchable: true,
-                                                                                      isMultiSelect: false,
-                                                                                    ),
-                                                                                  ),
-                                                                                  Expanded(
-                                                                                    flex: 4,
-                                                                                    child: FlutterFlowDropDown<String>(
-                                                                                      controller: _model.ddwDistritoValueController2 ??= FormFieldController<String>(
-                                                                                        _model.ddwDistritoValue2 ??= '',
-                                                                                      ),
-                                                                                      options: List<String>.from(['']),
-                                                                                      optionLabels: const [''],
-                                                                                      onChanged: (val) => safeSetState(() => _model.ddwDistritoValue2 = val),
-                                                                                      height: 60.0,
-                                                                                      textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      hintText: FFLocalizations.of(context).getText(
-                                                                                        'sdft18te' /* Positions */,
-                                                                                      ),
-                                                                                      icon: Icon(
-                                                                                        Icons.keyboard_arrow_down_rounded,
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        size: 24.0,
-                                                                                      ),
-                                                                                      fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      elevation: 2.0,
-                                                                                      borderColor: FlutterFlowTheme.of(context).alternate,
-                                                                                      borderWidth: 2.0,
-                                                                                      borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                                      hidesUnderline: true,
-                                                                                      isOverButton: false,
-                                                                                      isSearchable: false,
-                                                                                      isMultiSelect: false,
-                                                                                    ),
-                                                                                  ),
-                                                                                ].divide(const SizedBox(width: 10.0)),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Expanded(
-                                                                                    flex: 6,
-                                                                                    child: SizedBox(
-                                                                                      width: MediaQuery.sizeOf(context).width * 1.0,
-                                                                                      child: TextFormField(
-                                                                                        controller: _model.txtMembroHistoricoTextController ??= TextEditingController(
-                                                                                          text: overlayMembrosRow?.historico,
+                                                                                    Expanded(
+                                                                                      flex: 4,
+                                                                                      child: FlutterFlowDropDown<String>(
+                                                                                        controller: _model.ddwEstadoValueController2 ??= FormFieldController<String>(
+                                                                                          _model.ddwEstadoValue2 ??= '',
                                                                                         ),
-                                                                                        focusNode: _model.txtMembroHistoricoFocusNode,
-                                                                                        autofocus: true,
-                                                                                        obscureText: false,
-                                                                                        decoration: InputDecoration(
-                                                                                          labelText: FFLocalizations.of(context).getText(
-                                                                                            'awnrzzus' /* Historic */,
-                                                                                          ),
-                                                                                          labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                          alignLabelWithHint: true,
-                                                                                          hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                          enabledBorder: OutlineInputBorder(
-                                                                                            borderSide: BorderSide(
-                                                                                              color: FlutterFlowTheme.of(context).alternate,
-                                                                                              width: 2.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                          ),
-                                                                                          focusedBorder: OutlineInputBorder(
-                                                                                            borderSide: BorderSide(
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              width: 2.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                          ),
-                                                                                          errorBorder: OutlineInputBorder(
-                                                                                            borderSide: BorderSide(
-                                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                                              width: 2.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                          ),
-                                                                                          focusedErrorBorder: OutlineInputBorder(
-                                                                                            borderSide: BorderSide(
-                                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                                              width: 2.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                          ),
-                                                                                          filled: true,
-                                                                                          fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
-                                                                                        ),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        options: List<String>.from(['']),
+                                                                                        optionLabels: const [''],
+                                                                                        onChanged: (val) => safeSetState(() => _model.ddwEstadoValue2 = val),
+                                                                                        height: 60.0,
+                                                                                        searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                               fontFamily: 'Plus Jakarta Sans',
                                                                                               letterSpacing: 0.0,
                                                                                             ),
-                                                                                        maxLines: 26,
-                                                                                        cursorColor: FlutterFlowTheme.of(context).primary,
-                                                                                        validator: _model.txtMembroHistoricoTextControllerValidator.asValidator(context),
+                                                                                        searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        hintText: FFLocalizations.of(context).getText(
+                                                                                          'cbh3ukkw' /* Function */,
+                                                                                        ),
+                                                                                        searchHintText: FFLocalizations.of(context).getText(
+                                                                                          'td986qh3' /* Search... */,
+                                                                                        ),
+                                                                                        icon: Icon(
+                                                                                          Icons.keyboard_arrow_down_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                        fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                        elevation: 2.0,
+                                                                                        borderColor: FlutterFlowTheme.of(context).alternate,
+                                                                                        borderWidth: 2.0,
+                                                                                        borderRadius: 8.0,
+                                                                                        margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                        hidesUnderline: true,
+                                                                                        isOverButton: false,
+                                                                                        isSearchable: true,
+                                                                                        isMultiSelect: false,
                                                                                       ),
                                                                                     ),
-                                                                                  ),
-                                                                                ].divide(const SizedBox(width: 10.0)),
-                                                                              ),
-                                                                            ].divide(const SizedBox(height: 10.0)),
+                                                                                    Expanded(
+                                                                                      flex: 4,
+                                                                                      child: FlutterFlowDropDown<String>(
+                                                                                        controller: _model.ddwMunicipioValueController2 ??= FormFieldController<String>(
+                                                                                          _model.ddwMunicipioValue2 ??= '',
+                                                                                        ),
+                                                                                        options: List<String>.from(['']),
+                                                                                        optionLabels: const [''],
+                                                                                        onChanged: (val) => safeSetState(() => _model.ddwMunicipioValue2 = val),
+                                                                                        height: 60.0,
+                                                                                        searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        hintText: FFLocalizations.of(context).getText(
+                                                                                          'tsjf37kw' /* Function */,
+                                                                                        ),
+                                                                                        searchHintText: FFLocalizations.of(context).getText(
+                                                                                          'el0ub5v2' /* Search... */,
+                                                                                        ),
+                                                                                        icon: Icon(
+                                                                                          Icons.keyboard_arrow_down_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                        fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                        elevation: 2.0,
+                                                                                        borderColor: FlutterFlowTheme.of(context).alternate,
+                                                                                        borderWidth: 2.0,
+                                                                                        borderRadius: 8.0,
+                                                                                        margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                        hidesUnderline: true,
+                                                                                        isOverButton: false,
+                                                                                        isSearchable: true,
+                                                                                        isMultiSelect: false,
+                                                                                      ),
+                                                                                    ),
+                                                                                    Expanded(
+                                                                                      flex: 4,
+                                                                                      child: FlutterFlowDropDown<String>(
+                                                                                        controller: _model.ddwDistritoValueController2 ??= FormFieldController<String>(
+                                                                                          _model.ddwDistritoValue2 ??= '',
+                                                                                        ),
+                                                                                        options: List<String>.from(['']),
+                                                                                        optionLabels: const [''],
+                                                                                        onChanged: (val) => safeSetState(() => _model.ddwDistritoValue2 = val),
+                                                                                        height: 60.0,
+                                                                                        textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        hintText: FFLocalizations.of(context).getText(
+                                                                                          'sdft18te' /* Positions */,
+                                                                                        ),
+                                                                                        icon: Icon(
+                                                                                          Icons.keyboard_arrow_down_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                        fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                        elevation: 2.0,
+                                                                                        borderColor: FlutterFlowTheme.of(context).alternate,
+                                                                                        borderWidth: 2.0,
+                                                                                        borderRadius: 8.0,
+                                                                                        margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                        hidesUnderline: true,
+                                                                                        isOverButton: false,
+                                                                                        isSearchable: false,
+                                                                                        isMultiSelect: false,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ].divide(const SizedBox(width: 10.0)),
+                                                                                ),
+                                                                                Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    Expanded(
+                                                                                      flex: 6,
+                                                                                      child: SizedBox(
+                                                                                        width: MediaQuery.sizeOf(context).width * 1.0,
+                                                                                        child: TextFormField(
+                                                                                          controller: _model.txtMembroHistoricoTextController ??= TextEditingController(
+                                                                                            text: overlayMembrosRow?.historico,
+                                                                                          ),
+                                                                                          focusNode: _model.txtMembroHistoricoFocusNode,
+                                                                                          autofocus: true,
+                                                                                          obscureText: false,
+                                                                                          decoration: InputDecoration(
+                                                                                            labelText: FFLocalizations.of(context).getText(
+                                                                                              'awnrzzus' /* Historic */,
+                                                                                            ),
+                                                                                            labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                  letterSpacing: 0.0,
+                                                                                                ),
+                                                                                            alignLabelWithHint: true,
+                                                                                            hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                  letterSpacing: 0.0,
+                                                                                                ),
+                                                                                            enabledBorder: OutlineInputBorder(
+                                                                                              borderSide: BorderSide(
+                                                                                                color: FlutterFlowTheme.of(context).alternate,
+                                                                                                width: 2.0,
+                                                                                              ),
+                                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                                            ),
+                                                                                            focusedBorder: OutlineInputBorder(
+                                                                                              borderSide: BorderSide(
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                width: 2.0,
+                                                                                              ),
+                                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                                            ),
+                                                                                            errorBorder: OutlineInputBorder(
+                                                                                              borderSide: BorderSide(
+                                                                                                color: FlutterFlowTheme.of(context).error,
+                                                                                                width: 2.0,
+                                                                                              ),
+                                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                                            ),
+                                                                                            focusedErrorBorder: OutlineInputBorder(
+                                                                                              borderSide: BorderSide(
+                                                                                                color: FlutterFlowTheme.of(context).error,
+                                                                                                width: 2.0,
+                                                                                              ),
+                                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                                            ),
+                                                                                            filled: true,
+                                                                                            fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                          ),
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                                letterSpacing: 0.0,
+                                                                                              ),
+                                                                                          maxLines: 26,
+                                                                                          cursorColor: FlutterFlowTheme.of(context).primary,
+                                                                                          validator: _model.txtMembroHistoricoTextControllerValidator.asValidator(context),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ].divide(const SizedBox(width: 10.0)),
+                                                                                ),
+                                                                              ].divide(const SizedBox(height: 10.0)),
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                              ],
+                                                                ],
+                                                              ),
                                                             ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        16.0),
-                                                            child:
-                                                                SingleChildScrollView(
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            16.0,
-                                                                            16.0,
-                                                                            16.0,
-                                                                            16.0),
-                                                                    child:
-                                                                        StickyHeader(
-                                                                      overlapHeaders:
-                                                                          false,
-                                                                      header:
-                                                                          Container(
-                                                                        width: double
-                                                                            .infinity,
-                                                                        height:
-                                                                            50.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                        ),
-                                                                        alignment: const AlignmentDirectional(
-                                                                            -1.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.stretch,
-                                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
+                                                              child:
+                                                                  SingleChildScrollView(
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          16.0,
+                                                                          16.0,
+                                                                          16.0),
+                                                                      child:
+                                                                          StickyHeader(
+                                                                        overlapHeaders:
+                                                                            false,
+                                                                        header:
                                                                             Container(
-                                                                              decoration: const BoxDecoration(),
-                                                                              child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
-                                                                                child: SingleChildScrollView(
-                                                                                  scrollDirection: Axis.horizontal,
-                                                                                  child: Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                    children: [
-                                                                                      Align(
-                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                        child: Container(
-                                                                                          decoration: const BoxDecoration(),
-                                                                                          child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                            child: Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                'pkxqwpe0' /* Procedure */,
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Align(
-                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                        child: Container(
-                                                                                          decoration: const BoxDecoration(),
-                                                                                          child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                            child: Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                '8wkf62hp' /* Procedure */,
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Align(
-                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                        child: Container(
-                                                                                          decoration: const BoxDecoration(),
-                                                                                          child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                            child: Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                'cwdxjy9v' /* Unit */,
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Align(
-                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                        child: Container(
-                                                                                          decoration: const BoxDecoration(),
-                                                                                          child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                            child: Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                'l2vacdhp' /* Type of Procedure */,
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Align(
-                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                        child: Container(
-                                                                                          decoration: const BoxDecoration(),
-                                                                                          child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                            child: Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                'vpcryda6' /* Crime */,
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Align(
-                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                        child: Container(
-                                                                                          decoration: const BoxDecoration(),
-                                                                                          child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                            child: Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                's7pnbuqy' /* Data */,
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ].divide(const SizedBox(width: 16.0)),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                      content:
-                                                                          Container(
-                                                                        decoration:
-                                                                            const BoxDecoration(),
-                                                                        child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                height: 70.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 0.0,
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      offset: const Offset(
-                                                                                        0.0,
-                                                                                        1.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(1.0),
-                                                                                  border: Border.all(
-                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  ),
-                                                                                ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              50.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                          ),
+                                                                          alignment: const AlignmentDirectional(
+                                                                              -1.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.center,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.stretch,
+                                                                            children: [
+                                                                              Container(
+                                                                                decoration: const BoxDecoration(),
                                                                                 child: Padding(
                                                                                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
-                                                                                  child: Row(
-                                                                                    mainAxisSize: MainAxisSize.min,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                    children: [
-                                                                                      Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                        child: Container(
-                                                                                          width: 100.0,
-                                                                                          height: 100.0,
-                                                                                          decoration: BoxDecoration(
-                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                          ),
-                                                                                          child: Column(
-                                                                                            mainAxisSize: MainAxisSize.min,
-                                                                                            mainAxisAlignment: MainAxisAlignment.center,
-                                                                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                            children: [
-                                                                                              Align(
-                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                                child: FlutterFlowIconButton(
-                                                                                                  borderRadius: 40.0,
-                                                                                                  buttonSize: 40.0,
-                                                                                                  fillColor: FlutterFlowTheme.of(context).primary,
-                                                                                                  icon: Icon(
-                                                                                                    Icons.arrow_back,
-                                                                                                    color: FlutterFlowTheme.of(context).info,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  showLoadingIndicator: true,
-                                                                                                  onPressed: () {
-                                                                                                    print('IconButton pressed ...');
-                                                                                                  },
-                                                                                                ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Expanded(
-                                                                                        child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                                  child: SingleChildScrollView(
+                                                                                    scrollDirection: Axis.horizontal,
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                      children: [
+                                                                                        Align(
+                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                           child: Container(
-                                                                                            width: 100.0,
-                                                                                            height: 100.0,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            ),
-                                                                                            child: Align(
-                                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Padding(
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
-                                                                                                  'k0z056dg' /* List Item */,
+                                                                                                  'pkxqwpe0' /* Procedure */,
                                                                                                 ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
@@ -2439,23 +2242,17 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                      Expanded(
-                                                                                        child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                        Align(
+                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                           child: Container(
-                                                                                            width: 100.0,
-                                                                                            height: 100.0,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            ),
-                                                                                            child: Align(
-                                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Padding(
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
-                                                                                                  '4vkiqra9' /* List Item */,
+                                                                                                  '8wkf62hp' /* Procedure */,
                                                                                                 ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
@@ -2463,23 +2260,17 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                      Expanded(
-                                                                                        child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                        Align(
+                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                           child: Container(
-                                                                                            width: 100.0,
-                                                                                            height: 100.0,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            ),
-                                                                                            child: Align(
-                                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Padding(
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
-                                                                                                  'qddih2dx' /* List Item */,
+                                                                                                  'cwdxjy9v' /* Unit */,
                                                                                                 ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
@@ -2487,23 +2278,17 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                      Expanded(
-                                                                                        child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                        Align(
+                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                           child: Container(
-                                                                                            width: 100.0,
-                                                                                            height: 100.0,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            ),
-                                                                                            child: Align(
-                                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Padding(
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
-                                                                                                  'cyqz7sdo' /* List Item */,
+                                                                                                  'l2vacdhp' /* Type of Procedure */,
                                                                                                 ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
@@ -2511,23 +2296,17 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                      Expanded(
-                                                                                        child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                        Align(
+                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                           child: Container(
-                                                                                            width: 100.0,
-                                                                                            height: 100.0,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            ),
-                                                                                            child: Align(
-                                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Padding(
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
-                                                                                                  'iwh4sdh0' /* List Item */,
+                                                                                                  'vpcryda6' /* Crime */,
                                                                                                 ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
@@ -2535,319 +2314,532 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                      Icon(
-                                                                                        Icons.chevron_right_rounded,
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        size: 24.0,
-                                                                                      ),
-                                                                                    ],
+                                                                                        Align(
+                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                          child: Container(
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Padding(
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                              child: Text(
+                                                                                                FFLocalizations.of(context).getText(
+                                                                                                  's7pnbuqy' /* Data */,
+                                                                                                ),
+                                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                                      letterSpacing: 0.0,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ].divide(const SizedBox(width: 16.0)),
+                                                                                    ),
                                                                                   ),
                                                                                 ),
                                                                               ),
-                                                                            ),
-                                                                          ],
+                                                                            ],
+                                                                          ),
                                                                         ),
+                                                                        content:
+                                                                            Container(
+                                                                          decoration:
+                                                                              const BoxDecoration(),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                                                                                child: Container(
+                                                                                  width: double.infinity,
+                                                                                  height: 70.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    boxShadow: [
+                                                                                      BoxShadow(
+                                                                                        blurRadius: 0.0,
+                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                        offset: const Offset(
+                                                                                          0.0,
+                                                                                          1.0,
+                                                                                        ),
+                                                                                      )
+                                                                                    ],
+                                                                                    borderRadius: BorderRadius.circular(1.0),
+                                                                                    border: Border.all(
+                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                    ),
+                                                                                  ),
+                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.min,
+                                                                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                          child: Container(
+                                                                                            width: 100.0,
+                                                                                            height: 100.0,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            ),
+                                                                                            child: Column(
+                                                                                              mainAxisSize: MainAxisSize.min,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Align(
+                                                                                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                  child: FlutterFlowIconButton(
+                                                                                                    borderRadius: 40.0,
+                                                                                                    buttonSize: 40.0,
+                                                                                                    fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                                    icon: Icon(
+                                                                                                      Icons.arrow_back,
+                                                                                                      color: FlutterFlowTheme.of(context).info,
+                                                                                                      size: 24.0,
+                                                                                                    ),
+                                                                                                    showLoadingIndicator: true,
+                                                                                                    onPressed: () {
+                                                                                                      print('IconButton pressed ...');
+                                                                                                    },
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                                            child: Container(
+                                                                                              width: 100.0,
+                                                                                              height: 100.0,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                              ),
+                                                                                              child: Align(
+                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                child: Text(
+                                                                                                  FFLocalizations.of(context).getText(
+                                                                                                    'k0z056dg' /* List Item */,
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                                        letterSpacing: 0.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            child: Container(
+                                                                                              width: 100.0,
+                                                                                              height: 100.0,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                              ),
+                                                                                              child: Align(
+                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                child: Text(
+                                                                                                  FFLocalizations.of(context).getText(
+                                                                                                    '4vkiqra9' /* List Item */,
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                                        letterSpacing: 0.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            child: Container(
+                                                                                              width: 100.0,
+                                                                                              height: 100.0,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                              ),
+                                                                                              child: Align(
+                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                child: Text(
+                                                                                                  FFLocalizations.of(context).getText(
+                                                                                                    'qddih2dx' /* List Item */,
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                                        letterSpacing: 0.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            child: Container(
+                                                                                              width: 100.0,
+                                                                                              height: 100.0,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                              ),
+                                                                                              child: Align(
+                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                child: Text(
+                                                                                                  FFLocalizations.of(context).getText(
+                                                                                                    'cyqz7sdo' /* List Item */,
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                                        letterSpacing: 0.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            child: Container(
+                                                                                              width: 100.0,
+                                                                                              height: 100.0,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                              ),
+                                                                                              child: Align(
+                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                child: Text(
+                                                                                                  FFLocalizations.of(context).getText(
+                                                                                                    'iwh4sdh0' /* List Item */,
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                                        letterSpacing: 0.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Icon(
+                                                                                          Icons.chevron_right_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
+                                                              child:
+                                                                  SingleChildScrollView(
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          1.0,
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
+                                                                          0.756,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Expanded(
+                                                                    child:
+                                                                        Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          1.0,
+                                                                      height:
+                                                                          MediaQuery.sizeOf(context).height *
+                                                                              0.8,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
                                                                       ),
                                                                     ),
                                                                   ),
                                                                 ],
                                                               ),
                                                             ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        16.0),
-                                                            child:
-                                                                SingleChildScrollView(
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
                                                                 children: [
-                                                                  Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
-                                                                    height: MediaQuery.sizeOf(context)
-                                                                            .height *
-                                                                        0.756,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
+                                                                  Expanded(
+                                                                    child:
+                                                                        Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          1.0,
+                                                                      height:
+                                                                          MediaQuery.sizeOf(context).height *
+                                                                              0.8,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ],
                                                               ),
                                                             ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        16.0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
-                                                                    height:
-                                                                        MediaQuery.sizeOf(context).height *
-                                                                            0.8,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        16.0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
-                                                                    height:
-                                                                        MediaQuery.sizeOf(context).height *
-                                                                            0.8,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ],
+                                                          ],
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, -1.0),
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 12.0, 0.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              0.0, 0.05),
-                                                      child: FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'Button pressed ...');
-                                                        },
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'yotbhdup' /* Cancel */,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 44.0,
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      16.0,
-                                                                      0.0,
-                                                                      16.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color: FlutterFlowTheme
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, -1.0),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 12.0, 0.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.05),
+                                                        child: FFButtonWidget(
+                                                          onPressed: () {
+                                                            print(
+                                                                'Button pressed ...');
+                                                          },
+                                                          text: FFLocalizations
                                                                   .of(context)
-                                                              .secondaryBackground,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    letterSpacing:
+                                                              .getText(
+                                                            'yotbhdup' /* Cancel */,
+                                                          ),
+                                                          options:
+                                                              FFButtonOptions(
+                                                            height: 44.0,
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
                                                                         0.0,
-                                                                  ),
-                                                          elevation: 0.0,
-                                                          borderSide:
-                                                              BorderSide(
+                                                                        16.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .primary,
-                                                            width: 2.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          hoverColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
+                                                                .secondaryBackground,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Plus Jakarta Sans',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                            elevation: 0.0,
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
                                                                   .primary,
-                                                          hoverBorderSide:
-                                                              BorderSide(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            width: 2.0,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                            hoverColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                            hoverBorderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              width: 2.0,
+                                                            ),
+                                                            hoverTextColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .info,
+                                                            hoverElevation: 3.0,
                                                           ),
-                                                          hoverTextColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .info,
-                                                          hoverElevation: 3.0,
                                                         ),
                                                       ),
-                                                    ),
-                                                    Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              0.0, 0.05),
-                                                      child: FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'Button pressed ...');
-                                                        },
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'afbgi0tm' /* Save Member */,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 44.0,
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      16.0,
-                                                                      0.0,
-                                                                      16.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color: FlutterFlowTheme
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.05),
+                                                        child: FFButtonWidget(
+                                                          onPressed: () {
+                                                            print(
+                                                                'Button pressed ...');
+                                                          },
+                                                          text: FFLocalizations
                                                                   .of(context)
-                                                              .primary,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                          elevation: 3.0,
-                                                          borderSide:
-                                                              const BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1.0,
+                                                              .getText(
+                                                            'afbgi0tm' /* Save Member */,
                                                           ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          hoverColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .accent1,
-                                                          hoverBorderSide:
-                                                              BorderSide(
+                                                          options:
+                                                              FFButtonOptions(
+                                                            height: 44.0,
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        16.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            width: 1.0,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Plus Jakarta Sans',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .info,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                            elevation: 3.0,
+                                                            borderSide:
+                                                                const BorderSide(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              width: 1.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                            hoverColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent1,
+                                                            hoverBorderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              width: 1.0,
+                                                            ),
+                                                            hoverTextColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                            hoverElevation: 0.0,
                                                           ),
-                                                          hoverTextColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                          hoverElevation: 0.0,
                                                         ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ].divide(const SizedBox(height: 0.0)),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
