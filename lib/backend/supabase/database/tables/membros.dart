@@ -97,6 +97,10 @@ class MembrosRow extends SupabaseDataRow {
   set faccaoInimiga(List<int>? value) =>
       setListField<int>('faccao_inimiga', value);
 
-  String? get senha => getField<String>('senha');
-  set senha(String? value) => setField<String>('senha', value);
+  String? get faccaoSenha => getField<String>('faccao_senha');
+  set faccaoSenha(String? value) => setField<String>('faccao_senha', value);
+
+  List<String> get membroEndereco => getListField<String>('membro_endereco');
+  set membroEndereco(List<String>? value) =>
+      setListField<String>('membro_endereco', value);
 }
