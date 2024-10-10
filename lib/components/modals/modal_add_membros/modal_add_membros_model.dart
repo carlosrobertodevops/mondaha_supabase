@@ -71,12 +71,12 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   String? Function(BuildContext, String?)?
       txtDataUltimaPrisaoTextControllerValidator;
   DateTime? datePicked1;
-  // State field(s) for txt_localizacao widget.
-  FocusNode? txtLocalizacaoFocusNode;
-  TextEditingController? txtLocalizacaoTextController;
-  final txtLocalizacaoMask = MaskTextInputFormatter(mask: '##/##/####');
+  // State field(s) for txt_data_nascimento widget.
+  FocusNode? txtDataNascimentoFocusNode;
+  TextEditingController? txtDataNascimentoTextController;
+  final txtDataNascimentoMask = MaskTextInputFormatter(mask: '##/##/####');
   String? Function(BuildContext, String?)?
-      txtLocalizacaoTextControllerValidator;
+      txtDataNascimentoTextControllerValidator;
   DateTime? datePicked2;
   // State field(s) for txt_no_infopen widget.
   FocusNode? txtNoInfopenFocusNode;
@@ -137,8 +137,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
     txtDataUltimaPrisaoFocusNode?.dispose();
     txtDataUltimaPrisaoTextController?.dispose();
 
-    txtLocalizacaoFocusNode?.dispose();
-    txtLocalizacaoTextController?.dispose();
+    txtDataNascimentoFocusNode?.dispose();
+    txtDataNascimentoTextController?.dispose();
 
     txtNoInfopenFocusNode?.dispose();
     txtNoInfopenTextController?.dispose();
