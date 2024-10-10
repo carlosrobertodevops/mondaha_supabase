@@ -29,8 +29,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   ///  State fields for stateful widgets in this component.
 
-  final formKey2 = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>

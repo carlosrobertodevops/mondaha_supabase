@@ -1179,7 +1179,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'danyvope': {
       'en': 'Find Faction',
-      'pt': 'Encontre a facção',
+      'pt': 'Encontrar Facção',
     },
     'bngj5l7i': {
       'en': 'User Habilit',
@@ -1537,204 +1537,204 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Profile',
       'pt': 'Perfil',
     },
-    'zloyk56i': {
+    'fuw255xv': {
       'en':
           'Upload images about the  member and fill out the information below.',
       'pt': 'Carregue imagens sobre o membro e preencha as informações abaixo.',
     },
-    '2kerntna': {
+    'n7bo970y': {
       'en': 'Add Photos',
       'pt': 'Adicionar fotos',
     },
-    'efxxj2dg': {
+    '50a5zzr1': {
       'en': 'Option 1',
       'pt': 'Opção 1',
     },
-    'qis8ek4g': {
+    'mqd7ofwc': {
       'en': 'Option 2',
       'pt': 'Opção 2',
     },
-    'bl0jgbhe': {
+    'kd81fxo5': {
       'en': 'Option 3',
       'pt': 'Opção 3',
     },
-    'sp99lvqo': {
+    'p8zr65o2': {
       'en': 'Factions',
       'pt': 'Facções',
     },
-    '0otbjtza': {
+    'c65kmjew': {
       'en': 'Search...',
       'pt': 'Procurar...',
     },
-    'lxcb32ee': {
+    'lozncyoq': {
       'en': 'Option 1',
       'pt': 'Opção 1',
     },
-    'x765e96i': {
+    'i9uryaau': {
       'en': 'Option 2',
       'pt': 'Opção 2',
     },
-    'uulw707o': {
+    '2kc2hhg9': {
       'en': 'Option 3',
       'pt': 'Opção 3',
     },
-    'lsvyye50': {
+    '4fb7ygyu': {
       'en': 'Function',
       'pt': 'Função',
     },
-    'dbpzx0wa': {
+    'zg77wevd': {
       'en': 'Search...',
       'pt': 'Procurar...',
     },
-    'd8zqa8ak': {
+    'nr4vs3dm': {
       'en': 'Option 1',
       'pt': 'Opção 1',
     },
-    '08g279yz': {
+    'ng7097vi': {
       'en': 'Option 2',
       'pt': 'Opção 2',
     },
-    'kfnc24br': {
+    'nri579hj': {
       'en': 'Option 3',
       'pt': 'Opção 3',
     },
-    '857d9q9s': {
+    '5rqof90h': {
       'en': 'Positions',
       'pt': 'Posições',
     },
-    'clmxob15': {
+    '6gzu9rr7': {
       'en': 'Search...',
       'pt': 'Procurar...',
     },
-    '9scf1wys': {
+    'rfc9v78y': {
       'en': 'Single',
       'pt': 'Solteiro',
     },
-    'k734mapy': {
+    'm9mi75d2': {
       'en': 'Married',
       'pt': 'Casado',
     },
-    'd95v2ygu': {
+    'qso8sekn': {
       'en': 'Divorced',
       'pt': 'Divorciado',
     },
-    'smf8dlax': {
+    'erusnuss': {
       'en': 'Widowed',
       'pt': 'Viúva',
     },
-    'dizjc3xj': {
+    'vcm3xon0': {
       'en': 'Legally separated',
       'pt': 'Separados legalmente',
     },
-    'f9j18s33': {
+    'joe5pub6': {
       'en': 'Stable union:',
       'pt': 'União estável:',
     },
-    'gzfccoxw': {
+    '3ubhuqyx': {
       'en': 'None of the options',
       'pt': 'Nenhuma das opções',
     },
-    'ouyc5fno': {
+    '2rr730y3': {
       'en': 'Marital status',
       'pt': 'Estado civil',
     },
-    'i3mxuf9l': {
+    'hshq11tm': {
       'en': 'Marital status',
       'pt': 'Estado civil',
     },
-    '66dz4air': {
+    'ikt0h50o': {
       'en': 'Nickname',
       'pt': 'Apelido',
     },
-    'ksz338ax': {
+    'jna6z2zu': {
       'en': 'Nickname',
       'pt': 'Apelido',
     },
-    'j299wauq': {
+    'xvhtuhnm': {
       'en': 'Alcunha #1',
       'pt': 'Alcunha #1',
     },
-    'lf0m83g1': {
+    '8bhgzjw3': {
       'en': 'Localizations',
       'pt': 'Localizações',
     },
-    '481urngr': {
+    'w89q228c': {
       'en': 'Search...',
       'pt': 'Procurar...',
     },
-    'iemu2806': {
+    '6is0v9cf': {
       'en': 'Date of last arrest',
       'pt': 'Data da última prisão',
     },
-    'sd6yf6wh': {
+    'y0skhz0z': {
       'en': 'Date of last arrest',
       'pt': 'Data da última prisão',
     },
-    'kvbu18o0': {
+    'ekm5bqzl': {
       'en': 'Date of birth',
       'pt': 'Data de nascimento',
     },
-    '5vjjczd8': {
+    'qsg1hkly': {
       'en': 'Date of birth',
       'pt': 'Data de nascimento',
     },
-    'mtr3m1li': {
+    '2opj9i3o': {
       'en': 'National Infopen Number',
       'pt': 'Número Nacional Infopen',
     },
-    'i5g4w31z': {
+    'v4bdomyi': {
       'en': 'National Infopen Number',
       'pt': 'Número Nacional Infopen',
     },
-    '1oyymlhe': {
+    'i92q2h5w': {
       'en': 'Procedural status',
       'pt': 'Situação processual',
     },
-    'gs8yvqvd': {
+    'ov8z5k7q': {
       'en': 'Procedural status',
       'pt': 'Situação processual',
     },
-    'jr3e9j3h': {
+    'uqfd5q9z': {
       'en': 'Color/Skin/Ethnicity',
       'pt': 'Cor/Pele/Etnia',
     },
-    '4s6o2lo0': {
+    'nbz99o5b': {
       'en': 'Color/Skin/Ethnicity',
       'pt': 'Cor/Pele/Etnia',
     },
-    '8b3ytet2': {
+    '05v92wca': {
       'en': 'Blood type',
       'pt': 'Tipo sanguíneo',
     },
-    'h0xjhkdj': {
+    'f70cpju6': {
       'en': 'Blood type',
       'pt': 'Tipo sanguíneo',
     },
-    'o1xcstp2': {
+    'cjy846zr': {
       'en': 'Mother Name',
       'pt': 'Nome da mãe',
     },
-    'ov71yzv7': {
+    'gc3vbmj4': {
       'en': 'Mother Situation',
       'pt': 'Situação da Mãe',
     },
-    'd3fluyb8': {
+    'bj72hiw8': {
       'en': 'Mother\'s Situation',
       'pt': 'Situação da Mãe',
     },
-    '0lzrdmr3': {
+    'lbcdz337': {
       'en': 'Father Name',
       'pt': 'Nome do pai',
     },
-    'td0xsfvc': {
+    'l5vrftgu': {
       'en': '',
       'pt': '',
     },
-    'u8y4aop8': {
+    'cnn9tddw': {
       'en': 'Father\'s Situation',
       'pt': 'Situação do Pai',
     },
-    'xzwshd49': {
+    'bsvzf3cx': {
       'en': 'Father\'s Situation',
       'pt': 'Situação do Pai',
     },
