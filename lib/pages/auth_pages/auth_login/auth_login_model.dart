@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final formKey1 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>

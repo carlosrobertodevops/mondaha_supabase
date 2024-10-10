@@ -148,130 +148,132 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Align(
                     alignment: const AlignmentDirectional(-1.0, 1.0),
-                    child: SingleChildScrollView(
-                      primary: false,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          constraints: const BoxConstraints(
+                            maxWidth: 602.0,
+                          ),
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(16.0),
+                              bottomRight: Radius.circular(16.0),
+                              topLeft: Radius.circular(0.0),
+                              topRight: Radius.circular(0.0),
+                            ),
+                          ),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                child: Text(
+                                  FFAppState().AGENCIA,
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/images/app_launcher_icon.png',
+                                    width: 300.0,
+                                    height: 250.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          child: Container(
                             width: double.infinity,
+                            height: 600.0,
                             constraints: const BoxConstraints(
-                              maxWidth: 602.0,
+                              maxWidth: 600.0,
                             ),
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              borderRadius: const BorderRadius.only(
-                                bottomLeft: Radius.circular(16.0),
-                                bottomRight: Radius.circular(16.0),
-                                topLeft: Radius.circular(0.0),
-                                topRight: Radius.circular(0.0),
-                              ),
                             ),
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            alignment: const AlignmentDirectional(-1.0, 1.0),
                             child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
-                                  child: Text(
-                                    FFAppState().AGENCIA,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineMedium
+                                  alignment: const Alignment(-1.0, 0),
+                                  child: TabBar(
+                                    isScrollable: true,
+                                    labelColor: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    unselectedLabelColor:
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                    labelPadding: const EdgeInsets.all(16.0),
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .displaySmall
                                         .override(
                                           fontFamily: 'Outfit',
+                                          fontSize: 22.0,
                                           letterSpacing: 0.0,
                                         ),
+                                    unselectedLabelStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 22.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                    indicatorColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    indicatorWeight: 4.0,
+                                    tabs: [
+                                      Tab(
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'tzm2gn5e' /* Sign In */,
+                                        ),
+                                      ),
+                                      Tab(
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'eitkx3bc' /* Sign Up */,
+                                        ),
+                                      ),
+                                    ],
+                                    controller: _model.tabBarController,
+                                    onTap: (i) async {
+                                      [() async {}, () async {}][i]();
+                                    },
                                   ),
                                 ),
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.asset(
-                                      'assets/images/app_launcher_icon.png',
-                                      width: 200.0,
-                                      height: 150.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
-                            child: Container(
-                              width: double.infinity,
-                              height: 600.0,
-                              constraints: const BoxConstraints(
-                                maxWidth: 600.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                              alignment: const AlignmentDirectional(-1.0, 1.0),
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: const Alignment(-1.0, 0),
-                                    child: TabBar(
-                                      isScrollable: true,
-                                      labelColor: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      unselectedLabelColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                      labelPadding: const EdgeInsets.all(16.0),
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 22.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      unselectedLabelStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 22.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                      indicatorColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      indicatorWeight: 4.0,
-                                      tabs: [
-                                        Tab(
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'tzm2gn5e' /* Sign In */,
-                                          ),
-                                        ),
-                                        Tab(
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'eitkx3bc' /* Sign Up */,
-                                          ),
-                                        ),
-                                      ],
-                                      controller: _model.tabBarController,
-                                      onTap: (i) async {
-                                        [() async {}, () async {}][i]();
-                                      },
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: TabBarView(
-                                      controller: _model.tabBarController,
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                Expanded(
+                                  child: TabBarView(
+                                    controller: _model.tabBarController,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Form(
+                                          key: _model.formKey1,
+                                          autovalidateMode:
+                                              AutovalidateMode.disabled,
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
@@ -737,9 +739,14 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                 'columnOnPageLoadAnimation1']!),
                                           ),
                                         ),
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Form(
+                                          key: _model.formKey2,
+                                          autovalidateMode:
+                                              AutovalidateMode.disabled,
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
@@ -1671,15 +1678,15 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                 'columnOnPageLoadAnimation2']!),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

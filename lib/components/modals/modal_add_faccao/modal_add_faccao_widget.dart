@@ -294,6 +294,11 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
 
                                                 var downloadUrls = <String>[];
                                                 try {
+                                                  showUploadMessage(
+                                                    context,
+                                                    'Uploading file...',
+                                                    showLoading: true,
+                                                  );
                                                   selectedUploadedFiles =
                                                       selectedMedia
                                                           .map((m) =>
@@ -321,6 +326,8 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                         selectedMedia,
                                                   );
                                                 } finally {
+                                                  ScaffoldMessenger.of(context)
+                                                      .hideCurrentSnackBar();
                                                   _model.isDataUploading =
                                                       false;
                                                 }
@@ -336,8 +343,12 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                     _model.uploadedFileUrl =
                                                         downloadUrls.first;
                                                   });
+                                                  showUploadMessage(
+                                                      context, 'Success!');
                                                 } else {
                                                   safeSetState(() {});
+                                                  showUploadMessage(context,
+                                                      'Failed to upload data');
                                                   return;
                                                 }
                                               }
