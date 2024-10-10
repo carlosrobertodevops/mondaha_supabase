@@ -232,7 +232,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                     flex: 4,
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 16.0, 16.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       child: SingleChildScrollView(
                                         primary: false,
                                         child: Column(
