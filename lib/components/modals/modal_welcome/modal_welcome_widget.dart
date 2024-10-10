@@ -1,4 +1,4 @@
-import '/components/main_logo_small/main_logo_small_widget.dart';
+import '/components/logos/main_logo_small/main_logo_small_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

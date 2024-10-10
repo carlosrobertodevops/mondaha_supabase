@@ -23,8 +23,8 @@ class MembrosRow extends SupabaseDataRow {
   String? get nomeCompleto => getField<String>('nome_completo');
   set nomeCompleto(String? value) => setField<String>('nome_completo', value);
 
-  List<String> get vulgo => getListField<String>('vulgo');
-  set vulgo(List<String>? value) => setListField<String>('vulgo', value);
+  List<String> get alcunha => getListField<String>('alcunha');
+  set alcunha(List<String>? value) => setListField<String>('alcunha', value);
 
   int? get faccaoId => getField<int>('faccao_id');
   set faccaoId(int? value) => setField<int>('faccao_id', value);
@@ -42,9 +42,6 @@ class MembrosRow extends SupabaseDataRow {
 
   int? get nacionalidade => getField<int>('nacionalidade');
   set nacionalidade(int? value) => setField<int>('nacionalidade', value);
-
-  List<String> get alcunha => getListField<String>('alcunha');
-  set alcunha(List<String>? value) => setListField<String>('alcunha', value);
 
   String? get naturalidade => getField<String>('naturalidade');
   set naturalidade(String? value) => setField<String>('naturalidade', value);

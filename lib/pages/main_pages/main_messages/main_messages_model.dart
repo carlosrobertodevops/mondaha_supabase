@@ -1,4 +1,4 @@
-import '/components/web_nav/web_nav_widget.dart';
+import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'main_messages_widget.dart' show MainMessagesWidget;
 import 'package:flutter/material.dart';

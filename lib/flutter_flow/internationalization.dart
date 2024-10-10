@@ -190,7 +190,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g1uaaovn': {
       'en': 'Update Activity',
-      'pt': 'Atividade de Atualizações',
+      'pt': 'Atividade de atualização',
     },
     'e5q3ows1': {
       'en': 'Below is an a summary of activity.',
@@ -221,7 +221,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '__',
     },
   },
-  // main_membros_list
+  // main_membros
   {
     'n99lg1qh': {
       'en': 'Members',
@@ -249,7 +249,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '04vrv62j': {
       'en': 'Simple Name',
-      'pt': 'Nome Simples',
+      'pt': 'Alculhas',
     },
     '4zc3d2m8': {
       'en': 'CPF',
@@ -272,7 +272,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '__',
     },
   },
-  // main_faccoes
+  // main_faccao_old
   {
     '4h88trkp': {
       'en': 'Contracts',
@@ -617,6 +617,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'All Members',
       'pt': 'Todos os membros',
     },
+    'aw6pd4xm': {
+      'en': 'user@domainname.com',
+      'pt': 'user@domainname.com',
+    },
     '4cek35uo': {
       'en': 'View',
       'pt': 'Visualizar',
@@ -907,7 +911,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Lar',
     },
   },
-  // main_admin_list
+  // main_admin
   {
     'xdubtp8a': {
       'en': 'Customers',
@@ -958,49 +962,41 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '__',
     },
   },
-  // main_faccoes_list
+  // main_faccoes
   {
-    'igm9ah22': {
+    'r8ltzsy4': {
       'en': 'Customers',
       'pt': 'Clientes',
     },
-    'r6rxby9f': {
+    '4j8vce4m': {
       'en': 'Factions',
       'pt': 'Facções',
     },
-    'glylo9gj': {
-      'en': 'Add faction',
-      'pt': 'Adicionar facção',
+    'zt1zsn3q': {
+      'en': 'Add Faction',
+      'pt': 'Adicionar Facção',
     },
-    '029hzzvv': {
+    'a5ixac3k': {
       'en': 'All',
       'pt': 'Todos',
     },
-    'e2orzexv': {
-      'en': 'Faction name',
-      'pt': 'Nome da Facção',
+    '222dkjfs': {
+      'en': 'Name',
+      'pt': 'Nome',
     },
-    'f59ty26q': {
+    'qyq0ek8t': {
       'en': 'Description',
       'pt': 'Descrição',
     },
-    'c6hh5dcp': {
-      'en': 'Founders',
-      'pt': 'Fundadores',
+    'mtyn0hp2': {
+      'en': 'Faction Creation Date',
+      'pt': 'Data de criação da facção',
     },
-    'ht73x20m': {
-      'en': 'Creating in',
-      'pt': 'Crianda em',
+    'h9ronhq6': {
+      'en': 'Last modified',
+      'pt': 'Última modificação',
     },
-    'ct0a7kev': {
-      'en': 'Add in',
-      'pt': 'Adicionar em',
-    },
-    '3s2bnwt5': {
-      'en': 'Agency',
-      'pt': 'Agência',
-    },
-    'rwyyy8yf': {
+    '8xlnl6av': {
       'en': '__',
       'pt': '__',
     },
@@ -1067,7 +1063,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Continuar',
     },
   },
-  // modal_Welcome
+  // modal_welcome
   {
     '00flvi93': {
       'en': 'Congratulations!',
@@ -1082,7 +1078,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Continuar',
     },
   },
-  // create_comment
+  // modal_add_comment
   {
     'l2jlnhye': {
       'en': 'Create Note',
@@ -1163,7 +1159,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Sair',
     },
   },
-  // command_palette
+  // modal_command_palette
   {
     '8m0o3yfd': {
       'en': 'Search platform...',
@@ -1183,7 +1179,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'danyvope': {
       'en': 'Find Faction',
-      'pt': 'Encontrar Facção',
+      'pt': 'Encontre a facção',
     },
     'bngj5l7i': {
       'en': 'User Habilit',
@@ -1194,7 +1190,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Novo membro',
     },
   },
-  // edit_profile_photo
+  // modal_profile_edit_photo
   {
     '6bnefz1c': {
       'en': 'Change Photo',
@@ -1344,7 +1340,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Descrição',
     },
     '2g54ptaj': {
-      'en': 'Create Faction',
+      'en': 'Save',
       'pt': 'Salvar',
     },
     '4spmowtt': {
@@ -1531,7 +1527,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Detalhes do Projeto',
     },
   },
-  // modal_create_membro
+  // modal_add_membros
   {
     'c8pk7l6z': {
       'en': 'Add Members',
@@ -1547,9 +1543,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2ggy2rd0': {
       'en':
-          'Upload images about your company and fill out the information below.',
-      'pt':
-          'Carregue imagens sobre sua empresa e preencha as informações abaixo.',
+          'Upload images about the  member and fill out the information below.',
+      'pt': 'Carregue imagens sobre o membro e preencha as informações abaixo.',
     },
     'b3ledlsz': {
       'en': 'Option 1',
@@ -1564,8 +1559,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Opção 3',
     },
     'gzt0b7oi': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
+      'en': 'Factions',
+      'pt': 'Facções',
     },
     'ytkhg7nn': {
       'en': 'Search...',
@@ -1584,8 +1579,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Opção 3',
     },
     'm5dstjmu': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
+      'en': 'Function',
+      'pt': 'Função',
     },
     '50jo6bc7': {
       'en': 'Search...',
@@ -1604,44 +1599,120 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Opção 3',
     },
     'prj5f1jr': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
+      'en': 'Positions',
+      'pt': 'Cargo',
     },
     'eafr1737': {
       'en': 'Search...',
       'pt': 'Procurar...',
     },
-    'ps3vgvwa': {
-      'en': 'Full Name',
-      'pt': 'Nome completo',
-    },
     'gn6sg8mo': {
-      'en': 'Website',
-      'pt': 'Site',
+      'en': 'Nickname',
+      'pt': 'Alcunha(s)',
     },
     '9ttbiraj': {
-      'en': 'Enter in your website without \"https://\"...',
-      'pt': 'Entre no seu site sem \"https://\"...',
+      'en': 'Nickname',
+      'pt': 'Alcunha(s)',
     },
-    'p9mtwk5z': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
+    '63k08ufi': {
+      'en': 'Alcunha #1',
+      'pt': 'Alcunha #1',
     },
-    '4cv97pyw': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
+    'jbcet7b6': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    'ywa2dfc5': {
+      'en': 'Option 2',
+      'pt': '',
+    },
+    '4e6biro3': {
+      'en': 'Option 3',
+      'pt': '',
+    },
+    'gh3yvbuw': {
+      'en': 'Localizations',
+      'pt': 'Localizações',
+    },
+    'tp96ldux': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'vd7osr0r': {
+      'en': 'Date of last arrest',
+      'pt': 'Data da última prisão',
+    },
+    'ppvsxz3b': {
+      'en': 'Date of last arrest',
+      'pt': 'Data da última prisão',
+    },
+    'glzi3org': {
+      'en': 'Date of birth',
+      'pt': 'Data de nascimento',
+    },
+    '9v4gok1w': {
+      'en': 'Date of birth',
+      'pt': 'Data de nascimento',
+    },
+    'q953cg35': {
+      'en': 'National Infopen Number',
+      'pt': 'Número Nacional Infopen',
+    },
+    'hmbhwfr4': {
+      'en': 'National Infopen Number',
+      'pt': 'Número Nacional Infopen',
+    },
+    'wk342cig': {
+      'en': 'Procedural status',
+      'pt': 'Situação processual',
+    },
+    'lefxo00q': {
+      'en': 'Procedural status',
+      'pt': 'Situação processual',
+    },
+    '363xxgz8': {
+      'en': 'Color/Skin/Ethnicity',
+      'pt': 'Cor/Pele/Etnia',
+    },
+    'iuqv6wls': {
+      'en': 'Color/Skin/Ethnicity',
+      'pt': 'Cor/Pele/Etnia',
+    },
+    'w1m5b14a': {
+      'en': 'Blood type',
+      'pt': 'Tipo sanguíneo',
+    },
+    'v3akq03k': {
+      'en': 'Blood type',
+      'pt': 'Tipo sanguíneo',
     },
     'oywg5xux': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
+      'en': 'Mother Name',
+      'pt': 'Nome da mãe',
     },
-    'dxxr9u18': {
-      'en': 'Cancel',
-      'pt': 'Cancelar',
+    'puk1fd8z': {
+      'en': 'Mother Situation',
+      'pt': 'Situação da Mãe',
     },
-    '8qi4pc3p': {
-      'en': 'Create Company',
-      'pt': 'Criar empresa',
+    'lbjky8v9': {
+      'en': 'Mother\'s Situation',
+      'pt': 'Situação da Mãe',
+    },
+    'suk86d9v': {
+      'en': 'Father Name',
+      'pt': 'Nome do pai',
+    },
+    'qweuu358': {
+      'en': '',
+      'pt': '',
+    },
+    'spaic2x5': {
+      'en': 'Father\'s Situation',
+      'pt': 'Situação do Pai',
+    },
+    'c3m0kh0f': {
+      'en': 'Father\'s Situation',
+      'pt': 'Situação do Pai',
     },
     'nvxntirq': {
       'en': 'History',
@@ -1662,6 +1733,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'i3nwl1ug': {
       'en': 'Alert',
       'pt': 'Alerta',
+    },
+    'yotbhdup': {
+      'en': 'Cancel',
+      'pt': 'Cancelar',
+    },
+    'afbgi0tm': {
+      'en': 'Save Member',
+      'pt': 'Salvar Membro',
     },
     'ld0rt7j2': {
       'en': 'Relations',
@@ -1891,7 +1970,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Fechar',
     },
   },
-  // modal_profile_Edit
+  // modal_edit_profile
   {
     'qs8serr4': {
       'en': 'Edit Profile',
@@ -2160,147 +2239,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '9bj3lmc0': {
       'en': 'Please choose an option from the dropdown',
       'pt': 'Selecione uma opção no menu suspenso',
-    },
-  },
-  // modal_create_membroCopy
-  {
-    'ubtgg0h9': {
-      'en': 'Add Members',
-      'pt': 'Adicionar membros',
-    },
-    'oe306ao3': {
-      'en': 'Profile',
-      'pt': 'Perfil',
-    },
-    'qdf16bd3': {
-      'en': 'Create Record of Member',
-      'pt': 'Criar registro de membro',
-    },
-    'n0de4knm': {
-      'en':
-          'Upload images about your company and fill out the information below.',
-      'pt':
-          'Carregue imagens sobre sua empresa e preencha as informações abaixo.',
-    },
-    'wjofqt94': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'lrnf9134': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    '5ppzq38p': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'r3p34vt7': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'k0rl6i1b': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '7f5pntyt': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'zr4k4ldh': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'zvfofrny': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'clnq5g27': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    '4f1ww7cg': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    'rbqj96oo': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'mkggmxoq': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'prkz82af': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'x56v275w': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    '7418x3u8': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    'nh2hzrp8': {
-      'en': 'Full Name',
-      'pt': 'Nome completo',
-    },
-    'oen3r936': {
-      'en': 'Website',
-      'pt': 'Site',
-    },
-    'ghtfrcws': {
-      'en': 'Enter in your website without \"https://\"...',
-      'pt': 'Entre no seu site sem \"https://\"...',
-    },
-    'qmxsa9l0': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    'yx35dj78': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    'js9a79tk': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    'b5i87k0d': {
-      'en': 'Cancel',
-      'pt': 'Cancelar',
-    },
-    'zdx3vrgh': {
-      'en': 'Create Company',
-      'pt': 'Criar empresa',
-    },
-    'gjyn11cx': {
-      'en': 'History',
-      'pt': 'História',
-    },
-    '2vwtg0rm': {
-      'en': 'Procedures',
-      'pt': 'Procedimentos',
-    },
-    '5slo93qf': {
-      'en': 'Faction',
-      'pt': 'Facção',
-    },
-    'pg6za72d': {
-      'en': 'Crime Action',
-      'pt': 'Ação Criminal',
-    },
-    'gl1ed49c': {
-      'en': 'Alert',
-      'pt': 'Alerta',
-    },
-    '0j8kwokq': {
-      'en': 'Relations',
-      'pt': 'Relações',
-    },
-    '9o60tep6': {
-      'en': 'Groups',
-      'pt': 'Grupos',
     },
   },
   // dropdown_member_edit

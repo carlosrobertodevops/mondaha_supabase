@@ -18,6 +18,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
+
+  final environmentValues = FFDevEnvironmentValues();
+  await environmentValues.initialize();
+
   await initFirebase();
 
   await SupaFlow.initialize();
@@ -28,9 +32,6 @@ void main() async {
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
-
-  final environmentValues = FFDevEnvironmentValues();
-  await environmentValues.initialize();
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
@@ -139,11 +140,11 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'main_home': const MainHomeWidget(),
-      'main_membros_list': const MainMembrosListWidget(),
+      'main_membros': const MainMembrosWidget(),
       'main_messages': const MainMessagesWidget(),
       'main_profile_page': const MainProfilePageWidget(),
-      'main_admin_list': const MainAdminListWidget(),
-      'main_faccoes_list': const MainFaccoesListWidget(),
+      'main_admin': const MainAdminWidget(),
+      'main_faccoes': const MainFaccoesWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -248,7 +249,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 size: 32.0,
               ),
               label: FFLocalizations.of(context).getText(
-                'rwyyy8yf' /* __ */,
+                '8xlnl6av' /* __ */,
               ),
               tooltip: '',
             )

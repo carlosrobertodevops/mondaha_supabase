@@ -534,7 +534,7 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                 FFButtonWidget(
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_ADD_FACCAO_CREATE_FACTION_BTN_ON_T');
+                                        'MODAL_ADD_FACCAO_COMP_SAVE_BTN_ON_TAP');
                                     await FaccoesTable().insert({
                                       'nome': _model
                                           .txtNomeFaccaoTextController.text,
@@ -542,10 +542,14 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                           _model.descriptionTextController.text,
                                       'imagem_path': _model.uploadedFileUrl,
                                     });
+                                    Navigator.pop(context);
+
+                                    context.pushNamed('main_faccoes');
+
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          'Informações SALVAS cm sucesso !',
+                                          'Cadastro SALVO com sucesso!',
                                           style: TextStyle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
@@ -557,11 +561,9 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                 .success,
                                       ),
                                     );
-                                    await Future.delayed(
-                                        const Duration(milliseconds: 1000));
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    '2g54ptaj' /* Create Faction */,
+                                    '2g54ptaj' /* Save */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 40.0,

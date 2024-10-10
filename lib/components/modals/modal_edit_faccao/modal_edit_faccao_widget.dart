@@ -642,29 +642,28 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                           widget.faccaoid?.faccaoId,
                                         ),
                                       );
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Registo APAGADO com sucesso !',
-                                            style: TextStyle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          duration:
-                                              const Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .success,
-                                        ),
-                                      );
+                                      Navigator.pop(context);
                                     } else {
-                                      context.safePop();
+                                      Navigator.pop(context);
                                     }
 
-                                    context.safePop();
+                                    context.pushNamed('main_faccoes');
+
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Registro APAGADO com sucesso!',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: const Duration(milliseconds: 2000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondary,
+                                      ),
+                                    );
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '2d3lr93u' /* Delete */,
@@ -675,8 +674,7 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                         44.0, 0.0, 44.0, 0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
+                                    color: FlutterFlowTheme.of(context).error,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
@@ -718,10 +716,14 @@ class _ModalEditFaccaoWidgetState extends State<ModalEditFaccaoWidget>
                                         widget.faccaoid?.faccaoId,
                                       ),
                                     );
+                                    Navigator.pop(context);
+
+                                    context.pushNamed('main_faccoes');
+
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          'Informações SALVAS com sucesso !',
+                                          'Cadastro ADICIONADO com sucesso!',
                                           style: TextStyle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,

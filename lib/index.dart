@@ -2,10 +2,10 @@
 export '/pages/auth_pages/forgot_password/forgot_password_widget.dart'
     show ForgotPasswordWidget;
 export '/pages/main_pages/main_home/main_home_widget.dart' show MainHomeWidget;
-export '/pages/main_pages/main_membros_list/main_membros_list_widget.dart'
-    show MainMembrosListWidget;
-export '/pages/main_pages/main_faccoes/main_faccoes_widget.dart'
-    show MainFaccoesWidget;
+export '/pages/main_pages/main_membros/main_membros_widget.dart'
+    show MainMembrosWidget;
+export '/components/logos/main_faccao_old/main_faccao_old_widget.dart'
+    show MainFaccaoOldWidget;
 export '/pages/main_pages/main_messages/main_messages_widget.dart'
     show MainMessagesWidget;
 export '/pages/main_pages/main_profile_page/main_profile_page_widget.dart'
@@ -24,7 +24,7 @@ export '/pages/auth_pages/auth_login/auth_login_widget.dart'
     show AuthLoginWidget;
 export '/pages/cadastros/add_membros/add_membros_widget.dart'
     show AddMembrosWidget;
-export '/pages/main_pages/main_admin_list/main_admin_list_widget.dart'
-    show MainAdminListWidget;
-export '/pages/main_pages/main_faccoes_list/main_faccoes_list_widget.dart'
-    show MainFaccoesListWidget;
+export '/pages/main_pages/main_admin/main_admin_widget.dart'
+    show MainAdminWidget;
+export '/pages/main_pages/main_faccoes/main_faccoes_widget.dart'
+    show MainFaccoesWidget;

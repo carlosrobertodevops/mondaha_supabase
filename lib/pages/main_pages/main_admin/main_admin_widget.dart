@@ -1,8 +1,8 @@
 import '/backend/supabase/supabase.dart';
-import '/components/dropdowns/dropdown_faccao_edit/dropdown_faccao_edit_widget.dart';
-import '/components/modals/modal_add_faccao/modal_add_faccao_widget.dart';
+import '/components/dropdowns/dropdown_user_edit/dropdown_user_edit_widget.dart';
 import '/components/modals/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -11,34 +11,65 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
-import 'main_faccoes_model.dart';
-export 'main_faccoes_model.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'main_admin_model.dart';
+export 'main_admin_model.dart';
 
-class MainFaccoesWidget extends StatefulWidget {
-  const MainFaccoesWidget({super.key});
+class MainAdminWidget extends StatefulWidget {
+  const MainAdminWidget({super.key});
 
   @override
-  State<MainFaccoesWidget> createState() => _MainFaccoesWidgetState();
+  State<MainAdminWidget> createState() => _MainAdminWidgetState();
 }
 
-class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
+class _MainAdminWidgetState extends State<MainAdminWidget>
     with TickerProviderStateMixin {
-  late MainFaccoesModel _model;
+  late MainAdminModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MainFaccoesModel());
+    _model = createModel(context, () => MainAdminModel());
 
-    logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'main_faccoes'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'main_admin'});
     _model.tabBarController = TabController(
       vsync: this,
-      length: 1,
+      length: 2,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+    });
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -62,7 +93,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                 automaticallyImplyLeading: false,
                 title: Text(
                   FFLocalizations.of(context).getText(
-                    'r8ltzsy4' /* Customers */,
+                    'xdubtp8a' /* Customers */,
                   ),
                   style: FlutterFlowTheme.of(context).displaySmall.override(
                         fontFamily: 'Outfit',
@@ -86,12 +117,12 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                 model: _model.webNavModel,
                 updateCallback: () => safeSetState(() {}),
                 child: const WebNavWidget(
-                  selectedNav: 2,
+                  selectedNav: 5,
                 ),
               ),
             Expanded(
-              child: Align(
-                alignment: const AlignmentDirectional(-1.0, -1.0),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +144,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                           Expanded(
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '4j8vce4m' /* Factions */,
+                                'qkmq9xej' /* Adminitration */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -128,64 +159,83 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                             phone: false,
                             tablet: false,
                           ))
-                            Builder(
-                              builder: (context) => FFButtonWidget(
-                                onPressed: () async {
-                                  logFirebaseEvent(
-                                      'MAIN_FACCOES_PAGE_ADD_FACTION_BTN_ON_TAP');
-                                  await showDialog(
-                                    context: context,
-                                    builder: (dialogContext) {
-                                      return Dialog(
-                                        elevation: 0,
-                                        insetPadding: EdgeInsets.zero,
-                                        backgroundColor: Colors.transparent,
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                        child: GestureDetector(
-                                          onTap: () =>
-                                              FocusScope.of(dialogContext)
-                                                  .unfocus(),
-                                          child: const ModalAddFaccaoWidget(),
-                                        ),
-                                      );
-                                    },
-                                  );
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'zt1zsn3q' /* Add Faction */,
+                            FFButtonWidget(
+                              onPressed: () {
+                                print('Button pressed ...');
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                'r8vl0ce9' /* Add Profile */,
+                              ),
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
                                 ),
-                                options: FFButtonOptions(
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).accent1,
+                                hoverBorderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Plus Jakarta Sans',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 3.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  hoverColor:
-                                      FlutterFlowTheme.of(context).accent1,
-                                  hoverBorderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 1.0,
-                                  ),
-                                  hoverTextColor:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  hoverElevation: 0.0,
+                                  width: 1.0,
                                 ),
+                                hoverTextColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                hoverElevation: 0.0,
+                              ),
+                            ),
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                            tablet: false,
+                          ))
+                            FFButtonWidget(
+                              onPressed: () {
+                                print('Button pressed ...');
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                'q2wabmua' /* Add Profile Type */,
+                              ),
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).accent1,
+                                hoverBorderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 1.0,
+                                ),
+                                hoverTextColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                hoverElevation: 0.0,
                               ),
                             ),
                           FlutterFlowIconButton(
@@ -201,7 +251,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                             ),
                             onPressed: () async {
                               logFirebaseEvent(
-                                  'MAIN_FACCOES_search_rounded_ICN_ON_TAP');
+                                  'MAIN_ADMIN_search_rounded_ICN_ON_TAP');
                               await showModalBottomSheet(
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,
@@ -267,13 +317,18 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                   tabs: [
                                     Tab(
                                       text: FFLocalizations.of(context).getText(
-                                        'a5ixac3k' /* All */,
+                                        'i6puusi7' /* All */,
+                                      ),
+                                    ),
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'ppz66xjm' /* Agency */,
                                       ),
                                     ),
                                   ],
                                   controller: _model.tabBarController,
                                   onTap: (i) async {
-                                    [() async {}][i]();
+                                    [() async {}, () async {}][i]();
                                   },
                                 ),
                               ),
@@ -350,7 +405,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    '222dkjfs' /* Name */,
+                                                                    '5ei4gaxd' /* Full Name */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -387,7 +442,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'qyq0ek8t' /* Description */,
+                                                                      'knvrskhd' /* Agency */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -424,7 +479,44 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'mtyn0hp2' /* Faction Creation Date */,
+                                                                      'q5s6eda3' /* Description */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          if (responsiveVisibility(
+                                                            context: context,
+                                                            phone: false,
+                                                            tablet: false,
+                                                          ))
+                                                            Expanded(
+                                                              child: Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        -1.0,
+                                                                        0.0),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'rd2ba3as' /* email */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -456,7 +548,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'h9ronhq6' /* Last modified */,
+                                                                    '5cijyycp' /* User Type */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -491,10 +583,12 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                     ),
                                                   ),
                                                   content: FutureBuilder<
-                                                      List<FaccoesRow>>(
-                                                    future: FaccoesTable()
+                                                      List<UsuariosRow>>(
+                                                    future: UsuariosTable()
                                                         .queryRows(
-                                                      queryFn: (q) => q,
+                                                      queryFn: (q) => q.order(
+                                                          'nome_completo',
+                                                          ascending: true),
                                                     ),
                                                     builder:
                                                         (context, snapshot) {
@@ -517,8 +611,8 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                           ),
                                                         );
                                                       }
-                                                      List<FaccoesRow>
-                                                          listViewFaccoesRowList =
+                                                      List<UsuariosRow>
+                                                          listViewUsuariosRowList =
                                                           snapshot.data!;
 
                                                       return ListView.builder(
@@ -528,12 +622,12 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                         scrollDirection:
                                                             Axis.vertical,
                                                         itemCount:
-                                                            listViewFaccoesRowList
+                                                            listViewUsuariosRowList
                                                                 .length,
                                                         itemBuilder: (context,
                                                             listViewIndex) {
-                                                          final listViewFaccoesRow =
-                                                              listViewFaccoesRowList[
+                                                          final listViewUsuariosRow =
+                                                              listViewUsuariosRowList[
                                                                   listViewIndex];
                                                           return Padding(
                                                             padding:
@@ -593,8 +687,8 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                           .network(
                                                                         valueOrDefault<
                                                                             String>(
-                                                                          listViewFaccoesRow
-                                                                              .imagemPath,
+                                                                          listViewUsuariosRow
+                                                                              .fotoPath,
                                                                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
                                                                         ),
                                                                         width:
@@ -617,7 +711,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
-                                                                                  listViewFaccoesRow.nome,
+                                                                                  listViewUsuariosRow.nomeCompleto,
                                                                                   'sem informacao',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -644,15 +738,43 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                                 ),
                                                                                 child: Padding(
                                                                                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      listViewFaccoesRow.descricao,
-                                                                                      'sem informação',
+                                                                                  child: FutureBuilder<List<AgenciasRow>>(
+                                                                                    future: AgenciasTable().querySingleRow(
+                                                                                      queryFn: (q) => q.eq(
+                                                                                        'agencia_id',
+                                                                                        listViewUsuariosRow.agenciaId,
+                                                                                      ),
                                                                                     ),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
+                                                                                    builder: (context, snapshot) {
+                                                                                      // Customize what your widget looks like when it's loading.
+                                                                                      if (!snapshot.hasData) {
+                                                                                        return Center(
+                                                                                          child: SizedBox(
+                                                                                            width: 50.0,
+                                                                                            height: 50.0,
+                                                                                            child: CircularProgressIndicator(
+                                                                                              valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                FlutterFlowTheme.of(context).primary,
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        );
+                                                                                      }
+                                                                                      List<AgenciasRow> textAgenciasRowList = snapshot.data!;
+
+                                                                                      final textAgenciasRow = textAgenciasRowList.isNotEmpty ? textAgenciasRowList.first : null;
+
+                                                                                      return Text(
+                                                                                        valueOrDefault<String>(
+                                                                                          textAgenciasRow?.nome,
+                                                                                          'sem informacao',
                                                                                         ),
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                      );
+                                                                                    },
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -671,12 +793,32 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   valueOrDefault<String>(
-                                                                                    dateTimeFormat(
-                                                                                      "d/M/y",
-                                                                                      listViewFaccoesRow.dataCriacao,
-                                                                                      locale: FFLocalizations.of(context).languageCode,
-                                                                                    ),
+                                                                                    listViewUsuariosRow.descricao,
                                                                                     'sem informação',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontSize: 14.0,
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          if (responsiveVisibility(
+                                                                            context:
+                                                                                context,
+                                                                            phone:
+                                                                                false,
+                                                                            tablet:
+                                                                                false,
+                                                                          ))
+                                                                            Expanded(
+                                                                              child: Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  valueOrDefault<String>(
+                                                                                    listViewUsuariosRow.email,
+                                                                                    'sem informacao',
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Plus Jakarta Sans',
@@ -705,19 +847,43 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                     child: Padding(
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                      child: Text(
-                                                                                        valueOrDefault<String>(
-                                                                                          dateTimeFormat(
-                                                                                            "relative",
-                                                                                            listViewFaccoesRow.createdAt,
-                                                                                            locale: FFLocalizations.of(context).languageCode,
+                                                                                      child: FutureBuilder<List<TiposUsuariosRow>>(
+                                                                                        future: TiposUsuariosTable().querySingleRow(
+                                                                                          queryFn: (q) => q.eq(
+                                                                                            'tipo_usuario_id',
+                                                                                            listViewUsuariosRow.tipoUsuarioId,
                                                                                           ),
-                                                                                          'sem informação',
                                                                                         ),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                                              letterSpacing: 0.0,
+                                                                                        builder: (context, snapshot) {
+                                                                                          // Customize what your widget looks like when it's loading.
+                                                                                          if (!snapshot.hasData) {
+                                                                                            return Center(
+                                                                                              child: SizedBox(
+                                                                                                width: 50.0,
+                                                                                                height: 50.0,
+                                                                                                child: CircularProgressIndicator(
+                                                                                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                    FlutterFlowTheme.of(context).primary,
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            );
+                                                                                          }
+                                                                                          List<TiposUsuariosRow> textTiposUsuariosRowList = snapshot.data!;
+
+                                                                                          final textTiposUsuariosRow = textTiposUsuariosRowList.isNotEmpty ? textTiposUsuariosRowList.first : null;
+
+                                                                                          return Text(
+                                                                                            valueOrDefault<String>(
+                                                                                              textTiposUsuariosRow?.descricao,
+                                                                                              'sem informacao',
                                                                                             ),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                  letterSpacing: 0.0,
+                                                                                                ),
+                                                                                          );
+                                                                                        },
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -749,7 +915,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                               Colors.transparent,
                                                                           onTap:
                                                                               () async {
-                                                                            logFirebaseEvent('MAIN_FACCOES_PAGE_Icon_y0mw3is8_ON_TAP');
+                                                                            logFirebaseEvent('MAIN_ADMIN_PAGE_Icon_mgpftkgm_ON_TAP');
                                                                             await showAlignedDialog(
                                                                               barrierColor: Colors.transparent,
                                                                               context: context,
@@ -762,9 +928,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                                   color: Colors.transparent,
                                                                                   child: GestureDetector(
                                                                                     onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                    child: DropdownFaccaoEditWidget(
-                                                                                      faccaoid: listViewFaccoesRow,
-                                                                                    ),
+                                                                                    child: const DropdownUserEditWidget(),
                                                                                   ),
                                                                                 );
                                                                               },
@@ -784,7 +948,9 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                   ],
                                                                 ),
                                                               ),
-                                                            ),
+                                                            ).animateOnPageLoad(
+                                                                animationsMap[
+                                                                    'containerOnPageLoadAnimation']!),
                                                           );
                                                         },
                                                       );
@@ -796,6 +962,10 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                           ),
                                         ],
                                       ),
+                                    ),
+                                    const Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [],
                                     ),
                                   ],
                                 ),

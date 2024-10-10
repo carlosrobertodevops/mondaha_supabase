@@ -1,4 +1,4 @@
-import '/components/modals/create_comment/create_comment_widget.dart';
+import '/components/modals/modal_add_comment/modal_add_comment_widget.dart';
 import '/components/modals/modal_success/modal_success_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -712,7 +712,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                                   context),
                                               child: const SizedBox(
                                                 height: double.infinity,
-                                                child: CreateCommentWidget(),
+                                                child: ModalAddCommentWidget(),
                                               ),
                                             );
                                           },

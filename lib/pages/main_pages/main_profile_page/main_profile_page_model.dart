@@ -1,4 +1,4 @@
-import '/components/web_nav/web_nav_widget.dart';
+import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'main_profile_page_widget.dart' show MainProfilePageWidget;
 import 'package:flutter/material.dart';

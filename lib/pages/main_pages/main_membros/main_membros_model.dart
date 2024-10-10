@@ -1,13 +1,17 @@
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'main_home_widget.dart' show MainHomeWidget;
+import 'main_membros_widget.dart' show MainMembrosWidget;
 import 'package:flutter/material.dart';
 
-class MainHomeModel extends FlutterFlowModel<MainHomeWidget> {
+class MainMembrosModel extends FlutterFlowModel<MainMembrosWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for web_nav component.
   late WebNavModel webNavModel;
+  // State field(s) for TabBar widget.
+  TabController? tabBarController;
+  int get tabBarCurrentIndex =>
+      tabBarController != null ? tabBarController!.index : 0;
 
   @override
   void initState(BuildContext context) {
@@ -17,5 +21,6 @@ class MainHomeModel extends FlutterFlowModel<MainHomeWidget> {
   @override
   void dispose() {
     webNavModel.dispose();
+    tabBarController?.dispose();
   }
 }

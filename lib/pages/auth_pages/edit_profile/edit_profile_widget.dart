@@ -1,6 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/modals/edit_profile_photo/edit_profile_photo_widget.dart';
+import '/components/modals/modal_profile_edit_photo/modal_profile_edit_photo_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -195,7 +195,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                             MediaQuery.viewInsetsOf(context),
                                         child: const SizedBox(
                                           height: 360.0,
-                                          child: EditProfilePhotoWidget(),
+                                          child: ModalProfileEditPhotoWidget(),
                                         ),
                                       );
                                     },

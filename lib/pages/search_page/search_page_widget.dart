@@ -493,10 +493,11 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          userList5MembrosRowList
-                                                              .first
-                                                              .vulgo
-                                                              .first,
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'aw6pd4xm' /* user@domainname.com */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium

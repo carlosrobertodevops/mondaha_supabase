@@ -1,9 +1,9 @@
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'main_home_widget.dart' show MainHomeWidget;
+import 'main_faccao_old_widget.dart' show MainFaccaoOldWidget;
 import 'package:flutter/material.dart';
 
-class MainHomeModel extends FlutterFlowModel<MainHomeWidget> {
+class MainFaccaoOldModel extends FlutterFlowModel<MainFaccaoOldWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for web_nav component.

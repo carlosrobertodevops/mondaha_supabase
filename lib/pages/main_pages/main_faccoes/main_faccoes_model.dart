@@ -1,4 +1,4 @@
-import '/components/web_nav/web_nav_widget.dart';
+import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'main_faccoes_widget.dart' show MainFaccoesWidget;
 import 'package:flutter/material.dart';
@@ -8,6 +8,10 @@ class MainFaccoesModel extends FlutterFlowModel<MainFaccoesWidget> {
 
   // Model for web_nav component.
   late WebNavModel webNavModel;
+  // State field(s) for TabBar widget.
+  TabController? tabBarController;
+  int get tabBarCurrentIndex =>
+      tabBarController != null ? tabBarController!.index : 0;
 
   @override
   void initState(BuildContext context) {
@@ -17,5 +21,6 @@ class MainFaccoesModel extends FlutterFlowModel<MainFaccoesWidget> {
   @override
   void dispose() {
     webNavModel.dispose();
+    tabBarController?.dispose();
   }
 }

@@ -96,17 +96,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const MainHomeWidget(),
             ),
             FFRoute(
-              name: 'main_membros_list',
-              path: 'mainMembrosList',
+              name: 'main_membros',
+              path: 'mainMembros',
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_membros_list')
-                  : const MainMembrosListWidget(),
+                  ? const NavBarPage(initialPage: 'main_membros')
+                  : const MainMembrosWidget(),
             ),
             FFRoute(
-              name: 'main_faccoes',
-              path: 'mainFaccoes',
+              name: 'main_faccao_old',
+              path: 'mainFaccaoOld',
               requireAuth: true,
-              builder: (context, params) => const MainFaccoesWidget(),
+              builder: (context, params) => const MainFaccaoOldWidget(),
             ),
             FFRoute(
               name: 'main_messages',
@@ -170,18 +170,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const AddMembrosWidget(),
             ),
             FFRoute(
-              name: 'main_admin_list',
-              path: 'mainAdminList',
+              name: 'main_admin',
+              path: 'mainAdmin',
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_admin_list')
-                  : const MainAdminListWidget(),
+                  ? const NavBarPage(initialPage: 'main_admin')
+                  : const MainAdminWidget(),
             ),
             FFRoute(
-              name: 'main_faccoes_list',
-              path: 'mainFaccoesList',
+              name: 'main_faccoes',
+              path: 'mainFaccoes',
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_faccoes_list')
-                  : const MainFaccoesListWidget(),
+                  ? const NavBarPage(initialPage: 'main_faccoes')
+                  : const MainFaccoesWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
