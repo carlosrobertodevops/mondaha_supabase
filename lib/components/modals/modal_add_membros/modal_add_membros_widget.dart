@@ -2723,6 +2723,9 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
