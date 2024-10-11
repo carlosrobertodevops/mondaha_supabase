@@ -6,12 +6,15 @@ export 'row.dart';
 export 'table.dart';
 
 export 'tables/estados.dart';
+export 'tables/grupos_membros.dart';
 export 'tables/wappler_migrations.dart';
 export 'tables/processos.dart';
 export 'tables/cargos.dart';
 export 'tables/validacoes.dart';
 export 'tables/usuarios.dart';
 export 'tables/membros.dart';
+export 'tables/grupos.dart';
+export 'tables/relacionamentos_membros.dart';
 export 'tables/funcoes.dart';
 export 'tables/vara.dart';
 export 'tables/tipos_usuarios.dart';

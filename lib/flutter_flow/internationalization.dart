@@ -1586,25 +1586,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search...',
       'pt': 'Procurar...',
     },
-    'nr4vs3dm': {
+    '2vkeht6b': {
       'en': 'Option 1',
-      'pt': 'Opção 1',
+      'pt': '',
     },
-    'ng7097vi': {
+    'e50x3p3f': {
       'en': 'Option 2',
-      'pt': 'Opção 2',
+      'pt': '',
     },
-    'nri579hj': {
+    '1f3sdvec': {
       'en': 'Option 3',
-      'pt': 'Opção 3',
+      'pt': '',
     },
-    '5rqof90h': {
-      'en': 'Positions',
+    'n5ymyfg1': {
+      'en': 'Position',
       'pt': 'Cargo',
     },
-    '6gzu9rr7': {
+    '8wt3qpud': {
       'en': 'Search...',
-      'pt': 'Procurar...',
+      'pt': '',
     },
     'rfc9v78y': {
       'en': 'Single',
@@ -1755,16 +1755,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Estrangeiro',
     },
     'cbh3ukkw': {
-      'en': 'Function',
-      'pt': 'Função',
+      'en': 'Staty',
+      'pt': 'Estado',
     },
     'td986qh3': {
       'en': 'Search...',
       'pt': 'Procurar...',
     },
     'tsjf37kw': {
-      'en': 'Function',
-      'pt': 'Função',
+      'en': 'Municipio',
+      'pt': 'Município',
     },
     'el0ub5v2': {
       'en': 'Search...',
@@ -1842,14 +1842,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Alert',
       'pt': 'Alerta',
     },
-    'yotbhdup': {
-      'en': 'Cancel',
-      'pt': 'Cancelar',
-    },
-    'afbgi0tm': {
-      'en': 'Save Member',
-      'pt': 'Salvar Membro',
-    },
     'ld0rt7j2': {
       'en': 'Relations',
       'pt': 'Relações',
@@ -1857,6 +1849,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'hikp6nbx': {
       'en': 'Groups',
       'pt': 'Grupos',
+    },
+    'qziqype9': {
+      'en': 'Cancel',
+      'pt': 'Cancelar',
+    },
+    'xkcg34s5': {
+      'en': 'Save Member',
+      'pt': 'Salvar Membro',
     },
   },
   // modal_invite_user

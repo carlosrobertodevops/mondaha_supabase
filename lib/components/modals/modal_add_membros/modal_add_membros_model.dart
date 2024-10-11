@@ -46,9 +46,9 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   // State field(s) for ddw_funcao widget.
   int? ddwFuncaoValue;
   FormFieldController<int>? ddwFuncaoValueController;
-  // State field(s) for ddw_cargo widget.
-  int? ddwCargoValue;
-  FormFieldController<int>? ddwCargoValueController;
+  // State field(s) for ddw_cargos widget.
+  int? ddwCargosValue;
+  FormFieldController<int>? ddwCargosValueController;
   // State field(s) for txt_nome_completo widget.
   FocusNode? txtNomeCompletoFocusNode;
   TextEditingController? txtNomeCompletoTextController;
@@ -82,15 +82,15 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   FocusNode? txtNoInfopenFocusNode;
   TextEditingController? txtNoInfopenTextController;
   String? Function(BuildContext, String?)? txtNoInfopenTextControllerValidator;
-  // State field(s) for ddw_estado widget.
-  String? ddwEstadoValue1;
-  FormFieldController<String>? ddwEstadoValueController1;
-  // State field(s) for ddw_municipio widget.
-  String? ddwMunicipioValue1;
-  FormFieldController<String>? ddwMunicipioValueController1;
-  // State field(s) for ddw_distrito widget.
-  String? ddwDistritoValue1;
-  FormFieldController<String>? ddwDistritoValueController1;
+  // State field(s) for ddw_situacao_processual widget.
+  String? ddwSituacaoProcessualValue;
+  FormFieldController<String>? ddwSituacaoProcessualValueController;
+  // State field(s) for ddw_cor_pele widget.
+  String? ddwCorPeleValue;
+  FormFieldController<String>? ddwCorPeleValueController;
+  // State field(s) for ddw_tipo_sanguineo widget.
+  String? ddwTipoSanguineoValue;
+  FormFieldController<String>? ddwTipoSanguineoValueController;
   // State field(s) for txt_mae_nome widget.
   FocusNode? txtMaeNomeFocusNode;
   TextEditingController? txtMaeNomeTextController;
@@ -108,14 +108,14 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
   // State field(s) for ddw_estado widget.
-  String? ddwEstadoValue2;
-  FormFieldController<String>? ddwEstadoValueController2;
+  int? ddwEstadoValue;
+  FormFieldController<int>? ddwEstadoValueController;
   // State field(s) for ddw_municipio widget.
-  String? ddwMunicipioValue2;
-  FormFieldController<String>? ddwMunicipioValueController2;
+  int? ddwMunicipioValue;
+  FormFieldController<int>? ddwMunicipioValueController;
   // State field(s) for ddw_distrito widget.
-  String? ddwDistritoValue2;
-  FormFieldController<String>? ddwDistritoValueController2;
+  String? ddwDistritoValue;
+  FormFieldController<String>? ddwDistritoValueController;
   // State field(s) for txt_membro_historico widget.
   FocusNode? txtMembroHistoricoFocusNode;
   TextEditingController? txtMembroHistoricoTextController;

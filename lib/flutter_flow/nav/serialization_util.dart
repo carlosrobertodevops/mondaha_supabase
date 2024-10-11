@@ -207,6 +207,8 @@ dynamic deserializeParam<T>(
         switch (T) {
           case EstadosRow:
             return EstadosRow(data);
+          case GruposMembrosRow:
+            return GruposMembrosRow(data);
           case WapplerMigrationsRow:
             return WapplerMigrationsRow(data);
           case ProcessosRow:
@@ -219,6 +221,10 @@ dynamic deserializeParam<T>(
             return UsuariosRow(data);
           case MembrosRow:
             return MembrosRow(data);
+          case GruposRow:
+            return GruposRow(data);
+          case RelacionamentosMembrosRow:
+            return RelacionamentosMembrosRow(data);
           case FuncoesRow:
             return FuncoesRow(data);
           case VaraRow:

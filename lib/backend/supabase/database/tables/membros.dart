@@ -103,4 +103,10 @@ class MembrosRow extends SupabaseDataRow {
   List<String> get membroEndereco => getListField<String>('membro_endereco');
   set membroEndereco(List<String>? value) =>
       setListField<String>('membro_endereco', value);
+
+  int? get estadoId => getField<int>('estado_id');
+  set estadoId(int? value) => setField<int>('estado_id', value);
+
+  int? get municipioId => getField<int>('municipio_id');
+  set municipioId(int? value) => setField<int>('municipio_id', value);
 }
