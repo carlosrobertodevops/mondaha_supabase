@@ -928,7 +928,9 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                   color: Colors.transparent,
                                                                                   child: GestureDetector(
                                                                                     onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                    child: const DropdownUserEditWidget(),
+                                                                                    child: DropdownUserEditWidget(
+                                                                                      usuarioid: listViewUsuariosRow,
+                                                                                    ),
                                                                                   ),
                                                                                 );
                                                                               },

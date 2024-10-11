@@ -1301,12 +1301,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Editar',
     },
     '6kc0o458': {
-      'en': 'Assign',
-      'pt': 'Atribuir',
+      'en': 'Assign basic acess',
+      'pt': 'Atribuir acesso básico',
     },
-    'jqnyu0j6': {
-      'en': 'Share',
-      'pt': 'Compartilhar',
+    'w1jtn19u': {
+      'en': 'View',
+      'pt': 'Visualizar',
     },
     '9qkfsg85': {
       'en': 'Delete',

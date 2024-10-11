@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,12 @@ import 'dropdown_user_edit_model.dart';
 export 'dropdown_user_edit_model.dart';
 
 class DropdownUserEditWidget extends StatefulWidget {
-  const DropdownUserEditWidget({super.key});
+  const DropdownUserEditWidget({
+    super.key,
+    required this.usuarioid,
+  });
+
+  final UsuariosRow? usuarioid;
 
   @override
   State<DropdownUserEditWidget> createState() => _DropdownUserEditWidgetState();
@@ -148,48 +154,85 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                     onExit: ((event) async {
                       safeSetState(() => _model.mouseRegionHovered2 = false);
                     }),
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 150),
-                      curve: Curves.easeInOut,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered2
-                            ? FlutterFlowTheme.of(context).primaryBackground
-                            : FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 0.0, 0.0, 0.0),
-                              child: Icon(
-                                Icons.personal_video,
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        logFirebaseEvent(
+                            'DROPDOWN_USER_EDIT_wrapWidget_ON_TAP');
+                        await UsuariosTable().update(
+                          data: {
+                            'tipo_usuario_id': 8,
+                          },
+                          matchingRows: (rows) => rows.eq(
+                            'usuario_id',
+                            widget.usuarioid?.usuarioId,
+                          ),
+                        );
+
+                        context.pushNamed('main_admin');
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Nível BÁSICO atribuido com sucesso!',
+                              style: TextStyle(
                                 color: FlutterFlowTheme.of(context).primaryText,
-                                size: 20.0,
                               ),
                             ),
-                            Expanded(
-                              child: Padding(
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).success,
+                          ),
+                        );
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 150),
+                        curve: Curves.easeInOut,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: _model.mouseRegionHovered2
+                              ? FlutterFlowTheme.of(context).primaryBackground
+                              : FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '6kc0o458' /* Assign */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Plus Jakarta Sans',
-                                        letterSpacing: 0.0,
-                                      ),
+                                child: Icon(
+                                  Icons.add_task_sharp,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 20.0,
                                 ),
                               ),
-                            ),
-                          ],
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '6kc0o458' /* Assign basic acess */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -222,7 +265,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Icon(
-                                Icons.ios_share,
+                                Icons.personal_video,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 size: 20.0,
                               ),
@@ -233,7 +276,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'jqnyu0j6' /* Share */,
+                                    'w1jtn19u' /* View */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
