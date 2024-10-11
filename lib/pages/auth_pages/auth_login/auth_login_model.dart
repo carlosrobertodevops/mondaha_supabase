@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'auth_login_widget.dart' show AuthLoginWidget;
@@ -23,6 +24,8 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
   late bool txtLoginPasswordVisibility;
   String? Function(BuildContext, String?)?
       txtLoginPasswordTextControllerValidator;
+  // Stores action output result for [Backend Call - Query Rows] action in btn-login widget.
+  List<UsuariosRow>? usuarioDiferenteNove;
   // State field(s) for drop_agencia widget.
   int? dropAgenciaValue;
   FormFieldController<int>? dropAgenciaValueController;

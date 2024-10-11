@@ -598,28 +598,75 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                     onPressed: () async {
                                                       logFirebaseEvent(
                                                           'AUTH_LOGIN_PAGE_btn-login_ON_TAP');
-                                                      // login
-                                                      GoRouter.of(context)
-                                                          .prepareAuthEvent();
-
-                                                      final user =
-                                                          await authManager
-                                                              .signInWithEmail(
-                                                        context,
-                                                        _model
-                                                            .txtLoginEmailTextController
-                                                            .text,
-                                                        _model
-                                                            .txtLoginPasswordTextController
-                                                            .text,
+                                                      _model.usuarioDiferenteNove =
+                                                          await UsuariosTable()
+                                                              .queryRows(
+                                                        queryFn: (q) => q
+                                                            .eq(
+                                                              'email',
+                                                              _model
+                                                                  .txtLoginEmailTextController
+                                                                  .text,
+                                                            )
+                                                            .neq(
+                                                              'tipo_usuario_id',
+                                                              9,
+                                                            ),
                                                       );
-                                                      if (user == null) {
-                                                        return;
+                                                      if (_model.usuarioDiferenteNove !=
+                                                              null &&
+                                                          (_model.usuarioDiferenteNove)!
+                                                              .isNotEmpty) {
+                                                        GoRouter.of(context)
+                                                            .prepareAuthEvent();
+
+                                                        final user =
+                                                            await authManager
+                                                                .signInWithEmail(
+                                                          context,
+                                                          _model
+                                                              .txtLoginEmailTextController
+                                                              .text,
+                                                          _model
+                                                              .txtLoginPasswordTextController
+                                                              .text,
+                                                        );
+                                                        if (user == null) {
+                                                          return;
+                                                        }
+
+                                                        context.pushNamedAuth(
+                                                            'main_home',
+                                                            context.mounted);
+                                                      } else {
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              title: const Text(
+                                                                  'Informação'),
+                                                              content: const Text(
+                                                                  'Usuário cadastrado, porém, deve Aguardar liberação do Gestor de sua agência.'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: const Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        );
+
+                                                        context.pushNamedAuth(
+                                                            'auth_login',
+                                                            context.mounted);
                                                       }
 
-                                                      context.goNamedAuth(
-                                                          'main_home',
-                                                          context.mounted);
+                                                      safeSetState(() {});
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)
@@ -1588,7 +1635,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                             'agencia_id': _model
                                                                 .dropAgenciaValue,
                                                             'tipo_usuario_id':
-                                                                2,
+                                                                9,
                                                           });
                                                           ScaffoldMessenger.of(
                                                                   context)
@@ -1612,9 +1659,49 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                       .success,
                                                             ),
                                                           );
+                                                          safeSetState(() {
+                                                            _model
+                                                                .dropAgenciaValueController
+                                                                ?.reset();
+                                                          });
+                                                          safeSetState(() {
+                                                            _model
+                                                                .txtSignupConfirmTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .txtSignupPasswordTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .txtSignupEmailTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .txtSignupNomeTextController
+                                                                ?.clear();
+                                                          });
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                title: const Text(
+                                                                    'Informação'),
+                                                                content: const Text(
+                                                                    'Cadastro realizado com SUCESSO !!! Aguarde liberação do Gestor de sua agência.'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: const Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          );
 
-                                                          context.goNamedAuth(
-                                                              'main_home',
+                                                          context.pushNamedAuth(
+                                                              'auth_login',
                                                               context.mounted);
                                                         },
                                                         text:
