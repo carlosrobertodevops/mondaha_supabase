@@ -1586,23 +1586,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search...',
       'pt': 'Procurar...',
     },
-    '2vkeht6b': {
+    '8s833vf2': {
       'en': 'Option 1',
       'pt': '',
     },
-    'e50x3p3f': {
+    '44y1ejjd': {
       'en': 'Option 2',
       'pt': '',
     },
-    '1f3sdvec': {
+    'rxkpaogd': {
       'en': 'Option 3',
       'pt': '',
     },
-    'n5ymyfg1': {
-      'en': 'Position',
+    'fjklz75e': {
+      'en': 'Cargo',
       'pt': 'Cargo',
     },
-    '8wt3qpud': {
+    'qf96c5yf': {
       'en': 'Search...',
       'pt': '',
     },

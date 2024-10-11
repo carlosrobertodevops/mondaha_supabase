@@ -767,12 +767,12 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                 List<FuncoesRow> ddwFuncaoFuncoesRowList = snapshot.data!;
 
                                                                                                 return FlutterFlowDropDown<int>(
-                                                                                                  controller: _model.ddwFuncaoValueController ??= FormFieldController<int>(
-                                                                                                    _model.ddwFuncaoValue ??= overlayMembrosRow?.funcaoId,
+                                                                                                  controller: _model.ddwFuncaoValueController1 ??= FormFieldController<int>(
+                                                                                                    _model.ddwFuncaoValue1 ??= overlayMembrosRow?.funcaoId,
                                                                                                   ),
                                                                                                   options: List<int>.from(ddwFuncaoFuncoesRowList.map((e) => e.funcaoId).toList()),
                                                                                                   optionLabels: ddwFuncaoFuncoesRowList.map((e) => e.nome).withoutNulls.toList(),
-                                                                                                  onChanged: (val) => safeSetState(() => _model.ddwFuncaoValue = val),
+                                                                                                  onChanged: (val) => safeSetState(() => _model.ddwFuncaoValue1 = val),
                                                                                                   height: 60.0,
                                                                                                   searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                         fontFamily: 'Plus Jakarta Sans',
@@ -832,15 +832,15 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                     ),
                                                                                                   );
                                                                                                 }
-                                                                                                List<CargosRow> ddwCargosCargosRowList = snapshot.data!;
+                                                                                                List<CargosRow> ddwFuncaoCargosRowList = snapshot.data!;
 
                                                                                                 return FlutterFlowDropDown<int>(
-                                                                                                  controller: _model.ddwCargosValueController ??= FormFieldController<int>(
-                                                                                                    _model.ddwCargosValue ??= overlayMembrosRow?.cargoId,
+                                                                                                  controller: _model.ddwFuncaoValueController2 ??= FormFieldController<int>(
+                                                                                                    _model.ddwFuncaoValue2 ??= overlayMembrosRow?.funcaoId,
                                                                                                   ),
-                                                                                                  options: List<int>.from(ddwCargosCargosRowList.map((e) => e.cargoId).toList()),
-                                                                                                  optionLabels: ddwCargosCargosRowList.map((e) => e.nome).withoutNulls.toList(),
-                                                                                                  onChanged: (val) => safeSetState(() => _model.ddwCargosValue = val),
+                                                                                                  options: List<int>.from(ddwFuncaoCargosRowList.map((e) => e.cargoId).toList()),
+                                                                                                  optionLabels: ddwFuncaoCargosRowList.map((e) => e.nome).withoutNulls.toList(),
+                                                                                                  onChanged: (val) => safeSetState(() => _model.ddwFuncaoValue2 = val),
                                                                                                   height: 60.0,
                                                                                                   searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                         fontFamily: 'Plus Jakarta Sans',
@@ -855,10 +855,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
                                                                                                   hintText: FFLocalizations.of(context).getText(
-                                                                                                    'n5ymyfg1' /* Position */,
+                                                                                                    'fjklz75e' /* Cargo */,
                                                                                                   ),
                                                                                                   searchHintText: FFLocalizations.of(context).getText(
-                                                                                                    '8wt3qpud' /* Search... */,
+                                                                                                    'qf96c5yf' /* Search... */,
                                                                                                   ),
                                                                                                   icon: Icon(
                                                                                                     Icons.keyboard_arrow_down_rounded,
