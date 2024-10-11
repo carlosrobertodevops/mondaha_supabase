@@ -262,7 +262,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                 child: Align(
                                                   alignment:
                                                       const AlignmentDirectional(
-                                                          0.0, 0.0),
+                                                          0.0, -1.0),
                                                   child: Column(
                                                     children: [
                                                       Align(
@@ -367,14 +367,15 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                             Align(
                                                               alignment:
                                                                   const AlignmentDirectional(
-                                                                      0.0, 0.0),
+                                                                      0.0,
+                                                                      -1.0),
                                                               child: Padding(
                                                                 padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
-                                                                        0.0),
+                                                                        8.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -2670,10 +2671,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                 ),
                                                 alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 8.0, 0.0, 0.0),
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
