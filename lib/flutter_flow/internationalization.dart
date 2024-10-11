@@ -1302,7 +1302,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6kc0o458': {
       'en': 'Assign basic acess',
-      'pt': 'Atribuir acesso básico',
+      'pt': 'Atribuir acesso Básico',
+    },
+    '9v90iv59': {
+      'en': 'Assign analisty acess',
+      'pt': 'Atribuir acesso de Análise',
     },
     'w1jtn19u': {
       'en': 'View',

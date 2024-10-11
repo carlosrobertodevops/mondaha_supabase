@@ -227,6 +227,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
                                           letterSpacing: 0.0,
+                                          fontWeight: FontWeight.bold,
                                         ),
                                   ),
                                 ),
@@ -246,12 +247,105 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                     onExit: ((event) async {
                       safeSetState(() => _model.mouseRegionHovered3 = false);
                     }),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        logFirebaseEvent(
+                            'DROPDOWN_USER_EDIT_wrapWidget_ON_TAP');
+                        // ActionAnalista
+                        await UsuariosTable().update(
+                          data: {
+                            'tipo_usuario_id': 4,
+                          },
+                          matchingRows: (rows) => rows.eq(
+                            'usuario_id',
+                            widget.usuarioid?.usuarioId,
+                          ),
+                        );
+
+                        context.pushNamed('main_admin');
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Nível BÁSICO atribuido com sucesso!',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).success,
+                          ),
+                        );
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 150),
+                        curve: Curves.easeInOut,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: _model.mouseRegionHovered3
+                              ? FlutterFlowTheme.of(context).primaryBackground
+                              : FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
+                                child: Icon(
+                                  Icons.beenhere_outlined,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 20.0,
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '9v90iv59' /* Assign analisty acess */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  MouseRegion(
+                    opaque: false,
+                    cursor: SystemMouseCursors.click ?? MouseCursor.defer,
+                    onEnter: ((event) async {
+                      safeSetState(() => _model.mouseRegionHovered4 = true);
+                    }),
+                    onExit: ((event) async {
+                      safeSetState(() => _model.mouseRegionHovered4 = false);
+                    }),
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 150),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered3
+                        color: _model.mouseRegionHovered4
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -300,17 +394,17 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                     opaque: false,
                     cursor: MouseCursor.defer ?? MouseCursor.defer,
                     onEnter: ((event) async {
-                      safeSetState(() => _model.mouseRegionHovered4 = true);
+                      safeSetState(() => _model.mouseRegionHovered5 = true);
                     }),
                     onExit: ((event) async {
-                      safeSetState(() => _model.mouseRegionHovered4 = false);
+                      safeSetState(() => _model.mouseRegionHovered5 = false);
                     }),
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 150),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered4
+                        color: _model.mouseRegionHovered5
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
                         borderRadius: const BorderRadius.only(
