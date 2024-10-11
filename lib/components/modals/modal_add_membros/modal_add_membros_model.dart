@@ -44,11 +44,11 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   int? ddwFaccaoValue;
   FormFieldController<int>? ddwFaccaoValueController;
   // State field(s) for ddw_funcao widget.
-  int? ddwFuncaoValue1;
-  FormFieldController<int>? ddwFuncaoValueController1;
-  // State field(s) for ddw_funcao widget.
-  int? ddwFuncaoValue2;
-  FormFieldController<int>? ddwFuncaoValueController2;
+  int? ddwFuncaoValue;
+  FormFieldController<int>? ddwFuncaoValueController;
+  // State field(s) for ddw_cargo widget.
+  int? ddwCargoValue;
+  FormFieldController<int>? ddwCargoValueController;
   // State field(s) for txt_nome_completo widget.
   FocusNode? txtNomeCompletoFocusNode;
   TextEditingController? txtNomeCompletoTextController;
