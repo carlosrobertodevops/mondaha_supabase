@@ -3000,6 +3000,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                       .getText(
                                                     'qziqype9' /* Cancel */,
                                                   ),
+                                                  icon: const Icon(
+                                                    Icons.cancel_outlined,
+                                                    size: 24.0,
+                                                  ),
                                                   options: FFButtonOptions(
                                                     height: 44.0,
                                                     padding:
@@ -3035,17 +3039,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             12.0),
-                                                    hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                    hoverBorderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      width: 2.0,
-                                                    ),
                                                     hoverTextColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -3065,6 +3058,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           context)
                                                       .getText(
                                                     'xkcg34s5' /* Save Member */,
+                                                  ),
+                                                  icon: const Icon(
+                                                    Icons.check_circle,
+                                                    size: 24.0,
                                                   ),
                                                   options: FFButtonOptions(
                                                     height: 44.0,
