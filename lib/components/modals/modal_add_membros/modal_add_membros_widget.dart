@@ -2885,7 +2885,18 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .primary,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  width: 2.0,
+                                                                ),
                                                               ),
                                                               alignment:
                                                                   const AlignmentDirectional(
@@ -2904,10 +2915,12 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMedium
+                                                                      .headlineSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Plus Jakarta Sans',
+                                                                            'Outfit',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .info,
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -3000,7 +3013,18 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .primary,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  width: 2.0,
+                                                                ),
                                                               ),
                                                               alignment:
                                                                   const AlignmentDirectional(
@@ -3019,10 +3043,12 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMedium
+                                                                      .headlineSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Plus Jakarta Sans',
+                                                                            'Outfit',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .info,
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
