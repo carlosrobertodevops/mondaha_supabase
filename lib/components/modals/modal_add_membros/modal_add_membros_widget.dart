@@ -658,7 +658,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     flex: 5,
                                                                                     child: FutureBuilder<List<FaccoesRow>>(
                                                                                       future: FaccoesTable().queryRows(
-                                                                                        queryFn: (q) => q.order('nome'),
+                                                                                        queryFn: (q) => q,
                                                                                       ),
                                                                                       builder: (context, snapshot) {
                                                                                         // Customize what your widget looks like when it's loading.
@@ -731,7 +731,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     flex: 4,
                                                                                     child: FutureBuilder<List<FuncoesRow>>(
                                                                                       future: FuncoesTable().queryRows(
-                                                                                        queryFn: (q) => q.order('descricao', ascending: true),
+                                                                                        queryFn: (q) => q,
                                                                                       ),
                                                                                       builder: (context, snapshot) {
                                                                                         // Customize what your widget looks like when it's loading.
@@ -796,10 +796,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Expanded(
-                                                                                    flex: 3,
+                                                                                    flex: 4,
                                                                                     child: FutureBuilder<List<CargosRow>>(
                                                                                       future: CargosTable().queryRows(
-                                                                                        queryFn: (q) => q.order('nome', ascending: true),
+                                                                                        queryFn: (q) => q,
                                                                                       ),
                                                                                       builder: (context, snapshot) {
                                                                                         // Customize what your widget looks like when it's loading.
@@ -2673,7 +2673,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                 child: Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 12.0, 0.0, 0.0),
+                                                          0.0, 8.0, 0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2885,7 +2885,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primary,
+                                                                    .secondary,
                                                               ),
                                                               alignment:
                                                                   const AlignmentDirectional(
@@ -3000,7 +3000,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primary,
+                                                                    .secondary,
                                                               ),
                                                               alignment:
                                                                   const AlignmentDirectional(
