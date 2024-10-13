@@ -288,17 +288,12 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                           m.storagePath,
                                                           context))) {
                                                 safeSetState(() => _model
-                                                    .isDataUploading = true);
+                                                    .isDataUploading2 = true);
                                                 var selectedUploadedFiles =
                                                     <FFUploadedFile>[];
 
                                                 var downloadUrls = <String>[];
                                                 try {
-                                                  showUploadMessage(
-                                                    context,
-                                                    'Uploading file...',
-                                                    showLoading: true,
-                                                  );
                                                   selectedUploadedFiles =
                                                       selectedMedia
                                                           .map((m) =>
@@ -326,9 +321,7 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                         selectedMedia,
                                                   );
                                                 } finally {
-                                                  ScaffoldMessenger.of(context)
-                                                      .hideCurrentSnackBar();
-                                                  _model.isDataUploading =
+                                                  _model.isDataUploading2 =
                                                       false;
                                                 }
                                                 if (selectedUploadedFiles
@@ -337,18 +330,14 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                     downloadUrls.length ==
                                                         selectedMedia.length) {
                                                   safeSetState(() {
-                                                    _model.uploadedLocalFile =
+                                                    _model.uploadedLocalFile2 =
                                                         selectedUploadedFiles
                                                             .first;
-                                                    _model.uploadedFileUrl =
+                                                    _model.uploadedFileUrl2 =
                                                         downloadUrls.first;
                                                   });
-                                                  showUploadMessage(
-                                                      context, 'Success!');
                                                 } else {
                                                   safeSetState(() {});
-                                                  showUploadMessage(context,
-                                                      'Failed to upload data');
                                                   return;
                                                 }
                                               }
@@ -361,9 +350,7 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                     const Duration(milliseconds: 500),
                                                 fadeOutDuration:
                                                     const Duration(milliseconds: 500),
-                                                imageUrl: _model.isDataUploading
-                                                    ? _model.uploadedFileUrl
-                                                    : _model.uploadedFileUrl,
+                                                imageUrl: '',
                                                 width: double.infinity,
                                                 height: double.infinity,
                                                 fit: BoxFit.cover,
@@ -551,7 +538,7 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                           .txtNomeFaccaoTextController.text,
                                       'descricao':
                                           _model.descriptionTextController.text,
-                                      'imagem_path': _model.uploadedFileUrl,
+                                      'imagem_path': _model.uploadedFileUrl1,
                                     });
                                     Navigator.pop(context);
 

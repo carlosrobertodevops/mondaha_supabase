@@ -837,7 +837,10 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                 Container(
                                                                                   height: 32.0,
                                                                                   decoration: BoxDecoration(
-                                                                                    color: FlutterFlowTheme.of(context).accent2,
+                                                                                    color: valueOrDefault<Color>(
+                                                                                      listViewUsuariosRow.tipoUsuarioId == 9 ? FlutterFlowTheme.of(context).accent3 : FlutterFlowTheme.of(context).accent2,
+                                                                                      FlutterFlowTheme.of(context).accent2,
+                                                                                    ),
                                                                                     borderRadius: BorderRadius.circular(8.0),
                                                                                     border: Border.all(
                                                                                       color: FlutterFlowTheme.of(context).secondary,
