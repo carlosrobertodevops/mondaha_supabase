@@ -706,6 +706,11 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             text: overlayMembrosRow?.nomeCompleto,
                                                                                           ),
                                                                                           focusNode: _model.txtNomeCompletoFocusNode1,
+                                                                                          onChanged: (_) => EasyDebounce.debounce(
+                                                                                            '_model.txtNomeCompletoTextController1',
+                                                                                            const Duration(milliseconds: 2000),
+                                                                                            () => safeSetState(() {}),
+                                                                                          ),
                                                                                           autofocus: false,
                                                                                           obscureText: false,
                                                                                           decoration: InputDecoration(
@@ -753,6 +758,18 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             filled: true,
                                                                                             fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                            suffixIcon: _model.txtNomeCompletoTextController1!.text.isNotEmpty
+                                                                                                ? InkWell(
+                                                                                                    onTap: () async {
+                                                                                                      _model.txtNomeCompletoTextController1?.clear();
+                                                                                                      safeSetState(() {});
+                                                                                                    },
+                                                                                                    child: const Icon(
+                                                                                                      Icons.clear,
+                                                                                                      size: 24.0,
+                                                                                                    ),
+                                                                                                  )
+                                                                                                : null,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Plus Jakarta Sans',
@@ -3320,7 +3337,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 color: FlutterFlowTheme.of(context).alternate,
                                                                                 width: 2.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 OutlineInputBorder(
@@ -3328,7 +3345,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 color: Color(0x00000000),
                                                                                 width: 2.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 OutlineInputBorder(
@@ -3336,7 +3353,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 color: FlutterFlowTheme.of(context).error,
                                                                                 width: 2.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 OutlineInputBorder(
@@ -3344,12 +3361,17 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 color: FlutterFlowTheme.of(context).error,
                                                                                 width: 2.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                             filled:
                                                                                 true,
                                                                             fillColor:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                14.0,
+                                                                                24.0,
+                                                                                24.0,
+                                                                                24.0),
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -3452,7 +3474,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 color: FlutterFlowTheme.of(context).alternate,
                                                                                 width: 2.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 OutlineInputBorder(
@@ -3460,7 +3482,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 color: Color(0x00000000),
                                                                                 width: 2.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 OutlineInputBorder(
@@ -3468,7 +3490,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 color: FlutterFlowTheme.of(context).error,
                                                                                 width: 2.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 OutlineInputBorder(
@@ -3476,12 +3498,17 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 color: FlutterFlowTheme.of(context).error,
                                                                                 width: 2.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                             filled:
                                                                                 true,
                                                                             fillColor:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                24.0,
+                                                                                24.0,
+                                                                                24.0,
+                                                                                24.0),
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -3617,6 +3644,12 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                     mainAxisSize:
                                                                         MainAxisSize
                                                                             .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
                                                                     children: List.generate(
                                                                         childrenColMembrosRelacoes
                                                                             .length,
