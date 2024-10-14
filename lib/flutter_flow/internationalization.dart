@@ -1558,10 +1558,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Nickname',
       'pt': 'Apelido',
     },
-    'xvhtuhnm': {
-      'en': 'Alcunha #1',
-      'pt': 'Alcunha #1',
-    },
     'deg0fdow': {
       'en': 'Naturalidade',
       'pt': 'Naturalidade',
@@ -1722,93 +1718,57 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'History',
       'pt': 'História',
     },
-    '08f1it9z': {
+    'uw8i01r5': {
+      'en': 'Endereço',
+      'pt': 'Endereço',
+    },
+    '97izofel': {
+      'en': 'Endereço',
+      'pt': 'Endereço',
+    },
+    '7tegc2gd': {
       'en': 'Brazilian born',
       'pt': 'Nascido no Brasil',
     },
-    '5r7kuicl': {
+    'j7uzqdk2': {
       'en': 'Naturalized Brazilian',
       'pt': 'Naturalizado Brasileiro',
     },
-    'pjygocz6': {
+    'usfossjo': {
       'en': 'Foreigner',
       'pt': 'Estrangeiro',
     },
-    'cbh3ukkw': {
-      'en': 'Staty',
+    'baq5xyzk': {
+      'en': 'Estado',
       'pt': 'Estado',
     },
-    'td986qh3': {
+    '8h8sdizg': {
       'en': 'Search...',
-      'pt': 'Procurar...',
+      'pt': '',
     },
-    'tsjf37kw': {
+    'l7659gs2': {
       'en': 'Municipio',
       'pt': 'Município',
     },
-    'el0ub5v2': {
+    'd6sdnxoa': {
       'en': 'Search...',
-      'pt': 'Procurar...',
+      'pt': '',
     },
-    'sdft18te': {
-      'en': 'Positions',
+    '8ws4718a': {
+      'en': 'Posições',
       'pt': 'Posições',
     },
-    'eqkwrz88': {
+    'iiu1eskx': {
       'en': 'Search...',
-      'pt': 'Procurar...',
+      'pt': '',
     },
     'awnrzzus': {
-      'en': 'Historic',
+      'en': 'Histórico',
       'pt': 'Histórico',
     },
-    '5got0r9g': {
-      'en': 'Procedures',
-      'pt': 'Procedimentos',
-    },
-    'pkxqwpe0': {
-      'en': 'Procedure',
-      'pt': 'Procedimento',
-    },
-    '8wkf62hp': {
-      'en': 'Procedure',
-      'pt': 'Procedimento',
-    },
-    'cwdxjy9v': {
-      'en': 'Unit',
-      'pt': 'Unidade',
-    },
-    'l2vacdhp': {
-      'en': 'Type of Procedure',
-      'pt': 'Tipo de Procedimento',
-    },
-    'vpcryda6': {
-      'en': 'Crime',
-      'pt': 'Crime',
-    },
-    's7pnbuqy': {
-      'en': 'Data',
-      'pt': 'Dados',
-    },
-    'k0z056dg': {
-      'en': 'List Item',
-      'pt': 'Item da lista',
-    },
-    '4vkiqra9': {
-      'en': 'List Item',
-      'pt': 'Item da lista',
-    },
-    'qddih2dx': {
-      'en': 'List Item',
-      'pt': 'Item da lista',
-    },
-    'cyqz7sdo': {
-      'en': 'List Item',
-      'pt': 'Item da lista',
-    },
-    'iwh4sdh0': {
-      'en': 'List Item',
-      'pt': 'Item da lista',
+    'o7r2rdc8': {
+      'en': 'Histórico',
+      'pt': 'Histórico',
     },
     'zo5mhuuq': {
       'en': 'Faction',
@@ -1881,47 +1841,51 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'wkak4lxs': {
-      'en': 'Naturalidade',
-      'pt': 'Naturalidade',
+      'en': 'Batismo',
+      'pt': 'Batismo',
     },
     'pm0rvser': {
-      'en': 'Naturalidade',
-      'pt': 'Naturalidade',
+      'en': 'Batismo',
+      'pt': 'Batismo',
     },
-    'q7wfe11q': {
-      'en': 'Solteiro',
-      'pt': 'Solteiro',
+    'v5ktssho': {
+      'en': 'Local do Batismo',
+      'pt': 'Local do Batismo',
     },
-    'l8bv9yex': {
-      'en': 'Casado',
-      'pt': 'Casado',
+    '344g39wc': {
+      'en': 'Local do Batismo',
+      'pt': 'Local do Batismo',
     },
-    'w1m7c9vd': {
-      'en': 'Divorciado',
-      'pt': 'Divorciado',
+    'cteddjhn': {
+      'en': 'Padrinho',
+      'pt': 'Padrinho',
     },
-    '8b80zu96': {
-      'en': 'Viúva',
-      'pt': 'Viúva',
-    },
-    'tv3h66j2': {
-      'en': 'Separados legalmente',
-      'pt': 'Separados legalmente',
-    },
-    'dl34b1d2': {
-      'en': 'Stable union:',
+    'zntstdx4': {
+      'en': 'Batismo',
       'pt': '',
     },
-    'u1pq3aqq': {
-      'en': 'None of the options',
+    'uylgtxfb': {
+      'en': 'Senha',
+      'pt': 'Senha',
+    },
+    'h7acv992': {
+      'en': 'Local do Batismo',
       'pt': '',
     },
-    'aw77wtc8': {
-      'en': 'Marital status',
+    'ttnl9bl6': {
+      'en': 'Senha',
+      'pt': 'Senha',
+    },
+    'szi911dp': {
+      'en': 'Batismo',
       'pt': '',
     },
-    'jkb54u3z': {
-      'en': 'Marital status',
+    'h4o9kjih': {
+      'en': 'Local do Batismo',
+      'pt': '',
+    },
+    'asni2rgc': {
+      'en': 'Local do Batismo',
       'pt': '',
     },
     'g4cudkfo': {
@@ -1960,40 +1924,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Marital status',
       'pt': '',
     },
-    '17rd1cxr': {
-      'en': 'National Infopen Number',
+    'hx5z1zse': {
+      'en': 'Single',
       'pt': '',
     },
-    'uq8bvwan': {
-      'en': 'National Infopen Number',
+    'uq2ji1sc': {
+      'en': 'Married',
       'pt': '',
     },
-    'mbvfcjbq': {
-      'en': 'Procedural status',
+    'yyxfrhvy': {
+      'en': 'Divorced',
       'pt': '',
     },
-    '6q5404c2': {
-      'en': 'Procedural status',
+    'x8874h89': {
+      'en': 'Widowed',
       'pt': '',
     },
-    'otet3jao': {
-      'en': 'Color/Skin/Ethnicity',
+    '375vhpqk': {
+      'en': 'Legally separated',
       'pt': '',
     },
-    'xk24dpve': {
-      'en': 'Color/Skin/Ethnicity',
+    'p5znajxx': {
+      'en': 'Stable union:',
       'pt': '',
     },
-    'chl3526h': {
-      'en': 'Blood type',
+    'da0eemx5': {
+      'en': 'None of the options',
       'pt': '',
     },
-    'txohfwr0': {
-      'en': 'Blood type',
+    'uhi29t9v': {
+      'en': 'Marital status',
       'pt': '',
     },
-    'f9j3232z': {
-      'en': 'Mother Name',
+    'bfv93uyj': {
+      'en': 'Marital status',
       'pt': '',
     },
     '0c8h6wz9': {
@@ -2004,12 +1968,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Mother\'s Situation',
       'pt': '',
     },
-    'l8mp8z1l': {
-      'en': 'Father Name',
+    '8c2yoabs': {
+      'en': 'Mother Situation',
       'pt': '',
     },
-    'wsu4rpfa': {
-      'en': '',
+    'xtghmnhj': {
+      'en': 'Mother\'s Situation',
       'pt': '',
     },
     '8uf1jitv': {
@@ -2020,12 +1984,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Father\'s Situation',
       'pt': '',
     },
-    'stse0963': {
-      'en': 'Crime Action',
-      'pt': 'Ação Criminal',
+    'xeeiaebp': {
+      'en': 'Procedimentos',
+      'pt': 'Procedimentos',
     },
-    'i3nwl1ug': {
-      'en': 'Alert',
+    '0v0s6s8e': {
+      'en': 'Processos',
+      'pt': 'Processos',
+    },
+    'xaeljp2r': {
+      'en': 'Atuação',
+      'pt': 'Atuação',
+    },
+    '8slh1eth': {
+      'en': 'Alerta',
       'pt': 'Alerta',
     },
     'ld0rt7j2': {
