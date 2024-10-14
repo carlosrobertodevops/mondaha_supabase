@@ -25,4 +25,7 @@ class FuncoesRow extends SupabaseDataRow {
 
   String? get nome => getField<String>('nome');
   set nome(String? value) => setField<String>('nome', value);
+
+  int? get faccaoId => getField<int>('faccao_id');
+  set faccaoId(int? value) => setField<int>('faccao_id', value);
 }

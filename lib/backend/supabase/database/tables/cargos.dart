@@ -25,4 +25,7 @@ class CargosRow extends SupabaseDataRow {
 
   String? get descricao => getField<String>('descricao');
   set descricao(String? value) => setField<String>('descricao', value);
+
+  int? get faccaoId => getField<int>('faccao_id');
+  set faccaoId(int? value) => setField<int>('faccao_id', value);
 }

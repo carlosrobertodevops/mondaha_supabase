@@ -2274,7 +2274,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
-                                                                                          maxLines: 19,
+                                                                                          maxLines: 20,
                                                                                           keyboardType: TextInputType.multiline,
                                                                                           cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                           validator: _model.txtMembroHistoricoTextControllerValidator.asValidator(context),
@@ -3298,94 +3298,84 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                               ),
                                                                         ),
                                                                       ),
-                                                                      SizedBox(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
+                                                                      Expanded(
                                                                         child:
-                                                                            TextFormField(
-                                                                          controller:
-                                                                              _model.txtMembroAtuacaoTextController,
-                                                                          focusNode:
-                                                                              _model.txtMembroAtuacaoFocusNode,
-                                                                          autofocus:
-                                                                              false,
-                                                                          obscureText:
-                                                                              false,
-                                                                          decoration:
-                                                                              InputDecoration(
-                                                                            isDense:
-                                                                                true,
-                                                                            labelText:
-                                                                                FFLocalizations.of(context).getText(
-                                                                              'ssjp267b' /* Atuação no Crime */,
+                                                                            SizedBox(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 1.0,
+                                                                          child:
+                                                                              TextFormField(
+                                                                            controller:
+                                                                                _model.txtMembroAtuacaoTextController,
+                                                                            focusNode:
+                                                                                _model.txtMembroAtuacaoFocusNode,
+                                                                            autofocus:
+                                                                                false,
+                                                                            obscureText:
+                                                                                false,
+                                                                            decoration:
+                                                                                InputDecoration(
+                                                                              isDense: true,
+                                                                              labelText: FFLocalizations.of(context).getText(
+                                                                                'ssjp267b' /* Atuação no Crime */,
+                                                                              ),
+                                                                              labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
+                                                                              alignLabelWithHint: true,
+                                                                              hintText: FFLocalizations.of(context).getText(
+                                                                                'dak0lg3s' /* Atuação no Crime */,
+                                                                              ),
+                                                                              hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
+                                                                              enabledBorder: OutlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              focusedBorder: OutlineInputBorder(
+                                                                                borderSide: const BorderSide(
+                                                                                  color: Color(0x00000000),
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              errorBorder: OutlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: FlutterFlowTheme.of(context).error,
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              focusedErrorBorder: OutlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: FlutterFlowTheme.of(context).error,
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              filled: true,
+                                                                              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(14.0, 24.0, 24.0, 24.0),
                                                                             ),
-                                                                            labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            hintText:
-                                                                                FFLocalizations.of(context).getText(
-                                                                              'dak0lg3s' /* Atuação no Crime */,
-                                                                            ),
-                                                                            hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                            enabledBorder:
-                                                                                OutlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                color: FlutterFlowTheme.of(context).alternate,
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            focusedBorder:
-                                                                                OutlineInputBorder(
-                                                                              borderSide: const BorderSide(
-                                                                                color: Color(0x00000000),
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            errorBorder:
-                                                                                OutlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                color: FlutterFlowTheme.of(context).error,
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            focusedErrorBorder:
-                                                                                OutlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                color: FlutterFlowTheme.of(context).error,
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            filled:
-                                                                                true,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                14.0,
-                                                                                24.0,
-                                                                                24.0,
-                                                                                24.0),
+                                                                            maxLines:
+                                                                                20,
+                                                                            keyboardType:
+                                                                                TextInputType.multiline,
+                                                                            cursorColor:
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                            validator:
+                                                                                _model.txtMembroAtuacaoTextControllerValidator.asValidator(context),
                                                                           ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                          maxLines:
-                                                                              20,
-                                                                          cursorColor:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          validator: _model
-                                                                              .txtMembroAtuacaoTextControllerValidator
-                                                                              .asValidator(context),
                                                                         ),
                                                                       ),
                                                                     ].divide(const SizedBox(
@@ -3435,94 +3425,84 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                           ),
                                                                         ].divide(const SizedBox(width: 16.0)),
                                                                       ),
-                                                                      SizedBox(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
+                                                                      Expanded(
                                                                         child:
-                                                                            TextFormField(
-                                                                          controller:
-                                                                              _model.txtMembroAlertaTextController,
-                                                                          focusNode:
-                                                                              _model.txtMembroAlertaFocusNode,
-                                                                          autofocus:
-                                                                              false,
-                                                                          obscureText:
-                                                                              false,
-                                                                          decoration:
-                                                                              InputDecoration(
-                                                                            isDense:
-                                                                                true,
-                                                                            labelText:
-                                                                                FFLocalizations.of(context).getText(
-                                                                              '29530mgy' /* Alerta */,
+                                                                            SizedBox(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 1.0,
+                                                                          child:
+                                                                              TextFormField(
+                                                                            controller:
+                                                                                _model.txtMembroAlertaTextController,
+                                                                            focusNode:
+                                                                                _model.txtMembroAlertaFocusNode,
+                                                                            autofocus:
+                                                                                false,
+                                                                            obscureText:
+                                                                                false,
+                                                                            decoration:
+                                                                                InputDecoration(
+                                                                              isDense: true,
+                                                                              labelText: FFLocalizations.of(context).getText(
+                                                                                '29530mgy' /* Alerta */,
+                                                                              ),
+                                                                              labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
+                                                                              alignLabelWithHint: true,
+                                                                              hintText: FFLocalizations.of(context).getText(
+                                                                                'kx61gjir' /* Alerta */,
+                                                                              ),
+                                                                              hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
+                                                                              enabledBorder: OutlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              focusedBorder: OutlineInputBorder(
+                                                                                borderSide: const BorderSide(
+                                                                                  color: Color(0x00000000),
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              errorBorder: OutlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: FlutterFlowTheme.of(context).error,
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              focusedErrorBorder: OutlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: FlutterFlowTheme.of(context).error,
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              filled: true,
+                                                                              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
                                                                             ),
-                                                                            labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            hintText:
-                                                                                FFLocalizations.of(context).getText(
-                                                                              'kx61gjir' /* Alerta */,
-                                                                            ),
-                                                                            hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                            enabledBorder:
-                                                                                OutlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                color: FlutterFlowTheme.of(context).alternate,
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            focusedBorder:
-                                                                                OutlineInputBorder(
-                                                                              borderSide: const BorderSide(
-                                                                                color: Color(0x00000000),
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            errorBorder:
-                                                                                OutlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                color: FlutterFlowTheme.of(context).error,
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            focusedErrorBorder:
-                                                                                OutlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                color: FlutterFlowTheme.of(context).error,
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            filled:
-                                                                                true,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                24.0,
-                                                                                24.0,
-                                                                                24.0,
-                                                                                24.0),
+                                                                            maxLines:
+                                                                                20,
+                                                                            keyboardType:
+                                                                                TextInputType.multiline,
+                                                                            cursorColor:
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                            validator:
+                                                                                _model.txtMembroAlertaTextControllerValidator.asValidator(context),
                                                                           ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                          maxLines:
-                                                                              20,
-                                                                          cursorColor:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          validator: _model
-                                                                              .txtMembroAlertaTextControllerValidator
-                                                                              .asValidator(context),
                                                                         ),
                                                                       ),
                                                                     ].divide(const SizedBox(
