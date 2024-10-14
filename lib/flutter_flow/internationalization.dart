@@ -1610,6 +1610,42 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Identidade',
       'pt': 'Identidade',
     },
+    'kuvmd4lw': {
+      'en': 'SSP-AL',
+      'pt': 'SSP-AL',
+    },
+    'i0p55l2k': {
+      'en': 'SSP-SE',
+      'pt': 'SSP-SE',
+    },
+    'q0egmn1z': {
+      'en': 'SSP-CE',
+      'pt': 'SSP-CE',
+    },
+    'yoj8hn6v': {
+      'en': 'SSP-PE',
+      'pt': 'SSP-PE',
+    },
+    'vuc1hntf': {
+      'en': 'SSP-BA',
+      'pt': 'SSP-BA',
+    },
+    'lhjvkfqm': {
+      'en': 'SSP-RN',
+      'pt': 'SSP-RN',
+    },
+    'ryqcnfe0': {
+      'en': 'Nenhuma das opções',
+      'pt': '',
+    },
+    'ia9zkanc': {
+      'en': 'Órgão expedidor',
+      'pt': 'Órgão expedidor',
+    },
+    'h3ykxfak': {
+      'en': 'Órgão expedidor',
+      'pt': 'Órgão expedidor',
+    },
     'k3o15zmt': {
       'en': 'CPF',
       'pt': 'CPF',
@@ -1726,16 +1762,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Endereço',
       'pt': 'Endereço',
     },
+    'ob87x68k': {
+      'en': '',
+      'pt': '',
+    },
     '7tegc2gd': {
-      'en': 'Brazilian born',
+      'en': 'Nascido no Brasil',
       'pt': 'Nascido no Brasil',
     },
     'j7uzqdk2': {
-      'en': 'Naturalized Brazilian',
+      'en': 'Naturalizado Brasileiro',
       'pt': 'Naturalizado Brasileiro',
     },
     'usfossjo': {
-      'en': 'Foreigner',
+      'en': 'Estrangeiro',
       'pt': 'Estrangeiro',
     },
     'baq5xyzk': {
@@ -1751,14 +1791,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Município',
     },
     'd6sdnxoa': {
-      'en': 'Search...',
-      'pt': '',
-    },
-    '8ws4718a': {
-      'en': 'Posições',
-      'pt': 'Posições',
-    },
-    'iiu1eskx': {
       'en': 'Search...',
       'pt': '',
     },

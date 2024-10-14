@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'modal_add_membros_widget.dart' show ModalAddMembrosWidget;
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   ///  Local state fields for this component.
@@ -37,6 +38,28 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
       membrosEnderecos[index] = updateFn(membrosEnderecos[index]);
 
   bool membroAlerta = false;
+
+  String? membrosLimpar;
+
+  List<String> membrosGrupos = [];
+  void addToMembrosGrupos(String item) => membrosGrupos.add(item);
+  void removeFromMembrosGrupos(String item) => membrosGrupos.remove(item);
+  void removeAtIndexFromMembrosGrupos(int index) =>
+      membrosGrupos.removeAt(index);
+  void insertAtIndexInMembrosGrupos(int index, String item) =>
+      membrosGrupos.insert(index, item);
+  void updateMembrosGruposAtIndex(int index, Function(String) updateFn) =>
+      membrosGrupos[index] = updateFn(membrosGrupos[index]);
+
+  List<String> membrosRelacoes = [];
+  void addToMembrosRelacoes(String item) => membrosRelacoes.add(item);
+  void removeFromMembrosRelacoes(String item) => membrosRelacoes.remove(item);
+  void removeAtIndexFromMembrosRelacoes(int index) =>
+      membrosRelacoes.removeAt(index);
+  void insertAtIndexInMembrosRelacoes(int index, String item) =>
+      membrosRelacoes.insert(index, item);
+  void updateMembrosRelacoesAtIndex(int index, Function(String) updateFn) =>
+      membrosRelacoes[index] = updateFn(membrosRelacoes[index]);
 
   ///  State fields for stateful widgets in this component.
 
@@ -74,9 +97,13 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   TextEditingController? txtNoIdentidadeTextController;
   String? Function(BuildContext, String?)?
       txtNoIdentidadeTextControllerValidator;
+  // State field(s) for ddw_orgao_expedidor widget.
+  int? ddwOrgaoExpedidorValue;
+  FormFieldController<int>? ddwOrgaoExpedidorValueController;
   // State field(s) for txt_no_cpf widget.
   FocusNode? txtNoCpfFocusNode;
   TextEditingController? txtNoCpfTextController;
+  final txtNoCpfMask = MaskTextInputFormatter(mask: '###.###.###-##');
   String? Function(BuildContext, String?)? txtNoCpfTextControllerValidator;
   // State field(s) for txt_no_infopen widget.
   FocusNode? txtNoInfopenFocusNode;
@@ -112,9 +139,6 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   // State field(s) for ddw_municipio widget.
   int? ddwMunicipioValue;
   FormFieldController<int>? ddwMunicipioValueController;
-  // State field(s) for ddw_distrito widget.
-  String? ddwDistritoValue;
-  FormFieldController<String>? ddwDistritoValueController;
   // State field(s) for txt_membro_historico widget.
   FocusNode? txtMembroHistoricoFocusNode;
   TextEditingController? txtMembroHistoricoTextController;
