@@ -390,6 +390,26 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
+      'progressBarOnPageLoadAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1200.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 1200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 1200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
       'dividerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -1492,6 +1512,17 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     const Color(0x4CFFFFFF),
                                               ).animateOnPageLoad(animationsMap[
                                                   'progressBarOnPageLoadAnimation2']!),
+                                              CircularPercentIndicator(
+                                                percent: 0.3,
+                                                radius: 25.0,
+                                                lineWidth: 12.0,
+                                                animation: true,
+                                                animateFromLastPercent: true,
+                                                progressColor: Colors.white,
+                                                backgroundColor:
+                                                    const Color(0x4CFFFFFF),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'progressBarOnPageLoadAnimation3']!),
                                             ],
                                           ),
                                         ],
@@ -1509,7 +1540,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                           0.0, 0.0, 0.0, 8.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'xlzf8qqx' /* Users in  dding registers */,
+                                          'xlzf8qqx' /* Users in  adding registers */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineMedium
@@ -1702,7 +1733,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                   12.0),
                                                           child: Icon(
                                                             Icons
-                                                                .folder_open_outlined,
+                                                                .account_tree_outlined,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryText,
@@ -1856,7 +1887,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'g1uaaovn' /* Update Activity */,
+                                                              'g1uaaovn' /* Update Activity in the all */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1931,7 +1962,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                               const EdgeInsets.all(
                                                                   12.0),
                                                           child: Icon(
-                                                            Icons.group,
+                                                            Icons
+                                                                .all_inclusive_rounded,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryText,

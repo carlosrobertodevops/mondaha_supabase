@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'modal_add_membros_widget.dart' show ModalAddMembrosWidget;
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   ///  Local state fields for this component.
@@ -31,6 +30,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   final formKey1 = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -40,71 +40,53 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   List<FFUploadedFile> uploadedLocalFiles = [];
   List<String> uploadedFileUrls = [];
 
-  // State field(s) for ddw_faccao widget.
-  int? ddwFaccaoValue;
-  FormFieldController<int>? ddwFaccaoValueController;
-  // State field(s) for ddw_funcao widget.
-  int? ddwFuncaoValue;
-  FormFieldController<int>? ddwFuncaoValueController;
-  // State field(s) for ddw_cargo widget.
-  int? ddwCargoValue;
-  FormFieldController<int>? ddwCargoValueController;
   // State field(s) for txt_nome_completo widget.
-  FocusNode? txtNomeCompletoFocusNode;
-  TextEditingController? txtNomeCompletoTextController;
+  FocusNode? txtNomeCompletoFocusNode1;
+  TextEditingController? txtNomeCompletoTextController1;
   String? Function(BuildContext, String?)?
-      txtNomeCompletoTextControllerValidator;
-  // State field(s) for ddw_estado_civil widget.
-  int? ddwEstadoCivilValue;
-  FormFieldController<int>? ddwEstadoCivilValueController;
+      txtNomeCompletoTextController1Validator;
   // State field(s) for txt_alcunha_add widget.
   FocusNode? txtAlcunhaAddFocusNode;
   TextEditingController? txtAlcunhaAddTextController;
   String? Function(BuildContext, String?)? txtAlcunhaAddTextControllerValidator;
-  // State field(s) for ddw_localizacoes widget.
-  String? ddwLocalizacoesValue;
-  FormFieldController<String>? ddwLocalizacoesValueController;
-  // State field(s) for txt_data_ultima_prisao widget.
-  FocusNode? txtDataUltimaPrisaoFocusNode;
-  TextEditingController? txtDataUltimaPrisaoTextController;
-  final txtDataUltimaPrisaoMask = MaskTextInputFormatter(mask: '##/##/####');
+  // State field(s) for txt_nome_completo widget.
+  FocusNode? txtNomeCompletoFocusNode2;
+  TextEditingController? txtNomeCompletoTextController2;
   String? Function(BuildContext, String?)?
-      txtDataUltimaPrisaoTextControllerValidator;
-  DateTime? datePicked1;
-  // State field(s) for txt_data_nascimento widget.
-  FocusNode? txtDataNascimentoFocusNode;
-  TextEditingController? txtDataNascimentoTextController;
-  final txtDataNascimentoMask = MaskTextInputFormatter(mask: '##/##/####');
+      txtNomeCompletoTextController2Validator;
+  // State field(s) for ddw_estado_civil widget.
+  int? ddwEstadoCivilValue1;
+  FormFieldController<int>? ddwEstadoCivilValueController1;
+  // State field(s) for txt_no_identidade widget.
+  FocusNode? txtNoIdentidadeFocusNode;
+  TextEditingController? txtNoIdentidadeTextController;
   String? Function(BuildContext, String?)?
-      txtDataNascimentoTextControllerValidator;
-  DateTime? datePicked2;
+      txtNoIdentidadeTextControllerValidator;
+  // State field(s) for txt_no_cpf widget.
+  FocusNode? txtNoCpfFocusNode;
+  TextEditingController? txtNoCpfTextController;
+  String? Function(BuildContext, String?)? txtNoCpfTextControllerValidator;
   // State field(s) for txt_no_infopen widget.
-  FocusNode? txtNoInfopenFocusNode;
-  TextEditingController? txtNoInfopenTextController;
-  String? Function(BuildContext, String?)? txtNoInfopenTextControllerValidator;
-  // State field(s) for ddw_situacao_processual widget.
-  String? ddwSituacaoProcessualValue;
-  FormFieldController<String>? ddwSituacaoProcessualValueController;
-  // State field(s) for ddw_cor_pele widget.
-  String? ddwCorPeleValue;
-  FormFieldController<String>? ddwCorPeleValueController;
-  // State field(s) for ddw_tipo_sanguineo widget.
-  String? ddwTipoSanguineoValue;
-  FormFieldController<String>? ddwTipoSanguineoValueController;
+  FocusNode? txtNoInfopenFocusNode1;
+  TextEditingController? txtNoInfopenTextController1;
+  String? Function(BuildContext, String?)? txtNoInfopenTextController1Validator;
   // State field(s) for txt_mae_nome widget.
-  FocusNode? txtMaeNomeFocusNode;
-  TextEditingController? txtMaeNomeTextController;
-  String? Function(BuildContext, String?)? txtMaeNomeTextControllerValidator;
+  FocusNode? txtMaeNomeFocusNode1;
+  TextEditingController? txtMaeNomeTextController1;
+  String? Function(BuildContext, String?)? txtMaeNomeTextController1Validator;
   // State field(s) for ddw_situacao_mae widget.
-  String? ddwSituacaoMaeValue;
-  FormFieldController<String>? ddwSituacaoMaeValueController;
+  int? ddwSituacaoMaeValue1;
+  FormFieldController<int>? ddwSituacaoMaeValueController1;
   // State field(s) for txt_nome_pai widget.
-  FocusNode? txtNomePaiFocusNode;
-  TextEditingController? txtNomePaiTextController;
-  String? Function(BuildContext, String?)? txtNomePaiTextControllerValidator;
+  FocusNode? txtNomePaiFocusNode1;
+  TextEditingController? txtNomePaiTextController1;
+  String? Function(BuildContext, String?)? txtNomePaiTextController1Validator;
   // State field(s) for ddw_situacao_pai widget.
-  String? ddwSituacaoPaiValue;
-  FormFieldController<String>? ddwSituacaoPaiValueController;
+  int? ddwSituacaoPaiValue1;
+  FormFieldController<int>? ddwSituacaoPaiValueController1;
+  // State field(s) for ddw_intrucao widget.
+  int? ddwIntrucaoValue;
+  FormFieldController<int>? ddwIntrucaoValueController;
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
   // State field(s) for ddw_estado widget.
@@ -121,6 +103,57 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   TextEditingController? txtMembroHistoricoTextController;
   String? Function(BuildContext, String?)?
       txtMembroHistoricoTextControllerValidator;
+  // State field(s) for ddw_faccao widget.
+  int? ddwFaccaoValue;
+  FormFieldController<int>? ddwFaccaoValueController;
+  // State field(s) for ddw_funcao widget.
+  int? ddwFuncaoValue;
+  FormFieldController<int>? ddwFuncaoValueController;
+  // State field(s) for ddw_cargo widget.
+  int? ddwCargoValue;
+  FormFieldController<int>? ddwCargoValueController;
+  // State field(s) for txt_bastismo widget.
+  FocusNode? txtBastismoFocusNode;
+  TextEditingController? txtBastismoTextController;
+  String? Function(BuildContext, String?)? txtBastismoTextControllerValidator;
+  // State field(s) for ddw_estado_civil widget.
+  int? ddwEstadoCivilValue2;
+  FormFieldController<int>? ddwEstadoCivilValueController2;
+  // State field(s) for txt_local_batismo widget.
+  FocusNode? txtLocalBatismoFocusNode;
+  TextEditingController? txtLocalBatismoTextController;
+  String? Function(BuildContext, String?)?
+      txtLocalBatismoTextControllerValidator;
+  // State field(s) for ddw_estado_civil widget.
+  int? ddwEstadoCivilValue3;
+  FormFieldController<int>? ddwEstadoCivilValueController3;
+  // State field(s) for txt_no_infopen widget.
+  FocusNode? txtNoInfopenFocusNode2;
+  TextEditingController? txtNoInfopenTextController2;
+  String? Function(BuildContext, String?)? txtNoInfopenTextController2Validator;
+  // State field(s) for ddw_situacao_processual widget.
+  String? ddwSituacaoProcessualValue;
+  FormFieldController<String>? ddwSituacaoProcessualValueController;
+  // State field(s) for ddw_cor_pele widget.
+  String? ddwCorPeleValue;
+  FormFieldController<String>? ddwCorPeleValueController;
+  // State field(s) for ddw_tipo_sanguineo widget.
+  String? ddwTipoSanguineoValue;
+  FormFieldController<String>? ddwTipoSanguineoValueController;
+  // State field(s) for txt_mae_nome widget.
+  FocusNode? txtMaeNomeFocusNode2;
+  TextEditingController? txtMaeNomeTextController2;
+  String? Function(BuildContext, String?)? txtMaeNomeTextController2Validator;
+  // State field(s) for ddw_situacao_mae widget.
+  String? ddwSituacaoMaeValue2;
+  FormFieldController<String>? ddwSituacaoMaeValueController2;
+  // State field(s) for txt_nome_pai widget.
+  FocusNode? txtNomePaiFocusNode2;
+  TextEditingController? txtNomePaiTextController2;
+  String? Function(BuildContext, String?)? txtNomePaiTextController2Validator;
+  // State field(s) for ddw_situacao_pai widget.
+  String? ddwSituacaoPaiValue2;
+  FormFieldController<String>? ddwSituacaoPaiValueController2;
 
   @override
   void initState(BuildContext context) {}
@@ -128,29 +161,47 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   @override
   void dispose() {
     tabBarController?.dispose();
-    txtNomeCompletoFocusNode?.dispose();
-    txtNomeCompletoTextController?.dispose();
+    txtNomeCompletoFocusNode1?.dispose();
+    txtNomeCompletoTextController1?.dispose();
 
     txtAlcunhaAddFocusNode?.dispose();
     txtAlcunhaAddTextController?.dispose();
 
-    txtDataUltimaPrisaoFocusNode?.dispose();
-    txtDataUltimaPrisaoTextController?.dispose();
+    txtNomeCompletoFocusNode2?.dispose();
+    txtNomeCompletoTextController2?.dispose();
 
-    txtDataNascimentoFocusNode?.dispose();
-    txtDataNascimentoTextController?.dispose();
+    txtNoIdentidadeFocusNode?.dispose();
+    txtNoIdentidadeTextController?.dispose();
 
-    txtNoInfopenFocusNode?.dispose();
-    txtNoInfopenTextController?.dispose();
+    txtNoCpfFocusNode?.dispose();
+    txtNoCpfTextController?.dispose();
 
-    txtMaeNomeFocusNode?.dispose();
-    txtMaeNomeTextController?.dispose();
+    txtNoInfopenFocusNode1?.dispose();
+    txtNoInfopenTextController1?.dispose();
 
-    txtNomePaiFocusNode?.dispose();
-    txtNomePaiTextController?.dispose();
+    txtMaeNomeFocusNode1?.dispose();
+    txtMaeNomeTextController1?.dispose();
+
+    txtNomePaiFocusNode1?.dispose();
+    txtNomePaiTextController1?.dispose();
 
     txtMembroHistoricoFocusNode?.dispose();
     txtMembroHistoricoTextController?.dispose();
+
+    txtBastismoFocusNode?.dispose();
+    txtBastismoTextController?.dispose();
+
+    txtLocalBatismoFocusNode?.dispose();
+    txtLocalBatismoTextController?.dispose();
+
+    txtNoInfopenFocusNode2?.dispose();
+    txtNoInfopenTextController2?.dispose();
+
+    txtMaeNomeFocusNode2?.dispose();
+    txtMaeNomeTextController2?.dispose();
+
+    txtNomePaiFocusNode2?.dispose();
+    txtNomePaiTextController2?.dispose();
   }
 
   /// Additional helper methods.

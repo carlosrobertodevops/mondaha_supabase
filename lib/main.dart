@@ -175,7 +175,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 size: 24.0,
               ),
               activeIcon: const Icon(
-                Icons.dashboard_rounded,
+                Icons.account_tree_outlined,
                 size: 32.0,
               ),
               label: FFLocalizations.of(context).getText(

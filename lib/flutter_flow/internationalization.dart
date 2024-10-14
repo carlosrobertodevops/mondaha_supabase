@@ -162,7 +162,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'saxskj92': {
       'en': 'Add in the Map',
-      'pt': 'Adicionar no mapa',
+      'pt': 'Adicionados no mapa',
     },
     '2wlrr5lg': {
       'en': '4300',
@@ -173,8 +173,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Projetos',
     },
     'xlzf8qqx': {
-      'en': 'Users in  dding registers',
-      'pt': 'Usuários em registros dding',
+      'en': 'Users in  adding registers',
+      'pt': 'Atualizações de registros por usuários',
     },
     'zt3s5l2s': {
       'en': '4 Members',
@@ -189,8 +189,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Abaixo está um resumo da atividade.',
     },
     'g1uaaovn': {
-      'en': 'Update Activity',
-      'pt': 'Atividade de atualização',
+      'en': 'Update Activity in the all',
+      'pt': 'Atividade de atualização em todos os dados',
     },
     'e5q3ows1': {
       'en': 'Below is an a summary of activity.',
@@ -1550,102 +1550,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add Photos',
       'pt': 'Adicionar fotos',
     },
-    '50a5zzr1': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'mqd7ofwc': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'kd81fxo5': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'p8zr65o2': {
-      'en': 'Factions',
-      'pt': 'Facções',
-    },
-    'c65kmjew': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    'lozncyoq': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'i9uryaau': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    '2kc2hhg9': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    '4fb7ygyu': {
-      'en': 'Function',
-      'pt': 'Função',
-    },
-    'zg77wevd': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '8s833vf2': {
-      'en': 'Option 1',
-      'pt': '',
-    },
-    '44y1ejjd': {
-      'en': 'Option 2',
-      'pt': '',
-    },
-    'rxkpaogd': {
-      'en': 'Option 3',
-      'pt': '',
-    },
-    'fjklz75e': {
-      'en': 'Cargo',
-      'pt': 'Cargo',
-    },
-    'qf96c5yf': {
-      'en': 'Search...',
-      'pt': '',
-    },
-    'rfc9v78y': {
-      'en': 'Single',
-      'pt': 'Solteiro',
-    },
-    'm9mi75d2': {
-      'en': 'Married',
-      'pt': 'Casado',
-    },
-    'qso8sekn': {
-      'en': 'Divorced',
-      'pt': 'Divorciado',
-    },
-    'erusnuss': {
-      'en': 'Widowed',
-      'pt': 'Viúva',
-    },
-    'vcm3xon0': {
-      'en': 'Legally separated',
-      'pt': 'Separados legalmente',
-    },
-    'joe5pub6': {
-      'en': 'Stable union:',
-      'pt': 'União estável:',
-    },
-    '3ubhuqyx': {
-      'en': 'None of the options',
-      'pt': 'Nenhuma das opções',
-    },
-    '2rr730y3': {
-      'en': 'Marital status',
-      'pt': 'Estado civil',
-    },
-    'hshq11tm': {
-      'en': 'Marital status',
-      'pt': 'Estado civil',
-    },
     'ikt0h50o': {
       'en': 'Nickname',
       'pt': 'Apelido',
@@ -1658,72 +1562,100 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Alcunha #1',
       'pt': 'Alcunha #1',
     },
-    '8bhgzjw3': {
-      'en': 'Localizations',
-      'pt': 'Localizações',
+    'deg0fdow': {
+      'en': 'Naturalidade',
+      'pt': 'Naturalidade',
     },
-    'w89q228c': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
+    'o99a5cgx': {
+      'en': 'Naturalidade',
+      'pt': 'Naturalidade',
     },
-    '6is0v9cf': {
-      'en': 'Date of last arrest',
-      'pt': 'Data da última prisão',
+    't9eza7j1': {
+      'en': 'Solteiro',
+      'pt': 'Solteiro',
     },
-    'y0skhz0z': {
-      'en': 'Date of last arrest',
-      'pt': 'Data da última prisão',
+    'l63dv3dx': {
+      'en': 'Casado',
+      'pt': 'Casado',
     },
-    'ekm5bqzl': {
-      'en': 'Date of birth',
-      'pt': 'Data de nascimento',
+    'e2udnh0l': {
+      'en': 'DIvorciado',
+      'pt': 'DIvorciado',
     },
-    'qsg1hkly': {
-      'en': 'Date of birth',
-      'pt': 'Data de nascimento',
+    'ggvr9869': {
+      'en': 'Viúvo(a)',
+      'pt': 'Viúvo(a)',
+    },
+    'dq3xw3uc': {
+      'en': 'Separados legalmente',
+      'pt': 'Separados legalmente',
+    },
+    'bm6cnl7l': {
+      'en': 'União estável',
+      'pt': 'União estável',
+    },
+    '75eegesr': {
+      'en': 'Nenhuma das opções',
+      'pt': 'Nenhuma das opções',
+    },
+    'ievjy8qu': {
+      'en': 'Estado civil',
+      'pt': 'Estado civil',
+    },
+    'tfn53ft8': {
+      'en': 'Estado civil',
+      'pt': 'Estado civil',
     },
     '2opj9i3o': {
-      'en': 'National Infopen Number',
-      'pt': 'Número Nacional Infopen',
+      'en': 'Identidade',
+      'pt': 'Identidade',
     },
     'v4bdomyi': {
-      'en': 'National Infopen Number',
-      'pt': 'Número Nacional Infopen',
+      'en': 'Identidade',
+      'pt': 'Identidade',
     },
-    'i92q2h5w': {
-      'en': 'Procedural status',
-      'pt': 'Situação processual',
+    'k3o15zmt': {
+      'en': 'CPF',
+      'pt': 'CPF',
     },
-    'ov8z5k7q': {
-      'en': 'Procedural status',
-      'pt': 'Situação processual',
+    '1rai7wkj': {
+      'en': 'CPF',
+      'pt': 'CPF',
     },
-    'uqfd5q9z': {
-      'en': 'Color/Skin/Ethnicity',
-      'pt': 'Cor/Pele/Etnia',
+    'f434de4i': {
+      'en': 'Cadastro Infopen',
+      'pt': 'Cadastro Infopen',
     },
-    'nbz99o5b': {
-      'en': 'Color/Skin/Ethnicity',
-      'pt': 'Cor/Pele/Etnia',
-    },
-    '05v92wca': {
-      'en': 'Blood type',
-      'pt': 'Tipo sanguíneo',
-    },
-    'f70cpju6': {
-      'en': 'Blood type',
-      'pt': 'Tipo sanguíneo',
+    '1yyjhbj8': {
+      'en': 'Cadastro Infopen',
+      'pt': 'Cadastro Infopen',
     },
     'cjy846zr': {
       'en': 'Mother Name',
       'pt': 'Nome da mãe',
     },
+    '4ebn7u9d': {
+      'en': 'Viva',
+      'pt': 'Viva',
+    },
+    'vte6onee': {
+      'en': 'Viva',
+      'pt': 'Viva',
+    },
+    '188nb78m': {
+      'en': 'Falecida',
+      'pt': 'Falecida',
+    },
+    'aw1z7gel': {
+      'en': 'Sem informação',
+      'pt': 'Sem informação',
+    },
     'gc3vbmj4': {
-      'en': 'Mother Situation',
+      'en': 'Situação da Mãe',
       'pt': 'Situação da Mãe',
     },
     'bj72hiw8': {
-      'en': 'Mother\'s Situation',
+      'en': 'Situação da Mãe',
       'pt': 'Situação da Mãe',
     },
     'lbcdz337': {
@@ -1734,13 +1666,57 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
+    'qyc8q0st': {
+      'en': 'Vivo',
+      'pt': 'Vivo',
+    },
+    '7ygxf6rh': {
+      'en': 'Vivo',
+      'pt': 'Vivo',
+    },
+    'wmbvp74d': {
+      'en': 'Falecido',
+      'pt': 'Falecido',
+    },
+    'r9rah6gc': {
+      'en': 'Sem informação',
+      'pt': 'Sem informação',
+    },
     'cnn9tddw': {
-      'en': 'Father\'s Situation',
+      'en': 'Situação do Pai',
       'pt': 'Situação do Pai',
     },
     'bsvzf3cx': {
       'en': 'Father\'s Situation',
       'pt': 'Situação do Pai',
+    },
+    'r2g2yo2p': {
+      'en': 'Não alfabetizado',
+      'pt': 'Não alfabetizado',
+    },
+    'y7i4eicy': {
+      'en': 'Não alfabetizado',
+      'pt': 'Não alfabetizado',
+    },
+    'xmduvdwh': {
+      'en': 'Ensino Fundamental',
+      'pt': 'Ensino Fundamental',
+    },
+    'lvynt86i': {
+      'en': 'Ensino médiio',
+      'pt': 'Ensino médiio',
+    },
+    'eur8h0kh': {
+      'en': 'Ensino superior',
+      'pt': 'Ensino superior',
+    },
+    '0wrilaus': {
+      'en': 'Grau ou Nível de instruição',
+      'pt': 'Grau ou Nível de instruição',
+    },
+    '4thgagtf': {
+      'en': 'Father\'s Situation',
+      'pt': '',
     },
     'nvxntirq': {
       'en': 'History',
@@ -1837,6 +1813,212 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'zo5mhuuq': {
       'en': 'Faction',
       'pt': 'Facção',
+    },
+    '4z7rsy3e': {
+      'en':
+          'Informe os dados sobre o membro e a facção ao qual o mesmo pertecem.',
+      'pt':
+          'Informe os dados sobre o membro e a facção ao qual o mesmo pertecem.',
+    },
+    'wym31ngo': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    'dn03i4b5': {
+      'en': 'Option 2',
+      'pt': '',
+    },
+    'kuqoapto': {
+      'en': 'Option 3',
+      'pt': '',
+    },
+    'qrs0yx4b': {
+      'en': 'Facções',
+      'pt': 'Facções',
+    },
+    'xcc9fckm': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'f93bp5n9': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    'x1eeiu3h': {
+      'en': 'Option 2',
+      'pt': '',
+    },
+    'voqbwxmq': {
+      'en': 'Option 3',
+      'pt': '',
+    },
+    'jlqk41h6': {
+      'en': 'Função',
+      'pt': 'Função',
+    },
+    'srjrgtad': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    '4v0rz6jo': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    'cz2bkw8q': {
+      'en': 'Option 2',
+      'pt': '',
+    },
+    'amhbgshi': {
+      'en': 'Option 3',
+      'pt': '',
+    },
+    't4551wj3': {
+      'en': 'Cargo',
+      'pt': 'Cargo',
+    },
+    'b73egaj9': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'wkak4lxs': {
+      'en': 'Naturalidade',
+      'pt': 'Naturalidade',
+    },
+    'pm0rvser': {
+      'en': 'Naturalidade',
+      'pt': 'Naturalidade',
+    },
+    'q7wfe11q': {
+      'en': 'Solteiro',
+      'pt': 'Solteiro',
+    },
+    'l8bv9yex': {
+      'en': 'Casado',
+      'pt': 'Casado',
+    },
+    'w1m7c9vd': {
+      'en': 'Divorciado',
+      'pt': 'Divorciado',
+    },
+    '8b80zu96': {
+      'en': 'Viúva',
+      'pt': 'Viúva',
+    },
+    'tv3h66j2': {
+      'en': 'Separados legalmente',
+      'pt': 'Separados legalmente',
+    },
+    'dl34b1d2': {
+      'en': 'Stable union:',
+      'pt': '',
+    },
+    'u1pq3aqq': {
+      'en': 'None of the options',
+      'pt': '',
+    },
+    'aw77wtc8': {
+      'en': 'Marital status',
+      'pt': '',
+    },
+    'jkb54u3z': {
+      'en': 'Marital status',
+      'pt': '',
+    },
+    'g4cudkfo': {
+      'en': 'Single',
+      'pt': '',
+    },
+    'm7nto11y': {
+      'en': 'Married',
+      'pt': '',
+    },
+    'lua0u9r7': {
+      'en': 'Divorced',
+      'pt': '',
+    },
+    'pagj2byz': {
+      'en': 'Widowed',
+      'pt': '',
+    },
+    '7ia0ilv6': {
+      'en': 'Legally separated',
+      'pt': '',
+    },
+    'wb6wqo3u': {
+      'en': 'Stable union:',
+      'pt': '',
+    },
+    'doyxn8td': {
+      'en': 'None of the options',
+      'pt': '',
+    },
+    '5xrtyank': {
+      'en': 'Marital status',
+      'pt': '',
+    },
+    'u231jvsq': {
+      'en': 'Marital status',
+      'pt': '',
+    },
+    '17rd1cxr': {
+      'en': 'National Infopen Number',
+      'pt': '',
+    },
+    'uq8bvwan': {
+      'en': 'National Infopen Number',
+      'pt': '',
+    },
+    'mbvfcjbq': {
+      'en': 'Procedural status',
+      'pt': '',
+    },
+    '6q5404c2': {
+      'en': 'Procedural status',
+      'pt': '',
+    },
+    'otet3jao': {
+      'en': 'Color/Skin/Ethnicity',
+      'pt': '',
+    },
+    'xk24dpve': {
+      'en': 'Color/Skin/Ethnicity',
+      'pt': '',
+    },
+    'chl3526h': {
+      'en': 'Blood type',
+      'pt': '',
+    },
+    'txohfwr0': {
+      'en': 'Blood type',
+      'pt': '',
+    },
+    'f9j3232z': {
+      'en': 'Mother Name',
+      'pt': '',
+    },
+    '0c8h6wz9': {
+      'en': 'Mother Situation',
+      'pt': '',
+    },
+    'qc1gohjk': {
+      'en': 'Mother\'s Situation',
+      'pt': '',
+    },
+    'l8mp8z1l': {
+      'en': 'Father Name',
+      'pt': '',
+    },
+    'wsu4rpfa': {
+      'en': '',
+      'pt': '',
+    },
+    '8uf1jitv': {
+      'en': 'Father\'s Situation',
+      'pt': '',
+    },
+    'fzkhhi3x': {
+      'en': 'Father\'s Situation',
+      'pt': '',
     },
     'stse0963': {
       'en': 'Crime Action',
