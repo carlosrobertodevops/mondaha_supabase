@@ -1771,7 +1771,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Histórico',
     },
     'zo5mhuuq': {
-      'en': 'Faction',
+      'en': 'Facção',
       'pt': 'Facção',
     },
     '4z7rsy3e': {
@@ -1800,46 +1800,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search...',
       'pt': '',
     },
-    'f93bp5n9': {
-      'en': 'Option 1',
-      'pt': '',
-    },
-    'x1eeiu3h': {
-      'en': 'Option 2',
-      'pt': '',
-    },
-    'voqbwxmq': {
-      'en': 'Option 3',
-      'pt': '',
-    },
-    'jlqk41h6': {
-      'en': 'Função',
-      'pt': 'Função',
-    },
-    'srjrgtad': {
-      'en': 'Search...',
-      'pt': '',
-    },
-    '4v0rz6jo': {
-      'en': 'Option 1',
-      'pt': '',
-    },
-    'cz2bkw8q': {
-      'en': 'Option 2',
-      'pt': '',
-    },
-    'amhbgshi': {
-      'en': 'Option 3',
-      'pt': '',
-    },
-    't4551wj3': {
-      'en': 'Cargo',
-      'pt': 'Cargo',
-    },
-    'b73egaj9': {
-      'en': 'Search...',
-      'pt': '',
-    },
     'wkak4lxs': {
       'en': 'Batismo',
       'pt': 'Batismo',
@@ -1862,127 +1822,71 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zntstdx4': {
       'en': 'Batismo',
-      'pt': '',
+      'pt': 'Batismo',
     },
     'uylgtxfb': {
       'en': 'Senha',
       'pt': 'Senha',
     },
     'h7acv992': {
-      'en': 'Local do Batismo',
-      'pt': '',
-    },
-    'ttnl9bl6': {
       'en': 'Senha',
       'pt': 'Senha',
     },
-    'szi911dp': {
-      'en': 'Batismo',
-      'pt': '',
-    },
-    'h4o9kjih': {
-      'en': 'Local do Batismo',
-      'pt': '',
-    },
-    'asni2rgc': {
-      'en': 'Local do Batismo',
-      'pt': '',
-    },
-    'g4cudkfo': {
-      'en': 'Single',
-      'pt': '',
-    },
-    'm7nto11y': {
-      'en': 'Married',
-      'pt': '',
-    },
-    'lua0u9r7': {
-      'en': 'Divorced',
-      'pt': '',
-    },
-    'pagj2byz': {
-      'en': 'Widowed',
-      'pt': '',
-    },
-    '7ia0ilv6': {
-      'en': 'Legally separated',
-      'pt': '',
-    },
-    'wb6wqo3u': {
-      'en': 'Stable union:',
-      'pt': '',
-    },
-    'doyxn8td': {
-      'en': 'None of the options',
-      'pt': '',
-    },
     '5xrtyank': {
-      'en': 'Marital status',
-      'pt': '',
+      'en': 'Cargo atual',
+      'pt': 'Cargo atual',
     },
     'u231jvsq': {
       'en': 'Marital status',
       'pt': '',
     },
-    'hx5z1zse': {
-      'en': 'Single',
-      'pt': '',
-    },
-    'uq2ji1sc': {
-      'en': 'Married',
-      'pt': '',
-    },
-    'yyxfrhvy': {
-      'en': 'Divorced',
-      'pt': '',
-    },
-    'x8874h89': {
-      'en': 'Widowed',
-      'pt': '',
-    },
-    '375vhpqk': {
-      'en': 'Legally separated',
-      'pt': '',
-    },
-    'p5znajxx': {
-      'en': 'Stable union:',
-      'pt': '',
-    },
-    'da0eemx5': {
-      'en': 'None of the options',
-      'pt': '',
-    },
     'uhi29t9v': {
-      'en': 'Marital status',
-      'pt': '',
+      'en': 'Cargo anterior',
+      'pt': 'Cargo anterior',
     },
     'bfv93uyj': {
       'en': 'Marital status',
       'pt': '',
     },
     '0c8h6wz9': {
-      'en': 'Mother Situation',
-      'pt': '',
+      'en': 'Função atual',
+      'pt': 'Função atual',
     },
     'qc1gohjk': {
       'en': 'Mother\'s Situation',
       'pt': '',
     },
     '8c2yoabs': {
-      'en': 'Mother Situation',
-      'pt': '',
+      'en': 'Função anterior',
+      'pt': 'Função anterior',
     },
     'xtghmnhj': {
-      'en': 'Mother\'s Situation',
-      'pt': '',
+      'en': 'Função anterior',
+      'pt': 'Função anterior',
     },
     '8uf1jitv': {
+      'en': 'Facção que integrou',
+      'pt': 'Facção que integrou',
+    },
+    'fzkhhi3x': {
+      'en': 'Facção que integrou',
+      'pt': 'Facção que integrou',
+    },
+    '4i6g2oa6': {
+      'en': 'Facção aliada',
+      'pt': 'Facção aliada',
+    },
+    'rnawpmov': {
       'en': 'Father\'s Situation',
       'pt': '',
     },
-    'fzkhhi3x': {
-      'en': 'Father\'s Situation',
-      'pt': '',
+    '2rfuge4k': {
+      'en': 'Facção Inimiga',
+      'pt': 'Facção Inimiga',
+    },
+    '03pc9yaz': {
+      'en': 'Facção Inimiga',
+      'pt': 'Facção Inimiga',
     },
     'xeeiaebp': {
       'en': 'Procedimentos',
@@ -1996,7 +1900,31 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Atuação',
       'pt': 'Atuação',
     },
+    '7v3qtjj2': {
+      'en': 'Faça um resumo das principais atuações criminais deste membro.',
+      'pt': 'Faça um resumo das principais atuações criminais deste membro.',
+    },
+    'ssjp267b': {
+      'en': 'Atuação no Crime',
+      'pt': 'Atuação no Crime',
+    },
+    'dak0lg3s': {
+      'en': 'Atuação no Crime',
+      'pt': 'Atuação no Crime',
+    },
     '8slh1eth': {
+      'en': 'Alerta',
+      'pt': 'Alerta',
+    },
+    '3etmnyzt': {
+      'en': 'Ativar alerta',
+      'pt': 'Ativar alerta',
+    },
+    '29530mgy': {
+      'en': 'Alerta',
+      'pt': 'Alerta',
+    },
+    'kx61gjir': {
       'en': 'Alerta',
       'pt': 'Alerta',
     },

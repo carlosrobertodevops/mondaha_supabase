@@ -36,6 +36,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   void updateMembrosEnderecosAtIndex(int index, Function(String) updateFn) =>
       membrosEnderecos[index] = updateFn(membrosEnderecos[index]);
 
+  bool membroAlerta = false;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey2 = GlobalKey<FormState>();
@@ -92,8 +94,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   TextEditingController? txtNomePaiTextController;
   String? Function(BuildContext, String?)? txtNomePaiTextControllerValidator;
   // State field(s) for ddw_situacao_pai widget.
-  int? ddwSituacaoPaiValue1;
-  FormFieldController<int>? ddwSituacaoPaiValueController1;
+  int? ddwSituacaoPaiValue;
+  FormFieldController<int>? ddwSituacaoPaiValueController;
   // State field(s) for ddw_intrucao widget.
   int? ddwIntrucaoValue;
   FormFieldController<int>? ddwIntrucaoValueController;
@@ -121,21 +123,15 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   // State field(s) for ddw_faccao widget.
   int? ddwFaccaoValue;
   FormFieldController<int>? ddwFaccaoValueController;
-  // State field(s) for ddw_funcao widget.
-  int? ddwFuncaoValue;
-  FormFieldController<int>? ddwFuncaoValueController;
-  // State field(s) for ddw_cargo widget.
-  int? ddwCargoValue;
-  FormFieldController<int>? ddwCargoValueController;
   // State field(s) for txt_bastismo widget.
   FocusNode? txtBastismoFocusNode;
   TextEditingController? txtBastismoTextController;
   String? Function(BuildContext, String?)? txtBastismoTextControllerValidator;
   // State field(s) for txt_local_bastismo widget.
-  FocusNode? txtLocalBastismoFocusNode1;
-  TextEditingController? txtLocalBastismoTextController1;
+  FocusNode? txtLocalBastismoFocusNode;
+  TextEditingController? txtLocalBastismoTextController;
   String? Function(BuildContext, String?)?
-      txtLocalBastismoTextController1Validator;
+      txtLocalBastismoTextControllerValidator;
   // State field(s) for txt_membros_padrinho widget.
   FocusNode? txtMembrosPadrinhoFocusNode;
   TextEditingController? txtMembrosPadrinhoTextController;
@@ -146,31 +142,39 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   TextEditingController? txtMembroSenhaTextController;
   String? Function(BuildContext, String?)?
       txtMembroSenhaTextControllerValidator;
-  // State field(s) for txt_membros_senha widget.
-  FocusNode? txtMembrosSenhaFocusNode;
-  TextEditingController? txtMembrosSenhaTextController;
-  String? Function(BuildContext, String?)?
-      txtMembrosSenhaTextControllerValidator;
-  // State field(s) for txt_local_bastismo widget.
-  FocusNode? txtLocalBastismoFocusNode2;
-  TextEditingController? txtLocalBastismoTextController2;
-  String? Function(BuildContext, String?)?
-      txtLocalBastismoTextController2Validator;
   // State field(s) for ddw_cargo_atual widget.
   int? ddwCargoAtualValue;
   FormFieldController<int>? ddwCargoAtualValueController;
   // State field(s) for ddw_cargo_anterior widget.
-  int? ddwCargoAnteriorValue1;
-  FormFieldController<int>? ddwCargoAnteriorValueController1;
+  int? ddwCargoAnteriorValue;
+  FormFieldController<int>? ddwCargoAnteriorValueController;
   // State field(s) for ddw_funcao_atual widget.
-  String? ddwFuncaoAtualValue;
-  FormFieldController<String>? ddwFuncaoAtualValueController;
-  // State field(s) for ddw_cargo_anterior widget.
-  String? ddwCargoAnteriorValue2;
-  FormFieldController<String>? ddwCargoAnteriorValueController2;
-  // State field(s) for ddw_situacao_pai widget.
-  String? ddwSituacaoPaiValue2;
-  FormFieldController<String>? ddwSituacaoPaiValueController2;
+  int? ddwFuncaoAtualValue;
+  FormFieldController<int>? ddwFuncaoAtualValueController;
+  // State field(s) for ddw_funcao_anterior widget.
+  int? ddwFuncaoAnteriorValue;
+  FormFieldController<int>? ddwFuncaoAnteriorValueController;
+  // State field(s) for ddw_faccao_integrou widget.
+  int? ddwFaccaoIntegrouValue;
+  FormFieldController<int>? ddwFaccaoIntegrouValueController;
+  // State field(s) for ddw_faccao_aliada widget.
+  int? ddwFaccaoAliadaValue;
+  FormFieldController<int>? ddwFaccaoAliadaValueController;
+  // State field(s) for ddw_faccao_inimiga widget.
+  int? ddwFaccaoInimigaValue;
+  FormFieldController<int>? ddwFaccaoInimigaValueController;
+  // State field(s) for txt_membro_atuacao widget.
+  FocusNode? txtMembroAtuacaoFocusNode;
+  TextEditingController? txtMembroAtuacaoTextController;
+  String? Function(BuildContext, String?)?
+      txtMembroAtuacaoTextControllerValidator;
+  // State field(s) for SwitchAlerta widget.
+  bool? switchAlertaValue;
+  // State field(s) for txt_membro_alerta widget.
+  FocusNode? txtMembroAlertaFocusNode;
+  TextEditingController? txtMembroAlertaTextController;
+  String? Function(BuildContext, String?)?
+      txtMembroAlertaTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -211,8 +215,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
     txtBastismoFocusNode?.dispose();
     txtBastismoTextController?.dispose();
 
-    txtLocalBastismoFocusNode1?.dispose();
-    txtLocalBastismoTextController1?.dispose();
+    txtLocalBastismoFocusNode?.dispose();
+    txtLocalBastismoTextController?.dispose();
 
     txtMembrosPadrinhoFocusNode?.dispose();
     txtMembrosPadrinhoTextController?.dispose();
@@ -220,11 +224,11 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
     txtMembroSenhaFocusNode?.dispose();
     txtMembroSenhaTextController?.dispose();
 
-    txtMembrosSenhaFocusNode?.dispose();
-    txtMembrosSenhaTextController?.dispose();
+    txtMembroAtuacaoFocusNode?.dispose();
+    txtMembroAtuacaoTextController?.dispose();
 
-    txtLocalBastismoFocusNode2?.dispose();
-    txtLocalBastismoTextController2?.dispose();
+    txtMembroAlertaFocusNode?.dispose();
+    txtMembroAlertaTextController?.dispose();
   }
 
   /// Additional helper methods.
