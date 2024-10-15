@@ -5,8 +5,8 @@ import '/backend/schema/util/schema_util.dart';
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class ProcessosStruct extends BaseStruct {
-  ProcessosStruct({
+class DataTypesProcessosStruct extends BaseStruct {
+  DataTypesProcessosStruct({
     int? membroId,
     String? noAcaoPenal,
     int? varaId,
@@ -74,7 +74,8 @@ class ProcessosStruct extends BaseStruct {
 
   bool hasSituacaoReuId() => _situacaoReuId != null;
 
-  static ProcessosStruct fromMap(Map<String, dynamic> data) => ProcessosStruct(
+  static DataTypesProcessosStruct fromMap(Map<String, dynamic> data) =>
+      DataTypesProcessosStruct(
         membroId: castToType<int>(data['membro_id']),
         noAcaoPenal: data['no_acao_penal'] as String?,
         varaId: castToType<int>(data['vara_id']),
@@ -83,8 +84,8 @@ class ProcessosStruct extends BaseStruct {
         situacaoReuId: castToType<int>(data['situacao_reu_id']),
       );
 
-  static ProcessosStruct? maybeFromMap(dynamic data) => data is Map
-      ? ProcessosStruct.fromMap(data.cast<String, dynamic>())
+  static DataTypesProcessosStruct? maybeFromMap(dynamic data) => data is Map
+      ? DataTypesProcessosStruct.fromMap(data.cast<String, dynamic>())
       : null;
 
   Map<String, dynamic> toMap() => {
@@ -124,8 +125,9 @@ class ProcessosStruct extends BaseStruct {
         ),
       }.withoutNulls;
 
-  static ProcessosStruct fromSerializableMap(Map<String, dynamic> data) =>
-      ProcessosStruct(
+  static DataTypesProcessosStruct fromSerializableMap(
+          Map<String, dynamic> data) =>
+      DataTypesProcessosStruct(
         membroId: deserializeParam(
           data['membro_id'],
           ParamType.int,
@@ -159,11 +161,11 @@ class ProcessosStruct extends BaseStruct {
       );
 
   @override
-  String toString() => 'ProcessosStruct(${toMap()})';
+  String toString() => 'DataTypesProcessosStruct(${toMap()})';
 
   @override
   bool operator ==(Object other) {
-    return other is ProcessosStruct &&
+    return other is DataTypesProcessosStruct &&
         membroId == other.membroId &&
         noAcaoPenal == other.noAcaoPenal &&
         varaId == other.varaId &&
@@ -183,7 +185,7 @@ class ProcessosStruct extends BaseStruct {
       ]);
 }
 
-ProcessosStruct createProcessosStruct({
+DataTypesProcessosStruct createDataTypesProcessosStruct({
   int? membroId,
   String? noAcaoPenal,
   int? varaId,
@@ -191,7 +193,7 @@ ProcessosStruct createProcessosStruct({
   int? regimeId,
   int? situacaoReuId,
 }) =>
-    ProcessosStruct(
+    DataTypesProcessosStruct(
       membroId: membroId,
       noAcaoPenal: noAcaoPenal,
       varaId: varaId,

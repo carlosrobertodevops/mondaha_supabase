@@ -1920,6 +1920,106 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Procedimentos',
       'pt': 'Procedimentos',
     },
+    'ehpi1bdt': {
+      'en': 'Procedimento',
+      'pt': 'Procedimento',
+    },
+    'zixccf5b': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    '3icrvrxr': {
+      'en': 'Option 2',
+      'pt': '',
+    },
+    '0jkskbpt': {
+      'en': 'Option 3',
+      'pt': '',
+    },
+    'p4l0yjdk': {
+      'en': 'Unidade',
+      'pt': 'Unidade',
+    },
+    'ugrmtsta': {
+      'en': 'Search...',
+      'pt': 'Procurar...',
+    },
+    '8mzvg8rs': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    'wyndkicr': {
+      'en': 'Option 2',
+      'pt': '',
+    },
+    'n6abyguw': {
+      'en': 'Option 3',
+      'pt': '',
+    },
+    'z4wg64u9': {
+      'en': 'Tipo do procedimento',
+      'pt': 'Tipo do procedimento',
+    },
+    'cd6xrkst': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'wvr7sal1': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    'maxppcf5': {
+      'en': 'Option 2',
+      'pt': '',
+    },
+    'n5w1m9ao': {
+      'en': 'Option 3',
+      'pt': '',
+    },
+    '86bdc01p': {
+      'en': 'Crime',
+      'pt': 'Crime',
+    },
+    'bqng7ebw': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'kkjjfns6': {
+      'en': 'Data',
+      'pt': 'Data',
+    },
+    'y539pnv4': {
+      'en': 'Data',
+      'pt': 'Data',
+    },
+    '5mm0nr5l': {
+      'en': 'Limpar',
+      'pt': 'Limpar',
+    },
+    '8pxnhql5': {
+      'en': 'Adicionar',
+      'pt': 'Adicionar',
+    },
+    'g3vpoxn0': {
+      'en': 'Procedimento',
+      'pt': 'Procedimento',
+    },
+    '6vsm4hcv': {
+      'en': 'Unidade',
+      'pt': 'Unidade',
+    },
+    '1rnrt2ya': {
+      'en': 'Tipo de Procedimento:',
+      'pt': 'Tipo de Procedimento:',
+    },
+    '7esylq1a': {
+      'en': 'Crime',
+      'pt': 'Crime',
+    },
+    '8m6o6goq': {
+      'en': 'Data',
+      'pt': 'Data',
+    },
     '0v0s6s8e': {
       'en': 'Processos',
       'pt': 'Processos',
@@ -2273,143 +2373,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'gz2xhplu': {
       'en': 'Save Changes',
       'pt': 'Salvar alterações',
-    },
-  },
-  // modal_edit_membro
-  {
-    'hhd15u94': {
-      'en': 'Profile',
-      'pt': 'Perfil',
-    },
-    'ct695psi': {
-      'en': 'Edit Member',
-      'pt': 'Editar Membro',
-    },
-    'n5ncpsg2': {
-      'en':
-          'Upload images about your company and fill out the information below.',
-      'pt':
-          'Carregue imagens sobre sua empresa e preencha as informações abaixo.',
-    },
-    'wpz2votl': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'oc2xrzov': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'scwp2ipr': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'f6uwklii': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'h94tohmj': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '3onsia79': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'f136bda9': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'i2nztzlx': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'bab4cwx8': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'jfw8i7nx': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    'awqibgmg': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'docdwfax': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    '05zfi1qo': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'p4d1q8r1': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'wb1xgp2j': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '380pqc7p': {
-      'en': 'Full Name',
-      'pt': 'Nome completo',
-    },
-    'at9q5ufx': {
-      'en': 'Website',
-      'pt': 'Site',
-    },
-    'ptsoa3u3': {
-      'en': 'Enter in your website without \"https://\"...',
-      'pt': 'Entre no seu site sem \"https://\"...',
-    },
-    '78chtaa3': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    'aoyawo2h': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    'f0cexnba': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    'n5n67rrb': {
-      'en': 'Cancel',
-      'pt': 'Cancelar',
-    },
-    '47dtuht9': {
-      'en': 'Create Company',
-      'pt': 'Criar empresa',
-    },
-    'he83mrqe': {
-      'en': 'History',
-      'pt': 'História',
-    },
-    'fv3r85cu': {
-      'en': 'Procedures',
-      'pt': 'Procedimentos',
-    },
-    'huluoynw': {
-      'en': 'Faction',
-      'pt': 'Facção',
-    },
-    'y0nnz7jv': {
-      'en': 'Crime Action',
-      'pt': 'Ação Criminal',
-    },
-    '6sahwdxn': {
-      'en': 'Alert',
-      'pt': 'Alerta',
-    },
-    'g5wdxccf': {
-      'en': 'Relations',
-      'pt': 'Relações',
-    },
-    '3agfa81o': {
-      'en': 'Groups',
-      'pt': 'Grupos',
     },
   },
   // modal_edit_faccao

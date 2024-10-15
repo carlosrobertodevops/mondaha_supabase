@@ -65,6 +65,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   final formKey2 = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
+  final formKey4 = GlobalKey<FormState>();
   final formKey3 = GlobalKey<FormState>();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
@@ -145,8 +146,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   String? Function(BuildContext, String?)?
       txtMembroHistoricoTextControllerValidator;
   // State field(s) for ddw_faccao widget.
-  int? ddwFaccaoValue;
-  FormFieldController<int>? ddwFaccaoValueController;
+  int? ddwFaccaoValue1;
+  FormFieldController<int>? ddwFaccaoValueController1;
   // State field(s) for txt_bastismo widget.
   FocusNode? txtBastismoFocusNode;
   TextEditingController? txtBastismoTextController;
@@ -187,6 +188,26 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   // State field(s) for ddw_faccao_inimiga widget.
   int? ddwFaccaoInimigaValue;
   FormFieldController<int>? ddwFaccaoInimigaValueController;
+  // State field(s) for txt_procedimento_no widget.
+  FocusNode? txtProcedimentoNoFocusNode;
+  TextEditingController? txtProcedimentoNoTextController;
+  String? Function(BuildContext, String?)?
+      txtProcedimentoNoTextControllerValidator;
+  // State field(s) for ddw_faccao widget.
+  String? ddwFaccaoValue2;
+  FormFieldController<String>? ddwFaccaoValueController2;
+  // State field(s) for ddw_faccao widget.
+  String? ddwFaccaoValue3;
+  FormFieldController<String>? ddwFaccaoValueController3;
+  // State field(s) for ddw_faccao widget.
+  String? ddwFaccaoValue4;
+  FormFieldController<String>? ddwFaccaoValueController4;
+  // State field(s) for txt_procedimento_data widget.
+  FocusNode? txtProcedimentoDataFocusNode;
+  TextEditingController? txtProcedimentoDataTextController;
+  final txtProcedimentoDataMask = MaskTextInputFormatter(mask: '##/##/####');
+  String? Function(BuildContext, String?)?
+      txtProcedimentoDataTextControllerValidator;
   // State field(s) for txt_membro_atuacao widget.
   FocusNode? txtMembroAtuacaoFocusNode;
   TextEditingController? txtMembroAtuacaoTextController;
@@ -247,6 +268,12 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
     txtMembroSenhaFocusNode?.dispose();
     txtMembroSenhaTextController?.dispose();
+
+    txtProcedimentoNoFocusNode?.dispose();
+    txtProcedimentoNoTextController?.dispose();
+
+    txtProcedimentoDataFocusNode?.dispose();
+    txtProcedimentoDataTextController?.dispose();
 
     txtMembroAtuacaoFocusNode?.dispose();
     txtMembroAtuacaoTextController?.dispose();

@@ -5,8 +5,8 @@ import '/backend/schema/util/schema_util.dart';
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class ProcedimentosStruct extends BaseStruct {
-  ProcedimentosStruct({
+class DataTypesProcedimentosStruct extends BaseStruct {
+  DataTypesProcedimentosStruct({
     int? membroId,
     String? procedimentoNo,
     String? unidadeId,
@@ -69,8 +69,8 @@ class ProcedimentosStruct extends BaseStruct {
 
   bool hasData() => _data != null;
 
-  static ProcedimentosStruct fromMap(Map<String, dynamic> data) =>
-      ProcedimentosStruct(
+  static DataTypesProcedimentosStruct fromMap(Map<String, dynamic> data) =>
+      DataTypesProcedimentosStruct(
         membroId: castToType<int>(data['membro_id']),
         procedimentoNo: data['procedimento_no'] as String?,
         unidadeId: data['unidade_id'] as String?,
@@ -79,8 +79,8 @@ class ProcedimentosStruct extends BaseStruct {
         data: data['data'] as DateTime?,
       );
 
-  static ProcedimentosStruct? maybeFromMap(dynamic data) => data is Map
-      ? ProcedimentosStruct.fromMap(data.cast<String, dynamic>())
+  static DataTypesProcedimentosStruct? maybeFromMap(dynamic data) => data is Map
+      ? DataTypesProcedimentosStruct.fromMap(data.cast<String, dynamic>())
       : null;
 
   Map<String, dynamic> toMap() => {
@@ -120,8 +120,9 @@ class ProcedimentosStruct extends BaseStruct {
         ),
       }.withoutNulls;
 
-  static ProcedimentosStruct fromSerializableMap(Map<String, dynamic> data) =>
-      ProcedimentosStruct(
+  static DataTypesProcedimentosStruct fromSerializableMap(
+          Map<String, dynamic> data) =>
+      DataTypesProcedimentosStruct(
         membroId: deserializeParam(
           data['membro_id'],
           ParamType.int,
@@ -155,11 +156,11 @@ class ProcedimentosStruct extends BaseStruct {
       );
 
   @override
-  String toString() => 'ProcedimentosStruct(${toMap()})';
+  String toString() => 'DataTypesProcedimentosStruct(${toMap()})';
 
   @override
   bool operator ==(Object other) {
-    return other is ProcedimentosStruct &&
+    return other is DataTypesProcedimentosStruct &&
         membroId == other.membroId &&
         procedimentoNo == other.procedimentoNo &&
         unidadeId == other.unidadeId &&
@@ -173,7 +174,7 @@ class ProcedimentosStruct extends BaseStruct {
       [membroId, procedimentoNo, unidadeId, procedimentoTipoId, crimeId, data]);
 }
 
-ProcedimentosStruct createProcedimentosStruct({
+DataTypesProcedimentosStruct createDataTypesProcedimentosStruct({
   int? membroId,
   String? procedimentoNo,
   String? unidadeId,
@@ -181,7 +182,7 @@ ProcedimentosStruct createProcedimentosStruct({
   int? crimeId,
   DateTime? data,
 }) =>
-    ProcedimentosStruct(
+    DataTypesProcedimentosStruct(
       membroId: membroId,
       procedimentoNo: procedimentoNo,
       unidadeId: unidadeId,
