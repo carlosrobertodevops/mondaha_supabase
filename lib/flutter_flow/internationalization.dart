@@ -925,10 +925,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add Profile',
       'pt': 'Adicionar perfil',
     },
-    'q2wabmua': {
-      'en': 'Add Profile Type',
-      'pt': 'Adicionar tipo de perfil',
-    },
     'i6puusi7': {
       'en': 'All',
       'pt': 'Todos',
