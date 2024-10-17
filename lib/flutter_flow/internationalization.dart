@@ -2268,10 +2268,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Percentual  de validação dos dados',
       'pt': 'Percentual  de validação dos dados',
     },
-    'm3x7tdl2': {
-      'en': '50%',
-      'pt': '50%',
-    },
     'z911x2kd': {
       'en': 'Como foram validados os dados e informações',
       'pt': 'Como foram validados os dados e informações',

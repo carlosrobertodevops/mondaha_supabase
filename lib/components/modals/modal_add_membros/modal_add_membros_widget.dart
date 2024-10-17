@@ -3327,7 +3327,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Expanded(
-                                                                                          flex: 6,
+                                                                                          flex: 3,
                                                                                           child: TextFormField(
                                                                                             controller: _model.txtFaccaoTresLocaisAddTextController,
                                                                                             focusNode: _model.txtFaccaoTresLocaisAddFocusNode,
@@ -5792,7 +5792,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     child: Padding(
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(100.0, 0.0, 100.0, 0.0),
                                                                                       child: CircularPercentIndicator(
-                                                                                        percent: _model.membrosPercetualValidacao!,
+                                                                                        percent: valueOrDefault<double>(
+                                                                                          _model.membrosPercetualValidacao,
+                                                                                          0.0,
+                                                                                        ),
                                                                                         radius: 140.0,
                                                                                         lineWidth: 30.0,
                                                                                         animation: true,
@@ -5800,8 +5803,9 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                         progressColor: FlutterFlowTheme.of(context).success,
                                                                                         backgroundColor: FlutterFlowTheme.of(context).accent4,
                                                                                         center: Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            'm3x7tdl2' /* 50% */,
+                                                                                          formatNumber(
+                                                                                            _model.membrosPercetualValidacao,
+                                                                                            formatType: FormatType.percent,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                                 fontFamily: 'Outfit',
@@ -5843,7 +5847,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 10.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'z911x2kd' /* Como foram validados os dados ... */,
@@ -5895,7 +5899,11 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     onChanged: (val) async {
                                                                                       safeSetState(() => _model.choiceChipsValues = val);
                                                                                       logFirebaseEvent('MODAL_ADD_MEMBROS_ChoiceChips_4gyoh8qd_O');
-                                                                                      _model.membrosPercetualValidacao = _model.membrosPercetualValidacao! + 0.10;
+                                                                                      _model.membrosPercetualValidacao = _model.membrosPercetualValidacao +
+                                                                                          valueOrDefault<double>(
+                                                                                            _model.membrosPercetualValidacao <= 1.0 ? 1.0 : 0.10,
+                                                                                            0.10,
+                                                                                          );
                                                                                       safeSetState(() {});
                                                                                     },
                                                                                     selectedChipStyle: ChipStyle(
@@ -6018,7 +6026,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
-                                                                                          maxLines: 3,
+                                                                                          maxLines: 2,
                                                                                           cursorColor: FlutterFlowTheme.of(context).primaryText,
                                                                                           validator: _model.textController21Validator.asValidator(context),
                                                                                         ),

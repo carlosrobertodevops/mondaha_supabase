@@ -103,7 +103,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
           int index, Function(DataTypesProcessosStruct) updateFn) =>
       membrosProcessos[index] = updateFn(membrosProcessos[index]);
 
-  double? membrosPercetualValidacao;
+  double membrosPercetualValidacao = 0.1;
 
   ///  State fields for stateful widgets in this component.
 
