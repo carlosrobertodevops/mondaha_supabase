@@ -7,27 +7,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class DataTypesProcessosStruct extends BaseStruct {
   DataTypesProcessosStruct({
-    int? membroId,
     String? noAcaoPenal,
-    int? varaId,
-    int? situacaoJuridicaId,
-    int? regimeId,
-    int? situacaoReuId,
-  })  : _membroId = membroId,
-        _noAcaoPenal = noAcaoPenal,
-        _varaId = varaId,
-        _situacaoJuridicaId = situacaoJuridicaId,
-        _regimeId = regimeId,
-        _situacaoReuId = situacaoReuId;
-
-  // "membro_id" field.
-  int? _membroId;
-  int get membroId => _membroId ?? 0;
-  set membroId(int? val) => _membroId = val;
-
-  void incrementMembroId(int amount) => membroId = membroId + amount;
-
-  bool hasMembroId() => _membroId != null;
+    String? vara,
+    String? situacaoJuridica,
+    String? regime,
+    String? situacaoReu,
+  })  : _noAcaoPenal = noAcaoPenal,
+        _vara = vara,
+        _situacaoJuridica = situacaoJuridica,
+        _regime = regime,
+        _situacaoReu = situacaoReu;
 
   // "no_acao_penal" field.
   String? _noAcaoPenal;
@@ -36,52 +25,41 @@ class DataTypesProcessosStruct extends BaseStruct {
 
   bool hasNoAcaoPenal() => _noAcaoPenal != null;
 
-  // "vara_id" field.
-  int? _varaId;
-  int get varaId => _varaId ?? 0;
-  set varaId(int? val) => _varaId = val;
+  // "vara" field.
+  String? _vara;
+  String get vara => _vara ?? '';
+  set vara(String? val) => _vara = val;
 
-  void incrementVaraId(int amount) => varaId = varaId + amount;
+  bool hasVara() => _vara != null;
 
-  bool hasVaraId() => _varaId != null;
+  // "situacao_juridica" field.
+  String? _situacaoJuridica;
+  String get situacaoJuridica => _situacaoJuridica ?? '';
+  set situacaoJuridica(String? val) => _situacaoJuridica = val;
 
-  // "situacao_juridica_id" field.
-  int? _situacaoJuridicaId;
-  int get situacaoJuridicaId => _situacaoJuridicaId ?? 0;
-  set situacaoJuridicaId(int? val) => _situacaoJuridicaId = val;
+  bool hasSituacaoJuridica() => _situacaoJuridica != null;
 
-  void incrementSituacaoJuridicaId(int amount) =>
-      situacaoJuridicaId = situacaoJuridicaId + amount;
+  // "regime" field.
+  String? _regime;
+  String get regime => _regime ?? '';
+  set regime(String? val) => _regime = val;
 
-  bool hasSituacaoJuridicaId() => _situacaoJuridicaId != null;
+  bool hasRegime() => _regime != null;
 
-  // "regime_id" field.
-  int? _regimeId;
-  int get regimeId => _regimeId ?? 0;
-  set regimeId(int? val) => _regimeId = val;
+  // "situacao_reu" field.
+  String? _situacaoReu;
+  String get situacaoReu => _situacaoReu ?? '';
+  set situacaoReu(String? val) => _situacaoReu = val;
 
-  void incrementRegimeId(int amount) => regimeId = regimeId + amount;
-
-  bool hasRegimeId() => _regimeId != null;
-
-  // "situacao_reu_id" field.
-  int? _situacaoReuId;
-  int get situacaoReuId => _situacaoReuId ?? 0;
-  set situacaoReuId(int? val) => _situacaoReuId = val;
-
-  void incrementSituacaoReuId(int amount) =>
-      situacaoReuId = situacaoReuId + amount;
-
-  bool hasSituacaoReuId() => _situacaoReuId != null;
+  bool hasSituacaoReu() => _situacaoReu != null;
 
   static DataTypesProcessosStruct fromMap(Map<String, dynamic> data) =>
       DataTypesProcessosStruct(
-        membroId: castToType<int>(data['membro_id']),
         noAcaoPenal: data['no_acao_penal'] as String?,
-        varaId: castToType<int>(data['vara_id']),
-        situacaoJuridicaId: castToType<int>(data['situacao_juridica_id']),
-        regimeId: castToType<int>(data['regime_id']),
-        situacaoReuId: castToType<int>(data['situacao_reu_id']),
+        vara: data['vara'] as String?,
+        situacaoJuridica: data['situacao_juridica'] as String?,
+        regime: data['regime'] as String?,
+        situacaoReu: data['situacao_reu'] as String?,
       );
 
   static DataTypesProcessosStruct? maybeFromMap(dynamic data) => data is Map
@@ -89,73 +67,63 @@ class DataTypesProcessosStruct extends BaseStruct {
       : null;
 
   Map<String, dynamic> toMap() => {
-        'membro_id': _membroId,
         'no_acao_penal': _noAcaoPenal,
-        'vara_id': _varaId,
-        'situacao_juridica_id': _situacaoJuridicaId,
-        'regime_id': _regimeId,
-        'situacao_reu_id': _situacaoReuId,
+        'vara': _vara,
+        'situacao_juridica': _situacaoJuridica,
+        'regime': _regime,
+        'situacao_reu': _situacaoReu,
       }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'membro_id': serializeParam(
-          _membroId,
-          ParamType.int,
-        ),
         'no_acao_penal': serializeParam(
           _noAcaoPenal,
           ParamType.String,
         ),
-        'vara_id': serializeParam(
-          _varaId,
-          ParamType.int,
+        'vara': serializeParam(
+          _vara,
+          ParamType.String,
         ),
-        'situacao_juridica_id': serializeParam(
-          _situacaoJuridicaId,
-          ParamType.int,
+        'situacao_juridica': serializeParam(
+          _situacaoJuridica,
+          ParamType.String,
         ),
-        'regime_id': serializeParam(
-          _regimeId,
-          ParamType.int,
+        'regime': serializeParam(
+          _regime,
+          ParamType.String,
         ),
-        'situacao_reu_id': serializeParam(
-          _situacaoReuId,
-          ParamType.int,
+        'situacao_reu': serializeParam(
+          _situacaoReu,
+          ParamType.String,
         ),
       }.withoutNulls;
 
   static DataTypesProcessosStruct fromSerializableMap(
           Map<String, dynamic> data) =>
       DataTypesProcessosStruct(
-        membroId: deserializeParam(
-          data['membro_id'],
-          ParamType.int,
-          false,
-        ),
         noAcaoPenal: deserializeParam(
           data['no_acao_penal'],
           ParamType.String,
           false,
         ),
-        varaId: deserializeParam(
-          data['vara_id'],
-          ParamType.int,
+        vara: deserializeParam(
+          data['vara'],
+          ParamType.String,
           false,
         ),
-        situacaoJuridicaId: deserializeParam(
-          data['situacao_juridica_id'],
-          ParamType.int,
+        situacaoJuridica: deserializeParam(
+          data['situacao_juridica'],
+          ParamType.String,
           false,
         ),
-        regimeId: deserializeParam(
-          data['regime_id'],
-          ParamType.int,
+        regime: deserializeParam(
+          data['regime'],
+          ParamType.String,
           false,
         ),
-        situacaoReuId: deserializeParam(
-          data['situacao_reu_id'],
-          ParamType.int,
+        situacaoReu: deserializeParam(
+          data['situacao_reu'],
+          ParamType.String,
           false,
         ),
       );
@@ -166,38 +134,29 @@ class DataTypesProcessosStruct extends BaseStruct {
   @override
   bool operator ==(Object other) {
     return other is DataTypesProcessosStruct &&
-        membroId == other.membroId &&
         noAcaoPenal == other.noAcaoPenal &&
-        varaId == other.varaId &&
-        situacaoJuridicaId == other.situacaoJuridicaId &&
-        regimeId == other.regimeId &&
-        situacaoReuId == other.situacaoReuId;
+        vara == other.vara &&
+        situacaoJuridica == other.situacaoJuridica &&
+        regime == other.regime &&
+        situacaoReu == other.situacaoReu;
   }
 
   @override
-  int get hashCode => const ListEquality().hash([
-        membroId,
-        noAcaoPenal,
-        varaId,
-        situacaoJuridicaId,
-        regimeId,
-        situacaoReuId
-      ]);
+  int get hashCode => const ListEquality()
+      .hash([noAcaoPenal, vara, situacaoJuridica, regime, situacaoReu]);
 }
 
 DataTypesProcessosStruct createDataTypesProcessosStruct({
-  int? membroId,
   String? noAcaoPenal,
-  int? varaId,
-  int? situacaoJuridicaId,
-  int? regimeId,
-  int? situacaoReuId,
+  String? vara,
+  String? situacaoJuridica,
+  String? regime,
+  String? situacaoReu,
 }) =>
     DataTypesProcessosStruct(
-      membroId: membroId,
       noAcaoPenal: noAcaoPenal,
-      varaId: varaId,
-      situacaoJuridicaId: situacaoJuridicaId,
-      regimeId: regimeId,
-      situacaoReuId: situacaoReuId,
+      vara: vara,
+      situacaoJuridica: situacaoJuridica,
+      regime: regime,
+      situacaoReu: situacaoReu,
     );

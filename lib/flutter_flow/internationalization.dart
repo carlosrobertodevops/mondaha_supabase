@@ -1546,13 +1546,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add Photos',
       'pt': 'Adicionar fotos',
     },
+    'npcbcpl9': {
+      'en': 'Nome completo',
+      'pt': 'Nome completo',
+    },
+    'eyhgaf81': {
+      'en': 'Nome completo',
+      'pt': 'Nome completo',
+    },
     'ikt0h50o': {
-      'en': 'Nickname',
-      'pt': 'Apelido',
+      'en': 'Alcunha',
+      'pt': 'Alcunha',
     },
     'jna6z2zu': {
-      'en': 'Nickname',
-      'pt': 'Apelido',
+      'en': 'Alcunha',
+      'pt': 'Alcunha',
     },
     'deg0fdow': {
       'en': 'Naturalidade',
@@ -1632,7 +1640,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ryqcnfe0': {
       'en': 'Nenhuma das opções',
-      'pt': '',
+      'pt': 'Nenhuma das opções',
     },
     'ia9zkanc': {
       'en': 'Órgão expedidor',
@@ -1659,7 +1667,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Cadastro Infopen',
     },
     'cjy846zr': {
-      'en': 'Mother Name',
+      'en': 'Nome da mãe',
+      'pt': 'Nome da mãe',
+    },
+    '7g88w199': {
+      'en': 'Nome da mãe',
       'pt': 'Nome da mãe',
     },
     '4ebn7u9d': {
@@ -1667,12 +1679,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Viva',
     },
     'vte6onee': {
-      'en': 'Viva',
-      'pt': 'Viva',
-    },
-    '188nb78m': {
       'en': 'Falecida',
       'pt': 'Falecida',
+    },
+    '188nb78m': {
+      'en': 'Cadeirante',
+      'pt': 'Cadeirante',
     },
     'aw1z7gel': {
       'en': 'Sem informação',
@@ -1687,7 +1699,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Situação da Mãe',
     },
     'lbcdz337': {
-      'en': 'Father Name',
+      'en': 'Nome do pai',
+      'pt': 'Nome do pai',
+    },
+    '35jyk488': {
+      'en': 'Nome do pai',
       'pt': 'Nome do pai',
     },
     'l5vrftgu': {
@@ -1699,12 +1715,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Vivo',
     },
     '7ygxf6rh': {
-      'en': 'Vivo',
-      'pt': 'Vivo',
-    },
-    'wmbvp74d': {
       'en': 'Falecido',
       'pt': 'Falecido',
+    },
+    'wmbvp74d': {
+      'en': 'Cadeirante',
+      'pt': 'Cadeirante',
     },
     'r9rah6gc': {
       'en': 'Sem informação',
@@ -1719,24 +1735,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Situação do Pai',
     },
     'r2g2yo2p': {
-      'en': 'Não alfabetizado',
-      'pt': 'Não alfabetizado',
+      'en': 'Alfabetizado',
+      'pt': 'Alfabetizado',
     },
     'y7i4eicy': {
       'en': 'Não alfabetizado',
       'pt': 'Não alfabetizado',
     },
     'xmduvdwh': {
-      'en': 'Ensino Fundamental',
-      'pt': 'Ensino Fundamental',
+      'en': 'Ensino fundamental completo',
+      'pt': 'Ensino fundamental completo',
     },
     'lvynt86i': {
-      'en': 'Ensino médiio',
-      'pt': 'Ensino médiio',
+      'en': 'Ensino médiio completo',
+      'pt': 'Ensino médiio completo',
     },
     'eur8h0kh': {
-      'en': 'Ensino superior',
-      'pt': 'Ensino superior',
+      'en': 'Ensino superior completo',
+      'pt': 'Ensino superior completo',
+    },
+    'm10ha0nj': {
+      'en': 'Ensino fundamental incompleto',
+      'pt': 'Ensino fundamental incompleto',
+    },
+    'csrvq6pn': {
+      'en': 'Ensino médio incompleto',
+      'pt': 'Ensino médio incompleto',
+    },
+    'tb0j8o1f': {
+      'en': 'Ensino superior incompleto',
+      'pt': 'Ensino superior incompleto',
     },
     '0wrilaus': {
       'en': 'Grau ou Nível de instruição',
@@ -1751,12 +1779,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'História',
     },
     'uw8i01r5': {
-      'en': 'Endereço',
-      'pt': 'Endereço',
+      'en': 'Endereço Completo',
+      'pt': 'Endereço Completo',
     },
     '97izofel': {
-      'en': 'Endereço',
-      'pt': 'Endereço',
+      'en': 'Endereço Completo',
+      'pt': 'Endereço Completo',
     },
     'ob87x68k': {
       'en': '',
@@ -1798,15 +1826,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Histórico',
       'pt': 'Histórico',
     },
+    'lz0njodx': {
+      'en': 'Option 1',
+      'pt': '',
+    },
     'zo5mhuuq': {
       'en': 'Facção',
       'pt': 'Facção',
     },
     '4z7rsy3e': {
       'en':
-          'Informe os dados sobre o membro e a facção ao qual o mesmo pertecem.',
+          'Informe os dados sobre o membro e a facção na qual o mesmo pertecem.',
       'pt':
-          'Informe os dados sobre o membro e a facção ao qual o mesmo pertecem.',
+          'Informe os dados sobre o membro e a facção na qual o mesmo pertecem.',
     },
     'wym31ngo': {
       'en': 'Option 1',
@@ -1835,6 +1867,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'pm0rvser': {
       'en': 'Batismo',
       'pt': 'Batismo',
+    },
+    '8j1rka5p': {
+      'en': 'Option 1',
+      'pt': '',
     },
     'v5ktssho': {
       'en': 'Local do Batismo',
@@ -1892,6 +1928,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Função anterior',
       'pt': 'Função anterior',
     },
+    'm25toomj': {
+      'en': 'Três últimos locais onde esteve preso',
+      'pt': 'Três últimos locais onde esteve preso',
+    },
+    'xroteapo': {
+      'en': 'Três últimos locais onde esteve preso',
+      'pt': 'Três últimos locais onde esteve preso',
+    },
     '8uf1jitv': {
       'en': 'Facção que integrou',
       'pt': 'Facção que integrou',
@@ -1920,21 +1964,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Procedimentos',
       'pt': 'Procedimentos',
     },
+    '4trmbq2b': {
+      'en':
+          'Informe os dados sobre os Procedimentos que foram realizados contra esse membro.',
+      'pt':
+          'Informe os dados sobre os Procedimentos que foram realizados contra esse membro.',
+    },
     'ehpi1bdt': {
       'en': 'Procedimento',
       'pt': 'Procedimento',
     },
-    'zixccf5b': {
-      'en': 'Option 1',
-      'pt': '',
+    'cqb8a5yu': {
+      'en': 'Procedimento',
+      'pt': 'Procedimento',
     },
-    '3icrvrxr': {
-      'en': 'Option 2',
-      'pt': '',
+    'a1mq04vz': {
+      'en': 'Nenhuma das opções',
+      'pt': 'Nenhuma das opções',
     },
-    '0jkskbpt': {
-      'en': 'Option 3',
-      'pt': '',
+    'ptm9fsnl': {
+      'en': 'Delegacia Local',
+      'pt': 'Delegacia Local',
+    },
+    'ewv0wp4u': {
+      'en': 'Delegacia Especializada',
+      'pt': 'Delegacia Especializada',
+    },
+    'tfba3ok1': {
+      'en': 'Delegacia Regional',
+      'pt': 'Delegacia Regional',
     },
     'p4l0yjdk': {
       'en': 'Unidade',
@@ -1944,17 +2002,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search...',
       'pt': 'Procurar...',
     },
-    '8mzvg8rs': {
-      'en': 'Option 1',
-      'pt': '',
+    '2oi2gd2o': {
+      'en': 'Nenhuma das opções',
+      'pt': 'Nenhuma das opções',
     },
-    'wyndkicr': {
-      'en': 'Option 2',
-      'pt': '',
+    'fqtt5evw': {
+      'en': 'IPL. Portaria',
+      'pt': 'IPL. Portaria',
     },
-    'n6abyguw': {
-      'en': 'Option 3',
-      'pt': '',
+    'nlsyfr82': {
+      'en': 'IPL. Flagrante',
+      'pt': 'IPL. Flagrante',
+    },
+    '1sk13k9j': {
+      'en': 'T.C.O',
+      'pt': 'T.C.O',
     },
     'z4wg64u9': {
       'en': 'Tipo do procedimento',
@@ -1964,17 +2026,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search...',
       'pt': '',
     },
-    'wvr7sal1': {
-      'en': 'Option 1',
-      'pt': '',
+    'sgflhc8f': {
+      'en': 'Nenhuma das opções',
+      'pt': 'Nenhuma das opções',
     },
-    'maxppcf5': {
-      'en': 'Option 2',
-      'pt': '',
+    '6pi3pms7': {
+      'en': 'Tráfico de drogas',
+      'pt': 'Tráfico de drogas',
     },
-    'n5w1m9ao': {
-      'en': 'Option 3',
-      'pt': '',
+    '5zqnvie0': {
+      'en': 'Roubo Qualificado',
+      'pt': 'Roubo Qualificado',
+    },
+    'ohxl9bc7': {
+      'en': 'Lesão Corporal',
+      'pt': 'Lesão Corporal',
+    },
+    '1zj80s5y': {
+      'en': 'Homicídio',
+      'pt': 'Homicídio',
     },
     '86bdc01p': {
       'en': 'Crime',
@@ -1985,15 +2055,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'kkjjfns6': {
-      'en': 'Data',
-      'pt': 'Data',
+      'en': 'Data do Procedimento',
+      'pt': 'Data do Procedimento',
     },
     'y539pnv4': {
-      'en': 'Data',
-      'pt': 'Data',
+      'en': 'Data do Procedimento',
+      'pt': 'Data do Procedimento',
     },
     '5mm0nr5l': {
-      'en': 'Limpar',
+      'en': 'Limpar procedimentos abaixo',
       'pt': 'Limpar',
     },
     '8pxnhql5': {
@@ -2024,6 +2094,132 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Processos',
       'pt': 'Processos',
     },
+    '50bd7mi1': {
+      'en':
+          'Informe os dados sobre os Processo que foram realizados contra esse membro.',
+      'pt':
+          'Informe os dados sobre os Processo que foram realizados contra esse membro.',
+    },
+    'ig1tpcu8': {
+      'en': 'Nº da ação Penal',
+      'pt': 'Nº da ação Penal',
+    },
+    'on8d1j5b': {
+      'en': 'Nenhuma das opções',
+      'pt': 'Nenhuma das opções',
+    },
+    '3y3arw03': {
+      'en': '1ª VARA PENAL',
+      'pt': '1ª VARA PENAL',
+    },
+    '2ad97h60': {
+      'en': '2ª VARA PENAL',
+      'pt': '2ª VARA PENAL',
+    },
+    '62uy1ula': {
+      'en': '3ª VARA PENAL',
+      'pt': '3ª VARA PENAL',
+    },
+    '52tqxh7t': {
+      'en': 'Vara',
+      'pt': 'Vara',
+    },
+    'f81efpi5': {
+      'en': 'Search ...',
+      'pt': 'Pesquisa ...',
+    },
+    '9ntgj4nz': {
+      'en': 'Nenhuma das opções',
+      'pt': 'Nenhuma das opções',
+    },
+    '9krzgpyy': {
+      'en': 'Condenado',
+      'pt': 'Condenado',
+    },
+    'veeirmiy': {
+      'en': 'Provisório',
+      'pt': 'Provisório',
+    },
+    '85dco8ds': {
+      'en': 'Aguardando Sentença',
+      'pt': 'Aguardando Sentença',
+    },
+    'njzw806d': {
+      'en': 'Situação jurídica',
+      'pt': 'Situação jurídica',
+    },
+    'p7i3qgzk': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'eskukxtn': {
+      'en': 'Nenhuma das opções',
+      'pt': 'Nenhuma das opções',
+    },
+    '3ucnkzsn': {
+      'en': 'Fechado',
+      'pt': 'Fechado',
+    },
+    '9ogzdq4x': {
+      'en': 'Semi-aberto',
+      'pt': 'Semi-aberto',
+    },
+    'gjnab6i2': {
+      'en': 'Regime',
+      'pt': 'Regime',
+    },
+    'zgtd0ndz': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'tn9os876': {
+      'en': 'Nenhuma das opções',
+      'pt': 'Nenhuma das opções',
+    },
+    '6f4ajcmk': {
+      'en': 'Fechado',
+      'pt': '',
+    },
+    'wjr32pf6': {
+      'en': 'Semi-aberto',
+      'pt': '',
+    },
+    'whrvcs43': {
+      'en': 'Situação réu',
+      'pt': 'Situação réu',
+    },
+    'dquf2f18': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'tveo07et': {
+      'en': 'Limpar',
+      'pt': 'Limpar',
+    },
+    'vm7t0n6u': {
+      'en': 'Adicionar',
+      'pt': 'Adicionar',
+    },
+    'noufgwqe': {
+      'en': 'Nº da ação Penal',
+      'pt': 'Nº da ação Penal',
+    },
+    'xeuwwqlt': {
+      'en': 'Vara',
+      'pt': 'Vara',
+    },
+    '9t25cx0m': {
+      'en': 'Situação jurídica',
+      'pt': 'Situação jurídica',
+    },
+    'ptv8ms3l': {
+      'en': 'Regime',
+      'pt': 'Regime',
+    },
+    '670xv14p': {
+      'en': 'Situação réu',
+      'pt': 'Situação réu',
+    },
     'xaeljp2r': {
       'en': 'Atuação',
       'pt': 'Atuação',
@@ -2040,6 +2236,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Atuação no Crime',
       'pt': 'Atuação no Crime',
     },
+    '9xq1nz54': {
+      'en': 'Option 1',
+      'pt': '',
+    },
     '8slh1eth': {
       'en': 'Alerta',
       'pt': 'Alerta',
@@ -2055,6 +2255,78 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'kx61gjir': {
       'en': 'Alerta',
       'pt': 'Alerta',
+    },
+    'buogb0wh': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    '2rc41m6r': {
+      'en': 'Validação',
+      'pt': 'Validação',
+    },
+    'hg8tsf0e': {
+      'en': 'Percentual  de validação dos dados',
+      'pt': 'Percentual  de validação dos dados',
+    },
+    'm3x7tdl2': {
+      'en': '50%',
+      'pt': '50%',
+    },
+    'z911x2kd': {
+      'en': 'Como foram validados os dados e informações',
+      'pt': 'Como foram validados os dados e informações',
+    },
+    'udriebg5': {
+      'en': 'Validação Local ou área de atuação',
+      'pt': 'Validação Local ou área de atuação',
+    },
+    'ekk2ybut': {
+      'en': 'Apenas  atráves de fontes abertas',
+      'pt': 'Apenas  atráves de fontes abertas',
+    },
+    'jq3rovfo': {
+      'en': 'Apenas através de fontes restristas',
+      'pt': 'Apenas através de fontes restristas',
+    },
+    'si112iv5': {
+      'en': '',
+      'pt': '',
+    },
+    'ucqyj1ot': {
+      'en': 'Através de outra(s) agência de  inteligência',
+      'pt': 'Através de outra(s) agência de  inteligência',
+    },
+    'qd88nb62': {
+      'en': 'Atráves de  outro(s) órgãos como : PP, MP e etc.',
+      'pt': 'Atráves de  outro(s) órgãos como : PP, MP e etc.',
+    },
+    'gq42kahm': {
+      'en': 'Dentro de um Estabelecimento Prisional Estadual',
+      'pt': 'Dentro de um Estabelecimento Prisional Estadual',
+    },
+    'ma9rbpmx': {
+      'en': 'Dentro de um Estabelecimento Prisional Federal',
+      'pt': 'Dentro de um Estabelecimento Prisional Federal',
+    },
+    '1i2vccnc': {
+      'en': 'Apenas  através de informes ',
+      'pt': 'Apenas  através de informes ',
+    },
+    'zcj6hpny': {
+      'en': 'Apenas através de Coolaborador(es)',
+      'pt': 'Apenas através de Coolaborador(es)',
+    },
+    'v0fvpqeq': {
+      'en': 'Apenas através de informante(s)',
+      'pt': 'Apenas através de informante(s)',
+    },
+    'hu7rwf8m': {
+      'en': 'Observação(ões)',
+      'pt': 'Observação(ões)',
+    },
+    '0a8jmcbn': {
+      'en': 'Observação(ões)',
+      'pt': 'Observação(ões)',
     },
     'ld0rt7j2': {
       'en': 'Relations',

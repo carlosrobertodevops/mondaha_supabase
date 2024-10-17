@@ -224,6 +224,8 @@ dynamic deserializeParam<T>(
             return WapplerMigrationsRow(data);
           case ProcessosRow:
             return ProcessosRow(data);
+          case ProcedumentosRow:
+            return ProcedumentosRow(data);
           case CargosRow:
             return CargosRow(data);
           case ValidacoesRow:

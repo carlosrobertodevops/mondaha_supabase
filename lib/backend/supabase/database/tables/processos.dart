@@ -17,9 +17,6 @@ class ProcessosRow extends SupabaseDataRow {
   int get processoId => getField<int>('processo_id')!;
   set processoId(int value) => setField<int>('processo_id', value);
 
-  DateTime get createdAt => getField<DateTime>('created_at')!;
-  set createdAt(DateTime value) => setField<DateTime>('created_at', value);
-
   int? get membroId => getField<int>('membro_id');
   set membroId(int? value) => setField<int>('membro_id', value);
 
@@ -29,13 +26,13 @@ class ProcessosRow extends SupabaseDataRow {
   int? get varaId => getField<int>('vara_id');
   set varaId(int? value) => setField<int>('vara_id', value);
 
-  int? get situacoJuridicaId => getField<int>('situaco_juridica_id');
-  set situacoJuridicaId(int? value) =>
-      setField<int>('situaco_juridica_id', value);
+  String? get situacoJuridica => getField<String>('situaco_juridica');
+  set situacoJuridica(String? value) =>
+      setField<String>('situaco_juridica', value);
 
-  int? get regime => getField<int>('regime');
-  set regime(int? value) => setField<int>('regime', value);
+  String? get regime => getField<String>('regime');
+  set regime(String? value) => setField<String>('regime', value);
 
-  int? get situacaoReu => getField<int>('situacao_reu');
-  set situacaoReu(int? value) => setField<int>('situacao_reu', value);
+  String? get situacaoReu => getField<String>('situacao_reu');
+  set situacaoReu(String? value) => setField<String>('situacao_reu', value);
 }

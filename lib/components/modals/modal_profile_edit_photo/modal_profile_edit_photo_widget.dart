@@ -286,9 +286,6 @@ class _ModalProfileEditPhotoWidgetState
                                                   return;
                                                 }
                                               }
-
-                                              FFAppState().USUARIOFOTO = '';
-                                              safeSetState(() {});
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(

@@ -7,27 +7,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class DataTypesProcedimentosStruct extends BaseStruct {
   DataTypesProcedimentosStruct({
-    int? membroId,
     String? procedimentoNo,
-    String? unidadeId,
-    int? procedimentoTipoId,
-    int? crimeId,
+    String? procedimentoTipo,
+    String? unidade,
+    String? crime,
     DateTime? data,
-  })  : _membroId = membroId,
-        _procedimentoNo = procedimentoNo,
-        _unidadeId = unidadeId,
-        _procedimentoTipoId = procedimentoTipoId,
-        _crimeId = crimeId,
+  })  : _procedimentoNo = procedimentoNo,
+        _procedimentoTipo = procedimentoTipo,
+        _unidade = unidade,
+        _crime = crime,
         _data = data;
-
-  // "membro_id" field.
-  int? _membroId;
-  int get membroId => _membroId ?? 0;
-  set membroId(int? val) => _membroId = val;
-
-  void incrementMembroId(int amount) => membroId = membroId + amount;
-
-  bool hasMembroId() => _membroId != null;
 
   // "procedimento_no" field.
   String? _procedimentoNo;
@@ -36,31 +25,26 @@ class DataTypesProcedimentosStruct extends BaseStruct {
 
   bool hasProcedimentoNo() => _procedimentoNo != null;
 
-  // "unidade_id" field.
-  String? _unidadeId;
-  String get unidadeId => _unidadeId ?? '';
-  set unidadeId(String? val) => _unidadeId = val;
+  // "procedimento_tipo" field.
+  String? _procedimentoTipo;
+  String get procedimentoTipo => _procedimentoTipo ?? '';
+  set procedimentoTipo(String? val) => _procedimentoTipo = val;
 
-  bool hasUnidadeId() => _unidadeId != null;
+  bool hasProcedimentoTipo() => _procedimentoTipo != null;
 
-  // "procedimento_tipo_id" field.
-  int? _procedimentoTipoId;
-  int get procedimentoTipoId => _procedimentoTipoId ?? 0;
-  set procedimentoTipoId(int? val) => _procedimentoTipoId = val;
+  // "unidade" field.
+  String? _unidade;
+  String get unidade => _unidade ?? '';
+  set unidade(String? val) => _unidade = val;
 
-  void incrementProcedimentoTipoId(int amount) =>
-      procedimentoTipoId = procedimentoTipoId + amount;
+  bool hasUnidade() => _unidade != null;
 
-  bool hasProcedimentoTipoId() => _procedimentoTipoId != null;
+  // "crime" field.
+  String? _crime;
+  String get crime => _crime ?? '';
+  set crime(String? val) => _crime = val;
 
-  // "crime_id" field.
-  int? _crimeId;
-  int get crimeId => _crimeId ?? 0;
-  set crimeId(int? val) => _crimeId = val;
-
-  void incrementCrimeId(int amount) => crimeId = crimeId + amount;
-
-  bool hasCrimeId() => _crimeId != null;
+  bool hasCrime() => _crime != null;
 
   // "data" field.
   DateTime? _data;
@@ -71,11 +55,10 @@ class DataTypesProcedimentosStruct extends BaseStruct {
 
   static DataTypesProcedimentosStruct fromMap(Map<String, dynamic> data) =>
       DataTypesProcedimentosStruct(
-        membroId: castToType<int>(data['membro_id']),
         procedimentoNo: data['procedimento_no'] as String?,
-        unidadeId: data['unidade_id'] as String?,
-        procedimentoTipoId: castToType<int>(data['procedimento_tipo_id']),
-        crimeId: castToType<int>(data['crime_id']),
+        procedimentoTipo: data['procedimento_tipo'] as String?,
+        unidade: data['unidade'] as String?,
+        crime: data['crime'] as String?,
         data: data['data'] as DateTime?,
       );
 
@@ -84,35 +67,30 @@ class DataTypesProcedimentosStruct extends BaseStruct {
       : null;
 
   Map<String, dynamic> toMap() => {
-        'membro_id': _membroId,
         'procedimento_no': _procedimentoNo,
-        'unidade_id': _unidadeId,
-        'procedimento_tipo_id': _procedimentoTipoId,
-        'crime_id': _crimeId,
+        'procedimento_tipo': _procedimentoTipo,
+        'unidade': _unidade,
+        'crime': _crime,
         'data': _data,
       }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'membro_id': serializeParam(
-          _membroId,
-          ParamType.int,
-        ),
         'procedimento_no': serializeParam(
           _procedimentoNo,
           ParamType.String,
         ),
-        'unidade_id': serializeParam(
-          _unidadeId,
+        'procedimento_tipo': serializeParam(
+          _procedimentoTipo,
           ParamType.String,
         ),
-        'procedimento_tipo_id': serializeParam(
-          _procedimentoTipoId,
-          ParamType.int,
+        'unidade': serializeParam(
+          _unidade,
+          ParamType.String,
         ),
-        'crime_id': serializeParam(
-          _crimeId,
-          ParamType.int,
+        'crime': serializeParam(
+          _crime,
+          ParamType.String,
         ),
         'data': serializeParam(
           _data,
@@ -123,29 +101,24 @@ class DataTypesProcedimentosStruct extends BaseStruct {
   static DataTypesProcedimentosStruct fromSerializableMap(
           Map<String, dynamic> data) =>
       DataTypesProcedimentosStruct(
-        membroId: deserializeParam(
-          data['membro_id'],
-          ParamType.int,
-          false,
-        ),
         procedimentoNo: deserializeParam(
           data['procedimento_no'],
           ParamType.String,
           false,
         ),
-        unidadeId: deserializeParam(
-          data['unidade_id'],
+        procedimentoTipo: deserializeParam(
+          data['procedimento_tipo'],
           ParamType.String,
           false,
         ),
-        procedimentoTipoId: deserializeParam(
-          data['procedimento_tipo_id'],
-          ParamType.int,
+        unidade: deserializeParam(
+          data['unidade'],
+          ParamType.String,
           false,
         ),
-        crimeId: deserializeParam(
-          data['crime_id'],
-          ParamType.int,
+        crime: deserializeParam(
+          data['crime'],
+          ParamType.String,
           false,
         ),
         data: deserializeParam(
@@ -161,32 +134,29 @@ class DataTypesProcedimentosStruct extends BaseStruct {
   @override
   bool operator ==(Object other) {
     return other is DataTypesProcedimentosStruct &&
-        membroId == other.membroId &&
         procedimentoNo == other.procedimentoNo &&
-        unidadeId == other.unidadeId &&
-        procedimentoTipoId == other.procedimentoTipoId &&
-        crimeId == other.crimeId &&
+        procedimentoTipo == other.procedimentoTipo &&
+        unidade == other.unidade &&
+        crime == other.crime &&
         data == other.data;
   }
 
   @override
-  int get hashCode => const ListEquality().hash(
-      [membroId, procedimentoNo, unidadeId, procedimentoTipoId, crimeId, data]);
+  int get hashCode => const ListEquality()
+      .hash([procedimentoNo, procedimentoTipo, unidade, crime, data]);
 }
 
 DataTypesProcedimentosStruct createDataTypesProcedimentosStruct({
-  int? membroId,
   String? procedimentoNo,
-  String? unidadeId,
-  int? procedimentoTipoId,
-  int? crimeId,
+  String? procedimentoTipo,
+  String? unidade,
+  String? crime,
   DateTime? data,
 }) =>
     DataTypesProcedimentosStruct(
-      membroId: membroId,
       procedimentoNo: procedimentoNo,
-      unidadeId: unidadeId,
-      procedimentoTipoId: procedimentoTipoId,
-      crimeId: crimeId,
+      procedimentoTipo: procedimentoTipo,
+      unidade: unidade,
+      crime: crime,
       data: data,
     );

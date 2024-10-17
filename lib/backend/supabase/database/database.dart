@@ -9,6 +9,7 @@ export 'tables/estados.dart';
 export 'tables/grupos_membros.dart';
 export 'tables/wappler_migrations.dart';
 export 'tables/processos.dart';
+export 'tables/procedumentos.dart';
 export 'tables/cargos.dart';
 export 'tables/validacoes.dart';
 export 'tables/usuarios.dart';

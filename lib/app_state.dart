@@ -22,12 +22,6 @@ class FFAppState extends ChangeNotifier {
       _AGENCIA = prefs.getString('ff_AGENCIA') ?? _AGENCIA;
     });
     _safeInit(() {
-      _USUARIOFOTO = prefs.getString('ff_USUARIOFOTO') ?? _USUARIOFOTO;
-    });
-    _safeInit(() {
-      _WEBBARRETRATIL = prefs.getInt('ff_WEBBARRETRATIL') ?? _WEBBARRETRATIL;
-    });
-    _safeInit(() {
       _AppStateProcedimentos = prefs
               .getStringList('ff_AppStateProcedimentos')
               ?.map((x) {
@@ -73,20 +67,6 @@ class FFAppState extends ChangeNotifier {
   set AGENCIA(String value) {
     _AGENCIA = value;
     prefs.setString('ff_AGENCIA', value);
-  }
-
-  String _USUARIOFOTO = '';
-  String get USUARIOFOTO => _USUARIOFOTO;
-  set USUARIOFOTO(String value) {
-    _USUARIOFOTO = value;
-    prefs.setString('ff_USUARIOFOTO', value);
-  }
-
-  int _WEBBARRETRATIL = 250;
-  int get WEBBARRETRATIL => _WEBBARRETRATIL;
-  set WEBBARRETRATIL(int value) {
-    _WEBBARRETRATIL = value;
-    prefs.setInt('ff_WEBBARRETRATIL', value);
   }
 
   int _EDITFACCAOID = 0;
