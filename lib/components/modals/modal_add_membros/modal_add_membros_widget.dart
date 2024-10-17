@@ -1029,19 +1029,21 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                             children: [
-                                                                                                              Align(
-                                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                                child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 3.0, 0.0),
-                                                                                                                  child: SelectionArea(
-                                                                                                                      child: Text(
-                                                                                                                    tagAlcunhaItem,
-                                                                                                                    textAlign: TextAlign.center,
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                        ),
-                                                                                                                  )),
+                                                                                                              Expanded(
+                                                                                                                child: Align(
+                                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                  child: Padding(
+                                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 3.0, 0.0),
+                                                                                                                    child: SelectionArea(
+                                                                                                                        child: Text(
+                                                                                                                      tagAlcunhaItem,
+                                                                                                                      textAlign: TextAlign.center,
+                                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                                                            letterSpacing: 0.0,
+                                                                                                                          ),
+                                                                                                                    )),
+                                                                                                                  ),
                                                                                                                 ),
                                                                                                               ),
                                                                                                               Align(
@@ -2156,7 +2158,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                               Align(
                                                                                                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                                                 child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 3.0, 0.0),
+                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 3.0, 0.0),
                                                                                                                   child: Text(
                                                                                                                     listMembrosEnderecosItem,
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3472,19 +3474,21 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                             children: [
-                                                                                                              Align(
-                                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                                child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 3.0, 0.0),
-                                                                                                                  child: SelectionArea(
-                                                                                                                      child: Text(
-                                                                                                                    childenTresLocaisItem,
-                                                                                                                    textAlign: TextAlign.center,
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                        ),
-                                                                                                                  )),
+                                                                                                              Expanded(
+                                                                                                                child: Align(
+                                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                  child: Padding(
+                                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 3.0, 0.0),
+                                                                                                                    child: SelectionArea(
+                                                                                                                        child: Text(
+                                                                                                                      childenTresLocaisItem,
+                                                                                                                      textAlign: TextAlign.center,
+                                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                                                            letterSpacing: 0.0,
+                                                                                                                          ),
+                                                                                                                    )),
+                                                                                                                  ),
                                                                                                                 ),
                                                                                                               ),
                                                                                                               Align(
@@ -5891,10 +5895,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     onChanged: (val) async {
                                                                                       safeSetState(() => _model.choiceChipsValues = val);
                                                                                       logFirebaseEvent('MODAL_ADD_MEMBROS_ChoiceChips_4gyoh8qd_O');
-                                                                                      _model.membrosPercetualValidacao = valueOrDefault<double>(
-                                                                                        _model.membrosPercetualValidacao,
-                                                                                        0.10,
-                                                                                      );
+                                                                                      _model.membrosPercetualValidacao = _model.membrosPercetualValidacao! + 0.10;
                                                                                       safeSetState(() {});
                                                                                     },
                                                                                     selectedChipStyle: ChipStyle(
@@ -6368,7 +6369,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 16.0),
+                                    16.0, 0.0, 16.0, 24.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
