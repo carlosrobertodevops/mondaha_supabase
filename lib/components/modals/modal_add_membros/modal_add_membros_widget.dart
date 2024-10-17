@@ -5901,7 +5901,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                       logFirebaseEvent('MODAL_ADD_MEMBROS_ChoiceChips_4gyoh8qd_O');
                                                                                       _model.membrosPercetualValidacao = _model.membrosPercetualValidacao +
                                                                                           valueOrDefault<double>(
-                                                                                            _model.membrosPercetualValidacao <= 1.0 ? 1.0 : 0.10,
+                                                                                            _model.membrosPercetualValidacao > 1.0 ? 1.0 : 0.10,
                                                                                             0.10,
                                                                                           );
                                                                                       safeSetState(() {});
