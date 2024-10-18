@@ -33,10 +33,6 @@ class MembrosRow extends SupabaseDataRow {
   set fotosPath(List<String>? value) =>
       setListField<String>('fotos_path', value);
 
-  List<String> get tatuagensPath => getListField<String>('tatuagens_path');
-  set tatuagensPath(List<String>? value) =>
-      setListField<String>('tatuagens_path', value);
-
   int? get funcaoId => getField<int>('funcao_id');
   set funcaoId(int? value) => setField<int>('funcao_id', value);
 
@@ -52,9 +48,9 @@ class MembrosRow extends SupabaseDataRow {
   String? get identidade => getField<String>('identidade');
   set identidade(String? value) => setField<String>('identidade', value);
 
-  double? get nivelInstruacao => getField<double>('nivel_instruacao');
-  set nivelInstruacao(double? value) =>
-      setField<double>('nivel_instruacao', value);
+  String? get nivelInstrucao => getField<String>('nivel_instrucao');
+  set nivelInstrucao(String? value) =>
+      setField<String>('nivel_instrucao', value);
 
   String? get filiacaoMae => getField<String>('filiacao_mae');
   set filiacaoMae(String? value) => setField<String>('filiacao_mae', value);
@@ -62,11 +58,11 @@ class MembrosRow extends SupabaseDataRow {
   String? get filiacaoPai => getField<String>('filiacao_pai');
   set filiacaoPai(String? value) => setField<String>('filiacao_pai', value);
 
-  int? get situacaoMae => getField<int>('situacao_mae');
-  set situacaoMae(int? value) => setField<int>('situacao_mae', value);
+  String? get situacaoMae => getField<String>('situacao_mae');
+  set situacaoMae(String? value) => setField<String>('situacao_mae', value);
 
-  int? get situacaoPai => getField<int>('situacao_pai');
-  set situacaoPai(int? value) => setField<int>('situacao_pai', value);
+  String? get situacaoPai => getField<String>('situacao_pai');
+  set situacaoPai(String? value) => setField<String>('situacao_pai', value);
 
   String? get historico => getField<String>('historico');
   set historico(String? value) => setField<String>('historico', value);
@@ -109,4 +105,7 @@ class MembrosRow extends SupabaseDataRow {
 
   int? get municipioId => getField<int>('municipio_id');
   set municipioId(int? value) => setField<int>('municipio_id', value);
+
+  String? get infopen => getField<String>('infopen');
+  set infopen(String? value) => setField<String>('infopen', value);
 }

@@ -50,14 +50,14 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
       length: 8,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
-    _model.txtNomeCompletoTextController1 ??= TextEditingController();
-    _model.txtNomeCompletoFocusNode1 ??= FocusNode();
+    _model.txtNomeCompletoTextController ??= TextEditingController();
+    _model.txtNomeCompletoFocusNode ??= FocusNode();
 
     _model.txtAlcunhaAddTextController ??= TextEditingController();
     _model.txtAlcunhaAddFocusNode ??= FocusNode();
 
-    _model.txtNomeCompletoTextController2 ??= TextEditingController();
-    _model.txtNomeCompletoFocusNode2 ??= FocusNode();
+    _model.txtMembroNaturalidadeTextController ??= TextEditingController();
+    _model.txtMembroNaturalidadeFocusNode ??= FocusNode();
 
     _model.txtNoIdentidadeTextController ??= TextEditingController();
     _model.txtNoIdentidadeFocusNode ??= FocusNode();
@@ -68,11 +68,11 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
     _model.txtNoInfopenTextController ??= TextEditingController();
     _model.txtNoInfopenFocusNode ??= FocusNode();
 
-    _model.txtMaeNomeTextController ??= TextEditingController();
-    _model.txtMaeNomeFocusNode ??= FocusNode();
+    _model.txtFiliacaoMaeTextController ??= TextEditingController();
+    _model.txtFiliacaoMaeFocusNode ??= FocusNode();
 
-    _model.txtNomePaiTextController ??= TextEditingController();
-    _model.txtNomePaiFocusNode ??= FocusNode();
+    _model.txtFiliacaoPaiTextController ??= TextEditingController();
+    _model.txtFiliacaoPaiFocusNode ??= FocusNode();
 
     _model.txtMembrosEnderecosAddTextController ??= TextEditingController();
     _model.txtMembrosEnderecosAddFocusNode ??= FocusNode();
@@ -796,10 +796,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                       Expanded(
                                                                                         flex: 10,
                                                                                         child: TextFormField(
-                                                                                          controller: _model.txtNomeCompletoTextController1,
-                                                                                          focusNode: _model.txtNomeCompletoFocusNode1,
+                                                                                          controller: _model.txtNomeCompletoTextController,
+                                                                                          focusNode: _model.txtNomeCompletoFocusNode,
                                                                                           onChanged: (_) => EasyDebounce.debounce(
-                                                                                            '_model.txtNomeCompletoTextController1',
+                                                                                            '_model.txtNomeCompletoTextController',
                                                                                             const Duration(milliseconds: 2000),
                                                                                             () => safeSetState(() {}),
                                                                                           ),
@@ -852,10 +852,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             filled: true,
                                                                                             fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
-                                                                                            suffixIcon: _model.txtNomeCompletoTextController1!.text.isNotEmpty
+                                                                                            suffixIcon: _model.txtNomeCompletoTextController!.text.isNotEmpty
                                                                                                 ? InkWell(
                                                                                                     onTap: () async {
-                                                                                                      _model.txtNomeCompletoTextController1?.clear();
+                                                                                                      _model.txtNomeCompletoTextController?.clear();
                                                                                                       safeSetState(() {});
                                                                                                     },
                                                                                                     child: Icon(
@@ -871,7 +871,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
                                                                                           cursorColor: FlutterFlowTheme.of(context).primary,
-                                                                                          validator: _model.txtNomeCompletoTextController1Validator.asValidator(context),
+                                                                                          validator: _model.txtNomeCompletoTextControllerValidator.asValidator(context),
                                                                                         ),
                                                                                       ),
                                                                                     ].divide(const SizedBox(width: 10.0)),
@@ -1085,10 +1085,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                       Expanded(
                                                                                         flex: 7,
                                                                                         child: TextFormField(
-                                                                                          controller: _model.txtNomeCompletoTextController2,
-                                                                                          focusNode: _model.txtNomeCompletoFocusNode2,
+                                                                                          controller: _model.txtMembroNaturalidadeTextController,
+                                                                                          focusNode: _model.txtMembroNaturalidadeFocusNode,
                                                                                           onChanged: (_) => EasyDebounce.debounce(
-                                                                                            '_model.txtNomeCompletoTextController2',
+                                                                                            '_model.txtMembroNaturalidadeTextController',
                                                                                             const Duration(milliseconds: 2000),
                                                                                             () => safeSetState(() {}),
                                                                                           ),
@@ -1141,10 +1141,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             filled: true,
                                                                                             fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
-                                                                                            suffixIcon: _model.txtNomeCompletoTextController2!.text.isNotEmpty
+                                                                                            suffixIcon: _model.txtMembroNaturalidadeTextController!.text.isNotEmpty
                                                                                                 ? InkWell(
                                                                                                     onTap: () async {
-                                                                                                      _model.txtNomeCompletoTextController2?.clear();
+                                                                                                      _model.txtMembroNaturalidadeTextController?.clear();
                                                                                                       safeSetState(() {});
                                                                                                     },
                                                                                                     child: const Icon(
@@ -1159,7 +1159,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
                                                                                           cursorColor: FlutterFlowTheme.of(context).primary,
-                                                                                          validator: _model.txtNomeCompletoTextController2Validator.asValidator(context),
+                                                                                          validator: _model.txtMembroNaturalidadeTextControllerValidator.asValidator(context),
                                                                                         ),
                                                                                       ),
                                                                                       Expanded(
@@ -1616,10 +1616,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                       Expanded(
                                                                                         flex: 7,
                                                                                         child: TextFormField(
-                                                                                          controller: _model.txtMaeNomeTextController,
-                                                                                          focusNode: _model.txtMaeNomeFocusNode,
+                                                                                          controller: _model.txtFiliacaoMaeTextController,
+                                                                                          focusNode: _model.txtFiliacaoMaeFocusNode,
                                                                                           onChanged: (_) => EasyDebounce.debounce(
-                                                                                            '_model.txtMaeNomeTextController',
+                                                                                            '_model.txtFiliacaoMaeTextController',
                                                                                             const Duration(milliseconds: 2000),
                                                                                             () => safeSetState(() {}),
                                                                                           ),
@@ -1671,10 +1671,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             filled: true,
                                                                                             fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
-                                                                                            suffixIcon: _model.txtMaeNomeTextController!.text.isNotEmpty
+                                                                                            suffixIcon: _model.txtFiliacaoMaeTextController!.text.isNotEmpty
                                                                                                 ? InkWell(
                                                                                                     onTap: () async {
-                                                                                                      _model.txtMaeNomeTextController?.clear();
+                                                                                                      _model.txtFiliacaoMaeTextController?.clear();
                                                                                                       safeSetState(() {});
                                                                                                     },
                                                                                                     child: Icon(
@@ -1690,7 +1690,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
                                                                                           cursorColor: FlutterFlowTheme.of(context).primary,
-                                                                                          validator: _model.txtMaeNomeTextControllerValidator.asValidator(context),
+                                                                                          validator: _model.txtFiliacaoMaeTextControllerValidator.asValidator(context),
                                                                                         ),
                                                                                       ),
                                                                                       Expanded(
@@ -1756,10 +1756,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                       Expanded(
                                                                                         flex: 7,
                                                                                         child: TextFormField(
-                                                                                          controller: _model.txtNomePaiTextController,
-                                                                                          focusNode: _model.txtNomePaiFocusNode,
+                                                                                          controller: _model.txtFiliacaoPaiTextController,
+                                                                                          focusNode: _model.txtFiliacaoPaiFocusNode,
                                                                                           onChanged: (_) => EasyDebounce.debounce(
-                                                                                            '_model.txtNomePaiTextController',
+                                                                                            '_model.txtFiliacaoPaiTextController',
                                                                                             const Duration(milliseconds: 2000),
                                                                                             () => safeSetState(() {}),
                                                                                           ),
@@ -1811,10 +1811,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             filled: true,
                                                                                             fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
-                                                                                            suffixIcon: _model.txtNomePaiTextController!.text.isNotEmpty
+                                                                                            suffixIcon: _model.txtFiliacaoPaiTextController!.text.isNotEmpty
                                                                                                 ? InkWell(
                                                                                                     onTap: () async {
-                                                                                                      _model.txtNomePaiTextController?.clear();
+                                                                                                      _model.txtFiliacaoPaiTextController?.clear();
                                                                                                       safeSetState(() {});
                                                                                                     },
                                                                                                     child: Icon(
@@ -1830,7 +1830,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
                                                                                           cursorColor: FlutterFlowTheme.of(context).primary,
-                                                                                          validator: _model.txtNomePaiTextControllerValidator.asValidator(context),
+                                                                                          validator: _model.txtFiliacaoPaiTextControllerValidator.asValidator(context),
                                                                                         ),
                                                                                       ),
                                                                                       Expanded(
@@ -1896,7 +1896,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                       Expanded(
                                                                                         flex: 3,
                                                                                         child: FlutterFlowDropDown<String>(
-                                                                                          controller: _model.ddwIntrucaoValueController ??= FormFieldController<String>(null),
+                                                                                          controller: _model.ddwNivelInstrucaoValueController ??= FormFieldController<String>(null),
                                                                                           options: [
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'r2g2yo2p' /* Alfabetizado */,
@@ -1923,7 +1923,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                               'tb0j8o1f' /* Ensino superior incompleto */,
                                                                                             )
                                                                                           ],
-                                                                                          onChanged: (val) => safeSetState(() => _model.ddwIntrucaoValue = val),
+                                                                                          onChanged: (val) => safeSetState(() => _model.ddwNivelInstrucaoValue = val),
                                                                                           height: 60.0,
                                                                                           searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                 fontFamily: 'Plus Jakarta Sans',
@@ -6478,9 +6478,44 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                       const AlignmentDirectional(
                                                           0.0, 0.05),
                                                   child: FFButtonWidget(
-                                                    onPressed: () {
-                                                      print(
-                                                          'Button pressed ...');
+                                                    onPressed: () async {
+                                                      logFirebaseEvent(
+                                                          'MODAL_ADD_MEMBROS_SAVE_MEMBER_BTN_ON_TAP');
+                                                      await MembrosTable()
+                                                          .insert({
+                                                        'nome_completo': _model
+                                                            .txtNomeCompletoTextController
+                                                            .text,
+                                                        'fotos_path': _model
+                                                            .uploadedFileUrls,
+                                                        'alcunha': _model
+                                                            .membrosAlcunhas,
+                                                        'nacionalidade':
+                                                            overlayMembrosRow
+                                                                ?.nacionalidade,
+                                                        'cpf': _model
+                                                            .txtNoCpfTextController
+                                                            .text,
+                                                        'identidade': _model
+                                                            .txtNoIdentidadeTextController
+                                                            .text,
+                                                        'naturalidade': _model
+                                                            .txtMembroNaturalidadeTextController
+                                                            .text,
+                                                        'filiacao_mae': _model
+                                                            .txtFiliacaoMaeTextController
+                                                            .text,
+                                                        'filiacao_pai': _model
+                                                            .txtFiliacaoPaiTextController
+                                                            .text,
+                                                        'situacao_mae': _model
+                                                            .ddwSituacaoMaeValue,
+                                                        'situacao_pai':
+                                                            overlayMembrosRow
+                                                                ?.situacaoPai,
+                                                        'nivel_instrucao': _model
+                                                            .ddwNivelInstrucaoValue,
+                                                      });
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)

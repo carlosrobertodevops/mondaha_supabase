@@ -122,19 +122,19 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   List<String> uploadedFileUrls = [];
 
   // State field(s) for txt_nome_completo widget.
-  FocusNode? txtNomeCompletoFocusNode1;
-  TextEditingController? txtNomeCompletoTextController1;
+  FocusNode? txtNomeCompletoFocusNode;
+  TextEditingController? txtNomeCompletoTextController;
   String? Function(BuildContext, String?)?
-      txtNomeCompletoTextController1Validator;
+      txtNomeCompletoTextControllerValidator;
   // State field(s) for txt_alcunha_add widget.
   FocusNode? txtAlcunhaAddFocusNode;
   TextEditingController? txtAlcunhaAddTextController;
   String? Function(BuildContext, String?)? txtAlcunhaAddTextControllerValidator;
-  // State field(s) for txt_nome_completo widget.
-  FocusNode? txtNomeCompletoFocusNode2;
-  TextEditingController? txtNomeCompletoTextController2;
+  // State field(s) for txt_membro_naturalidade widget.
+  FocusNode? txtMembroNaturalidadeFocusNode;
+  TextEditingController? txtMembroNaturalidadeTextController;
   String? Function(BuildContext, String?)?
-      txtNomeCompletoTextController2Validator;
+      txtMembroNaturalidadeTextControllerValidator;
   // State field(s) for ddw_estado_civil widget.
   int? ddwEstadoCivilValue;
   FormFieldController<int>? ddwEstadoCivilValueController;
@@ -155,23 +155,25 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   FocusNode? txtNoInfopenFocusNode;
   TextEditingController? txtNoInfopenTextController;
   String? Function(BuildContext, String?)? txtNoInfopenTextControllerValidator;
-  // State field(s) for txt_mae_nome widget.
-  FocusNode? txtMaeNomeFocusNode;
-  TextEditingController? txtMaeNomeTextController;
-  String? Function(BuildContext, String?)? txtMaeNomeTextControllerValidator;
+  // State field(s) for txt_filiacao_mae widget.
+  FocusNode? txtFiliacaoMaeFocusNode;
+  TextEditingController? txtFiliacaoMaeTextController;
+  String? Function(BuildContext, String?)?
+      txtFiliacaoMaeTextControllerValidator;
   // State field(s) for ddw_situacao_mae widget.
   String? ddwSituacaoMaeValue;
   FormFieldController<String>? ddwSituacaoMaeValueController;
-  // State field(s) for txt_nome_pai widget.
-  FocusNode? txtNomePaiFocusNode;
-  TextEditingController? txtNomePaiTextController;
-  String? Function(BuildContext, String?)? txtNomePaiTextControllerValidator;
+  // State field(s) for txt_filiacao_pai widget.
+  FocusNode? txtFiliacaoPaiFocusNode;
+  TextEditingController? txtFiliacaoPaiTextController;
+  String? Function(BuildContext, String?)?
+      txtFiliacaoPaiTextControllerValidator;
   // State field(s) for ddw_situacao_pai widget.
   String? ddwSituacaoPaiValue;
   FormFieldController<String>? ddwSituacaoPaiValueController;
-  // State field(s) for ddw_intrucao widget.
-  String? ddwIntrucaoValue;
-  FormFieldController<String>? ddwIntrucaoValueController;
+  // State field(s) for ddw_nivel_instrucao widget.
+  String? ddwNivelInstrucaoValue;
+  FormFieldController<String>? ddwNivelInstrucaoValueController;
   // State field(s) for txt_membros_enderecos_add widget.
   FocusNode? txtMembrosEnderecosAddFocusNode;
   TextEditingController? txtMembrosEnderecosAddTextController;
@@ -313,14 +315,14 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   @override
   void dispose() {
     tabBarController?.dispose();
-    txtNomeCompletoFocusNode1?.dispose();
-    txtNomeCompletoTextController1?.dispose();
+    txtNomeCompletoFocusNode?.dispose();
+    txtNomeCompletoTextController?.dispose();
 
     txtAlcunhaAddFocusNode?.dispose();
     txtAlcunhaAddTextController?.dispose();
 
-    txtNomeCompletoFocusNode2?.dispose();
-    txtNomeCompletoTextController2?.dispose();
+    txtMembroNaturalidadeFocusNode?.dispose();
+    txtMembroNaturalidadeTextController?.dispose();
 
     txtNoIdentidadeFocusNode?.dispose();
     txtNoIdentidadeTextController?.dispose();
@@ -331,11 +333,11 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
     txtNoInfopenFocusNode?.dispose();
     txtNoInfopenTextController?.dispose();
 
-    txtMaeNomeFocusNode?.dispose();
-    txtMaeNomeTextController?.dispose();
+    txtFiliacaoMaeFocusNode?.dispose();
+    txtFiliacaoMaeTextController?.dispose();
 
-    txtNomePaiFocusNode?.dispose();
-    txtNomePaiTextController?.dispose();
+    txtFiliacaoPaiFocusNode?.dispose();
+    txtFiliacaoPaiTextController?.dispose();
 
     txtMembrosEnderecosAddFocusNode?.dispose();
     txtMembrosEnderecosAddTextController?.dispose();
