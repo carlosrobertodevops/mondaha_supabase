@@ -1,4 +1,6 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'modal_add_membros_widget.dart' show ModalAddMembrosWidget;
@@ -103,7 +105,11 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
           int index, Function(DataTypesProcessosStruct) updateFn) =>
       membrosProcessos[index] = updateFn(membrosProcessos[index]);
 
-  double membrosPercetualValidacao = 0.1;
+  double membrosPercetualValidacao = 0.0;
+
+  int? membrosProcedimentosCount = -1;
+
+  int? membrosProcessosCount = -1;
 
   ///  State fields for stateful widgets in this component.
 
@@ -308,6 +314,12 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController21;
   String? Function(BuildContext, String?)? textController21Validator;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  MembrosRow? retMembrosAdd;
+  // Stores action output result for [Backend Call - API (ProcedimentosADD)] action in Button widget.
+  ApiCallResponse? apiResultProcedimentos;
+  // Stores action output result for [Backend Call - API (ProcessosADD)] action in Button widget.
+  ApiCallResponse? apiResultProcessos;
 
   @override
   void initState(BuildContext context) {}

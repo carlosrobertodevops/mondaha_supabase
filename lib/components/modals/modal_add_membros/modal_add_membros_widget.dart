@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -6005,12 +6006,13 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 onChanged: (val) async {
                                                                                   safeSetState(() => _model.choiceChipsValues = val);
                                                                                   logFirebaseEvent('MODAL_ADD_MEMBROS_ChoiceChips_4gyoh8qd_O');
-                                                                                  _model.membrosPercetualValidacao = _model.membrosPercetualValidacao +
-                                                                                      valueOrDefault<double>(
-                                                                                        _model.membrosPercetualValidacao > 1.0 ? 1.0 : 0.10,
-                                                                                        0.10,
-                                                                                      );
-                                                                                  safeSetState(() {});
+                                                                                  if (_model.membrosPercetualValidacao <= 1.0) {
+                                                                                    _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 0.10;
+                                                                                    safeSetState(() {});
+                                                                                  } else {
+                                                                                    _model.membrosPercetualValidacao = 1.0;
+                                                                                    safeSetState(() {});
+                                                                                  }
                                                                                 },
                                                                                 selectedChipStyle: ChipStyle(
                                                                                   backgroundColor: FlutterFlowTheme.of(context).primary,
@@ -6596,6 +6598,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                 onPressed: () async {
                                                   logFirebaseEvent(
                                                       'MODAL_ADD_MEMBROS_SAVE_MEMBER_BTN_ON_TAP');
+                                                  var shouldSetState = false;
                                                   var confirmDialogResponse =
                                                       await showDialog<bool>(
                                                             context: context,
@@ -6629,8 +6632,9 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           ) ??
                                                           false;
                                                   if (confirmDialogResponse) {
-                                                    await MembrosTable()
-                                                        .insert({
+                                                    _model.retMembrosAdd =
+                                                        await MembrosTable()
+                                                            .insert({
                                                       'nome_completo': _model
                                                           .txtNomeCompletoTextController
                                                           .text,
@@ -6709,16 +6713,191 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           _model
                                                               .membrosFaccaoTresLocais,
                                                     });
+                                                    shouldSetState = true;
                                                     await Future.delayed(
                                                         const Duration(
-                                                            milliseconds:
-                                                                1000));
+                                                            milliseconds: 500));
+                                                    await Future.wait([
+                                                      Future(() async {
+                                                        if (_model
+                                                                .membrosProcedimentos.isNotEmpty) {
+                                                          _model.membrosProcedimentosCount =
+                                                              -1;
+                                                          safeSetState(() {});
+                                                          while (_model
+                                                                  .membrosProcedimentosCount! <=
+                                                              _model
+                                                                  .membrosProcedimentos
+                                                                  .length) {
+                                                            _model.membrosProcedimentosCount =
+                                                                _model.membrosProcedimentosCount! +
+                                                                    1;
+                                                            safeSetState(() {});
+                                                            _model.apiResultProcedimentos =
+                                                                await ProcedimentosADDCall
+                                                                    .call(
+                                                              membroId: _model
+                                                                  .retMembrosAdd
+                                                                  ?.membroId
+                                                                  .toString(),
+                                                              procedimentoNo: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .unidade,
+                                                              unidade: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .procedimentoTipo,
+                                                              procedimentoTipo: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .crime,
+                                                              crime: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .crime,
+                                                              data: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .data
+                                                                  ?.toString(),
+                                                            );
+
+                                                            shouldSetState =
+                                                                true;
+                                                            if ((_model
+                                                                    .apiResultProcedimentos
+                                                                    ?.succeeded ??
+                                                                true)) {
+                                                              ScaffoldMessenger
+                                                                      .of(context)
+                                                                  .showSnackBar(
+                                                                SnackBar(
+                                                                  content: Text(
+                                                                    'Dados dos procedimentos salvos !',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                  ),
+                                                                  duration: const Duration(
+                                                                      milliseconds:
+                                                                          4000),
+                                                                  backgroundColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                ),
+                                                              );
+                                                            }
+                                                          }
+                                                        } else {
+                                                          if (shouldSetState) {
+                                                            safeSetState(() {});
+                                                          }
+                                                          return;
+                                                        }
+                                                      }),
+                                                      Future(() async {
+                                                        if (_model
+                                                                .membrosProcessos.isNotEmpty) {
+                                                          _model.membrosProcessosCount =
+                                                              -1;
+                                                          safeSetState(() {});
+                                                          while (_model
+                                                                  .membrosProcessosCount! <=
+                                                              _model
+                                                                  .membrosProcessos
+                                                                  .length) {
+                                                            _model.membrosProcessosCount =
+                                                                _model.membrosProcessosCount! +
+                                                                    1;
+                                                            safeSetState(() {});
+                                                            _model.apiResultProcessos =
+                                                                await ProcessosADDCall
+                                                                    .call(
+                                                              membroId: _model
+                                                                  .retMembrosAdd
+                                                                  ?.membroId
+                                                                  .toString(),
+                                                              acaoPenalNo: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .noAcaoPenal,
+                                                              vara: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .vara,
+                                                              situacaoJuridica: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .situacaoJuridica,
+                                                              regime: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .situacaoJuridica,
+                                                              situacaoReu: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .situacaoReu,
+                                                            );
+
+                                                            shouldSetState =
+                                                                true;
+                                                            if ((_model
+                                                                    .apiResultProcessos
+                                                                    ?.succeeded ??
+                                                                true)) {
+                                                              ScaffoldMessenger
+                                                                      .of(context)
+                                                                  .showSnackBar(
+                                                                SnackBar(
+                                                                  content: Text(
+                                                                    'Dados dos processos salvos !',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                  ),
+                                                                  duration: const Duration(
+                                                                      milliseconds:
+                                                                          4000),
+                                                                  backgroundColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                ),
+                                                              );
+                                                            }
+                                                          }
+                                                        } else {
+                                                          if (shouldSetState) {
+                                                            safeSetState(() {});
+                                                          }
+                                                          return;
+                                                        }
+                                                      }),
+                                                    ]);
                                                     ScaffoldMessenger.of(
                                                             context)
                                                         .showSnackBar(
                                                       SnackBar(
                                                         content: Text(
-                                                          'Dad',
+                                                          'Dados do Membro salvo com sucesso !',
                                                           style: TextStyle(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
@@ -6730,11 +6909,18 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                         backgroundColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .success,
+                                                                .secondary,
                                                       ),
                                                     );
                                                   } else {
-                                                    Navigator.pop(context);
+                                                    if (shouldSetState) {
+                                                      safeSetState(() {});
+                                                    }
+                                                    return;
+                                                  }
+
+                                                  if (shouldSetState) {
+                                                    safeSetState(() {});
                                                   }
                                                 },
                                                 text:

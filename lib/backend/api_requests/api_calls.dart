@@ -104,6 +104,90 @@ class LoginNoSUPABASECall {
   }
 }
 
+class ProcedimentosADDCall {
+  static Future<ApiCallResponse> call({
+    String? membroId = '',
+    String? procedimentoNo = '',
+    String? unidade = '',
+    String? procedimentoTipo = '',
+    String? crime = '',
+    String? data = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "membro_id": "$membroId",
+  "procedimento_no": "$procedimentoNo",
+  "unidade": "$unidade",
+  "procedimento_tipo": "$procedimentoTipo",
+  "crime": "$crime",
+  "data": "$data"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'ProcedimentosADD',
+      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/procedimentos',
+      callType: ApiCallType.POST,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NjMzMzIsImV4cCI6MjA0MjMzOTMzMn0.nQtpi4gaPoJ4zGxMeRUkp5bkFse-nZXloRjbM44zrLE',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NjMzMzIsImV4cCI6MjA0MjMzOTMzMn0.nQtpi4gaPoJ4zGxMeRUkp5bkFse-nZXloRjbM44zrLE',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ProcessosADDCall {
+  static Future<ApiCallResponse> call({
+    String? membroId = '',
+    String? acaoPenalNo = '',
+    String? vara = '',
+    String? situacaoJuridica = '',
+    String? regime = '',
+    String? situacaoReu = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "membro_id": "$membroId",
+  "acao_penal_no": "$acaoPenalNo",
+  "vara": "$vara",
+  "situaco_juridica": "$situacaoJuridica",
+  "regime": "$regime",
+  "situacao_reu": "$situacaoReu"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'ProcessosADD',
+      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/processos',
+      callType: ApiCallType.POST,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NjMzMzIsImV4cCI6MjA0MjMzOTMzMn0.nQtpi4gaPoJ4zGxMeRUkp5bkFse-nZXloRjbM44zrLE',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NjMzMzIsImV4cCI6MjA0MjMzOTMzMn0.nQtpi4gaPoJ4zGxMeRUkp5bkFse-nZXloRjbM44zrLE',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;
