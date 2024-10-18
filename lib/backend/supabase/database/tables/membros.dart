@@ -36,8 +36,8 @@ class MembrosRow extends SupabaseDataRow {
   int? get funcaoId => getField<int>('funcao_id');
   set funcaoId(int? value) => setField<int>('funcao_id', value);
 
-  int? get nacionalidade => getField<int>('nacionalidade');
-  set nacionalidade(int? value) => setField<int>('nacionalidade', value);
+  String? get nacionalidade => getField<String>('nacionalidade');
+  set nacionalidade(String? value) => setField<String>('nacionalidade', value);
 
   String? get naturalidade => getField<String>('naturalidade');
   set naturalidade(String? value) => setField<String>('naturalidade', value);
@@ -82,16 +82,14 @@ class MembrosRow extends SupabaseDataRow {
   String? get padrinho => getField<String>('padrinho');
   set padrinho(String? value) => setField<String>('padrinho', value);
 
-  List<int> get faccaoIntegrou => getListField<int>('faccao_integrou');
-  set faccaoIntegrou(List<int>? value) =>
-      setListField<int>('faccao_integrou', value);
+  int? get faccaoIntegrou => getField<int>('faccao_integrou');
+  set faccaoIntegrou(int? value) => setField<int>('faccao_integrou', value);
 
-  List<int> get facaoAliada => getListField<int>('facao_aliada');
-  set facaoAliada(List<int>? value) => setListField<int>('facao_aliada', value);
+  int? get faccaoAliada => getField<int>('faccao_aliada');
+  set faccaoAliada(int? value) => setField<int>('faccao_aliada', value);
 
-  List<int> get faccaoInimiga => getListField<int>('faccao_inimiga');
-  set faccaoInimiga(List<int>? value) =>
-      setListField<int>('faccao_inimiga', value);
+  int? get faccaoInimiga => getField<int>('faccao_inimiga');
+  set faccaoInimiga(int? value) => setField<int>('faccao_inimiga', value);
 
   String? get faccaoSenha => getField<String>('faccao_senha');
   set faccaoSenha(String? value) => setField<String>('faccao_senha', value);
@@ -108,4 +106,15 @@ class MembrosRow extends SupabaseDataRow {
 
   String? get infopen => getField<String>('infopen');
   set infopen(String? value) => setField<String>('infopen', value);
+
+  String? get estadoCivil => getField<String>('estado_civil');
+  set estadoCivil(String? value) => setField<String>('estado_civil', value);
+
+  String? get batismoLocal => getField<String>('batismo_local');
+  set batismoLocal(String? value) => setField<String>('batismo_local', value);
+
+  List<String> get tresUltimoLocaisPreso =>
+      getListField<String>('tres_ultimo_locais_preso');
+  set tresUltimoLocaisPreso(List<String>? value) =>
+      setListField<String>('tres_ultimo_locais_preso', value);
 }

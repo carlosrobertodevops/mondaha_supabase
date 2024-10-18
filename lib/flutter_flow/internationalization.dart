@@ -1787,8 +1787,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Endereço Completo',
     },
     'ob87x68k': {
-      'en': '',
-      'pt': '',
+      'en': 'Nascido no Brasil',
+      'pt': 'Nascido no Brasil',
     },
     '7tegc2gd': {
       'en': 'Nascido no Brasil',
@@ -1885,8 +1885,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Padrinho',
     },
     'zntstdx4': {
-      'en': 'Batismo',
-      'pt': 'Batismo',
+      'en': 'Padrinho',
+      'pt': 'Padrinho',
     },
     'uylgtxfb': {
       'en': 'Senha',

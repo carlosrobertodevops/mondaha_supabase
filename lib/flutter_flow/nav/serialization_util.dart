@@ -222,10 +222,10 @@ dynamic deserializeParam<T>(
             return GruposMembrosRow(data);
           case WapplerMigrationsRow:
             return WapplerMigrationsRow(data);
+          case ProcedimentosRow:
+            return ProcedimentosRow(data);
           case ProcessosRow:
             return ProcessosRow(data);
-          case ProcedumentosRow:
-            return ProcedumentosRow(data);
           case CargosRow:
             return CargosRow(data);
           case ValidacoesRow:

@@ -1,19 +1,19 @@
 import '../database.dart';
 
-class ProcedumentosTable extends SupabaseTable<ProcedumentosRow> {
+class ProcedimentosTable extends SupabaseTable<ProcedimentosRow> {
   @override
-  String get tableName => 'procedumentos';
+  String get tableName => 'procedimentos';
 
   @override
-  ProcedumentosRow createRow(Map<String, dynamic> data) =>
-      ProcedumentosRow(data);
+  ProcedimentosRow createRow(Map<String, dynamic> data) =>
+      ProcedimentosRow(data);
 }
 
-class ProcedumentosRow extends SupabaseDataRow {
-  ProcedumentosRow(super.data);
+class ProcedimentosRow extends SupabaseDataRow {
+  ProcedimentosRow(super.data);
 
   @override
-  SupabaseTable get table => ProcedumentosTable();
+  SupabaseTable get table => ProcedimentosTable();
 
   int get procedimentoId => getField<int>('procedimento_id')!;
   set procedimentoId(int value) => setField<int>('procedimento_id', value);

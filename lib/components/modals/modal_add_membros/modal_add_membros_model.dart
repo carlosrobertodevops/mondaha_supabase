@@ -136,8 +136,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   String? Function(BuildContext, String?)?
       txtMembroNaturalidadeTextControllerValidator;
   // State field(s) for ddw_estado_civil widget.
-  int? ddwEstadoCivilValue;
-  FormFieldController<int>? ddwEstadoCivilValueController;
+  String? ddwEstadoCivilValue;
+  FormFieldController<String>? ddwEstadoCivilValueController;
   // State field(s) for txt_no_identidade widget.
   FocusNode? txtNoIdentidadeFocusNode;
   TextEditingController? txtNoIdentidadeTextController;
@@ -179,8 +179,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   TextEditingController? txtMembrosEnderecosAddTextController;
   String? Function(BuildContext, String?)?
       txtMembrosEnderecosAddTextControllerValidator;
-  // State field(s) for rbtnPerfilNatural widget.
-  FormFieldController<String>? rbtnPerfilNaturalValueController;
+  // State field(s) for rbNacionalidade widget.
+  FormFieldController<String>? rbNacionalidadeValueController;
   // State field(s) for ddw_estado widget.
   int? ddwEstadoValue;
   FormFieldController<int>? ddwEstadoValueController;
@@ -376,5 +376,5 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   }
 
   /// Additional helper methods.
-  String? get rbtnPerfilNaturalValue => rbtnPerfilNaturalValueController?.value;
+  String? get rbNacionalidadeValue => rbNacionalidadeValueController?.value;
 }
