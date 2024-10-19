@@ -495,7 +495,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
-                                                                                        if (_model.uploadedLocalFiles1.isEmpty)
+                                                                                        if (_model.membrosPhotos.isEmpty)
                                                                                           InkWell(
                                                                                             splashColor: Colors.transparent,
                                                                                             focusColor: Colors.transparent,
@@ -563,7 +563,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                     Align(
                                                                                                       alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                                       child: Icon(
-                                                                                                        Icons.arrow_forward_rounded,
+                                                                                                        Icons.add_outlined,
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         size: 24.0,
                                                                                                       ),
@@ -593,7 +593,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             children: [
                                                                                               Builder(
                                                                                                 builder: (context) {
-                                                                                                  final fotosMembroPaths = _model.membrosPhotos.toList().take(4).toList();
+                                                                                                  final fotosMembroPaths = _model.uploadedLocalFiles1.map((e) => e).toList().take(4).toList();
 
                                                                                                   return SingleChildScrollView(
                                                                                                     scrollDirection: Axis.horizontal,
@@ -603,7 +603,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                       children: List.generate(fotosMembroPaths.length, (fotosMembroPathsIndex) {
                                                                                                         final fotosMembroPathsItem = fotosMembroPaths[fotosMembroPathsIndex];
                                                                                                         return Visibility(
-                                                                                                          visible: _model.uploadedLocalFiles1.isNotEmpty,
+                                                                                                          visible: _model.membrosPhotos.isNotEmpty,
                                                                                                           child: Align(
                                                                                                             alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                                             child: Container(
@@ -707,8 +707,11 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                             ) ??
                                                                                                                             false;
                                                                                                                         if (confirmDialogResponse) {
-                                                                                                                          _model.removeAtIndexFromMembrosPhotos(fotosMembroPathsIndex);
-                                                                                                                          safeSetState(() {});
+                                                                                                                          safeSetState(() {
+                                                                                                                            _model.isDataUploading1 = false;
+                                                                                                                            _model.uploadedLocalFiles1 = [];
+                                                                                                                          });
+
                                                                                                                           ScaffoldMessenger.of(context).showSnackBar(
                                                                                                                             SnackBar(
                                                                                                                               content: Text(
@@ -739,7 +742,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                         const SizedBox(width: 12.0),
                                                                                                         filterFn: (fotosMembroPathsIndex) {
                                                                                                           final fotosMembroPathsItem = fotosMembroPaths[fotosMembroPathsIndex];
-                                                                                                          return _model.uploadedLocalFiles1.isNotEmpty;
+                                                                                                          return _model.membrosPhotos.isNotEmpty;
                                                                                                         },
                                                                                                       ),
                                                                                                     ),
