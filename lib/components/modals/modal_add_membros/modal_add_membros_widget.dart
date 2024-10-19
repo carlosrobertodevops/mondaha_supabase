@@ -196,59 +196,66 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 16.0, 0.0, 16.0),
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              'rgboq48h' /* Add Member */,
+                          if (responsiveVisibility(
+                            context: context,
+                            tabletLandscape: false,
+                          ))
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 16.0, 0.0, 16.0),
+                                      child: SingleChildScrollView(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'rgboq48h' /* Add Member */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineMedium
-                                                .override(
-                                                  fontFamily: 'Outfit',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                FlutterFlowIconButton(
-                                  borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 60.0,
-                                  icon: Icon(
-                                    Icons.close_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 30.0,
+                                  FlutterFlowIconButton(
+                                    borderColor: Colors.transparent,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
+                                    icon: Icon(
+                                      Icons.close_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'MODAL_ADD_MEMBROS_close_rounded_ICN_ON_T');
+                                      Navigator.pop(context);
+                                    },
                                   ),
-                                  onPressed: () async {
-                                    logFirebaseEvent(
-                                        'MODAL_ADD_MEMBROS_close_rounded_ICN_ON_T');
-                                    Navigator.pop(context);
-                                  },
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
                           Expanded(
                             flex: 4,
                             child: Row(
@@ -507,6 +514,11 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                                                                                 try {
+                                                                                                  showUploadMessage(
+                                                                                                    context,
+                                                                                                    'Uploading file...',
+                                                                                                    showLoading: true,
+                                                                                                  );
                                                                                                   selectedUploadedFiles = selectedMedia
                                                                                                       .map((m) => FFUploadedFile(
                                                                                                             name: m.storagePath.split('/').last,
@@ -517,20 +529,20 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                           ))
                                                                                                       .toList();
                                                                                                 } finally {
+                                                                                                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
                                                                                                   _model.isDataUploading1 = false;
                                                                                                 }
                                                                                                 if (selectedUploadedFiles.length == selectedMedia.length) {
                                                                                                   safeSetState(() {
                                                                                                     _model.uploadedLocalFiles1 = selectedUploadedFiles;
                                                                                                   });
+                                                                                                  showUploadMessage(context, 'Success!');
                                                                                                 } else {
                                                                                                   safeSetState(() {});
+                                                                                                  showUploadMessage(context, 'Failed to upload data');
                                                                                                   return;
                                                                                                 }
                                                                                               }
-
-                                                                                              _model.addToMembrosPhotos((_model.uploadedLocalFiles1.isNotEmpty).toString());
-                                                                                              safeSetState(() {});
                                                                                             },
                                                                                             child: Container(
                                                                                               width: 100.0,
