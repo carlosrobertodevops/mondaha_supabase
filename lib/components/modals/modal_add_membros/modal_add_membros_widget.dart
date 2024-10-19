@@ -694,6 +694,11 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                         if (confirmDialogResponse) {
                                                                                                                           _model.removeAtIndexFromMembrosPhotos(fotosMembroPathsIndex);
                                                                                                                           safeSetState(() {});
+                                                                                                                          safeSetState(() {
+                                                                                                                            _model.isDataUploading1 = false;
+                                                                                                                            _model.uploadedLocalFiles1 = [];
+                                                                                                                          });
+
                                                                                                                           ScaffoldMessenger.of(context).showSnackBar(
                                                                                                                             SnackBar(
                                                                                                                               content: Text(
