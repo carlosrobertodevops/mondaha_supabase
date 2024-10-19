@@ -16,6 +16,7 @@ import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -487,7 +488,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
-                                                                                        if (_model.uploadedFileUrls.isEmpty)
+                                                                                        if (_model.uploadedLocalFiles1.isEmpty)
                                                                                           InkWell(
                                                                                             splashColor: Colors.transparent,
                                                                                             focusColor: Colors.transparent,
@@ -495,36 +496,17 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             highlightColor: Colors.transparent,
                                                                                             onTap: () async {
                                                                                               logFirebaseEvent('MODAL_ADD_MEMBROS_Container_we8qkkgn_ON_');
-                                                                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                                                                SnackBar(
-                                                                                                  content: Text(
-                                                                                                    'Foto(s) adicionada(s) com sucesso',
-                                                                                                    style: TextStyle(
-                                                                                                      color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                  duration: const Duration(milliseconds: 4000),
-                                                                                                  backgroundColor: FlutterFlowTheme.of(context).success,
-                                                                                                ),
-                                                                                              );
                                                                                               final selectedMedia = await selectMedia(
-                                                                                                storageFolderPath: 'membros',
                                                                                                 maxWidth: 100.00,
                                                                                                 maxHeight: 100.00,
                                                                                                 mediaSource: MediaSource.photoGallery,
                                                                                                 multiImage: true,
                                                                                               );
                                                                                               if (selectedMedia != null && selectedMedia.every((m) => validateFileFormat(m.storagePath, context))) {
-                                                                                                safeSetState(() => _model.isDataUploading = true);
+                                                                                                safeSetState(() => _model.isDataUploading1 = true);
                                                                                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
-                                                                                                var downloadUrls = <String>[];
                                                                                                 try {
-                                                                                                  showUploadMessage(
-                                                                                                    context,
-                                                                                                    'Uploading file...',
-                                                                                                    showLoading: true,
-                                                                                                  );
                                                                                                   selectedUploadedFiles = selectedMedia
                                                                                                       .map((m) => FFUploadedFile(
                                                                                                             name: m.storagePath.split('/').last,
@@ -534,24 +516,15 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                             blurHash: m.blurHash,
                                                                                                           ))
                                                                                                       .toList();
-
-                                                                                                  downloadUrls = await uploadSupabaseStorageFiles(
-                                                                                                    bucketName: 'uploads',
-                                                                                                    selectedFiles: selectedMedia,
-                                                                                                  );
                                                                                                 } finally {
-                                                                                                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                                                                                  _model.isDataUploading = false;
+                                                                                                  _model.isDataUploading1 = false;
                                                                                                 }
-                                                                                                if (selectedUploadedFiles.length == selectedMedia.length && downloadUrls.length == selectedMedia.length) {
+                                                                                                if (selectedUploadedFiles.length == selectedMedia.length) {
                                                                                                   safeSetState(() {
-                                                                                                    _model.uploadedLocalFiles = selectedUploadedFiles;
-                                                                                                    _model.uploadedFileUrls = downloadUrls;
+                                                                                                    _model.uploadedLocalFiles1 = selectedUploadedFiles;
                                                                                                   });
-                                                                                                  showUploadMessage(context, 'Success!');
                                                                                                 } else {
                                                                                                   safeSetState(() {});
-                                                                                                  showUploadMessage(context, 'Failed to upload data');
                                                                                                   return;
                                                                                                 }
                                                                                               }
@@ -605,7 +578,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             children: [
                                                                                               Builder(
                                                                                                 builder: (context) {
-                                                                                                  final fotosMembroPaths = _model.uploadedFileUrls.map((e) => e).toList().take(4).toList();
+                                                                                                  final fotosMembroPaths = _model.uploadedLocalFiles1.toList().take(4).toList();
 
                                                                                                   return SingleChildScrollView(
                                                                                                     scrollDirection: Axis.horizontal,
@@ -615,7 +588,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                       children: List.generate(fotosMembroPaths.length, (fotosMembroPathsIndex) {
                                                                                                         final fotosMembroPathsItem = fotosMembroPaths[fotosMembroPathsIndex];
                                                                                                         return Visibility(
-                                                                                                          visible: _model.uploadedFileUrls.isNotEmpty,
+                                                                                                          visible: _model.uploadedLocalFiles1.isNotEmpty,
                                                                                                           child: Align(
                                                                                                             alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                                             child: Container(
@@ -651,8 +624,8 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                               PageTransition(
                                                                                                                                 type: PageTransitionType.fade,
                                                                                                                                 child: FlutterFlowExpandedImageView(
-                                                                                                                                  image: Image.network(
-                                                                                                                                    fotosMembroPathsItem,
+                                                                                                                                  image: Image.memory(
+                                                                                                                                    _model.uploadedLocalFiles1[fotosMembroPathsIndex].bytes ?? Uint8List.fromList([]),
                                                                                                                                     fit: BoxFit.contain,
                                                                                                                                     errorBuilder: (context, error, stackTrace) => Image.asset(
                                                                                                                                       'assets/images/error_image.png',
@@ -660,19 +633,19 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                                     ),
                                                                                                                                   ),
                                                                                                                                   allowRotation: false,
-                                                                                                                                  tag: fotosMembroPathsItem,
+                                                                                                                                  tag: 'membroFotoTag',
                                                                                                                                   useHeroAnimation: true,
                                                                                                                                 ),
                                                                                                                               ),
                                                                                                                             );
                                                                                                                           },
                                                                                                                           child: Hero(
-                                                                                                                            tag: fotosMembroPathsItem,
+                                                                                                                            tag: 'membroFotoTag',
                                                                                                                             transitionOnUserGestures: true,
                                                                                                                             child: ClipRRect(
                                                                                                                               borderRadius: BorderRadius.circular(10.0),
-                                                                                                                              child: Image.network(
-                                                                                                                                fotosMembroPathsItem,
+                                                                                                                              child: Image.memory(
+                                                                                                                                _model.uploadedLocalFiles1[fotosMembroPathsIndex].bytes ?? Uint8List.fromList([]),
                                                                                                                                 width: 100.0,
                                                                                                                                 height: 100.0,
                                                                                                                                 fit: BoxFit.cover,
@@ -750,7 +723,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                         const SizedBox(width: 12.0),
                                                                                                         filterFn: (fotosMembroPathsIndex) {
                                                                                                           final fotosMembroPathsItem = fotosMembroPaths[fotosMembroPathsIndex];
-                                                                                                          return _model.uploadedFileUrls.isNotEmpty;
+                                                                                                          return _model.uploadedLocalFiles1.isNotEmpty;
                                                                                                         },
                                                                                                       ),
                                                                                                     ),
@@ -6632,14 +6605,103 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           ) ??
                                                           false;
                                                   if (confirmDialogResponse) {
+                                                    final selectedMedia =
+                                                        await selectMedia(
+                                                      storageFolderPath:
+                                                          'membros',
+                                                      maxWidth: 100.00,
+                                                      maxHeight: 100.00,
+                                                      mediaSource: MediaSource
+                                                          .photoGallery,
+                                                      multiImage: true,
+                                                    );
+                                                    if (selectedMedia != null &&
+                                                        selectedMedia.every((m) =>
+                                                            validateFileFormat(
+                                                                m.storagePath,
+                                                                context))) {
+                                                      safeSetState(() => _model
+                                                              .isDataUploading2 =
+                                                          true);
+                                                      var selectedUploadedFiles =
+                                                          <FFUploadedFile>[];
+
+                                                      var downloadUrls =
+                                                          <String>[];
+                                                      try {
+                                                        showUploadMessage(
+                                                          context,
+                                                          'Uploading file...',
+                                                          showLoading: true,
+                                                        );
+                                                        selectedUploadedFiles =
+                                                            selectedMedia
+                                                                .map((m) =>
+                                                                    FFUploadedFile(
+                                                                      name: m
+                                                                          .storagePath
+                                                                          .split(
+                                                                              '/')
+                                                                          .last,
+                                                                      bytes: m
+                                                                          .bytes,
+                                                                      height: m
+                                                                          .dimensions
+                                                                          ?.height,
+                                                                      width: m
+                                                                          .dimensions
+                                                                          ?.width,
+                                                                      blurHash:
+                                                                          m.blurHash,
+                                                                    ))
+                                                                .toList();
+
+                                                        downloadUrls =
+                                                            await uploadSupabaseStorageFiles(
+                                                          bucketName: 'uploads',
+                                                          selectedFiles:
+                                                              selectedMedia,
+                                                        );
+                                                      } finally {
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .hideCurrentSnackBar();
+                                                        _model.isDataUploading2 =
+                                                            false;
+                                                      }
+                                                      if (selectedUploadedFiles
+                                                                  .length ==
+                                                              selectedMedia
+                                                                  .length &&
+                                                          downloadUrls.length ==
+                                                              selectedMedia
+                                                                  .length) {
+                                                        safeSetState(() {
+                                                          _model.uploadedLocalFiles2 =
+                                                              selectedUploadedFiles;
+                                                          _model.uploadedFileUrls2 =
+                                                              downloadUrls;
+                                                        });
+                                                        showUploadMessage(
+                                                            context,
+                                                            'Success!');
+                                                      } else {
+                                                        safeSetState(() {});
+                                                        showUploadMessage(
+                                                            context,
+                                                            'Failed to upload data');
+                                                        return;
+                                                      }
+                                                    }
+
                                                     _model.retMembrosAdd =
                                                         await MembrosTable()
                                                             .insert({
                                                       'nome_completo': _model
                                                           .txtNomeCompletoTextController
                                                           .text,
-                                                      'fotos_path': _model
-                                                          .uploadedFileUrls,
+                                                      'fotos_path':
+                                                          _model.membrosPhotos,
                                                       'alcunha': _model
                                                           .membrosAlcunhas,
                                                       'cpf': _model

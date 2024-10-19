@@ -123,9 +123,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
 
-  bool isDataUploading = false;
-  List<FFUploadedFile> uploadedLocalFiles = [];
-  List<String> uploadedFileUrls = [];
+  bool isDataUploading1 = false;
+  List<FFUploadedFile> uploadedLocalFiles1 = [];
 
   // State field(s) for txt_nome_completo widget.
   FocusNode? txtNomeCompletoFocusNode;
@@ -314,6 +313,10 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController21;
   String? Function(BuildContext, String?)? textController21Validator;
+  bool isDataUploading2 = false;
+  List<FFUploadedFile> uploadedLocalFiles2 = [];
+  List<String> uploadedFileUrls2 = [];
+
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   MembrosRow? retMembrosAdd;
   // Stores action output result for [Backend Call - API (ProcedimentosADD)] action in Button widget.
