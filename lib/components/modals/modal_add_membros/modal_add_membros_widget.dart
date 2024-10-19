@@ -495,7 +495,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
-                                                                                        if (_model.membrosPhotos.isEmpty)
+                                                                                        if (_model.uploadedLocalFiles1.isEmpty)
                                                                                           InkWell(
                                                                                             splashColor: Colors.transparent,
                                                                                             focusColor: Colors.transparent,
@@ -603,7 +603,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                       children: List.generate(fotosMembroPaths.length, (fotosMembroPathsIndex) {
                                                                                                         final fotosMembroPathsItem = fotosMembroPaths[fotosMembroPathsIndex];
                                                                                                         return Visibility(
-                                                                                                          visible: _model.membrosPhotos.isNotEmpty,
+                                                                                                          visible: _model.uploadedLocalFiles1.isNotEmpty,
                                                                                                           child: Align(
                                                                                                             alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                                             child: Container(
@@ -640,7 +640,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                                 type: PageTransitionType.fade,
                                                                                                                                 child: FlutterFlowExpandedImageView(
                                                                                                                                   image: Image.memory(
-                                                                                                                                    _model.uploadedLocalFiles1[fotosMembroPathsIndex].bytes ?? Uint8List.fromList([]),
+                                                                                                                                    fotosMembroPathsItem.bytes ?? Uint8List.fromList([]),
                                                                                                                                     fit: BoxFit.contain,
                                                                                                                                     errorBuilder: (context, error, stackTrace) => Image.asset(
                                                                                                                                       'assets/images/error_image.png',
@@ -660,7 +660,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                             child: ClipRRect(
                                                                                                                               borderRadius: BorderRadius.circular(10.0),
                                                                                                                               child: Image.memory(
-                                                                                                                                _model.uploadedLocalFiles1[fotosMembroPathsIndex].bytes ?? Uint8List.fromList([]),
+                                                                                                                                fotosMembroPathsItem.bytes ?? Uint8List.fromList([]),
                                                                                                                                 width: 100.0,
                                                                                                                                 height: 100.0,
                                                                                                                                 fit: BoxFit.cover,
@@ -711,19 +711,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                             _model.isDataUploading1 = false;
                                                                                                                             _model.uploadedLocalFiles1 = [];
                                                                                                                           });
-
-                                                                                                                          ScaffoldMessenger.of(context).showSnackBar(
-                                                                                                                            SnackBar(
-                                                                                                                              content: Text(
-                                                                                                                                'Foto excluida com sucesso!',
-                                                                                                                                style: TextStyle(
-                                                                                                                                  color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                                ),
-                                                                                                                              ),
-                                                                                                                              duration: const Duration(milliseconds: 4000),
-                                                                                                                              backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                                                                            ),
-                                                                                                                          );
                                                                                                                         }
                                                                                                                       },
                                                                                                                       child: Icon(
@@ -742,7 +729,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                         const SizedBox(width: 12.0),
                                                                                                         filterFn: (fotosMembroPathsIndex) {
                                                                                                           final fotosMembroPathsItem = fotosMembroPaths[fotosMembroPathsIndex];
-                                                                                                          return _model.membrosPhotos.isNotEmpty;
+                                                                                                          return _model.uploadedLocalFiles1.isNotEmpty;
                                                                                                         },
                                                                                                       ),
                                                                                                     ),
