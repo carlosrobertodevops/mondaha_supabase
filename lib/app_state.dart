@@ -53,6 +53,9 @@ class FFAppState extends ChangeNotifier {
               .toList() ??
           _AppStateProcessos;
     });
+    _safeInit(() {
+      _webbarminimal = prefs.getBool('ff_webbarminimal') ?? _webbarminimal;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -62,7 +65,7 @@ class FFAppState extends ChangeNotifier {
 
   late SharedPreferences prefs;
 
-  String _AGENCIA = 'CHEGII/SSPAL';
+  String _AGENCIA = 'CHEGII';
   String get AGENCIA => _AGENCIA;
   set AGENCIA(String value) {
     _AGENCIA = value;
@@ -159,6 +162,13 @@ class FFAppState extends ChangeNotifier {
     AppStateProcessos.insert(index, value);
     prefs.setStringList('ff_AppStateProcessos',
         _AppStateProcessos.map((x) => x.serialize()).toList());
+  }
+
+  bool _webbarminimal = false;
+  bool get webbarminimal => _webbarminimal;
+  set webbarminimal(bool value) {
+    _webbarminimal = value;
+    prefs.setBool('ff_webbarminimal', value);
   }
 }
 
