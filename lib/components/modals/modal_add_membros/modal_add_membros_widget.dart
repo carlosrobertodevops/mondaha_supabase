@@ -692,7 +692,8 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                             ) ??
                                                                                                                             false;
                                                                                                                         if (confirmDialogResponse) {
-                                                                                                                          await deleteSupabaseFileFromPublicUrl(fotosMembroPathsIndex.toString());
+                                                                                                                          _model.removeAtIndexFromMembrosPhotos(fotosMembroPathsIndex);
+                                                                                                                          safeSetState(() {});
                                                                                                                           ScaffoldMessenger.of(context).showSnackBar(
                                                                                                                             SnackBar(
                                                                                                                               content: Text(
