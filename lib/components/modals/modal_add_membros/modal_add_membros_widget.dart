@@ -528,6 +528,9 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                   return;
                                                                                                 }
                                                                                               }
+
+                                                                                              _model.addToMembrosPhotos((_model.uploadedLocalFiles1.isNotEmpty).toString());
+                                                                                              safeSetState(() {});
                                                                                             },
                                                                                             child: Container(
                                                                                               width: 100.0,
@@ -548,7 +551,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                     Align(
                                                                                                       alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                                       child: Icon(
-                                                                                                        Icons.arrow_back,
+                                                                                                        Icons.arrow_forward_rounded,
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         size: 24.0,
                                                                                                       ),
@@ -578,7 +581,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             children: [
                                                                                               Builder(
                                                                                                 builder: (context) {
-                                                                                                  final fotosMembroPaths = _model.uploadedLocalFiles1.toList().take(4).toList();
+                                                                                                  final fotosMembroPaths = _model.membrosPhotos.toList().take(4).toList();
 
                                                                                                   return SingleChildScrollView(
                                                                                                     scrollDirection: Axis.horizontal,
@@ -694,11 +697,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                         if (confirmDialogResponse) {
                                                                                                                           _model.removeAtIndexFromMembrosPhotos(fotosMembroPathsIndex);
                                                                                                                           safeSetState(() {});
-                                                                                                                          safeSetState(() {
-                                                                                                                            _model.isDataUploading1 = false;
-                                                                                                                            _model.uploadedLocalFiles1 = [];
-                                                                                                                          });
-
                                                                                                                           ScaffoldMessenger.of(context).showSnackBar(
                                                                                                                             SnackBar(
                                                                                                                               content: Text(
