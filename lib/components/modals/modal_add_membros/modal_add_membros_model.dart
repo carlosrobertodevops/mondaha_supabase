@@ -113,11 +113,14 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   ///  State fields for stateful widgets in this component.
 
+  final formKey3 = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
-  final formKey1 = GlobalKey<FormState>();
+  final formKey8 = GlobalKey<FormState>();
   final formKey5 = GlobalKey<FormState>();
   final formKey4 = GlobalKey<FormState>();
-  final formKey3 = GlobalKey<FormState>();
+  final formKey7 = GlobalKey<FormState>();
+  final formKey6 = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -288,8 +291,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   String? ddwProcessoRegimeValue;
   FormFieldController<String>? ddwProcessoRegimeValueController;
   // State field(s) for ddw_processo_situacao_reu widget.
-  int? ddwProcessoSituacaoReuValue;
-  FormFieldController<int>? ddwProcessoSituacaoReuValueController;
+  String? ddwProcessoSituacaoReuValue;
+  FormFieldController<String>? ddwProcessoSituacaoReuValueController;
   // State field(s) for txt_membro_atuacao widget.
   final txtMembroAtuacaoKey = GlobalKey();
   FocusNode? txtMembroAtuacaoFocusNode;
@@ -312,19 +315,19 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
       choiceChipsValidacoesValueController?.value;
   set choiceChipsValidacoesValues(List<String>? val) =>
       choiceChipsValidacoesValueController?.value = val;
-  // State field(s) for TextField widget.
-  final textFieldKey = GlobalKey();
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController21;
-  String? textFieldSelectedOption;
-  String? Function(BuildContext, String?)? textController21Validator;
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
-
+  // State field(s) for txt_validacoes_observacoes widget.
+  final txtValidacoesObservacoesKey = GlobalKey();
+  FocusNode? txtValidacoesObservacoesFocusNode;
+  TextEditingController? txtValidacoesObservacoesTextController;
+  String? txtValidacoesObservacoesSelectedOption;
+  String? Function(BuildContext, String?)?
+      txtValidacoesObservacoesTextControllerValidator;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   MembrosRow? retMembrosAdd;
+  bool isDataUploading2 = false;
+  List<FFUploadedFile> uploadedLocalFiles2 = [];
+  List<String> uploadedFileUrls2 = [];
+
   // Stores action output result for [Backend Call - API (ProcedimentosADD)] action in Button widget.
   ApiCallResponse? apiResultProcedimentos;
   // Stores action output result for [Backend Call - API (ProcessosADD)] action in Button widget.
@@ -391,7 +394,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
     txtMembroAlertaFocusNode?.dispose();
 
-    textFieldFocusNode?.dispose();
+    txtValidacoesObservacoesFocusNode?.dispose();
   }
 
   /// Additional helper methods.

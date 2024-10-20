@@ -1778,6 +1778,70 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Father\'s Situation',
       'pt': '',
     },
+    'qjj69k8u': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'o5on3ke1': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'ym3akpkn': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'n2o48na0': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'v395se51': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'ig5z8pao': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'wb25vyk9': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'swo0b7np': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'nfcv23yd': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'm3wl1tny': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'hmz6g9kq': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'dl0iqn1k': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'aajuf6zo': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'kb47qv7h': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    '2wgvagjr': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'f7drazjt': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
     'nvxntirq': {
       'en': 'History',
       'pt': 'História',
@@ -2178,6 +2242,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zgtd0ndz': {
       'en': 'Search...',
+      'pt': '',
+    },
+    'qoe55ylu': {
+      'en': '',
       'pt': '',
     },
     'tn9os876': {
