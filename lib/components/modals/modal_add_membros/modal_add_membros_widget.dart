@@ -6839,57 +6839,37 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           ) ??
                                                           false;
                                                   if (confirmDialogResponse) {
-                                                    final selectedMedia =
-                                                        await selectMedia(
-                                                      storageFolderPath:
-                                                          'membros',
-                                                      maxWidth: 100.00,
-                                                      maxHeight: 100.00,
-                                                      mediaSource: MediaSource
-                                                          .photoGallery,
-                                                      multiImage: true,
-                                                    );
-                                                    if (selectedMedia != null &&
-                                                        selectedMedia.every((m) =>
-                                                            validateFileFormat(
-                                                                m.storagePath,
-                                                                context))) {
+                                                    {
                                                       safeSetState(() => _model
                                                               .isDataUploading2 =
                                                           true);
                                                       var selectedUploadedFiles =
                                                           <FFUploadedFile>[];
-
+                                                      var selectedMedia =
+                                                          <SelectedFile>[];
                                                       var downloadUrls =
                                                           <String>[];
                                                       try {
-                                                        showUploadMessage(
-                                                          context,
-                                                          'Uploading file...',
-                                                          showLoading: true,
+                                                        selectedUploadedFiles = _model
+                                                                .uploadedLocalFiles1[
+                                                                    _model
+                                                                        .uploadedLocalFiles1
+                                                                        .length]
+                                                                .bytes!
+                                                                .isNotEmpty
+                                                            ? [
+                                                                _model.uploadedLocalFiles1[
+                                                                    _model
+                                                                        .uploadedLocalFiles1
+                                                                        .length]
+                                                              ]
+                                                            : <FFUploadedFile>[];
+                                                        selectedMedia =
+                                                            selectedFilesFromUploadedFiles(
+                                                          selectedUploadedFiles,
+                                                          storageFolderPath:
+                                                              'membros',
                                                         );
-                                                        selectedUploadedFiles =
-                                                            selectedMedia
-                                                                .map((m) =>
-                                                                    FFUploadedFile(
-                                                                      name: m
-                                                                          .storagePath
-                                                                          .split(
-                                                                              '/')
-                                                                          .last,
-                                                                      bytes: m
-                                                                          .bytes,
-                                                                      height: m
-                                                                          .dimensions
-                                                                          ?.height,
-                                                                      width: m
-                                                                          .dimensions
-                                                                          ?.width,
-                                                                      blurHash:
-                                                                          m.blurHash,
-                                                                    ))
-                                                                .toList();
-
                                                         downloadUrls =
                                                             await uploadSupabaseStorageFiles(
                                                           bucketName: 'uploads',
@@ -6897,9 +6877,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                               selectedMedia,
                                                         );
                                                       } finally {
-                                                        ScaffoldMessenger.of(
-                                                                context)
-                                                            .hideCurrentSnackBar();
                                                         _model.isDataUploading2 =
                                                             false;
                                                       }
@@ -6911,19 +6888,15 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                               selectedMedia
                                                                   .length) {
                                                         safeSetState(() {
-                                                          _model.uploadedLocalFiles2 =
-                                                              selectedUploadedFiles;
-                                                          _model.uploadedFileUrls2 =
-                                                              downloadUrls;
+                                                          _model.uploadedLocalFile2 =
+                                                              selectedUploadedFiles
+                                                                  .first;
+                                                          _model.uploadedFileUrl2 =
+                                                              downloadUrls
+                                                                  .first;
                                                         });
-                                                        showUploadMessage(
-                                                            context,
-                                                            'Success!');
                                                       } else {
                                                         safeSetState(() {});
-                                                        showUploadMessage(
-                                                            context,
-                                                            'Failed to upload data');
                                                         return;
                                                       }
                                                     }
@@ -6934,8 +6907,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                       'nome_completo': _model
                                                           .txtNomeCompletoTextController
                                                           .text,
-                                                      'fotos_path':
-                                                          _model.membrosPhotos,
+                                                      'fotos_path': [],
                                                       'alcunha': _model
                                                           .membrosAlcunhas,
                                                       'cpf': _model

@@ -319,8 +319,9 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   String? textFieldSelectedOption;
   String? Function(BuildContext, String?)? textController21Validator;
   bool isDataUploading2 = false;
-  List<FFUploadedFile> uploadedLocalFiles2 = [];
-  List<String> uploadedFileUrls2 = [];
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
 
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   MembrosRow? retMembrosAdd;
