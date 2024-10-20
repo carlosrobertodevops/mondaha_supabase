@@ -117,4 +117,18 @@ class MembrosRow extends SupabaseDataRow {
       getListField<String>('tres_ultimo_locais_preso');
   set tresUltimoLocaisPreso(List<String>? value) =>
       setListField<String>('tres_ultimo_locais_preso', value);
+
+  bool? get alerta => getField<bool>('alerta');
+  set alerta(bool? value) => setField<bool>('alerta', value);
+
+  String? get atuacaoCrime => getField<String>('atuacao_crime');
+  set atuacaoCrime(String? value) => setField<String>('atuacao_crime', value);
+
+  double? get validacaoPrecentual => getField<double>('validacao_precentual');
+  set validacaoPrecentual(double? value) =>
+      setField<double>('validacao_precentual', value);
+
+  List<String> get validacoes => getListField<String>('validacoes');
+  set validacoes(List<String>? value) =>
+      setListField<String>('validacoes', value);
 }

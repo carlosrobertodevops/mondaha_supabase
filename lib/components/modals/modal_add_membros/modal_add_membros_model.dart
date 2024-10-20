@@ -180,8 +180,10 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   String? ddwNivelInstrucaoValue;
   FormFieldController<String>? ddwNivelInstrucaoValueController;
   // State field(s) for txt_membros_enderecos_add widget.
+  final txtMembrosEnderecosAddKey = GlobalKey();
   FocusNode? txtMembrosEnderecosAddFocusNode;
   TextEditingController? txtMembrosEnderecosAddTextController;
+  String? txtMembrosEnderecosAddSelectedOption;
   String? Function(BuildContext, String?)?
       txtMembrosEnderecosAddTextControllerValidator;
   // State field(s) for rbNacionalidade widget.
@@ -304,14 +306,17 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   String? txtMembroAlertaSelectedOption;
   String? Function(BuildContext, String?)?
       txtMembroAlertaTextControllerValidator;
-  // State field(s) for ChoiceChips widget.
-  FormFieldController<List<String>>? choiceChipsValueController;
-  List<String>? get choiceChipsValues => choiceChipsValueController?.value;
-  set choiceChipsValues(List<String>? val) =>
-      choiceChipsValueController?.value = val;
+  // State field(s) for ChoiceChipsValidacoes widget.
+  FormFieldController<List<String>>? choiceChipsValidacoesValueController;
+  List<String>? get choiceChipsValidacoesValues =>
+      choiceChipsValidacoesValueController?.value;
+  set choiceChipsValidacoesValues(List<String>? val) =>
+      choiceChipsValidacoesValueController?.value = val;
   // State field(s) for TextField widget.
+  final textFieldKey = GlobalKey();
   FocusNode? textFieldFocusNode;
   TextEditingController? textController21;
+  String? textFieldSelectedOption;
   String? Function(BuildContext, String?)? textController21Validator;
   bool isDataUploading2 = false;
   List<FFUploadedFile> uploadedLocalFiles2 = [];
@@ -355,7 +360,6 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
     txtFiliacaoPaiTextController?.dispose();
 
     txtMembrosEnderecosAddFocusNode?.dispose();
-    txtMembrosEnderecosAddTextController?.dispose();
 
     txtMembroHistoricoFocusNode?.dispose();
 
@@ -387,7 +391,6 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
     txtMembroAlertaFocusNode?.dispose();
 
     textFieldFocusNode?.dispose();
-    textController21?.dispose();
   }
 
   /// Additional helper methods.

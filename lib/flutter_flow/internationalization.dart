@@ -1529,7 +1529,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // modal_add_membros
   {
-    'rgboq48h': {
+    'ioxmm05s': {
       'en': 'Add Member',
       'pt': 'Adicionar membro',
     },
@@ -1545,6 +1545,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'n7bo970y': {
       'en': 'Add Photos',
       'pt': 'Adicionar fotos',
+    },
+    'szzdveit': {
+      'en': 'Apagar Fotos',
+      'pt': 'Apagar Fotos',
     },
     'npcbcpl9': {
       'en': 'Nome completo',
@@ -1786,6 +1790,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Endereço Completo',
       'pt': 'Endereço Completo',
     },
+    '8j1rka5p': {
+      'en': 'Option 1',
+      'pt': '',
+    },
     'ob87x68k': {
       'en': 'Nascido no Brasil',
       'pt': 'Nascido no Brasil',
@@ -1868,7 +1876,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Batismo',
       'pt': 'Batismo',
     },
-    '8j1rka5p': {
+    '9xq1nz54': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -2236,7 +2244,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Atuação no Crime',
       'pt': 'Atuação no Crime',
     },
-    '9xq1nz54': {
+    'buogb0wh': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -2256,7 +2264,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Alerta',
       'pt': 'Alerta',
     },
-    'buogb0wh': {
+    '18a7a4fk': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -2265,12 +2273,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Validação',
     },
     'hg8tsf0e': {
-      'en': 'Percentual  de validação dos dados',
-      'pt': 'Percentual  de validação dos dados',
+      'en': 'Percentual  de validações dos dados',
+      'pt': 'Percentual  de validações dos dados',
     },
     'z911x2kd': {
-      'en': 'Como foram validados os dados e informações',
-      'pt': 'Como foram validados os dados e informações',
+      'en': 'Como foram validados os dados e informações ?',
+      'pt': 'Como foram validados os dados e informações ?',
     },
     'udriebg5': {
       'en': 'Validação Local ou área de atuação',
@@ -2285,16 +2293,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Apenas através de fontes restristas',
     },
     'si112iv5': {
-      'en': '',
-      'pt': '',
-    },
-    'ucqyj1ot': {
       'en': 'Através de outra(s) agência de  inteligência',
       'pt': 'Através de outra(s) agência de  inteligência',
     },
-    'qd88nb62': {
+    'ucqyj1ot': {
       'en': 'Atráves de  outro(s) órgãos como : PP, MP e etc.',
       'pt': 'Atráves de  outro(s) órgãos como : PP, MP e etc.',
+    },
+    'qd88nb62': {
+      'en': 'Apenas  através de informe(s) ',
+      'pt': 'Apenas  através de informe(s) ',
     },
     'gq42kahm': {
       'en': 'Dentro de um Estabelecimento Prisional Estadual',
@@ -2305,16 +2313,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Dentro de um Estabelecimento Prisional Federal',
     },
     '1i2vccnc': {
-      'en': 'Apenas  através de informes ',
-      'pt': 'Apenas  através de informes ',
+      'en': 'Apenas através de informante(s)',
+      'pt': 'Apenas através de informante(s)',
     },
     'zcj6hpny': {
       'en': 'Apenas através de Coolaborador(es)',
       'pt': 'Apenas através de Coolaborador(es)',
     },
     'v0fvpqeq': {
-      'en': 'Apenas através de informante(s)',
-      'pt': 'Apenas através de informante(s)',
+      'en': '',
+      'pt': '',
     },
     'hu7rwf8m': {
       'en': 'Observação(ões)',
@@ -2323,6 +2331,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '0a8jmcbn': {
       'en': 'Observação(ões)',
       'pt': 'Observação(ões)',
+    },
+    'taqpyut0': {
+      'en': 'Option 1',
+      'pt': '',
     },
     'ld0rt7j2': {
       'en': 'Relations',
@@ -2738,6 +2750,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'vu30hinr': {
       'en': 'Delete',
       'pt': 'Excluir',
+    },
+  },
+  // modal_app_bar
+  {
+    'qxwj6eeq': {
+      'en': 'Add Member',
+      'pt': 'Adicionar membro',
     },
   },
   // Miscellaneous
