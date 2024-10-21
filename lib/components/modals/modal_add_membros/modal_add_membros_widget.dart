@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -2432,7 +2433,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     controller: _model.ddwMunicipioValueController ??= FormFieldController<int>(
                                                                                       _model.ddwMunicipioValue ??= 0,
                                                                                     ),
-                                                                                    options: List<int>.from(ddwMunicipioMunicipiosRowList.map((e) => e.municipioId).withoutNulls.toList()),
+                                                                                    options: List<int>.from(ddwMunicipioMunicipiosRowList.map((e) => e.id).toList()),
                                                                                     optionLabels: ddwMunicipioMunicipiosRowList.map((e) => e.nome).withoutNulls.toList(),
                                                                                     onChanged: (val) => safeSetState(() => _model.ddwMunicipioValue = val),
                                                                                     height: 60.0,
@@ -7084,6 +7085,56 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           ) ??
                                                           false;
                                                   if (confirmDialogResponse) {
+                                                    {
+                                                      safeSetState(() => _model
+                                                              .isDataUploading2 =
+                                                          true);
+                                                      var selectedUploadedFiles =
+                                                          <FFUploadedFile>[];
+                                                      var selectedMedia =
+                                                          <SelectedFile>[];
+                                                      var downloadUrls =
+                                                          <String>[];
+                                                      try {
+                                                        selectedUploadedFiles =
+                                                            _model
+                                                                .uploadedLocalFiles1;
+                                                        selectedMedia =
+                                                            selectedFilesFromUploadedFiles(
+                                                          selectedUploadedFiles,
+                                                          storageFolderPath:
+                                                              'membros',
+                                                          isMultiData: true,
+                                                        );
+                                                        downloadUrls =
+                                                            await uploadSupabaseStorageFiles(
+                                                          bucketName: 'uploads',
+                                                          selectedFiles:
+                                                              selectedMedia,
+                                                        );
+                                                      } finally {
+                                                        _model.isDataUploading2 =
+                                                            false;
+                                                      }
+                                                      if (selectedUploadedFiles
+                                                                  .length ==
+                                                              selectedMedia
+                                                                  .length &&
+                                                          downloadUrls.length ==
+                                                              selectedMedia
+                                                                  .length) {
+                                                        safeSetState(() {
+                                                          _model.uploadedLocalFiles2 =
+                                                              selectedUploadedFiles;
+                                                          _model.uploadedFileUrls2 =
+                                                              downloadUrls;
+                                                        });
+                                                      } else {
+                                                        safeSetState(() {});
+                                                        return;
+                                                      }
+                                                    }
+
                                                     _model.retMembrosAdd =
                                                         await MembrosTable()
                                                             .insert({
@@ -7178,87 +7229,190 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           .choiceChipsValidacoesValues,
                                                     });
                                                     shouldSetState = true;
-                                                    if (_model.retMembrosAdd
-                                                            ?.membroId !=
-                                                        0) {
-                                                      {
-                                                        safeSetState(() => _model
-                                                                .isDataUploading2 =
-                                                            true);
-                                                        var selectedUploadedFiles =
-                                                            <FFUploadedFile>[];
-                                                        var selectedMedia =
-                                                            <SelectedFile>[];
-                                                        var downloadUrls =
-                                                            <String>[];
-                                                        try {
-                                                          selectedUploadedFiles =
-                                                              _model
-                                                                  .uploadedLocalFiles1;
-                                                          selectedMedia =
-                                                              selectedFilesFromUploadedFiles(
-                                                            selectedUploadedFiles,
-                                                            storageFolderPath:
-                                                                'membros',
-                                                            isMultiData: true,
-                                                          );
-                                                          downloadUrls =
-                                                              await uploadSupabaseStorageFiles(
-                                                            bucketName:
-                                                                'uploads',
-                                                            selectedFiles:
-                                                                selectedMedia,
-                                                          );
-                                                        } finally {
-                                                          _model.isDataUploading2 =
-                                                              false;
-                                                        }
-                                                        if (selectedUploadedFiles
-                                                                    .length ==
-                                                                selectedMedia
-                                                                    .length &&
-                                                            downloadUrls
-                                                                    .length ==
-                                                                selectedMedia
-                                                                    .length) {
-                                                          safeSetState(() {
-                                                            _model.uploadedLocalFiles2 =
-                                                                selectedUploadedFiles;
-                                                            _model.uploadedFileUrls2 =
-                                                                downloadUrls;
-                                                          });
-                                                        } else {
+                                                    await Future.delayed(
+                                                        const Duration(
+                                                            milliseconds: 500));
+                                                    await Future.wait([
+                                                      Future(() async {
+                                                        if (_model
+                                                                .membrosProcedimentos.isNotEmpty) {
+                                                          _model.membrosProcedimentosCount =
+                                                              -1;
                                                           safeSetState(() {});
+                                                          while (_model
+                                                                  .membrosProcedimentosCount! <=
+                                                              _model
+                                                                  .membrosProcedimentos
+                                                                  .length) {
+                                                            _model.membrosProcedimentosCount =
+                                                                _model.membrosProcedimentosCount! +
+                                                                    1;
+                                                            safeSetState(() {});
+                                                            _model.apiResultProcedimentos =
+                                                                await ProcedimentosADDCall
+                                                                    .call(
+                                                              membroId: _model
+                                                                  .retMembrosAdd
+                                                                  ?.membroId
+                                                                  .toString(),
+                                                              procedimentoNo: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .procedimentoNo,
+                                                              unidade: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .unidade,
+                                                              procedimentoTipo: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .procedimentoTipo,
+                                                              crime: _model
+                                                                  .membrosProcedimentos[
+                                                                      _model
+                                                                          .membrosProcedimentosCount!]
+                                                                  .crime,
+                                                              data:
+                                                                  dateTimeFormat(
+                                                                "d/M/y",
+                                                                _model
+                                                                    .membrosProcedimentos[
+                                                                        _model
+                                                                            .membrosProcedimentosCount!]
+                                                                    .data,
+                                                                locale: FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode,
+                                                              ),
+                                                            );
+
+                                                            shouldSetState =
+                                                                true;
+                                                            if ((_model
+                                                                    .apiResultProcedimentos
+                                                                    ?.succeeded ??
+                                                                true)) {
+                                                              ScaffoldMessenger
+                                                                      .of(context)
+                                                                  .showSnackBar(
+                                                                SnackBar(
+                                                                  content: Text(
+                                                                    'Dados dos procedimentos salvos !',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                  ),
+                                                                  duration: const Duration(
+                                                                      milliseconds:
+                                                                          4000),
+                                                                  backgroundColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                ),
+                                                              );
+                                                            }
+                                                          }
+                                                        } else {
+                                                          if (shouldSetState) {
+                                                            safeSetState(() {});
+                                                          }
                                                           return;
                                                         }
-                                                      }
-                                                    } else {
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: const Text(
-                                                                'ERRO !!!'),
-                                                            content: const Text(
-                                                                'Dados não foram salvos !!! Revise os dados !!!'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    const Text('Ok'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        },
-                                                      );
-                                                      if (shouldSetState) {
-                                                        safeSetState(() {});
-                                                      }
-                                                      return;
-                                                    }
+                                                      }),
+                                                      Future(() async {
+                                                        if (_model
+                                                                .membrosProcessos.isNotEmpty) {
+                                                          _model.membrosProcessosCount =
+                                                              -1;
+                                                          safeSetState(() {});
+                                                          while (_model
+                                                                  .membrosProcessosCount! <=
+                                                              _model
+                                                                  .membrosProcessos
+                                                                  .length) {
+                                                            _model.membrosProcessosCount =
+                                                                _model.membrosProcessosCount! +
+                                                                    1;
+                                                            safeSetState(() {});
+                                                            _model.apiResultProcessos =
+                                                                await ProcessosADDCall
+                                                                    .call(
+                                                              membroId: _model
+                                                                  .retMembrosAdd
+                                                                  ?.membroId
+                                                                  .toString(),
+                                                              acaoPenalNo: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .noAcaoPenal,
+                                                              vara: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .vara,
+                                                              situacaoJuridica: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .situacaoJuridica,
+                                                              regime: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .regime,
+                                                              situacaoReu: _model
+                                                                  .membrosProcessos[
+                                                                      _model
+                                                                          .membrosProcessosCount!]
+                                                                  .situacaoReu,
+                                                            );
+
+                                                            shouldSetState =
+                                                                true;
+                                                            if ((_model
+                                                                    .apiResultProcessos
+                                                                    ?.succeeded ??
+                                                                true)) {
+                                                              ScaffoldMessenger
+                                                                      .of(context)
+                                                                  .showSnackBar(
+                                                                SnackBar(
+                                                                  content: Text(
+                                                                    'Dados dos processos salvos !',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                  ),
+                                                                  duration: const Duration(
+                                                                      milliseconds:
+                                                                          4000),
+                                                                  backgroundColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                ),
+                                                              );
+                                                            }
+                                                          }
+                                                        } else {
+                                                          if (shouldSetState) {
+                                                            safeSetState(() {});
+                                                          }
+                                                          return;
+                                                        }
+                                                      }),
+                                                    ]);
                                                   } else {
                                                     if (shouldSetState) {
                                                       safeSetState(() {});

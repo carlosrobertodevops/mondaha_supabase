@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -323,11 +324,16 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   String? txtValidacoesObservacoesSelectedOption;
   String? Function(BuildContext, String?)?
       txtValidacoesObservacoesTextControllerValidator;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  MembrosRow? retMembrosAdd;
   bool isDataUploading2 = false;
   List<FFUploadedFile> uploadedLocalFiles2 = [];
   List<String> uploadedFileUrls2 = [];
+
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  MembrosRow? retMembrosAdd;
+  // Stores action output result for [Backend Call - API (ProcedimentosADD)] action in Button widget.
+  ApiCallResponse? apiResultProcedimentos;
+  // Stores action output result for [Backend Call - API (ProcessosADD)] action in Button widget.
+  ApiCallResponse? apiResultProcessos;
 
   @override
   void initState(BuildContext context) {}
