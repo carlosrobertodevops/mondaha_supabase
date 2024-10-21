@@ -7059,7 +7059,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
                                                                 title: const Text(
-                                                                    'Salvar dados do Membro'),
+                                                                    'Salvar dados'),
                                                                 content: const Text(
                                                                     'Deseja salvar os  dados ?'),
                                                                 actions: [
@@ -7253,8 +7253,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                     .call(
                                                               membroId: _model
                                                                   .retMembrosAdd
-                                                                  ?.membroId
-                                                                  .toString(),
+                                                                  ?.membroId,
                                                               procedimentoNo: _model
                                                                   .membrosProcedimentos[
                                                                       _model
@@ -7297,6 +7296,9 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                 true)) {
                                                               ScaffoldMessenger
                                                                       .of(context)
+                                                                  .clearSnackBars();
+                                                              ScaffoldMessenger
+                                                                      .of(context)
                                                                   .showSnackBar(
                                                                 SnackBar(
                                                                   content: Text(
@@ -7310,11 +7312,11 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   ),
                                                                   duration: const Duration(
                                                                       milliseconds:
-                                                                          4000),
+                                                                          2000),
                                                                   backgroundColor:
                                                                       FlutterFlowTheme.of(
                                                                               context)
-                                                                          .secondary,
+                                                                          .success,
                                                                 ),
                                                               );
                                                             }
@@ -7346,8 +7348,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                     .call(
                                                               membroId: _model
                                                                   .retMembrosAdd
-                                                                  ?.membroId
-                                                                  .toString(),
+                                                                  ?.membroId,
                                                               acaoPenalNo: _model
                                                                   .membrosProcessos[
                                                                       _model
@@ -7383,6 +7384,9 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                 true)) {
                                                               ScaffoldMessenger
                                                                       .of(context)
+                                                                  .clearSnackBars();
+                                                              ScaffoldMessenger
+                                                                      .of(context)
                                                                   .showSnackBar(
                                                                 SnackBar(
                                                                   content: Text(
@@ -7400,7 +7404,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   backgroundColor:
                                                                       FlutterFlowTheme.of(
                                                                               context)
-                                                                          .secondary,
+                                                                          .success,
                                                                 ),
                                                               );
                                                             }
@@ -7413,6 +7417,26 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                         }
                                                       }),
                                                     ]);
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return AlertDialog(
+                                                          title: const Text(
+                                                              'Adicionar Membros'),
+                                                          content: const Text(
+                                                              'Dados dos membros adicionados com sucesso !'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: const Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    );
                                                   } else {
                                                     if (shouldSetState) {
                                                       safeSetState(() {});

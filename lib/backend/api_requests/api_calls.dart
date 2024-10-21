@@ -106,7 +106,7 @@ class LoginNoSUPABASECall {
 
 class ProcedimentosADDCall {
   static Future<ApiCallResponse> call({
-    String? membroId = '',
+    int? membroId,
     String? procedimentoNo = '',
     String? unidade = '',
     String? procedimentoTipo = '',
@@ -148,7 +148,7 @@ class ProcedimentosADDCall {
 
 class ProcessosADDCall {
   static Future<ApiCallResponse> call({
-    String? membroId = '',
+    int? membroId,
     String? acaoPenalNo = '',
     String? vara = '',
     String? situacaoJuridica = '',
