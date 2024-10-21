@@ -111,6 +111,8 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   int? membrosProcessosCount = -1;
 
+  DateTime? dataProcedimento;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey3 = GlobalKey<FormState>();

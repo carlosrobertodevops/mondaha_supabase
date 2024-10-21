@@ -2253,12 +2253,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Nenhuma das opções',
     },
     '6f4ajcmk': {
-      'en': 'Fechado',
-      'pt': '',
+      'en': 'Preso',
+      'pt': 'Preso',
     },
     'wjr32pf6': {
-      'en': 'Semi-aberto',
-      'pt': '',
+      'en': 'Solto',
+      'pt': 'Solto',
     },
     'whrvcs43': {
       'en': 'Situação réu',

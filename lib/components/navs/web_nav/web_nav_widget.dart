@@ -90,7 +90,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   width: double.infinity,
                   height: double.infinity,
                   constraints: const BoxConstraints(
-                    minWidth: 280.0,
+                    minWidth: 250.0,
                     minHeight: double.infinity,
                     maxWidth: 250.0,
                     maxHeight: double.infinity,
