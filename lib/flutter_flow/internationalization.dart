@@ -2134,6 +2134,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Data do Procedimento',
       'pt': 'Data do Procedimento',
     },
+    'qgcnm0hf': {
+      'en': '',
+      'pt': '',
+    },
     '5mm0nr5l': {
       'en': 'Limpar procedimentos abaixo',
       'pt': 'Limpar',
@@ -2141,6 +2145,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '8pxnhql5': {
       'en': 'Adicionar',
       'pt': 'Adicionar',
+    },
+    'i2sj5hwa': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'lerrd27b': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'jgdeykjo': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'wkwcrq40': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
     },
     'g3vpoxn0': {
       'en': 'Procedimento',

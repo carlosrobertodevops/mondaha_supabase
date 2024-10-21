@@ -125,13 +125,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
-          _model.txtProcedimentoDataTextController?.text = dateTimeFormat(
-            "d/M/y",
-            _model.dataProcedimento,
-            locale: FFLocalizations.of(context).languageCode,
-          );
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -4215,6 +4209,57 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 const Duration(milliseconds: 2000),
                                                                                 () => safeSetState(() {}),
                                                                               ),
+                                                                              onFieldSubmitted: (_) async {
+                                                                                logFirebaseEvent('MODAL_ADD_MEMBROS_txt_procedimento_data_');
+                                                                                final datePicked1Date = await showDatePicker(
+                                                                                  context: context,
+                                                                                  initialDate: getCurrentTimestamp,
+                                                                                  firstDate: DateTime(1900),
+                                                                                  lastDate: getCurrentTimestamp,
+                                                                                  builder: (context, child) {
+                                                                                    return wrapInMaterialDatePickerTheme(
+                                                                                      context,
+                                                                                      child!,
+                                                                                      headerBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                      headerForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                      headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
+                                                                                            fontFamily: 'Outfit',
+                                                                                            fontSize: 32.0,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                          ),
+                                                                                      pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                      pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                      selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                      selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                      actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                      iconSize: 24.0,
+                                                                                    );
+                                                                                  },
+                                                                                );
+
+                                                                                if (datePicked1Date != null) {
+                                                                                  safeSetState(() {
+                                                                                    _model.datePicked1 = DateTime(
+                                                                                      datePicked1Date.year,
+                                                                                      datePicked1Date.month,
+                                                                                      datePicked1Date.day,
+                                                                                    );
+                                                                                  });
+                                                                                }
+                                                                                await Future.wait([
+                                                                                  Future(() async {
+                                                                                    safeSetState(() {
+                                                                                      _model.txtProcedimentoDataTextController?.text = _model.datePicked1!.toString();
+                                                                                      _model.txtProcedimentoDataTextController?.selection = TextSelection.collapsed(offset: _model.txtProcedimentoDataTextController!.text.length);
+                                                                                    });
+                                                                                  }),
+                                                                                  Future(() async {
+                                                                                    _model.dataProcedimento = _model.datePicked1;
+                                                                                    safeSetState(() {});
+                                                                                  }),
+                                                                                ]);
+                                                                              },
                                                                               autofocus: false,
                                                                               obscureText: false,
                                                                               decoration: InputDecoration(
@@ -4305,7 +4350,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                             onPressed:
                                                                                 () async {
                                                                               logFirebaseEvent('MODAL_ADD_MEMBROS_calendar_month_outline');
-                                                                              final datePickedDate = await showDatePicker(
+                                                                              final datePicked2Date = await showDatePicker(
                                                                                 context: context,
                                                                                 initialDate: getCurrentTimestamp,
                                                                                 firstDate: DateTime(1900),
@@ -4332,23 +4377,31 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 },
                                                                               );
 
-                                                                              if (datePickedDate != null) {
+                                                                              if (datePicked2Date != null) {
                                                                                 safeSetState(() {
-                                                                                  _model.datePicked = DateTime(
-                                                                                    datePickedDate.year,
-                                                                                    datePickedDate.month,
-                                                                                    datePickedDate.day,
+                                                                                  _model.datePicked2 = DateTime(
+                                                                                    datePicked2Date.year,
+                                                                                    datePicked2Date.month,
+                                                                                    datePicked2Date.day,
                                                                                   );
                                                                                 });
                                                                               }
-                                                                              safeSetState(() {
-                                                                                _model.txtProcedimentoDataTextController?.text = dateTimeFormat(
-                                                                                  "d/M/y",
-                                                                                  _model.datePicked,
-                                                                                  locale: FFLocalizations.of(context).languageCode,
-                                                                                );
-                                                                                _model.txtProcedimentoDataTextController?.selection = TextSelection.collapsed(offset: _model.txtProcedimentoDataTextController!.text.length);
-                                                                              });
+                                                                              await Future.wait([
+                                                                                Future(() async {
+                                                                                  safeSetState(() {
+                                                                                    _model.txtProcedimentoDataTextController?.text = dateTimeFormat(
+                                                                                      "d/M/y",
+                                                                                      _model.datePicked2,
+                                                                                      locale: FFLocalizations.of(context).languageCode,
+                                                                                    );
+                                                                                    _model.txtProcedimentoDataTextController?.selection = TextSelection.collapsed(offset: _model.txtProcedimentoDataTextController!.text.length);
+                                                                                  });
+                                                                                }),
+                                                                                Future(() async {
+                                                                                  _model.dataProcedimento = _model.datePicked2;
+                                                                                  safeSetState(() {});
+                                                                                }),
+                                                                              ]);
                                                                             },
                                                                           ),
                                                                         ].divide(const SizedBox(width: 10.0)),
