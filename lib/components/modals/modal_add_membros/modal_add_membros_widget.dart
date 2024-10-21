@@ -7133,26 +7133,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                         }
                                                       }),
                                                     ]);
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(
-                                                      SnackBar(
-                                                        content: Text(
-                                                          'Dados do Membro salvo com sucesso !',
-                                                          style: TextStyle(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                          ),
-                                                        ),
-                                                        duration: const Duration(
-                                                            milliseconds: 4000),
-                                                        backgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                      ),
-                                                    );
                                                   } else {
                                                     if (shouldSetState) {
                                                       safeSetState(() {});
@@ -7160,6 +7140,26 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                     return;
                                                   }
 
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: const Text(
+                                                            'Adicionar Membros'),
+                                                        content: const Text(
+                                                            'Dados dos membros adicionados com sucesso !'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: const Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
                                                   if (shouldSetState) {
                                                     safeSetState(() {});
                                                   }

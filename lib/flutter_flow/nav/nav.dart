@@ -87,6 +87,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'forgot_password',
               path: 'forgotPassword',
+              requireAuth: true,
               builder: (context, params) => const ForgotPasswordWidget(),
             ),
             FFRoute(
@@ -100,6 +101,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'main_membros',
               path: 'mainMembros',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'main_membros')
                   : const MainMembrosWidget(),
@@ -129,6 +131,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'user_details',
               path: 'userDetails',
+              requireAuth: true,
               builder: (context, params) => UserDetailsWidget(
                 showBack: params.getParam(
                   'showBack',
@@ -139,26 +142,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'edit_profile',
               path: 'editProfile',
+              requireAuth: true,
               builder: (context, params) => const EditProfileWidget(),
             ),
             FFRoute(
               name: 'project_details_health_ai',
               path: 'projectDetailsHealthAi',
+              requireAuth: true,
               builder: (context, params) => const ProjectDetailsHealthAiWidget(),
             ),
             FFRoute(
               name: 'project_details',
               path: 'projectDetails',
+              requireAuth: true,
               builder: (context, params) => const ProjectDetailsWidget(),
             ),
             FFRoute(
               name: 'search_page',
               path: 'searchPage',
+              requireAuth: true,
               builder: (context, params) => const SearchPageWidget(),
             ),
             FFRoute(
               name: 'messages_details',
               path: 'messagesDetails',
+              requireAuth: true,
               builder: (context, params) => const MessagesDetailsWidget(),
             ),
             FFRoute(
@@ -169,11 +177,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'add_membros',
               path: 'addMembros',
+              requireAuth: true,
               builder: (context, params) => const AddMembrosWidget(),
             ),
             FFRoute(
               name: 'main_admin',
               path: 'mainAdmin',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'main_admin')
                   : const MainAdminWidget(),
@@ -181,6 +191,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'main_faccoes',
               path: 'mainFaccoes',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'main_faccoes')
                   : const MainFaccoesWidget(),
