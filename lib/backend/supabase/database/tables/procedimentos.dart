@@ -18,8 +18,8 @@ class ProcedimentosRow extends SupabaseDataRow {
   int get procedimentoId => getField<int>('procedimento_id')!;
   set procedimentoId(int value) => setField<int>('procedimento_id', value);
 
-  int? get membrosId => getField<int>('membros_id');
-  set membrosId(int? value) => setField<int>('membros_id', value);
+  int? get membroId => getField<int>('membro_id');
+  set membroId(int? value) => setField<int>('membro_id', value);
 
   String? get procedimentoNo => getField<String>('procedimento_no');
   set procedimentoNo(String? value) =>

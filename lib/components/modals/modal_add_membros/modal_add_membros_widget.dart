@@ -4404,7 +4404,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 procedimentoTipo: _model.ddwProcedimentoTipoValue,
                                                                                 unidade: _model.ddwProcedimentoUnidadeValue,
                                                                                 crime: _model.ddwProcedimentoCrimeValue,
-                                                                                data: _model.datePicked,
+                                                                                data: _model.dataProcedimento,
                                                                               ));
                                                                               safeSetState(() {});
                                                                             },
@@ -7231,7 +7231,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                     shouldSetState = true;
                                                     await Future.delayed(
                                                         const Duration(
-                                                            milliseconds: 500));
+                                                            milliseconds: 100));
                                                     await Future.wait([
                                                       Future(() async {
                                                         if (_model
@@ -7312,7 +7312,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   ),
                                                                   duration: const Duration(
                                                                       milliseconds:
-                                                                          2000),
+                                                                          1000),
                                                                   backgroundColor:
                                                                       FlutterFlowTheme.of(
                                                                               context)
