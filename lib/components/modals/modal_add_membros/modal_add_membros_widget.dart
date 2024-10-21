@@ -5714,7 +5714,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             maxLines:
-                                                                                20,
+                                                                                25,
                                                                             keyboardType:
                                                                                 TextInputType.multiline,
                                                                             cursorColor:
@@ -5725,6 +5725,10 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                         },
                                                                       ),
                                                                     ),
+                                                                  ),
+                                                                  Container(
+                                                                    decoration:
+                                                                        const BoxDecoration(),
                                                                   ),
                                                                 ].divide(const SizedBox(
                                                                     height:
@@ -6831,11 +6835,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           .txtNomeCompletoTextController
                                                           .text,
                                                       'fotos_path': _model
-                                                          .uploadedLocalFiles1
-                                                          .map(
-                                                              (e) => e.blurHash)
-                                                          .withoutNulls
-                                                          .toList(),
+                                                          .uploadedFileUrls2,
                                                       'alcunha': _model
                                                           .membrosAlcunhas,
                                                       'cpf': _model
