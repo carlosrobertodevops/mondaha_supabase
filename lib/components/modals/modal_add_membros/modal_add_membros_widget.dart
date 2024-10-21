@@ -1009,9 +1009,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                   if (_model.txtAlcunhaAddTextController.text != '') {
                                                                                     _model.addToMembrosAlcunhas(_model.txtAlcunhaAddTextController.text);
                                                                                     safeSetState(() {});
-                                                                                    safeSetState(() {
-                                                                                      _model.txtAlcunhaAddTextController?.text = _model.membrosLimpar!;
-                                                                                    });
                                                                                   } else {
                                                                                     ScaffoldMessenger.of(context).showSnackBar(
                                                                                       SnackBar(
@@ -2018,13 +2015,19 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                 MainAxisSize
                                                                     .min,
                                                             children: [
-                                                              Expanded(
-                                                                child: Form(
-                                                                  key: _model
-                                                                      .formKey2,
-                                                                  autovalidateMode:
-                                                                      AutovalidateMode
-                                                                          .disabled,
+                                                              Form(
+                                                                key: _model
+                                                                    .formKey2,
+                                                                autovalidateMode:
+                                                                    AutovalidateMode
+                                                                        .disabled,
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0,
+                                                                          8.0),
                                                                   child:
                                                                       SingleChildScrollView(
                                                                     child:
@@ -2170,7 +2173,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                             fontFamily: 'Plus Jakarta Sans',
                                                                                             letterSpacing: 0.0,
                                                                                           ),
-                                                                                      keyboardType: TextInputType.streetAddress,
                                                                                       cursorColor: FlutterFlowTheme.of(context).primaryText,
                                                                                       validator: _model.txtMembrosEnderecosAddTextControllerValidator.asValidator(context),
                                                                                     );
@@ -2192,10 +2194,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 if (_model.txtMembrosEnderecosAddTextController.text != '') {
                                                                                   _model.addToMembrosEnderecos(_model.txtMembrosEnderecosAddTextController.text);
                                                                                   safeSetState(() {});
-                                                                                  safeSetState(() {
-                                                                                    _model.txtMembrosEnderecosAddTextController?.text = _model.membrosLimpar!;
-                                                                                    _model.txtMembrosEnderecosAddTextController?.selection = TextSelection.collapsed(offset: _model.txtMembrosEnderecosAddTextController!.text.length);
-                                                                                  });
                                                                                 } else {
                                                                                   ScaffoldMessenger.of(context).showSnackBar(
                                                                                     SnackBar(
@@ -2214,94 +2212,89 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                             ),
                                                                           ].divide(const SizedBox(width: 10.0)),
                                                                         ),
-                                                                        Align(
-                                                                          alignment: const AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Builder(
-                                                                            builder:
-                                                                                (context) {
-                                                                              final listMembrosEnderecos = _model.membrosEnderecos.toList().take(4).toList();
+                                                                        Builder(
+                                                                          builder:
+                                                                              (context) {
+                                                                            final listMembrosEnderecos =
+                                                                                _model.membrosEnderecos.toList().take(4).toList();
 
-                                                                              return SingleChildScrollView(
-                                                                                scrollDirection: Axis.horizontal,
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  children: List.generate(listMembrosEnderecos.length, (listMembrosEnderecosIndex) {
-                                                                                    final listMembrosEnderecosItem = listMembrosEnderecos[listMembrosEnderecosIndex];
-                                                                                    return Align(
-                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                      child: Container(
-                                                                                        decoration: BoxDecoration(
-                                                                                          borderRadius: BorderRadius.circular(10.0),
-                                                                                          shape: BoxShape.rectangle,
-                                                                                          border: Border.all(
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                        ),
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                        child: Align(
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                          child: Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            children: [
-                                                                                              Align(
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                child: SingleChildScrollView(
-                                                                                                  scrollDirection: Axis.horizontal,
-                                                                                                  child: Row(
-                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                    children: [
-                                                                                                      Align(
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                        child: Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 3.0, 0.0),
-                                                                                                          child: Text(
-                                                                                                            listMembrosEnderecosItem,
-                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                  letterSpacing: 0.0,
-                                                                                                                ),
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                      Align(
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                        child: InkWell(
-                                                                                                          splashColor: Colors.transparent,
-                                                                                                          focusColor: Colors.transparent,
-                                                                                                          hoverColor: Colors.transparent,
-                                                                                                          highlightColor: Colors.transparent,
-                                                                                                          onTap: () async {
-                                                                                                            logFirebaseEvent('MODAL_ADD_MEMBROS_Icon_9l4zc2l7_ON_TAP');
-                                                                                                            _model.removeAtIndexFromMembrosEnderecos(listMembrosEnderecosIndex);
-                                                                                                            safeSetState(() {});
-                                                                                                          },
-                                                                                                          child: Icon(
-                                                                                                            Icons.do_not_disturb_on_rounded,
-                                                                                                            color: FlutterFlowTheme.of(context).error,
-                                                                                                            size: 24.0,
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ],
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
+                                                                            return SingleChildScrollView(
+                                                                              scrollDirection: Axis.horizontal,
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: List.generate(listMembrosEnderecos.length, (listMembrosEnderecosIndex) {
+                                                                                  final listMembrosEnderecosItem = listMembrosEnderecos[listMembrosEnderecosIndex];
+                                                                                  return Align(
+                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                    child: Container(
+                                                                                      decoration: BoxDecoration(
+                                                                                        borderRadius: BorderRadius.circular(10.0),
+                                                                                        shape: BoxShape.rectangle,
+                                                                                        border: Border.all(
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          width: 2.0,
                                                                                         ),
                                                                                       ),
-                                                                                    );
-                                                                                  }).divide(const SizedBox(width: 10.0)),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ),
+                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                      child: Align(
+                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          children: [
+                                                                                            Align(
+                                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                              child: SingleChildScrollView(
+                                                                                                scrollDirection: Axis.horizontal,
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                  children: [
+                                                                                                    Align(
+                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                      child: Padding(
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 3.0, 0.0),
+                                                                                                        child: Text(
+                                                                                                          listMembrosEnderecosItem,
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                    Align(
+                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                      child: InkWell(
+                                                                                                        splashColor: Colors.transparent,
+                                                                                                        focusColor: Colors.transparent,
+                                                                                                        hoverColor: Colors.transparent,
+                                                                                                        highlightColor: Colors.transparent,
+                                                                                                        onTap: () async {
+                                                                                                          logFirebaseEvent('MODAL_ADD_MEMBROS_Icon_9l4zc2l7_ON_TAP');
+                                                                                                          _model.removeAtIndexFromMembrosEnderecos(listMembrosEnderecosIndex);
+                                                                                                          safeSetState(() {});
+                                                                                                        },
+                                                                                                        child: Icon(
+                                                                                                          Icons.do_not_disturb_on_rounded,
+                                                                                                          color: FlutterFlowTheme.of(context).error,
+                                                                                                          size: 24.0,
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                }).divide(const SizedBox(width: 10.0)),
+                                                                              ),
+                                                                            );
+                                                                          },
                                                                         ),
                                                                         Row(
                                                                           mainAxisSize:
@@ -2345,7 +2338,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                               flex: 4,
                                                                               child: FutureBuilder<List<EstadosRow>>(
                                                                                 future: EstadosTable().queryRows(
-                                                                                  queryFn: (q) => q,
+                                                                                  queryFn: (q) => q.order('sigla', ascending: true),
                                                                                 ),
                                                                                 builder: (context, snapshot) {
                                                                                   // Customize what your widget looks like when it's loading.
@@ -2366,7 +2359,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
 
                                                                                   return FlutterFlowDropDown<int>(
                                                                                     controller: _model.ddwEstadoValueController ??= FormFieldController<int>(
-                                                                                      _model.ddwEstadoValue ??= 27,
+                                                                                      _model.ddwEstadoValue ??= 0,
                                                                                     ),
                                                                                     options: List<int>.from(ddwEstadoEstadosRowList.map((e) => e.estadoId).toList()),
                                                                                     optionLabels: ddwEstadoEstadosRowList.map((e) => e.sigla).withoutNulls.toList(),
@@ -2546,6 +2539,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
+                                                                                      textCapitalization: TextCapitalization.words,
                                                                                       obscureText: false,
                                                                                       decoration: InputDecoration(
                                                                                         labelText: FFLocalizations.of(context).getText(
@@ -2591,8 +2585,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(12.0),
                                                                                         ),
-                                                                                        filled: true,
-                                                                                        fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                         contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                         suffixIcon: _model.txtMembroHistoricoTextController!.text.isNotEmpty
                                                                                             ? InkWell(
@@ -2629,7 +2621,8 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ],
+                                                            ].divide(const SizedBox(
+                                                                height: 16.0)),
                                                           ),
                                                         ),
                                                         Padding(
@@ -2803,7 +2796,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     }
                                                                                     return [
                                                                                       FFLocalizations.of(context).getText(
-                                                                                        '8j1rka5p' /* Option 1 */,
+                                                                                        'buogb0wh' /* Option 1 */,
                                                                                       )
                                                                                     ].where((option) {
                                                                                       final lowercaseOption = option.toLowerCase();
@@ -5703,7 +5696,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                       return [
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          'buogb0wh' /* Option 1 */,
+                                                                          '18a7a4fk' /* Option 1 */,
                                                                         )
                                                                       ].where(
                                                                           (option) {
@@ -5787,6 +5780,8 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                         ),
                                                                         autofocus:
                                                                             false,
+                                                                        textCapitalization:
+                                                                            TextCapitalization.words,
                                                                         obscureText:
                                                                             false,
                                                                         decoration:
@@ -5828,8 +5823,8 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                const BorderSide(
-                                                                              color: Color(0x00000000),
+                                                                                BorderSide(
+                                                                              color: FlutterFlowTheme.of(context).primary,
                                                                               width: 2.0,
                                                                             ),
                                                                             borderRadius:
@@ -5855,10 +5850,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                             borderRadius:
                                                                                 BorderRadius.circular(12.0),
                                                                           ),
-                                                                          filled:
-                                                                              true,
-                                                                          fillColor:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
                                                                           contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               14.0,
                                                                               24.0,
@@ -5984,222 +5975,243 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                           16.0)),
                                                                 ),
                                                               ),
-                                                              Expanded(
+                                                              SizedBox(
+                                                                width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width *
+                                                                    1.0,
                                                                 child:
-                                                                    SizedBox(
-                                                                  width: MediaQuery.sizeOf(
+                                                                    Autocomplete<
+                                                                        String>(
+                                                                  initialValue:
+                                                                      const TextEditingValue(),
+                                                                  optionsBuilder:
+                                                                      (textEditingValue) {
+                                                                    if (textEditingValue
+                                                                            .text ==
+                                                                        '') {
+                                                                      return const Iterable<
+                                                                          String>.empty();
+                                                                    }
+                                                                    return [
+                                                                      FFLocalizations.of(
                                                                               context)
-                                                                          .width *
-                                                                      1.0,
-                                                                  child:
-                                                                      Autocomplete<
-                                                                          String>(
-                                                                    initialValue:
-                                                                        const TextEditingValue(),
-                                                                    optionsBuilder:
-                                                                        (textEditingValue) {
-                                                                      if (textEditingValue
-                                                                              .text ==
-                                                                          '') {
-                                                                        return const Iterable<
-                                                                            String>.empty();
-                                                                      }
-                                                                      return [
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '18a7a4fk' /* Option 1 */,
-                                                                        )
-                                                                      ].where(
-                                                                          (option) {
-                                                                        final lowercaseOption =
-                                                                            option.toLowerCase();
-                                                                        return lowercaseOption.contains(textEditingValue
-                                                                            .text
-                                                                            .toLowerCase());
-                                                                      });
-                                                                    },
-                                                                    optionsViewBuilder:
-                                                                        (context,
-                                                                            onSelected,
-                                                                            options) {
-                                                                      return AutocompleteOptionsList(
-                                                                        textFieldKey:
-                                                                            _model.txtMembroAlertaKey,
-                                                                        textController:
-                                                                            _model.txtMembroAlertaTextController!,
-                                                                        options:
-                                                                            options.toList(),
-                                                                        onSelected:
-                                                                            onSelected,
-                                                                        textStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                        textHighlightStyle:
-                                                                            const TextStyle(),
-                                                                        elevation:
-                                                                            4.0,
-                                                                        optionBackgroundColor:
-                                                                            FlutterFlowTheme.of(context).primaryBackground,
-                                                                        optionHighlightColor:
-                                                                            FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        maxHeight:
-                                                                            200.0,
-                                                                      );
-                                                                    },
-                                                                    onSelected:
-                                                                        (String
-                                                                            selection) {
-                                                                      safeSetState(() =>
-                                                                          _model.txtMembroAlertaSelectedOption =
-                                                                              selection);
-                                                                      FocusScope.of(
+                                                                          .getText(
+                                                                        'taqpyut0' /* Option 1 */,
+                                                                      )
+                                                                    ].where(
+                                                                        (option) {
+                                                                      final lowercaseOption =
+                                                                          option
+                                                                              .toLowerCase();
+                                                                      return lowercaseOption.contains(textEditingValue
+                                                                          .text
+                                                                          .toLowerCase());
+                                                                    });
+                                                                  },
+                                                                  optionsViewBuilder:
+                                                                      (context,
+                                                                          onSelected,
+                                                                          options) {
+                                                                    return AutocompleteOptionsList(
+                                                                      textFieldKey:
+                                                                          _model
+                                                                              .txtMembroAlertaKey,
+                                                                      textController:
+                                                                          _model
+                                                                              .txtMembroAlertaTextController!,
+                                                                      options:
+                                                                          options
+                                                                              .toList(),
+                                                                      onSelected:
+                                                                          onSelected,
+                                                                      textStyle: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .unfocus();
-                                                                    },
-                                                                    fieldViewBuilder:
-                                                                        (
-                                                                      context,
-                                                                      textEditingController,
-                                                                      focusNode,
-                                                                      onEditingComplete,
-                                                                    ) {
-                                                                      _model.txtMembroAlertaFocusNode =
-                                                                          focusNode;
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                      textHighlightStyle:
+                                                                          const TextStyle(),
+                                                                      elevation:
+                                                                          4.0,
+                                                                      optionBackgroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryBackground,
+                                                                      optionHighlightColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      maxHeight:
+                                                                          200.0,
+                                                                    );
+                                                                  },
+                                                                  onSelected:
+                                                                      (String
+                                                                          selection) {
+                                                                    safeSetState(() =>
+                                                                        _model.txtMembroAlertaSelectedOption =
+                                                                            selection);
+                                                                    FocusScope.of(
+                                                                            context)
+                                                                        .unfocus();
+                                                                  },
+                                                                  fieldViewBuilder:
+                                                                      (
+                                                                    context,
+                                                                    textEditingController,
+                                                                    focusNode,
+                                                                    onEditingComplete,
+                                                                  ) {
+                                                                    _model.txtMembroAlertaFocusNode =
+                                                                        focusNode;
 
-                                                                      _model.txtMembroAlertaTextController =
-                                                                          textEditingController;
-                                                                      return TextFormField(
-                                                                        key: _model
-                                                                            .txtMembroAlertaKey,
-                                                                        controller:
-                                                                            textEditingController,
-                                                                        focusNode:
-                                                                            focusNode,
-                                                                        onEditingComplete:
-                                                                            onEditingComplete,
-                                                                        onChanged:
-                                                                            (_) =>
-                                                                                EasyDebounce.debounce(
-                                                                          '_model.txtMembroAlertaTextController',
-                                                                          const Duration(
-                                                                              milliseconds: 2000),
-                                                                          () =>
-                                                                              safeSetState(() {}),
+                                                                    _model.txtMembroAlertaTextController =
+                                                                        textEditingController;
+                                                                    return TextFormField(
+                                                                      key: _model
+                                                                          .txtMembroAlertaKey,
+                                                                      controller:
+                                                                          textEditingController,
+                                                                      focusNode:
+                                                                          focusNode,
+                                                                      onEditingComplete:
+                                                                          onEditingComplete,
+                                                                      onChanged:
+                                                                          (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                        '_model.txtMembroAlertaTextController',
+                                                                        const Duration(
+                                                                            milliseconds:
+                                                                                2000),
+                                                                        () => safeSetState(
+                                                                            () {}),
+                                                                      ),
+                                                                      autofocus:
+                                                                          false,
+                                                                      textCapitalization:
+                                                                          TextCapitalization
+                                                                              .words,
+                                                                      obscureText:
+                                                                          false,
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        isDense:
+                                                                            true,
+                                                                        labelText:
+                                                                            FFLocalizations.of(context).getText(
+                                                                          '29530mgy' /* Alerta */,
                                                                         ),
-                                                                        autofocus:
-                                                                            false,
-                                                                        obscureText:
-                                                                            false,
-                                                                        decoration:
-                                                                            InputDecoration(
-                                                                          isDense:
-                                                                              true,
-                                                                          labelText:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '29530mgy' /* Alerta */,
-                                                                          ),
-                                                                          labelStyle: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                          alignLabelWithHint:
-                                                                              true,
-                                                                          hintText:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            'kx61gjir' /* Alerta */,
-                                                                          ),
-                                                                          hintStyle: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                          enabledBorder:
-                                                                              OutlineInputBorder(
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).alternate,
-                                                                              width: 2.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          focusedBorder:
-                                                                              OutlineInputBorder(
-                                                                            borderSide:
-                                                                                const BorderSide(
-                                                                              color: Color(0x00000000),
-                                                                              width: 2.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          errorBorder:
-                                                                              OutlineInputBorder(
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                              width: 2.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          focusedErrorBorder:
-                                                                              OutlineInputBorder(
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                              width: 2.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          filled:
-                                                                              true,
-                                                                          fillColor:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              24.0,
-                                                                              24.0,
-                                                                              24.0,
-                                                                              24.0),
-                                                                          suffixIcon: _model.txtMembroAlertaTextController!.text.isNotEmpty
-                                                                              ? InkWell(
-                                                                                  onTap: () async {
-                                                                                    _model.txtMembroAlertaTextController?.clear();
-                                                                                    safeSetState(() {});
-                                                                                  },
-                                                                                  child: Icon(
-                                                                                    Icons.clear,
-                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                    size: 24.0,
-                                                                                  ),
-                                                                                )
-                                                                              : null,
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
+                                                                        labelStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
                                                                               letterSpacing: 0.0,
                                                                             ),
-                                                                        maxLines:
-                                                                            20,
-                                                                        keyboardType:
-                                                                            TextInputType.multiline,
-                                                                        cursorColor:
-                                                                            FlutterFlowTheme.of(context).primaryText,
-                                                                        validator: _model
-                                                                            .txtMembroAlertaTextControllerValidator
-                                                                            .asValidator(context),
-                                                                      );
-                                                                    },
-                                                                  ),
+                                                                        alignLabelWithHint:
+                                                                            true,
+                                                                        hintText:
+                                                                            FFLocalizations.of(context).getText(
+                                                                          'kx61gjir' /* Alerta */,
+                                                                        ),
+                                                                        hintStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                        enabledBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).alternate,
+                                                                            width:
+                                                                                2.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(12.0),
+                                                                        ),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            width:
+                                                                                2.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(12.0),
+                                                                        ),
+                                                                        errorBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).error,
+                                                                            width:
+                                                                                2.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(12.0),
+                                                                        ),
+                                                                        focusedErrorBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).error,
+                                                                            width:
+                                                                                2.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(12.0),
+                                                                        ),
+                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            24.0,
+                                                                            24.0,
+                                                                            24.0,
+                                                                            24.0),
+                                                                        suffixIcon: _model.txtMembroAlertaTextController!.text.isNotEmpty
+                                                                            ? InkWell(
+                                                                                onTap: () async {
+                                                                                  _model.txtMembroAlertaTextController?.clear();
+                                                                                  safeSetState(() {});
+                                                                                },
+                                                                                child: Icon(
+                                                                                  Icons.clear,
+                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  size: 24.0,
+                                                                                ),
+                                                                              )
+                                                                            : null,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                      maxLines:
+                                                                          20,
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .multiline,
+                                                                      cursorColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                      validator: _model
+                                                                          .txtMembroAlertaTextControllerValidator
+                                                                          .asValidator(
+                                                                              context),
+                                                                    );
+                                                                  },
                                                                 ),
                                                               ),
                                                             ].divide(const SizedBox(
@@ -6452,7 +6464,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                           }
                                                                                           return [
                                                                                             FFLocalizations.of(context).getText(
-                                                                                              'taqpyut0' /* Option 1 */,
+                                                                                              'e34igmbj' /* Option 1 */,
                                                                                             )
                                                                                           ].where((option) {
                                                                                             final lowercaseOption = option.toLowerCase();
@@ -6525,7 +6537,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                   ),
                                                                                               enabledBorder: OutlineInputBorder(
                                                                                                 borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                                  color: FlutterFlowTheme.of(context).primary,
                                                                                                   width: 2.0,
                                                                                                 ),
                                                                                                 borderRadius: BorderRadius.circular(12.0),
@@ -7166,54 +7178,86 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           .choiceChipsValidacoesValues,
                                                     });
                                                     shouldSetState = true;
-                                                    {
-                                                      safeSetState(() => _model
-                                                              .isDataUploading2 =
-                                                          true);
-                                                      var selectedUploadedFiles =
-                                                          <FFUploadedFile>[];
-                                                      var selectedMedia =
-                                                          <SelectedFile>[];
-                                                      var downloadUrls =
-                                                          <String>[];
-                                                      try {
-                                                        selectedUploadedFiles =
-                                                            _model
-                                                                .uploadedLocalFiles1;
-                                                        selectedMedia =
-                                                            selectedFilesFromUploadedFiles(
-                                                          selectedUploadedFiles,
-                                                          storageFolderPath:
-                                                              'membros',
-                                                          isMultiData: true,
-                                                        );
-                                                        downloadUrls =
-                                                            await uploadSupabaseStorageFiles(
-                                                          bucketName: 'uploads',
-                                                          selectedFiles:
-                                                              selectedMedia,
-                                                        );
-                                                      } finally {
-                                                        _model.isDataUploading2 =
-                                                            false;
+                                                    if (_model.retMembrosAdd
+                                                            ?.membroId !=
+                                                        0) {
+                                                      {
+                                                        safeSetState(() => _model
+                                                                .isDataUploading2 =
+                                                            true);
+                                                        var selectedUploadedFiles =
+                                                            <FFUploadedFile>[];
+                                                        var selectedMedia =
+                                                            <SelectedFile>[];
+                                                        var downloadUrls =
+                                                            <String>[];
+                                                        try {
+                                                          selectedUploadedFiles =
+                                                              _model
+                                                                  .uploadedLocalFiles1;
+                                                          selectedMedia =
+                                                              selectedFilesFromUploadedFiles(
+                                                            selectedUploadedFiles,
+                                                            storageFolderPath:
+                                                                'membros',
+                                                            isMultiData: true,
+                                                          );
+                                                          downloadUrls =
+                                                              await uploadSupabaseStorageFiles(
+                                                            bucketName:
+                                                                'uploads',
+                                                            selectedFiles:
+                                                                selectedMedia,
+                                                          );
+                                                        } finally {
+                                                          _model.isDataUploading2 =
+                                                              false;
+                                                        }
+                                                        if (selectedUploadedFiles
+                                                                    .length ==
+                                                                selectedMedia
+                                                                    .length &&
+                                                            downloadUrls
+                                                                    .length ==
+                                                                selectedMedia
+                                                                    .length) {
+                                                          safeSetState(() {
+                                                            _model.uploadedLocalFiles2 =
+                                                                selectedUploadedFiles;
+                                                            _model.uploadedFileUrls2 =
+                                                                downloadUrls;
+                                                          });
+                                                        } else {
+                                                          safeSetState(() {});
+                                                          return;
+                                                        }
                                                       }
-                                                      if (selectedUploadedFiles
-                                                                  .length ==
-                                                              selectedMedia
-                                                                  .length &&
-                                                          downloadUrls.length ==
-                                                              selectedMedia
-                                                                  .length) {
-                                                        safeSetState(() {
-                                                          _model.uploadedLocalFiles2 =
-                                                              selectedUploadedFiles;
-                                                          _model.uploadedFileUrls2 =
-                                                              downloadUrls;
-                                                        });
-                                                      } else {
+                                                    } else {
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return AlertDialog(
+                                                            title: const Text(
+                                                                'ERRO !!!'),
+                                                            content: const Text(
+                                                                'Dados não foram salvos !!! Revise os dados !!!'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    const Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      );
+                                                      if (shouldSetState) {
                                                         safeSetState(() {});
-                                                        return;
                                                       }
+                                                      return;
                                                     }
                                                   } else {
                                                     if (shouldSetState) {

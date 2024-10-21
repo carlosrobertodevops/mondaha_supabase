@@ -1940,7 +1940,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Batismo',
       'pt': 'Batismo',
     },
-    '9xq1nz54': {
+    'buogb0wh': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -2312,7 +2312,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Atuação no Crime',
       'pt': 'Atuação no Crime',
     },
-    'buogb0wh': {
+    '18a7a4fk': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -2332,7 +2332,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Alerta',
       'pt': 'Alerta',
     },
-    '18a7a4fk': {
+    'taqpyut0': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -2400,7 +2400,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Observação(ões)',
       'pt': 'Observação(ões)',
     },
-    'taqpyut0': {
+    'e34igmbj': {
       'en': 'Option 1',
       'pt': '',
     },
