@@ -7110,8 +7110,6 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                           .membrosEnderecos,
                                                       'estado_id':
                                                           _model.ddwEstadoValue,
-                                                      'membro_id': _model
-                                                          .ddwMunicipioValue,
                                                       'historico': _model
                                                           .txtMembroHistoricoTextController
                                                           .text,
