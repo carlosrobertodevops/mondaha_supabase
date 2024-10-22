@@ -9,7 +9,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/walkthroughs/adicionar_membros.dart';
 import 'package:sticky_headers/sticky_headers.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart'
+    show TutorialCoachMark;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -215,6 +218,9 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                     FlutterFlowTheme.of(context).primaryText,
                                 hoverElevation: 0.0,
                               ),
+                            ).addWalkthrough(
+                              button9j4hsjnr,
+                              _model.adicionarMembrosController,
                             ),
                           ),
                         FlutterFlowIconButton(
@@ -975,4 +981,15 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
       ),
     );
   }
+
+  TutorialCoachMark createPageWalkthrough(BuildContext context) =>
+      TutorialCoachMark(
+        targets: createWalkthroughTargets(context),
+        onFinish: () async {
+          safeSetState(() => _model.adicionarMembrosController = null);
+        },
+        onSkip: () {
+          return true;
+        },
+      );
 }

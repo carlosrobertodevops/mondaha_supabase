@@ -16,7 +16,12 @@ import 'main_admin_model.dart';
 export 'main_admin_model.dart';
 
 class MainAdminWidget extends StatefulWidget {
-  const MainAdminWidget({super.key});
+  const MainAdminWidget({
+    super.key,
+    int? mainAdminTipoUsuario,
+  }) : mainAdminTipoUsuario = mainAdminTipoUsuario ?? 1;
+
+  final int mainAdminTipoUsuario;
 
   @override
   State<MainAdminWidget> createState() => _MainAdminWidgetState();

@@ -1288,6 +1288,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // dropdown_user_edit
   {
+    'pnpighuj': {
+      'en': 'Atribuir acessos',
+      'pt': 'Atribuir acessos',
+    },
+    '6kc0o458': {
+      'en': ' Básico',
+      'pt': 'Básico',
+    },
+    '9v90iv59': {
+      'en': 'Análise',
+      'pt': 'Análise',
+    },
+    'kwwbdpwg': {
+      'en': 'Gestor',
+      'pt': 'Gestor',
+    },
+    '08tfqij4': {
+      'en': 'Desenvolvedor',
+      'pt': 'Desenvolvedor',
+    },
+    'nkugovnf': {
+      'en': 'Administrador',
+      'pt': 'Administrador',
+    },
     'vqk7im3j': {
       'en': 'Options',
       'pt': 'Opções',
@@ -1295,14 +1319,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ufasy4ju': {
       'en': 'Edit',
       'pt': 'Editar',
-    },
-    '6kc0o458': {
-      'en': 'Assign basic acess',
-      'pt': 'Atribuir acesso Básico',
-    },
-    '9v90iv59': {
-      'en': 'Assign analisty acess',
-      'pt': 'Atribuir acesso de Análise',
     },
     'w1jtn19u': {
       'en': 'View',
@@ -2133,10 +2149,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'y539pnv4': {
       'en': 'Data do Procedimento',
       'pt': 'Data do Procedimento',
-    },
-    'qgcnm0hf': {
-      'en': '',
-      'pt': '',
     },
     '5mm0nr5l': {
       'en': 'Limpar procedimentos abaixo',

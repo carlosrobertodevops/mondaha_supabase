@@ -15,6 +15,12 @@ class DropdownUserEditModel extends FlutterFlowModel<DropdownUserEditWidget> {
   bool mouseRegionHovered4 = false;
   // State field(s) for MouseRegion widget.
   bool mouseRegionHovered5 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered6 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered7 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered8 = false;
 
   @override
   void initState(BuildContext context) {}

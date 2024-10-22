@@ -186,7 +186,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'main_admin')
-                  : const MainAdminWidget(),
+                  : MainAdminWidget(
+                      mainAdminTipoUsuario: params.getParam(
+                        'mainAdminTipoUsuario',
+                        ParamType.int,
+                      ),
+                    ),
             ),
             FFRoute(
               name: 'main_faccoes',

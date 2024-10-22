@@ -277,8 +277,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   final txtProcedimentoDataMask = MaskTextInputFormatter(mask: '##/##/####');
   String? Function(BuildContext, String?)?
       txtProcedimentoDataTextControllerValidator;
-  DateTime? datePicked1;
-  DateTime? datePicked2;
+  DateTime? datePicked;
   // State field(s) for txt_processo_no_acao_penal widget.
   FocusNode? txtProcessoNoAcaoPenalFocusNode;
   TextEditingController? txtProcessoNoAcaoPenalTextController;
