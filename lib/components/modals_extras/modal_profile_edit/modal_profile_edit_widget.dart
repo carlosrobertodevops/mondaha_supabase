@@ -36,9 +36,9 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
     super.initState();
     _model = createModel(context, () => ModalProfileEditModel());
 
-    _model.yourNameFocusNode1 ??= FocusNode();
+    _model.txtNomeCompletoFocusNode ??= FocusNode();
 
-    _model.yourNameFocusNode2 ??= FocusNode();
+    _model.txtDescricapFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -332,11 +332,12 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: TextFormField(
-                              controller: _model.yourNameTextController1 ??=
-                                  TextEditingController(
+                              controller:
+                                  _model.txtNomeCompletoTextController ??=
+                                      TextEditingController(
                                 text: overlayUsuariosRow?.nomeCompleto,
                               ),
-                              focusNode: _model.yourNameFocusNode1,
+                              focusNode: _model.txtNomeCompletoFocusNode,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -397,7 +398,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                     letterSpacing: 0.0,
                                   ),
                               cursorColor: FlutterFlowTheme.of(context).primary,
-                              validator: _model.yourNameTextController1Validator
+                              validator: _model
+                                  .txtNomeCompletoTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -405,11 +407,11 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: TextFormField(
-                              controller: _model.yourNameTextController2 ??=
+                              controller: _model.txtDescricapTextController ??=
                                   TextEditingController(
                                 text: overlayUsuariosRow?.descricao,
                               ),
-                              focusNode: _model.yourNameFocusNode2,
+                              focusNode: _model.txtDescricapFocusNode,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -472,7 +474,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                               maxLines: 4,
                               minLines: 3,
                               cursorColor: FlutterFlowTheme.of(context).primary,
-                              validator: _model.yourNameTextController2Validator
+                              validator: _model
+                                  .txtDescricapTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -746,9 +749,11 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
 
                                     await UsuariosTable().update(
                                       data: {
-                                        'nome_completo': '',
+                                        'nome_completo': _model
+                                            .txtNomeCompletoTextController.text,
                                         'foto_path': _model.uploadedFileUrl2,
-                                        'descricao': '',
+                                        'descricao': _model
+                                            .txtDescricapTextController.text,
                                         'acesso_at': supaSerialize<DateTime>(
                                             getCurrentTimestamp),
                                       },
@@ -761,8 +766,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         .outputUpdateUsuario!
                                         .first
                                         .nomeCompleto!;
-                                    FFAppState().UsuarioAtualFoto = _model
-                                        .outputUpdateUsuario!.first.fotoPath!;
+                                    FFAppState().UsuarioAtualFoto =
+                                        _model.uploadedFileUrl2;
                                     safeSetState(() {});
 
                                     context.pushNamed('main_profile_page');

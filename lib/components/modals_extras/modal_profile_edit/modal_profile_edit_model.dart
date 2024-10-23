@@ -10,14 +10,15 @@ class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  // State field(s) for yourName widget.
-  FocusNode? yourNameFocusNode1;
-  TextEditingController? yourNameTextController1;
-  String? Function(BuildContext, String?)? yourNameTextController1Validator;
-  // State field(s) for yourName widget.
-  FocusNode? yourNameFocusNode2;
-  TextEditingController? yourNameTextController2;
-  String? Function(BuildContext, String?)? yourNameTextController2Validator;
+  // State field(s) for txt_nome_completo widget.
+  FocusNode? txtNomeCompletoFocusNode;
+  TextEditingController? txtNomeCompletoTextController;
+  String? Function(BuildContext, String?)?
+      txtNomeCompletoTextControllerValidator;
+  // State field(s) for txt_descricap widget.
+  FocusNode? txtDescricapFocusNode;
+  TextEditingController? txtDescricapTextController;
+  String? Function(BuildContext, String?)? txtDescricapTextControllerValidator;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -31,10 +32,10 @@ class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
 
   @override
   void dispose() {
-    yourNameFocusNode1?.dispose();
-    yourNameTextController1?.dispose();
+    txtNomeCompletoFocusNode?.dispose();
+    txtNomeCompletoTextController?.dispose();
 
-    yourNameFocusNode2?.dispose();
-    yourNameTextController2?.dispose();
+    txtDescricapFocusNode?.dispose();
+    txtDescricapTextController?.dispose();
   }
 }
