@@ -3,8 +3,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'project_details_health_ai_model.dart';
 export 'project_details_health_ai_model.dart';
 
@@ -46,8 +50,8 @@ class _ProjectDetailsHealthAiWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, -30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -66,8 +70,8 @@ class _ProjectDetailsHealthAiWidgetState
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -86,8 +90,8 @@ class _ProjectDetailsHealthAiWidgetState
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -106,8 +110,8 @@ class _ProjectDetailsHealthAiWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 50.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -126,8 +130,8 @@ class _ProjectDetailsHealthAiWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 70.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 70.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -174,7 +178,7 @@ class _ProjectDetailsHealthAiWidgetState
               context.pop();
             },
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -184,12 +188,12 @@ class _ProjectDetailsHealthAiWidgetState
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x2C000000),
@@ -207,19 +211,19 @@ class _ProjectDetailsHealthAiWidgetState
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 12.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 12.0, 0.0),
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -230,7 +234,7 @@ class _ProjectDetailsHealthAiWidgetState
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
+                                    padding: EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(12.0),
                                       child: Image.asset(
@@ -260,7 +264,7 @@ class _ProjectDetailsHealthAiWidgetState
                                   ).animateOnPageLoad(animationsMap[
                                       'textOnPageLoadAnimation1']!),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -302,7 +306,7 @@ class _ProjectDetailsHealthAiWidgetState
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -329,9 +333,9 @@ class _ProjectDetailsHealthAiWidgetState
                                   width: 2.0,
                                 ),
                               ),
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -361,12 +365,12 @@ class _ProjectDetailsHealthAiWidgetState
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 5.0,
                             color: Color(0x34111417),
@@ -379,7 +383,7 @@ class _ProjectDetailsHealthAiWidgetState
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 16.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -391,7 +395,7 @@ class _ProjectDetailsHealthAiWidgetState
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -399,7 +403,7 @@ class _ProjectDetailsHealthAiWidgetState
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 24.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -414,7 +418,7 @@ class _ProjectDetailsHealthAiWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 24.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -434,7 +438,7 @@ class _ProjectDetailsHealthAiWidgetState
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 24.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -449,27 +453,27 @@ class _ProjectDetailsHealthAiWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  SizedBox(
+                                  Container(
                                     width: 150.0,
                                     child: Stack(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.91, 0.0),
+                                              AlignmentDirectional(-0.91, 0.0),
                                           child: Container(
                                             width: 28.0,
                                             height: 28.0,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
@@ -480,12 +484,12 @@ class _ProjectDetailsHealthAiWidgetState
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.62, 0.0),
+                                              AlignmentDirectional(-0.62, 0.0),
                                           child: Container(
                                             width: 28.0,
                                             height: 28.0,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
@@ -496,12 +500,12 @@ class _ProjectDetailsHealthAiWidgetState
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.35, 0.0),
+                                              AlignmentDirectional(-0.35, 0.0),
                                           child: Container(
                                             width: 28.0,
                                             height: 28.0,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
@@ -523,7 +527,7 @@ class _ProjectDetailsHealthAiWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () {
@@ -535,9 +539,9 @@ class _ProjectDetailsHealthAiWidgetState
                                 options: FFButtonOptions(
                                   width: 170.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -548,7 +552,7 @@ class _ProjectDetailsHealthAiWidgetState
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -564,12 +568,12 @@ class _ProjectDetailsHealthAiWidgetState
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 5.0,
                             color: Color(0x34111417),
@@ -582,7 +586,7 @@ class _ProjectDetailsHealthAiWidgetState
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 16.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -590,7 +594,7 @@ class _ProjectDetailsHealthAiWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 24.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -605,7 +609,7 @@ class _ProjectDetailsHealthAiWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 24.0, 8.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -620,7 +624,7 @@ class _ProjectDetailsHealthAiWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 24.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -635,27 +639,27 @@ class _ProjectDetailsHealthAiWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 12.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  SizedBox(
+                                  Container(
                                     width: 150.0,
                                     child: Stack(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.91, 0.0),
+                                              AlignmentDirectional(-0.91, 0.0),
                                           child: Container(
                                             width: 28.0,
                                             height: 28.0,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
@@ -666,12 +670,12 @@ class _ProjectDetailsHealthAiWidgetState
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.62, 0.0),
+                                              AlignmentDirectional(-0.62, 0.0),
                                           child: Container(
                                             width: 28.0,
                                             height: 28.0,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
@@ -682,12 +686,12 @@ class _ProjectDetailsHealthAiWidgetState
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.35, 0.0),
+                                              AlignmentDirectional(-0.35, 0.0),
                                           child: Container(
                                             width: 28.0,
                                             height: 28.0,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
@@ -709,7 +713,7 @@ class _ProjectDetailsHealthAiWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () {
@@ -721,9 +725,9 @@ class _ProjectDetailsHealthAiWidgetState
                                 options: FFButtonOptions(
                                   width: 170.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -734,7 +738,7 @@ class _ProjectDetailsHealthAiWidgetState
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),

@@ -1,4 +1,5 @@
 import 'package:provider/provider.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,6 +13,8 @@ import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
@@ -35,13 +38,11 @@ void main() async {
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
-    child: const MyApp(),
+    child: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
@@ -72,7 +73,7 @@ class _MyAppState extends State<MyApp> {
       });
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      const Duration(milliseconds: 1000),
+      Duration(milliseconds: 1000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -91,7 +92,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'mondaha',
-      localizationsDelegates: const [
+      localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -117,7 +118,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class NavBarPage extends StatefulWidget {
-  const NavBarPage({super.key, this.initialPage, this.page});
+  NavBarPage({Key? key, this.initialPage, this.page}) : super(key: key);
 
   final String? initialPage;
   final Widget? page;
@@ -141,12 +142,12 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'main_home': const MainHomeWidget(),
-      'main_membros': const MainMembrosWidget(),
-      'main_messages': const MainMessagesWidget(),
-      'main_profile_page': const MainProfilePageWidget(),
-      'main_admin': const MainAdminWidget(),
-      'main_faccoes': const MainFaccoesWidget(),
+      'main_home': MainHomeWidget(),
+      'main_membros': MainMembrosWidget(),
+      'main_messages': MainMessagesWidget(),
+      'main_profile_page': MainProfilePageWidget(),
+      'main_admin': MainAdminWidget(),
+      'main_faccoes': MainFaccoesWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -172,11 +173,11 @@ class _NavBarPageState extends State<NavBarPage> {
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.dashboard_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.account_tree_outlined,
                 size: 32.0,
               ),
@@ -186,11 +187,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.supervised_user_circle_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.groups_outlined,
                 size: 32.0,
               ),
@@ -200,11 +201,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.forum_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.forum_rounded,
                 size: 24.0,
               ),
@@ -214,11 +215,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.account_circle_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.account_circle,
                 size: 32.0,
               ),
@@ -228,11 +229,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.supervised_user_circle_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.groups_outlined,
                 size: 32.0,
               ),
@@ -242,11 +243,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.supervised_user_circle_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.groups_outlined,
                 size: 32.0,
               ),

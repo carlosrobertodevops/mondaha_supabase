@@ -4,8 +4,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modal_command_palette_model.dart';
 export 'modal_command_palette_model.dart';
 
@@ -46,8 +50,8 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 100.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 100.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -78,21 +82,21 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 530.0,
                     ),
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -120,15 +124,15 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: Container(
                     width: double.infinity,
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 530.0,
                     ),
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 12.0,
                           color: Color(0x1E000000),
@@ -147,14 +151,14 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 4.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 16.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -180,53 +184,53 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                           'Plus Jakarta Sans',
                                                       letterSpacing: 0.0,
                                                     ),
-                                            enabledBorder: const UnderlineInputBorder(
+                                            enabledBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.only(
+                                                  const BorderRadius.only(
                                                 topLeft: Radius.circular(4.0),
                                                 topRight: Radius.circular(4.0),
                                               ),
                                             ),
-                                            focusedBorder: const UnderlineInputBorder(
+                                            focusedBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.only(
+                                                  const BorderRadius.only(
                                                 topLeft: Radius.circular(4.0),
                                                 topRight: Radius.circular(4.0),
                                               ),
                                             ),
-                                            errorBorder: const UnderlineInputBorder(
+                                            errorBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.only(
+                                                  const BorderRadius.only(
                                                 topLeft: Radius.circular(4.0),
                                                 topRight: Radius.circular(4.0),
                                               ),
                                             ),
                                             focusedErrorBorder:
-                                                const UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.only(
+                                                  const BorderRadius.only(
                                                 topLeft: Radius.circular(4.0),
                                                 topRight: Radius.circular(4.0),
                                               ),
                                             ),
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 24.0, 0.0, 24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -263,7 +267,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                         ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
@@ -277,10 +281,10 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                         ),
                                         options: FFButtonOptions(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -293,7 +297,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -324,7 +328,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                   color: FlutterFlowTheme.of(context).alternate,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 12.0, 0.0, 12.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -341,7 +345,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 1.0),
                                   child: Container(
                                     width: double.infinity,
@@ -353,7 +357,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                           blurRadius: 0.0,
                                           color: FlutterFlowTheme.of(context)
                                               .alternate,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             0.0,
                                             1.0,
                                           ),
@@ -363,7 +367,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 12.0, 16.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -376,7 +380,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -412,7 +416,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                   scrollDirection: Axis.vertical,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 1.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -436,7 +440,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                offset: const Offset(
+                                                offset: Offset(
                                                   0.0,
                                                   1.0,
                                                 ),
@@ -448,7 +452,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 12.0, 16.0, 12.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -463,7 +467,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -497,7 +501,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 1.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -519,7 +523,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: const ModalFaccaoAddWidget(),
+                                                child: ModalFaccaoAddWidget(),
                                               );
                                             },
                                           ).then(
@@ -536,7 +540,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                offset: const Offset(
+                                                offset: Offset(
                                                   0.0,
                                                   1.0,
                                                 ),
@@ -548,7 +552,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 12.0, 16.0, 12.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -563,7 +567,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -597,7 +601,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 1.0),
                                       child: Container(
                                         width: double.infinity,
@@ -608,7 +612,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 12.0, 16.0, 12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -622,7 +626,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(

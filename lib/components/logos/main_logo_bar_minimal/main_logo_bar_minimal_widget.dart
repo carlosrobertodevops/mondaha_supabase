@@ -1,5 +1,8 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'main_logo_bar_minimal_model.dart';
 export 'main_logo_bar_minimal_model.dart';
 
@@ -38,7 +41,7 @@ class _MainLogoBarMinimalWidgetState extends State<MainLogoBarMinimalWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Image.asset(
         Theme.of(context).brightness == Brightness.dark
             ? 'assets/images/app_launcher_icon.png'

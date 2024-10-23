@@ -2,6 +2,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modal_add_comment_model.dart';
 export 'modal_add_comment_model.dart';
 
@@ -52,9 +54,9 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Material(
                 color: Colors.transparent,
                 elevation: 5.0,
@@ -64,7 +66,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                 child: Container(
                   width: double.infinity,
                   height: 370.0,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     maxWidth: 530.0,
                   ),
                   decoration: BoxDecoration(
@@ -81,7 +83,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Container(
                                 width: 50.0,
@@ -95,7 +97,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -110,7 +112,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -125,7 +127,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -140,7 +142,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -158,7 +160,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 0.0),
                           child: TextFormField(
                             controller: _model.shortBioTextController,
@@ -183,27 +185,27 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               errorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
-                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 32.0, 20.0, 12.0),
                             ),
                             style:
@@ -224,7 +226,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 44.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -236,9 +238,9 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                                   'farrki57' /* Create Note */,
                                 ),
                                 options: FFButtonOptions(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       44.0, 0.0, 44.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -248,7 +250,7 @@ class _ModalAddCommentWidgetState extends State<ModalAddCommentWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),

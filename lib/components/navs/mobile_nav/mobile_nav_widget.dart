@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'mobile_nav_model.dart';
 export 'mobile_nav_model.dart';
 
@@ -55,7 +57,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
       height: 110.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 3.0,
             color: Color(0x33000000),
@@ -67,7 +69,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 34.0),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 34.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +86,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   context.pushNamed(
                     'main_home',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -96,10 +98,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget.iconOne!,
+                    widget!.iconOne!,
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'sy0pxvma' /* Dashboard */,
@@ -127,7 +129,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   context.pushNamed(
                     'main_messages',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -139,10 +141,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget.iconFive!,
+                    widget!.iconFive!,
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           't5c3aiuy' /* My Team */,
@@ -170,7 +172,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   context.pushNamed(
                     'main_membros',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -182,10 +184,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget.iconTwo!,
+                    widget!.iconTwo!,
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'nkz3c58a' /* Customers */,
@@ -213,7 +215,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   context.pushNamed(
                     'main_faccao_old',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -225,10 +227,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget.iconThree!,
+                    widget!.iconThree!,
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '1mkyyjwj' /* Contracts */,
@@ -256,7 +258,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   context.pushNamed(
                     'main_profile_page',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -268,10 +270,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget.iconFour!,
+                    widget!.iconFour!,
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'eg79coc6' /* Profile */,

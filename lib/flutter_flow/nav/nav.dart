@@ -1,17 +1,23 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/backend/schema/structs/index.dart';
 
+import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -76,57 +82,57 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const AuthLoginWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : AuthLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const AuthLoginWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : AuthLoginWidget(),
           routes: [
             FFRoute(
               name: 'forgot_password',
               path: 'forgotPassword',
               requireAuth: true,
-              builder: (context, params) => const ForgotPasswordWidget(),
+              builder: (context, params) => ForgotPasswordWidget(),
             ),
             FFRoute(
               name: 'main_home',
               path: 'mainHome',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_home')
-                  : const MainHomeWidget(),
+                  ? NavBarPage(initialPage: 'main_home')
+                  : MainHomeWidget(),
             ),
             FFRoute(
               name: 'main_membros',
               path: 'mainMembros',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_membros')
-                  : const MainMembrosWidget(),
+                  ? NavBarPage(initialPage: 'main_membros')
+                  : MainMembrosWidget(),
             ),
             FFRoute(
               name: 'main_faccao_old',
               path: 'mainFaccaoOld',
               requireAuth: true,
-              builder: (context, params) => const MainFaccaoOldWidget(),
+              builder: (context, params) => MainFaccaoOldWidget(),
             ),
             FFRoute(
               name: 'main_messages',
               path: 'mainMessages',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_messages')
-                  : const MainMessagesWidget(),
+                  ? NavBarPage(initialPage: 'main_messages')
+                  : MainMessagesWidget(),
             ),
             FFRoute(
               name: 'main_profile_page',
               path: 'mainProfilePage',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_profile_page')
-                  : const MainProfilePageWidget(),
+                  ? NavBarPage(initialPage: 'main_profile_page')
+                  : MainProfilePageWidget(),
             ),
             FFRoute(
               name: 'user_details',
@@ -143,49 +149,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'edit_profile',
               path: 'editProfile',
               requireAuth: true,
-              builder: (context, params) => const EditProfileWidget(),
+              builder: (context, params) => EditProfileWidget(),
             ),
             FFRoute(
               name: 'project_details_health_ai',
               path: 'projectDetailsHealthAi',
               requireAuth: true,
-              builder: (context, params) => const ProjectDetailsHealthAiWidget(),
+              builder: (context, params) => ProjectDetailsHealthAiWidget(),
             ),
             FFRoute(
               name: 'project_details',
               path: 'projectDetails',
               requireAuth: true,
-              builder: (context, params) => const ProjectDetailsWidget(),
+              builder: (context, params) => ProjectDetailsWidget(),
             ),
             FFRoute(
               name: 'search_page',
               path: 'searchPage',
               requireAuth: true,
-              builder: (context, params) => const SearchPageWidget(),
+              builder: (context, params) => SearchPageWidget(),
             ),
             FFRoute(
               name: 'messages_details',
               path: 'messagesDetails',
               requireAuth: true,
-              builder: (context, params) => const MessagesDetailsWidget(),
+              builder: (context, params) => MessagesDetailsWidget(),
             ),
             FFRoute(
               name: 'auth_login',
               path: 'authLogin',
-              builder: (context, params) => const AuthLoginWidget(),
+              builder: (context, params) => AuthLoginWidget(),
             ),
             FFRoute(
               name: 'add_membros',
               path: 'addMembros',
               requireAuth: true,
-              builder: (context, params) => const AddMembrosWidget(),
+              builder: (context, params) => AddMembrosWidget(),
             ),
             FFRoute(
               name: 'main_admin',
               path: 'mainAdmin',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_admin')
+                  ? NavBarPage(initialPage: 'main_admin')
                   : MainAdminWidget(
                       mainAdminTipoUsuario: params.getParam(
                         'mainAdminTipoUsuario',
@@ -198,8 +204,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'mainFaccoes',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'main_faccoes')
-                  : const MainFaccoesWidget(),
+                  ? NavBarPage(initialPage: 'main_faccoes')
+                  : MainFaccoesWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -435,7 +441,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

@@ -5,8 +5,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'user_details_main_model.dart';
 export 'user_details_main_model.dart';
 
@@ -55,8 +59,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, -140.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -140.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -75,8 +79,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.6, 0.6),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -95,8 +99,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -115,8 +119,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -135,8 +139,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -155,8 +159,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -175,8 +179,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 50.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -195,8 +199,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -215,8 +219,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 70.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 70.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -235,8 +239,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 80.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -255,8 +259,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -274,8 +278,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 80.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -294,8 +298,8 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             curve: Curves.easeInOut,
             delay: 800.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 120.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 120.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -325,10 +329,10 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
       children: [
         Expanded(
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Container(
               width: double.infinity,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 700.0,
               ),
               decoration: BoxDecoration(
@@ -339,13 +343,13 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    Container(
                       height: 240.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(-0.95, -0.7),
+                        alignment: AlignmentDirectional(-0.95, -0.7),
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Image.network(
                               'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
                               width: double.infinity,
@@ -354,9 +358,9 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                             ).animateOnPageLoad(
                                 animationsMap['imageOnPageLoadAnimation']!),
                           ),
-                          if (widget.showBack == true)
+                          if (widget!.showBack == true)
                             Align(
-                              alignment: const AlignmentDirectional(-0.95, -0.55),
+                              alignment: AlignmentDirectional(-0.95, -0.55),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -369,13 +373,13 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                 },
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                                  color: const Color(0xFFF5F5F5),
+                                  color: Color(0xFFF5F5F5),
                                   elevation: 3.0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(100.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: EdgeInsets.all(10.0),
                                     child: Icon(
                                       Icons.arrow_back_rounded,
                                       color:
@@ -392,7 +396,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 16.0, 20.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 16.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -415,7 +419,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                               ).animateOnPageLoad(
                                   animationsMap['textOnPageLoadAnimation1']!),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -438,7 +442,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                             height: 50.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 4.0,
                                   color: Color(0x2B000000),
@@ -455,7 +459,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                               borderRadius: 30.0,
                               borderWidth: 1.0,
                               buttonSize: 50.0,
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.mark_chat_unread,
                                 color: Colors.white,
                                 size: 24.0,
@@ -470,7 +474,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 0.0, 0.0),
                       child: Container(
                         width: 120.0,
                         height: 32.0,
@@ -478,13 +482,13 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                           color: FlutterFlowTheme.of(context).accent1,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 4.0, 0.0),
                               child: Icon(
                                 Icons.stars_rounded,
@@ -510,7 +514,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -528,7 +532,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                           ).animateOnPageLoad(
                               animationsMap['textOnPageLoadAnimation3']!),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -549,7 +553,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 0.0, 12.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 0.0, 12.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -567,7 +571,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                           ).animateOnPageLoad(
                               animationsMap['textOnPageLoadAnimation5']!),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -595,7 +599,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                         animationsMap['dividerOnPageLoadAnimation']!),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'f6o8asym' /* Notes */,
@@ -615,7 +619,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                       scrollDirection: Axis.vertical,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 12.0, 20.0, 16.0),
                           child: Container(
                             width: 100.0,
@@ -642,7 +646,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -664,7 +668,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -693,7 +697,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                       buttonSize: 44.0,
                                       fillColor:
                                           FlutterFlowTheme.of(context).primary,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.add_rounded,
                                         color: Colors.white,
                                         size: 20.0,
@@ -710,7 +714,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                             return Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
-                                              child: const SizedBox(
+                                              child: Container(
                                                 height: double.infinity,
                                                 child: ModalAddCommentWidget(),
                                               ),
@@ -722,7 +726,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -737,7 +741,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -749,7 +753,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             4.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -764,7 +768,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             4.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -782,7 +786,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 12.0),
                                   child: ListView(
                                     padding: EdgeInsets.zero,
@@ -791,7 +795,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                     scrollDirection: Axis.vertical,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -816,7 +820,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Container(
@@ -840,7 +844,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     8.0,
@@ -871,7 +875,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -901,7 +905,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -945,12 +949,12 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
         Container(
           width: double.infinity,
           height: 120.0,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 700.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 3.0,
                 color: Color(0x19000000),
@@ -960,7 +964,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                 ),
               )
             ],
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(12.0),
@@ -968,7 +972,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
             ),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 36.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 36.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -986,7 +990,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                         builder: (context) {
                           return Padding(
                             padding: MediaQuery.viewInsetsOf(context),
-                            child: const SizedBox(
+                            child: Container(
                               height: double.infinity,
                               child: ModalSuccessWidget(),
                             ),
@@ -999,9 +1003,9 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                     ),
                     options: FFButtonOptions(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1034,9 +1038,9 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                     ),
                     options: FFButtonOptions(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1059,7 +1063,7 @@ class _UserDetailsMainWidgetState extends State<UserDetailsMainWidget>
                     ),
                   ),
                 ),
-              ].divide(const SizedBox(width: 12.0)),
+              ].divide(SizedBox(width: 12.0)),
             ),
           ),
         ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation2']!),

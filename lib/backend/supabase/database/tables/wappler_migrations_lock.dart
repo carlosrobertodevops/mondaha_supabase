@@ -11,7 +11,7 @@ class WapplerMigrationsLockTable
 }
 
 class WapplerMigrationsLockRow extends SupabaseDataRow {
-  WapplerMigrationsLockRow(super.data);
+  WapplerMigrationsLockRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => WapplerMigrationsLockTable();

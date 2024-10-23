@@ -1,7 +1,10 @@
 import '/components/modal_sections/user_details_main/user_details_main_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'user_details_model.dart';
 export 'user_details_model.dart';
 
@@ -9,7 +12,7 @@ class UserDetailsWidget extends StatefulWidget {
   const UserDetailsWidget({
     super.key,
     bool? showBack,
-  }) : showBack = showBack ?? true;
+  }) : this.showBack = showBack ?? true;
 
   final bool showBack;
 
@@ -48,7 +51,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
         model: _model.userDetailsMainModel,
         updateCallback: () => safeSetState(() {}),
         child: UserDetailsMainWidget(
-          showBack: widget.showBack,
+          showBack: widget!.showBack,
         ),
       ),
     );

@@ -13,13 +13,19 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import 'dart:math';
 import 'dart:ui';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:provider/provider.dart';
 import 'modal_membros_add_model.dart';
 export 'modal_membros_add_model.dart';
 
@@ -144,7 +150,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(0.0),
         child: BackdropFilter(
@@ -153,19 +159,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
             sigmaY: 4.0,
           ),
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16.0),
                     child: Container(
                       width: 1440.0,
                       height: 900.0,
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         minWidth: 1440.0,
                         minHeight: 900.0,
                         maxWidth: 1440.0,
@@ -173,7 +179,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                       ),
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x33000000),
@@ -189,7 +195,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                           width: 1.0,
                         ),
                       ),
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -199,7 +205,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                             tabletLandscape: false,
                           ))
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -208,7 +214,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 0.0, 16.0),
                                       child: SingleChildScrollView(
                                         child: Column(
@@ -264,7 +270,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                 Expanded(
                                   flex: 4,
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 8.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -275,7 +281,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: SafeArea(
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -293,7 +299,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        const Alignment(0.0, 0),
+                                                        Alignment(0.0, 0),
                                                     child: TabBar(
                                                       isScrollable: true,
                                                       tabAlignment:
@@ -331,7 +337,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                   context)
                                                               .primary,
                                                       padding:
-                                                          const EdgeInsets.all(2.0),
+                                                          EdgeInsets.all(2.0),
                                                       tabs: [
                                                         Tab(
                                                           text: FFLocalizations
@@ -413,7 +419,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -435,12 +441,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                               children: [
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           -1.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             12.0,
@@ -466,7 +472,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Form(
@@ -492,11 +498,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Align(
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
-                                                                                    if (_model.uploadedLocalFiles1.isEmpty)
+                                                                                    if (_model.uploadedLocalFiles1.length < 1)
                                                                                       InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -556,13 +562,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                               width: 2.0,
                                                                                             ),
                                                                                           ),
-                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                          alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
                                                                                                 Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                   child: Icon(
                                                                                                     Icons.add_outlined,
                                                                                                     color: FlutterFlowTheme.of(context).primaryText,
@@ -570,7 +576,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                   child: Text(
                                                                                                     FFLocalizations.of(context).getText(
                                                                                                       'n7bo970y' /* Add Photos */,
@@ -588,7 +594,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         ),
                                                                                       ),
                                                                                     Container(
-                                                                                      decoration: const BoxDecoration(),
+                                                                                      decoration: BoxDecoration(),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -605,9 +611,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                   children: List.generate(fotosMembroPaths.length, (fotosMembroPathsIndex) {
                                                                                                     final fotosMembroPathsItem = fotosMembroPaths[fotosMembroPathsIndex];
                                                                                                     return Visibility(
-                                                                                                      visible: _model.uploadedLocalFiles1.isNotEmpty,
+                                                                                                      visible: _model.uploadedLocalFiles1.length >= 1,
                                                                                                       child: Align(
-                                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                         child: Container(
                                                                                                           width: 100.0,
                                                                                                           height: 100.0,
@@ -626,9 +632,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                             children: [
                                                                                                               Expanded(
                                                                                                                 child: Align(
-                                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                                   child: Padding(
-                                                                                                                    padding: const EdgeInsets.all(2.0),
+                                                                                                                    padding: EdgeInsets.all(2.0),
                                                                                                                     child: InkWell(
                                                                                                                       splashColor: Colors.transparent,
                                                                                                                       focusColor: Colors.transparent,
@@ -681,7 +687,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                               ),
                                                                                                               if (_model.uploadedLocalFiles1.length == 1)
                                                                                                                 Align(
-                                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                                   child: InkWell(
                                                                                                                     splashColor: Colors.transparent,
                                                                                                                     focusColor: Colors.transparent,
@@ -693,16 +699,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                                             context: context,
                                                                                                                             builder: (alertDialogContext) {
                                                                                                                               return AlertDialog(
-                                                                                                                                title: const Text('Apagar Foto'),
-                                                                                                                                content: const Text('Deseja apagar esta foto ?'),
+                                                                                                                                title: Text('Apagar Foto'),
+                                                                                                                                content: Text('Deseja apagar esta foto ?'),
                                                                                                                                 actions: [
                                                                                                                                   TextButton(
                                                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                                                    child: const Text('Cancelar'),
+                                                                                                                                    child: Text('Cancelar'),
                                                                                                                                   ),
                                                                                                                                   TextButton(
                                                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                                                    child: const Text('Confirmar'),
+                                                                                                                                    child: Text('Confirmar'),
                                                                                                                                   ),
                                                                                                                                 ],
                                                                                                                               );
@@ -729,10 +735,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                       ),
                                                                                                     );
                                                                                                   }).divide(
-                                                                                                    const SizedBox(width: 12.0),
+                                                                                                    SizedBox(width: 12.0),
                                                                                                     filterFn: (fotosMembroPathsIndex) {
                                                                                                       final fotosMembroPathsItem = fotosMembroPaths[fotosMembroPathsIndex];
-                                                                                                      return _model.uploadedLocalFiles1.isNotEmpty;
+                                                                                                      return _model.uploadedLocalFiles1.length >= 1;
                                                                                                     },
                                                                                                   ),
                                                                                                 ),
@@ -754,16 +760,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                 context: context,
                                                                                                 builder: (alertDialogContext) {
                                                                                                   return AlertDialog(
-                                                                                                    title: const Text('Apagar Foto'),
-                                                                                                    content: const Text('Deseja apagar todas às fotos ?'),
+                                                                                                    title: Text('Apagar Foto'),
+                                                                                                    content: Text('Deseja apagar todas às fotos ?'),
                                                                                                     actions: [
                                                                                                       TextButton(
                                                                                                         onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                        child: const Text('Cancelar'),
+                                                                                                        child: Text('Cancelar'),
                                                                                                       ),
                                                                                                       TextButton(
                                                                                                         onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                        child: const Text('Confirmar'),
+                                                                                                        child: Text('Confirmar'),
                                                                                                       ),
                                                                                                     ],
                                                                                                   );
@@ -788,13 +794,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                               width: 2.0,
                                                                                             ),
                                                                                           ),
-                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                          alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
                                                                                                 Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                   child: Icon(
                                                                                                     Icons.close_outlined,
                                                                                                     color: FlutterFlowTheme.of(context).primaryText,
@@ -802,7 +808,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                   child: Text(
                                                                                                     FFLocalizations.of(context).getText(
                                                                                                       'szzdveit' /* Apagar Fotos */,
@@ -819,7 +825,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           ),
                                                                                         ),
                                                                                       ),
-                                                                                  ].divide(const SizedBox(width: 12.0)),
+                                                                                  ].divide(SizedBox(width: 12.0)),
                                                                                 ),
                                                                               ),
                                                                             ],
@@ -836,7 +842,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtNomeCompletoFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtNomeCompletoTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -887,7 +893,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtNomeCompletoTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
@@ -910,7 +916,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   validator: _model.txtNomeCompletoTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -924,7 +930,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtAlcunhaAddFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtAlcunhaAddTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -974,7 +980,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtAlcunhaAddTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
@@ -1021,7 +1027,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                           ),
                                                                                         ),
-                                                                                        duration: const Duration(milliseconds: 4000),
+                                                                                        duration: Duration(milliseconds: 4000),
                                                                                         backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                       ),
                                                                                     );
@@ -1041,7 +1047,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         final tagAlcunhaItem = tagAlcunha[tagAlcunhaIndex];
                                                                                         return Expanded(
                                                                                           child: Container(
-                                                                                            constraints: const BoxConstraints(
+                                                                                            constraints: BoxConstraints(
                                                                                               minHeight: 40.0,
                                                                                               maxWidth: 40.0,
                                                                                               maxHeight: 40.0,
@@ -1059,16 +1065,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                                               children: [
                                                                                                 Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                   child: Row(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                     children: [
                                                                                                       Expanded(
                                                                                                         child: Align(
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 3.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 3.0, 0.0),
                                                                                                             child: SelectionArea(
                                                                                                                 child: Text(
                                                                                                               tagAlcunhaItem,
@@ -1082,7 +1088,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                       Align(
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                         child: InkWell(
                                                                                                           splashColor: Colors.transparent,
                                                                                                           focusColor: Colors.transparent,
@@ -1107,12 +1113,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             ),
                                                                                           ),
                                                                                         );
-                                                                                      }).divide(const SizedBox(width: 5.0)),
+                                                                                      }).divide(SizedBox(width: 5.0)),
                                                                                     );
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -1126,7 +1132,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtMembroNaturalidadeFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtMembroNaturalidadeTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -1177,14 +1183,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtMembroNaturalidadeTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
                                                                                               _model.txtMembroNaturalidadeTextController?.clear();
                                                                                               safeSetState(() {});
                                                                                             },
-                                                                                            child: const Icon(
+                                                                                            child: Icon(
                                                                                               Icons.clear,
                                                                                               size: 24.0,
                                                                                             ),
@@ -1277,7 +1283,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -1286,7 +1292,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -1300,7 +1306,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtNoIdentidadeFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtNoIdentidadeTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -1350,14 +1356,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtNoIdentidadeTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
                                                                                               _model.txtNoIdentidadeTextController?.clear();
                                                                                               safeSetState(() {});
                                                                                             },
-                                                                                            child: const Icon(
+                                                                                            child: Icon(
                                                                                               Icons.clear,
                                                                                               color: Color(0xFF757575),
                                                                                               size: 24.0,
@@ -1463,7 +1469,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -1479,7 +1485,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtNoCpfFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtNoCpfTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -1529,7 +1535,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtNoCpfTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
@@ -1563,7 +1569,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtNoInfopenFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtNoInfopenTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -1613,14 +1619,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtNoInfopenTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
                                                                                               _model.txtNoInfopenTextController?.clear();
                                                                                               safeSetState(() {});
                                                                                             },
-                                                                                            child: const Icon(
+                                                                                            child: Icon(
                                                                                               Icons.clear,
                                                                                               size: 24.0,
                                                                                             ),
@@ -1636,7 +1642,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   validator: _model.txtNoInfopenTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -1650,7 +1656,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtFiliacaoMaeFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtFiliacaoMaeTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -1700,7 +1706,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtFiliacaoMaeTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
@@ -1771,14 +1777,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                   borderWidth: 2.0,
                                                                                   borderRadius: 8.0,
-                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   hidesUnderline: true,
                                                                                   isOverButton: false,
                                                                                   isSearchable: true,
                                                                                   isMultiSelect: false,
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -1792,7 +1798,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtFiliacaoPaiFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtFiliacaoPaiTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -1842,7 +1848,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtFiliacaoPaiTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
@@ -1913,14 +1919,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                   borderWidth: 2.0,
                                                                                   borderRadius: 8.0,
-                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   hidesUnderline: true,
                                                                                   isOverButton: false,
                                                                                   isSearchable: true,
                                                                                   isMultiSelect: false,
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -1990,16 +1996,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                   borderWidth: 2.0,
                                                                                   borderRadius: 8.0,
-                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   hidesUnderline: true,
                                                                                   isOverButton: false,
                                                                                   isSearchable: true,
                                                                                   isMultiSelect: false,
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 13.0)),
+                                                                        ].divide(SizedBox(height: 13.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -2010,7 +2016,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -2028,7 +2034,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     AutovalidateMode
                                                                         .disabled,
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           16.0,
@@ -2055,10 +2061,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           children:
                                                                               [
                                                                             Expanded(
-                                                                              child: SizedBox(
+                                                                              child: Container(
                                                                                 width: 200.0,
                                                                                 child: Autocomplete<String>(
-                                                                                  initialValue: const TextEditingValue(),
+                                                                                  initialValue: TextEditingValue(),
                                                                                   optionsBuilder: (textEditingValue) {
                                                                                     if (textEditingValue.text == '') {
                                                                                       return const Iterable<String>.empty();
@@ -2082,7 +2088,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             fontFamily: 'Plus Jakarta Sans',
                                                                                             letterSpacing: 0.0,
                                                                                           ),
-                                                                                      textHighlightStyle: const TextStyle(),
+                                                                                      textHighlightStyle: TextStyle(),
                                                                                       elevation: 4.0,
                                                                                       optionBackgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                       optionHighlightColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -2109,7 +2115,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onEditingComplete: onEditingComplete,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.txtMembrosEnderecosAddTextController',
-                                                                                        const Duration(milliseconds: 2000),
+                                                                                        Duration(milliseconds: 2000),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -2138,7 +2144,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           borderRadius: BorderRadius.circular(12.0),
                                                                                         ),
                                                                                         focusedBorder: OutlineInputBorder(
-                                                                                          borderSide: const BorderSide(
+                                                                                          borderSide: BorderSide(
                                                                                             color: Color(0x00000000),
                                                                                             width: 2.0,
                                                                                           ),
@@ -2160,7 +2166,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         ),
                                                                                         filled: true,
                                                                                         fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                         suffixIcon: _model.txtMembrosEnderecosAddTextController!.text.isNotEmpty
                                                                                             ? InkWell(
                                                                                                 onTap: () async {
@@ -2209,14 +2215,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
                                                                                 }
                                                                               },
                                                                             ),
-                                                                          ].divide(const SizedBox(width: 10.0)),
+                                                                          ].divide(SizedBox(width: 10.0)),
                                                                         ),
                                                                         Builder(
                                                                           builder:
@@ -2231,7 +2237,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 children: List.generate(listMembrosEnderecos.length, (listMembrosEnderecosIndex) {
                                                                                   final listMembrosEnderecosItem = listMembrosEnderecos[listMembrosEnderecosIndex];
                                                                                   return Align(
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(0.0, 0.0),
                                                                                     child: Container(
                                                                                       decoration: BoxDecoration(
                                                                                         borderRadius: BorderRadius.circular(10.0),
@@ -2241,14 +2247,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           width: 2.0,
                                                                                         ),
                                                                                       ),
-                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
                                                                                       child: Align(
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Align(
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                               child: SingleChildScrollView(
                                                                                                 scrollDirection: Axis.horizontal,
                                                                                                 child: Row(
@@ -2256,9 +2262,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                   children: [
                                                                                                     Align(
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                       child: Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 3.0, 0.0),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 3.0, 0.0),
                                                                                                         child: Text(
                                                                                                           listMembrosEnderecosItem,
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2270,7 +2276,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                       ),
                                                                                                     ),
                                                                                                     Align(
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                       child: InkWell(
                                                                                                         splashColor: Colors.transparent,
                                                                                                         focusColor: Colors.transparent,
@@ -2297,7 +2303,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       ),
                                                                                     ),
                                                                                   );
-                                                                                }).divide(const SizedBox(width: 10.0)),
+                                                                                }).divide(SizedBox(width: 10.0)),
                                                                               ),
                                                                             );
                                                                           },
@@ -2399,7 +2405,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                     borderWidth: 2.0,
                                                                                     borderRadius: 8.0,
-                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                    margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                     hidesUnderline: true,
                                                                                     isOverButton: false,
                                                                                     isSearchable: true,
@@ -2470,7 +2476,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                     borderWidth: 2.0,
                                                                                     borderRadius: 8.0,
-                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                    margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                     hidesUnderline: true,
                                                                                     isOverButton: false,
                                                                                     isSearchable: true,
@@ -2479,7 +2485,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 },
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(width: 10.0)),
+                                                                          ].divide(SizedBox(width: 10.0)),
                                                                         ),
                                                                         Row(
                                                                           mainAxisSize:
@@ -2487,10 +2493,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           children:
                                                                               [
                                                                             Expanded(
-                                                                              child: SizedBox(
+                                                                              child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                                                                 child: Autocomplete<String>(
-                                                                                  initialValue: const TextEditingValue(),
+                                                                                  initialValue: TextEditingValue(),
                                                                                   optionsBuilder: (textEditingValue) {
                                                                                     if (textEditingValue.text == '') {
                                                                                       return const Iterable<String>.empty();
@@ -2514,7 +2520,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             fontFamily: 'Plus Jakarta Sans',
                                                                                             letterSpacing: 0.0,
                                                                                           ),
-                                                                                      textHighlightStyle: const TextStyle(),
+                                                                                      textHighlightStyle: TextStyle(),
                                                                                       elevation: 4.0,
                                                                                       optionBackgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                       optionHighlightColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -2541,7 +2547,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onEditingComplete: onEditingComplete,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.txtMembroHistoricoTextController',
-                                                                                        const Duration(milliseconds: 2000),
+                                                                                        Duration(milliseconds: 2000),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -2591,7 +2597,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(12.0),
                                                                                         ),
-                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                         suffixIcon: _model.txtMembroHistoricoTextController!.text.isNotEmpty
                                                                                             ? InkWell(
                                                                                                 onTap: () async {
@@ -2619,21 +2625,21 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(width: 10.0)),
+                                                                          ].divide(SizedBox(width: 10.0)),
                                                                         ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               height: 13.0)),
                                                                     ),
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 16.0)),
                                                           ),
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -2655,12 +2661,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                               children: [
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           -1.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             12.0,
@@ -2686,7 +2692,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Form(
@@ -2776,7 +2782,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -2785,7 +2791,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -2795,7 +2801,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               Expanded(
                                                                                 flex: 10,
                                                                                 child: Autocomplete<String>(
-                                                                                  initialValue: const TextEditingValue(),
+                                                                                  initialValue: TextEditingValue(),
                                                                                   optionsBuilder: (textEditingValue) {
                                                                                     if (textEditingValue.text == '') {
                                                                                       return const Iterable<String>.empty();
@@ -2819,7 +2825,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             fontFamily: 'Plus Jakarta Sans',
                                                                                             letterSpacing: 0.0,
                                                                                           ),
-                                                                                      textHighlightStyle: const TextStyle(),
+                                                                                      textHighlightStyle: TextStyle(),
                                                                                       elevation: 4.0,
                                                                                       optionBackgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                       optionHighlightColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -2846,7 +2852,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onEditingComplete: onEditingComplete,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.txtFaccaoBastismoTextController',
-                                                                                        const Duration(milliseconds: 2000),
+                                                                                        Duration(milliseconds: 2000),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -2897,14 +2903,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         ),
                                                                                         filled: true,
                                                                                         fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                         suffixIcon: _model.txtFaccaoBastismoTextController!.text.isNotEmpty
                                                                                             ? InkWell(
                                                                                                 onTap: () async {
                                                                                                   _model.txtFaccaoBastismoTextController?.clear();
                                                                                                   safeSetState(() {});
                                                                                                 },
-                                                                                                child: const Icon(
+                                                                                                child: Icon(
                                                                                                   Icons.clear,
                                                                                                   size: 24.0,
                                                                                                 ),
@@ -2928,7 +2934,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtFacaoLocalBastismoFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtFacaoLocalBastismoTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -2979,14 +2985,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtFacaoLocalBastismoTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
                                                                                               _model.txtFacaoLocalBastismoTextController?.clear();
                                                                                               safeSetState(() {});
                                                                                             },
-                                                                                            child: const Icon(
+                                                                                            child: Icon(
                                                                                               Icons.clear,
                                                                                               size: 24.0,
                                                                                             ),
@@ -3001,7 +3007,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   validator: _model.txtFacaoLocalBastismoTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -3015,7 +3021,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtMembrosFaccaoPadrinhoFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtMembrosFaccaoPadrinhoTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -3066,14 +3072,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtMembrosFaccaoPadrinhoTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
                                                                                               _model.txtMembrosFaccaoPadrinhoTextController?.clear();
                                                                                               safeSetState(() {});
                                                                                             },
-                                                                                            child: const Icon(
+                                                                                            child: Icon(
                                                                                               Icons.clear,
                                                                                               size: 24.0,
                                                                                             ),
@@ -3095,7 +3101,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtMembroFaccaoSenhaFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtMembroFaccaoSenhaTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -3146,14 +3152,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtMembroFaccaoSenhaTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
                                                                                               _model.txtMembroFaccaoSenhaTextController?.clear();
                                                                                               safeSetState(() {});
                                                                                             },
-                                                                                            child: const Icon(
+                                                                                            child: Icon(
                                                                                               Icons.clear,
                                                                                               size: 24.0,
                                                                                             ),
@@ -3168,7 +3174,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   validator: _model.txtMembroFaccaoSenhaTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -3234,7 +3240,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3302,7 +3308,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3311,7 +3317,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -3377,7 +3383,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3445,7 +3451,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3454,7 +3460,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -3468,7 +3474,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   focusNode: _model.txtFaccaoTresLocaisAddFocusNode,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.txtFaccaoTresLocaisAddTextController',
-                                                                                    const Duration(milliseconds: 2000),
+                                                                                    Duration(milliseconds: 2000),
                                                                                     () => safeSetState(() {}),
                                                                                   ),
                                                                                   autofocus: false,
@@ -3518,14 +3524,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                     filled: true,
                                                                                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                     suffixIcon: _model.txtFaccaoTresLocaisAddTextController!.text.isNotEmpty
                                                                                         ? InkWell(
                                                                                             onTap: () async {
                                                                                               _model.txtFaccaoTresLocaisAddTextController?.clear();
                                                                                               safeSetState(() {});
                                                                                             },
-                                                                                            child: const Icon(
+                                                                                            child: Icon(
                                                                                               Icons.clear,
                                                                                               size: 24.0,
                                                                                             ),
@@ -3567,7 +3573,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                           ),
                                                                                         ),
-                                                                                        duration: const Duration(milliseconds: 4000),
+                                                                                        duration: Duration(milliseconds: 4000),
                                                                                         backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                       ),
                                                                                     );
@@ -3586,7 +3592,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         final childenTresLocaisItem = childenTresLocais[childenTresLocaisIndex];
                                                                                         return Expanded(
                                                                                           child: Container(
-                                                                                            constraints: const BoxConstraints(
+                                                                                            constraints: BoxConstraints(
                                                                                               minWidth: 200.0,
                                                                                               minHeight: 40.0,
                                                                                               maxWidth: 200.0,
@@ -3611,9 +3617,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                   children: [
                                                                                                     Expanded(
                                                                                                       child: Align(
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                         child: Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 3.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 3.0, 0.0),
                                                                                                           child: SelectionArea(
                                                                                                               child: Text(
                                                                                                             childenTresLocaisItem,
@@ -3627,7 +3633,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                       ),
                                                                                                     ),
                                                                                                     Align(
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                       child: InkWell(
                                                                                                         splashColor: Colors.transparent,
                                                                                                         focusColor: Colors.transparent,
@@ -3651,12 +3657,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             ),
                                                                                           ),
                                                                                         );
-                                                                                      }).divide(const SizedBox(width: 5.0)),
+                                                                                      }).divide(SizedBox(width: 5.0)),
                                                                                     );
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -3722,7 +3728,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3790,7 +3796,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3799,7 +3805,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:
@@ -3865,7 +3871,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 8.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3874,9 +3880,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(SizedBox(width: 10.0)),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 15.0)),
+                                                                        ].divide(SizedBox(height: 15.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -3887,7 +3893,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -3905,7 +3911,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     AutovalidateMode
                                                                         .disabled,
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -3917,12 +3923,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             .max,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               12.0,
                                                                               0.0,
@@ -3953,7 +3959,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               focusNode: _model.txtProcedimentoNoFocusNode,
                                                                               onChanged: (_) => EasyDebounce.debounce(
                                                                                 '_model.txtProcedimentoNoTextController',
-                                                                                const Duration(milliseconds: 2000),
+                                                                                Duration(milliseconds: 2000),
                                                                                 () => safeSetState(() {}),
                                                                               ),
                                                                               autofocus: false,
@@ -4004,14 +4010,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 ),
                                                                                 filled: true,
                                                                                 fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                 suffixIcon: _model.txtProcedimentoNoTextController!.text.isNotEmpty
                                                                                     ? InkWell(
                                                                                         onTap: () async {
                                                                                           _model.txtProcedimentoNoTextController?.clear();
                                                                                           safeSetState(() {});
                                                                                         },
-                                                                                        child: const Icon(
+                                                                                        child: Icon(
                                                                                           Icons.clear,
                                                                                           size: 24.0,
                                                                                         ),
@@ -4077,14 +4083,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 8.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
                                                                               isMultiSelect: false,
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 10.0)),
+                                                                        ].divide(SizedBox(width: 10.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -4141,7 +4147,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 8.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
@@ -4201,7 +4207,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 8.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
@@ -4217,7 +4223,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               focusNode: _model.txtProcedimentoDataFocusNode,
                                                                               onChanged: (_) => EasyDebounce.debounce(
                                                                                 '_model.txtProcedimentoDataTextController',
-                                                                                const Duration(milliseconds: 2000),
+                                                                                Duration(milliseconds: 2000),
                                                                                 () => safeSetState(() {}),
                                                                               ),
                                                                               autofocus: false,
@@ -4268,14 +4274,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 ),
                                                                                 filled: true,
                                                                                 fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                 suffixIcon: _model.txtProcedimentoDataTextController!.text.isNotEmpty
                                                                                     ? InkWell(
                                                                                         onTap: () async {
                                                                                           _model.txtProcedimentoDataTextController?.clear();
                                                                                           safeSetState(() {});
                                                                                         },
-                                                                                        child: const Icon(
+                                                                                        child: Icon(
                                                                                           Icons.clear,
                                                                                           size: 24.0,
                                                                                         ),
@@ -4310,7 +4316,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             onPressed:
                                                                                 () async {
                                                                               logFirebaseEvent('MODAL_MEMBROS_ADD_calendar_month_outline');
-                                                                              final datePickedDate = await showDatePicker(
+                                                                              final _datePickedDate = await showDatePicker(
                                                                                 context: context,
                                                                                 initialDate: getCurrentTimestamp,
                                                                                 firstDate: DateTime(1900),
@@ -4337,12 +4343,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 },
                                                                               );
 
-                                                                              if (datePickedDate != null) {
+                                                                              if (_datePickedDate != null) {
                                                                                 safeSetState(() {
                                                                                   _model.datePicked = DateTime(
-                                                                                    datePickedDate.year,
-                                                                                    datePickedDate.month,
-                                                                                    datePickedDate.day,
+                                                                                    _datePickedDate.year,
+                                                                                    _datePickedDate.month,
+                                                                                    _datePickedDate.day,
                                                                                   );
                                                                                 });
                                                                               }
@@ -4364,7 +4370,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ]);
                                                                             },
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 10.0)),
+                                                                        ].divide(SizedBox(width: 10.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -4385,15 +4391,15 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               '5mm0nr5l' /* Limpar procedimentos abaixo */,
                                                                             ),
                                                                             icon:
-                                                                                const Icon(
+                                                                                Icon(
                                                                               Icons.remove_outlined,
                                                                               size: 15.0,
                                                                             ),
                                                                             options:
                                                                                 FFButtonOptions(
                                                                               height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).overlay0,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
@@ -4426,15 +4432,15 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               '8pxnhql5' /* Adicionar */,
                                                                             ),
                                                                             icon:
-                                                                                const Icon(
+                                                                                Icon(
                                                                               Icons.add_rounded,
                                                                               size: 24.0,
                                                                             ),
                                                                             options:
                                                                                 FFButtonOptions(
                                                                               height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
@@ -4445,9 +4451,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 10.0)),
+                                                                        ].divide(SizedBox(width: 10.0)),
                                                                       ),
-                                                                    ].divide(const SizedBox(
+                                                                    ].divide(SizedBox(
                                                                         height:
                                                                             13.0)),
                                                                   ),
@@ -4479,12 +4485,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
                                                                         ),
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               36.0,
@@ -4501,7 +4507,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 Container(
                                                                                   width: 39.0,
                                                                                   height: 100.0,
-                                                                                  decoration: const BoxDecoration(),
+                                                                                  decoration: BoxDecoration(),
                                                                                 ),
                                                                               if (responsiveVisibility(
                                                                                 context: context,
@@ -4511,7 +4517,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'g3vpoxn0' /* Procedimento */,
@@ -4530,7 +4536,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         '6vsm4hcv' /* Unidade */,
@@ -4549,9 +4555,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           '1rnrt2ya' /* Tipo de Procedimento: */,
@@ -4571,9 +4577,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           '7esylq1a' /* Crime */,
@@ -4594,9 +4600,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(1.0, 0.0),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           '8m6o6goq' /* Data */,
@@ -4610,11 +4616,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   ),
                                                                                 ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: 24.0,
                                                                                   height: 100.0,
-                                                                                  decoration: const BoxDecoration(),
+                                                                                  decoration: BoxDecoration(),
                                                                                 ),
                                                                               ),
                                                                             ],
@@ -4629,12 +4635,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
                                                                               child: Container(
                                                                                 width: double.infinity,
                                                                                 decoration: BoxDecoration(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  boxShadow: const [
+                                                                                  boxShadow: [
                                                                                     BoxShadow(
                                                                                       blurRadius: 3.0,
                                                                                       color: Color(0x20000000),
@@ -4655,7 +4661,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       children: List.generate(childrenProcedimentos.length, (childrenProcedimentosIndex) {
                                                                                         final childrenProcedimentosItem = childrenProcedimentos[childrenProcedimentosIndex];
                                                                                         return Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 12.0, 8.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 12.0, 8.0),
                                                                                           child: Row(
                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -4666,7 +4672,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                   children: [
                                                                                                     Expanded(
                                                                                                       child: Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                         child: Text(
                                                                                                           childrenProcedimentosItem.procedimentoNo,
                                                                                                           style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -4683,7 +4689,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                         decoration: BoxDecoration(
                                                                                                           color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                         ),
-                                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                         child: Visibility(
                                                                                                           visible: responsiveVisibility(
                                                                                                             context: context,
@@ -4691,7 +4697,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                             tablet: false,
                                                                                                           ),
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               childrenProcedimentosItem.unidade,
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4710,7 +4716,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                     ))
                                                                                                       Expanded(
                                                                                                         child: Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             childrenProcedimentosItem.procedimentoTipo,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4728,7 +4734,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                     ))
                                                                                                       Expanded(
                                                                                                         child: Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             childrenProcedimentosItem.crime,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4755,9 +4761,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                               ),
                                                                                                             ),
                                                                                                             child: Align(
-                                                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                               child: Padding(
-                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                                 child: Text(
                                                                                                                   dateTimeFormat(
                                                                                                                     "d/M/y",
@@ -4779,7 +4785,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                 child: InkWell(
                                                                                                   splashColor: Colors.transparent,
                                                                                                   focusColor: Colors.transparent,
@@ -4813,13 +4819,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                   ],
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 16.0)),
                                                           ),
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -4837,7 +4843,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     AutovalidateMode
                                                                         .disabled,
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -4849,12 +4855,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             .max,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               12.0,
                                                                               0.0,
@@ -4885,7 +4891,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               focusNode: _model.txtProcessoNoAcaoPenalFocusNode,
                                                                               onChanged: (_) => EasyDebounce.debounce(
                                                                                 '_model.txtProcessoNoAcaoPenalTextController',
-                                                                                const Duration(milliseconds: 2000),
+                                                                                Duration(milliseconds: 2000),
                                                                                 () => safeSetState(() {}),
                                                                               ),
                                                                               autofocus: false,
@@ -4933,7 +4939,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 ),
                                                                                 filled: true,
                                                                                 fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                                 suffixIcon: _model.txtProcessoNoAcaoPenalTextController!.text.isNotEmpty
                                                                                     ? InkWell(
                                                                                         onTap: () async {
@@ -5007,14 +5013,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 8.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
                                                                               isMultiSelect: false,
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 10.0)),
+                                                                        ].divide(SizedBox(width: 10.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -5071,7 +5077,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 8.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
@@ -5125,7 +5131,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 8.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
@@ -5183,14 +5189,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 8.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
                                                                               isMultiSelect: false,
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 10.0)),
+                                                                        ].divide(SizedBox(width: 10.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -5211,15 +5217,15 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               'tveo07et' /* Limpar */,
                                                                             ),
                                                                             icon:
-                                                                                const Icon(
+                                                                                Icon(
                                                                               Icons.remove_outlined,
                                                                               size: 15.0,
                                                                             ),
                                                                             options:
                                                                                 FFButtonOptions(
                                                                               height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).overlay0,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
@@ -5252,15 +5258,15 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               'vm7t0n6u' /* Adicionar */,
                                                                             ),
                                                                             icon:
-                                                                                const Icon(
+                                                                                Icon(
                                                                               Icons.add_rounded,
                                                                               size: 24.0,
                                                                             ),
                                                                             options:
                                                                                 FFButtonOptions(
                                                                               height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
@@ -5271,9 +5277,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderRadius: BorderRadius.circular(12.0),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 10.0)),
+                                                                        ].divide(SizedBox(width: 10.0)),
                                                                       ),
-                                                                    ].divide(const SizedBox(
+                                                                    ].divide(SizedBox(
                                                                         height:
                                                                             13.0)),
                                                                   ),
@@ -5305,12 +5311,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
                                                                         ),
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               36.0,
@@ -5327,7 +5333,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 Container(
                                                                                   width: 39.0,
                                                                                   height: 100.0,
-                                                                                  decoration: const BoxDecoration(),
+                                                                                  decoration: BoxDecoration(),
                                                                                 ),
                                                                               if (responsiveVisibility(
                                                                                 context: context,
@@ -5337,7 +5343,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'noufgwqe' /* Nº da ação Penal */,
@@ -5356,7 +5362,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'xeuwwqlt' /* Vara */,
@@ -5375,9 +5381,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           '9t25cx0m' /* Situação jurídica */,
@@ -5397,9 +5403,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'ptv8ms3l' /* Regime */,
@@ -5420,9 +5426,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               ))
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(1.0, 0.0),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           '670xv14p' /* Situação réu */,
@@ -5436,11 +5442,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   ),
                                                                                 ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: 24.0,
                                                                                   height: 100.0,
-                                                                                  decoration: const BoxDecoration(),
+                                                                                  decoration: BoxDecoration(),
                                                                                 ),
                                                                               ),
                                                                             ],
@@ -5455,12 +5461,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
                                                                               child: Container(
                                                                                 width: double.infinity,
                                                                                 decoration: BoxDecoration(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  boxShadow: const [
+                                                                                  boxShadow: [
                                                                                     BoxShadow(
                                                                                       blurRadius: 3.0,
                                                                                       color: Color(0x20000000),
@@ -5481,7 +5487,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       children: List.generate(childrenProcessos.length, (childrenProcessosIndex) {
                                                                                         final childrenProcessosItem = childrenProcessos[childrenProcessosIndex];
                                                                                         return Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 12.0, 8.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 12.0, 8.0),
                                                                                           child: Row(
                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -5492,7 +5498,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                   children: [
                                                                                                     Expanded(
                                                                                                       child: Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                         child: Text(
                                                                                                           childrenProcessosItem.noAcaoPenal,
                                                                                                           style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -5509,7 +5515,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                         decoration: BoxDecoration(
                                                                                                           color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                         ),
-                                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                         child: Visibility(
                                                                                                           visible: responsiveVisibility(
                                                                                                             context: context,
@@ -5517,7 +5523,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                             tablet: false,
                                                                                                           ),
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               childrenProcessosItem.vara,
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -5536,7 +5542,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                     ))
                                                                                                       Expanded(
                                                                                                         child: Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             childrenProcessosItem.situacaoJuridica,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -5554,7 +5560,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                     ))
                                                                                                       Expanded(
                                                                                                         child: Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             childrenProcessosItem.regime,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -5581,9 +5587,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                                 ),
                                                                                                               ),
                                                                                                               child: Align(
-                                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                                 child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                                                   child: Text(
                                                                                                                     childrenProcessosItem.situacaoReu,
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -5602,7 +5608,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                 child: InkWell(
                                                                                                   splashColor: Colors.transparent,
                                                                                                   focusColor: Colors.transparent,
@@ -5641,7 +5647,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -5654,11 +5660,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         -1.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           16.0,
@@ -5689,7 +5695,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     AutovalidateMode
                                                                         .disabled,
                                                                 child:
-                                                                    SizedBox(
+                                                                    Container(
                                                                   width: MediaQuery.sizeOf(
                                                                               context)
                                                                           .width *
@@ -5698,7 +5704,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                       Autocomplete<
                                                                           String>(
                                                                     initialValue:
-                                                                        const TextEditingValue(),
+                                                                        TextEditingValue(),
                                                                     optionsBuilder:
                                                                         (textEditingValue) {
                                                                       if (textEditingValue
@@ -5741,7 +5747,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                         textHighlightStyle:
-                                                                            const TextStyle(),
+                                                                            TextStyle(),
                                                                         elevation:
                                                                             4.0,
                                                                         optionBackgroundColor:
@@ -5787,7 +5793,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             (_) =>
                                                                                 EasyDebounce.debounce(
                                                                           '_model.txtMembroAtuacaoTextController',
-                                                                          const Duration(
+                                                                          Duration(
                                                                               milliseconds: 2000),
                                                                           () =>
                                                                               safeSetState(() {}),
@@ -5864,7 +5870,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             borderRadius:
                                                                                 BorderRadius.circular(12.0),
                                                                           ),
-                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
                                                                               14.0,
                                                                               24.0,
                                                                               24.0,
@@ -5905,15 +5911,15 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                               ),
                                                               Container(
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 16.0)),
                                                           ),
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -5962,7 +5968,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           ),
                                                                     ),
                                                                     Align(
-                                                                      alignment: const AlignmentDirectional(
+                                                                      alignment: AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child: Switch
@@ -5972,7 +5978,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         onChanged:
                                                                             (newValue) async {
                                                                           safeSetState(() =>
-                                                                              _model.switchAlertaValue = newValue);
+                                                                              _model.switchAlertaValue = newValue!);
                                                                         },
                                                                         activeColor:
                                                                             FlutterFlowTheme.of(context).error,
@@ -5984,12 +5990,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                       ),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       width:
                                                                           16.0)),
                                                                 ),
                                                               ),
-                                                              SizedBox(
+                                                              Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
                                                                         .width *
@@ -5998,7 +6004,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     Autocomplete<
                                                                         String>(
                                                                   initialValue:
-                                                                      const TextEditingValue(),
+                                                                      TextEditingValue(),
                                                                   optionsBuilder:
                                                                       (textEditingValue) {
                                                                     if (textEditingValue
@@ -6049,7 +6055,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 0.0,
                                                                           ),
                                                                       textHighlightStyle:
-                                                                          const TextStyle(),
+                                                                          TextStyle(),
                                                                       elevation:
                                                                           4.0,
                                                                       optionBackgroundColor:
@@ -6097,7 +6103,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           (_) =>
                                                                               EasyDebounce.debounce(
                                                                         '_model.txtMembroAlertaTextController',
-                                                                        const Duration(
+                                                                        Duration(
                                                                             milliseconds:
                                                                                 2000),
                                                                         () => safeSetState(
@@ -6184,7 +6190,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           borderRadius:
                                                                               BorderRadius.circular(12.0),
                                                                         ),
-                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             24.0,
                                                                             24.0,
@@ -6228,13 +6234,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                   },
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 16.0)),
                                                           ),
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -6270,7 +6276,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               .center,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               20.0,
                                                                               0.0,
@@ -6289,16 +6295,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               -1.0),
                                                                           child:
                                                                               Container(
                                                                             decoration:
-                                                                                const BoxDecoration(),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(100.0, 0.0, 100.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(100.0, 0.0, 100.0, 0.0),
                                                                               child: CircularPercentIndicator(
                                                                                 percent: valueOrDefault<double>(
                                                                                   _model.membrosPercetualValidacao,
@@ -6337,7 +6343,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Row(
@@ -6356,7 +6362,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         children:
                                                                             [
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -6465,13 +6471,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   wrapped: true,
                                                                                 ),
                                                                                 Align(
-                                                                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                   child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
-                                                                                    child: SizedBox(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
+                                                                                    child: Container(
                                                                                       width: MediaQuery.sizeOf(context).width * 1.0,
                                                                                       child: Autocomplete<String>(
-                                                                                        initialValue: const TextEditingValue(),
+                                                                                        initialValue: TextEditingValue(),
                                                                                         optionsBuilder: (textEditingValue) {
                                                                                           if (textEditingValue.text == '') {
                                                                                             return const Iterable<String>.empty();
@@ -6495,7 +6501,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
-                                                                                            textHighlightStyle: const TextStyle(),
+                                                                                            textHighlightStyle: TextStyle(),
                                                                                             elevation: 4.0,
                                                                                             optionBackgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                             optionHighlightColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -6522,7 +6528,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             onEditingComplete: onEditingComplete,
                                                                                             onChanged: (_) => EasyDebounce.debounce(
                                                                                               '_model.txtValidacoesObservacoesTextController',
-                                                                                              const Duration(milliseconds: 2000),
+                                                                                              Duration(milliseconds: 2000),
                                                                                               () => safeSetState(() {}),
                                                                                             ),
                                                                                             autofocus: false,
@@ -6557,7 +6563,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                 borderRadius: BorderRadius.circular(12.0),
                                                                                               ),
                                                                                               focusedBorder: OutlineInputBorder(
-                                                                                                borderSide: const BorderSide(
+                                                                                                borderSide: BorderSide(
                                                                                                   color: Color(0x00000000),
                                                                                                   width: 2.0,
                                                                                                 ),
@@ -6579,14 +6585,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                               ),
                                                                                               filled: true,
                                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 24.0),
+                                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 24.0),
                                                                                               suffixIcon: _model.txtValidacoesObservacoesTextController!.text.isNotEmpty
                                                                                                   ? InkWell(
                                                                                                       onTap: () async {
                                                                                                         _model.txtValidacoesObservacoesTextController?.clear();
                                                                                                         safeSetState(() {});
                                                                                                       },
-                                                                                                      child: const Icon(
+                                                                                                      child: Icon(
                                                                                                         Icons.clear,
                                                                                                         size: 24.0,
                                                                                                       ),
@@ -6606,10 +6612,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(height: 16.0)),
+                                                                              ].divide(SizedBox(height: 16.0)),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 16.0)),
+                                                                        ].divide(SizedBox(height: 16.0)),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -6626,13 +6632,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 16.0)),
+                                      ].divide(SizedBox(height: 16.0)),
                                     ),
                                   ),
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 16.0, 16.0),
                                     child: SingleChildScrollView(
                                       primary: false,
@@ -6645,7 +6651,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 16.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.min,
@@ -6685,11 +6691,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                               ),
                                                             ),
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, -1.0),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
@@ -6744,7 +6750,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     child:
                                                                         Align(
                                                                       alignment:
-                                                                          const AlignmentDirectional(
+                                                                          AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                       child:
@@ -6762,7 +6768,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             padding:
                                                                                 EdgeInsets.zero,
                                                                             gridDelegate:
-                                                                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                                                                SliverGridDelegateWithFixedCrossAxisCount(
                                                                               crossAxisCount: 3,
                                                                               crossAxisSpacing: 10.0,
                                                                               mainAxisSpacing: 10.0,
@@ -6808,7 +6814,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 16.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -6848,11 +6854,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                               ),
                                                             ),
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, -1.0),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
@@ -6916,7 +6922,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           padding:
                                                                               EdgeInsets.zero,
                                                                           gridDelegate:
-                                                                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                                                              SliverGridDelegateWithFixedCrossAxisCount(
                                                                             crossAxisCount:
                                                                                 3,
                                                                             crossAxisSpacing:
@@ -6973,23 +6979,23 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, -1.0),
+                                    alignment: AlignmentDirectional(0.0, -1.0),
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                       ),
                                       alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
+                                          AlignmentDirectional(0.0, -1.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -6999,7 +7005,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.05),
                                               child: FFButtonWidget(
                                                 onPressed: () {
@@ -7011,17 +7017,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                         .getText(
                                                   'qziqype9' /* Cancel */,
                                                 ),
-                                                icon: const Icon(
+                                                icon: Icon(
                                                   Icons.cancel_outlined,
                                                   size: 24.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 44.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -7058,22 +7064,22 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.05),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   logFirebaseEvent(
                                                       'MODAL_MEMBROS_ADD_SAVE_MEMBER_BTN_ON_TAP');
-                                                  var shouldSetState = false;
+                                                  var _shouldSetState = false;
                                                   var confirmDialogResponse =
                                                       await showDialog<bool>(
                                                             context: context,
                                                             builder:
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
-                                                                title: const Text(
+                                                                title: Text(
                                                                     'Salvar dados'),
-                                                                content: const Text(
+                                                                content: Text(
                                                                     'Deseja salvar os  dados ?'),
                                                                 actions: [
                                                                   TextButton(
@@ -7081,7 +7087,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Cancelar'),
                                                                   ),
                                                                   TextButton(
@@ -7089,7 +7095,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Confirmar'),
                                                                   ),
                                                                 ],
@@ -7241,14 +7247,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                       'validacoes': _model
                                                           .choiceChipsValidacoesValues,
                                                     });
-                                                    shouldSetState = true;
+                                                    _shouldSetState = true;
                                                     await Future.delayed(
                                                         const Duration(
                                                             milliseconds: 100));
                                                     await Future.wait([
                                                       Future(() async {
                                                         if (_model
-                                                                .membrosProcedimentos.isNotEmpty) {
+                                                                .membrosProcedimentos
+                                                                .length >=
+                                                            1) {
                                                           _model.membrosProcedimentosCount =
                                                               -1;
                                                           safeSetState(() {});
@@ -7301,7 +7309,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                               ),
                                                             );
 
-                                                            shouldSetState =
+                                                            _shouldSetState =
                                                                 true;
                                                             if ((_model
                                                                     .apiResultProcedimentos
@@ -7323,7 +7331,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: const Duration(
+                                                                  duration: Duration(
                                                                       milliseconds:
                                                                           1000),
                                                                   backgroundColor:
@@ -7335,15 +7343,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                             }
                                                           }
                                                         } else {
-                                                          if (shouldSetState) {
+                                                          if (_shouldSetState)
                                                             safeSetState(() {});
-                                                          }
                                                           return;
                                                         }
                                                       }),
                                                       Future(() async {
                                                         if (_model
-                                                                .membrosProcessos.isNotEmpty) {
+                                                                .membrosProcessos
+                                                                .length >=
+                                                            1) {
                                                           _model.membrosProcessosCount =
                                                               -1;
                                                           safeSetState(() {});
@@ -7389,7 +7398,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                   .situacaoReu,
                                                             );
 
-                                                            shouldSetState =
+                                                            _shouldSetState =
                                                                 true;
                                                             if ((_model
                                                                     .apiResultProcessos
@@ -7411,7 +7420,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: const Duration(
+                                                                  duration: Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -7423,9 +7432,8 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                             }
                                                           }
                                                         } else {
-                                                          if (shouldSetState) {
+                                                          if (_shouldSetState)
                                                             safeSetState(() {});
-                                                          }
                                                           return;
                                                         }
                                                       }),
@@ -7435,48 +7443,46 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: const Text(
+                                                          title: Text(
                                                               'Adicionar Membros'),
-                                                          content: const Text(
+                                                          content: Text(
                                                               'Dados dos membros adicionados com sucesso !'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
                                                                   Navigator.pop(
                                                                       alertDialogContext),
-                                                              child: const Text('Ok'),
+                                                              child: Text('Ok'),
                                                             ),
                                                           ],
                                                         );
                                                       },
                                                     );
                                                   } else {
-                                                    if (shouldSetState) {
+                                                    if (_shouldSetState)
                                                       safeSetState(() {});
-                                                    }
                                                     return;
                                                   }
 
-                                                  if (shouldSetState) {
+                                                  if (_shouldSetState)
                                                     safeSetState(() {});
-                                                  }
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
                                                         .getText(
                                                   'xkcg34s5' /* Save Member */,
                                                 ),
-                                                icon: const Icon(
+                                                icon: Icon(
                                                   Icons.check_circle,
                                                   size: 24.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 44.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -7495,7 +7501,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),

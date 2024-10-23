@@ -1,7 +1,10 @@
 import 'dart:convert';
+import 'dart:typed_data';
+import '../schema/structs/index.dart';
 
 import 'package:flutter/foundation.dart';
 
+import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -78,8 +81,8 @@ class LoginNoSUPABASECall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "email": "$email",
-  "password": "$password"
+  "email": "${email}",
+  "password": "${password}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Login no SUPABASE',
@@ -115,12 +118,12 @@ class ProcedimentosADDCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "membro_id": "$membroId",
-  "procedimento_no": "$procedimentoNo",
-  "unidade": "$unidade",
-  "procedimento_tipo": "$procedimentoTipo",
-  "crime": "$crime",
-  "data": "$data"
+  "membro_id": "${membroId}",
+  "procedimento_no": "${procedimentoNo}",
+  "unidade": "${unidade}",
+  "procedimento_tipo": "${procedimentoTipo}",
+  "crime": "${crime}",
+  "data": "${data}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ProcedimentosADD',
@@ -157,12 +160,12 @@ class ProcessosADDCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "membro_id": "$membroId",
-  "acao_penal_no": "$acaoPenalNo",
-  "vara": "$vara",
-  "situaco_juridica": "$situacaoJuridica",
-  "regime": "$regime",
-  "situacao_reu": "$situacaoReu"
+  "membro_id": "${membroId}",
+  "acao_penal_no": "${acaoPenalNo}",
+  "vara": "${vara}",
+  "situaco_juridica": "${situacaoJuridica}",
+  "regime": "${regime}",
+  "situacao_reu": "${situacaoReu}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ProcessosADD',

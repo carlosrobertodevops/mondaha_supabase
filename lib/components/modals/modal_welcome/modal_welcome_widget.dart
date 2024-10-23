@@ -3,9 +3,13 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modal_welcome_model.dart';
 export 'modal_welcome_model.dart';
 
@@ -49,15 +53,15 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -76,8 +80,8 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -96,8 +100,8 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 50.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -116,15 +120,15 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 50.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.8, 0.8),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -143,8 +147,8 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
             curve: Curves.bounceOut,
             delay: 800.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.8, 0.8),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -185,18 +189,18 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 100),
+                  duration: Duration(milliseconds: 100),
                   curve: Curves.easeInOut,
                   width: double.infinity,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     minHeight: 150.0,
                     maxWidth: 540.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 12.0,
                         color: Color(0x33000000),
@@ -213,13 +217,13 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -228,7 +232,7 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
                               wrapWithModel(
                                 model: _model.mainLogoSmallModel,
                                 updateCallback: () => safeSetState(() {}),
-                                child: const MainLogoSmallWidget(),
+                                child: MainLogoSmallWidget(),
                               ),
                             ],
                           ).animateOnPageLoad(
@@ -247,7 +251,7 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation1']!),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -263,7 +267,7 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
                               animationsMap['textOnPageLoadAnimation2']!),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 32.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
@@ -281,7 +285,7 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -291,7 +295,7 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
                                     context.pushNamed(
                                       'main_home',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -312,7 +316,7 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        duration: const Duration(milliseconds: 4000),
+                                        duration: Duration(milliseconds: 4000),
                                         backgroundColor:
                                             FlutterFlowTheme.of(context)
                                                 .secondary,
@@ -323,9 +327,9 @@ class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>
                                     'g8q2u55w' /* Continue */,
                                   ),
                                   options: FFButtonOptions(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         44.0, 0.0, 44.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,

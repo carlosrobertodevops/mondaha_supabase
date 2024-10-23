@@ -3,9 +3,14 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'main_messages_model.dart';
 export 'main_messages_model.dart';
 
@@ -53,8 +58,8 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -73,8 +78,8 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -117,7 +122,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                         letterSpacing: 0.0,
                       ),
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation2']!),
-                actions: const [],
+                actions: [],
                 centerTitle: false,
                 elevation: 0.0,
               )
@@ -139,7 +144,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                     wrapWithModel(
                       model: _model.webNavModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: const WebNavWidget(
+                      child: WebNavWidget(
                         selectedNav: 4,
                       ),
                     ),
@@ -158,7 +163,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 1.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
@@ -166,14 +171,14 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                             ),
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   flex: 7,
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -196,7 +201,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                   desktop: false,
                                 ))
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 24.0, 0.0),
                                     child: FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
@@ -226,7 +231,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                               Expanded(
                                 flex: 5,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
+                                  padding: EdgeInsets.all(16.0),
                                   child: Container(
                                     width: double.infinity,
                                     constraints: BoxConstraints(
@@ -253,7 +258,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      boxShadow: const [
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 3.0,
                                           color: Color(0x33000000),
@@ -266,7 +271,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 8.0),
                                       child: SingleChildScrollView(
                                         child: Column(
@@ -355,7 +360,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                           0.0),
                                                 ),
                                                 contentPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(24.0, 12.0,
                                                             0.0, 12.0),
                                                 prefixIcon: Icon(
@@ -384,7 +389,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 1.0, 0.0, 0.0),
                                                   child: Material(
@@ -408,7 +413,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     12.0,
@@ -445,7 +450,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -469,7 +474,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                             Expanded(
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -503,7 +508,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -534,7 +539,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       children:
                                                                           [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               4.0,
                                                                               0.0,
@@ -560,7 +565,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           size:
                                                                               24.0,
                                                                         ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               width: 16.0)),
                                                                     ),
                                                                   ],
@@ -581,7 +586,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 1.0, 0.0, 0.0),
                                                   child: Material(
@@ -605,7 +610,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     12.0,
@@ -642,7 +647,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -666,7 +671,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                             Expanded(
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -700,7 +705,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -730,7 +735,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                               .spaceBetween,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               4.0,
                                                                               0.0,
@@ -776,7 +781,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 1.0, 0.0, 0.0),
                                                   child: Material(
@@ -800,7 +805,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     12.0,
@@ -837,7 +842,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -861,7 +866,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                             Expanded(
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -895,7 +900,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -925,7 +930,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                               .spaceBetween,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               4.0,
                                                                               0.0,
@@ -1000,7 +1005,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                       children: [
                                         Flexible(
                                           child: ListView(
-                                            padding: const EdgeInsets.fromLTRB(
+                                            padding: EdgeInsets.fromLTRB(
                                               0,
                                               12.0,
                                               0,
@@ -1011,7 +1016,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                             scrollDirection: Axis.vertical,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 4.0),
                                                 child: Column(
@@ -1022,7 +1027,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1062,7 +1067,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
-                                                                    boxShadow: const [
+                                                                    boxShadow: [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             3.0,
@@ -1076,7 +1081,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       )
                                                                     ],
                                                                     borderRadius:
-                                                                        const BorderRadius
+                                                                        BorderRadius
                                                                             .only(
                                                                       bottomLeft:
                                                                           Radius.circular(
@@ -1104,7 +1109,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        const EdgeInsets.all(
+                                                                        EdgeInsets.all(
                                                                             8.0),
                                                                     child:
                                                                         Column(
@@ -1114,7 +1119,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       children: [
                                                                         Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(4.0),
+                                                                              EdgeInsets.all(4.0),
                                                                           child: SelectionArea(
                                                                               child: AutoSizeText(
                                                                             FFLocalizations.of(context).getText(
@@ -1134,7 +1139,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1165,11 +1170,11 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1204,7 +1209,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
-                                                                      boxShadow: const [
+                                                                      boxShadow: [
                                                                         BoxShadow(
                                                                           blurRadius:
                                                                               3.0,
@@ -1218,7 +1223,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                         )
                                                                       ],
                                                                       borderRadius:
-                                                                          const BorderRadius
+                                                                          BorderRadius
                                                                               .only(
                                                                         bottomLeft:
                                                                             Radius.circular(12.0),
@@ -1239,7 +1244,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               8.0),
                                                                       child:
                                                                           Column(
@@ -1250,7 +1255,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(4.0),
+                                                                                EdgeInsets.all(4.0),
                                                                             child: SelectionArea(
                                                                                 child: Text(
                                                                               FFLocalizations.of(context).getText(
@@ -1268,7 +1273,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -1302,7 +1307,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Column(
@@ -1313,7 +1318,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1348,7 +1353,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                                  boxShadow: const [
+                                                                  boxShadow: [
                                                                     BoxShadow(
                                                                       blurRadius:
                                                                           3.0,
@@ -1362,7 +1367,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                     )
                                                                   ],
                                                                   borderRadius:
-                                                                      const BorderRadius
+                                                                      BorderRadius
                                                                           .only(
                                                                     bottomLeft:
                                                                         Radius.circular(
@@ -1387,7 +1392,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                 ),
                                                                 child: Padding(
                                                                   padding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               8.0),
                                                                   child: Column(
@@ -1414,7 +1419,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       ),
                                                                       Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(4.0),
+                                                                            EdgeInsets.all(4.0),
                                                                         child: SelectionArea(
                                                                             child: AutoSizeText(
                                                                           FFLocalizations.of(context)
@@ -1438,7 +1443,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -1468,11 +1473,11 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1506,7 +1511,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
-                                                                    boxShadow: const [
+                                                                    boxShadow: [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             3.0,
@@ -1520,7 +1525,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       )
                                                                     ],
                                                                     borderRadius:
-                                                                        const BorderRadius
+                                                                        BorderRadius
                                                                             .only(
                                                                       bottomLeft:
                                                                           Radius.circular(
@@ -1546,7 +1551,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        const EdgeInsets.all(
+                                                                        EdgeInsets.all(
                                                                             8.0),
                                                                     child:
                                                                         Column(
@@ -1585,7 +1590,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(4.0),
+                                                                              EdgeInsets.all(4.0),
                                                                           child: SelectionArea(
                                                                               child: Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1603,7 +1608,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1634,11 +1639,11 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1672,7 +1677,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
-                                                                    boxShadow: const [
+                                                                    boxShadow: [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             3.0,
@@ -1686,7 +1691,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       )
                                                                     ],
                                                                     borderRadius:
-                                                                        const BorderRadius
+                                                                        BorderRadius
                                                                             .only(
                                                                       bottomLeft:
                                                                           Radius.circular(
@@ -1712,7 +1717,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        const EdgeInsets.all(
+                                                                        EdgeInsets.all(
                                                                             8.0),
                                                                     child:
                                                                         Column(
@@ -1737,7 +1742,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(4.0),
+                                                                              EdgeInsets.all(4.0),
                                                                           child: SelectionArea(
                                                                               child: Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1755,7 +1760,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1792,7 +1797,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 32.0),
                                           child: Container(
                                             width: double.infinity,
@@ -1800,7 +1805,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: const [
+                                              boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 3.0,
                                                   color: Color(0x33000000),
@@ -1814,7 +1819,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -1848,7 +1853,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   0.0,
@@ -1949,7 +1954,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                         8.0),
                                                           ),
                                                           contentPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       8.0,
