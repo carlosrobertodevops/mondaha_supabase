@@ -1,7 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/components/dropdowns/dropdown_faccao_edit/dropdown_faccao_edit_widget.dart';
-import '/components/modals/modal_add_faccao/modal_add_faccao_widget.dart';
 import '/components/modals/modal_command_palette/modal_command_palette_widget.dart';
+import '/components/modals/modal_faccao_add/modal_faccao_add_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -148,7 +148,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                           onTap: () =>
                                               FocusScope.of(dialogContext)
                                                   .unfocus(),
-                                          child: const ModalAddFaccaoWidget(),
+                                          child: const ModalFaccaoAddWidget(),
                                         ),
                                       );
                                     },
@@ -594,7 +594,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                             String>(
                                                                           listViewFaccoesRow
                                                                               .imagemPath,
-                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
+                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/jcagf9ktjnd8/imagem_(2).png',
                                                                         ),
                                                                         width:
                                                                             70.0,

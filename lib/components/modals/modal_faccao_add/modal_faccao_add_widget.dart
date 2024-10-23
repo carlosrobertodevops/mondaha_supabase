@@ -6,22 +6,21 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'modal_add_faccao_model.dart';
-export 'modal_add_faccao_model.dart';
+import 'modal_faccao_add_model.dart';
+export 'modal_faccao_add_model.dart';
 
-class ModalAddFaccaoWidget extends StatefulWidget {
-  const ModalAddFaccaoWidget({super.key});
+class ModalFaccaoAddWidget extends StatefulWidget {
+  const ModalFaccaoAddWidget({super.key});
 
   @override
-  State<ModalAddFaccaoWidget> createState() => _ModalAddFaccaoWidgetState();
+  State<ModalFaccaoAddWidget> createState() => _ModalFaccaoAddWidgetState();
 }
 
-class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
+class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
     with TickerProviderStateMixin {
-  late ModalAddFaccaoModel _model;
+  late ModalFaccaoAddModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -34,7 +33,7 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ModalAddFaccaoModel());
+    _model = createModel(context, () => ModalFaccaoAddModel());
 
     _model.txtNomeFaccaoTextController ??= TextEditingController();
     _model.txtNomeFaccaoFocusNode ??= FocusNode();
@@ -77,7 +76,12 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
+          _model.txtNomeFaccaoTextController?.text =
+              FFLocalizations.of(context).getText(
+            'cxlzs5tl' /* Nome da facção */,
+          );
+        }));
   }
 
   @override
@@ -199,7 +203,7 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                   ),
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_ADD_FACCAO_close_rounded_ICN_ON_TA');
+                                        'MODAL_FACCAO_ADD_close_rounded_ICN_ON_TA');
                                     Navigator.pop(context);
                                   },
                                 ),
@@ -213,139 +217,135 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
-                                child: Container(
-                                  width: 160.0,
-                                  height: 160.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      width: 2.0,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Stack(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                      children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.add_a_photo_outlined,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 72.0,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 12.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'dqo5yhdb' /* Add Photo */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(6.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'MODAL_ADD_FACCAO_Image_r5bsf0oi_ON_TAP');
-                                              final selectedMedia =
-                                                  await selectMediaWithSourceBottomSheet(
-                                                context: context,
-                                                maxWidth: 100.00,
-                                                maxHeight: 100.00,
-                                                allowPhoto: true,
-                                              );
-                                              if (selectedMedia != null &&
-                                                  selectedMedia.every((m) =>
-                                                      validateFileFormat(
-                                                          m.storagePath,
-                                                          context))) {
-                                                safeSetState(() => _model
-                                                    .isDataUploading2 = true);
-                                                var selectedUploadedFiles =
-                                                    <FFUploadedFile>[];
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    logFirebaseEvent(
+                                        'MODAL_FACCAO_ADD_faccao_image_ON_TAP');
+                                    final selectedMedia = await selectMedia(
+                                      maxWidth: 100.00,
+                                      maxHeight: 100.00,
+                                      mediaSource: MediaSource.photoGallery,
+                                      multiImage: false,
+                                    );
+                                    if (selectedMedia != null &&
+                                        selectedMedia.every((m) =>
+                                            validateFileFormat(
+                                                m.storagePath, context))) {
+                                      safeSetState(
+                                          () => _model.isDataUploading1 = true);
+                                      var selectedUploadedFiles =
+                                          <FFUploadedFile>[];
 
-                                                try {
-                                                  selectedUploadedFiles =
-                                                      selectedMedia
-                                                          .map((m) =>
-                                                              FFUploadedFile(
-                                                                name: m
-                                                                    .storagePath
-                                                                    .split('/')
-                                                                    .last,
-                                                                bytes: m.bytes,
-                                                                height: m
-                                                                    .dimensions
-                                                                    ?.height,
-                                                                width: m
-                                                                    .dimensions
-                                                                    ?.width,
-                                                                blurHash:
-                                                                    m.blurHash,
-                                                              ))
-                                                          .toList();
-                                                } finally {
-                                                  _model.isDataUploading2 =
-                                                      false;
-                                                }
-                                                if (selectedUploadedFiles
-                                                        .length ==
-                                                    selectedMedia.length) {
-                                                  safeSetState(() {
-                                                    _model.uploadedLocalFile2 =
-                                                        selectedUploadedFiles
-                                                            .first;
-                                                  });
-                                                } else {
-                                                  safeSetState(() {});
-                                                  return;
-                                                }
-                                              }
-                                            },
+                                      try {
+                                        showUploadMessage(
+                                          context,
+                                          'Uploading file...',
+                                          showLoading: true,
+                                        );
+                                        selectedUploadedFiles = selectedMedia
+                                            .map((m) => FFUploadedFile(
+                                                  name: m.storagePath
+                                                      .split('/')
+                                                      .last,
+                                                  bytes: m.bytes,
+                                                  height: m.dimensions?.height,
+                                                  width: m.dimensions?.width,
+                                                  blurHash: m.blurHash,
+                                                ))
+                                            .toList();
+                                      } finally {
+                                        ScaffoldMessenger.of(context)
+                                            .hideCurrentSnackBar();
+                                        _model.isDataUploading1 = false;
+                                      }
+                                      if (selectedUploadedFiles.length ==
+                                          selectedMedia.length) {
+                                        safeSetState(() {
+                                          _model.uploadedLocalFile1 =
+                                              selectedUploadedFiles.first;
+                                        });
+                                        showUploadMessage(context, 'Success!');
+                                      } else {
+                                        safeSetState(() {});
+                                        showUploadMessage(
+                                            context, 'Failed to upload data');
+                                        return;
+                                      }
+                                    }
+                                  },
+                                  child: Container(
+                                    width: 160.0,
+                                    height: 160.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      borderRadius: BorderRadius.circular(16.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        width: 2.0,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Stack(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        children: [
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.add_a_photo_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 72.0,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 12.0, 0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'dqo5yhdb' /* Add Photo */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(6.0),
                                             child: ClipRRect(
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
-                                              child: CachedNetworkImage(
-                                                fadeInDuration:
-                                                    const Duration(milliseconds: 500),
-                                                fadeOutDuration:
-                                                    const Duration(milliseconds: 500),
-                                                imageUrl: '',
+                                                  BorderRadius.circular(12.0),
+                                              child: Image.memory(
+                                                _model.uploadedLocalFile1
+                                                        .bytes ??
+                                                    Uint8List.fromList([]),
                                                 width: double.infinity,
                                                 height: double.infinity,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -438,7 +438,7 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'gvgwcy4p' /*  */,
+                                  'gvgwcy4p' /* Descrição ou Biografia */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -519,76 +519,124 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                 FFButtonWidget(
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_ADD_FACCAO_COMP_SAVE_BTN_ON_TAP');
-                                    {
-                                      safeSetState(
-                                          () => _model.isDataUploading3 = true);
-                                      var selectedUploadedFiles =
-                                          <FFUploadedFile>[];
-                                      var selectedMedia = <SelectedFile>[];
-                                      var downloadUrls = <String>[];
-                                      try {
-                                        selectedUploadedFiles = _model
-                                                .uploadedLocalFile2
-                                                .bytes!
-                                                .isNotEmpty
-                                            ? [_model.uploadedLocalFile2]
-                                            : <FFUploadedFile>[];
-                                        selectedMedia =
-                                            selectedFilesFromUploadedFiles(
-                                          selectedUploadedFiles,
-                                          storageFolderPath: 'faccoes',
-                                        );
-                                        downloadUrls =
-                                            await uploadSupabaseStorageFiles(
-                                          bucketName: 'uploads',
-                                          selectedFiles: selectedMedia,
-                                        );
-                                      } finally {
-                                        _model.isDataUploading3 = false;
+                                        'MODAL_FACCAO_ADD_COMP_SAVE_BTN_ON_TAP');
+                                    var confirmDialogResponse =
+                                        await showDialog<bool>(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: const Text('SALVAR'),
+                                                  content: const Text(
+                                                      'Deseja salvar os dados ?'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              false),
+                                                      child: const Text('Cancelar'),
+                                                    ),
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              true),
+                                                      child: const Text('Confirmar'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ) ??
+                                            false;
+                                    if (confirmDialogResponse) {
+                                      {
+                                        safeSetState(() =>
+                                            _model.isDataUploading2 = true);
+                                        var selectedUploadedFiles =
+                                            <FFUploadedFile>[];
+                                        var selectedMedia = <SelectedFile>[];
+                                        var downloadUrls = <String>[];
+                                        try {
+                                          showUploadMessage(
+                                            context,
+                                            'Uploading file...',
+                                            showLoading: true,
+                                          );
+                                          selectedUploadedFiles = _model
+                                                  .uploadedLocalFile1
+                                                  .bytes!
+                                                  .isNotEmpty
+                                              ? [_model.uploadedLocalFile1]
+                                              : <FFUploadedFile>[];
+                                          selectedMedia =
+                                              selectedFilesFromUploadedFiles(
+                                            selectedUploadedFiles,
+                                            storageFolderPath: 'faccoes',
+                                          );
+                                          downloadUrls =
+                                              await uploadSupabaseStorageFiles(
+                                            bucketName: 'uploads',
+                                            selectedFiles: selectedMedia,
+                                          );
+                                        } finally {
+                                          ScaffoldMessenger.of(context)
+                                              .hideCurrentSnackBar();
+                                          _model.isDataUploading2 = false;
+                                        }
+                                        if (selectedUploadedFiles.length ==
+                                                selectedMedia.length &&
+                                            downloadUrls.length ==
+                                                selectedMedia.length) {
+                                          safeSetState(() {
+                                            _model.uploadedLocalFile2 =
+                                                selectedUploadedFiles.first;
+                                            _model.uploadedFileUrl2 =
+                                                downloadUrls.first;
+                                          });
+                                          showUploadMessage(
+                                              context, 'Success!');
+                                        } else {
+                                          safeSetState(() {});
+                                          showUploadMessage(
+                                              context, 'Failed to upload data');
+                                          return;
+                                        }
                                       }
-                                      if (selectedUploadedFiles.length ==
-                                              selectedMedia.length &&
-                                          downloadUrls.length ==
-                                              selectedMedia.length) {
-                                        safeSetState(() {
-                                          _model.uploadedLocalFile3 =
-                                              selectedUploadedFiles.first;
-                                          _model.uploadedFileUrl3 =
-                                              downloadUrls.first;
-                                        });
-                                      } else {
-                                        safeSetState(() {});
-                                        return;
-                                      }
+
+                                      _model.outputFaccaoUpdate =
+                                          await FaccoesTable().insert({
+                                        'nome': _model
+                                            .txtNomeFaccaoTextController.text,
+                                        'descricao': _model
+                                            .descriptionTextController.text,
+                                        'imagem_path': _model.uploadedFileUrl2,
+                                      });
+                                      Navigator.pop(context);
+                                      Navigator.pop(context);
+
+                                      context.pushNamed('main_faccoes');
+
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Cadastro SALVO com sucesso!',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                          ),
+                                          duration:
+                                              const Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                        ),
+                                      );
                                     }
 
-                                    await FaccoesTable().insert({
-                                      'nome': _model
-                                          .txtNomeFaccaoTextController.text,
-                                      'descricao':
-                                          _model.descriptionTextController.text,
-                                      'imagem_path': _model.uploadedFileUrl3,
-                                    });
-                                    Navigator.pop(context);
-
-                                    context.pushNamed('main_faccoes');
-
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Cadastro SALVO com sucesso!',
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: const Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .success,
-                                      ),
-                                    );
+                                    safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '2g54ptaj' /* Save */,

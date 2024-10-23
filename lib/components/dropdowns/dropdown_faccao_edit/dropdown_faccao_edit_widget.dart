@@ -1,5 +1,5 @@
 import '/backend/supabase/supabase.dart';
-import '/components/modals/modal_edit_faccao/modal_edit_faccao_widget.dart';
+import '/components/modals/modal_faccao_edit/modal_faccao_edit_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -116,7 +116,7 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                                   backgroundColor: Colors.transparent,
                                   alignment: const AlignmentDirectional(0.0, 0.0)
                                       .resolve(Directionality.of(context)),
-                                  child: ModalEditFaccaoWidget(
+                                  child: ModalFaccaoEditWidget(
                                     faccaoid: widget.faccaoid,
                                   ),
                                 );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
-import '/components/modals/modal_add_membros/modal_add_membros_widget.dart';
+import '/components/modals/modal_membros_add/modal_membros_add_widget.dart';
 
 // Focus widget keys for this walkthrough
 final button9j4hsjnr = GlobalKey();
@@ -20,7 +20,7 @@ List<TargetFocus> createWalkthroughTargets(BuildContext context) => [
         contents: [
           TargetContent(
             align: ContentAlign.top,
-            builder: (context, __) => const ModalAddMembrosWidget(),
+            builder: (context, __) => const ModalMembrosAddWidget(),
           ),
         ],
       ),

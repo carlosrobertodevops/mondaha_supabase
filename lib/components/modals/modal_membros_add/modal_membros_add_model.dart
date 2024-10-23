@@ -3,11 +3,11 @@ import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'modal_add_membros_widget.dart' show ModalAddMembrosWidget;
+import 'modal_membros_add_widget.dart' show ModalMembrosAddWidget;
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
+class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   ///  Local state fields for this component.
 
   List<String> membrosPhotos = [];

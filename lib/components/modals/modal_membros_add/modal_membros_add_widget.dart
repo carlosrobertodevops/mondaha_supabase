@@ -20,19 +20,19 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'modal_add_membros_model.dart';
-export 'modal_add_membros_model.dart';
+import 'modal_membros_add_model.dart';
+export 'modal_membros_add_model.dart';
 
-class ModalAddMembrosWidget extends StatefulWidget {
-  const ModalAddMembrosWidget({super.key});
+class ModalMembrosAddWidget extends StatefulWidget {
+  const ModalMembrosAddWidget({super.key});
 
   @override
-  State<ModalAddMembrosWidget> createState() => _ModalAddMembrosWidgetState();
+  State<ModalMembrosAddWidget> createState() => _ModalMembrosAddWidgetState();
 }
 
-class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
+class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
     with TickerProviderStateMixin {
-  late ModalAddMembrosModel _model;
+  late ModalMembrosAddModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -45,7 +45,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ModalAddMembrosModel());
+    _model = createModel(context, () => ModalMembrosAddModel());
 
     _model.tabBarController = TabController(
       vsync: this,
@@ -247,7 +247,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                     ),
                                     onPressed: () async {
                                       logFirebaseEvent(
-                                          'MODAL_ADD_MEMBROS_close_rounded_ICN_ON_T');
+                                          'MODAL_MEMBROS_ADD_close_rounded_ICN_ON_T');
                                       Navigator.pop(context);
                                     },
                                   ),
@@ -503,7 +503,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                         hoverColor: Colors.transparent,
                                                                                         highlightColor: Colors.transparent,
                                                                                         onTap: () async {
-                                                                                          logFirebaseEvent('MODAL_ADD_MEMBROS_Container_we8qkkgn_ON_');
+                                                                                          logFirebaseEvent('MODAL_MEMBROS_ADD_Container_we8qkkgn_ON_');
                                                                                           final selectedMedia = await selectMedia(
                                                                                             maxWidth: 100.00,
                                                                                             maxHeight: 100.00,
@@ -635,7 +635,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                       hoverColor: Colors.transparent,
                                                                                                                       highlightColor: Colors.transparent,
                                                                                                                       onTap: () async {
-                                                                                                                        logFirebaseEvent('MODAL_ADD_MEMBROS_membro_foto_ON_TAP');
+                                                                                                                        logFirebaseEvent('MODAL_MEMBROS_ADD_membro_foto_ON_TAP');
                                                                                                                         await Navigator.push(
                                                                                                                           context,
                                                                                                                           PageTransition(
@@ -688,7 +688,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                                     hoverColor: Colors.transparent,
                                                                                                                     highlightColor: Colors.transparent,
                                                                                                                     onTap: () async {
-                                                                                                                      logFirebaseEvent('MODAL_ADD_MEMBROS_Icon_gn1akpon_ON_TAP');
+                                                                                                                      logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_gn1akpon_ON_TAP');
                                                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                                                             context: context,
                                                                                                                             builder: (alertDialogContext) {
@@ -749,7 +749,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                         hoverColor: Colors.transparent,
                                                                                         highlightColor: Colors.transparent,
                                                                                         onTap: () async {
-                                                                                          logFirebaseEvent('MODAL_ADD_MEMBROS_Container_monrsbqi_ON_');
+                                                                                          logFirebaseEvent('MODAL_MEMBROS_ADD_Container_monrsbqi_ON_');
                                                                                           var confirmDialogResponse = await showDialog<bool>(
                                                                                                 context: context,
                                                                                                 builder: (alertDialogContext) {
@@ -1008,7 +1008,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                   size: 24.0,
                                                                                 ),
                                                                                 onPressed: () async {
-                                                                                  logFirebaseEvent('MODAL_ADD_MEMBROS_add_rounded_ICN_ON_TAP');
+                                                                                  logFirebaseEvent('MODAL_MEMBROS_ADD_add_rounded_ICN_ON_TAP');
                                                                                   if (_model.txtAlcunhaAddTextController.text != '') {
                                                                                     _model.addToMembrosAlcunhas(_model.txtAlcunhaAddTextController.text);
                                                                                     safeSetState(() {});
@@ -1089,7 +1089,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                           hoverColor: Colors.transparent,
                                                                                                           highlightColor: Colors.transparent,
                                                                                                           onTap: () async {
-                                                                                                            logFirebaseEvent('MODAL_ADD_MEMBROS_Icon_6qqufm56_ON_TAP');
+                                                                                                            logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_6qqufm56_ON_TAP');
                                                                                                             _model.removeAtIndexFromMembrosAlcunhas(tagAlcunhaIndex);
                                                                                                             safeSetState(() {});
                                                                                                           },
@@ -2196,7 +2196,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                 size: 24.0,
                                                                               ),
                                                                               onPressed: () async {
-                                                                                logFirebaseEvent('MODAL_ADD_MEMBROS_add_rounded_ICN_ON_TAP');
+                                                                                logFirebaseEvent('MODAL_MEMBROS_ADD_add_rounded_ICN_ON_TAP');
                                                                                 if (_model.txtMembrosEnderecosAddTextController.text != '') {
                                                                                   _model.addToMembrosEnderecos(_model.txtMembrosEnderecosAddTextController.text);
                                                                                   safeSetState(() {});
@@ -2277,7 +2277,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                         hoverColor: Colors.transparent,
                                                                                                         highlightColor: Colors.transparent,
                                                                                                         onTap: () async {
-                                                                                                          logFirebaseEvent('MODAL_ADD_MEMBROS_Icon_9l4zc2l7_ON_TAP');
+                                                                                                          logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_9l4zc2l7_ON_TAP');
                                                                                                           _model.removeAtIndexFromMembrosEnderecos(listMembrosEnderecosIndex);
                                                                                                           safeSetState(() {});
                                                                                                         },
@@ -3551,7 +3551,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                   size: 24.0,
                                                                                 ),
                                                                                 onPressed: () async {
-                                                                                  logFirebaseEvent('MODAL_ADD_MEMBROS_add_rounded_ICN_ON_TAP');
+                                                                                  logFirebaseEvent('MODAL_MEMBROS_ADD_add_rounded_ICN_ON_TAP');
                                                                                   if (_model.txtFaccaoTresLocaisAddTextController.text != '') {
                                                                                     _model.addToMembrosFaccaoTresLocais(_model.txtFaccaoTresLocaisAddTextController.text);
                                                                                     safeSetState(() {});
@@ -3634,7 +3634,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                         hoverColor: Colors.transparent,
                                                                                                         highlightColor: Colors.transparent,
                                                                                                         onTap: () async {
-                                                                                                          logFirebaseEvent('MODAL_ADD_MEMBROS_Icon_zcdxsxk7_ON_TAP');
+                                                                                                          logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_zcdxsxk7_ON_TAP');
                                                                                                           _model.removeAtIndexFromMembrosFaccaoTresLocais(childenTresLocaisIndex);
                                                                                                           safeSetState(() {});
                                                                                                         },
@@ -4309,7 +4309,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
-                                                                              logFirebaseEvent('MODAL_ADD_MEMBROS_calendar_month_outline');
+                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_calendar_month_outline');
                                                                               final datePickedDate = await showDatePicker(
                                                                                 context: context,
                                                                                 initialDate: getCurrentTimestamp,
@@ -4376,7 +4376,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                           FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              logFirebaseEvent('MODAL_ADD_MEMBROS_LIMPAR_PROCEDIMENTOS_A');
+                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_LIMPAR_PROCEDIMENTOS_A');
                                                                               _model.membrosProcedimentos = [];
                                                                               safeSetState(() {});
                                                                             },
@@ -4411,7 +4411,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                           FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              logFirebaseEvent('MODAL_ADD_MEMBROS_ADICIONAR_BTN_ON_TAP');
+                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_ADICIONAR_BTN_ON_TAP');
                                                                               _model.addToMembrosProcedimentos(DataTypesProcedimentosStruct(
                                                                                 procedimentoNo: _model.txtProcedimentoNoTextController.text,
                                                                                 procedimentoTipo: _model.ddwProcedimentoTipoValue,
@@ -4786,7 +4786,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                   hoverColor: Colors.transparent,
                                                                                                   highlightColor: Colors.transparent,
                                                                                                   onTap: () async {
-                                                                                                    logFirebaseEvent('MODAL_ADD_MEMBROS_Icon_wakbomnr_ON_TAP');
+                                                                                                    logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_wakbomnr_ON_TAP');
                                                                                                     _model.removeAtIndexFromMembrosProcedimentos(childrenProcedimentosIndex);
                                                                                                     safeSetState(() {});
                                                                                                   },
@@ -5202,7 +5202,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                           FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              logFirebaseEvent('MODAL_ADD_MEMBROS_COMP_LIMPAR_BTN_ON_TAP');
+                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_COMP_LIMPAR_BTN_ON_TAP');
                                                                               _model.membrosProcessos = [];
                                                                               safeSetState(() {});
                                                                             },
@@ -5237,7 +5237,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                           FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              logFirebaseEvent('MODAL_ADD_MEMBROS_ADICIONAR_BTN_ON_TAP');
+                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_ADICIONAR_BTN_ON_TAP');
                                                                               _model.addToMembrosProcessos(DataTypesProcessosStruct(
                                                                                 noAcaoPenal: _model.txtProcessoNoAcaoPenalTextController.text,
                                                                                 vara: _model.ddwProcessoVaraValue,
@@ -5609,7 +5609,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                                   hoverColor: Colors.transparent,
                                                                                                   highlightColor: Colors.transparent,
                                                                                                   onTap: () async {
-                                                                                                    logFirebaseEvent('MODAL_ADD_MEMBROS_Icon_mt52g5ip_ON_TAP');
+                                                                                                    logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_mt52g5ip_ON_TAP');
                                                                                                     _model.removeAtIndexFromMembrosProcessos(childrenProcessosIndex);
                                                                                                     safeSetState(() {});
                                                                                                   },
@@ -6421,7 +6421,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                   ],
                                                                                   onChanged: (val) async {
                                                                                     safeSetState(() => _model.choiceChipsValidacoesValues = val);
-                                                                                    logFirebaseEvent('MODAL_ADD_MEMBROS_ChoiceChipsValidacoes_');
+                                                                                    logFirebaseEvent('MODAL_MEMBROS_ADD_ChoiceChipsValidacoes_');
                                                                                     if (_model.membrosPercetualValidacao <= 1.0) {
                                                                                       _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 0.10;
                                                                                       safeSetState(() {});
@@ -7063,7 +7063,7 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   logFirebaseEvent(
-                                                      'MODAL_ADD_MEMBROS_SAVE_MEMBER_BTN_ON_TAP');
+                                                      'MODAL_MEMBROS_ADD_SAVE_MEMBER_BTN_ON_TAP');
                                                   var shouldSetState = false;
                                                   var confirmDialogResponse =
                                                       await showDialog<bool>(

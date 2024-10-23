@@ -1,18 +1,14 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'modal_add_faccao_widget.dart' show ModalAddFaccaoWidget;
+import 'modal_faccao_add_widget.dart' show ModalFaccaoAddWidget;
 import 'package:flutter/material.dart';
 
-class ModalAddFaccaoModel extends FlutterFlowModel<ModalAddFaccaoWidget> {
+class ModalFaccaoAddModel extends FlutterFlowModel<ModalFaccaoAddWidget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
-
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
   // State field(s) for txt_nome_faccao widget.
@@ -45,10 +41,13 @@ class ModalAddFaccaoModel extends FlutterFlowModel<ModalAddFaccaoWidget> {
     return null;
   }
 
-  bool isDataUploading3 = false;
-  FFUploadedFile uploadedLocalFile3 =
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl3 = '';
+  String uploadedFileUrl2 = '';
+
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  FaccoesRow? outputFaccaoUpdate;
 
   @override
   void initState(BuildContext context) {

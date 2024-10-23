@@ -1368,7 +1368,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Excluir',
     },
   },
-  // modal_add_faccao
+  // modal_faccao_add
   {
     '5tdm3cpv': {
       'en': 'Add Faction',
@@ -1386,9 +1386,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Faction Name',
       'pt': 'Nome da Facção',
     },
+    'cxlzs5tl': {
+      'en': 'Nome da facção',
+      'pt': 'Nome da facção',
+    },
     'gvgwcy4p': {
-      'en': '',
-      'pt': '',
+      'en': 'Descrição ou Biografia',
+      'pt': 'Descrição ou Biografia',
     },
     'uqziqhmg': {
       'en': 'Description ',
@@ -1582,7 +1586,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Detalhes do Projeto',
     },
   },
-  // modal_add_membros
+  // modal_membros_add
   {
     'ioxmm05s': {
       'en': 'Add Member',
@@ -2758,7 +2762,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Salvar alterações',
     },
   },
-  // modal_edit_faccao
+  // modal_faccao_edit
   {
     'ze3l1q4r': {
       'en': 'Edit Faction',
@@ -2772,21 +2776,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Update foto',
       'pt': 'Atararr foto',
     },
+    'rq3zqf7i': {
+      'en': 'Nome da facção',
+      'pt': 'Nome da facção',
+    },
     '2huj2jzx': {
       'en': 'Faction Name',
       'pt': 'Nome da Facção',
     },
     '0lr3g0go': {
-      'en': '',
-      'pt': '',
+      'en': 'Descrição ou Biografia',
+      'pt': 'Descrição ou Biografia',
     },
     'krgsdp6s': {
       'en': 'Description here...',
       'pt': 'Descrição aqui...',
-    },
-    '2d3lr93u': {
-      'en': 'Delete',
-      'pt': 'Excluir',
     },
     'ntyay3mi': {
       'en': 'Save',

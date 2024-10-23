@@ -4,6 +4,10 @@ import 'modal_profile_edit_widget.dart' show ModalProfileEditWidget;
 import 'package:flutter/material.dart';
 
 class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
+  ///  Local state fields for this component.
+
+  bool uploadImagemTemp = false;
+
   ///  State fields for stateful widgets in this component.
 
   bool isDataUploading1 = false;
@@ -25,7 +29,7 @@ class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
   String uploadedFileUrl2 = '';
 
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<UsuariosRow>? outputUpdateUsuario;
+  List<UsuariosRow>? outputUsuarioUpdate;
 
   @override
   void initState(BuildContext context) {}

@@ -1,8 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'modal_edit_faccao_widget.dart' show ModalEditFaccaoWidget;
+import 'modal_faccao_edit_widget.dart' show ModalFaccaoEditWidget;
 import 'package:flutter/material.dart';
 
-class ModalEditFaccaoModel extends FlutterFlowModel<ModalEditFaccaoWidget> {
+class ModalFaccaoEditModel extends FlutterFlowModel<ModalFaccaoEditWidget> {
+  ///  Local state fields for this component.
+
+  bool? uploadImagemTemp = false;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

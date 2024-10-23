@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'main_profile_page_model.dart';
 export 'main_profile_page_model.dart';
 
@@ -112,6 +113,8 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<UsuariosRow>>(
       future: UsuariosTable().querySingleRow(
         queryFn: (q) => q.eq(
@@ -297,7 +300,7 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .accent1,
                                             borderRadius:
-                                                BorderRadius.circular(12.0),
+                                                BorderRadius.circular(50.0),
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -316,9 +319,8 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                                     const Duration(milliseconds: 500),
                                                 imageUrl:
                                                     valueOrDefault<String>(
-                                                  mainProfilePageUsuariosRow
-                                                      ?.fotoPath,
-                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
+                                                  FFAppState().UsuarioAtualFoto,
+                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
                                                 ),
                                                 width: 44.0,
                                                 height: 44.0,

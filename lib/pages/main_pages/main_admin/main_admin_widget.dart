@@ -651,7 +651,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                             String>(
                                                                           listViewUsuariosRow
                                                                               .fotoPath,
-                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
+                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
                                                                         ),
                                                                         width:
                                                                             70.0,

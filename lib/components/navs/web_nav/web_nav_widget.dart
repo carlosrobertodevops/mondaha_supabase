@@ -223,7 +223,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.dashboard_rounded,
+                                  Icons.dashboard_outlined,
                                   color: widget.selectedNav == 1
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -347,7 +347,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.groups_outlined,
+                                  Icons.groups_3_outlined,
                                   color: widget.selectedNav == 3
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -558,7 +558,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.account_circle_rounded,
+                                  Icons.account_circle_outlined,
                                   color: widget.selectedNav == 6
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -712,7 +712,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).accent1,
-                                      borderRadius: BorderRadius.circular(12.0),
+                                      borderRadius: BorderRadius.circular(50.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -722,7 +722,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       padding: const EdgeInsets.all(2.0),
                                       child: ClipRRect(
                                         borderRadius:
-                                            BorderRadius.circular(10.0),
+                                            BorderRadius.circular(50.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
                                               const Duration(milliseconds: 500),
@@ -730,7 +730,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                               const Duration(milliseconds: 500),
                                           imageUrl: valueOrDefault<String>(
                                             FFAppState().UsuarioAtualFoto,
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/uq7xkmuw5qeb/perfil-de-usuario.png',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
                                           ),
                                           width: 44.0,
                                           height: 44.0,
@@ -947,7 +947,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.dashboard_rounded,
+                                  Icons.dashboard_outlined,
                                   color: widget.selectedNav == 1
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -1031,7 +1031,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.groups_outlined,
+                                  Icons.groups_3_outlined,
                                   color: widget.selectedNav == 3
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -1182,7 +1182,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.account_circle_rounded,
+                                  Icons.account_circle_outlined,
                                   color: widget.selectedNav == 6
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -1252,7 +1252,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: FlutterFlowLanguageSelector(
-                                width: 84.0,
+                                width: 60.0,
                                 height: 60.0,
                                 backgroundColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -1296,7 +1296,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).accent1,
-                                      borderRadius: BorderRadius.circular(12.0),
+                                      borderRadius: BorderRadius.circular(50.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1306,7 +1306,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                       padding: const EdgeInsets.all(2.0),
                                       child: ClipRRect(
                                         borderRadius:
-                                            BorderRadius.circular(10.0),
+                                            BorderRadius.circular(50.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
                                               const Duration(milliseconds: 500),
@@ -1314,7 +1314,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                               const Duration(milliseconds: 500),
                                           imageUrl: valueOrDefault<String>(
                                             FFAppState().UsuarioAtualFoto,
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/uq7xkmuw5qeb/perfil-de-usuario.png',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
                                           ),
                                           width: 44.0,
                                           height: 44.0,

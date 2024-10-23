@@ -1,4 +1,4 @@
-import '/components/modals/modal_add_faccao/modal_add_faccao_widget.dart';
+import '/components/modals/modal_faccao_add/modal_faccao_add_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -519,7 +519,7 @@ class _ModalCommandPaletteWidgetState extends State<ModalCommandPaletteWidget>
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: const ModalAddFaccaoWidget(),
+                                                child: const ModalFaccaoAddWidget(),
                                               );
                                             },
                                           ).then(

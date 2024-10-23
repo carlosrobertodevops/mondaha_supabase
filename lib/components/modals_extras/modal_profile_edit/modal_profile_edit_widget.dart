@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
@@ -200,28 +199,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                   ),
                                   child: Stack(
                                     children: [
-                                      if (_model.isDataUploading1 == false)
-                                        Padding(
-                                          padding: const EdgeInsets.all(2.0),
-                                          child: Container(
-                                            width: 90.0,
-                                            height: 90.0,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: CachedNetworkImage(
-                                              fadeInDuration:
-                                                  const Duration(milliseconds: 500),
-                                              fadeOutDuration:
-                                                  const Duration(milliseconds: 500),
-                                              imageUrl:
-                                                  overlayUsuariosRow!.fotoPath!,
-                                              fit: BoxFit.fitWidth,
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.isDataUploading1 == true)
+                                      if (_model.uploadImagemTemp == true)
                                         Padding(
                                           padding: const EdgeInsets.all(2.0),
                                           child: Container(
@@ -234,6 +212,25 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                             child: Image.memory(
                                               _model.uploadedLocalFile1.bytes ??
                                                   Uint8List.fromList([]),
+                                              fit: BoxFit.fitWidth,
+                                            ),
+                                          ),
+                                        ),
+                                      if (_model.uploadImagemTemp == false)
+                                        Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: Container(
+                                            width: 90.0,
+                                            height: 90.0,
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Image.network(
+                                              valueOrDefault<String>(
+                                                overlayUsuariosRow?.fotoPath,
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
+                                              ),
                                               fit: BoxFit.fitWidth,
                                             ),
                                           ),
@@ -261,6 +258,11 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                           <FFUploadedFile>[];
 
                                       try {
+                                        showUploadMessage(
+                                          context,
+                                          'Uploading file...',
+                                          showLoading: true,
+                                        );
                                         selectedUploadedFiles = selectedMedia
                                             .map((m) => FFUploadedFile(
                                                   name: m.storagePath
@@ -273,6 +275,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                                 ))
                                             .toList();
                                       } finally {
+                                        ScaffoldMessenger.of(context)
+                                            .hideCurrentSnackBar();
                                         _model.isDataUploading1 = false;
                                       }
                                       if (selectedUploadedFiles.length ==
@@ -281,11 +285,17 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                           _model.uploadedLocalFile1 =
                                               selectedUploadedFiles.first;
                                         });
+                                        showUploadMessage(context, 'Success!');
                                       } else {
                                         safeSetState(() {});
+                                        showUploadMessage(
+                                            context, 'Failed to upload data');
                                         return;
                                       }
                                     }
+
+                                    _model.uploadImagemTemp = true;
+                                    safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'nx89dnuw' /* Change Photo */,
@@ -763,19 +773,21 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                       ),
                                     );
                                     FFAppState().UsuarioAtualNome = _model
-                                        .outputUpdateUsuario!
+                                        .outputUsuarioUpdate!
                                         .first
                                         .nomeCompleto!;
                                     FFAppState().UsuarioAtualFoto =
                                         _model.uploadedFileUrl2;
-                                    safeSetState(() {});
+                                    _model.updatePage(() {});
+                                    Navigator.pop(context);
+                                    Navigator.pop(context);
 
                                     context.pushNamed('main_profile_page');
 
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          'Perfil de Usuário salvo com sucesso !',
+                                          'Cadastro Atualizado com sucesso !',
                                           style: TextStyle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
