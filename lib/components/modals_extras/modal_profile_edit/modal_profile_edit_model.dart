@@ -1,10 +1,14 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
-import 'modal_edit_profile_widget.dart' show ModalEditProfileWidget;
+import 'modal_profile_edit_widget.dart' show ModalProfileEditWidget;
 import 'package:flutter/material.dart';
 
-class ModalEditProfileModel extends FlutterFlowModel<ModalEditProfileWidget> {
+class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
   ///  State fields for stateful widgets in this component.
+
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
 
   // State field(s) for yourName widget.
   FocusNode? yourNameFocusNode1;
@@ -14,9 +18,13 @@ class ModalEditProfileModel extends FlutterFlowModel<ModalEditProfileWidget> {
   FocusNode? yourNameFocusNode2;
   TextEditingController? yourNameTextController2;
   String? Function(BuildContext, String?)? yourNameTextController2Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
+
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<UsuariosRow>? outputUpdateUsuario;
 
   @override
   void initState(BuildContext context) {}

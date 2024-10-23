@@ -220,6 +220,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                     alignment: const Alignment(-1.0, 0),
                                     child: TabBar(
                                       isScrollable: true,
+                                      tabAlignment: TabAlignment.start,
                                       labelColor: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       unselectedLabelColor:

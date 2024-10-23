@@ -251,8 +251,7 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                   labelColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   unselectedLabelColor:
-                                      FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      FlutterFlowTheme.of(context).primaryText,
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).accent1,
                                   borderColor:

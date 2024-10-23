@@ -730,7 +730,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                               const Duration(milliseconds: 500),
                                           imageUrl: valueOrDefault<String>(
                                             FFAppState().UsuarioAtualFoto,
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/uq7xkmuw5qeb/perfil-de-usuario.png',
                                           ),
                                           width: 44.0,
                                           height: 44.0,
@@ -1314,7 +1314,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                               const Duration(milliseconds: 500),
                                           imageUrl: valueOrDefault<String>(
                                             FFAppState().UsuarioAtualFoto,
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/h8tx8fz7inbm/adicionar-imagem.png',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/uq7xkmuw5qeb/perfil-de-usuario.png',
                                           ),
                                           width: 44.0,
                                           height: 44.0,

@@ -6,10 +6,9 @@ class ModalEditFaccaoModel extends FlutterFlowModel<ModalEditFaccaoWidget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
 
   // State field(s) for txt_nome_faccao widget.
   FocusNode? txtNomeFaccaoFocusNode;
@@ -41,6 +40,11 @@ class ModalEditFaccaoModel extends FlutterFlowModel<ModalEditFaccaoWidget> {
 
     return null;
   }
+
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
 
   @override
   void initState(BuildContext context) {

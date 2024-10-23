@@ -50,6 +50,9 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           _model.outputQueryUsuarios!.first.tipoUsuarioId!;
       FFAppState().UsuarioAtualNome =
           _model.outputQueryUsuarios!.first.nomeCompleto!;
+      FFAppState().UsuarioAtualFoto =
+          _model.outputQueryUsuarios!.first.fotoPath!;
+      FFAppState().UsuarioAtualEmail = _model.outputQueryUsuarios!.first.email!;
       safeSetState(() {});
       await Future.wait([
         Future(() async {

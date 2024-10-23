@@ -14,7 +14,6 @@ class ModalAddFaccaoModel extends FlutterFlowModel<ModalAddFaccaoWidget> {
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
 
   // State field(s) for txt_nome_faccao widget.
   FocusNode? txtNomeFaccaoFocusNode;
@@ -45,6 +44,11 @@ class ModalAddFaccaoModel extends FlutterFlowModel<ModalAddFaccaoWidget> {
 
     return null;
   }
+
+  bool isDataUploading3 = false;
+  FFUploadedFile uploadedLocalFile3 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl3 = '';
 
   @override
   void initState(BuildContext context) {

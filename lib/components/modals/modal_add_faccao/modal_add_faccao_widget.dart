@@ -277,7 +277,6 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                               final selectedMedia =
                                                   await selectMediaWithSourceBottomSheet(
                                                 context: context,
-                                                storageFolderPath: 'faccoes',
                                                 maxWidth: 100.00,
                                                 maxHeight: 100.00,
                                                 allowPhoto: true,
@@ -292,7 +291,6 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                 var selectedUploadedFiles =
                                                     <FFUploadedFile>[];
 
-                                                var downloadUrls = <String>[];
                                                 try {
                                                   selectedUploadedFiles =
                                                       selectedMedia
@@ -313,28 +311,17 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                                                     m.blurHash,
                                                               ))
                                                           .toList();
-
-                                                  downloadUrls =
-                                                      await uploadSupabaseStorageFiles(
-                                                    bucketName: 'uploads',
-                                                    selectedFiles:
-                                                        selectedMedia,
-                                                  );
                                                 } finally {
                                                   _model.isDataUploading2 =
                                                       false;
                                                 }
                                                 if (selectedUploadedFiles
-                                                            .length ==
-                                                        selectedMedia.length &&
-                                                    downloadUrls.length ==
-                                                        selectedMedia.length) {
+                                                        .length ==
+                                                    selectedMedia.length) {
                                                   safeSetState(() {
                                                     _model.uploadedLocalFile2 =
                                                         selectedUploadedFiles
                                                             .first;
-                                                    _model.uploadedFileUrl2 =
-                                                        downloadUrls.first;
                                                   });
                                                 } else {
                                                   safeSetState(() {});
@@ -533,12 +520,55 @@ class _ModalAddFaccaoWidgetState extends State<ModalAddFaccaoWidget>
                                   onPressed: () async {
                                     logFirebaseEvent(
                                         'MODAL_ADD_FACCAO_COMP_SAVE_BTN_ON_TAP');
+                                    {
+                                      safeSetState(
+                                          () => _model.isDataUploading3 = true);
+                                      var selectedUploadedFiles =
+                                          <FFUploadedFile>[];
+                                      var selectedMedia = <SelectedFile>[];
+                                      var downloadUrls = <String>[];
+                                      try {
+                                        selectedUploadedFiles = _model
+                                                .uploadedLocalFile2
+                                                .bytes!
+                                                .isNotEmpty
+                                            ? [_model.uploadedLocalFile2]
+                                            : <FFUploadedFile>[];
+                                        selectedMedia =
+                                            selectedFilesFromUploadedFiles(
+                                          selectedUploadedFiles,
+                                          storageFolderPath: 'faccoes',
+                                        );
+                                        downloadUrls =
+                                            await uploadSupabaseStorageFiles(
+                                          bucketName: 'uploads',
+                                          selectedFiles: selectedMedia,
+                                        );
+                                      } finally {
+                                        _model.isDataUploading3 = false;
+                                      }
+                                      if (selectedUploadedFiles.length ==
+                                              selectedMedia.length &&
+                                          downloadUrls.length ==
+                                              selectedMedia.length) {
+                                        safeSetState(() {
+                                          _model.uploadedLocalFile3 =
+                                              selectedUploadedFiles.first;
+                                          _model.uploadedFileUrl3 =
+                                              downloadUrls.first;
+                                        });
+                                      } else {
+                                        safeSetState(() {});
+                                        return;
+                                      }
+                                    }
+
                                     await FaccoesTable().insert({
                                       'nome': _model
                                           .txtNomeFaccaoTextController.text,
                                       'descricao':
                                           _model.descriptionTextController.text,
-                                      'imagem_path': _model.uploadedFileUrl1,
+                                      'imagem_path': _model.uploadedFileUrl3,
                                     });
                                     Navigator.pop(context);
 

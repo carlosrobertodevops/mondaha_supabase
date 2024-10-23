@@ -296,6 +296,8 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                         const Alignment(0.0, 0),
                                                     child: TabBar(
                                                       isScrollable: true,
+                                                      tabAlignment:
+                                                          TabAlignment.center,
                                                       labelColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1953,6 +1955,9 @@ class _ModalAddMembrosWidgetState extends State<ModalAddMembrosWidget>
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
                                                                                       'tb0j8o1f' /* Ensino superior incompleto */,
+                                                                                    ),
+                                                                                    FFLocalizations.of(context).getText(
+                                                                                      'm23r6x4v' /* Sem informação */,
                                                                                     )
                                                                                   ],
                                                                                   onChanged: (val) => safeSetState(() => _model.ddwNivelInstrucaoValue = val),

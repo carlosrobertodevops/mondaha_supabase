@@ -1,7 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/modals/modal_command_palette/modal_command_palette_widget.dart';
-import '/components/modals_extras/modal_edit_profile/modal_edit_profile_widget.dart';
+import '/components/modals_extras/modal_profile_edit/modal_profile_edit_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -587,7 +587,7 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                                                 Directionality.of(
                                                                     context)),
                                                     child:
-                                                        const ModalEditProfileWidget(),
+                                                        const ModalProfileEditWidget(),
                                                   );
                                                 },
                                               );

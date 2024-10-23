@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -76,18 +77,47 @@ class FFLocalizations {
   };
 }
 
+/// Used if the locale is not supported by GlobalMaterialLocalizations.
+class FallbackMaterialLocalizationDelegate
+    extends LocalizationsDelegate<MaterialLocalizations> {
+  const FallbackMaterialLocalizationDelegate();
+
+  @override
+  bool isSupported(Locale locale) => _isSupportedLocale(locale);
+
+  @override
+  Future<MaterialLocalizations> load(Locale locale) async =>
+      SynchronousFuture<MaterialLocalizations>(
+        const DefaultMaterialLocalizations(),
+      );
+
+  @override
+  bool shouldReload(FallbackMaterialLocalizationDelegate old) => false;
+}
+
+/// Used if the locale is not supported by GlobalCupertinoLocalizations.
+class FallbackCupertinoLocalizationDelegate
+    extends LocalizationsDelegate<CupertinoLocalizations> {
+  const FallbackCupertinoLocalizationDelegate();
+
+  @override
+  bool isSupported(Locale locale) => _isSupportedLocale(locale);
+
+  @override
+  Future<CupertinoLocalizations> load(Locale locale) =>
+      SynchronousFuture<CupertinoLocalizations>(
+        const DefaultCupertinoLocalizations(),
+      );
+
+  @override
+  bool shouldReload(FallbackCupertinoLocalizationDelegate old) => false;
+}
+
 class FFLocalizationsDelegate extends LocalizationsDelegate<FFLocalizations> {
   const FFLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) {
-    final language = locale.toString();
-    return FFLocalizations.languages().contains(
-      language.endsWith('_')
-          ? language.substring(0, language.length - 1)
-          : language,
-    );
-  }
+  bool isSupported(Locale locale) => _isSupportedLocale(locale);
 
   @override
   Future<FFLocalizations> load(Locale locale) =>
@@ -103,6 +133,15 @@ Locale createLocale(String language) => language.contains('_')
         scriptCode: language.split('_').last,
       )
     : Locale(language);
+
+bool _isSupportedLocale(Locale locale) {
+  final language = locale.toString();
+  return FFLocalizations.languages().contains(
+    language.endsWith('_')
+        ? language.substring(0, language.length - 1)
+        : language,
+  );
+}
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // forgot_password
@@ -1786,6 +1825,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Ensino superior incompleto',
       'pt': 'Ensino superior incompleto',
     },
+    'm23r6x4v': {
+      'en': 'Sem informação',
+      'pt': 'Sem informação',
+    },
     '0wrilaus': {
       'en': 'Grau ou Nível de instruição',
       'pt': 'Grau ou Nível de instruição',
@@ -2672,7 +2715,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Fechar',
     },
   },
-  // modal_edit_profile
+  // modal_profile_edit
   {
     'qs8serr4': {
       'en': 'Edit Profile',
@@ -2694,57 +2737,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Short Description',
       'pt': 'Descrição curta',
     },
-    '5bl6mh8m': {
-      'en': 'Admin',
-      'pt': 'Administrador',
-    },
-    'au9c3fpx': {
-      'en': 'Admin',
-      'pt': 'Administrador',
-    },
-    '6qzm16cz': {
-      'en': 'Manager',
-      'pt': 'Gerente',
-    },
-    '6xjfeugp': {
-      'en': 'Editor',
-      'pt': 'Editor',
-    },
-    '4ga29wxb': {
-      'en': 'Viewer',
-      'pt': 'Visualizador',
-    },
-    'naxucoxg': {
-      'en': 'Please select...',
-      'pt': 'Por favor selecione...',
-    },
-    '8sac0l7x': {
-      'en': 'Search for an item...',
-      'pt': 'Pesquisar um item...',
-    },
     'p1lquhce': {
       'en': 'The email associated with this account is:',
       'pt': 'O e-mail associado a esta conta é:',
-    },
-    'i6iuebkd': {
-      'en': 'casper@ghostbusters.com',
-      'pt': 'casper@ghostbusters.com',
     },
     'fyuvtufe': {
       'en': 'Created On:',
       'pt': 'Criado em:',
     },
-    'jk8us6c6': {
-      'en': 'July 12th, 2023',
-      'pt': '12 de julho de 2023',
-    },
     'h4jwedag': {
       'en': 'Last Active:',
       'pt': 'Última atividade:',
-    },
-    'iakkv8eq': {
-      'en': 'Just Now',
-      'pt': 'Agora mesmo',
     },
     '27w5o6gn': {
       'en': 'Cancel',
@@ -2766,8 +2769,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Insira as informações abaixo para editar uma Facção.',
     },
     'xscprapi': {
-      'en': 'Add Photo',
-      'pt': 'Adicionar foto',
+      'en': 'Update foto',
+      'pt': 'Atararr foto',
     },
     '2huj2jzx': {
       'en': 'Faction Name',

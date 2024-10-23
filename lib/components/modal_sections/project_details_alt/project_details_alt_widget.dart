@@ -532,7 +532,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                   unselectedLabelStyle: const TextStyle(),
                   labelColor: FlutterFlowTheme.of(context).primaryText,
                   unselectedLabelColor:
-                      FlutterFlowTheme.of(context).secondaryText,
+                      FlutterFlowTheme.of(context).primaryText,
                   backgroundColor: FlutterFlowTheme.of(context).accent1,
                   unselectedBackgroundColor:
                       FlutterFlowTheme.of(context).primaryBackground,

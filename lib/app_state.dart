@@ -49,6 +49,10 @@ class FFAppState extends ChangeNotifier {
       _AgenciaAtualNome =
           prefs.getString('ff_AgenciaAtualNome') ?? _AgenciaAtualNome;
     });
+    _safeInit(() {
+      _UsuarioAtualEmail =
+          prefs.getString('ff_UsuarioAtualEmail') ?? _UsuarioAtualEmail;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -125,6 +129,13 @@ class FFAppState extends ChangeNotifier {
   set AgenciaAtualNome(String value) {
     _AgenciaAtualNome = value;
     prefs.setString('ff_AgenciaAtualNome', value);
+  }
+
+  String _UsuarioAtualEmail = '';
+  String get UsuarioAtualEmail => _UsuarioAtualEmail;
+  set UsuarioAtualEmail(String value) {
+    _UsuarioAtualEmail = value;
+    prefs.setString('ff_UsuarioAtualEmail', value);
   }
 }
 
