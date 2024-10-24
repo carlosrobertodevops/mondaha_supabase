@@ -38,27 +38,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
     _model.textFieldFocusNode2 ??= FocusNode();
 
     animationsMap.addAll({
-      'textOnPageLoadAnimation1': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'textOnPageLoadAnimation2': AnimationInfo(
+      'textOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 1.ms),
@@ -116,7 +96,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                         color: Colors.white,
                         letterSpacing: 0.0,
                       ),
-                ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation2']!),
+                ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation']!),
                 actions: const [],
                 centerTitle: false,
                 elevation: 0.0,
@@ -186,8 +166,7 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                             fontFamily: 'Outfit',
                                             letterSpacing: 0.0,
                                           ),
-                                    ).animateOnPageLoad(animationsMap[
-                                        'textOnPageLoadAnimation1']!),
+                                    ),
                                   ),
                                 ),
                                 if (responsiveVisibility(

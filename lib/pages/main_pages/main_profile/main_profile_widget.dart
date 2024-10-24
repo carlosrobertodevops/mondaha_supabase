@@ -38,26 +38,6 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'main_profile'});
     animationsMap.addAll({
-      'textOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
       'iconOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -219,8 +199,7 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                   fontFamily: 'Outfit',
                                                   letterSpacing: 0.0,
                                                 ),
-                                          ).animateOnPageLoad(animationsMap[
-                                              'textOnPageLoadAnimation']!),
+                                          ),
                                         ),
                                         if (responsiveVisibility(
                                           context: context,
