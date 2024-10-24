@@ -544,6 +544,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                               return;
                                                                                             }
                                                                                           }
+
+                                                                                          _model.membrosFotosTemp = _model.uploadedLocalFiles1.toList().cast<FFUploadedFile>();
+                                                                                          _model.updatePage(() {});
                                                                                         },
                                                                                         child: Container(
                                                                                           width: 100.0,
@@ -594,7 +597,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         children: [
                                                                                           Builder(
                                                                                             builder: (context) {
-                                                                                              final fotosMembroPaths = _model.uploadedLocalFiles1.map((e) => e).toList().take(6).toList();
+                                                                                              final fotosMembroPaths = _model.membrosFotosTemp.toList().take(6).toList();
 
                                                                                               return SingleChildScrollView(
                                                                                                 scrollDirection: Axis.horizontal,
@@ -710,10 +713,8 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                                           ) ??
                                                                                                                           false;
                                                                                                                       if (confirmDialogResponse) {
-                                                                                                                        safeSetState(() {
-                                                                                                                          _model.isDataUploading1 = false;
-                                                                                                                          _model.uploadedLocalFiles1 = [];
-                                                                                                                        });
+                                                                                                                        _model.removeAtIndexFromMembrosFotosTemp(fotosMembroPathsIndex);
+                                                                                                                        safeSetState(() {});
                                                                                                                       }
                                                                                                                     },
                                                                                                                     child: Icon(
@@ -775,6 +776,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                               _model.isDataUploading1 = false;
                                                                                               _model.uploadedLocalFiles1 = [];
                                                                                             });
+
+                                                                                            _model.membrosFotosTemp = _model.uploadedLocalFiles1.toList().cast<FFUploadedFile>();
+                                                                                            safeSetState(() {});
                                                                                           }
                                                                                         },
                                                                                         child: Container(
@@ -7244,7 +7248,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                       try {
                                                         selectedUploadedFiles =
                                                             _model
-                                                                .uploadedLocalFiles1;
+                                                                .membrosFotosTemp;
                                                         selectedMedia =
                                                             selectedFilesFromUploadedFiles(
                                                           selectedUploadedFiles,

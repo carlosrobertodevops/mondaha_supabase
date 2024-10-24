@@ -10,15 +10,17 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   ///  Local state fields for this component.
 
-  List<String> membrosPhotos = [];
-  void addToMembrosPhotos(String item) => membrosPhotos.add(item);
-  void removeFromMembrosPhotos(String item) => membrosPhotos.remove(item);
-  void removeAtIndexFromMembrosPhotos(int index) =>
-      membrosPhotos.removeAt(index);
-  void insertAtIndexInMembrosPhotos(int index, String item) =>
-      membrosPhotos.insert(index, item);
-  void updateMembrosPhotosAtIndex(int index, Function(String) updateFn) =>
-      membrosPhotos[index] = updateFn(membrosPhotos[index]);
+  List<FFUploadedFile> membrosFotosTemp = [];
+  void addToMembrosFotosTemp(FFUploadedFile item) => membrosFotosTemp.add(item);
+  void removeFromMembrosFotosTemp(FFUploadedFile item) =>
+      membrosFotosTemp.remove(item);
+  void removeAtIndexFromMembrosFotosTemp(int index) =>
+      membrosFotosTemp.removeAt(index);
+  void insertAtIndexInMembrosFotosTemp(int index, FFUploadedFile item) =>
+      membrosFotosTemp.insert(index, item);
+  void updateMembrosFotosTempAtIndex(
+          int index, Function(FFUploadedFile) updateFn) =>
+      membrosFotosTemp[index] = updateFn(membrosFotosTemp[index]);
 
   List<String> membrosAlcunhas = [];
   void addToMembrosAlcunhas(String item) => membrosAlcunhas.add(item);
