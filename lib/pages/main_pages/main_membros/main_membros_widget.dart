@@ -1,7 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/components/dropdowns/dropdown_member_edit/dropdown_member_edit_widget.dart';
-import '/components/modals/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/modals/modal_membros_add/modal_membros_add_widget.dart';
+import '/components/modals_extras/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';

@@ -8,19 +8,24 @@ import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'modal_faccao_add_model.dart';
-export 'modal_faccao_add_model.dart';
+import 'modal_faccao_edit_model.dart';
+export 'modal_faccao_edit_model.dart';
 
-class ModalFaccaoAddWidget extends StatefulWidget {
-  const ModalFaccaoAddWidget({super.key});
+class ModalFaccaoEditWidget extends StatefulWidget {
+  const ModalFaccaoEditWidget({
+    super.key,
+    this.faccaoid,
+  });
+
+  final FaccoesRow? faccaoid;
 
   @override
-  State<ModalFaccaoAddWidget> createState() => _ModalFaccaoAddWidgetState();
+  State<ModalFaccaoEditWidget> createState() => _ModalFaccaoEditWidgetState();
 }
 
-class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
+class _ModalFaccaoEditWidgetState extends State<ModalFaccaoEditWidget>
     with TickerProviderStateMixin {
-  late ModalFaccaoAddModel _model;
+  late ModalFaccaoEditModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -33,13 +38,15 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ModalFaccaoAddModel());
+    _model = createModel(context, () => ModalFaccaoEditModel());
 
-    _model.txtNomeFaccaoTextController ??= TextEditingController();
+    _model.txtNomeFaccaoTextController ??=
+        TextEditingController(text: widget.faccaoid?.nome);
     _model.txtNomeFaccaoFocusNode ??= FocusNode();
 
-    _model.descriptionTextController ??= TextEditingController();
-    _model.descriptionFocusNode ??= FocusNode();
+    _model.txtDescriptionTextController ??=
+        TextEditingController(text: widget.faccaoid?.descricao);
+    _model.txtDescriptionFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
@@ -76,12 +83,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
-          _model.txtNomeFaccaoTextController?.text =
-              FFLocalizations.of(context).getText(
-            'cxlzs5tl' /* Nome da facção */,
-          );
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -162,7 +164,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                             0.0, 0.0, 0.0, 4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '5tdm3cpv' /* Add Faction */,
+                                            'ze3l1q4r' /* Edit Faction */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
@@ -177,7 +179,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'vlg015ed' /* Please enter the information b... */,
+                                            '7tuc4kk2' /* Please enter the information b... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
@@ -203,174 +205,185 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                   ),
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_FACCAO_ADD_close_rounded_ICN_ON_TA');
+                                        'MODAL_FACCAO_EDIT_close_rounded_ICN_ON_T');
                                     Navigator.pop(context);
                                   },
                                 ),
                               ],
                             ),
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 8.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    logFirebaseEvent(
-                                        'MODAL_FACCAO_ADD_faccao_image_ON_TAP');
-                                    final selectedMedia = await selectMedia(
-                                      maxWidth: 100.00,
-                                      maxHeight: 100.00,
-                                      mediaSource: MediaSource.photoGallery,
-                                      multiImage: false,
-                                    );
-                                    if (selectedMedia != null &&
-                                        selectedMedia.every((m) =>
-                                            validateFileFormat(
-                                                m.storagePath, context))) {
-                                      safeSetState(
-                                          () => _model.isDataUploading1 = true);
-                                      var selectedUploadedFiles =
-                                          <FFUploadedFile>[];
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 8.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      logFirebaseEvent(
+                                          'MODAL_FACCAO_EDIT_COMP_heroImage_ON_TAP');
+                                      final selectedMedia = await selectMedia(
+                                        maxWidth: 200.00,
+                                        maxHeight: 200.00,
+                                        mediaSource: MediaSource.photoGallery,
+                                        multiImage: false,
+                                      );
+                                      if (selectedMedia != null &&
+                                          selectedMedia.every((m) =>
+                                              validateFileFormat(
+                                                  m.storagePath, context))) {
+                                        safeSetState(() =>
+                                            _model.isDataUploading1 = true);
+                                        var selectedUploadedFiles =
+                                            <FFUploadedFile>[];
 
-                                      try {
-                                        showUploadMessage(
-                                          context,
-                                          'Uploading file...',
-                                          showLoading: true,
-                                        );
-                                        selectedUploadedFiles = selectedMedia
-                                            .map((m) => FFUploadedFile(
-                                                  name: m.storagePath
-                                                      .split('/')
-                                                      .last,
-                                                  bytes: m.bytes,
-                                                  height: m.dimensions?.height,
-                                                  width: m.dimensions?.width,
-                                                  blurHash: m.blurHash,
-                                                ))
-                                            .toList();
-                                      } finally {
-                                        ScaffoldMessenger.of(context)
-                                            .hideCurrentSnackBar();
-                                        _model.isDataUploading1 = false;
+                                        try {
+                                          showUploadMessage(
+                                            context,
+                                            'Uploading file...',
+                                            showLoading: true,
+                                          );
+                                          selectedUploadedFiles = selectedMedia
+                                              .map((m) => FFUploadedFile(
+                                                    name: m.storagePath
+                                                        .split('/')
+                                                        .last,
+                                                    bytes: m.bytes,
+                                                    height:
+                                                        m.dimensions?.height,
+                                                    width: m.dimensions?.width,
+                                                    blurHash: m.blurHash,
+                                                  ))
+                                              .toList();
+                                        } finally {
+                                          ScaffoldMessenger.of(context)
+                                              .hideCurrentSnackBar();
+                                          _model.isDataUploading1 = false;
+                                        }
+                                        if (selectedUploadedFiles.length ==
+                                            selectedMedia.length) {
+                                          safeSetState(() {
+                                            _model.uploadedLocalFile1 =
+                                                selectedUploadedFiles.first;
+                                          });
+                                          showUploadMessage(
+                                              context, 'Success!');
+                                        } else {
+                                          safeSetState(() {});
+                                          showUploadMessage(
+                                              context, 'Failed to upload data');
+                                          return;
+                                        }
                                       }
-                                      if (selectedUploadedFiles.length ==
-                                          selectedMedia.length) {
-                                        safeSetState(() {
-                                          _model.uploadedLocalFile1 =
-                                              selectedUploadedFiles.first;
-                                        });
-                                        showUploadMessage(context, 'Success!');
-                                      } else {
-                                        safeSetState(() {});
-                                        showUploadMessage(
-                                            context, 'Failed to upload data');
-                                        return;
-                                      }
-                                    }
 
-                                    _model.uploadImagem = true;
-                                    safeSetState(() {});
-                                  },
-                                  child: Container(
-                                    width: 160.0,
-                                    height: 160.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      border: Border.all(
+                                      _model.uploadImagemTemp = true;
+                                      safeSetState(() {});
+                                    },
+                                    child: Container(
+                                      width: 160.0,
+                                      height: 160.0,
+                                      decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 2.0,
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
                                       ),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(2.0),
-                                      child: Stack(
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
-                                        children: [
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Icon(
-                                                Icons.add_a_photo_outlined,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 72.0,
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 12.0, 0.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'dqo5yhdb' /* Add Photo */,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(2.0),
+                                        child: Stack(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          children: [
+                                            Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.add_a_photo_outlined,
+                                                  color: FlutterFlowTheme.of(
                                                           context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                      .secondaryText,
+                                                  size: 72.0,
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          if (_model.uploadImagem == false)
-                                            Padding(
-                                              padding: const EdgeInsets.all(6.0),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                                child: Image.memory(
-                                                  _model.uploadedLocalFile1
-                                                          .bytes ??
-                                                      Uint8List.fromList([]),
-                                                  width: double.infinity,
-                                                  height: double.infinity,
-                                                  fit: BoxFit.cover,
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 12.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'xscprapi' /* Update foto */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
                                                 ),
-                                              ),
+                                              ],
                                             ),
-                                          if (_model.uploadImagem == true)
-                                            Padding(
-                                              padding: const EdgeInsets.all(6.0),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                                child: Image.memory(
-                                                  _model.uploadedLocalFile1
-                                                          .bytes ??
-                                                      Uint8List.fromList([]),
-                                                  width: double.infinity,
-                                                  height: double.infinity,
-                                                  fit: BoxFit.cover,
+                                            if (_model.uploadImagemTemp ==
+                                                false)
+                                              Padding(
+                                                padding: const EdgeInsets.all(6.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0),
+                                                  child: Image.network(
+                                                    valueOrDefault<String>(
+                                                      widget
+                                                          .faccaoid?.imagemPath,
+                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/5wht3hcncm24/imagem.png',
+                                                    ),
+                                                    width: double.infinity,
+                                                    height: double.infinity,
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                        ],
+                                            if (_model.uploadImagemTemp == true)
+                                              Padding(
+                                                padding: const EdgeInsets.all(6.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0),
+                                                  child: Image.memory(
+                                                    _model.uploadedLocalFile1
+                                                            .bytes ??
+                                                        Uint8List.fromList([]),
+                                                    width: double.infinity,
+                                                    height: double.infinity,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -381,8 +394,11 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
+                                labelText: FFLocalizations.of(context).getText(
+                                  'rq3zqf7i' /* Nome da facção */,
+                                ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '426hn69e' /* Faction Name */,
+                                  '2huj2jzx' /* Faction Name */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -452,13 +468,13 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: TextFormField(
-                              controller: _model.descriptionTextController,
-                              focusNode: _model.descriptionFocusNode,
+                              controller: _model.txtDescriptionTextController,
+                              focusNode: _model.txtDescriptionFocusNode,
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'gvgwcy4p' /* Descrição ou Biografia */,
+                                  '0lr3g0go' /* Descrição ou Biografia */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -467,7 +483,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'uqziqhmg' /* Description  */,
+                                  'krgsdp6s' /* Description here... */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -525,7 +541,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                   ),
                               maxLines: 5,
                               validator: _model
-                                  .descriptionTextControllerValidator
+                                  .txtDescriptionTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -539,15 +555,15 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                 FFButtonWidget(
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_FACCAO_ADD_COMP_SAVE_BTN_ON_TAP');
+                                        'MODAL_FACCAO_EDIT_COMP_SAVE_BTN_ON_TAP');
                                     var confirmDialogResponse =
                                         await showDialog<bool>(
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: const Text('SALVAR'),
+                                                  title: const Text('ATUALIZAR'),
                                                   content: const Text(
-                                                      'Deseja salvar os dados ?'),
+                                                      'Deseja atualizar os dados ?'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
@@ -623,43 +639,33 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                         }
                                       }
 
-                                      _model.outputFaccaoUpdate =
-                                          await FaccoesTable().insert({
-                                        'nome': _model
-                                            .txtNomeFaccaoTextController.text,
-                                        'descricao': _model
-                                            .descriptionTextController.text,
-                                        'imagem_path': _model.uploadedFileUrl2,
-                                      });
+                                      _model.outputFaccaoEdit =
+                                          await FaccoesTable().update(
+                                        data: {
+                                          'nome': _model
+                                              .txtNomeFaccaoTextController.text,
+                                          'descricao': _model
+                                              .txtDescriptionTextController
+                                              .text,
+                                          'imagem_path':
+                                              _model.uploadedFileUrl2,
+                                        },
+                                        matchingRows: (rows) => rows.eq(
+                                          'faccao_id',
+                                          widget.faccaoid?.faccaoId,
+                                        ),
+                                        returnRows: true,
+                                      );
                                       Navigator.pop(context);
                                       Navigator.pop(context);
 
                                       context.pushNamed('main_faccoes');
-
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Cadastro SALVO com sucesso!',
-                                            style: TextStyle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          duration:
-                                              const Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .success,
-                                        ),
-                                      );
                                     }
 
                                     safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    '2g54ptaj' /* Save */,
+                                    'ntyay3mi' /* Save */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 40.0,
@@ -679,7 +685,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(12.0),
                                     hoverColor:
                                         FlutterFlowTheme.of(context).accent1,
                                     hoverBorderSide: BorderSide(
@@ -692,7 +698,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                     hoverElevation: 0.0,
                                   ),
                                 ),
-                              ],
+                              ].divide(const SizedBox(width: 50.0)),
                             ),
                           ),
                         ],

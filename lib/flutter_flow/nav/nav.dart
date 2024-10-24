@@ -129,23 +129,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const MainProfileWidget(),
             ),
             FFRoute(
-              name: 'user_details',
-              path: 'userDetails',
-              requireAuth: true,
-              builder: (context, params) => UserDetailsWidget(
-                showBack: params.getParam(
-                  'showBack',
-                  ParamType.bool,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'edit_profile',
-              path: 'editProfile',
-              requireAuth: true,
-              builder: (context, params) => const EditProfileWidget(),
-            ),
-            FFRoute(
               name: 'project_details_health_ai',
               path: 'projectDetailsHealthAi',
               requireAuth: true,
@@ -173,12 +156,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'auth_login',
               path: 'authLogin',
               builder: (context, params) => const AuthLoginWidget(),
-            ),
-            FFRoute(
-              name: 'add_membros',
-              path: 'addMembros',
-              requireAuth: true,
-              builder: (context, params) => const AddMembrosWidget(),
             ),
             FFRoute(
               name: 'main_admin',

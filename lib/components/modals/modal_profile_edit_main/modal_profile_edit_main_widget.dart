@@ -156,7 +156,7 @@ class _ModalProfileEditMainWidgetState extends State<ModalProfileEditMainWidget>
                                         0.0, 0.0, 0.0, 4.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'zy7fzru7' /* Edit Profile */,
+                                        'zy7fzru7' /* Edit Profile (Administration) */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
@@ -215,70 +215,17 @@ class _ModalProfileEditMainWidgetState extends State<ModalProfileEditMainWidget>
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Container(
-                                  width: 100.0,
-                                  height: 100.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).accent1,
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
-                                    ),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      if (_model.imagemUpload == false)
-                                        Padding(
-                                          padding: const EdgeInsets.all(2.0),
-                                          child: Container(
-                                            width: 90.0,
-                                            height: 90.0,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: CachedNetworkImage(
-                                              fadeInDuration:
-                                                  const Duration(milliseconds: 0),
-                                              fadeOutDuration:
-                                                  const Duration(milliseconds: 0),
-                                              imageUrl: valueOrDefault<String>(
-                                                widget.usuarioid?.fotoPath,
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
-                                              ),
-                                              fit: BoxFit.fitWidth,
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.imagemUpload == true)
-                                        Padding(
-                                          padding: const EdgeInsets.all(50.0),
-                                          child: Container(
-                                            width: 90.0,
-                                            height: 90.0,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: Image.memory(
-                                              _model.uploadedLocalFile1.bytes ??
-                                                  Uint8List.fromList([]),
-                                              fit: BoxFit.fitWidth,
-                                            ),
-                                          ),
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                                FFButtonWidget(
-                                  onPressed: () async {
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
                                     logFirebaseEvent(
-                                        'MODAL_PROFILE_EDIT_MAIN_CHANGE_PHOTO_BTN');
+                                        'MODAL_PROFILE_EDIT_MAIN_imageBorder_ON_T');
                                     final selectedMedia = await selectMedia(
-                                      maxWidth: 200.00,
-                                      maxHeight: 200.00,
+                                      maxWidth: 100.00,
+                                      maxHeight: 100.00,
                                       mediaSource: MediaSource.photoGallery,
                                       multiImage: false,
                                     );
@@ -328,45 +275,80 @@ class _ModalProfileEditMainWidgetState extends State<ModalProfileEditMainWidget>
                                       }
                                     }
 
-                                    _model.imagemUpload = true;
-                                    safeSetState(() {});
+                                    _model.uploadimagemTemp = true;
+                                    _model.updatePage(() {});
                                   },
-                                  text: FFLocalizations.of(context).getText(
-                                    'gmdmuf1i' /* Change Photo */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    elevation: 0.0,
-                                    borderSide: BorderSide(
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
                                       color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
+                                          FlutterFlowTheme.of(context).accent1,
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 2.0,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    hoverColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    hoverBorderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      width: 2.0,
+                                    child: Stack(
+                                      children: [
+                                        if (_model.uploadimagemTemp == false)
+                                          Padding(
+                                            padding: const EdgeInsets.all(2.0),
+                                            child: Container(
+                                              width: 100.0,
+                                              height: 100.0,
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: const BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: CachedNetworkImage(
+                                                fadeInDuration:
+                                                    const Duration(milliseconds: 10),
+                                                fadeOutDuration:
+                                                    const Duration(milliseconds: 10),
+                                                imageUrl:
+                                                    valueOrDefault<String>(
+                                                  widget.usuarioid?.fotoPath,
+                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
+                                                ),
+                                                fit: BoxFit.fitWidth,
+                                                errorWidget: (context, error,
+                                                        stackTrace) =>
+                                                    Image.asset(
+                                                  'assets/images/error_image.png',
+                                                  fit: BoxFit.fitWidth,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (_model.uploadimagemTemp == true)
+                                          Padding(
+                                            padding: const EdgeInsets.all(2.0),
+                                            child: Container(
+                                              width: 100.0,
+                                              height: 100.0,
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: const BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Image.memory(
+                                                _model.uploadedLocalFile1
+                                                        .bytes ??
+                                                    Uint8List.fromList([]),
+                                                fit: BoxFit.fitWidth,
+                                                errorBuilder: (context, error,
+                                                        stackTrace) =>
+                                                    Image.asset(
+                                                  'assets/images/error_image.png',
+                                                  fit: BoxFit.fitWidth,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                      ],
                                     ),
-                                    hoverTextColor: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    hoverElevation: 3.0,
                                   ),
                                 ),
                               ].divide(const SizedBox(width: 16.0)),
@@ -676,7 +658,7 @@ class _ModalProfileEditMainWidgetState extends State<ModalProfileEditMainWidget>
                                   '75bhewl8' /* Cancel */,
                                 ),
                                 options: FFButtonOptions(
-                                  height: 50.0,
+                                  height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(
@@ -784,7 +766,8 @@ class _ModalProfileEditMainWidgetState extends State<ModalProfileEditMainWidget>
                                       }
                                     }
 
-                                    await UsuariosTable().update(
+                                    _model.outputUsuarioUpdate =
+                                        await UsuariosTable().update(
                                       data: {
                                         'nome_completo': _model
                                             .txtNomeCompletoTextController.text,
@@ -796,20 +779,19 @@ class _ModalProfileEditMainWidgetState extends State<ModalProfileEditMainWidget>
                                       },
                                       matchingRows: (rows) => rows.eq(
                                         'user_id',
-                                        currentUserUid,
+                                        widget.usuarioid?.userId,
                                       ),
+                                      returnRows: true,
                                     );
-                                    FFAppState().UsuarioAtualNome = _model
-                                        .outputUsuarioUpdate!
-                                        .first
-                                        .nomeCompleto!;
+                                    FFAppState().UsuarioAtualNomeCompleto =
+                                        _model.outputUsuarioUpdate!.first
+                                            .nomeCompleto!;
                                     FFAppState().UsuarioAtualFoto =
                                         _model.uploadedFileUrl2;
                                     FFAppState().update(() {});
                                     Navigator.pop(context);
-                                    if (Navigator.of(context).canPop()) {
-                                      context.pop();
-                                    }
+                                    Navigator.pop(context);
+
                                     context.pushNamed('main_admin');
                                   }
 
@@ -819,7 +801,7 @@ class _ModalProfileEditMainWidgetState extends State<ModalProfileEditMainWidget>
                                   'djvkekt3' /* Save Changes */,
                                 ),
                                 options: FFButtonOptions(
-                                  height: 50.0,
+                                  height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(

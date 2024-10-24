@@ -1,6 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/components/dropdowns/dropdown_admin_edit/dropdown_admin_edit_widget.dart';
-import '/components/modals/modal_command_palette/modal_command_palette_widget.dart';
+import '/components/modals_extras/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'main_admin_model.dart';
@@ -132,13 +133,6 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      width: double.infinity,
-                      height: 40.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                      ),
-                    ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
@@ -641,22 +635,30 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                       CrossAxisAlignment
                                                                           .center,
                                                                   children: [
-                                                                    ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        valueOrDefault<
-                                                                            String>(
+                                                                    Container(
+                                                                      width:
+                                                                          60.0,
+                                                                      height:
+                                                                          60.0,
+                                                                      clipBehavior:
+                                                                          Clip.antiAlias,
+                                                                      decoration:
+                                                                          const BoxDecoration(
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                      ),
+                                                                      child:
+                                                                          CachedNetworkImage(
+                                                                        fadeInDuration:
+                                                                            const Duration(milliseconds: 100),
+                                                                        fadeOutDuration:
+                                                                            const Duration(milliseconds: 100),
+                                                                        imageUrl:
+                                                                            valueOrDefault<String>(
                                                                           listViewUsuariosRow
                                                                               .fotoPath,
                                                                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
                                                                         ),
-                                                                        width:
-                                                                            70.0,
-                                                                        height:
-                                                                            70.0,
                                                                         fit: BoxFit
                                                                             .cover,
                                                                       ),

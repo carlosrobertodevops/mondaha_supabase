@@ -1,14 +1,13 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/modals/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/modals/modal_profile_edit/modal_profile_edit_widget.dart';
+import '/components/modals_extras/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -321,9 +320,9 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                   ),
                                                   child: CachedNetworkImage(
                                                     fadeInDuration: const Duration(
-                                                        milliseconds: 500),
+                                                        milliseconds: 10),
                                                     fadeOutDuration: const Duration(
-                                                        milliseconds: 500),
+                                                        milliseconds: 10),
                                                     imageUrl:
                                                         valueOrDefault<String>(
                                                       FFAppState()
@@ -331,6 +330,13 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
                                                     ),
                                                     fit: BoxFit.cover,
+                                                    errorWidget: (context,
+                                                            error,
+                                                            stackTrace) =>
+                                                        Image.asset(
+                                                      'assets/images/error_image.png',
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -347,11 +353,8 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                valueOrDefault<String>(
-                                                  mainProfileUsuariosRow
-                                                      ?.nomeCompleto,
-                                                  'nome_completo',
-                                                ),
+                                                FFAppState()
+                                                    .UsuarioAtualNomeCompleto,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
@@ -418,11 +421,8 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                           : null;
 
                                                   return Text(
-                                                    valueOrDefault<String>(
-                                                      textTiposUsuariosRow
-                                                          ?.descricao,
-                                                      'tipo_usuario_descricao',
-                                                    ),
+                                                    FFAppState()
+                                                        .UsuarioAtualTipoUsuarioNome,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -589,12 +589,13 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                                 Directionality.of(
                                                                     context)),
                                                     child:
-                                                        const ModalProfileEditWidget(),
+                                                        ModalProfileEditWidget(
+                                                      usuarioId:
+                                                          mainProfileUsuariosRow!,
+                                                    ),
                                                   );
                                                 },
                                               );
-                                            } else {
-                                              context.pushNamed('edit_profile');
                                             }
                                           },
                                           child: AnimatedContainer(
@@ -1257,66 +1258,6 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 12.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'abqf147c' /* Log Out */,
-                                            ),
-                                            options: FFButtonOptions(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              elevation: 0.0,
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                width: 2.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              hoverColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              hoverBorderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                width: 2.0,
-                                              ),
-                                              hoverTextColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              hoverElevation: 3.0,
-                                            ),
-                                          ),
-                                        ],
                                       ),
                                     ),
                                   ]

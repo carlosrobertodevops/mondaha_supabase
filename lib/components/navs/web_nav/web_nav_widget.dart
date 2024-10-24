@@ -1,7 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/components/logos/main_logo_bar/main_logo_bar_widget.dart';
 import '/components/logos/main_logo_bar_minimal/main_logo_bar_minimal_widget.dart';
-import '/components/modals/modal_command_palette/modal_command_palette_widget.dart';
+import '/components/modals_extras/modal_command_palette/modal_command_palette_widget.dart';
 import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -457,7 +457,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               'main_admin',
                               queryParameters: {
                                 'mainAdminTipoUsuario': serializeParam(
-                                  FFAppState().UsuarioAtualTipo,
+                                  FFAppState().UsuarioAtualTipoUsuarioId,
                                   ParamType.int,
                                 ),
                               }.withoutNulls,
@@ -749,7 +749,8 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            FFAppState().UsuarioAtualNome,
+                                            FFAppState()
+                                                .UsuarioAtualNomeCompleto,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -763,7 +764,8 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: Text(
-                                              FFAppState().TipoUsuarioAtualNome,
+                                              FFAppState()
+                                                  .UsuarioAtualTipoUsuarioNome,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .labelSmall
@@ -1096,12 +1098,12 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                         highlightColor: Colors.transparent,
                         onTap: () async {
                           logFirebaseEvent('WEB_NAV_COMP_bg_color_ON_TAP');
-                          if (FFAppState().UsuarioAtualTipo <= 3) {
+                          if (FFAppState().UsuarioAtualTipoUsuarioId <= 3) {
                             context.pushNamed(
                               'main_admin',
                               queryParameters: {
                                 'mainAdminTipoUsuario': serializeParam(
-                                  FFAppState().UsuarioAtualTipo,
+                                  FFAppState().UsuarioAtualTipoUsuarioId,
                                   ParamType.int,
                                 ),
                               }.withoutNulls,

@@ -501,67 +501,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Light Mode',
       'pt': 'Modo de luz',
     },
-    'abqf147c': {
-      'en': 'Log Out',
-      'pt': 'Sair',
-    },
     'o3dp9tss': {
       'en': '__',
       'pt': '__',
-    },
-  },
-  // user_details
-  {
-    '9t913b44': {
-      'en': 'Home',
-      'pt': 'Lar',
-    },
-  },
-  // edit_profile
-  {
-    'mk8nnw94': {
-      'en': 'Change Photo',
-      'pt': 'Alterar foto',
-    },
-    '2rqce1pj': {
-      'en': 'The email associated with this account is:',
-      'pt': 'O e-mail associado a esta conta é:',
-    },
-    'y680yxcf': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'dmbxoaz6': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    '2wl1lv9o': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'a3qnnd4d': {
-      'en': 'Select one Agency ',
-      'pt': 'Selecione uma agência',
-    },
-    'mg5okl99': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '4no7ue4a': {
-      'en': 'Your Name',
-      'pt': 'Seu nome',
-    },
-    'bj7cfa5q': {
-      'en': 'Your Name',
-      'pt': 'Seu nome',
-    },
-    'rr8ksatz': {
-      'en': 'Save Changes',
-      'pt': 'Salvar alterações',
-    },
-    '20uycztj': {
-      'en': 'Edit Profile',
-      'pt': 'Editar Perfil',
     },
   },
   // project_details_health_ai
@@ -801,151 +743,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Criar uma conta',
     },
     'rnyra7iu': {
-      'en': 'Home',
-      'pt': 'Lar',
-    },
-  },
-  // add_membros
-  {
-    'luy0t7h2': {
-      'en': 'Add Members',
-      'pt': 'Adicionar membros',
-    },
-    'ocp718jh': {
-      'en': 'Profile',
-      'pt': 'Perfil',
-    },
-    'x8axg494': {
-      'en': 'Create Company Profile',
-      'pt': 'Criar Perfil da Empresa',
-    },
-    'swf1sew5': {
-      'en':
-          'Upload images about your company and fill out the information below.',
-      'pt':
-          'Carregue imagens sobre sua empresa e preencha as informações abaixo.',
-    },
-    'kovjx5qk': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'zftdg7ng': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'bjyl96v1': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    '812357rd': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'rel4cqhn': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '5fqmijio': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    '1ddlajdn': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'gdhq0dq6': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'ohs1bq4j': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'm99af805': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '4zstb8xf': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'iy19h9i4': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'by8u8kmd': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    '2rro117l': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'ucwqr3c3': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    'm88zhnhm': {
-      'en': 'Full Name',
-      'pt': 'Nome completo',
-    },
-    '3x41wc8c': {
-      'en': 'Website',
-      'pt': 'Site',
-    },
-    'ak3nmiz7': {
-      'en': 'Enter in your website without \"https://\"...',
-      'pt': 'Entre no seu site sem \"https://\"...',
-    },
-    '6zw9yxni': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    'gfs5j60m': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    '0nignr1c': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    '3jjwznx5': {
-      'en': 'Cancel',
-      'pt': 'Cancelar',
-    },
-    'lwkne6wn': {
-      'en': 'Create Company',
-      'pt': 'Criar empresa',
-    },
-    'gti2knng': {
-      'en': 'History',
-      'pt': 'História',
-    },
-    'o6n478zo': {
-      'en': 'Procedures',
-      'pt': 'Procedimentos',
-    },
-    'bg2b0nj3': {
-      'en': 'Faction',
-      'pt': 'Facção',
-    },
-    'c7ica2jp': {
-      'en': 'Crime Action',
-      'pt': 'Ação Criminal',
-    },
-    'be0xptn9': {
-      'en': 'Alert',
-      'pt': 'Alerta',
-    },
-    '5lwbh8mj': {
-      'en': 'Relations',
-      'pt': 'Relações',
-    },
-    '1bduu4ux': {
-      'en': 'Groups',
-      'pt': 'Grupos',
-    },
-    'j0nfxam4': {
       'en': 'Home',
       'pt': 'Lar',
     },
@@ -1382,13 +1179,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add Photo',
       'pt': 'Adicionar foto',
     },
+    'eihow1ck': {
+      'en': 'Nome da facção',
+      'pt': 'Nome da facção',
+    },
     '426hn69e': {
       'en': 'Faction Name',
       'pt': 'Nome da Facção',
     },
     'cxlzs5tl': {
       'en': 'Nome da facção',
-      'pt': 'Nome da facção',
+      'pt': ' Nome da facção',
     },
     'gvgwcy4p': {
       'en': 'Descrição ou Biografia',
@@ -2722,8 +2523,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // modal_profile_edit
   {
     '7zctnlpm': {
-      'en': 'Edit Profile Active',
-      'pt': 'Editar Perfil Ativo',
+      'en': 'Edit Profile  (Now)',
+      'pt': 'Editar Perfil (Atual)',
     },
     'r1bwui0z': {
       'en': 'Please enter the information below to edit the Profile.',
@@ -2869,16 +2670,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // modal_profile_edit_main
   {
     'zy7fzru7': {
-      'en': 'Edit Profile',
-      'pt': 'Editar Perfil',
+      'en': 'Edit Profile (Administration)',
+      'pt': 'Editar Perfil (Administração)',
     },
     'hpa704ph': {
       'en': 'Please enter the information below to edit the Profile.',
       'pt': 'Insira as informações abaixo para editar o Perfil.',
-    },
-    'gmdmuf1i': {
-      'en': 'Change Photo',
-      'pt': 'Alterar foto',
     },
     'vc3a6nos': {
       'en': 'Your Name',

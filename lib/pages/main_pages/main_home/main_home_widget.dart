@@ -46,9 +46,9 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             .order('user_id'),
       );
       FFAppState().UsuarioAtualId = _model.outputQueryUsuarios!.first.usuarioId;
-      FFAppState().UsuarioAtualTipo =
+      FFAppState().UsuarioAtualTipoUsuarioId =
           _model.outputQueryUsuarios!.first.tipoUsuarioId!;
-      FFAppState().UsuarioAtualNome =
+      FFAppState().UsuarioAtualNomeCompleto =
           _model.outputQueryUsuarios!.first.nomeCompleto!;
       FFAppState().UsuarioAtualFoto =
           _model.outputQueryUsuarios!.first.fotoPath!;
@@ -63,7 +63,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
               _model.outputQueryUsuarios?.first.tipoUsuarioId,
             ),
           );
-          FFAppState().TipoUsuarioAtualNome =
+          FFAppState().UsuarioAtualTipoUsuarioNome =
               _model.outputQueryTipoUsuarios!.first.descricao!;
           safeSetState(() {});
         }),
@@ -75,7 +75,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
               _model.outputQueryUsuarios?.first.agenciaId,
             ),
           );
-          FFAppState().AgenciaAtualNome =
+          FFAppState().UsuarioAtualAgenciaNome =
               _model.outputQueryAgenciaNome!.first.nome!;
           safeSetState(() {});
         }),

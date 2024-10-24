@@ -1,4 +1,4 @@
-import '/components/modals/modal_add_comment/modal_add_comment_widget.dart';
+import '/components/modals_extras/modal_add_comment/modal_add_comment_widget.dart';
 import '/components/modals_extras/modal_success/modal_success_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

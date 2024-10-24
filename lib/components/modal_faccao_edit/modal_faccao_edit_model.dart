@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'modal_faccao_edit_widget.dart' show ModalFaccaoEditWidget;
 import 'package:flutter/material.dart';
@@ -49,6 +50,9 @@ class ModalFaccaoEditModel extends FlutterFlowModel<ModalFaccaoEditWidget> {
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl2 = '';
+
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<FaccoesRow>? outputFaccaoEdit;
 
   @override
   void initState(BuildContext context) {

@@ -7,7 +7,7 @@ class ModalProfileEditMainModel
     extends FlutterFlowModel<ModalProfileEditMainWidget> {
   ///  Local state fields for this component.
 
-  bool imagemUpload = false;
+  bool uploadimagemTemp = false;
 
   ///  State fields for stateful widgets in this component.
 

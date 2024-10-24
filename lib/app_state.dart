@@ -26,12 +26,14 @@ class FFAppState extends ChangeNotifier {
       _UsuarioAtualId = prefs.getInt('ff_UsuarioAtualId') ?? _UsuarioAtualId;
     });
     _safeInit(() {
-      _UsuarioAtualTipo =
-          prefs.getInt('ff_UsuarioAtualTipo') ?? _UsuarioAtualTipo;
+      _UsuarioAtualTipoUsuarioId =
+          prefs.getInt('ff_UsuarioAtualTipoUsuarioId') ??
+              _UsuarioAtualTipoUsuarioId;
     });
     _safeInit(() {
-      _UsuarioAtualNome =
-          prefs.getString('ff_UsuarioAtualNome') ?? _UsuarioAtualNome;
+      _UsuarioAtualNomeCompleto =
+          prefs.getString('ff_UsuarioAtualNomeCompleto') ??
+              _UsuarioAtualNomeCompleto;
     });
     _safeInit(() {
       _UsuarioAtualFoto =
@@ -42,12 +44,14 @@ class FFAppState extends ChangeNotifier {
           prefs.getInt('ff_UsuarioAtualAgencia') ?? _UsuarioAtualAgencia;
     });
     _safeInit(() {
-      _TipoUsuarioAtualNome =
-          prefs.getString('ff_TipoUsuarioAtualNome') ?? _TipoUsuarioAtualNome;
+      _UsuarioAtualTipoUsuarioNome =
+          prefs.getString('ff_UsuarioAtualTipoUsuarioNome') ??
+              _UsuarioAtualTipoUsuarioNome;
     });
     _safeInit(() {
-      _AgenciaAtualNome =
-          prefs.getString('ff_AgenciaAtualNome') ?? _AgenciaAtualNome;
+      _UsuarioAtualAgenciaNome =
+          prefs.getString('ff_UsuarioAtualAgenciaNome') ??
+              _UsuarioAtualAgenciaNome;
     });
     _safeInit(() {
       _UsuarioAtualEmail =
@@ -89,18 +93,18 @@ class FFAppState extends ChangeNotifier {
     prefs.setInt('ff_UsuarioAtualId', value);
   }
 
-  int _UsuarioAtualTipo = 0;
-  int get UsuarioAtualTipo => _UsuarioAtualTipo;
-  set UsuarioAtualTipo(int value) {
-    _UsuarioAtualTipo = value;
-    prefs.setInt('ff_UsuarioAtualTipo', value);
+  int _UsuarioAtualTipoUsuarioId = 0;
+  int get UsuarioAtualTipoUsuarioId => _UsuarioAtualTipoUsuarioId;
+  set UsuarioAtualTipoUsuarioId(int value) {
+    _UsuarioAtualTipoUsuarioId = value;
+    prefs.setInt('ff_UsuarioAtualTipoUsuarioId', value);
   }
 
-  String _UsuarioAtualNome = '';
-  String get UsuarioAtualNome => _UsuarioAtualNome;
-  set UsuarioAtualNome(String value) {
-    _UsuarioAtualNome = value;
-    prefs.setString('ff_UsuarioAtualNome', value);
+  String _UsuarioAtualNomeCompleto = '';
+  String get UsuarioAtualNomeCompleto => _UsuarioAtualNomeCompleto;
+  set UsuarioAtualNomeCompleto(String value) {
+    _UsuarioAtualNomeCompleto = value;
+    prefs.setString('ff_UsuarioAtualNomeCompleto', value);
   }
 
   String _UsuarioAtualFoto = '';
@@ -117,18 +121,18 @@ class FFAppState extends ChangeNotifier {
     prefs.setInt('ff_UsuarioAtualAgencia', value);
   }
 
-  String _TipoUsuarioAtualNome = '';
-  String get TipoUsuarioAtualNome => _TipoUsuarioAtualNome;
-  set TipoUsuarioAtualNome(String value) {
-    _TipoUsuarioAtualNome = value;
-    prefs.setString('ff_TipoUsuarioAtualNome', value);
+  String _UsuarioAtualTipoUsuarioNome = '';
+  String get UsuarioAtualTipoUsuarioNome => _UsuarioAtualTipoUsuarioNome;
+  set UsuarioAtualTipoUsuarioNome(String value) {
+    _UsuarioAtualTipoUsuarioNome = value;
+    prefs.setString('ff_UsuarioAtualTipoUsuarioNome', value);
   }
 
-  String _AgenciaAtualNome = '';
-  String get AgenciaAtualNome => _AgenciaAtualNome;
-  set AgenciaAtualNome(String value) {
-    _AgenciaAtualNome = value;
-    prefs.setString('ff_AgenciaAtualNome', value);
+  String _UsuarioAtualAgenciaNome = '';
+  String get UsuarioAtualAgenciaNome => _UsuarioAtualAgenciaNome;
+  set UsuarioAtualAgenciaNome(String value) {
+    _UsuarioAtualAgenciaNome = value;
+    prefs.setString('ff_UsuarioAtualAgenciaNome', value);
   }
 
   String _UsuarioAtualEmail = '';
