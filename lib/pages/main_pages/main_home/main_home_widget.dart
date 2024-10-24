@@ -664,6 +664,26 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
+      'textOnPageLoadAnimation14': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1600.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 1600.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 1600.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'containerOnPageLoadAnimation10': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -684,7 +704,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation14': AnimationInfo(
+      'textOnPageLoadAnimation15': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 200.ms),
@@ -704,7 +724,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation15': AnimationInfo(
+      'textOnPageLoadAnimation16': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 180.ms),
@@ -764,7 +784,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation16': AnimationInfo(
+      'textOnPageLoadAnimation17': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 200.ms),
@@ -784,7 +804,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation17': AnimationInfo(
+      'textOnPageLoadAnimation18': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 180.ms),
@@ -844,7 +864,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation18': AnimationInfo(
+      'textOnPageLoadAnimation19': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 200.ms),
@@ -864,7 +884,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation19': AnimationInfo(
+      'textOnPageLoadAnimation20': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 180.ms),
@@ -924,7 +944,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation20': AnimationInfo(
+      'textOnPageLoadAnimation21': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 200.ms),
@@ -944,7 +964,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation21': AnimationInfo(
+      'textOnPageLoadAnimation22': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 180.ms),
@@ -984,7 +1004,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation22': AnimationInfo(
+      'textOnPageLoadAnimation23': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 1.ms),
@@ -1045,7 +1065,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                         letterSpacing: 0.0,
                       ),
                 ).animateOnPageLoad(
-                    animationsMap['textOnPageLoadAnimation22']!),
+                    animationsMap['textOnPageLoadAnimation23']!),
                 actions: const [],
                 centerTitle: false,
                 elevation: 0.0,
@@ -1984,19 +2004,51 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                           ).animateOnPageLoad(animationsMap[
                                               'textOnPageLoadAnimation12']!),
                                         ),
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'zt3s5l2s' /* 4 Members */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color: const Color(0x9AFFFFFF),
-                                                letterSpacing: 0.0,
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  FFAppState()
+                                                      .CountMembros
+                                                      .toString(),
+                                                  '0',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0x9AFFFFFF),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'textOnPageLoadAnimation13']!),
+                                            ),
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'm5s42ngb' /* Members */,
                                               ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation13']!),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            const Color(0x9AFFFFFF),
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'textOnPageLoadAnimation14']!),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -2106,7 +2158,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                     ),
                                                               ).animateOnPageLoad(
                                                                   animationsMap[
-                                                                      'textOnPageLoadAnimation14']!),
+                                                                      'textOnPageLoadAnimation15']!),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
@@ -2132,7 +2184,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       ),
                                                                 ).animateOnPageLoad(
                                                                     animationsMap[
-                                                                        'textOnPageLoadAnimation15']!),
+                                                                        'textOnPageLoadAnimation16']!),
                                                               ),
                                                             ],
                                                           ),
@@ -2359,7 +2411,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                     ),
                                                               ).animateOnPageLoad(
                                                                   animationsMap[
-                                                                      'textOnPageLoadAnimation16']!),
+                                                                      'textOnPageLoadAnimation17']!),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
@@ -2385,7 +2437,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       ),
                                                                 ).animateOnPageLoad(
                                                                     animationsMap[
-                                                                        'textOnPageLoadAnimation17']!),
+                                                                        'textOnPageLoadAnimation18']!),
                                                               ),
                                                             ],
                                                           ),
@@ -2606,7 +2658,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 ),
                                                       ).animateOnPageLoad(
                                                           animationsMap[
-                                                              'textOnPageLoadAnimation18']!),
+                                                              'textOnPageLoadAnimation19']!),
                                                       Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
@@ -2632,7 +2684,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                               ),
                                                         ).animateOnPageLoad(
                                                             animationsMap[
-                                                                'textOnPageLoadAnimation19']!),
+                                                                'textOnPageLoadAnimation20']!),
                                                       ),
                                                     ],
                                                   ),
@@ -2823,7 +2875,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 ),
                                                       ).animateOnPageLoad(
                                                           animationsMap[
-                                                              'textOnPageLoadAnimation20']!),
+                                                              'textOnPageLoadAnimation21']!),
                                                       Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
@@ -2849,7 +2901,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                               ),
                                                         ).animateOnPageLoad(
                                                             animationsMap[
-                                                                'textOnPageLoadAnimation21']!),
+                                                                'textOnPageLoadAnimation22']!),
                                                       ),
                                                     ],
                                                   ),

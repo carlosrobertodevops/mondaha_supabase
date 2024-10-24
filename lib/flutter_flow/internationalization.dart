@@ -207,9 +207,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Users in  adding registers',
       'pt': 'Atualizações de registros por usuários',
     },
-    'zt3s5l2s': {
-      'en': '4 Members',
-      'pt': '4 membros',
+    'm5s42ngb': {
+      'en': 'Members',
+      'pt': 'Membros',
     },
     'puy8obok': {
       'en': 'Activity de Factions',
