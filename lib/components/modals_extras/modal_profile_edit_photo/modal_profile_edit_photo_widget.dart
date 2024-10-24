@@ -6,8 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_profile_edit_photo_model.dart';
 export 'modal_profile_edit_photo_model.dart';
 
@@ -51,9 +49,9 @@ class _ModalProfileEditPhotoWidgetState
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Align(
-          alignment: AlignmentDirectional(0.0, 1.0),
+          alignment: const AlignmentDirectional(0.0, 1.0),
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: FutureBuilder<List<UsuariosRow>>(
               future: UsuariosTable().queryRows(
                 queryFn: (q) => q.eq(
@@ -81,12 +79,12 @@ class _ModalProfileEditPhotoWidgetState
                 return Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 350.0,
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     maxWidth: 530.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x33000000),
@@ -99,13 +97,13 @@ class _ModalProfileEditPhotoWidgetState
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 8.0, 20.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -121,7 +119,7 @@ class _ModalProfileEditPhotoWidgetState
                                         .primaryBackground,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 16.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -136,7 +134,7 @@ class _ModalProfileEditPhotoWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -151,9 +149,9 @@ class _ModalProfileEditPhotoWidgetState
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 16.0),
                                       child: Container(
                                         width: 100.0,
@@ -177,18 +175,18 @@ class _ModalProfileEditPhotoWidgetState
                                         child: Stack(
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Container(
                                                 width: 120.0,
                                                 height: 120.0,
                                                 clipBehavior: Clip.antiAlias,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   shape: BoxShape.circle,
                                                 ),
                                                 child: CachedNetworkImage(
-                                                  fadeInDuration: Duration(
+                                                  fadeInDuration: const Duration(
                                                       milliseconds: 500),
-                                                  fadeOutDuration: Duration(
+                                                  fadeOutDuration: const Duration(
                                                       milliseconds: 500),
                                                   imageUrl:
                                                       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
@@ -197,18 +195,18 @@ class _ModalProfileEditPhotoWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Container(
                                                 width: 120.0,
                                                 height: 120.0,
                                                 clipBehavior: Clip.antiAlias,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   shape: BoxShape.circle,
                                                 ),
                                                 child: CachedNetworkImage(
-                                                  fadeInDuration: Duration(
+                                                  fadeInDuration: const Duration(
                                                       milliseconds: 500),
-                                                  fadeOutDuration: Duration(
+                                                  fadeOutDuration: const Duration(
                                                       milliseconds: 500),
                                                   imageUrl:
                                                       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
@@ -222,7 +220,7 @@ class _ModalProfileEditPhotoWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 24.0, 0.0, 44.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -294,10 +292,10 @@ class _ModalProfileEditPhotoWidgetState
                                               're4x0sz7' /* Upload Image */,
                                             ),
                                             options: FFButtonOptions(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -353,10 +351,10 @@ class _ModalProfileEditPhotoWidgetState
                                               'sr54fsk6' /* Save Changes */,
                                             ),
                                             options: FFButtonOptions(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -370,7 +368,7 @@ class _ModalProfileEditPhotoWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -392,7 +390,7 @@ class _ModalProfileEditPhotoWidgetState
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 16.0)),
+                                      ].divide(const SizedBox(width: 16.0)),
                                     ),
                                   ),
                                 ],

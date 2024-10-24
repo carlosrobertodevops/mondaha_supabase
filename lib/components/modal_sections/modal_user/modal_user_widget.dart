@@ -3,12 +3,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_user_model.dart';
 export 'modal_user_model.dart';
 
@@ -52,8 +48,8 @@ class _ModalUserWidgetState extends State<ModalUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.7, 0.7),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.7, 0.7),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -72,15 +68,15 @@ class _ModalUserWidgetState extends State<ModalUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(60.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(60.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0, 1.047),
-            end: Offset(0, 0),
+            begin: const Offset(0, 1.047),
+            end: const Offset(0, 0),
           ),
         ],
       ),
@@ -116,10 +112,10 @@ class _ModalUserWidgetState extends State<ModalUserWidget>
               mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(1.0, -1.0),
+                  alignment: const AlignmentDirectional(1.0, -1.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: FlutterFlowIconButton(
                       borderColor: FlutterFlowTheme.of(context).primary,
                       borderRadius: 20.0,
@@ -145,21 +141,21 @@ class _ModalUserWidgetState extends State<ModalUserWidget>
           ),
         ),
         Align(
-          alignment: AlignmentDirectional(1.0, -1.0),
+          alignment: const AlignmentDirectional(1.0, -1.0),
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: AnimatedContainer(
-              duration: Duration(milliseconds: 100),
+              duration: const Duration(milliseconds: 100),
               curve: Curves.easeInOut,
               width: double.infinity,
               height: double.infinity,
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minHeight: 150.0,
                 maxWidth: 500.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 12.0,
                     color: Color(0x33000000),

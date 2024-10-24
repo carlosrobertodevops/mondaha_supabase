@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'messages_details_model.dart';
 export 'messages_details_model.dart';
 
@@ -75,7 +72,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -87,7 +84,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
             children: [
               Flexible(
                 child: ListView(
-                  padding: EdgeInsets.fromLTRB(
+                  padding: const EdgeInsets.fromLTRB(
                     0,
                     12.0,
                     0,
@@ -99,13 +96,13 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 4.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 4.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 4.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -130,7 +127,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 3.0,
                                               color: Color(0x33000000),
@@ -140,7 +137,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                               ),
                                             )
                                           ],
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             bottomLeft: Radius.circular(0.0),
                                             bottomRight: Radius.circular(12.0),
                                             topLeft: Radius.circular(12.0),
@@ -153,12 +150,12 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(4.0),
+                                                padding: const EdgeInsets.all(4.0),
                                                 child: SelectionArea(
                                                     child: AutoSizeText(
                                                   FFLocalizations.of(context)
@@ -182,7 +179,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -203,7 +200,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 4.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -225,7 +222,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 3.0,
                                               color: Color(0x33000000),
@@ -235,7 +232,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                               ),
                                             )
                                           ],
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             bottomLeft: Radius.circular(12.0),
                                             bottomRight: Radius.circular(0.0),
                                             topLeft: Radius.circular(12.0),
@@ -247,14 +244,14 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(4.0),
+                                                padding: const EdgeInsets.all(4.0),
                                                 child: SelectionArea(
                                                     child: Text(
                                                   FFLocalizations.of(context)
@@ -280,7 +277,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -305,13 +302,13 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 4.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -332,7 +329,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 3.0,
                                             color: Color(0x33000000),
@@ -342,7 +339,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: BorderRadius.only(
+                                        borderRadius: const BorderRadius.only(
                                           bottomLeft: Radius.circular(0.0),
                                           bottomRight: Radius.circular(12.0),
                                           topLeft: Radius.circular(12.0),
@@ -355,7 +352,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -372,7 +369,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: SelectionArea(
                                                   child: AutoSizeText(
                                                 FFLocalizations.of(context)
@@ -396,7 +393,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -416,7 +413,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 4.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -438,7 +435,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 3.0,
                                               color: Color(0x33000000),
@@ -448,7 +445,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                               ),
                                             )
                                           ],
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             bottomLeft: Radius.circular(12.0),
                                             bottomRight: Radius.circular(0.0),
                                             topLeft: Radius.circular(12.0),
@@ -460,7 +457,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
@@ -491,7 +488,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(4.0),
+                                                padding: const EdgeInsets.all(4.0),
                                                 child: SelectionArea(
                                                     child: Text(
                                                   FFLocalizations.of(context)
@@ -517,7 +514,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -538,7 +535,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 4.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -560,7 +557,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 3.0,
                                               color: Color(0x33000000),
@@ -570,7 +567,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                               ),
                                             )
                                           ],
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             bottomLeft: Radius.circular(12.0),
                                             bottomRight: Radius.circular(0.0),
                                             topLeft: Radius.circular(12.0),
@@ -582,7 +579,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
@@ -603,7 +600,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(4.0),
+                                                padding: const EdgeInsets.all(4.0),
                                                 child: SelectionArea(
                                                     child: Text(
                                                   FFLocalizations.of(context)
@@ -629,7 +626,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -656,12 +653,12 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 3.0,
                         color: Color(0x33000000),
@@ -674,7 +671,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -697,7 +694,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController,
@@ -750,7 +747,7 @@ class _MessagesDetailsWidgetState extends State<MessagesDetailsWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 8.0, 0.0, 8.0),
                               ),
                               style: FlutterFlowTheme.of(context)

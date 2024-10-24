@@ -4,12 +4,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_invite_user_model.dart';
 export 'modal_invite_user_model.dart';
 
@@ -52,8 +48,8 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 100.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 100.0),
+            end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -95,15 +91,15 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
             child: Container(
               width: double.infinity,
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 maxWidth: 670.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 12.0,
                     color: Color(0x1E000000),
@@ -121,7 +117,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '2c6w1mkp' /* Edit User Details */,
@@ -135,7 +131,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'nez3q1xc' /* Edit the details of the user b... */,
@@ -148,12 +144,12 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -170,7 +166,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10.0),
                                     child: Image.network(
@@ -183,7 +179,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -202,7 +198,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -226,7 +222,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.yourNameTextController,
@@ -280,7 +276,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                               filled: true,
                               fillColor: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 24.0, 20.0, 24.0),
                             ),
                             style: FlutterFlowTheme.of(context)
@@ -295,7 +291,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.cityTextController,
@@ -349,7 +345,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                               filled: true,
                               fillColor: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 24.0, 20.0, 24.0),
                             ),
                             style: FlutterFlowTheme.of(context)
@@ -366,7 +362,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController ??=
@@ -409,25 +405,25 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 2.0,
                             borderRadius: 12.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
+                            margin: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isSearchable: false,
                             isMultiSelect: false,
                           ),
                         ),
-                      ].addToEnd(SizedBox(height: 16.0)),
+                      ].addToEnd(const SizedBox(height: 16.0)),
                     ),
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 24.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 24.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.05),
+                          alignment: const AlignmentDirectional(0.0, 0.05),
                           child: FFButtonWidget(
                             onPressed: () {
                               print('Button pressed ...');
@@ -436,9 +432,9 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                               'wl5lect6' /* Cancel */,
                             ),
                             options: FFButtonOptions(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -467,7 +463,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.05),
+                          alignment: const AlignmentDirectional(0.0, 0.05),
                           child: FFButtonWidget(
                             onPressed: () {
                               print('Button pressed ...');
@@ -476,9 +472,9 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                               'j7urjwc8' /* Send Invites */,
                             ),
                             options: FFButtonOptions(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -488,7 +484,7 @@ class _ModalInviteUserWidgetState extends State<ModalInviteUserWidget>
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),

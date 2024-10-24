@@ -8,8 +8,8 @@ export '/components/logos/main_faccao_old/main_faccao_old_widget.dart'
     show MainFaccaoOldWidget;
 export '/pages/main_pages/main_messages/main_messages_widget.dart'
     show MainMessagesWidget;
-export '/pages/main_pages/main_profile_page/main_profile_page_widget.dart'
-    show MainProfilePageWidget;
+export '/pages/main_pages/main_profile/main_profile_widget.dart'
+    show MainProfileWidget;
 export '/pages/user_details/user_details_widget.dart' show UserDetailsWidget;
 export '/pages/auth_pages/edit_profile/edit_profile_widget.dart'
     show EditProfileWidget;

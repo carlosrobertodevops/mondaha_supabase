@@ -9,7 +9,7 @@ class ProcessosTable extends SupabaseTable<ProcessosRow> {
 }
 
 class ProcessosRow extends SupabaseDataRow {
-  ProcessosRow(Map<String, dynamic> data) : super(data);
+  ProcessosRow(super.data);
 
   @override
   SupabaseTable get table => ProcessosTable();

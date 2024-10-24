@@ -6,8 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'search_page_model.dart';
 export 'search_page_model.dart';
@@ -105,18 +103,18 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 0.0,
             ),
             body: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Container(
                 width: double.infinity,
-                constraints: BoxConstraints(
+                constraints: const BoxConstraints(
                   maxWidth: 770.0,
                 ),
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -124,14 +122,14 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: Container(
                           width: double.infinity,
                           height: 16.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(0.0),
                               bottomRight: Radius.circular(0.0),
                               topLeft: Radius.circular(12.0),
@@ -183,7 +181,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                           fontFamily: 'Plus Jakarta Sans',
                                           letterSpacing: 0.0,
                                         ),
-                                    textHighlightStyle: TextStyle(),
+                                    textHighlightStyle: const TextStyle(),
                                     elevation: 4.0,
                                     optionBackgroundColor:
                                         FlutterFlowTheme.of(context)
@@ -215,7 +213,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                     onEditingComplete: onEditingComplete,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController',
-                                      Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 2000),
                                       () async {
                                         logFirebaseEvent(
                                             'SEARCH_TextField_ji6zqlyu_ON_TEXTFIELD_C');
@@ -239,7 +237,6 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                                   _model.textController.text)
                                               .map((r) => r.object)
                                               .toList();
-                                          ;
                                         });
                                       },
                                     ),
@@ -299,7 +296,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               24.0, 20.0, 12.0, 20.0),
                                       suffixIcon:
                                           _model.textController!.text.isNotEmpty
@@ -331,11 +328,10 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                                               .text)
                                                           .map((r) => r.object)
                                                           .toList();
-                                                      ;
                                                     });
                                                     safeSetState(() {});
                                                   },
-                                                  child: Icon(
+                                                  child: const Icon(
                                                     Icons.clear,
                                                     color: Color(0xFF757575),
                                                     size: 22.0,
@@ -361,7 +357,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 12.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -375,7 +371,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 44.0),
                         child: Builder(
                           builder: (context) {
@@ -390,7 +386,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                               itemBuilder: (context, membrosIndex) {
                                 final membrosItem = membros[membrosIndex];
                                 return Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 4.0, 16.0, 8.0),
                                   child: FutureBuilder<List<MembrosRow>>(
                                     future: MembrosTable().queryRows(
@@ -424,7 +420,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x32000000),
@@ -438,7 +434,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                               BorderRadius.circular(8.0),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -457,7 +453,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 0.0, 0.0),
                                                   child: Column(
@@ -490,7 +486,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -529,11 +525,11 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                                 options: FFButtonOptions(
                                                   width: 70.0,
                                                   height: 36.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -551,7 +547,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                                             FontWeight.normal,
                                                       ),
                                                   elevation: 2.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),

@@ -4,12 +4,9 @@ import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'main_home_model.dart';
@@ -63,7 +60,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           _model.outputQueryTipoUsuarios = await TiposUsuariosTable().queryRows(
             queryFn: (q) => q.eq(
               'tipo_usuario_id',
-              _model.outputQueryUsuarios?.first?.tipoUsuarioId,
+              _model.outputQueryUsuarios?.first.tipoUsuarioId,
             ),
           );
           FFAppState().TipoUsuarioAtualNome =
@@ -75,7 +72,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           _model.outputQueryAgenciaNome = await AgenciasTable().queryRows(
             queryFn: (q) => q.eq(
               'agencia_id',
-              _model.outputQueryUsuarios?.first?.agenciaId,
+              _model.outputQueryUsuarios?.first.agenciaId,
             ),
           );
           FFAppState().AgenciaAtualNome =
@@ -101,8 +98,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -121,8 +118,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -141,8 +138,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(100.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(100.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -161,8 +158,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -181,8 +178,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 180.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -201,8 +198,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -221,8 +218,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(120.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(120.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -241,8 +238,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -261,8 +258,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 220.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -281,8 +278,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 240.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -301,8 +298,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(120.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(120.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -321,8 +318,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -341,8 +338,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 220.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -361,8 +358,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 240.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -381,8 +378,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -401,8 +398,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 50.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -421,8 +418,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 900.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -441,8 +438,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1200.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -461,8 +458,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1200.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -481,8 +478,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1400.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -501,8 +498,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -521,8 +518,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 50.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -541,8 +538,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 70.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 70.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -561,8 +558,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -581,8 +578,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 180.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -601,8 +598,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -621,8 +618,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 90.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 90.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -641,8 +638,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -661,8 +658,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 180.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -681,8 +678,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -701,8 +698,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1200.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 70.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 70.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -721,8 +718,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -741,8 +738,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 180.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -761,8 +758,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -781,8 +778,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1200.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 90.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 90.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -801,8 +798,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -821,8 +818,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 180.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -841,8 +838,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -861,8 +858,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 10.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 10.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -908,7 +905,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                       ),
                 ).animateOnPageLoad(
                     animationsMap['textOnPageLoadAnimation20']!),
-                actions: [],
+                actions: const [],
                 centerTitle: false,
                 elevation: 0.0,
               )
@@ -958,7 +955,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                         wrapWithModel(
                           model: _model.webNavModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: WebNavWidget(
+                          child: const WebNavWidget(
                             selectedNav: 1,
                           ),
                         ),
@@ -977,7 +974,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                       .secondaryBackground,
                                 ),
                               ),
-                              Container(
+                              SizedBox(
                                 height: 230.0,
                                 child: Stack(
                                   children: [
@@ -990,7 +987,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                             .secondaryBackground,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1000,7 +997,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 0.0, 8.0),
                                               child: Text(
@@ -1020,7 +1017,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   'textOnPageLoadAnimation1']!),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 16.0),
                                               child: Text(
@@ -1045,16 +1042,16 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      alignment: const AlignmentDirectional(0.0, 1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 30.0, 0.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           height: 140.0,
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: ListView(
-                                            padding: EdgeInsets.fromLTRB(
+                                            padding: const EdgeInsets.fromLTRB(
                                               0,
                                               0,
                                               44.0,
@@ -1065,15 +1062,15 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                             scrollDirection: Axis.horizontal,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 12.0),
                                                 child: AnimatedContainer(
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 100),
                                                   curve: Curves.easeInOut,
                                                   width: double.infinity,
-                                                  constraints: BoxConstraints(
+                                                  constraints: const BoxConstraints(
                                                     minHeight: 70.0,
                                                     maxWidth: 300.0,
                                                   ),
@@ -1081,7 +1078,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 3.0,
                                                         color:
@@ -1105,7 +1102,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     child: Row(
@@ -1124,7 +1121,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 BoxShape.circle,
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Card(
                                                             clipBehavior: Clip
@@ -1139,7 +1136,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       .circular(
                                                                           40.0),
                                                             ),
-                                                            child: Padding(
+                                                            child: const Padding(
                                                               padding:
                                                                   EdgeInsets
                                                                       .all(
@@ -1158,7 +1155,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 'containerOnPageLoadAnimation2']!),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   12.0),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1191,7 +1188,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       'textOnPageLoadAnimation3']!),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -1226,14 +1223,14 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     'containerOnPageLoadAnimation1']!),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 12.0),
                                                 child: AnimatedContainer(
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 100),
                                                   curve: Curves.easeInOut,
-                                                  constraints: BoxConstraints(
+                                                  constraints: const BoxConstraints(
                                                     minHeight: 70.0,
                                                     maxWidth: 300.0,
                                                   ),
@@ -1241,7 +1238,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 3.0,
                                                         color:
@@ -1265,7 +1262,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     child: Row(
@@ -1284,7 +1281,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 BoxShape.circle,
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Card(
                                                             clipBehavior: Clip
@@ -1299,7 +1296,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       .circular(
                                                                           40.0),
                                                             ),
-                                                            child: Padding(
+                                                            child: const Padding(
                                                               padding:
                                                                   EdgeInsets
                                                                       .all(
@@ -1318,7 +1315,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 'containerOnPageLoadAnimation4']!),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   12.0),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1351,7 +1348,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       'textOnPageLoadAnimation5']!),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -1386,14 +1383,14 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     'containerOnPageLoadAnimation3']!),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 12.0),
                                                 child: AnimatedContainer(
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 100),
                                                   curve: Curves.easeInOut,
-                                                  constraints: BoxConstraints(
+                                                  constraints: const BoxConstraints(
                                                     minHeight: 70.0,
                                                     maxWidth: 300.0,
                                                   ),
@@ -1401,7 +1398,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 3.0,
                                                         color:
@@ -1425,7 +1422,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     child: Row(
@@ -1444,7 +1441,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 BoxShape.circle,
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Card(
                                                             clipBehavior: Clip
@@ -1459,7 +1456,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       .circular(
                                                                           40.0),
                                                             ),
-                                                            child: Padding(
+                                                            child: const Padding(
                                                               padding:
                                                                   EdgeInsets
                                                                       .all(
@@ -1478,7 +1475,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 'containerOnPageLoadAnimation6']!),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   12.0),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1511,7 +1508,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       'textOnPageLoadAnimation7']!),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -1554,7 +1551,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 8.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -1571,13 +1568,13 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                     animationsMap['textOnPageLoadAnimation9']!),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 0.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x1F000000),
@@ -1590,7 +1587,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1600,7 +1597,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1608,7 +1605,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                 MainAxisAlignment.center,
                                             children: [
                                               Stack(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 children: [
                                                   CircularPercentIndicator(
@@ -1620,7 +1617,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                         true,
                                                     progressColor: Colors.white,
                                                     backgroundColor:
-                                                        Color(0x4CFFFFFF),
+                                                        const Color(0x4CFFFFFF),
                                                   ).animateOnPageLoad(animationsMap[
                                                       'progressBarOnPageLoadAnimation1']!),
                                                   CircularPercentIndicator(
@@ -1632,7 +1629,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                         true,
                                                     progressColor: Colors.white,
                                                     backgroundColor:
-                                                        Color(0x4CFFFFFF),
+                                                        const Color(0x4CFFFFFF),
                                                   ).animateOnPageLoad(animationsMap[
                                                       'progressBarOnPageLoadAnimation2']!),
                                                   CircularPercentIndicator(
@@ -1644,7 +1641,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                         true,
                                                     progressColor: Colors.white,
                                                     backgroundColor:
-                                                        Color(0x4CFFFFFF),
+                                                        const Color(0x4CFFFFFF),
                                                   ).animateOnPageLoad(animationsMap[
                                                       'progressBarOnPageLoadAnimation3']!),
                                                 ],
@@ -1661,7 +1658,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                             'dividerOnPageLoadAnimation']!),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 8.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1686,7 +1683,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               .titleSmall
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0x9AFFFFFF),
+                                                color: const Color(0x9AFFFFFF),
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
@@ -1703,9 +1700,9 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                 tablet: false,
                               ))
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1713,10 +1710,10 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                         Expanded(
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 100),
+                                                const Duration(milliseconds: 100),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
-                                            constraints: BoxConstraints(
+                                            constraints: const BoxConstraints(
                                               minHeight: 70.0,
                                               maxWidth: 770.0,
                                             ),
@@ -1724,7 +1721,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   blurRadius: 3.0,
                                                   color: Color(0x33000000),
@@ -1744,7 +1741,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 12.0),
                                               child: Column(
@@ -1754,7 +1751,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 8.0,
                                                                 16.0, 4.0),
                                                     child: Row(
@@ -1766,7 +1763,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       4.0,
                                                                       12.0,
@@ -1803,7 +1800,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       'textOnPageLoadAnimation12']!),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -1843,7 +1840,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 BoxShape.circle,
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Card(
                                                             clipBehavior: Clip
@@ -1860,7 +1857,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(
                                                                           12.0),
                                                               child: Icon(
@@ -1886,7 +1883,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   ))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1909,9 +1906,9 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                     context)
                                                                 .primary,
                                                         backgroundColor:
-                                                            Color(0x4D91D0E8),
+                                                            const Color(0x4D91D0E8),
                                                         barRadius:
-                                                            Radius.circular(
+                                                            const Radius.circular(
                                                                 24.0),
                                                         padding:
                                                             EdgeInsets.zero,
@@ -1924,7 +1921,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   ))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1951,7 +1948,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                     context)
                                                                 .accent1,
                                                         barRadius:
-                                                            Radius.circular(
+                                                            const Radius.circular(
                                                                 24.0),
                                                         padding:
                                                             EdgeInsets.zero,
@@ -1966,10 +1963,10 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                         Expanded(
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 100),
+                                                const Duration(milliseconds: 100),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
-                                            constraints: BoxConstraints(
+                                            constraints: const BoxConstraints(
                                               minHeight: 70.0,
                                               maxWidth: 770.0,
                                             ),
@@ -1977,7 +1974,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   blurRadius: 3.0,
                                                   color: Color(0x33000000),
@@ -1997,7 +1994,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 12.0),
                                               child: Column(
@@ -2007,7 +2004,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 8.0,
                                                                 16.0, 4.0),
                                                     child: Row(
@@ -2019,7 +2016,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       4.0,
                                                                       12.0,
@@ -2056,7 +2053,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       'textOnPageLoadAnimation14']!),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -2096,7 +2093,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 BoxShape.circle,
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Card(
                                                             clipBehavior: Clip
@@ -2113,7 +2110,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(
                                                                           12.0),
                                                               child: Icon(
@@ -2139,7 +2136,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   ))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -2162,9 +2159,9 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                     context)
                                                                 .primary,
                                                         backgroundColor:
-                                                            Color(0x4D91D0E8),
+                                                            const Color(0x4D91D0E8),
                                                         barRadius:
-                                                            Radius.circular(
+                                                            const Radius.circular(
                                                                 24.0),
                                                         padding:
                                                             EdgeInsets.zero,
@@ -2177,7 +2174,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   ))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -2204,7 +2201,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                     context)
                                                                 .accent1,
                                                         barRadius:
-                                                            Radius.circular(
+                                                            const Radius.circular(
                                                                 24.0),
                                                         padding:
                                                             EdgeInsets.zero,
@@ -2216,7 +2213,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                           ).animateOnPageLoad(animationsMap[
                                               'containerOnPageLoadAnimation10']!),
                                         ),
-                                      ].divide(SizedBox(width: 16.0)),
+                                      ].divide(const SizedBox(width: 16.0)),
                                     ),
                                   ),
                                 ),
@@ -2226,14 +2223,14 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x1F000000),
@@ -2251,7 +2248,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -2260,7 +2257,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 8.0, 16.0, 4.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -2269,7 +2266,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(4.0, 12.0, 12.0,
                                                           12.0),
                                                   child: Column(
@@ -2303,7 +2300,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                               'textOnPageLoadAnimation16']!),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -2341,7 +2338,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     shape: BoxShape.circle,
                                                   ),
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Card(
                                                     clipBehavior: Clip
@@ -2357,7 +2354,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Icon(
                                                         Icons
                                                             .folder_open_outlined,
@@ -2380,7 +2377,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                             desktop: false,
                                           ))
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: LinearPercentIndicator(
@@ -2399,7 +2396,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .accent1,
                                                 barRadius:
-                                                    Radius.circular(24.0),
+                                                    const Radius.circular(24.0),
                                                 padding: EdgeInsets.zero,
                                               ),
                                             ),
@@ -2409,7 +2406,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                             tablet: false,
                                           ))
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: LinearPercentIndicator(
@@ -2425,9 +2422,9 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 backgroundColor:
-                                                    Color(0x4D91D0E8),
+                                                    const Color(0x4D91D0E8),
                                                 barRadius:
-                                                    Radius.circular(24.0),
+                                                    const Radius.circular(24.0),
                                                 padding: EdgeInsets.zero,
                                               ),
                                             ),
@@ -2443,14 +2440,14 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 16.0),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x1F000000),
@@ -2468,7 +2465,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -2477,7 +2474,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 8.0, 16.0, 4.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -2486,7 +2483,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(4.0, 12.0, 12.0,
                                                           12.0),
                                                   child: Column(
@@ -2520,7 +2517,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                               'textOnPageLoadAnimation18']!),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -2558,7 +2555,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     shape: BoxShape.circle,
                                                   ),
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Card(
                                                     clipBehavior: Clip
@@ -2574,7 +2571,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Icon(
                                                         Icons.group,
                                                         color:
@@ -2596,7 +2593,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                             desktop: false,
                                           ))
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: LinearPercentIndicator(
@@ -2615,7 +2612,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .accent1,
                                                 barRadius:
-                                                    Radius.circular(24.0),
+                                                    const Radius.circular(24.0),
                                                 padding: EdgeInsets.zero,
                                               ),
                                             ),
@@ -2625,7 +2622,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                             tablet: false,
                                           ))
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: LinearPercentIndicator(
@@ -2641,9 +2638,9 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 backgroundColor:
-                                                    Color(0x4D91D0E8),
+                                                    const Color(0x4D91D0E8),
                                                 barRadius:
-                                                    Radius.circular(24.0),
+                                                    const Radius.circular(24.0),
                                                 padding: EdgeInsets.zero,
                                               ),
                                             ),

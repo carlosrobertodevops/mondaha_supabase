@@ -1,5 +1,5 @@
 import '/backend/supabase/supabase.dart';
-import '/components/dropdowns/dropdown_user_edit/dropdown_user_edit_widget.dart';
+import '/components/dropdowns/dropdown_admin_edit/dropdown_admin_edit_widget.dart';
 import '/components/modals/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -8,14 +8,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'main_admin_model.dart';
 export 'main_admin_model.dart';
 
@@ -23,7 +19,7 @@ class MainAdminWidget extends StatefulWidget {
   const MainAdminWidget({
     super.key,
     int? mainAdminTipoUsuario,
-  }) : this.mainAdminTipoUsuario = mainAdminTipoUsuario ?? 1;
+  }) : mainAdminTipoUsuario = mainAdminTipoUsuario ?? 1;
 
   final int mainAdminTipoUsuario;
 
@@ -66,8 +62,8 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -109,7 +105,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                         letterSpacing: 0.0,
                       ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: false,
                 elevation: 0.0,
               )
@@ -125,13 +121,13 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
               wrapWithModel(
                 model: _model.webNavModel,
                 updateCallback: () => safeSetState(() {}),
-                child: WebNavWidget(
+                child: const WebNavWidget(
                   selectedNav: 5,
                 ),
               ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,7 +141,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -177,9 +173,9 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -189,7 +185,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -222,7 +218,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                               await showModalBottomSheet(
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,
-                                barrierColor: Color(0x1A000000),
+                                barrierColor: const Color(0x1A000000),
                                 context: context,
                                 builder: (context) {
                                   return GestureDetector(
@@ -230,7 +226,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                         FocusScope.of(context).unfocus(),
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
-                                      child: Container(
+                                      child: const SizedBox(
                                         height: double.infinity,
                                         child: ModalCommandPaletteWidget(),
                                       ),
@@ -240,21 +236,21 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                               ).then((value) => safeSetState(() {}));
                             },
                           ),
-                        ].divide(SizedBox(width: 16.0)),
+                        ].divide(const SizedBox(width: 16.0)),
                       ),
                     ),
                     Flexible(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: MediaQuery.sizeOf(context).height * 0.94,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Column(
                             children: [
                               Align(
-                                alignment: Alignment(-1.0, 0),
+                                alignment: const Alignment(-1.0, 0),
                                 child: FlutterFlowButtonTabBar(
                                   useToggleButtonStyle: false,
                                   isScrollable: true,
@@ -264,7 +260,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                         fontFamily: 'Plus Jakarta Sans',
                                         letterSpacing: 0.0,
                                       ),
-                                  unselectedLabelStyle: TextStyle(),
+                                  unselectedLabelStyle: const TextStyle(),
                                   labelColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   unselectedLabelColor:
@@ -276,9 +272,9 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                   borderWidth: 2.0,
                                   borderRadius: 12.0,
                                   elevation: 0.0,
-                                  labelPadding: EdgeInsetsDirectional.fromSTEB(
+                                  labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 20.0, 0.0),
-                                  buttonMargin: EdgeInsetsDirectional.fromSTEB(
+                                  buttonMargin: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 8.0, 0.0, 0.0),
                                   tabs: [
                                     Tab(
@@ -329,11 +325,11 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                           .primaryBackground,
                                                     ),
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -351,17 +347,17 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                               width: 90.0,
                                                               height: 100.0,
                                                               decoration:
-                                                                  BoxDecoration(),
+                                                                  const BoxDecoration(),
                                                             ),
                                                           Expanded(
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -394,11 +390,11 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                             Expanded(
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -431,11 +427,11 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                             Expanded(
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -468,11 +464,11 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                             Expanded(
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -500,11 +496,11 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                           Expanded(
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -531,7 +527,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -541,7 +537,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                               width: 24.0,
                                                               height: 100.0,
                                                               decoration:
-                                                                  BoxDecoration(),
+                                                                  const BoxDecoration(),
                                                             ),
                                                           ),
                                                         ],
@@ -597,7 +593,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                   listViewIndex];
                                                           return Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         8.0,
@@ -611,7 +607,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         3.0,
@@ -631,7 +627,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             8.0,
@@ -674,7 +670,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   listViewUsuariosRow.nomeCompleto,
@@ -695,7 +691,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               ),
-                                                                              alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                               child: Visibility(
                                                                                 visible: responsiveVisibility(
                                                                                   context: context,
@@ -703,7 +699,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                   tablet: false,
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                   child: FutureBuilder<List<AgenciasRow>>(
                                                                                     future: AgenciasTable().querySingleRow(
                                                                                       queryFn: (q) => q.eq(
@@ -756,7 +752,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                           ))
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   valueOrDefault<String>(
                                                                                     listViewUsuariosRow.descricao,
@@ -780,7 +776,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                           ))
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   valueOrDefault<String>(
                                                                                     listViewUsuariosRow.email,
@@ -813,9 +809,9 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                     ),
                                                                                   ),
                                                                                   child: Align(
-                                                                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                       child: FutureBuilder<List<TiposUsuariosRow>>(
                                                                                         future: TiposUsuariosTable().querySingleRow(
                                                                                           queryFn: (q) => q.eq(
@@ -867,7 +863,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             0.0,
@@ -890,14 +886,14 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                               context: context,
                                                                               isGlobal: false,
                                                                               avoidOverflow: true,
-                                                                              targetAnchor: AlignmentDirectional(-1.0, 1.0).resolve(Directionality.of(context)),
-                                                                              followerAnchor: AlignmentDirectional(1.0, -1.0).resolve(Directionality.of(context)),
+                                                                              targetAnchor: const AlignmentDirectional(-1.0, 1.0).resolve(Directionality.of(context)),
+                                                                              followerAnchor: const AlignmentDirectional(1.0, -1.0).resolve(Directionality.of(context)),
                                                                               builder: (dialogContext) {
                                                                                 return Material(
                                                                                   color: Colors.transparent,
                                                                                   child: GestureDetector(
                                                                                     onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                    child: DropdownUserEditWidget(
+                                                                                    child: DropdownAdminEditWidget(
                                                                                       usuarioid: listViewUsuariosRow,
                                                                                     ),
                                                                                   ),
@@ -934,7 +930,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                         ],
                                       ),
                                     ),
-                                    Column(
+                                    const Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [],
                                     ),

@@ -465,7 +465,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '__',
     },
   },
-  // main_profile_page
+  // main_profile
   {
     'qrxn5crt': {
       'en': 'My Profile',
@@ -1325,7 +1325,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Ver empresa',
     },
   },
-  // dropdown_user_edit
+  // dropdown_admin_edit
   {
     'pnpighuj': {
       'en': 'Atribuir acessos',
@@ -2721,13 +2721,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // modal_profile_edit
   {
-    'qs8serr4': {
-      'en': 'Edit Profile',
-      'pt': 'Editar Perfil',
+    '7zctnlpm': {
+      'en': 'Edit Profile Active',
+      'pt': 'Editar Perfil Ativo',
     },
-    'bvy3fs93': {
-      'en': 'Below are your profile details',
-      'pt': 'Abaixo estão os detalhes do seu perfil',
+    'r1bwui0z': {
+      'en': 'Please enter the information below to edit the Profile.',
+      'pt': 'Insira as informações abaixo para editar o Perfil.',
     },
     'nx89dnuw': {
       'en': 'Change Photo',
@@ -2864,6 +2864,49 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'qxwj6eeq': {
       'en': 'Add Member',
       'pt': 'Adicionar membro',
+    },
+  },
+  // modal_profile_edit_main
+  {
+    'zy7fzru7': {
+      'en': 'Edit Profile',
+      'pt': 'Editar Perfil',
+    },
+    'hpa704ph': {
+      'en': 'Please enter the information below to edit the Profile.',
+      'pt': 'Insira as informações abaixo para editar o Perfil.',
+    },
+    'gmdmuf1i': {
+      'en': 'Change Photo',
+      'pt': 'Alterar foto',
+    },
+    'vc3a6nos': {
+      'en': 'Your Name',
+      'pt': 'Seu nome',
+    },
+    'pfhfmd7v': {
+      'en': 'Short Description',
+      'pt': 'Descrição curta',
+    },
+    'orq2ygjx': {
+      'en': 'The email associated with this account is:',
+      'pt': 'O e-mail associado a esta conta é:',
+    },
+    '9klcab1x': {
+      'en': 'Created On:',
+      'pt': 'Criado em:',
+    },
+    'iz396jj1': {
+      'en': 'Last Active:',
+      'pt': 'Última atividade:',
+    },
+    '75bhewl8': {
+      'en': 'Cancel',
+      'pt': 'Cancelar',
+    },
+    'djvkekt3': {
+      'en': 'Save Changes',
+      'pt': 'Salvar alterações',
     },
   },
   // Miscellaneous

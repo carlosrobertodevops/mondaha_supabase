@@ -9,7 +9,7 @@ class GruposTable extends SupabaseTable<GruposRow> {
 }
 
 class GruposRow extends SupabaseDataRow {
-  GruposRow(Map<String, dynamic> data) : super(data);
+  GruposRow(super.data);
 
   @override
   SupabaseTable get table => GruposTable();

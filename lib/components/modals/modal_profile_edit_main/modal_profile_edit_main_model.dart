@@ -1,26 +1,17 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
-import 'dart:math';
-import 'modal_profile_edit_widget.dart' show ModalProfileEditWidget;
-import 'package:cached_network_image/cached_network_image.dart';
+import 'modal_profile_edit_main_widget.dart' show ModalProfileEditMainWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
-class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
+class ModalProfileEditMainModel
+    extends FlutterFlowModel<ModalProfileEditMainWidget> {
   ///  Local state fields for this component.
 
-  bool uploadImagemTemp = false;
+  bool imagemUpload = false;
 
   ///  State fields for stateful widgets in this component.
 
+  final formKey = GlobalKey<FormState>();
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));

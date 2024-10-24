@@ -10,7 +10,7 @@ class ProcedimentosTable extends SupabaseTable<ProcedimentosRow> {
 }
 
 class ProcedimentosRow extends SupabaseDataRow {
-  ProcedimentosRow(Map<String, dynamic> data) : super(data);
+  ProcedimentosRow(super.data);
 
   @override
   SupabaseTable get table => ProcedimentosTable();

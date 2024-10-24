@@ -1,30 +1,34 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'modal_profile_edit_model.dart';
-export 'modal_profile_edit_model.dart';
+import 'modal_profile_edit_main_model.dart';
+export 'modal_profile_edit_main_model.dart';
 
-class ModalProfileEditWidget extends StatefulWidget {
-  const ModalProfileEditWidget({super.key});
+class ModalProfileEditMainWidget extends StatefulWidget {
+  const ModalProfileEditMainWidget({
+    super.key,
+    required this.usuarioid,
+  });
+
+  final UsuariosRow? usuarioid;
 
   @override
-  State<ModalProfileEditWidget> createState() => _ModalProfileEditWidgetState();
+  State<ModalProfileEditMainWidget> createState() =>
+      _ModalProfileEditMainWidgetState();
 }
 
-class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
+class _ModalProfileEditMainWidgetState extends State<ModalProfileEditMainWidget>
     with TickerProviderStateMixin {
-  late ModalProfileEditModel _model;
+  late ModalProfileEditMainModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -37,10 +41,14 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ModalProfileEditModel());
+    _model = createModel(context, () => ModalProfileEditMainModel());
 
+    _model.txtNomeCompletoTextController ??=
+        TextEditingController(text: widget.usuarioid?.nomeCompleto);
     _model.txtNomeCompletoFocusNode ??= FocusNode();
 
+    _model.txtDescricapTextController ??=
+        TextEditingController(text: widget.usuarioid?.descricao);
     _model.txtDescricapFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -52,8 +60,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 100.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 100.0),
+            end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -86,96 +94,114 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return FutureBuilder<List<UsuariosRow>>(
-      future: UsuariosTable().querySingleRow(
-        queryFn: (q) => q.eq(
-          'user_id',
-          currentUserUid,
-        ),
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        color: FlutterFlowTheme.of(context).accent4,
       ),
-      builder: (context, snapshot) {
-        // Customize what your widget looks like when it's loading.
-        if (!snapshot.hasData) {
-          return Center(
-            child: SizedBox(
-              width: 50.0,
-              height: 50.0,
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  FlutterFlowTheme.of(context).primary,
-                ),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
+            child: Container(
+              width: double.infinity,
+              constraints: const BoxConstraints(
+                maxWidth: 670.0,
               ),
-            ),
-          );
-        }
-        List<UsuariosRow> overlayUsuariosRowList = snapshot.data!;
-
-        final overlayUsuariosRow = overlayUsuariosRowList.isNotEmpty
-            ? overlayUsuariosRowList.first
-            : null;
-
-        return Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).accent4,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
-                child: Container(
-                  width: double.infinity,
-                  constraints: BoxConstraints(
-                    maxWidth: 670.0,
-                  ),
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 12.0,
-                        color: Color(0x1E000000),
-                        offset: Offset(
-                          0.0,
-                          5.0,
-                        ),
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(16.0),
-                  ),
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+                boxShadow: const [
+                  BoxShadow(
+                    blurRadius: 12.0,
+                    color: Color(0x1E000000),
+                    offset: Offset(
+                      0.0,
+                      5.0,
+                    ),
+                  )
+                ],
+                borderRadius: BorderRadius.circular(16.0),
+              ),
+              child: Card(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+                elevation: 0.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Form(
+                  key: _model.formKey,
+                  autovalidateMode: AutovalidateMode.disabled,
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            24.0, 16.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'qs8serr4' /* Edit Profile */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .headlineMedium
-                              .override(
-                                fontFamily: 'Outfit',
-                                letterSpacing: 0.0,
-                              ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'bvy3fs93' /* Below are your profile details */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    letterSpacing: 0.0,
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            12.0, 12.0, 12.0, 12.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 4.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'zy7fzru7' /* Edit Profile */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
                                   ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 8.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'hpa704ph' /* Please enter the information b... */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 30.0,
+                              borderWidth: 1.0,
+                              buttonSize: 60.0,
+                              icon: Icon(
+                                Icons.close_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 30.0,
+                              ),
+                              onPressed: () async {
+                                logFirebaseEvent(
+                                    'MODAL_PROFILE_EDIT_MAIN_close_rounded_IC');
+                                Navigator.pop(context);
+                              },
+                            ),
+                          ],
                         ),
                       ),
                       Column(
@@ -183,8 +209,8 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 16.0, 0.0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -203,38 +229,42 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                   ),
                                   child: Stack(
                                     children: [
-                                      if (_model.uploadImagemTemp == true)
+                                      if (_model.imagemUpload == false)
                                         Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: Container(
                                             width: 90.0,
                                             height: 90.0,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: BoxDecoration(
+                                            decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: CachedNetworkImage(
+                                              fadeInDuration:
+                                                  const Duration(milliseconds: 0),
+                                              fadeOutDuration:
+                                                  const Duration(milliseconds: 0),
+                                              imageUrl: valueOrDefault<String>(
+                                                widget.usuarioid?.fotoPath,
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
+                                              ),
+                                              fit: BoxFit.fitWidth,
+                                            ),
+                                          ),
+                                        ),
+                                      if (_model.imagemUpload == true)
+                                        Padding(
+                                          padding: const EdgeInsets.all(50.0),
+                                          child: Container(
+                                            width: 90.0,
+                                            height: 90.0,
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.memory(
                                               _model.uploadedLocalFile1.bytes ??
                                                   Uint8List.fromList([]),
-                                              fit: BoxFit.fitWidth,
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.uploadImagemTemp == false)
-                                        Padding(
-                                          padding: EdgeInsets.all(2.0),
-                                          child: Container(
-                                            width: 90.0,
-                                            height: 90.0,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: Image.network(
-                                              valueOrDefault<String>(
-                                                overlayUsuariosRow?.fotoPath,
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
-                                              ),
                                               fit: BoxFit.fitWidth,
                                             ),
                                           ),
@@ -245,7 +275,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 FFButtonWidget(
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MODAL_PROFILE_EDIT_CHANGE_PHOTO_BTN_ON_T');
+                                        'MODAL_PROFILE_EDIT_MAIN_CHANGE_PHOTO_BTN');
                                     final selectedMedia = await selectMedia(
                                       maxWidth: 200.00,
                                       maxHeight: 200.00,
@@ -298,17 +328,17 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                       }
                                     }
 
-                                    _model.uploadImagemTemp = true;
+                                    _model.imagemUpload = true;
                                     safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    'nx89dnuw' /* Change Photo */,
+                                    'gmdmuf1i' /* Change Photo */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -339,24 +369,20 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                     hoverElevation: 3.0,
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: TextFormField(
-                              controller:
-                                  _model.txtNomeCompletoTextController ??=
-                                      TextEditingController(
-                                text: overlayUsuariosRow?.nomeCompleto,
-                              ),
+                              controller: _model.txtNomeCompletoTextController,
                               focusNode: _model.txtNomeCompletoFocusNode,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  '99oumm34' /* Your Name */,
+                                  'vc3a6nos' /* Your Name */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -402,7 +428,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 24.0, 20.0, 24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -418,19 +444,16 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: TextFormField(
-                              controller: _model.txtDescricapTextController ??=
-                                  TextEditingController(
-                                text: overlayUsuariosRow?.descricao,
-                              ),
+                              controller: _model.txtDescricapTextController,
                               focusNode: _model.txtDescricapFocusNode,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  '8gkrs3rw' /* Short Description */,
+                                  'pfhfmd7v' /* Short Description */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -476,7 +499,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 24.0, 20.0, 24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -494,7 +517,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -507,12 +530,12 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 0.0, 0.0),
                                         child: SelectionArea(
                                             child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'p1lquhce' /* The email associated with this... */,
+                                            'orq2ygjx' /* The email associated with this... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -523,7 +546,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         )),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 0.0, 0.0),
                                         child: SelectionArea(
                                             child: Text(
@@ -547,12 +570,12 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 0.0, 0.0),
                                         child: SelectionArea(
                                             child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'fyuvtufe' /* Created On: */,
+                                            '9klcab1x' /* Created On: */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -563,13 +586,13 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         )),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 0.0, 0.0),
                                         child: SelectionArea(
                                             child: Text(
                                           dateTimeFormat(
                                             "d/M/y",
-                                            overlayUsuariosRow!.createdAt,
+                                            widget.usuarioid!.createdAt,
                                             locale: FFLocalizations.of(context)
                                                 .languageCode,
                                           ),
@@ -592,12 +615,12 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 0.0, 0.0),
                                         child: SelectionArea(
                                             child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'h4jwedag' /* Last Active: */,
+                                            'iz396jj1' /* Last Active: */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -608,13 +631,13 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         )),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 0.0, 0.0),
                                         child: SelectionArea(
                                             child: Text(
                                           dateTimeFormat(
                                             "relative",
-                                            overlayUsuariosRow!.acessoAt!,
+                                            widget.usuarioid!.acessoAt!,
                                             locale: FFLocalizations.of(context)
                                                 .languageCode,
                                           ),
@@ -629,34 +652,34 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                     ],
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 12.0, 24.0, 24.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.05),
+                              alignment: const AlignmentDirectional(0.0, 0.05),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   logFirebaseEvent(
-                                      'MODAL_PROFILE_EDIT_CANCEL_BTN_ON_TAP');
+                                      'MODAL_PROFILE_EDIT_MAIN_CANCEL_BTN_ON_TA');
                                   Navigator.pop(context);
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  '27w5o6gn' /* Cancel */,
+                                  '75bhewl8' /* Cancel */,
                                 ),
                                 options: FFButtonOptions(
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -688,29 +711,29 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.05),
+                              alignment: const AlignmentDirectional(0.0, 0.05),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   logFirebaseEvent(
-                                      'MODAL_PROFILE_EDIT_SAVE_CHANGES_BTN_ON_T');
+                                      'MODAL_PROFILE_EDIT_MAIN_SAVE_CHANGES_BTN');
                                   var confirmDialogResponse = await showDialog<
                                           bool>(
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return AlertDialog(
-                                            title: Text('SALVAR'),
+                                            title: const Text('SALVAR'),
                                             content:
-                                                Text('Deseja salva os dados ?'),
+                                                const Text('Deseja salva os dados ?'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext, false),
-                                                child: Text('Cancelar'),
+                                                child: const Text('Cancelar'),
                                               ),
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext, true),
-                                                child: Text('Confirmar'),
+                                                child: const Text('Confirmar'),
                                               ),
                                             ],
                                           );
@@ -782,39 +805,24 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         .nomeCompleto!;
                                     FFAppState().UsuarioAtualFoto =
                                         _model.uploadedFileUrl2;
-                                    _model.updatePage(() {});
+                                    FFAppState().update(() {});
                                     Navigator.pop(context);
-                                    Navigator.pop(context);
-
-                                    context.pushNamed('main_profile_page');
-
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Cadastro Atualizado com sucesso !',
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .success,
-                                      ),
-                                    );
+                                    if (Navigator.of(context).canPop()) {
+                                      context.pop();
+                                    }
+                                    context.pushNamed('main_admin');
                                   }
 
                                   safeSetState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'gz2xhplu' /* Save Changes */,
+                                  'djvkekt3' /* Save Changes */,
                                 ),
                                 options: FFButtonOptions(
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -824,7 +832,7 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -846,13 +854,12 @@ class _ModalProfileEditWidgetState extends State<ModalProfileEditWidget>
                       ),
                     ],
                   ),
-                ).animateOnPageLoad(
-                    animationsMap['containerOnPageLoadAnimation']!),
+                ),
               ),
-            ],
+            ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }

@@ -1,16 +1,12 @@
 import '/components/logos/main_logo_small/main_logo_small_widget.dart';
-import '/components/modals/modal_welcome/modal_welcome_widget.dart';
+import '/components/modals_extras/modal_welcome/modal_welcome_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_success_model.dart';
 export 'modal_success_model.dart';
 
@@ -54,15 +50,15 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.9, 0.9),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.9, 0.9),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -81,8 +77,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -101,8 +97,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 50.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -121,8 +117,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -141,8 +137,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 50.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -161,8 +157,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -181,8 +177,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             curve: Curves.bounceOut,
             delay: 800.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -201,8 +197,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             curve: Curves.bounceOut,
             delay: 800.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -243,18 +239,18 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 100),
+                  duration: const Duration(milliseconds: 100),
                   curve: Curves.easeInOut,
                   width: double.infinity,
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     minHeight: 150.0,
                     maxWidth: 530.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 12.0,
                         color: Color(0x33000000),
@@ -271,15 +267,15 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 12.0),
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
@@ -290,7 +286,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                                   wrapWithModel(
                                     model: _model.mainLogoSmallModel,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: MainLogoSmallWidget(),
+                                    child: const MainLogoSmallWidget(),
                                   ),
                                 ],
                               ),
@@ -311,7 +307,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation1']!),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -327,7 +323,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                               animationsMap['textOnPageLoadAnimation2']!),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -345,7 +341,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 3.0,
                                     color: Color(0x20000000),
@@ -358,7 +354,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 12.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -381,7 +377,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -400,7 +396,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 2.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -419,7 +415,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -458,7 +454,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                               animationsMap['containerOnPageLoadAnimation']!),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -475,7 +471,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                               animationsMap['textOnPageLoadAnimation3']!),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -491,7 +487,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                               animationsMap['textOnPageLoadAnimation4']!),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -505,7 +501,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                                 builder: (context) {
                                   return Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
-                                    child: Container(
+                                    child: const SizedBox(
                                       height: double.infinity,
                                       child: ModalWelcomeWidget(),
                                     ),
@@ -519,8 +515,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                               'e408bhw6' /* Send Information */,
                             ),
                             options: FFButtonOptions(
-                              padding: EdgeInsets.all(0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsets.all(0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -530,7 +526,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -548,7 +544,7 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                               animationsMap['buttonOnPageLoadAnimation1']!),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -560,8 +556,8 @@ class _ModalSuccessWidgetState extends State<ModalSuccessWidget>
                               'wo1onxhi' /* Never Mind */,
                             ),
                             options: FFButtonOptions(
-                              padding: EdgeInsets.all(0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsets.all(0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,

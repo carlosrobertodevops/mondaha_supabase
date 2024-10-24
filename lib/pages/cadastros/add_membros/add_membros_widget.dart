@@ -6,12 +6,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'add_membros_model.dart';
 export 'add_membros_model.dart';
 
@@ -65,8 +61,8 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 100.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 100.0),
+            end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -158,7 +154,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 0.0,
             ),
@@ -177,7 +173,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                         Expanded(
                           flex: 4,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 24.0, 24.0, 24.0),
                             child: SingleChildScrollView(
                               primary: false,
@@ -187,7 +183,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 1.0),
+                                    alignment: const AlignmentDirectional(0.0, 1.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -198,11 +194,11 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                       ),
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Column(
                                         children: [
                                           Align(
-                                            alignment: Alignment(0.0, 0),
+                                            alignment: const Alignment(0.0, 0),
                                             child: TabBar(
                                               labelColor:
                                                   FlutterFlowTheme.of(context)
@@ -317,7 +313,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   16.0),
                                                           child:
                                                               SingleChildScrollView(
@@ -333,7 +329,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                       .start,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           16.0,
@@ -357,7 +353,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           4.0,
@@ -388,7 +384,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                     Builder(
                                                                       builder:
                                                                           (context) {
-                                                                        final uploadedImages = (addMembrosMembrosRow?.fotosPath?.toList() ??
+                                                                        final uploadedImages = (addMembrosMembrosRow?.fotosPath.toList() ??
                                                                                 [])
                                                                             .take(3)
                                                                             .toList();
@@ -402,7 +398,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                             final uploadedImagesItem =
                                                                                 uploadedImages[uploadedImagesIndex];
                                                                             return Align(
-                                                                              alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                               child: Container(
                                                                                 width: 100.0,
                                                                                 height: 100.0,
@@ -416,7 +412,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                   ),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsets.all(2.0),
+                                                                                  padding: const EdgeInsets.all(2.0),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(10.0),
                                                                                     child: Image.network(
@@ -429,8 +425,8 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                 ),
                                                                               ),
                                                                             );
-                                                                          }).divide(SizedBox(width: 12.0)).addToStart(SizedBox(width: 24.0)).addToEnd(
-                                                                              SizedBox(width: 24.0)),
+                                                                          }).divide(const SizedBox(width: 12.0)).addToStart(const SizedBox(width: 24.0)).addToEnd(
+                                                                              const SizedBox(width: 24.0)),
                                                                         );
                                                                       },
                                                                     ),
@@ -507,7 +503,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                 borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                 borderWidth: 2.0,
                                                                                 borderRadius: 8.0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                 hidesUnderline: true,
                                                                                 isOverButton: false,
                                                                                 isSearchable: true,
@@ -578,7 +574,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                 borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                 borderWidth: 2.0,
                                                                                 borderRadius: 8.0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                 hidesUnderline: true,
                                                                                 isOverButton: false,
                                                                                 isSearchable: true,
@@ -638,7 +634,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                 borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                 borderWidth: 2.0,
                                                                                 borderRadius: 8.0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                 hidesUnderline: true,
                                                                                 isOverButton: false,
                                                                                 isSearchable: false,
@@ -647,7 +643,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                             },
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 16.0)),
                                                                     ),
                                                                     Row(
@@ -710,7 +706,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                               ),
                                                                               filled: true,
                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
@@ -786,7 +782,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                               ),
                                                                               filled: true,
                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
@@ -859,7 +855,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                               ),
                                                                               filled: true,
                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
@@ -932,7 +928,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                               ),
                                                                               filled: true,
                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
@@ -1005,7 +1001,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                               ),
                                                                               filled: true,
                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
@@ -1020,7 +1016,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                       ],
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           16.0,
                                                                           0.0,
@@ -1034,7 +1030,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 0.05),
+                                                                                const AlignmentDirectional(0.0, 0.05),
                                                                             child:
                                                                                 FFButtonWidget(
                                                                               onPressed: () {
@@ -1045,8 +1041,8 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 height: 44.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
@@ -1070,7 +1066,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 0.05),
+                                                                                const AlignmentDirectional(0.0, 0.05),
                                                                             child:
                                                                                 FFButtonWidget(
                                                                               onPressed: () {
@@ -1081,8 +1077,8 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 height: 44.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
@@ -1090,7 +1086,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1108,11 +1104,11 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                  ].divide(SizedBox(
+                                                                  ].divide(const SizedBox(
                                                                       height:
                                                                           16.0)),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height:
                                                                       16.0)),
                                                             ),
@@ -1124,27 +1120,27 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                     ],
                                                   ),
                                                 ),
-                                                Column(
+                                                const Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [],
                                                 ),
-                                                Column(
+                                                const Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [],
                                                 ),
-                                                Column(
+                                                const Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [],
                                                 ),
-                                                Column(
+                                                const Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [],
                                                 ),
-                                                Column(
+                                                const Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [],
@@ -1164,7 +1160,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                         Expanded(
                           flex: 1,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -1172,7 +1168,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1200,11 +1196,11 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                               .primary,
                                                     ),
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, -1.0),
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Text(
                                                         FFLocalizations.of(
@@ -1241,14 +1237,14 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: GridView(
                                                               padding:
                                                                   EdgeInsets
                                                                       .zero,
                                                               gridDelegate:
-                                                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                                                 crossAxisCount:
                                                                     3,
                                                                 crossAxisSpacing:
@@ -1261,7 +1257,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                               shrinkWrap: true,
                                                               scrollDirection:
                                                                   Axis.vertical,
-                                                              children: [],
+                                                              children: const [],
                                                             ),
                                                           ),
                                                         ),
@@ -1277,7 +1273,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1305,11 +1301,11 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                               .primary,
                                                     ),
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, -1.0),
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Text(
                                                         FFLocalizations.of(
@@ -1348,7 +1344,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                             padding:
                                                                 EdgeInsets.zero,
                                                             gridDelegate:
-                                                                SliverGridDelegateWithFixedCrossAxisCount(
+                                                                const SliverGridDelegateWithFixedCrossAxisCount(
                                                               crossAxisCount: 3,
                                                               crossAxisSpacing:
                                                                   10.0,
@@ -1360,7 +1356,7 @@ class _AddMembrosWidgetState extends State<AddMembrosWidget>
                                                             shrinkWrap: true,
                                                             scrollDirection:
                                                                 Axis.vertical,
-                                                            children: [],
+                                                            children: const [],
                                                           ),
                                                         ),
                                                       ),

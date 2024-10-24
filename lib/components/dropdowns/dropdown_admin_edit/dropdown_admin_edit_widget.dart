@@ -1,15 +1,14 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/modals/modal_profile_edit_main/modal_profile_edit_main_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'dropdown_user_edit_model.dart';
-export 'dropdown_user_edit_model.dart';
+import 'dropdown_admin_edit_model.dart';
+export 'dropdown_admin_edit_model.dart';
 
-class DropdownUserEditWidget extends StatefulWidget {
-  const DropdownUserEditWidget({
+class DropdownAdminEditWidget extends StatefulWidget {
+  const DropdownAdminEditWidget({
     super.key,
     required this.usuarioid,
   });
@@ -17,11 +16,12 @@ class DropdownUserEditWidget extends StatefulWidget {
   final UsuariosRow? usuarioid;
 
   @override
-  State<DropdownUserEditWidget> createState() => _DropdownUserEditWidgetState();
+  State<DropdownAdminEditWidget> createState() =>
+      _DropdownAdminEditWidgetState();
 }
 
-class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
-  late DropdownUserEditModel _model;
+class _DropdownAdminEditWidgetState extends State<DropdownAdminEditWidget> {
+  late DropdownAdminEditModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -32,7 +32,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DropdownUserEditModel());
+    _model = createModel(context, () => DropdownAdminEditModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -78,12 +78,12 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Container(
                 width: 300.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x33000000),
@@ -96,13 +96,13 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                   borderRadius: BorderRadius.circular(12.0),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             12.0, 12.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -119,8 +119,15 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                       MouseRegion(
                         opaque: false,
                         cursor: SystemMouseCursors.click ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered1 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered1 = false);
+                        }),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -129,14 +136,14 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               logFirebaseEvent(
-                                  'DROPDOWN_USER_EDIT_wrapWidget_ON_TAP');
+                                  'DROPDOWN_ADMIN_EDIT_wrapWidget_ON_TAP');
                               await UsuariosTable().update(
                                 data: {
                                   'tipo_usuario_id': 8,
                                 },
                                 matchingRows: (rows) => rows.eq(
                                   'usuario_id',
-                                  widget!.usuarioid?.usuarioId,
+                                  widget.usuarioid?.usuarioId,
                                 ),
                               );
 
@@ -151,31 +158,31 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  duration: Duration(milliseconds: 4000),
+                                  duration: const Duration(milliseconds: 4000),
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).success,
                                 ),
                               );
                             },
                             child: AnimatedContainer(
-                              duration: Duration(milliseconds: 150),
+                              duration: const Duration(milliseconds: 150),
                               curve: Curves.easeInOut,
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                color: _model.mouseRegionHovered1!
+                                color: _model.mouseRegionHovered1
                                     ? FlutterFlowTheme.of(context)
                                         .primaryBackground
                                     : FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.add_task_sharp,
@@ -186,7 +193,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -211,17 +218,17 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             ),
                           ),
                         ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered1 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered1 = false);
-                        }),
                       ),
                       MouseRegion(
                         opaque: false,
                         cursor: SystemMouseCursors.click ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered2 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered2 = false);
+                        }),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -229,7 +236,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             logFirebaseEvent(
-                                'DROPDOWN_USER_EDIT_wrapWidget_ON_TAP');
+                                'DROPDOWN_ADMIN_EDIT_wrapWidget_ON_TAP');
                             // ActionAnalista
                             await UsuariosTable().update(
                               data: {
@@ -237,7 +244,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                               },
                               matchingRows: (rows) => rows.eq(
                                 'usuario_id',
-                                widget!.usuarioid?.usuarioId,
+                                widget.usuarioid?.usuarioId,
                               ),
                             );
 
@@ -252,31 +259,31 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                duration: Duration(milliseconds: 4000),
+                                duration: const Duration(milliseconds: 4000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).success,
                               ),
                             );
                           },
                           child: AnimatedContainer(
-                            duration: Duration(milliseconds: 150),
+                            duration: const Duration(milliseconds: 150),
                             curve: Curves.easeInOut,
                             width: double.infinity,
                             decoration: BoxDecoration(
-                              color: _model.mouseRegionHovered2!
+                              color: _model.mouseRegionHovered2
                                   ? FlutterFlowTheme.of(context)
                                       .primaryBackground
                                   : FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Icon(
                                       Icons.beenhere_outlined,
@@ -287,7 +294,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -311,17 +318,17 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             ),
                           ),
                         ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered2 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered2 = false);
-                        }),
                       ),
                       MouseRegion(
                         opaque: false,
                         cursor: SystemMouseCursors.click ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered3 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered3 = false);
+                        }),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -329,7 +336,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             logFirebaseEvent(
-                                'DROPDOWN_USER_EDIT_wrapWidget_ON_TAP');
+                                'DROPDOWN_ADMIN_EDIT_wrapWidget_ON_TAP');
                             // ActionAnalista
                             await UsuariosTable().update(
                               data: {
@@ -337,7 +344,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                               },
                               matchingRows: (rows) => rows.eq(
                                 'usuario_id',
-                                widget!.usuarioid?.usuarioId,
+                                widget.usuarioid?.usuarioId,
                               ),
                             );
 
@@ -352,31 +359,31 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                duration: Duration(milliseconds: 4000),
+                                duration: const Duration(milliseconds: 4000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).success,
                               ),
                             );
                           },
                           child: AnimatedContainer(
-                            duration: Duration(milliseconds: 150),
+                            duration: const Duration(milliseconds: 150),
                             curve: Curves.easeInOut,
                             width: double.infinity,
                             decoration: BoxDecoration(
-                              color: _model.mouseRegionHovered3!
+                              color: _model.mouseRegionHovered3
                                   ? FlutterFlowTheme.of(context)
                                       .primaryBackground
                                   : FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Icon(
                                       Icons.festival,
@@ -387,7 +394,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -411,17 +418,17 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             ),
                           ),
                         ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered3 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered3 = false);
-                        }),
                       ),
                       MouseRegion(
                         opaque: false,
                         cursor: SystemMouseCursors.click ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered4 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered4 = false);
+                        }),
                         child: Visibility(
                           visible: columnUsuariosRow!.tipoUsuarioId! <= 2,
                           child: InkWell(
@@ -431,7 +438,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               logFirebaseEvent(
-                                  'DROPDOWN_USER_EDIT_wrapWidget_ON_TAP');
+                                  'DROPDOWN_ADMIN_EDIT_wrapWidget_ON_TAP');
                               // ActionAnalista
                               await UsuariosTable().update(
                                 data: {
@@ -439,7 +446,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                 },
                                 matchingRows: (rows) => rows.eq(
                                   'usuario_id',
-                                  widget!.usuarioid?.usuarioId,
+                                  widget.usuarioid?.usuarioId,
                                 ),
                               );
 
@@ -454,34 +461,34 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  duration: Duration(milliseconds: 4000),
+                                  duration: const Duration(milliseconds: 4000),
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).success,
                                 ),
                               );
                             },
                             child: AnimatedContainer(
-                              duration: Duration(milliseconds: 150),
+                              duration: const Duration(milliseconds: 150),
                               curve: Curves.easeInOut,
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                color: _model.mouseRegionHovered4!
+                                color: _model.mouseRegionHovered4
                                     ? FlutterFlowTheme.of(context)
                                         .primaryBackground
                                     : FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Icon(
-                                        Icons.developer_mode_outlined,
+                                        Icons.logo_dev_rounded,
                                         color: FlutterFlowTheme.of(context)
                                             .success,
                                         size: 20.0,
@@ -489,7 +496,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -514,19 +521,19 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             ),
                           ),
                         ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered4 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered4 = false);
-                        }),
                       ),
                       MouseRegion(
                         opaque: false,
                         cursor: SystemMouseCursors.click ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered5 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered5 = false);
+                        }),
                         child: Visibility(
-                          visible: columnUsuariosRow!.tipoUsuarioId! <= 2,
+                          visible: columnUsuariosRow.tipoUsuarioId! <= 2,
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -534,7 +541,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               logFirebaseEvent(
-                                  'DROPDOWN_USER_EDIT_wrapWidget_ON_TAP');
+                                  'DROPDOWN_ADMIN_EDIT_wrapWidget_ON_TAP');
                               // ActionAnalista
                               await UsuariosTable().update(
                                 data: {
@@ -542,7 +549,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                 },
                                 matchingRows: (rows) => rows.eq(
                                   'usuario_id',
-                                  widget!.usuarioid?.usuarioId,
+                                  widget.usuarioid?.usuarioId,
                                 ),
                               );
 
@@ -557,31 +564,31 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  duration: Duration(milliseconds: 4000),
+                                  duration: const Duration(milliseconds: 4000),
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).success,
                                 ),
                               );
                             },
                             child: AnimatedContainer(
-                              duration: Duration(milliseconds: 150),
+                              duration: const Duration(milliseconds: 150),
                               curve: Curves.easeInOut,
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                color: _model.mouseRegionHovered5!
+                                color: _model.mouseRegionHovered5
                                     ? FlutterFlowTheme.of(context)
                                         .primaryBackground
                                     : FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.admin_panel_settings_outlined,
@@ -592,7 +599,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -617,20 +624,13 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             ),
                           ),
                         ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered5 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered5 = false);
-                        }),
                       ),
                       Divider(
                         thickness: 1.0,
                         color: FlutterFlowTheme.of(context).alternate,
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             12.0, 12.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -644,30 +644,130 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                   ),
                         ),
                       ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        child: MouseRegion(
+                          opaque: false,
+                          cursor: SystemMouseCursors.click ?? MouseCursor.defer,
+                          onEnter: ((event) async {
+                            safeSetState(
+                                () => _model.mouseRegionHovered6 = true);
+                          }),
+                          onExit: ((event) async {
+                            safeSetState(
+                                () => _model.mouseRegionHovered6 = false);
+                          }),
+                          child: Builder(
+                            builder: (context) => InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                logFirebaseEvent(
+                                    'DROPDOWN_ADMIN_EDIT_replaceWidget_ON_TAP');
+                                await showDialog(
+                                  context: context,
+                                  builder: (dialogContext) {
+                                    return Dialog(
+                                      elevation: 0,
+                                      insetPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.transparent,
+                                      alignment: const AlignmentDirectional(0.0, 0.0)
+                                          .resolve(Directionality.of(context)),
+                                      child: ModalProfileEditMainWidget(
+                                        usuarioid: widget.usuarioid!,
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 150),
+                                curve: Curves.easeInOut,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: _model.mouseRegionHovered6
+                                      ? FlutterFlowTheme.of(context)
+                                          .primaryBackground
+                                      : FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 8.0, 0.0, 8.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 0.0, 0.0),
+                                        child: Icon(
+                                          Icons.edit_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 20.0,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'ufasy4ju' /* Edit */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                       MouseRegion(
                         opaque: false,
                         cursor: SystemMouseCursors.click ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered7 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered7 = false);
+                        }),
                         child: AnimatedContainer(
-                          duration: Duration(milliseconds: 150),
+                          duration: const Duration(milliseconds: 150),
                           curve: Curves.easeInOut,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: _model.mouseRegionHovered6!
+                            color: _model.mouseRegionHovered7
                                 ? FlutterFlowTheme.of(context).primaryBackground
                                 : FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Icon(
-                                    Icons.edit_sharp,
+                                    Icons.personal_video,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     size: 20.0,
@@ -675,11 +775,11 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'ufasy4ju' /* Edit */,
+                                        'w1jtn19u' /* View */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -694,90 +794,27 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             ),
                           ),
                         ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered6 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered6 = false);
-                        }),
-                      ),
-                      MouseRegion(
-                        opaque: false,
-                        cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 12.0, 0.0, 0.0),
-                          child: AnimatedContainer(
-                            duration: Duration(milliseconds: 150),
-                            curve: Curves.easeInOut,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: _model.mouseRegionHovered7!
-                                  ? FlutterFlowTheme.of(context)
-                                      .primaryBackground
-                                  : FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 0.0, 0.0),
-                                    child: Icon(
-                                      Icons.personal_video,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 20.0,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'w1jtn19u' /* View */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered7 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered7 = false);
-                        }),
                       ),
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered8 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered8 = false);
+                        }),
                         child: AnimatedContainer(
-                          duration: Duration(milliseconds: 150),
+                          duration: const Duration(milliseconds: 150),
                           curve: Curves.easeInOut,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: _model.mouseRegionHovered8!
+                            color: _model.mouseRegionHovered8
                                 ? FlutterFlowTheme.of(context).primaryBackground
                                 : FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(4.0),
                               bottomRight: Radius.circular(4.0),
                               topLeft: Radius.circular(0.0),
@@ -785,13 +822,13 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Icon(
                                     Icons.delete_outline_rounded,
@@ -801,7 +838,7 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -822,13 +859,6 @@ class _DropdownUserEditWidgetState extends State<DropdownUserEditWidget> {
                             ),
                           ),
                         ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered8 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered8 = false);
-                        }),
                       ),
                     ],
                   ),

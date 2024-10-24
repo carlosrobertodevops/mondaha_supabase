@@ -10,16 +10,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/walkthroughs/adicionar_membros.dart';
-import 'dart:math';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart'
     show TutorialCoachMark;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'main_membros_model.dart';
 export 'main_membros_model.dart';
 
@@ -66,8 +62,8 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -109,7 +105,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                         letterSpacing: 0.0,
                       ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: false,
                 elevation: 0.0,
               )
@@ -125,7 +121,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
               wrapWithModel(
                 model: _model.webNavModel,
                 updateCallback: () => safeSetState(() {}),
-                child: WebNavWidget(
+                child: const WebNavWidget(
                   selectedNav: 3,
                 ),
               ),
@@ -143,7 +139,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -178,13 +174,13 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                       elevation: 0,
                                       insetPadding: EdgeInsets.zero,
                                       backgroundColor: Colors.transparent,
-                                      alignment: AlignmentDirectional(0.0, 0.0)
+                                      alignment: const AlignmentDirectional(0.0, 0.0)
                                           .resolve(Directionality.of(context)),
                                       child: GestureDetector(
                                         onTap: () =>
                                             FocusScope.of(dialogContext)
                                                 .unfocus(),
-                                        child: ModalMembrosAddWidget(),
+                                        child: const ModalMembrosAddWidget(),
                                       ),
                                     );
                                   },
@@ -195,9 +191,9 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -207,7 +203,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -244,14 +240,14 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                             await showModalBottomSheet(
                               isScrollControlled: true,
                               backgroundColor: Colors.transparent,
-                              barrierColor: Color(0x1A000000),
+                              barrierColor: const Color(0x1A000000),
                               context: context,
                               builder: (context) {
                                 return GestureDetector(
                                   onTap: () => FocusScope.of(context).unfocus(),
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
-                                    child: Container(
+                                    child: const SizedBox(
                                       height: double.infinity,
                                       child: ModalCommandPaletteWidget(),
                                     ),
@@ -261,21 +257,21 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                             ).then((value) => safeSetState(() {}));
                           },
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                   ),
                   Flexible(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 0.94,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Column(
                           children: [
                             Align(
-                              alignment: Alignment(-1.0, 0),
+                              alignment: const Alignment(-1.0, 0),
                               child: FlutterFlowButtonTabBar(
                                 useToggleButtonStyle: false,
                                 isScrollable: true,
@@ -285,7 +281,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                       fontFamily: 'Plus Jakarta Sans',
                                       letterSpacing: 0.0,
                                     ),
-                                unselectedLabelStyle: TextStyle(),
+                                unselectedLabelStyle: const TextStyle(),
                                 labelColor:
                                     FlutterFlowTheme.of(context).primaryText,
                                 unselectedLabelColor:
@@ -297,9 +293,9 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                 borderWidth: 2.0,
                                 borderRadius: 12.0,
                                 elevation: 0.0,
-                                labelPadding: EdgeInsetsDirectional.fromSTEB(
+                                labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 20.0, 0.0),
-                                buttonMargin: EdgeInsetsDirectional.fromSTEB(
+                                buttonMargin: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 8.0, 0.0, 0.0),
                                 tabs: [
                                   Tab(
@@ -355,11 +351,11 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                         .primaryBackground,
                                                   ),
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 36.0, 0.0),
                                                     child: Row(
@@ -374,16 +370,16 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                             width: 90.0,
                                                             height: 100.0,
                                                             decoration:
-                                                                BoxDecoration(),
+                                                                const BoxDecoration(),
                                                           ),
                                                         Expanded(
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -416,12 +412,12 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                           Expanded(
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -454,12 +450,12 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                           Expanded(
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -492,12 +488,12 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                           Expanded(
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -525,11 +521,11 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                         Expanded(
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -556,7 +552,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -566,7 +562,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                             width: 24.0,
                                                             height: 100.0,
                                                             decoration:
-                                                                BoxDecoration(),
+                                                                const BoxDecoration(),
                                                           ),
                                                         ),
                                                       ],
@@ -621,7 +617,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                 listViewIndex];
                                                         return Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       8.0,
@@ -635,7 +631,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              boxShadow: [
+                                                              boxShadow: const [
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       3.0,
@@ -655,7 +651,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           8.0,
@@ -699,7 +695,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                         Expanded(
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -728,7 +724,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                               child: FutureBuilder<List<FuncoesRow>>(
                                                                                 future: FuncoesTable().queryRows(
                                                                                   queryFn: (q) => q.eq(
@@ -778,7 +774,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                               child: FutureBuilder<List<FaccoesRow>>(
                                                                                 future: FaccoesTable().queryRows(
                                                                                   queryFn: (q) => q.eq(
@@ -829,7 +825,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   listViewMembrosRow.alcunha.first,
@@ -861,9 +857,9 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                                   ),
                                                                                 ),
                                                                                 child: Align(
-                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       valueOrDefault<String>(
                                                                                         listViewMembrosRow.cpf,
@@ -887,7 +883,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                     builder:
                                                                         (context) =>
                                                                             Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           0.0,
@@ -916,16 +912,16 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                             avoidOverflow:
                                                                                 true,
                                                                             targetAnchor:
-                                                                                AlignmentDirectional(-1.0, 1.0).resolve(Directionality.of(context)),
+                                                                                const AlignmentDirectional(-1.0, 1.0).resolve(Directionality.of(context)),
                                                                             followerAnchor:
-                                                                                AlignmentDirectional(1.0, -1.0).resolve(Directionality.of(context)),
+                                                                                const AlignmentDirectional(1.0, -1.0).resolve(Directionality.of(context)),
                                                                             builder:
                                                                                 (dialogContext) {
                                                                               return Material(
                                                                                 color: Colors.transparent,
                                                                                 child: GestureDetector(
                                                                                   onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                  child: DropdownMemberEditWidget(),
+                                                                                  child: const DropdownMemberEditWidget(),
                                                                                 ),
                                                                               );
                                                                             },
@@ -961,11 +957,11 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                       ],
                                     ),
                                   ),
-                                  Column(
+                                  const Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [],
                                   ),
-                                  Column(
+                                  const Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [],
                                   ),

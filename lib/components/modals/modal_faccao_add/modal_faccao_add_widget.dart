@@ -5,14 +5,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:math';
 import 'dart:ui';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_faccao_add_model.dart';
 export 'modal_faccao_add_model.dart';
 
@@ -68,8 +63,8 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
             curve: Curves.easeInOut,
             delay: 250.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 70.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 70.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -114,15 +109,15 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 width: double.infinity,
-                constraints: BoxConstraints(
+                constraints: const BoxConstraints(
                   maxWidth: 670.0,
                 ),
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 3.0,
                       color: Color(0x33000000),
@@ -139,18 +134,18 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(2.0),
+                  padding: const EdgeInsets.all(2.0),
                   child: Form(
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.always,
                     child: Padding(
-                      padding: EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -163,7 +158,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -178,7 +173,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -220,7 +215,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -281,6 +276,9 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                         return;
                                       }
                                     }
+
+                                    _model.uploadImagem = true;
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: 160.0,
@@ -296,10 +294,10 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(2.0),
+                                      padding: const EdgeInsets.all(2.0),
                                       child: Stack(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         children: [
                                           Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -314,7 +312,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                                 size: 72.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 12.0, 0.0, 0.0),
                                                 child: Text(
@@ -334,21 +332,38 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                               ),
                                             ],
                                           ),
-                                          Padding(
-                                            padding: EdgeInsets.all(6.0),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              child: Image.memory(
-                                                _model.uploadedLocalFile1
-                                                        .bytes ??
-                                                    Uint8List.fromList([]),
-                                                width: double.infinity,
-                                                height: double.infinity,
-                                                fit: BoxFit.cover,
+                                          if (_model.uploadImagem == false)
+                                            Padding(
+                                              padding: const EdgeInsets.all(6.0),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                child: Image.memory(
+                                                  _model.uploadedLocalFile1
+                                                          .bytes ??
+                                                      Uint8List.fromList([]),
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
                                             ),
-                                          ),
+                                          if (_model.uploadImagem == true)
+                                            Padding(
+                                              padding: const EdgeInsets.all(6.0),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                child: Image.memory(
+                                                  _model.uploadedLocalFile1
+                                                          .bytes ??
+                                                      Uint8List.fromList([]),
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
                                         ],
                                       ),
                                     ),
@@ -358,7 +373,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
                             child: TextFormField(
                               controller: _model.txtNomeFaccaoTextController,
@@ -419,7 +434,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                     topRight: Radius.circular(4.0),
                                   ),
                                 ),
-                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -434,7 +449,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: TextFormField(
                               controller: _model.descriptionTextController,
@@ -515,7 +530,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -530,8 +545,8 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: Text('SALVAR'),
-                                                  content: Text(
+                                                  title: const Text('SALVAR'),
+                                                  content: const Text(
                                                       'Deseja salvar os dados ?'),
                                                   actions: [
                                                     TextButton(
@@ -539,14 +554,14 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               false),
-                                                      child: Text('Cancelar'),
+                                                      child: const Text('Cancelar'),
                                                     ),
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               true),
-                                                      child: Text('Confirmar'),
+                                                      child: const Text('Confirmar'),
                                                     ),
                                                   ],
                                                 );
@@ -633,7 +648,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                             ),
                                           ),
                                           duration:
-                                              Duration(milliseconds: 4000),
+                                              const Duration(milliseconds: 4000),
                                           backgroundColor:
                                               FlutterFlowTheme.of(context)
                                                   .success,
@@ -648,9 +663,9 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                   ),
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         44.0, 0.0, 44.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -660,7 +675,7 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
