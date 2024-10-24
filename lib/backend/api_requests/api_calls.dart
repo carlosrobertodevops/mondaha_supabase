@@ -194,7 +194,7 @@ class CountUsuariosViewCall {
     return ApiManager.instance.makeApiCall(
       callName: 'CountUsuariosView',
       apiUrl:
-          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_usuarios_ativos_view?select=*',
+          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_usuarios_view?select=*',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
@@ -222,7 +222,7 @@ class CountUsuariosAtivosViewCall {
     return ApiManager.instance.makeApiCall(
       callName: 'CountUsuariosAtivosView ',
       apiUrl:
-          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_membros_view?select=*',
+          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_usuarios_ativos_view?select=*',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
@@ -250,7 +250,7 @@ class CountMembrosViewCall {
     return ApiManager.instance.makeApiCall(
       callName: 'CountMembrosView',
       apiUrl:
-          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_usuarios_view?select=*',
+          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_membros_view?select=*',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',

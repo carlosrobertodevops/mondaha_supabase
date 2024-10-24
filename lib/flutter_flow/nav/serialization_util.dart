@@ -216,10 +216,14 @@ dynamic deserializeParam<T>(
       case ParamType.SupabaseRow:
         final data = json.decode(param) as Map<String, dynamic>;
         switch (T) {
+          case CountUsuariosViewRow:
+            return CountUsuariosViewRow(data);
           case EstadosRow:
             return EstadosRow(data);
           case GruposMembrosRow:
             return GruposMembrosRow(data);
+          case CountUsuariosAtivosViewRow:
+            return CountUsuariosAtivosViewRow(data);
           case WapplerMigrationsRow:
             return WapplerMigrationsRow(data);
           case ProcedimentosRow:
@@ -238,6 +242,8 @@ dynamic deserializeParam<T>(
             return GruposRow(data);
           case RelacionamentosMembrosRow:
             return RelacionamentosMembrosRow(data);
+          case CountMembrosViewRow:
+            return CountMembrosViewRow(data);
           case FuncoesRow:
             return FuncoesRow(data);
           case VaraRow:
@@ -246,6 +252,8 @@ dynamic deserializeParam<T>(
             return TiposUsuariosRow(data);
           case WapplerMigrationsLockRow:
             return WapplerMigrationsLockRow(data);
+          case CountFaccoesViewRow:
+            return CountFaccoesViewRow(data);
           case MunicipiosRow:
             return MunicipiosRow(data);
           case AgenciasRow:
