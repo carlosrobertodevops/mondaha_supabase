@@ -503,7 +503,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    '04vrv62j' /* Simple Name */,
+                                                                    '04vrv62j' /* Alcunha */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)

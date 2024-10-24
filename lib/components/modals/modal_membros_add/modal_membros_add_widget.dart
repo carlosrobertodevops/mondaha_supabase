@@ -594,7 +594,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         children: [
                                                                                           Builder(
                                                                                             builder: (context) {
-                                                                                              final fotosMembroPaths = _model.uploadedLocalFiles1.map((e) => e).toList().take(4).toList();
+                                                                                              final fotosMembroPaths = _model.uploadedLocalFiles1.map((e) => e).toList().take(6).toList();
 
                                                                                               return SingleChildScrollView(
                                                                                                 scrollDirection: Axis.horizontal,
@@ -823,6 +823,25 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 ),
                                                                               ),
                                                                             ],
+                                                                          ),
+                                                                          Align(
+                                                                            alignment:
+                                                                                const AlignmentDirectional(-1.0, 0.0),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                              child: Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'eivogkvw' /* ATENÇÃO : (1) Foto Frente, (2)... */,
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w600,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
                                                                           ),
                                                                           Row(
                                                                             mainAxisSize:

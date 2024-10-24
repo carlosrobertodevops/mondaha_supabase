@@ -1,6 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/modals/modal_profile_edit/modal_profile_edit_widget.dart';
+import '/components/modals/modal_profile_edit_profile/modal_profile_edit_profile_widget.dart';
 import '/components/modals_extras/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -568,35 +568,26 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                           onTap: () async {
                                             logFirebaseEvent(
                                                 'MAIN_PROFILE_Container_h7tyfdoi_ON_TAP');
-                                            if (MediaQuery.sizeOf(context)
-                                                    .width >=
-                                                991.0) {
-                                              await showDialog(
-                                                barrierColor:
-                                                    Colors.transparent,
-                                                context: context,
-                                                builder: (dialogContext) {
-                                                  return Dialog(
-                                                    elevation: 0,
-                                                    insetPadding:
-                                                        EdgeInsets.zero,
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                                0.0, 0.0)
-                                                            .resolve(
-                                                                Directionality.of(
-                                                                    context)),
-                                                    child:
-                                                        ModalProfileEditWidget(
-                                                      usuarioId:
-                                                          mainProfileUsuariosRow!,
-                                                    ),
-                                                  );
-                                                },
-                                              );
-                                            }
+                                            await showDialog(
+                                              barrierColor: Colors.transparent,
+                                              context: context,
+                                              builder: (dialogContext) {
+                                                return Dialog(
+                                                  elevation: 0,
+                                                  insetPadding: EdgeInsets.zero,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                              0.0, 0.0)
+                                                          .resolve(
+                                                              Directionality.of(
+                                                                  context)),
+                                                  child:
+                                                      const ModalProfileEditProfileWidget(),
+                                                );
+                                              },
+                                            );
                                           },
                                           child: AnimatedContainer(
                                             duration:

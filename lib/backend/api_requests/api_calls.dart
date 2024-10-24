@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
+import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -186,6 +187,118 @@ class ProcessosADDCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class CountUsuariosViewCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'CountUsuariosView',
+      apiUrl:
+          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_usuarios_ativos_view?select=*',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? total(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].total''',
+      ));
+}
+
+class CountUsuariosAtivosViewCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'CountUsuariosAtivosView ',
+      apiUrl:
+          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_membros_view?select=*',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? total(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].total''',
+      ));
+}
+
+class CountMembrosViewCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'CountMembrosView',
+      apiUrl:
+          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_usuarios_view?select=*',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? total(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].total''',
+      ));
+}
+
+class CountFaccoesViewCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'CountFaccoesView ',
+      apiUrl:
+          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_faccoes_view?select=*',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? total(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].total''',
+      ));
 }
 
 class ApiPagingParams {

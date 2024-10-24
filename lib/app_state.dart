@@ -57,6 +57,22 @@ class FFAppState extends ChangeNotifier {
       _UsuarioAtualEmail =
           prefs.getString('ff_UsuarioAtualEmail') ?? _UsuarioAtualEmail;
     });
+    _safeInit(() {
+      _CountFaccoes = prefs.getInt('ff_CountFaccoes') ?? _CountFaccoes;
+    });
+    _safeInit(() {
+      _CountMembros = prefs.getInt('ff_CountMembros') ?? _CountMembros;
+    });
+    _safeInit(() {
+      _CountUsuarios = prefs.getInt('ff_CountUsuarios') ?? _CountUsuarios;
+    });
+    _safeInit(() {
+      _CountUsuariosAtivos =
+          prefs.getInt('ff_CountUsuariosAtivos') ?? _CountUsuariosAtivos;
+    });
+    _safeInit(() {
+      _CountMaps = prefs.getInt('ff_CountMaps') ?? _CountMaps;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -140,6 +156,41 @@ class FFAppState extends ChangeNotifier {
   set UsuarioAtualEmail(String value) {
     _UsuarioAtualEmail = value;
     prefs.setString('ff_UsuarioAtualEmail', value);
+  }
+
+  int _CountFaccoes = 0;
+  int get CountFaccoes => _CountFaccoes;
+  set CountFaccoes(int value) {
+    _CountFaccoes = value;
+    prefs.setInt('ff_CountFaccoes', value);
+  }
+
+  int _CountMembros = 0;
+  int get CountMembros => _CountMembros;
+  set CountMembros(int value) {
+    _CountMembros = value;
+    prefs.setInt('ff_CountMembros', value);
+  }
+
+  int _CountUsuarios = 0;
+  int get CountUsuarios => _CountUsuarios;
+  set CountUsuarios(int value) {
+    _CountUsuarios = value;
+    prefs.setInt('ff_CountUsuarios', value);
+  }
+
+  int _CountUsuariosAtivos = 0;
+  int get CountUsuariosAtivos => _CountUsuariosAtivos;
+  set CountUsuariosAtivos(int value) {
+    _CountUsuariosAtivos = value;
+    prefs.setInt('ff_CountUsuariosAtivos', value);
+  }
+
+  int _CountMaps = 0;
+  int get CountMaps => _CountMaps;
+  set CountMaps(int value) {
+    _CountMaps = value;
+    prefs.setInt('ff_CountMaps', value);
   }
 }
 

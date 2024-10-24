@@ -1,6 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/modals/modal_profile_edit_main/modal_profile_edit_main_widget.dart';
+import '/components/modals/modal_profile_edit_admin/modal_profile_edit_admin_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -676,7 +676,7 @@ class _DropdownAdminEditWidgetState extends State<DropdownAdminEditWidget> {
                                       backgroundColor: Colors.transparent,
                                       alignment: const AlignmentDirectional(0.0, 0.0)
                                           .resolve(Directionality.of(context)),
-                                      child: ModalProfileEditMainWidget(
+                                      child: ModalProfileEditAdminWidget(
                                         usuarioid: widget.usuarioid!,
                                       ),
                                     );

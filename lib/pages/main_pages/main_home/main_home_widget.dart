@@ -1,4 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -78,6 +79,66 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           FFAppState().UsuarioAtualAgenciaNome =
               _model.outputQueryAgenciaNome!.first.nome!;
           safeSetState(() {});
+        }),
+        Future(() async {
+          _model.apiResultahoUsuarios = await CountUsuariosViewCall.call();
+
+          if ((_model.apiResultahoUsuarios?.succeeded ?? true)) {
+            FFAppState().CountUsuarios = valueOrDefault<int>(
+              getJsonField(
+                (_model.apiResultahoUsuarios?.jsonBody ?? ''),
+                r'''$[:].total''',
+              ),
+              0,
+            );
+            safeSetState(() {});
+          } else {
+            FFAppState().CountUsuarios = 0;
+            safeSetState(() {});
+          }
+        }),
+        Future(() async {
+          _model.apiResultMembros = await CountMembrosViewCall.call();
+
+          if ((_model.apiResultMembros?.succeeded ?? true)) {
+            FFAppState().CountMembros = getJsonField(
+              (_model.apiResultMembros?.jsonBody ?? ''),
+              r'''$[:].total''',
+            );
+            safeSetState(() {});
+          } else {
+            FFAppState().CountMembros = 0;
+            safeSetState(() {});
+          }
+        }),
+        Future(() async {
+          _model.apiResultFaccoes = await CountFaccoesViewCall.call();
+
+          if ((_model.apiResultFaccoes?.succeeded ?? true)) {
+            FFAppState().CountFaccoes = getJsonField(
+              (_model.apiResultFaccoes?.jsonBody ?? ''),
+              r'''$[:].total''',
+            );
+            safeSetState(() {});
+          } else {
+            FFAppState().CountFaccoes = 0;
+            safeSetState(() {});
+          }
+        }),
+        Future(() async {
+          _model.apiResultUsuariosAtivos =
+              await CountUsuariosAtivosViewCall.call();
+
+          if ((_model.apiResultUsuariosAtivos?.succeeded ?? true)) {
+            FFAppState().CountUsuariosAtivos = getJsonField(
+              (_model.apiResultUsuariosAtivos?.jsonBody ?? ''),
+              r'''$[:].total''',
+            );
+            safeSetState(() {});
+          } else {
+            FFAppState().CountUsuariosAtivos = 0;
+            safeSetState(() {});
+          }
         }),
       ]);
     });
@@ -363,7 +424,87 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
+      'containerOnPageLoadAnimation7': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(120.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation8': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
       'textOnPageLoadAnimation9': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 220.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 220.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 220.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation10': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 240.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 240.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 240.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation11': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 600.ms),
@@ -383,7 +524,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'containerOnPageLoadAnimation7': AnimationInfo(
+      'containerOnPageLoadAnimation9': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 600.ms),
@@ -483,7 +624,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation10': AnimationInfo(
+      'textOnPageLoadAnimation12': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 1600.ms),
@@ -503,7 +644,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation11': AnimationInfo(
+      'textOnPageLoadAnimation13': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 1600.ms),
@@ -523,86 +664,6 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
-      'containerOnPageLoadAnimation8': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1600.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 1600.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 1600.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, 70.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'textOnPageLoadAnimation12': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 200.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 200.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 200.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'textOnPageLoadAnimation13': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 180.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 180.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 180.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'containerOnPageLoadAnimation9': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          ScaleEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
-          ),
-        ],
-      ),
       'containerOnPageLoadAnimation10': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -618,7 +679,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1600.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
+            begin: const Offset(0.0, 70.0),
             end: const Offset(0.0, 0.0),
           ),
         ],
@@ -686,19 +747,19 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
       'containerOnPageLoadAnimation12': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
-          VisibilityEffect(duration: 1200.ms),
+          VisibilityEffect(duration: 1600.ms),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 1200.0.ms,
-            duration: 300.0.ms,
+            delay: 1600.0.ms,
+            duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
           ),
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 1200.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.0, 70.0),
+            delay: 1600.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 90.0),
             end: const Offset(0.0, 0.0),
           ),
         ],
@@ -778,7 +839,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
             curve: Curves.easeInOut,
             delay: 1200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 90.0),
+            begin: const Offset(0.0, 70.0),
             end: const Offset(0.0, 0.0),
           ),
         ],
@@ -843,7 +904,87 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
           ),
         ],
       ),
+      'containerOnPageLoadAnimation16': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1200.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 1200.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 1200.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(0.0, 90.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'textOnPageLoadAnimation20': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation21': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 180.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 180.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 180.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation17': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation22': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 1.ms),
@@ -904,7 +1045,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                         letterSpacing: 0.0,
                       ),
                 ).animateOnPageLoad(
-                    animationsMap['textOnPageLoadAnimation20']!),
+                    animationsMap['textOnPageLoadAnimation22']!),
                 actions: const [],
                 centerTitle: false,
                 elevation: 0.0,
@@ -1023,7 +1164,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'nnv46x35' /* Below is a summary of your tea... */,
+                                                  'nnv46x35' /* Below is a summary of your App... */,
                                                 ),
                                                 textAlign: TextAlign.start,
                                                 style:
@@ -1072,7 +1213,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   width: double.infinity,
                                                   constraints: const BoxConstraints(
                                                     minHeight: 70.0,
-                                                    maxWidth: 300.0,
+                                                    maxWidth: 250.0,
                                                   ),
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -1195,10 +1336,12 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                             0.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'd0r4w3cc' /* 24 */,
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    FFAppState()
+                                                                        .CountMembros
+                                                                        .toString(),
+                                                                    '0',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -1232,7 +1375,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   curve: Curves.easeInOut,
                                                   constraints: const BoxConstraints(
                                                     minHeight: 70.0,
-                                                    maxWidth: 300.0,
+                                                    maxWidth: 250.0,
                                                   ),
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -1355,10 +1498,12 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                             0.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '463rfkem' /* 3,200 */,
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    FFAppState()
+                                                                        .CountFaccoes
+                                                                        .toString(),
+                                                                    '0',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -1392,7 +1537,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   curve: Curves.easeInOut,
                                                   constraints: const BoxConstraints(
                                                     minHeight: 70.0,
-                                                    maxWidth: 300.0,
+                                                    maxWidth: 250.0,
                                                   ),
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -1515,10 +1660,12 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                             0.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '2wlrr5lg' /* 4300 */,
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    FFAppState()
+                                                                        .CountMaps
+                                                                        .toString(),
+                                                                    '0',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -1542,6 +1689,168 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                 ).animateOnPageLoad(animationsMap[
                                                     'containerOnPageLoadAnimation5']!),
                                               ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 0.0, 12.0),
+                                                child: AnimatedContainer(
+                                                  duration: const Duration(
+                                                      milliseconds: 100),
+                                                  curve: Curves.easeInOut,
+                                                  constraints: const BoxConstraints(
+                                                    minHeight: 70.0,
+                                                    maxWidth: 250.0,
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    boxShadow: const [
+                                                      BoxShadow(
+                                                        blurRadius: 3.0,
+                                                        color:
+                                                            Color(0x33000000),
+                                                        offset: Offset(
+                                                          0.0,
+                                                          1.0,
+                                                        ),
+                                                      )
+                                                    ],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
+                                                    border: Border.all(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      width: 1.0,
+                                                    ),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: 60.0,
+                                                          height: 60.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          alignment:
+                                                              const AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Card(
+                                                            clipBehavior: Clip
+                                                                .antiAliasWithSaveLayer,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            shape:
+                                                                RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40.0),
+                                                            ),
+                                                            child: const Padding(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(
+                                                                          12.0),
+                                                              child: Icon(
+                                                                Icons
+                                                                    .account_circle_outlined,
+                                                                color: Colors
+                                                                    .white,
+                                                                size: 24.0,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ).animateOnPageLoad(
+                                                            animationsMap[
+                                                                'containerOnPageLoadAnimation8']!),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets.all(
+                                                                  12.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Text(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'n9k8nozn' /* Active users */,
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Plus Jakarta Sans',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ).animateOnPageLoad(
+                                                                  animationsMap[
+                                                                      'textOnPageLoadAnimation9']!),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    FFAppState()
+                                                                        .CountUsuariosAtivos
+                                                                        .toString(),
+                                                                    '0',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .displaySmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Outfit',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ).animateOnPageLoad(
+                                                                    animationsMap[
+                                                                        'textOnPageLoadAnimation10']!),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ).animateOnPageLoad(animationsMap[
+                                                    'containerOnPageLoadAnimation7']!),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -1564,8 +1873,8 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                         fontFamily: 'Plus Jakarta Sans',
                                         letterSpacing: 0.0,
                                       ),
-                                ).animateOnPageLoad(
-                                    animationsMap['textOnPageLoadAnimation9']!),
+                                ).animateOnPageLoad(animationsMap[
+                                    'textOnPageLoadAnimation11']!),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1673,7 +1982,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                   letterSpacing: 0.0,
                                                 ),
                                           ).animateOnPageLoad(animationsMap[
-                                              'textOnPageLoadAnimation10']!),
+                                              'textOnPageLoadAnimation12']!),
                                         ),
                                         Text(
                                           FFLocalizations.of(context).getText(
@@ -1687,12 +1996,12 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                 letterSpacing: 0.0,
                                               ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation11']!),
+                                            'textOnPageLoadAnimation13']!),
                                       ],
                                     ),
                                   ),
                                 ).animateOnPageLoad(animationsMap[
-                                    'containerOnPageLoadAnimation7']!),
+                                    'containerOnPageLoadAnimation9']!),
                               ),
                               if (responsiveVisibility(
                                 context: context,
@@ -1797,7 +2106,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                     ),
                                                               ).animateOnPageLoad(
                                                                   animationsMap[
-                                                                      'textOnPageLoadAnimation12']!),
+                                                                      'textOnPageLoadAnimation14']!),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
@@ -1823,7 +2132,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       ),
                                                                 ).animateOnPageLoad(
                                                                     animationsMap[
-                                                                        'textOnPageLoadAnimation13']!),
+                                                                        'textOnPageLoadAnimation15']!),
                                                               ),
                                                             ],
                                                           ),
@@ -1872,7 +2181,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                           ),
                                                         ).animateOnPageLoad(
                                                             animationsMap[
-                                                                'containerOnPageLoadAnimation9']!),
+                                                                'containerOnPageLoadAnimation11']!),
                                                       ],
                                                     ),
                                                   ),
@@ -1958,7 +2267,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               ),
                                             ),
                                           ).animateOnPageLoad(animationsMap[
-                                              'containerOnPageLoadAnimation8']!),
+                                              'containerOnPageLoadAnimation10']!),
                                         ),
                                         Expanded(
                                           child: AnimatedContainer(
@@ -2050,7 +2359,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                     ),
                                                               ).animateOnPageLoad(
                                                                   animationsMap[
-                                                                      'textOnPageLoadAnimation14']!),
+                                                                      'textOnPageLoadAnimation16']!),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
@@ -2076,7 +2385,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                       ),
                                                                 ).animateOnPageLoad(
                                                                     animationsMap[
-                                                                        'textOnPageLoadAnimation15']!),
+                                                                        'textOnPageLoadAnimation17']!),
                                                               ),
                                                             ],
                                                           ),
@@ -2125,7 +2434,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                           ),
                                                         ).animateOnPageLoad(
                                                             animationsMap[
-                                                                'containerOnPageLoadAnimation11']!),
+                                                                'containerOnPageLoadAnimation13']!),
                                                       ],
                                                     ),
                                                   ),
@@ -2211,7 +2520,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                               ),
                                             ),
                                           ).animateOnPageLoad(animationsMap[
-                                              'containerOnPageLoadAnimation10']!),
+                                              'containerOnPageLoadAnimation12']!),
                                         ),
                                       ].divide(const SizedBox(width: 16.0)),
                                     ),
@@ -2297,7 +2606,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 ),
                                                       ).animateOnPageLoad(
                                                           animationsMap[
-                                                              'textOnPageLoadAnimation16']!),
+                                                              'textOnPageLoadAnimation18']!),
                                                       Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
@@ -2323,7 +2632,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                               ),
                                                         ).animateOnPageLoad(
                                                             animationsMap[
-                                                                'textOnPageLoadAnimation17']!),
+                                                                'textOnPageLoadAnimation19']!),
                                                       ),
                                                     ],
                                                   ),
@@ -2367,7 +2676,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     ),
                                                   ),
                                                 ).animateOnPageLoad(animationsMap[
-                                                    'containerOnPageLoadAnimation13']!),
+                                                    'containerOnPageLoadAnimation15']!),
                                               ],
                                             ),
                                           ),
@@ -2432,7 +2741,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                       ),
                                     ),
                                   ).animateOnPageLoad(animationsMap[
-                                      'containerOnPageLoadAnimation12']!),
+                                      'containerOnPageLoadAnimation14']!),
                                 ),
                               if (responsiveVisibility(
                                 context: context,
@@ -2514,7 +2823,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                                 ),
                                                       ).animateOnPageLoad(
                                                           animationsMap[
-                                                              'textOnPageLoadAnimation18']!),
+                                                              'textOnPageLoadAnimation20']!),
                                                       Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
@@ -2540,7 +2849,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                               ),
                                                         ).animateOnPageLoad(
                                                             animationsMap[
-                                                                'textOnPageLoadAnimation19']!),
+                                                                'textOnPageLoadAnimation21']!),
                                                       ),
                                                     ],
                                                   ),
@@ -2583,7 +2892,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                                     ),
                                                   ),
                                                 ).animateOnPageLoad(animationsMap[
-                                                    'containerOnPageLoadAnimation15']!),
+                                                    'containerOnPageLoadAnimation17']!),
                                               ],
                                             ),
                                           ),
@@ -2648,7 +2957,7 @@ class _MainHomeWidgetState extends State<MainHomeWidget>
                                       ),
                                     ),
                                   ).animateOnPageLoad(animationsMap[
-                                      'containerOnPageLoadAnimation14']!),
+                                      'containerOnPageLoadAnimation16']!),
                                 ),
                             ],
                           ),

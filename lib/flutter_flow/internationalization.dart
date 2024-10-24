@@ -180,32 +180,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Painel',
     },
     'nnv46x35': {
-      'en': 'Below is a summary of your teams activity.',
-      'pt': 'Abaixo está um resumo das atividades da sua equipe.',
+      'en': 'Below is a summary of your App activity.',
+      'pt': 'Abaixo está um resumo das atividades no App.',
     },
     'jqevo63s': {
       'en': 'New Members',
       'pt': 'Novos Membros',
     },
-    'd0r4w3cc': {
-      'en': '24',
-      'pt': '24',
-    },
     '8vot9bzj': {
       'en': 'New Factions',
       'pt': 'Novas Facções',
-    },
-    '463rfkem': {
-      'en': '3,200',
-      'pt': '3.200',
     },
     'saxskj92': {
       'en': 'Add in the Map',
       'pt': 'Adicionados no mapa',
     },
-    '2wlrr5lg': {
-      'en': '4300',
-      'pt': '4300',
+    'n9k8nozn': {
+      'en': 'Active users',
+      'pt': 'Usuários ativos',
     },
     'kphqz3hi': {
       'en': 'Projects',
@@ -287,8 +279,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Facção',
     },
     '04vrv62j': {
-      'en': 'Simple Name',
-      'pt': 'Nome Simples',
+      'en': 'Alcunha',
+      'pt': 'Alcunha',
     },
     '4zc3d2m8': {
       'en': 'CPF',
@@ -1410,6 +1402,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Apagar Fotos',
       'pt': 'Apagar Fotos',
     },
+    'eivogkvw': {
+      'en':
+          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira, (4) Tatuagens (6 imagens no total)',
+      'pt':
+          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . No total de 6 imagens.',
+    },
     'npcbcpl9': {
       'en': 'Nome completo',
       'pt': 'Nome completo',
@@ -2520,7 +2518,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Fechar',
     },
   },
-  // modal_profile_edit
+  // modal_profile_edit_profile
   {
     '7zctnlpm': {
       'en': 'Edit Profile  (Now)',
@@ -2529,10 +2527,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'r1bwui0z': {
       'en': 'Please enter the information below to edit the Profile.',
       'pt': 'Insira as informações abaixo para editar o Perfil.',
-    },
-    'nx89dnuw': {
-      'en': 'Change Photo',
-      'pt': 'Alterar foto',
     },
     '99oumm34': {
       'en': 'Your Name',
@@ -2667,7 +2661,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Adicionar membro',
     },
   },
-  // modal_profile_edit_main
+  // modal_profile_edit_admin
   {
     'zy7fzru7': {
       'en': 'Edit Profile (Administration)',

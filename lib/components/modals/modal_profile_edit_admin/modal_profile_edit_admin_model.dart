@@ -1,10 +1,10 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'modal_profile_edit_main_widget.dart' show ModalProfileEditMainWidget;
+import 'modal_profile_edit_admin_widget.dart' show ModalProfileEditAdminWidget;
 import 'package:flutter/material.dart';
 
-class ModalProfileEditMainModel
-    extends FlutterFlowModel<ModalProfileEditMainWidget> {
+class ModalProfileEditAdminModel
+    extends FlutterFlowModel<ModalProfileEditAdminWidget> {
   ///  Local state fields for this component.
 
   bool uploadimagemTemp = false;

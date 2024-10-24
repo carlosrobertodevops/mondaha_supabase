@@ -1,9 +1,11 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'modal_profile_edit_widget.dart' show ModalProfileEditWidget;
+import 'modal_profile_edit_profile_widget.dart'
+    show ModalProfileEditProfileWidget;
 import 'package:flutter/material.dart';
 
-class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
+class ModalProfileEditProfileModel
+    extends FlutterFlowModel<ModalProfileEditProfileWidget> {
   ///  Local state fields for this component.
 
   bool uploadImagemTemp = false;
@@ -15,10 +17,6 @@ class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-
   // State field(s) for txt_nome_completo widget.
   FocusNode? txtNomeCompletoFocusNode;
   TextEditingController? txtNomeCompletoTextController;
@@ -28,10 +26,10 @@ class ModalProfileEditModel extends FlutterFlowModel<ModalProfileEditWidget> {
   FocusNode? txtDescricapFocusNode;
   TextEditingController? txtDescricapTextController;
   String? Function(BuildContext, String?)? txtDescricapTextControllerValidator;
-  bool isDataUploading3 = false;
-  FFUploadedFile uploadedLocalFile3 =
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl3 = '';
+  String uploadedFileUrl2 = '';
 
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<UsuariosRow>? outputUsuarioUpdate;

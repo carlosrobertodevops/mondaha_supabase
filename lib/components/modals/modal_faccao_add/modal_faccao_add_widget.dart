@@ -543,121 +543,87 @@ class _ModalFaccaoAddWidgetState extends State<ModalFaccaoAddWidget>
                                   onPressed: () async {
                                     logFirebaseEvent(
                                         'MODAL_FACCAO_ADD_COMP_SAVE_BTN_ON_TAP');
-                                    var confirmDialogResponse =
-                                        await showDialog<bool>(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: const Text('SALVAR'),
-                                                  content: const Text(
-                                                      'Deseja salvar os dados ?'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext,
-                                                              false),
-                                                      child: const Text('Cancelar'),
-                                                    ),
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext,
-                                                              true),
-                                                      child: const Text('Confirmar'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            ) ??
-                                            false;
-                                    if (confirmDialogResponse) {
-                                      {
-                                        safeSetState(() =>
-                                            _model.isDataUploading2 = true);
-                                        var selectedUploadedFiles =
-                                            <FFUploadedFile>[];
-                                        var selectedMedia = <SelectedFile>[];
-                                        var downloadUrls = <String>[];
-                                        try {
-                                          showUploadMessage(
-                                            context,
-                                            'Uploading file...',
-                                            showLoading: true,
-                                          );
-                                          selectedUploadedFiles = _model
-                                                  .uploadedLocalFile1
-                                                  .bytes!
-                                                  .isNotEmpty
-                                              ? [_model.uploadedLocalFile1]
-                                              : <FFUploadedFile>[];
-                                          selectedMedia =
-                                              selectedFilesFromUploadedFiles(
-                                            selectedUploadedFiles,
-                                            storageFolderPath: 'faccoes',
-                                          );
-                                          downloadUrls =
-                                              await uploadSupabaseStorageFiles(
-                                            bucketName: 'uploads',
-                                            selectedFiles: selectedMedia,
-                                          );
-                                        } finally {
-                                          ScaffoldMessenger.of(context)
-                                              .hideCurrentSnackBar();
-                                          _model.isDataUploading2 = false;
-                                        }
-                                        if (selectedUploadedFiles.length ==
-                                                selectedMedia.length &&
-                                            downloadUrls.length ==
-                                                selectedMedia.length) {
-                                          safeSetState(() {
-                                            _model.uploadedLocalFile2 =
-                                                selectedUploadedFiles.first;
-                                            _model.uploadedFileUrl2 =
-                                                downloadUrls.first;
-                                          });
-                                          showUploadMessage(
-                                              context, 'Success!');
-                                        } else {
-                                          safeSetState(() {});
-                                          showUploadMessage(
-                                              context, 'Failed to upload data');
-                                          return;
-                                        }
+                                    {
+                                      safeSetState(
+                                          () => _model.isDataUploading2 = true);
+                                      var selectedUploadedFiles =
+                                          <FFUploadedFile>[];
+                                      var selectedMedia = <SelectedFile>[];
+                                      var downloadUrls = <String>[];
+                                      try {
+                                        showUploadMessage(
+                                          context,
+                                          'Uploading file...',
+                                          showLoading: true,
+                                        );
+                                        selectedUploadedFiles = _model
+                                                .uploadedLocalFile1
+                                                .bytes!
+                                                .isNotEmpty
+                                            ? [_model.uploadedLocalFile1]
+                                            : <FFUploadedFile>[];
+                                        selectedMedia =
+                                            selectedFilesFromUploadedFiles(
+                                          selectedUploadedFiles,
+                                          storageFolderPath: 'faccoes',
+                                        );
+                                        downloadUrls =
+                                            await uploadSupabaseStorageFiles(
+                                          bucketName: 'uploads',
+                                          selectedFiles: selectedMedia,
+                                        );
+                                      } finally {
+                                        ScaffoldMessenger.of(context)
+                                            .hideCurrentSnackBar();
+                                        _model.isDataUploading2 = false;
                                       }
-
-                                      _model.outputFaccaoUpdate =
-                                          await FaccoesTable().insert({
-                                        'nome': _model
-                                            .txtNomeFaccaoTextController.text,
-                                        'descricao': _model
-                                            .descriptionTextController.text,
-                                        'imagem_path': _model.uploadedFileUrl2,
-                                      });
-                                      Navigator.pop(context);
-                                      Navigator.pop(context);
-
-                                      context.pushNamed('main_faccoes');
-
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Cadastro SALVO com sucesso!',
-                                            style: TextStyle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          duration:
-                                              const Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .success,
-                                        ),
-                                      );
+                                      if (selectedUploadedFiles.length ==
+                                              selectedMedia.length &&
+                                          downloadUrls.length ==
+                                              selectedMedia.length) {
+                                        safeSetState(() {
+                                          _model.uploadedLocalFile2 =
+                                              selectedUploadedFiles.first;
+                                          _model.uploadedFileUrl2 =
+                                              downloadUrls.first;
+                                        });
+                                        showUploadMessage(context, 'Success!');
+                                      } else {
+                                        safeSetState(() {});
+                                        showUploadMessage(
+                                            context, 'Failed to upload data');
+                                        return;
+                                      }
                                     }
+
+                                    _model.outputFaccaoUpdate =
+                                        await FaccoesTable().insert({
+                                      'nome': _model
+                                          .txtNomeFaccaoTextController.text,
+                                      'descricao':
+                                          _model.descriptionTextController.text,
+                                      'imagem_path': _model.uploadedFileUrl2,
+                                    });
+                                    Navigator.pop(context);
+                                    Navigator.pop(context);
+
+                                    context.pushNamed('main_faccoes');
+
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Daddos  salvos com sucesso !',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: const Duration(milliseconds: 1000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .success,
+                                      ),
+                                    );
 
                                     safeSetState(() {});
                                   },
