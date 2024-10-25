@@ -668,12 +668,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                                             fotosMembroPathsItem.bytes ?? Uint8List.fromList([]),
                                                                                                                             width: 100.0,
                                                                                                                             height: 100.0,
-                                                                                                                            fit: BoxFit.cover,
+                                                                                                                            fit: BoxFit.none,
                                                                                                                             errorBuilder: (context, error, stackTrace) => Image.asset(
                                                                                                                               'assets/images/error_image.png',
                                                                                                                               width: 100.0,
                                                                                                                               height: 100.0,
-                                                                                                                              fit: BoxFit.cover,
+                                                                                                                              fit: BoxFit.none,
                                                                                                                             ),
                                                                                                                           ),
                                                                                                                         ),
@@ -832,19 +832,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             alignment:
                                                                                 const AlignmentDirectional(-1.0, 0.0),
                                                                             child:
-                                                                                Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
-                                                                              child: Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'eivogkvw' /* ATENÇÃO : (1) Foto Frente, (2)... */,
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
-                                                                                      color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                    ),
+                                                                                Text(
+                                                                              FFLocalizations.of(context).getText(
+                                                                                'eivogkvw' /* ATENÇÃO : (1) Foto Frente, (2)... */,
                                                                               ),
+                                                                              style: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                  ),
                                                                             ),
                                                                           ),
                                                                           Row(
