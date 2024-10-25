@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -624,8 +623,8 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                             ),
                                                                                                           ),
                                                                                                           child: Column(
-                                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                            mainAxisSize: MainAxisSize.min,
+                                                                                                            mainAxisAlignment: MainAxisAlignment.start,
                                                                                                             children: [
                                                                                                               Expanded(
                                                                                                                 child: Align(
@@ -639,42 +638,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                                       highlightColor: Colors.transparent,
                                                                                                                       onTap: () async {
                                                                                                                         logFirebaseEvent('MODAL_MEMBROS_ADD_membro_foto_ON_TAP');
-                                                                                                                        await Navigator.push(
-                                                                                                                          context,
-                                                                                                                          PageTransition(
-                                                                                                                            type: PageTransitionType.fade,
-                                                                                                                            child: FlutterFlowExpandedImageView(
-                                                                                                                              image: Image.memory(
-                                                                                                                                fotosMembroPathsItem.bytes ?? Uint8List.fromList([]),
-                                                                                                                                fit: BoxFit.contain,
-                                                                                                                                errorBuilder: (context, error, stackTrace) => Image.asset(
-                                                                                                                                  'assets/images/error_image.png',
-                                                                                                                                  fit: BoxFit.contain,
-                                                                                                                                ),
-                                                                                                                              ),
-                                                                                                                              allowRotation: false,
-                                                                                                                              tag: 'membroFotoTag',
-                                                                                                                              useHeroAnimation: true,
-                                                                                                                            ),
-                                                                                                                          ),
-                                                                                                                        );
                                                                                                                       },
-                                                                                                                      child: Hero(
-                                                                                                                        tag: 'membroFotoTag',
-                                                                                                                        transitionOnUserGestures: true,
-                                                                                                                        child: ClipRRect(
-                                                                                                                          borderRadius: BorderRadius.circular(10.0),
-                                                                                                                          child: Image.memory(
-                                                                                                                            fotosMembroPathsItem.bytes ?? Uint8List.fromList([]),
+                                                                                                                      child: ClipRRect(
+                                                                                                                        borderRadius: BorderRadius.circular(10.0),
+                                                                                                                        child: Image.memory(
+                                                                                                                          fotosMembroPathsItem.bytes ?? Uint8List.fromList([]),
+                                                                                                                          width: 100.0,
+                                                                                                                          height: 100.0,
+                                                                                                                          fit: BoxFit.none,
+                                                                                                                          errorBuilder: (context, error, stackTrace) => Image.asset(
+                                                                                                                            'assets/images/error_image.png',
                                                                                                                             width: 100.0,
                                                                                                                             height: 100.0,
                                                                                                                             fit: BoxFit.none,
-                                                                                                                            errorBuilder: (context, error, stackTrace) => Image.asset(
-                                                                                                                              'assets/images/error_image.png',
-                                                                                                                              width: 100.0,
-                                                                                                                              height: 100.0,
-                                                                                                                              fit: BoxFit.none,
-                                                                                                                            ),
                                                                                                                           ),
                                                                                                                         ),
                                                                                                                       ),
