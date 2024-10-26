@@ -1404,9 +1404,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'eivogkvw': {
       'en':
-          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira, (4) Tatuagens (6 imagens no total)',
+          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . No total de 6 imagens (200px por 200px cada).',
       'pt':
-          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . No total de 6 imagens.',
+          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . No total de 6 imagens (200px por 200px cada).',
     },
     'npcbcpl9': {
       'en': 'Nome completo',
