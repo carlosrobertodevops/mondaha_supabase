@@ -87,11 +87,9 @@ class FFAppState extends ChangeNotifier {
   late LoggableList<DataTypesProcedimentosStruct> _AppStateProcedimentos =
       LoggableList([]);
   List<DataTypesProcedimentosStruct> get AppStateProcedimentos =>
-      _AppStateProcedimentos?..logger = () => debugLogAppState(this);
+      _AppStateProcedimentos..logger = () => debugLogAppState(this);
   set AppStateProcedimentos(List<DataTypesProcedimentosStruct> value) {
-    if (value != null) {
-      _AppStateProcedimentos = LoggableList(value);
-    }
+    _AppStateProcedimentos = LoggableList(value);
 
     prefs.setStringList(
         'ff_AppStateProcedimentos', value.map((x) => x.serialize()).toList());
@@ -136,11 +134,9 @@ class FFAppState extends ChangeNotifier {
   late LoggableList<DataTypesProcessosStruct> _AppStateProcessos =
       LoggableList([]);
   List<DataTypesProcessosStruct> get AppStateProcessos =>
-      _AppStateProcessos?..logger = () => debugLogAppState(this);
+      _AppStateProcessos..logger = () => debugLogAppState(this);
   set AppStateProcessos(List<DataTypesProcessosStruct> value) {
-    if (value != null) {
-      _AppStateProcessos = LoggableList(value);
-    }
+    _AppStateProcessos = LoggableList(value);
 
     prefs.setStringList(
         'ff_AppStateProcessos', value.map((x) => x.serialize()).toList());

@@ -32,9 +32,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   late LoggableList<String> _membrosPhotos = LoggableList([]);
   set membrosPhotos(List<String> value) {
-    if (value != null) {
-      _membrosPhotos = LoggableList(value);
-    }
+    _membrosPhotos = LoggableList(value);
 
     debugLogWidgetClass(this);
   }
@@ -52,9 +50,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   late LoggableList<String> _membrosAlcunhas = LoggableList([]);
   set membrosAlcunhas(List<String> value) {
-    if (value != null) {
-      _membrosAlcunhas = LoggableList(value);
-    }
+    _membrosAlcunhas = LoggableList(value);
 
     debugLogWidgetClass(this);
   }
@@ -72,9 +68,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   late LoggableList<String> _membrosEnderecos = LoggableList([]);
   set membrosEnderecos(List<String> value) {
-    if (value != null) {
-      _membrosEnderecos = LoggableList(value);
-    }
+    _membrosEnderecos = LoggableList(value);
 
     debugLogWidgetClass(this);
   }
@@ -108,9 +102,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   late LoggableList<String> _membrosGrupos = LoggableList([]);
   set membrosGrupos(List<String> value) {
-    if (value != null) {
-      _membrosGrupos = LoggableList(value);
-    }
+    _membrosGrupos = LoggableList(value);
 
     debugLogWidgetClass(this);
   }
@@ -128,9 +120,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   late LoggableList<String> _membrosRelacoes = LoggableList([]);
   set membrosRelacoes(List<String> value) {
-    if (value != null) {
-      _membrosRelacoes = LoggableList(value);
-    }
+    _membrosRelacoes = LoggableList(value);
 
     debugLogWidgetClass(this);
   }
@@ -148,9 +138,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
 
   late LoggableList<String> _membrosFaccaoTresLocais = LoggableList([]);
   set membrosFaccaoTresLocais(List<String> value) {
-    if (value != null) {
-      _membrosFaccaoTresLocais = LoggableList(value);
-    }
+    _membrosFaccaoTresLocais = LoggableList(value);
 
     debugLogWidgetClass(this);
   }
@@ -172,9 +160,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   late LoggableList<DataTypesProcedimentosStruct> _membrosProcedimentos =
       LoggableList([]);
   set membrosProcedimentos(List<DataTypesProcedimentosStruct> value) {
-    if (value != null) {
-      _membrosProcedimentos = LoggableList(value);
-    }
+    _membrosProcedimentos = LoggableList(value);
 
     debugLogWidgetClass(this);
   }
@@ -197,9 +183,7 @@ class ModalAddMembrosModel extends FlutterFlowModel<ModalAddMembrosWidget> {
   late LoggableList<DataTypesProcessosStruct> _membrosProcessos =
       LoggableList([]);
   set membrosProcessos(List<DataTypesProcessosStruct> value) {
-    if (value != null) {
-      _membrosProcessos = LoggableList(value);
-    }
+    _membrosProcessos = LoggableList(value);
 
     debugLogWidgetClass(this);
   }
