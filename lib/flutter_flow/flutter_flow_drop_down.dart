@@ -1,6 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 
-import 'package:flutter/foundation.dart';
 import 'form_field_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -269,8 +268,8 @@ class _FlutterFlowDropDownState<T> extends State<FlutterFlowDropDown<T>> {
       .toList();
 
   Widget _buildDropdown() {
-    final overlayColor = MaterialStateProperty.resolveWith<Color?>((states) =>
-        states.contains(MaterialState.focused) ? Colors.transparent : null);
+    final overlayColor = WidgetStateProperty.resolveWith<Color?>((states) =>
+        states.contains(WidgetState.focused) ? Colors.transparent : null);
     final iconStyleData = widget.icon != null
         ? IconStyleData(icon: widget.icon!)
         : const IconStyleData();
@@ -304,7 +303,8 @@ class _FlutterFlowDropDownState<T> extends State<FlutterFlowDropDown<T>> {
           : (isMultiSelect ? (_) {} : (val) => widget.controller!.value = val),
       isExpanded: true,
       selectedItemBuilder: (context) => widget.options
-          .map((item) => Align(
+          .map(
+            (item) => Align(
                 alignment: AlignmentDirectional.centerStart,
                 child: Text(
                   isMultiSelect
@@ -315,8 +315,8 @@ class _FlutterFlowDropDownState<T> extends State<FlutterFlowDropDown<T>> {
                       : optionLabels[item]!,
                   style: widget.textStyle,
                   maxLines: 1,
-                ),
-              ))
+                )),
+          )
           .toList(),
       dropdownSearchData: widget.isSearchable
           ? DropdownSearchData<T>(

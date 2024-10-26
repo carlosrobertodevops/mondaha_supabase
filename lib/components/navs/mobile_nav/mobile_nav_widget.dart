@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'mobile_nav_model.dart';
 export 'mobile_nav_model.dart';
 
@@ -26,7 +24,7 @@ class MobileNavWidget extends StatefulWidget {
   State<MobileNavWidget> createState() => _MobileNavWidgetState();
 }
 
-class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
+class _MobileNavWidgetState extends State<MobileNavWidget> {
   late MobileNavModel _model;
 
   @override
@@ -39,6 +37,8 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
   void initState() {
     super.initState();
     _model = createModel(context, () => MobileNavModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -50,16 +50,12 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
 
   @override
   Widget build(BuildContext context) {
-    DebugFlutterFlowModelContext.maybeOf(context)
-        ?.parentModelCallback
-        ?.call(_model);
-
     return Container(
       width: double.infinity,
       height: 110.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 3.0,
             color: Color(0x33000000),
@@ -71,7 +67,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
         ],
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 34.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 34.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +84,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   context.pushNamed(
                     'main_home',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
+                      kTransitionInfoKey: const TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -100,10 +96,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget!.iconOne!,
+                    widget.iconOne!,
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'sy0pxvma' /* Dashboard */,
@@ -131,7 +127,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   context.pushNamed(
                     'main_messages',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
+                      kTransitionInfoKey: const TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -143,10 +139,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget!.iconFive!,
+                    widget.iconFive!,
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           't5c3aiuy' /* My Team */,
@@ -174,7 +170,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   context.pushNamed(
                     'main_membros',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
+                      kTransitionInfoKey: const TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -186,10 +182,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget!.iconTwo!,
+                    widget.iconTwo!,
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'nkz3c58a' /* Customers */,
@@ -217,7 +213,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   context.pushNamed(
                     'main_faccao_old',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
+                      kTransitionInfoKey: const TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -229,10 +225,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget!.iconThree!,
+                    widget.iconThree!,
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '1mkyyjwj' /* Contracts */,
@@ -258,9 +254,9 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   logFirebaseEvent('MOBILE_NAV_COMP_Column_rda41op2_ON_TAP');
 
                   context.pushNamed(
-                    'main_profile_page',
+                    'main_profile',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
+                      kTransitionInfoKey: const TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -272,10 +268,10 @@ class _MobileNavWidgetState extends State<MobileNavWidget> with RouteAware {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    widget!.iconFour!,
+                    widget.iconFour!,
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'eg79coc6' /* Profile */,

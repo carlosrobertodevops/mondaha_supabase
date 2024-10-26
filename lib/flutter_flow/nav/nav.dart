@@ -1,63 +1,22 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/backend/schema/structs/index.dart';
 
-import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
-
-const debugRouteLinkMap = {
-  '/forgotPassword':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=forgot_password',
-  '/mainHome':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=main_home',
-  '/mainMembros':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=main_membros',
-  '/mainFaccaoOld':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=main_faccao_old',
-  '/mainMessages':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=main_messages',
-  '/mainProfilePage':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=main_profile_page',
-  '/userDetails':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=user_details',
-  '/editProfile':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=edit_profile',
-  '/projectDetailsHealthAi':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=project_details_health_ai',
-  '/projectDetails':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=project_details',
-  '/searchPage':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=search_page',
-  '/messagesDetails':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=messages_details',
-  '/authLogin':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=auth_login',
-  '/addMembros':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=add_membros',
-  '/mainAdmin':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=main_admin',
-  '/mainFaccoes':
-      'https://app.flutterflow.io/project/mondaha-be2293?tab=uiBuilder&page=main_faccoes'
-};
 
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
@@ -117,119 +76,111 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : AuthLoginWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const AuthLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : AuthLoginWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const AuthLoginWidget(),
           routes: [
             FFRoute(
               name: 'forgot_password',
               path: 'forgotPassword',
-              builder: (context, params) => ForgotPasswordWidget(),
+              requireAuth: true,
+              builder: (context, params) => const ForgotPasswordWidget(),
             ),
             FFRoute(
               name: 'main_home',
               path: 'mainHome',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'main_home')
-                  : MainHomeWidget(),
+                  ? const NavBarPage(initialPage: 'main_home')
+                  : const MainHomeWidget(),
             ),
             FFRoute(
               name: 'main_membros',
               path: 'mainMembros',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'main_membros')
-                  : MainMembrosWidget(),
+                  ? const NavBarPage(initialPage: 'main_membros')
+                  : const MainMembrosWidget(),
             ),
             FFRoute(
               name: 'main_faccao_old',
               path: 'mainFaccaoOld',
               requireAuth: true,
-              builder: (context, params) => MainFaccaoOldWidget(),
+              builder: (context, params) => const MainFaccaoOldWidget(),
             ),
             FFRoute(
               name: 'main_messages',
               path: 'mainMessages',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'main_messages')
-                  : MainMessagesWidget(),
+                  ? const NavBarPage(initialPage: 'main_messages')
+                  : const MainMessagesWidget(),
             ),
             FFRoute(
-              name: 'main_profile_page',
-              path: 'mainProfilePage',
+              name: 'main_profile',
+              path: 'mainProfile',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'main_profile_page')
-                  : MainProfilePageWidget(),
-            ),
-            FFRoute(
-              name: 'user_details',
-              path: 'userDetails',
-              builder: (context, params) => UserDetailsWidget(
-                showBack: params.getParam(
-                  'showBack',
-                  ParamType.bool,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'edit_profile',
-              path: 'editProfile',
-              builder: (context, params) => EditProfileWidget(),
+                  ? const NavBarPage(initialPage: 'main_profile')
+                  : const MainProfileWidget(),
             ),
             FFRoute(
               name: 'project_details_health_ai',
               path: 'projectDetailsHealthAi',
-              builder: (context, params) => ProjectDetailsHealthAiWidget(),
+              requireAuth: true,
+              builder: (context, params) => const ProjectDetailsHealthAiWidget(),
             ),
             FFRoute(
               name: 'project_details',
               path: 'projectDetails',
-              builder: (context, params) => ProjectDetailsWidget(),
+              requireAuth: true,
+              builder: (context, params) => const ProjectDetailsWidget(),
             ),
             FFRoute(
               name: 'search_page',
               path: 'searchPage',
-              builder: (context, params) => SearchPageWidget(),
+              requireAuth: true,
+              builder: (context, params) => const SearchPageWidget(),
             ),
             FFRoute(
               name: 'messages_details',
               path: 'messagesDetails',
-              builder: (context, params) => MessagesDetailsWidget(),
+              requireAuth: true,
+              builder: (context, params) => const MessagesDetailsWidget(),
             ),
             FFRoute(
               name: 'auth_login',
               path: 'authLogin',
-              builder: (context, params) => AuthLoginWidget(),
-            ),
-            FFRoute(
-              name: 'add_membros',
-              path: 'addMembros',
-              builder: (context, params) => AddMembrosWidget(),
+              builder: (context, params) => const AuthLoginWidget(),
             ),
             FFRoute(
               name: 'main_admin',
               path: 'mainAdmin',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'main_admin')
-                  : MainAdminWidget(),
+                  ? const NavBarPage(initialPage: 'main_admin')
+                  : MainAdminWidget(
+                      mainAdminTipoUsuario: params.getParam(
+                        'mainAdminTipoUsuario',
+                        ParamType.int,
+                      ),
+                    ),
             ),
             FFRoute(
               name: 'main_faccoes',
               path: 'mainFaccoes',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'main_faccoes')
-                  : MainFaccoesWidget(),
+                  ? const NavBarPage(initialPage: 'main_faccoes')
+                  : const MainFaccoesWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
-      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
@@ -461,7 +412,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

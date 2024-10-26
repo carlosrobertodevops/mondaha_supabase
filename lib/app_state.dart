@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import '/backend/schema/structs/index.dart';
-import '/backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -23,40 +20,58 @@ class FFAppState extends ChangeNotifier {
       _AGENCIA = prefs.getString('ff_AGENCIA') ?? _AGENCIA;
     });
     _safeInit(() {
-      _AppStateProcedimentos = LoggableList(
-        prefs
-                .getStringList('ff_AppStateProcedimentos')
-                ?.map((x) {
-                  try {
-                    return DataTypesProcedimentosStruct.fromSerializableMap(
-                        jsonDecode(x));
-                  } catch (e) {
-                    print("Can't decode persisted data type. Error: $e.");
-                    return null;
-                  }
-                })
-                .withoutNulls
-                .toList() ??
-            _AppStateProcedimentos,
-      );
+      _webbarminimal = prefs.getBool('ff_webbarminimal') ?? _webbarminimal;
     });
     _safeInit(() {
-      _AppStateProcessos = LoggableList(
-        prefs
-                .getStringList('ff_AppStateProcessos')
-                ?.map((x) {
-                  try {
-                    return DataTypesProcessosStruct.fromSerializableMap(
-                        jsonDecode(x));
-                  } catch (e) {
-                    print("Can't decode persisted data type. Error: $e.");
-                    return null;
-                  }
-                })
-                .withoutNulls
-                .toList() ??
-            _AppStateProcessos,
-      );
+      _UsuarioAtualId = prefs.getInt('ff_UsuarioAtualId') ?? _UsuarioAtualId;
+    });
+    _safeInit(() {
+      _UsuarioAtualTipoUsuarioId =
+          prefs.getInt('ff_UsuarioAtualTipoUsuarioId') ??
+              _UsuarioAtualTipoUsuarioId;
+    });
+    _safeInit(() {
+      _UsuarioAtualNomeCompleto =
+          prefs.getString('ff_UsuarioAtualNomeCompleto') ??
+              _UsuarioAtualNomeCompleto;
+    });
+    _safeInit(() {
+      _UsuarioAtualFoto =
+          prefs.getString('ff_UsuarioAtualFoto') ?? _UsuarioAtualFoto;
+    });
+    _safeInit(() {
+      _UsuarioAtualAgencia =
+          prefs.getInt('ff_UsuarioAtualAgencia') ?? _UsuarioAtualAgencia;
+    });
+    _safeInit(() {
+      _UsuarioAtualTipoUsuarioNome =
+          prefs.getString('ff_UsuarioAtualTipoUsuarioNome') ??
+              _UsuarioAtualTipoUsuarioNome;
+    });
+    _safeInit(() {
+      _UsuarioAtualAgenciaNome =
+          prefs.getString('ff_UsuarioAtualAgenciaNome') ??
+              _UsuarioAtualAgenciaNome;
+    });
+    _safeInit(() {
+      _UsuarioAtualEmail =
+          prefs.getString('ff_UsuarioAtualEmail') ?? _UsuarioAtualEmail;
+    });
+    _safeInit(() {
+      _CountFaccoes = prefs.getInt('ff_CountFaccoes') ?? _CountFaccoes;
+    });
+    _safeInit(() {
+      _CountMembros = prefs.getInt('ff_CountMembros') ?? _CountMembros;
+    });
+    _safeInit(() {
+      _CountUsuarios = prefs.getInt('ff_CountUsuarios') ?? _CountUsuarios;
+    });
+    _safeInit(() {
+      _CountUsuariosAtivos =
+          prefs.getInt('ff_CountUsuariosAtivos') ?? _CountUsuariosAtivos;
+    });
+    _safeInit(() {
+      _CountMaps = prefs.getInt('ff_CountMaps') ?? _CountMaps;
     });
   }
 
@@ -67,159 +82,116 @@ class FFAppState extends ChangeNotifier {
 
   late SharedPreferences prefs;
 
-  String _AGENCIA = 'CHEGII/SSPAL';
+  String _AGENCIA = 'CHEGII';
   String get AGENCIA => _AGENCIA;
   set AGENCIA(String value) {
     _AGENCIA = value;
     prefs.setString('ff_AGENCIA', value);
-    debugLogAppState(this);
   }
 
   int _EDITFACCAOID = 0;
   int get EDITFACCAOID => _EDITFACCAOID;
   set EDITFACCAOID(int value) {
     _EDITFACCAOID = value;
-
-    debugLogAppState(this);
   }
 
-  late LoggableList<DataTypesProcedimentosStruct> _AppStateProcedimentos =
-      LoggableList([]);
-  List<DataTypesProcedimentosStruct> get AppStateProcedimentos =>
-      _AppStateProcedimentos..logger = () => debugLogAppState(this);
-  set AppStateProcedimentos(List<DataTypesProcedimentosStruct> value) {
-    _AppStateProcedimentos = LoggableList(value);
-
-    prefs.setStringList(
-        'ff_AppStateProcedimentos', value.map((x) => x.serialize()).toList());
-    debugLogAppState(this);
+  bool _webbarminimal = false;
+  bool get webbarminimal => _webbarminimal;
+  set webbarminimal(bool value) {
+    _webbarminimal = value;
+    prefs.setBool('ff_webbarminimal', value);
   }
 
-  void addToAppStateProcedimentos(DataTypesProcedimentosStruct value) {
-    AppStateProcedimentos.add(value);
-    prefs.setStringList('ff_AppStateProcedimentos',
-        _AppStateProcedimentos.map((x) => x.serialize()).toList());
+  int _UsuarioAtualId = 0;
+  int get UsuarioAtualId => _UsuarioAtualId;
+  set UsuarioAtualId(int value) {
+    _UsuarioAtualId = value;
+    prefs.setInt('ff_UsuarioAtualId', value);
   }
 
-  void removeFromAppStateProcedimentos(DataTypesProcedimentosStruct value) {
-    AppStateProcedimentos.remove(value);
-    prefs.setStringList('ff_AppStateProcedimentos',
-        _AppStateProcedimentos.map((x) => x.serialize()).toList());
+  int _UsuarioAtualTipoUsuarioId = 0;
+  int get UsuarioAtualTipoUsuarioId => _UsuarioAtualTipoUsuarioId;
+  set UsuarioAtualTipoUsuarioId(int value) {
+    _UsuarioAtualTipoUsuarioId = value;
+    prefs.setInt('ff_UsuarioAtualTipoUsuarioId', value);
   }
 
-  void removeAtIndexFromAppStateProcedimentos(int index) {
-    AppStateProcedimentos.removeAt(index);
-    prefs.setStringList('ff_AppStateProcedimentos',
-        _AppStateProcedimentos.map((x) => x.serialize()).toList());
+  String _UsuarioAtualNomeCompleto = '';
+  String get UsuarioAtualNomeCompleto => _UsuarioAtualNomeCompleto;
+  set UsuarioAtualNomeCompleto(String value) {
+    _UsuarioAtualNomeCompleto = value;
+    prefs.setString('ff_UsuarioAtualNomeCompleto', value);
   }
 
-  void updateAppStateProcedimentosAtIndex(
-    int index,
-    DataTypesProcedimentosStruct Function(DataTypesProcedimentosStruct)
-        updateFn,
-  ) {
-    AppStateProcedimentos[index] = updateFn(_AppStateProcedimentos[index]);
-    prefs.setStringList('ff_AppStateProcedimentos',
-        _AppStateProcedimentos.map((x) => x.serialize()).toList());
+  String _UsuarioAtualFoto = '';
+  String get UsuarioAtualFoto => _UsuarioAtualFoto;
+  set UsuarioAtualFoto(String value) {
+    _UsuarioAtualFoto = value;
+    prefs.setString('ff_UsuarioAtualFoto', value);
   }
 
-  void insertAtIndexInAppStateProcedimentos(
-      int index, DataTypesProcedimentosStruct value) {
-    AppStateProcedimentos.insert(index, value);
-    prefs.setStringList('ff_AppStateProcedimentos',
-        _AppStateProcedimentos.map((x) => x.serialize()).toList());
+  int _UsuarioAtualAgencia = 0;
+  int get UsuarioAtualAgencia => _UsuarioAtualAgencia;
+  set UsuarioAtualAgencia(int value) {
+    _UsuarioAtualAgencia = value;
+    prefs.setInt('ff_UsuarioAtualAgencia', value);
   }
 
-  late LoggableList<DataTypesProcessosStruct> _AppStateProcessos =
-      LoggableList([]);
-  List<DataTypesProcessosStruct> get AppStateProcessos =>
-      _AppStateProcessos..logger = () => debugLogAppState(this);
-  set AppStateProcessos(List<DataTypesProcessosStruct> value) {
-    _AppStateProcessos = LoggableList(value);
-
-    prefs.setStringList(
-        'ff_AppStateProcessos', value.map((x) => x.serialize()).toList());
-    debugLogAppState(this);
+  String _UsuarioAtualTipoUsuarioNome = '';
+  String get UsuarioAtualTipoUsuarioNome => _UsuarioAtualTipoUsuarioNome;
+  set UsuarioAtualTipoUsuarioNome(String value) {
+    _UsuarioAtualTipoUsuarioNome = value;
+    prefs.setString('ff_UsuarioAtualTipoUsuarioNome', value);
   }
 
-  void addToAppStateProcessos(DataTypesProcessosStruct value) {
-    AppStateProcessos.add(value);
-    prefs.setStringList('ff_AppStateProcessos',
-        _AppStateProcessos.map((x) => x.serialize()).toList());
+  String _UsuarioAtualAgenciaNome = '';
+  String get UsuarioAtualAgenciaNome => _UsuarioAtualAgenciaNome;
+  set UsuarioAtualAgenciaNome(String value) {
+    _UsuarioAtualAgenciaNome = value;
+    prefs.setString('ff_UsuarioAtualAgenciaNome', value);
   }
 
-  void removeFromAppStateProcessos(DataTypesProcessosStruct value) {
-    AppStateProcessos.remove(value);
-    prefs.setStringList('ff_AppStateProcessos',
-        _AppStateProcessos.map((x) => x.serialize()).toList());
+  String _UsuarioAtualEmail = '';
+  String get UsuarioAtualEmail => _UsuarioAtualEmail;
+  set UsuarioAtualEmail(String value) {
+    _UsuarioAtualEmail = value;
+    prefs.setString('ff_UsuarioAtualEmail', value);
   }
 
-  void removeAtIndexFromAppStateProcessos(int index) {
-    AppStateProcessos.removeAt(index);
-    prefs.setStringList('ff_AppStateProcessos',
-        _AppStateProcessos.map((x) => x.serialize()).toList());
+  int _CountFaccoes = 0;
+  int get CountFaccoes => _CountFaccoes;
+  set CountFaccoes(int value) {
+    _CountFaccoes = value;
+    prefs.setInt('ff_CountFaccoes', value);
   }
 
-  void updateAppStateProcessosAtIndex(
-    int index,
-    DataTypesProcessosStruct Function(DataTypesProcessosStruct) updateFn,
-  ) {
-    AppStateProcessos[index] = updateFn(_AppStateProcessos[index]);
-    prefs.setStringList('ff_AppStateProcessos',
-        _AppStateProcessos.map((x) => x.serialize()).toList());
+  int _CountMembros = 0;
+  int get CountMembros => _CountMembros;
+  set CountMembros(int value) {
+    _CountMembros = value;
+    prefs.setInt('ff_CountMembros', value);
   }
 
-  void insertAtIndexInAppStateProcessos(
-      int index, DataTypesProcessosStruct value) {
-    AppStateProcessos.insert(index, value);
-    prefs.setStringList('ff_AppStateProcessos',
-        _AppStateProcessos.map((x) => x.serialize()).toList());
+  int _CountUsuarios = 0;
+  int get CountUsuarios => _CountUsuarios;
+  set CountUsuarios(int value) {
+    _CountUsuarios = value;
+    prefs.setInt('ff_CountUsuarios', value);
   }
 
-  Map<String, DebugDataField> toDebugSerializableMap() => {
-        'AGENCIA': debugSerializeParam(
-          AGENCIA,
-          ParamType.String,
-          link:
-              'https://app.flutterflow.io/project/mondaha-be2293?tab=appValues&appValuesTab=state',
-          searchReference:
-              'reference=ChkKEwoHQUdFTkNJQRIIcng4bzRsMDFyAggDWgdBR0VOQ0lB',
-          name: 'String',
-          nullable: false,
-        ),
-        'EDITFACCAOID': debugSerializeParam(
-          EDITFACCAOID,
-          ParamType.int,
-          link:
-              'https://app.flutterflow.io/project/mondaha-be2293?tab=appValues&appValuesTab=state',
-          searchReference:
-              'reference=Ch4KGAoMRURJVEZBQ0NBT0lEEgh5eTlwbXdjMnICCAFaDEVESVRGQUNDQU9JRA==',
-          name: 'int',
-          nullable: false,
-        ),
-        'AppStateProcedimentos': debugSerializeParam(
-          AppStateProcedimentos,
-          ParamType.DataStruct,
-          isList: true,
-          link:
-              'https://app.flutterflow.io/project/mondaha-be2293?tab=appValues&appValuesTab=state',
-          searchReference:
-              'reference=CkMKIQoVQXBwU3RhdGVQcm9jZWRpbWVudG9zEghrcnp2eDY5NnIeEgIIFCoYEhYKDXByb2NlZGltZW50b3MSBWJocXU2WhVBcHBTdGF0ZVByb2NlZGltZW50b3M=',
-          name: 'DataTypesProcedimentos',
-          nullable: false,
-        ),
-        'AppStateProcessos': debugSerializeParam(
-          AppStateProcessos,
-          ParamType.DataStruct,
-          isList: true,
-          link:
-              'https://app.flutterflow.io/project/mondaha-be2293?tab=appValues&appValuesTab=state',
-          searchReference:
-              'reference=CjsKHQoRQXBwU3RhdGVQcm9jZXNzb3MSCHk5MHRvdHU3choSAggUKhQSEgoJcHJvY2Vzc29zEgU0cDl4dloRQXBwU3RhdGVQcm9jZXNzb3M=',
-          name: 'DataTypesProcessos',
-          nullable: false,
-        )
-      };
+  int _CountUsuariosAtivos = 0;
+  int get CountUsuariosAtivos => _CountUsuariosAtivos;
+  set CountUsuariosAtivos(int value) {
+    _CountUsuariosAtivos = value;
+    prefs.setInt('ff_CountUsuariosAtivos', value);
+  }
+
+  int _CountMaps = 0;
+  int get CountMaps => _CountMaps;
+  set CountMaps(int value) {
+    _CountMaps = value;
+    prefs.setInt('ff_CountMaps', value);
+  }
 }
 
 void _safeInit(Function() initializeField) {

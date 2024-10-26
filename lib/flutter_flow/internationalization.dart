@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -76,18 +77,47 @@ class FFLocalizations {
   };
 }
 
+/// Used if the locale is not supported by GlobalMaterialLocalizations.
+class FallbackMaterialLocalizationDelegate
+    extends LocalizationsDelegate<MaterialLocalizations> {
+  const FallbackMaterialLocalizationDelegate();
+
+  @override
+  bool isSupported(Locale locale) => _isSupportedLocale(locale);
+
+  @override
+  Future<MaterialLocalizations> load(Locale locale) async =>
+      SynchronousFuture<MaterialLocalizations>(
+        const DefaultMaterialLocalizations(),
+      );
+
+  @override
+  bool shouldReload(FallbackMaterialLocalizationDelegate old) => false;
+}
+
+/// Used if the locale is not supported by GlobalCupertinoLocalizations.
+class FallbackCupertinoLocalizationDelegate
+    extends LocalizationsDelegate<CupertinoLocalizations> {
+  const FallbackCupertinoLocalizationDelegate();
+
+  @override
+  bool isSupported(Locale locale) => _isSupportedLocale(locale);
+
+  @override
+  Future<CupertinoLocalizations> load(Locale locale) =>
+      SynchronousFuture<CupertinoLocalizations>(
+        const DefaultCupertinoLocalizations(),
+      );
+
+  @override
+  bool shouldReload(FallbackCupertinoLocalizationDelegate old) => false;
+}
+
 class FFLocalizationsDelegate extends LocalizationsDelegate<FFLocalizations> {
   const FFLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) {
-    final language = locale.toString();
-    return FFLocalizations.languages().contains(
-      language.endsWith('_')
-          ? language.substring(0, language.length - 1)
-          : language,
-    );
-  }
+  bool isSupported(Locale locale) => _isSupportedLocale(locale);
 
   @override
   Future<FFLocalizations> load(Locale locale) =>
@@ -103,6 +133,15 @@ Locale createLocale(String language) => language.contains('_')
         scriptCode: language.split('_').last,
       )
     : Locale(language);
+
+bool _isSupportedLocale(Locale locale) {
+  final language = locale.toString();
+  return FFLocalizations.languages().contains(
+    language.endsWith('_')
+        ? language.substring(0, language.length - 1)
+        : language,
+  );
+}
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // forgot_password
@@ -141,32 +180,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Painel',
     },
     'nnv46x35': {
-      'en': 'Below is a summary of your teams activity.',
-      'pt': 'Abaixo está um resumo das atividades da sua equipe.',
+      'en': 'Below is a summary of your App activity.',
+      'pt': 'Abaixo está um resumo das atividades no App.',
     },
     'jqevo63s': {
       'en': 'New Members',
       'pt': 'Novos Membros',
     },
-    'd0r4w3cc': {
-      'en': '24',
-      'pt': '24',
-    },
     '8vot9bzj': {
       'en': 'New Factions',
       'pt': 'Novas Facções',
-    },
-    '463rfkem': {
-      'en': '3,200',
-      'pt': '3.200',
     },
     'saxskj92': {
       'en': 'Add in the Map',
       'pt': 'Adicionados no mapa',
     },
-    '2wlrr5lg': {
-      'en': '4300',
-      'pt': '4300',
+    'n9k8nozn': {
+      'en': 'Active users',
+      'pt': 'Usuários ativos',
     },
     'kphqz3hi': {
       'en': 'Projects',
@@ -176,9 +207,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Users in  adding registers',
       'pt': 'Atualizações de registros por usuários',
     },
-    'zt3s5l2s': {
-      'en': '4 Members',
-      'pt': '4 membros',
+    'm5s42ngb': {
+      'en': 'Members',
+      'pt': 'Membros',
     },
     'puy8obok': {
       'en': 'Activity de Factions',
@@ -248,8 +279,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Facção',
     },
     '04vrv62j': {
-      'en': 'Simple Name',
-      'pt': 'Nome Simples',
+      'en': 'Alcunha',
+      'pt': 'Alcunha',
     },
     '4zc3d2m8': {
       'en': 'CPF',
@@ -426,7 +457,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '__',
     },
   },
-  // main_profile_page
+  // main_profile
   {
     'qrxn5crt': {
       'en': 'My Profile',
@@ -462,67 +493,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Light Mode',
       'pt': 'Modo de luz',
     },
-    'abqf147c': {
-      'en': 'Log Out',
-      'pt': 'Sair',
-    },
     'o3dp9tss': {
       'en': '__',
       'pt': '__',
-    },
-  },
-  // user_details
-  {
-    '9t913b44': {
-      'en': 'Home',
-      'pt': 'Lar',
-    },
-  },
-  // edit_profile
-  {
-    'mk8nnw94': {
-      'en': 'Change Photo',
-      'pt': 'Alterar foto',
-    },
-    '2rqce1pj': {
-      'en': 'The email associated with this account is:',
-      'pt': 'O e-mail associado a esta conta é:',
-    },
-    'y680yxcf': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'dmbxoaz6': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    '2wl1lv9o': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'a3qnnd4d': {
-      'en': 'Select one Agency ',
-      'pt': 'Selecione uma agência',
-    },
-    'mg5okl99': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '4no7ue4a': {
-      'en': 'Your Name',
-      'pt': 'Seu nome',
-    },
-    'bj7cfa5q': {
-      'en': 'Your Name',
-      'pt': 'Seu nome',
-    },
-    'rr8ksatz': {
-      'en': 'Save Changes',
-      'pt': 'Salvar alterações',
-    },
-    '20uycztj': {
-      'en': 'Edit Profile',
-      'pt': 'Editar Perfil',
     },
   },
   // project_details_health_ai
@@ -762,151 +735,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Criar uma conta',
     },
     'rnyra7iu': {
-      'en': 'Home',
-      'pt': 'Lar',
-    },
-  },
-  // add_membros
-  {
-    'luy0t7h2': {
-      'en': 'Add Members',
-      'pt': 'Adicionar membros',
-    },
-    'ocp718jh': {
-      'en': 'Profile',
-      'pt': 'Perfil',
-    },
-    'x8axg494': {
-      'en': 'Create Company Profile',
-      'pt': 'Criar Perfil da Empresa',
-    },
-    'swf1sew5': {
-      'en':
-          'Upload images about your company and fill out the information below.',
-      'pt':
-          'Carregue imagens sobre sua empresa e preencha as informações abaixo.',
-    },
-    'kovjx5qk': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'zftdg7ng': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'bjyl96v1': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    '812357rd': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'rel4cqhn': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '5fqmijio': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    '1ddlajdn': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'gdhq0dq6': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'ohs1bq4j': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'm99af805': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    '4zstb8xf': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    'iy19h9i4': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'by8u8kmd': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    '2rro117l': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'ucwqr3c3': {
-      'en': 'Search...',
-      'pt': 'Procurar...',
-    },
-    'm88zhnhm': {
-      'en': 'Full Name',
-      'pt': 'Nome completo',
-    },
-    '3x41wc8c': {
-      'en': 'Website',
-      'pt': 'Site',
-    },
-    'ak3nmiz7': {
-      'en': 'Enter in your website without \"https://\"...',
-      'pt': 'Entre no seu site sem \"https://\"...',
-    },
-    '6zw9yxni': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    'gfs5j60m': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    '0nignr1c': {
-      'en': 'Company City',
-      'pt': 'Cidade da empresa',
-    },
-    '3jjwznx5': {
-      'en': 'Cancel',
-      'pt': 'Cancelar',
-    },
-    'lwkne6wn': {
-      'en': 'Create Company',
-      'pt': 'Criar empresa',
-    },
-    'gti2knng': {
-      'en': 'History',
-      'pt': 'História',
-    },
-    'o6n478zo': {
-      'en': 'Procedures',
-      'pt': 'Procedimentos',
-    },
-    'bg2b0nj3': {
-      'en': 'Faction',
-      'pt': 'Facção',
-    },
-    'c7ica2jp': {
-      'en': 'Crime Action',
-      'pt': 'Ação Criminal',
-    },
-    'be0xptn9': {
-      'en': 'Alert',
-      'pt': 'Alerta',
-    },
-    '5lwbh8mj': {
-      'en': 'Relations',
-      'pt': 'Relações',
-    },
-    '1bduu4ux': {
-      'en': 'Groups',
-      'pt': 'Grupos',
-    },
-    'j0nfxam4': {
       'en': 'Home',
       'pt': 'Lar',
     },
@@ -1286,8 +1114,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Ver empresa',
     },
   },
-  // dropdown_user_edit
+  // dropdown_admin_edit
   {
+    'pnpighuj': {
+      'en': 'Atribuir acessos',
+      'pt': 'Atribuir acessos',
+    },
+    '6kc0o458': {
+      'en': ' Básico',
+      'pt': 'Básico',
+    },
+    '9v90iv59': {
+      'en': 'Análise',
+      'pt': 'Análise',
+    },
+    'kwwbdpwg': {
+      'en': 'Gestor',
+      'pt': 'Gestor',
+    },
+    '08tfqij4': {
+      'en': 'Desenvolvedor',
+      'pt': 'Desenvolvedor',
+    },
+    'nkugovnf': {
+      'en': 'Administrador',
+      'pt': 'Administrador',
+    },
     'vqk7im3j': {
       'en': 'Options',
       'pt': 'Opções',
@@ -1295,14 +1147,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ufasy4ju': {
       'en': 'Edit',
       'pt': 'Editar',
-    },
-    '6kc0o458': {
-      'en': 'Assign basic acess',
-      'pt': 'Atribuir acesso Básico',
-    },
-    '9v90iv59': {
-      'en': 'Assign analisty acess',
-      'pt': 'Atribuir acesso de Análise',
     },
     'w1jtn19u': {
       'en': 'View',
@@ -1313,7 +1157,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Excluir',
     },
   },
-  // modal_add_faccao
+  // modal_faccao_add
   {
     '5tdm3cpv': {
       'en': 'Add Faction',
@@ -1327,13 +1171,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add Photo',
       'pt': 'Adicionar foto',
     },
+    'eihow1ck': {
+      'en': 'Nome da facção',
+      'pt': 'Nome da facção',
+    },
     '426hn69e': {
       'en': 'Faction Name',
       'pt': 'Nome da Facção',
     },
+    'cxlzs5tl': {
+      'en': 'Nome da facção',
+      'pt': ' Nome da facção',
+    },
     'gvgwcy4p': {
-      'en': '',
-      'pt': '',
+      'en': 'Descrição ou Biografia',
+      'pt': 'Descrição ou Biografia',
     },
     'uqziqhmg': {
       'en': 'Description ',
@@ -1527,9 +1379,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Detalhes do Projeto',
     },
   },
-  // modal_add_membros
+  // modal_membros_add
   {
-    'rgboq48h': {
+    'ioxmm05s': {
       'en': 'Add Member',
       'pt': 'Adicionar membro',
     },
@@ -1545,6 +1397,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'n7bo970y': {
       'en': 'Add Photos',
       'pt': 'Adicionar fotos',
+    },
+    'szzdveit': {
+      'en': 'Apagar Fotos',
+      'pt': 'Apagar Fotos',
+    },
+    'eivogkvw': {
+      'en':
+          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . No total de 6 imagens (200px por 200px cada).',
+      'pt':
+          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . No total de 6 imagens (200px por 200px cada).',
     },
     'npcbcpl9': {
       'en': 'Nome completo',
@@ -1766,12 +1628,80 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Ensino superior incompleto',
       'pt': 'Ensino superior incompleto',
     },
+    'm23r6x4v': {
+      'en': 'Sem informação',
+      'pt': 'Sem informação',
+    },
     '0wrilaus': {
       'en': 'Grau ou Nível de instruição',
       'pt': 'Grau ou Nível de instruição',
     },
     '4thgagtf': {
       'en': 'Father\'s Situation',
+      'pt': '',
+    },
+    'qjj69k8u': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'o5on3ke1': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'ym3akpkn': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'n2o48na0': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'v395se51': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'ig5z8pao': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'wb25vyk9': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'swo0b7np': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'nfcv23yd': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'm3wl1tny': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'hmz6g9kq': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'dl0iqn1k': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'aajuf6zo': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'kb47qv7h': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    '2wgvagjr': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'f7drazjt': {
+      'en': 'Please choose an option from the dropdown',
       'pt': '',
     },
     'nvxntirq': {
@@ -1786,9 +1716,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Endereço Completo',
       'pt': 'Endereço Completo',
     },
-    'ob87x68k': {
-      'en': '',
+    '8j1rka5p': {
+      'en': 'Option 1',
       'pt': '',
+    },
+    'ob87x68k': {
+      'en': 'Nascido no Brasil',
+      'pt': 'Nascido no Brasil',
     },
     '7tegc2gd': {
       'en': 'Nascido no Brasil',
@@ -1868,7 +1802,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Batismo',
       'pt': 'Batismo',
     },
-    '8j1rka5p': {
+    'buogb0wh': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -1885,8 +1819,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Padrinho',
     },
     'zntstdx4': {
-      'en': 'Batismo',
-      'pt': 'Batismo',
+      'en': 'Padrinho',
+      'pt': 'Padrinho',
     },
     'uylgtxfb': {
       'en': 'Senha',
@@ -2070,6 +2004,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Adicionar',
       'pt': 'Adicionar',
     },
+    'i2sj5hwa': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'lerrd27b': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'jgdeykjo': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'wkwcrq40': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
     'g3vpoxn0': {
       'en': 'Procedimento',
       'pt': 'Procedimento',
@@ -2172,17 +2122,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search...',
       'pt': '',
     },
+    'qoe55ylu': {
+      'en': '',
+      'pt': '',
+    },
     'tn9os876': {
       'en': 'Nenhuma das opções',
       'pt': 'Nenhuma das opções',
     },
     '6f4ajcmk': {
-      'en': 'Fechado',
-      'pt': '',
+      'en': 'Preso',
+      'pt': 'Preso',
     },
     'wjr32pf6': {
-      'en': 'Semi-aberto',
-      'pt': '',
+      'en': 'Solto',
+      'pt': 'Solto',
     },
     'whrvcs43': {
       'en': 'Situação réu',
@@ -2236,7 +2190,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Atuação no Crime',
       'pt': 'Atuação no Crime',
     },
-    '9xq1nz54': {
+    '18a7a4fk': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -2256,7 +2210,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Alerta',
       'pt': 'Alerta',
     },
-    'buogb0wh': {
+    'taqpyut0': {
       'en': 'Option 1',
       'pt': '',
     },
@@ -2265,12 +2219,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Validação',
     },
     'hg8tsf0e': {
-      'en': 'Percentual  de validação dos dados',
-      'pt': 'Percentual  de validação dos dados',
+      'en': 'Percentual  de validações dos dados',
+      'pt': 'Percentual  de validações dos dados',
     },
     'z911x2kd': {
-      'en': 'Como foram validados os dados e informações',
-      'pt': 'Como foram validados os dados e informações',
+      'en': 'Como foram validados os dados e informações ?',
+      'pt': 'Como foram validados os dados e informações ?',
     },
     'udriebg5': {
       'en': 'Validação Local ou área de atuação',
@@ -2285,16 +2239,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Apenas através de fontes restristas',
     },
     'si112iv5': {
-      'en': '',
-      'pt': '',
-    },
-    'ucqyj1ot': {
       'en': 'Através de outra(s) agência de  inteligência',
       'pt': 'Através de outra(s) agência de  inteligência',
     },
-    'qd88nb62': {
+    'ucqyj1ot': {
       'en': 'Atráves de  outro(s) órgãos como : PP, MP e etc.',
       'pt': 'Atráves de  outro(s) órgãos como : PP, MP e etc.',
+    },
+    'qd88nb62': {
+      'en': 'Apenas  através de informe(s) ',
+      'pt': 'Apenas  através de informe(s) ',
     },
     'gq42kahm': {
       'en': 'Dentro de um Estabelecimento Prisional Estadual',
@@ -2305,16 +2259,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Dentro de um Estabelecimento Prisional Federal',
     },
     '1i2vccnc': {
-      'en': 'Apenas  através de informes ',
-      'pt': 'Apenas  através de informes ',
+      'en': 'Apenas através de informante(s)',
+      'pt': 'Apenas através de informante(s)',
     },
     'zcj6hpny': {
       'en': 'Apenas através de Coolaborador(es)',
       'pt': 'Apenas através de Coolaborador(es)',
     },
     'v0fvpqeq': {
-      'en': 'Apenas através de informante(s)',
-      'pt': 'Apenas através de informante(s)',
+      'en': '',
+      'pt': '',
     },
     'hu7rwf8m': {
       'en': 'Observação(ões)',
@@ -2323,6 +2277,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '0a8jmcbn': {
       'en': 'Observação(ões)',
       'pt': 'Observação(ões)',
+    },
+    'e34igmbj': {
+      'en': 'Option 1',
+      'pt': '',
     },
     'ld0rt7j2': {
       'en': 'Relations',
@@ -2560,19 +2518,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Fechar',
     },
   },
-  // modal_edit_profile
+  // modal_profile_edit_profile
   {
-    'qs8serr4': {
-      'en': 'Edit Profile',
-      'pt': 'Editar Perfil',
+    '7zctnlpm': {
+      'en': 'Edit Profile  (Now)',
+      'pt': 'Editar Perfil (Atual)',
     },
-    'bvy3fs93': {
-      'en': 'Below are your profile details',
-      'pt': 'Abaixo estão os detalhes do seu perfil',
-    },
-    'nx89dnuw': {
-      'en': 'Change Photo',
-      'pt': 'Alterar foto',
+    'r1bwui0z': {
+      'en': 'Please enter the information below to edit the Profile.',
+      'pt': 'Insira as informações abaixo para editar o Perfil.',
     },
     '99oumm34': {
       'en': 'Your Name',
@@ -2582,57 +2536,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Short Description',
       'pt': 'Descrição curta',
     },
-    '5bl6mh8m': {
-      'en': 'Admin',
-      'pt': 'Administrador',
-    },
-    'au9c3fpx': {
-      'en': 'Admin',
-      'pt': 'Administrador',
-    },
-    '6qzm16cz': {
-      'en': 'Manager',
-      'pt': 'Gerente',
-    },
-    '6xjfeugp': {
-      'en': 'Editor',
-      'pt': 'Editor',
-    },
-    '4ga29wxb': {
-      'en': 'Viewer',
-      'pt': 'Visualizador',
-    },
-    'naxucoxg': {
-      'en': 'Please select...',
-      'pt': 'Por favor selecione...',
-    },
-    '8sac0l7x': {
-      'en': 'Search for an item...',
-      'pt': 'Pesquisar um item...',
-    },
     'p1lquhce': {
       'en': 'The email associated with this account is:',
       'pt': 'O e-mail associado a esta conta é:',
-    },
-    'i6iuebkd': {
-      'en': 'casper@ghostbusters.com',
-      'pt': 'casper@ghostbusters.com',
     },
     'fyuvtufe': {
       'en': 'Created On:',
       'pt': 'Criado em:',
     },
-    'jk8us6c6': {
-      'en': 'July 12th, 2023',
-      'pt': '12 de julho de 2023',
-    },
     'h4jwedag': {
       'en': 'Last Active:',
       'pt': 'Última atividade:',
-    },
-    'iakkv8eq': {
-      'en': 'Just Now',
-      'pt': 'Agora mesmo',
     },
     '27w5o6gn': {
       'en': 'Cancel',
@@ -2643,7 +2557,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Salvar alterações',
     },
   },
-  // modal_edit_faccao
+  // modal_faccao_edit
   {
     'ze3l1q4r': {
       'en': 'Edit Faction',
@@ -2654,24 +2568,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Insira as informações abaixo para editar uma Facção.',
     },
     'xscprapi': {
-      'en': 'Add Photo',
-      'pt': 'Adicionar foto',
+      'en': 'Update foto',
+      'pt': 'Atararr foto',
+    },
+    'rq3zqf7i': {
+      'en': 'Nome da facção',
+      'pt': 'Nome da facção',
     },
     '2huj2jzx': {
       'en': 'Faction Name',
       'pt': 'Nome da Facção',
     },
     '0lr3g0go': {
-      'en': '',
-      'pt': '',
+      'en': 'Descrição ou Biografia',
+      'pt': 'Descrição ou Biografia',
     },
     'krgsdp6s': {
       'en': 'Description here...',
       'pt': 'Descrição aqui...',
-    },
-    '2d3lr93u': {
-      'en': 'Delete',
-      'pt': 'Excluir',
     },
     'ntyay3mi': {
       'en': 'Save',
@@ -2738,6 +2652,52 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'vu30hinr': {
       'en': 'Delete',
       'pt': 'Excluir',
+    },
+  },
+  // modal_app_bar
+  {
+    'qxwj6eeq': {
+      'en': 'Add Member',
+      'pt': 'Adicionar membro',
+    },
+  },
+  // modal_profile_edit_admin
+  {
+    'zy7fzru7': {
+      'en': 'Edit Profile (Administration)',
+      'pt': 'Editar Perfil (Administração)',
+    },
+    'hpa704ph': {
+      'en': 'Please enter the information below to edit the Profile.',
+      'pt': 'Insira as informações abaixo para editar o Perfil.',
+    },
+    'vc3a6nos': {
+      'en': 'Your Name',
+      'pt': 'Seu nome',
+    },
+    'pfhfmd7v': {
+      'en': 'Short Description',
+      'pt': 'Descrição curta',
+    },
+    'orq2ygjx': {
+      'en': 'The email associated with this account is:',
+      'pt': 'O e-mail associado a esta conta é:',
+    },
+    '9klcab1x': {
+      'en': 'Created On:',
+      'pt': 'Criado em:',
+    },
+    'iz396jj1': {
+      'en': 'Last Active:',
+      'pt': 'Última atividade:',
+    },
+    '75bhewl8': {
+      'en': 'Cancel',
+      'pt': 'Cancelar',
+    },
+    'djvkekt3': {
+      'en': 'Save Changes',
+      'pt': 'Salvar alterações',
     },
   },
   // Miscellaneous

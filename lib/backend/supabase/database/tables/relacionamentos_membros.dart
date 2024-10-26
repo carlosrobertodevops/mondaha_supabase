@@ -11,7 +11,7 @@ class RelacionamentosMembrosTable
 }
 
 class RelacionamentosMembrosRow extends SupabaseDataRow {
-  RelacionamentosMembrosRow(Map<String, dynamic> data) : super(data);
+  RelacionamentosMembrosRow(super.data);
 
   @override
   SupabaseTable get table => RelacionamentosMembrosTable();

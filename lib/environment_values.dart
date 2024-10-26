@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'flutter_flow/flutter_flow_util.dart';
 
 class FFDevEnvironmentValues {
   static const String currentEnvironment = 'Production';
@@ -29,15 +28,4 @@ class FFDevEnvironmentValues {
 
   String _AGENCIA = '';
   String get AGENCIA => _AGENCIA;
-
-  Map<String, DebugDataField> toDebugSerializableMap() => {
-        'AGENCIA': debugSerializeParam(
-          AGENCIA,
-          ParamType.String,
-          link:
-              'https://app.flutterflow.io/project/mondaha-be2293?tab=appSettings&appSettingsTab=devEnvironment',
-          name: 'String',
-          nullable: false,
-        )
-      };
 }

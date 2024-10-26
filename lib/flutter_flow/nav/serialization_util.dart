@@ -1,17 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:from_css_color/from_css_color.dart';
 
 import '/backend/schema/structs/index.dart';
 
 import '/backend/supabase/supabase.dart';
 
-import '../../flutter_flow/lat_lng.dart';
 import '../../flutter_flow/place.dart';
 import '../../flutter_flow/uploaded_file.dart';
-
-import 'package:debug_panel_proto/debug_panel_proto.dart';
 
 /// SERIALIZATION HELPERS
 
@@ -92,114 +88,6 @@ String? serializeParam(
   }
 }
 
-DebugDataField debugSerializeParam(
-  dynamic param,
-  ParamType paramType, {
-  bool isList = false,
-  String? link,
-  String? searchReference,
-  String? name,
-  bool? nullable,
-}) {
-  try {
-    if (isList) {
-      final values = (param as Iterable?)
-          ?.map((p) => debugSerializeParam(
-                p,
-                paramType,
-                isList: false,
-              ))
-          .toList();
-      return DebugDataField(
-        type: _kParamTypeProtoMap[paramType],
-        listValue: ListDebugDataField(values: values),
-        link: link,
-        searchReference: searchReference,
-        name: name,
-        nullable: nullable,
-      );
-    }
-    String? data;
-    var type = _kParamTypeProtoMap[paramType];
-    if (param != null) {
-      switch (paramType) {
-        case ParamType.int:
-          data = param.toString();
-        case ParamType.double:
-          data = param.toString();
-        case ParamType.String:
-          data = param;
-        case ParamType.bool:
-          data = param ? 'true' : 'false';
-        case ParamType.DateTime:
-          data = (param as DateTime).millisecondsSinceEpoch.toString();
-        case ParamType.DateTimeRange:
-          data = dateTimeRangeToString(param as DateTimeRange);
-        case ParamType.LatLng:
-          data = (param as LatLng).serialize();
-        case ParamType.Color:
-          data = (param as Color).toCssString();
-        case ParamType.FFPlace:
-          data = placeToString(param as FFPlace);
-        case ParamType.FFUploadedFile:
-          data = uploadedFileToString(param as FFUploadedFile);
-        case ParamType.JSON:
-          data = json.encode(param);
-
-        case ParamType.DataStruct:
-          if (param is BaseStruct) {
-            return DebugDataField(
-              type: DebugDataField_ParamType.DATA_STRUCT,
-              mapValue: MapDebugDataField(
-                values: param.toDebugSerializableMap(),
-              ),
-              link: link,
-              searchReference: searchReference,
-              name: name,
-              nullable: nullable,
-            );
-          } else {
-            return DebugDataField();
-          }
-
-        case ParamType.SupabaseRow:
-          data = json.encode((param as SupabaseDataRow).data);
-
-        case ParamType.Action:
-        case ParamType.Widget:
-          data = param.runtimeType.toString();
-        case ParamType.ApiResponse:
-          return DebugDataField(
-            type: DebugDataField_ParamType.DATA_STRUCT,
-            mapValue: MapDebugDataField(
-              values: {
-                'statusCode':
-                    debugSerializeParam(param.statusCode, ParamType.int),
-                'body': debugSerializeParam(param.bodyText, ParamType.String),
-              },
-            ),
-            link: link,
-            name: name,
-            nullable: nullable,
-          );
-        default:
-          data = null;
-      }
-    }
-    return DebugDataField(
-      serializedValue: data,
-      type: type,
-      link: link,
-      searchReference: searchReference,
-      name: name,
-      nullable: nullable,
-    );
-  } catch (e) {
-    print('Error debug serializing parameter: $e');
-    return DebugDataField();
-  }
-}
-
 /// END SERIALIZATION HELPERS
 
 /// DESERIALIZATION HELPERS
@@ -265,30 +153,10 @@ enum ParamType {
   FFPlace,
   FFUploadedFile,
   JSON,
-  Action,
-  Widget,
-  ApiResponse,
+
   DataStruct,
   SupabaseRow,
 }
-
-const _kParamTypeProtoMap = {
-  ParamType.int: DebugDataField_ParamType.INT,
-  ParamType.double: DebugDataField_ParamType.DOUBLE,
-  ParamType.String: DebugDataField_ParamType.STRING,
-  ParamType.bool: DebugDataField_ParamType.BOOL,
-  ParamType.DateTime: DebugDataField_ParamType.DATE_TIME,
-  ParamType.DateTimeRange: DebugDataField_ParamType.DATE_TIME_RANGE,
-  ParamType.LatLng: DebugDataField_ParamType.LAT_LNG,
-  ParamType.Color: DebugDataField_ParamType.COLOR,
-  ParamType.FFPlace: DebugDataField_ParamType.FF_PLACE,
-  ParamType.FFUploadedFile: DebugDataField_ParamType.FF_UPLOADED_FILE,
-  ParamType.JSON: DebugDataField_ParamType.JSON,
-  ParamType.Action: DebugDataField_ParamType.ACTION,
-  ParamType.Widget: DebugDataField_ParamType.WIDGET,
-  ParamType.DataStruct: DebugDataField_ParamType.DATA_STRUCT,
-  ParamType.SupabaseRow: DebugDataField_ParamType.SUPABASE_ROW,
-};
 
 dynamic deserializeParam<T>(
   String? param,
@@ -306,8 +174,8 @@ dynamic deserializeParam<T>(
         return null;
       }
       return paramValues
-          .where((p) => p is String)
-          .map((p) => p as String)
+          .whereType<String>()
+          .map((p) => p)
           .map((p) => deserializeParam<T>(
                 p,
                 paramType,
@@ -348,16 +216,20 @@ dynamic deserializeParam<T>(
       case ParamType.SupabaseRow:
         final data = json.decode(param) as Map<String, dynamic>;
         switch (T) {
+          case CountUsuariosViewRow:
+            return CountUsuariosViewRow(data);
           case EstadosRow:
             return EstadosRow(data);
           case GruposMembrosRow:
             return GruposMembrosRow(data);
+          case CountUsuariosAtivosViewRow:
+            return CountUsuariosAtivosViewRow(data);
           case WapplerMigrationsRow:
             return WapplerMigrationsRow(data);
+          case ProcedimentosRow:
+            return ProcedimentosRow(data);
           case ProcessosRow:
             return ProcessosRow(data);
-          case ProcedumentosRow:
-            return ProcedumentosRow(data);
           case CargosRow:
             return CargosRow(data);
           case ValidacoesRow:
@@ -370,6 +242,8 @@ dynamic deserializeParam<T>(
             return GruposRow(data);
           case RelacionamentosMembrosRow:
             return RelacionamentosMembrosRow(data);
+          case CountMembrosViewRow:
+            return CountMembrosViewRow(data);
           case FuncoesRow:
             return FuncoesRow(data);
           case VaraRow:
@@ -378,6 +252,8 @@ dynamic deserializeParam<T>(
             return TiposUsuariosRow(data);
           case WapplerMigrationsLockRow:
             return WapplerMigrationsLockRow(data);
+          case CountFaccoesViewRow:
+            return CountFaccoesViewRow(data);
           case MunicipiosRow:
             return MunicipiosRow(data);
           case AgenciasRow:

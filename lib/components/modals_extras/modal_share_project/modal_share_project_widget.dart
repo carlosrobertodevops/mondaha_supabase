@@ -4,10 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_share_project_model.dart';
 export 'modal_share_project_model.dart';
 
@@ -20,7 +17,7 @@ class ModalShareProjectWidget extends StatefulWidget {
 }
 
 class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
-    with TickerProviderStateMixin, RouteAware {
+    with TickerProviderStateMixin {
   late ModalShareProjectModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
@@ -36,10 +33,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
     super.initState();
     _model = createModel(context, () => ModalShareProjectModel());
 
-    _model.yourNameTextController ??= TextEditingController()
-      ..addListener(() {
-        debugLogWidgetClass(_model);
-      });
+    _model.yourNameTextController ??= TextEditingController();
     _model.yourNameFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -51,8 +45,8 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 100.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 100.0),
+            end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -88,10 +82,6 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
 
   @override
   Widget build(BuildContext context) {
-    DebugFlutterFlowModelContext.maybeOf(context)
-        ?.parentModelCallback
-        ?.call(_model);
-
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -103,15 +93,15 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
             child: Container(
               width: double.infinity,
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 maxWidth: 670.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 12.0,
                     color: Color(0x1E000000),
@@ -129,7 +119,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '4tx2ru39' /* Share your project */,
@@ -143,7 +133,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'u6t74zsp' /* Your project has been created,... */,
@@ -156,12 +146,12 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 16.0, 24.0, 0.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12.0),
@@ -170,7 +160,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
@@ -187,7 +177,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -202,9 +192,17 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                           opaque: false,
                                           cursor: MouseCursor.defer ??
                                               MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() =>
+                                                _model.iuserHovered1 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() =>
+                                                _model.iuserHovered1 = false);
+                                          }),
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 150),
+                                                const Duration(milliseconds: 150),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
                                             decoration: BoxDecoration(
@@ -215,7 +213,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                       .secondaryBackground,
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 8.0, 12.0, 8.0),
                                               child: Row(
@@ -223,7 +221,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: ClipRRect(
@@ -240,7 +238,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Column(
@@ -274,7 +272,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -307,22 +305,22 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                               ),
                                             ),
                                           ),
-                                          onEnter: ((event) async {
-                                            safeSetState(() =>
-                                                _model.iuserHovered1 = true);
-                                          }),
-                                          onExit: ((event) async {
-                                            safeSetState(() =>
-                                                _model.iuserHovered1 = false);
-                                          }),
                                         ),
                                         MouseRegion(
                                           opaque: false,
                                           cursor: MouseCursor.defer ??
                                               MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() =>
+                                                _model.iuserHovered2 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() =>
+                                                _model.iuserHovered2 = false);
+                                          }),
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 150),
+                                                const Duration(milliseconds: 150),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
                                             decoration: BoxDecoration(
@@ -333,7 +331,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                       .secondaryBackground,
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 8.0, 12.0, 8.0),
                                               child: Row(
@@ -341,7 +339,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: ClipRRect(
@@ -358,7 +356,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Column(
@@ -392,7 +390,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -425,22 +423,22 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                               ),
                                             ),
                                           ),
-                                          onEnter: ((event) async {
-                                            safeSetState(() =>
-                                                _model.iuserHovered2 = true);
-                                          }),
-                                          onExit: ((event) async {
-                                            safeSetState(() =>
-                                                _model.iuserHovered2 = false);
-                                          }),
                                         ),
                                         MouseRegion(
                                           opaque: false,
                                           cursor: MouseCursor.defer ??
                                               MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() =>
+                                                _model.iuserHovered3 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() =>
+                                                _model.iuserHovered3 = false);
+                                          }),
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 150),
+                                                const Duration(milliseconds: 150),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
                                             decoration: BoxDecoration(
@@ -451,7 +449,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                       .secondaryBackground,
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 8.0, 12.0, 8.0),
                                               child: Row(
@@ -459,7 +457,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: ClipRRect(
@@ -476,7 +474,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Column(
@@ -510,7 +508,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -543,14 +541,6 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                               ),
                                             ),
                                           ),
-                                          onEnter: ((event) async {
-                                            safeSetState(() =>
-                                                _model.iuserHovered3 = true);
-                                          }),
-                                          onExit: ((event) async {
-                                            safeSetState(() =>
-                                                _model.iuserHovered3 = false);
-                                          }),
                                         ),
                                       ],
                                     ),
@@ -563,8 +553,16 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                       opaque: false,
                                       cursor: SystemMouseCursors.click ??
                                           MouseCursor.defer,
+                                      onEnter: ((event) async {
+                                        safeSetState(() =>
+                                            _model.mouseRegionHovered = true);
+                                      }),
+                                      onExit: ((event) async {
+                                        safeSetState(() =>
+                                            _model.mouseRegionHovered = false);
+                                      }),
                                       child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 150),
+                                        duration: const Duration(milliseconds: 150),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -576,13 +574,13 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Icon(
@@ -595,7 +593,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -621,14 +619,6 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                           ),
                                         ),
                                       ),
-                                      onEnter: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered = true);
-                                      }),
-                                      onExit: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered = false);
-                                      }),
                                     ),
                                   ],
                                 ),
@@ -637,16 +627,16 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 24.0, 24.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 24.0, 0.0),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: 300.0,
                                     child: TextFormField(
                                       controller: _model.yourNameTextController,
@@ -710,7 +700,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                         fillColor: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 20.0, 24.0, 20.0, 24.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -749,14 +739,14 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 24.0, 24.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.05),
+                                alignment: const AlignmentDirectional(0.0, 0.05),
                                 child: FFButtonWidget(
                                   onPressed: () {
                                     print('Button pressed ...');
@@ -765,9 +755,9 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                     'jz45d8an' /* Cancel */,
                                   ),
                                   options: FFButtonOptions(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -798,7 +788,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.05),
+                                alignment: const AlignmentDirectional(0.0, 0.05),
                                 child: FFButtonWidget(
                                   onPressed: () {
                                     print('Button pressed ...');
@@ -807,9 +797,9 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                     'ubopypxm' /* Send Invites */,
                                   ),
                                   options: FFButtonOptions(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -819,7 +809,7 @@ class _ModalShareProjectWidgetState extends State<ModalShareProjectWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),

@@ -9,7 +9,7 @@ class MunicipiosTable extends SupabaseTable<MunicipiosRow> {
 }
 
 class MunicipiosRow extends SupabaseDataRow {
-  MunicipiosRow(Map<String, dynamic> data) : super(data);
+  MunicipiosRow(super.data);
 
   @override
   SupabaseTable get table => MunicipiosTable();

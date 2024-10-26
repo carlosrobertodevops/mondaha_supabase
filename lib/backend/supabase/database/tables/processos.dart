@@ -9,7 +9,7 @@ class ProcessosTable extends SupabaseTable<ProcessosRow> {
 }
 
 class ProcessosRow extends SupabaseDataRow {
-  ProcessosRow(Map<String, dynamic> data) : super(data);
+  ProcessosRow(super.data);
 
   @override
   SupabaseTable get table => ProcessosTable();
@@ -23,8 +23,8 @@ class ProcessosRow extends SupabaseDataRow {
   String? get acaoPenalNo => getField<String>('acao_penal_no');
   set acaoPenalNo(String? value) => setField<String>('acao_penal_no', value);
 
-  int? get varaId => getField<int>('vara_id');
-  set varaId(int? value) => setField<int>('vara_id', value);
+  String? get vara => getField<String>('vara');
+  set vara(String? value) => setField<String>('vara', value);
 
   String? get situacoJuridica => getField<String>('situaco_juridica');
   set situacoJuridica(String? value) =>

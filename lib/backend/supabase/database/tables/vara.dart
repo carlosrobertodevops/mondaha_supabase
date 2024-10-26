@@ -9,7 +9,7 @@ class VaraTable extends SupabaseTable<VaraRow> {
 }
 
 class VaraRow extends SupabaseDataRow {
-  VaraRow(Map<String, dynamic> data) : super(data);
+  VaraRow(super.data);
 
   @override
   SupabaseTable get table => VaraTable();

@@ -1,8 +1,5 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'main_logo_bar_model.dart';
 export 'main_logo_bar_model.dart';
 
@@ -13,7 +10,7 @@ class MainLogoBarWidget extends StatefulWidget {
   State<MainLogoBarWidget> createState() => _MainLogoBarWidgetState();
 }
 
-class _MainLogoBarWidgetState extends State<MainLogoBarWidget> with RouteAware {
+class _MainLogoBarWidgetState extends State<MainLogoBarWidget> {
   late MainLogoBarModel _model;
 
   @override
@@ -26,6 +23,8 @@ class _MainLogoBarWidgetState extends State<MainLogoBarWidget> with RouteAware {
   void initState() {
     super.initState();
     _model = createModel(context, () => MainLogoBarModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -37,12 +36,8 @@ class _MainLogoBarWidgetState extends State<MainLogoBarWidget> with RouteAware {
 
   @override
   Widget build(BuildContext context) {
-    DebugFlutterFlowModelContext.maybeOf(context)
-        ?.parentModelCallback
-        ?.call(_model);
-
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Image.asset(
         Theme.of(context).brightness == Brightness.dark
             ? 'assets/images/app_launcher_icon.png'
