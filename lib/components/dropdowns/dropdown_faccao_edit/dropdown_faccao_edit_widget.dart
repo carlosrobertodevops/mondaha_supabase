@@ -1,8 +1,10 @@
 import '/backend/supabase/supabase.dart';
-import '/components/modals/modal_faccao_edit/modal_faccao_edit_widget.dart';
+import '/components/modals/modal_edit_faccao/modal_edit_faccao_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'dropdown_faccao_edit_model.dart';
 export 'dropdown_faccao_edit_model.dart';
 
@@ -19,7 +21,8 @@ class DropdownFaccaoEditWidget extends StatefulWidget {
       _DropdownFaccaoEditWidgetState();
 }
 
-class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
+class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget>
+    with RouteAware {
   late DropdownFaccaoEditModel _model;
 
   @override
@@ -32,8 +35,6 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DropdownFaccaoEditModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -45,16 +46,20 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
 
   @override
   Widget build(BuildContext context) {
+    DebugFlutterFlowModelContext.maybeOf(context)
+        ?.parentModelCallback
+        ?.call(_model);
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Container(
             width: 300.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              boxShadow: const [
+              boxShadow: [
                 BoxShadow(
                   blurRadius: 4.0,
                   color: Color(0x33000000),
@@ -67,14 +72,14 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
               borderRadius: BorderRadius.circular(12.0),
             ),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '0rwad3cv' /* Options */,
@@ -88,16 +93,10 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: MouseRegion(
                       opaque: false,
                       cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                      onEnter: ((event) async {
-                        safeSetState(() => _model.mouseRegionHovered1 = true);
-                      }),
-                      onExit: ((event) async {
-                        safeSetState(() => _model.mouseRegionHovered1 = false);
-                      }),
                       child: Builder(
                         builder: (context) => InkWell(
                           splashColor: Colors.transparent,
@@ -114,34 +113,34 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                                   elevation: 0,
                                   insetPadding: EdgeInsets.zero,
                                   backgroundColor: Colors.transparent,
-                                  alignment: const AlignmentDirectional(0.0, 0.0)
+                                  alignment: AlignmentDirectional(0.0, 0.0)
                                       .resolve(Directionality.of(context)),
-                                  child: ModalFaccaoEditWidget(
-                                    faccaoid: widget.faccaoid,
+                                  child: ModalEditFaccaoWidget(
+                                    faccaoid: widget!.faccaoid,
                                   ),
                                 );
                               },
                             );
                           },
                           child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 150),
+                            duration: Duration(milliseconds: 150),
                             curve: Curves.easeInOut,
                             width: double.infinity,
                             decoration: BoxDecoration(
-                              color: _model.mouseRegionHovered1
+                              color: _model.mouseRegionHovered1!
                                   ? FlutterFlowTheme.of(context)
                                       .primaryBackground
                                   : FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Icon(
                                       Icons.edit_sharp,
@@ -152,7 +151,7 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -173,34 +172,34 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                           ),
                         ),
                       ),
+                      onEnter: ((event) async {
+                        safeSetState(() => _model.mouseRegionHovered1 = true);
+                      }),
+                      onExit: ((event) async {
+                        safeSetState(() => _model.mouseRegionHovered1 = false);
+                      }),
                     ),
                   ),
                   MouseRegion(
                     opaque: false,
                     cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                    onEnter: ((event) async {
-                      safeSetState(() => _model.mouseRegionHovered2 = true);
-                    }),
-                    onExit: ((event) async {
-                      safeSetState(() => _model.mouseRegionHovered2 = false);
-                    }),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 150),
+                      duration: Duration(milliseconds: 150),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered2
+                        color: _model.mouseRegionHovered2!
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Icon(
                                 Icons.personal_video,
@@ -210,7 +209,7 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -229,33 +228,33 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                         ),
                       ),
                     ),
+                    onEnter: ((event) async {
+                      safeSetState(() => _model.mouseRegionHovered2 = true);
+                    }),
+                    onExit: ((event) async {
+                      safeSetState(() => _model.mouseRegionHovered2 = false);
+                    }),
                   ),
                   MouseRegion(
                     opaque: false,
                     cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                    onEnter: ((event) async {
-                      safeSetState(() => _model.mouseRegionHovered3 = true);
-                    }),
-                    onExit: ((event) async {
-                      safeSetState(() => _model.mouseRegionHovered3 = false);
-                    }),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 150),
+                      duration: Duration(milliseconds: 150),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered3
+                        color: _model.mouseRegionHovered3!
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Icon(
                                 Icons.ios_share,
@@ -265,7 +264,7 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -284,6 +283,12 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                         ),
                       ),
                     ),
+                    onEnter: ((event) async {
+                      safeSetState(() => _model.mouseRegionHovered3 = true);
+                    }),
+                    onExit: ((event) async {
+                      safeSetState(() => _model.mouseRegionHovered3 = false);
+                    }),
                   ),
                   Divider(
                     thickness: 1.0,
@@ -292,12 +297,6 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                   MouseRegion(
                     opaque: false,
                     cursor: MouseCursor.defer ?? MouseCursor.defer,
-                    onEnter: ((event) async {
-                      safeSetState(() => _model.mouseRegionHovered4 = true);
-                    }),
-                    onExit: ((event) async {
-                      safeSetState(() => _model.mouseRegionHovered4 = false);
-                    }),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -310,19 +309,19 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: const Text('APAGAR'),
-                                  content: const Text(
+                                  title: Text('APAGAR'),
+                                  content: Text(
                                       'Deseja APAGAR o registro selecionado ?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, false),
-                                      child: const Text('Cancel'),
+                                      child: Text('Cancel'),
                                     ),
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, true),
-                                      child: const Text('Confirm'),
+                                      child: Text('Confirm'),
                                     ),
                                   ],
                                 );
@@ -333,7 +332,7 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                           await FaccoesTable().delete(
                             matchingRows: (rows) => rows.eq(
                               'faccao_id',
-                              widget.faccaoid?.faccaoId,
+                              widget!.faccaoid?.faccaoId,
                             ),
                           );
                           ScaffoldMessenger.of(context).clearSnackBars();
@@ -346,7 +345,7 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: const Duration(milliseconds: 2000),
+                              duration: Duration(milliseconds: 2000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -357,15 +356,15 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                         context.pushNamed('main_faccoes');
                       },
                       child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 150),
+                        duration: Duration(milliseconds: 150),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: _model.mouseRegionHovered4
+                          color: _model.mouseRegionHovered4!
                               ? FlutterFlowTheme.of(context).primaryBackground
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(4.0),
                             bottomRight: Radius.circular(4.0),
                             topLeft: Radius.circular(0.0),
@@ -373,13 +372,13 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Icon(
                                   Icons.delete_outline_rounded,
@@ -389,7 +388,7 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -411,6 +410,12 @@ class _DropdownFaccaoEditWidgetState extends State<DropdownFaccaoEditWidget> {
                         ),
                       ),
                     ),
+                    onEnter: ((event) async {
+                      safeSetState(() => _model.mouseRegionHovered4 = true);
+                    }),
+                    onExit: ((event) async {
+                      safeSetState(() => _model.mouseRegionHovered4 = false);
+                    }),
                   ),
                 ],
               ),

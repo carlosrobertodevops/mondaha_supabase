@@ -1,4 +1,5 @@
 import 'package:provider/provider.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,7 +13,12 @@ import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
+
+import 'dart:async';
+import 'package:easy_debounce/easy_debounce.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +27,7 @@ void main() async {
 
   final environmentValues = FFDevEnvironmentValues();
   await environmentValues.initialize();
+  debugLogEnvironmentValue(environmentValues);
 
   await initFirebase();
 
@@ -32,16 +39,86 @@ void main() async {
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
+  debugLogAppState(appState);
+  appState.addListener(() {
+    debugLogAppState(appState);
+  });
+
+  final originalErrorWidgetBuilder = ErrorWidget.builder;
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    try {
+      final match = RegExp(
+              r'The relevant error-causing widget was:\s+([a-zA-Z0-9]+)(.|\n)*When the exception was thrown, this was the stack:((.|\n)*)')
+          .firstMatch(details.toString());
+      if (match == null) {
+        return originalErrorWidgetBuilder(details);
+      }
+      final widgetName = match.group(1);
+      final stackTrace = match.group(3)!;
+
+      // The stack trace usually is very long, and most of it is entirely
+      // irrelevant for troubleshooting, e.g.:
+      //
+      // dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 251:49  throw_
+      // dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 29:3    assertFailed
+      // packages/flutter/src/widgets/text.dart 378:14                                 new
+      // packages/debug_screen_test/home_page/home_page_widget.dart 51:15              build
+      // packages/flutter/src/widgets/framework.dart 4870:27                           build
+      // packages/flutter/src/widgets/framework.dart 4754:15                           performRebuild
+      // packages/flutter/src/widgets/framework.dart 4928:11                           performRebuild
+      // packages/flutter/src/widgets/framework.dart 4477:5                            rebuild
+      // <a long long list of internal libraries>
+      //
+      // We truncate everything after project-specific code.
+
+      final filteredStackTrace = <String>[];
+      var foundProjectTraces = false;
+      for (final line in stackTrace.split('\n')) {
+        if (line.startsWith('packages/mondaha/')) {
+          foundProjectTraces = true;
+        } else {
+          if (foundProjectTraces) {
+            filteredStackTrace.add('...');
+            break;
+          }
+        }
+        filteredStackTrace.add(line);
+      }
+
+      final result = '''${details.exceptionAsString()}
+      
+The relevant error-causing widget was: $widgetName
+
+Stack trace: ${filteredStackTrace.join("\n")}''';
+
+      return ErrorWidget.withDetails(message: result);
+    } catch (_) {
+      return originalErrorWidgetBuilder(details);
+    }
+  };
+
+  /// Every second, fire logging call for different channel (tag) so that frequent
+  /// logging calls don't get delayed too much
+  Timer.periodic(const Duration(seconds: 2), (timer) {
+    EasyDebounce.fire('405ebf2ff50c295c675b5802889ea941f081fd51');
+    EasyDebounce.cancel('405ebf2ff50c295c675b5802889ea941f081fd51');
+    EasyDebounce.fire('fbcc19a787981a30d86b10103c2f3951604b2ae6');
+    EasyDebounce.cancel('fbcc19a787981a30d86b10103c2f3951604b2ae6');
+
+    EasyDebounce.fire('c0186d2c21d5d9300ee148206df9fbd1850b8d41');
+    EasyDebounce.cancel('c0186d2c21d5d9300ee148206df9fbd1850b8d41');
+
+    EasyDebounce.fire('508f3c74205c87928b71f49040062e732f9c20b0');
+    EasyDebounce.cancel('508f3c74205c87928b71f49040062e732f9c20b0');
+  });
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
-    child: const MyApp(),
+    child: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
@@ -52,11 +129,24 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale = FFLocalizations.getStoredLocale();
-
+  Locale? get locale => _locale;
   ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
+  String getRoute([RouteMatch? routeMatch]) {
+    final RouteMatch lastMatch =
+        routeMatch ?? _router.routerDelegate.currentConfiguration.last;
+    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
+        ? lastMatch.matches
+        : _router.routerDelegate.currentConfiguration;
+    return matchList.uri.toString();
+  }
+
+  List<String> getRouteStack() =>
+      _router.routerDelegate.currentConfiguration.matches
+          .map((e) => getRoute(e))
+          .toList();
 
   late Stream<BaseAuthUser> userStream;
 
@@ -69,12 +159,24 @@ class _MyAppState extends State<MyApp> {
     userStream = mondahaSupabaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
+        debugLogAuthenticatedUser();
       });
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      const Duration(milliseconds: 1000),
+      Duration(milliseconds: 1000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
+
+    _router.routerDelegate.addListener(() {
+      if (mounted) {
+        debugLogGlobalProperty(
+          context,
+          locale: locale.toString(),
+          routePath: getRoute(),
+          routeStack: getRouteStack(),
+        );
+      }
+    });
   }
 
   void setLocale(String language) {
@@ -91,13 +193,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'mondaha',
-      localizationsDelegates: const [
+      localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
-        FallbackMaterialLocalizationDelegate(),
-        FallbackCupertinoLocalizationDelegate(),
       ],
       locale: _locale,
       supportedLocales: const [
@@ -117,7 +217,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class NavBarPage extends StatefulWidget {
-  const NavBarPage({super.key, this.initialPage, this.page});
+  NavBarPage({Key? key, this.initialPage, this.page}) : super(key: key);
 
   final String? initialPage;
   final Widget? page;
@@ -141,12 +241,12 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'main_home': const MainHomeWidget(),
-      'main_membros': const MainMembrosWidget(),
-      'main_messages': const MainMessagesWidget(),
-      'main_profile': const MainProfileWidget(),
-      'main_admin': const MainAdminWidget(),
-      'main_faccoes': const MainFaccoesWidget(),
+      'main_home': MainHomeWidget(),
+      'main_membros': MainMembrosWidget(),
+      'main_messages': MainMessagesWidget(),
+      'main_profile_page': MainProfilePageWidget(),
+      'main_admin': MainAdminWidget(),
+      'main_faccoes': MainFaccoesWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -172,11 +272,11 @@ class _NavBarPageState extends State<NavBarPage> {
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.dashboard_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.account_tree_outlined,
                 size: 32.0,
               ),
@@ -186,11 +286,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.supervised_user_circle_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.groups_outlined,
                 size: 32.0,
               ),
@@ -200,11 +300,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.forum_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.forum_rounded,
                 size: 24.0,
               ),
@@ -214,11 +314,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.account_circle_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.account_circle,
                 size: 32.0,
               ),
@@ -228,11 +328,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.supervised_user_circle_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.groups_outlined,
                 size: 32.0,
               ),
@@ -242,11 +342,11 @@ class _NavBarPageState extends State<NavBarPage> {
               tooltip: '',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
+              icon: Icon(
                 Icons.supervised_user_circle_outlined,
                 size: 24.0,
               ),
-              activeIcon: const Icon(
+              activeIcon: Icon(
                 Icons.groups_outlined,
                 size: 32.0,
               ),

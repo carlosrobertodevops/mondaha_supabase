@@ -9,11 +9,19 @@ import 'dart:math' show pow, pi, sin;
 import 'package:intl/intl.dart';
 import 'package:json_path/json_path.dart';
 import 'package:timeago/timeago.dart' as timeago;
-import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'debug_util.dart';
+
+export 'debug_util.dart';
+
+export 'package:debug_panel_proto/debug_panel_proto.dart';
+
+export 'nav/serialization_util.dart';
 
 import '../main.dart';
 
+import 'lat_lng.dart';
 
 export 'keep_alive_wrapper.dart';
 export 'lat_lng.dart';
@@ -30,6 +38,8 @@ export 'package:page_transition/page_transition.dart';
 export 'internationalization.dart' show FFLocalizations;
 export '/backend/firebase_analytics/analytics.dart';
 export 'nav/nav.dart';
+
+final RouteObserver<ModalRoute> routeObserver = RouteObserver<PageRoute>();
 
 T valueOrDefault<T>(T? value, T defaultValue) =>
     (value is String && value.isEmpty) || value == null ? defaultValue : value;
@@ -67,11 +77,11 @@ Theme wrapInMaterialDatePickerTheme(
 }) {
   final baseTheme = Theme.of(context);
   final dateTimeMaterialStateForegroundColor =
-      WidgetStateProperty.resolveWith((states) {
-    if (states.contains(WidgetState.disabled)) {
+      MaterialStateProperty.resolveWith((states) {
+    if (states.contains(MaterialState.disabled)) {
       return pickerForegroundColor.withOpacity(0.60);
     }
-    if (states.contains(WidgetState.selected)) {
+    if (states.contains(MaterialState.selected)) {
       return selectedDateTimeForegroundColor;
     }
     if (states.isEmpty) {
@@ -81,8 +91,8 @@ Theme wrapInMaterialDatePickerTheme(
   });
 
   final dateTimeMaterialStateBackgroundColor =
-      WidgetStateProperty.resolveWith((states) {
-    if (states.contains(WidgetState.selected)) {
+      MaterialStateProperty.resolveWith((states) {
+    if (states.contains(MaterialState.selected)) {
       return selectedDateTimeBackgroundColor;
     }
     return null;
@@ -103,15 +113,15 @@ Theme wrapInMaterialDatePickerTheme(
       ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-            foregroundColor: WidgetStatePropertyAll(
+            foregroundColor: MaterialStatePropertyAll(
               actionButtonForegroundColor,
             ),
-            overlayColor: WidgetStateProperty.resolveWith((states) {
-              if (states.contains(WidgetState.hovered)) {
+            overlayColor: MaterialStateProperty.resolveWith((states) {
+              if (states.contains(MaterialState.hovered)) {
                 return actionButtonForegroundColor.withOpacity(0.04);
               }
-              if (states.contains(WidgetState.focused) ||
-                  states.contains(WidgetState.pressed)) {
+              if (states.contains(MaterialState.focused) ||
+                  states.contains(MaterialState.pressed)) {
                 return actionButtonForegroundColor.withOpacity(0.12);
               }
               return null;
@@ -157,15 +167,15 @@ Theme wrapInMaterialTimePickerTheme(
       ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-            foregroundColor: WidgetStatePropertyAll(
+            foregroundColor: MaterialStatePropertyAll(
               actionButtonForegroundColor,
             ),
-            overlayColor: WidgetStateProperty.resolveWith((states) {
-              if (states.contains(WidgetState.hovered)) {
+            overlayColor: MaterialStateProperty.resolveWith((states) {
+              if (states.contains(MaterialState.hovered)) {
                 return actionButtonForegroundColor.withOpacity(0.04);
               }
-              if (states.contains(WidgetState.focused) ||
-                  states.contains(WidgetState.pressed)) {
+              if (states.contains(MaterialState.focused) ||
+                  states.contains(MaterialState.pressed)) {
                 return actionButtonForegroundColor.withOpacity(0.12);
               }
               return null;
@@ -175,19 +185,19 @@ Theme wrapInMaterialTimePickerTheme(
         backgroundColor: pickerBackgroundColor,
         hourMinuteTextColor: pickerForegroundColor,
         dialHandColor: selectedDateTimeBackgroundColor,
-        dialTextColor: WidgetStateColor.resolveWith((states) =>
-            states.contains(WidgetState.selected)
+        dialTextColor: MaterialStateColor.resolveWith((states) =>
+            states.contains(MaterialState.selected)
                 ? selectedDateTimeForegroundColor
                 : pickerForegroundColor),
         dayPeriodBorderSide: BorderSide(
           color: pickerForegroundColor,
         ),
-        dayPeriodTextColor: WidgetStateColor.resolveWith((states) =>
-            states.contains(WidgetState.selected)
+        dayPeriodTextColor: MaterialStateColor.resolveWith((states) =>
+            states.contains(MaterialState.selected)
                 ? selectedDateTimeForegroundColor
                 : pickerForegroundColor),
-        dayPeriodColor: WidgetStateColor.resolveWith((states) =>
-            states.contains(WidgetState.selected)
+        dayPeriodColor: MaterialStateColor.resolveWith((states) =>
+            states.contains(MaterialState.selected)
                 ? selectedDateTimeBackgroundColor
                 : Colors.transparent),
         entryModeIconColor: pickerForegroundColor,
@@ -441,12 +451,12 @@ void showSnackbar(
       content: Row(
         children: [
           if (loading)
-            const Padding(
+            Padding(
               padding: EdgeInsetsDirectional.only(end: 10.0),
-              child: SizedBox(
+              child: Container(
                 height: 20,
                 width: 20,
-                child: CircularProgressIndicator(
+                child: const CircularProgressIndicator(
                   color: Colors.white,
                 ),
               ),
@@ -515,24 +525,6 @@ extension StatefulWidgetExtensions on State<StatefulWidget> {
       // ignore: invalid_use_of_protected_member
       setState(fn);
     }
-  }
-}
-
-extension WalkthroughWrapperExtension on Widget {
-  Widget addWalkthrough(
-    GlobalKey walkthroughKey,
-    TutorialCoachMark? controller, {
-    int? listIndex,
-  }) {
-    if (listIndex != null && listIndex != 0) {
-      return this;
-    }
-    return controller != null
-        ? KeyedSubtree(
-            key: walkthroughKey,
-            child: this,
-          )
-        : this;
   }
 }
 

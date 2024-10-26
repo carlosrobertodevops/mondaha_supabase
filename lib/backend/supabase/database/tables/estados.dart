@@ -9,7 +9,7 @@ class EstadosTable extends SupabaseTable<EstadosRow> {
 }
 
 class EstadosRow extends SupabaseDataRow {
-  EstadosRow(super.data);
+  EstadosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => EstadosTable();

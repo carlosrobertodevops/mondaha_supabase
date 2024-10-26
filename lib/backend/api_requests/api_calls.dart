@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:typed_data';
+import '../schema/structs/index.dart';
 
 import 'package:flutter/foundation.dart';
 
@@ -79,8 +81,8 @@ class LoginNoSUPABASECall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "email": "$email",
-  "password": "$password"
+  "email": "${email}",
+  "password": "${password}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Login no SUPABASE',
@@ -103,202 +105,6 @@ class LoginNoSUPABASECall {
       alwaysAllowBody: false,
     );
   }
-}
-
-class ProcedimentosADDCall {
-  static Future<ApiCallResponse> call({
-    int? membroId,
-    String? procedimentoNo = '',
-    String? unidade = '',
-    String? procedimentoTipo = '',
-    String? crime = '',
-    String? data = '',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "membro_id": "$membroId",
-  "procedimento_no": "$procedimentoNo",
-  "unidade": "$unidade",
-  "procedimento_tipo": "$procedimentoTipo",
-  "crime": "$crime",
-  "data": "$data"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'ProcedimentosADD',
-      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/procedimentos',
-      callType: ApiCallType.POST,
-      headers: {
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NjMzMzIsImV4cCI6MjA0MjMzOTMzMn0.nQtpi4gaPoJ4zGxMeRUkp5bkFse-nZXloRjbM44zrLE',
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NjMzMzIsImV4cCI6MjA0MjMzOTMzMn0.nQtpi4gaPoJ4zGxMeRUkp5bkFse-nZXloRjbM44zrLE',
-        'Content-Type': 'application/json',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class ProcessosADDCall {
-  static Future<ApiCallResponse> call({
-    int? membroId,
-    String? acaoPenalNo = '',
-    String? vara = '',
-    String? situacaoJuridica = '',
-    String? regime = '',
-    String? situacaoReu = '',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "membro_id": "$membroId",
-  "acao_penal_no": "$acaoPenalNo",
-  "vara": "$vara",
-  "situaco_juridica": "$situacaoJuridica",
-  "regime": "$regime",
-  "situacao_reu": "$situacaoReu"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'ProcessosADD',
-      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/processos',
-      callType: ApiCallType.POST,
-      headers: {
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NjMzMzIsImV4cCI6MjA0MjMzOTMzMn0.nQtpi4gaPoJ4zGxMeRUkp5bkFse-nZXloRjbM44zrLE',
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NjMzMzIsImV4cCI6MjA0MjMzOTMzMn0.nQtpi4gaPoJ4zGxMeRUkp5bkFse-nZXloRjbM44zrLE',
-        'Content-Type': 'application/json',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class CountUsuariosViewCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'CountUsuariosView',
-      apiUrl:
-          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_usuarios_view?select=*',
-      callType: ApiCallType.GET,
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
-      },
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static int? total(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$[:].total''',
-      ));
-}
-
-class CountUsuariosAtivosViewCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'CountUsuariosAtivosView ',
-      apiUrl:
-          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_usuarios_ativos_view?select=*',
-      callType: ApiCallType.GET,
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
-      },
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static int? total(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$[:].total''',
-      ));
-}
-
-class CountMembrosViewCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'CountMembrosView',
-      apiUrl:
-          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_membros_view?select=*',
-      callType: ApiCallType.GET,
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
-      },
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static int? total(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$[:].total''',
-      ));
-}
-
-class CountFaccoesViewCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'CountFaccoesView ',
-      apiUrl:
-          'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/count_faccoes_view?select=*',
-      callType: ApiCallType.GET,
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
-      },
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static int? total(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$[:].total''',
-      ));
 }
 
 class ApiPagingParams {

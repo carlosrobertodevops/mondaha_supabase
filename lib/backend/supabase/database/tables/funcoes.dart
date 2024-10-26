@@ -9,7 +9,7 @@ class FuncoesTable extends SupabaseTable<FuncoesRow> {
 }
 
 class FuncoesRow extends SupabaseDataRow {
-  FuncoesRow(super.data);
+  FuncoesRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => FuncoesTable();

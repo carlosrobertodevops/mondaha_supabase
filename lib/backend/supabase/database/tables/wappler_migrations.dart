@@ -10,7 +10,7 @@ class WapplerMigrationsTable extends SupabaseTable<WapplerMigrationsRow> {
 }
 
 class WapplerMigrationsRow extends SupabaseDataRow {
-  WapplerMigrationsRow(super.data);
+  WapplerMigrationsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => WapplerMigrationsTable();

@@ -21,35 +21,50 @@ class DataTypesProcedimentosStruct extends BaseStruct {
   // "procedimento_no" field.
   String? _procedimentoNo;
   String get procedimentoNo => _procedimentoNo ?? '';
-  set procedimentoNo(String? val) => _procedimentoNo = val;
+  set procedimentoNo(String? val) {
+    _procedimentoNo = val;
+    debugLog();
+  }
 
   bool hasProcedimentoNo() => _procedimentoNo != null;
 
   // "procedimento_tipo" field.
   String? _procedimentoTipo;
   String get procedimentoTipo => _procedimentoTipo ?? '';
-  set procedimentoTipo(String? val) => _procedimentoTipo = val;
+  set procedimentoTipo(String? val) {
+    _procedimentoTipo = val;
+    debugLog();
+  }
 
   bool hasProcedimentoTipo() => _procedimentoTipo != null;
 
   // "unidade" field.
   String? _unidade;
   String get unidade => _unidade ?? '';
-  set unidade(String? val) => _unidade = val;
+  set unidade(String? val) {
+    _unidade = val;
+    debugLog();
+  }
 
   bool hasUnidade() => _unidade != null;
 
   // "crime" field.
   String? _crime;
   String get crime => _crime ?? '';
-  set crime(String? val) => _crime = val;
+  set crime(String? val) {
+    _crime = val;
+    debugLog();
+  }
 
   bool hasCrime() => _crime != null;
 
   // "data" field.
   DateTime? _data;
   DateTime? get data => _data;
-  set data(DateTime? val) => _data = val;
+  set data(DateTime? val) {
+    _data = val;
+    debugLog();
+  }
 
   bool hasData() => _data != null;
 
@@ -127,6 +142,39 @@ class DataTypesProcedimentosStruct extends BaseStruct {
           false,
         ),
       );
+  @override
+  Map<String, DebugDataField> toDebugSerializableMap() => {
+        'procedimento_no': debugSerializeParam(
+          procedimentoNo,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+        'procedimento_tipo': debugSerializeParam(
+          procedimentoTipo,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+        'unidade': debugSerializeParam(
+          unidade,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+        'crime': debugSerializeParam(
+          crime,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+        'data': debugSerializeParam(
+          _data,
+          ParamType.DateTime,
+          name: 'DateTime',
+          nullable: true,
+        ),
+      };
 
   @override
   String toString() => 'DataTypesProcedimentosStruct(${toMap()})';

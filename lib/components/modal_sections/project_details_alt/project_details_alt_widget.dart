@@ -4,8 +4,13 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'project_details_alt_model.dart';
 export 'project_details_alt_model.dart';
 
@@ -18,7 +23,7 @@ class ProjectDetailsAltWidget extends StatefulWidget {
 }
 
 class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
-    with TickerProviderStateMixin {
+    with TickerProviderStateMixin, RouteAware {
   late ProjectDetailsAltModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
@@ -38,7 +43,11 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
       vsync: this,
       length: 3,
       initialIndex: 0,
-    )..addListener(() => safeSetState(() {}));
+    )
+      ..addListener(() => safeSetState(() {}))
+      ..addListener(() {
+        debugLogWidgetClass(_model);
+      });
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -54,8 +63,8 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, -30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -74,8 +83,8 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -94,8 +103,8 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -113,8 +122,8 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 100.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 100.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -133,8 +142,8 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 50.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -153,8 +162,8 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -173,8 +182,8 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 70.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 70.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -193,8 +202,8 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -205,8 +214,6 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
           !anim.applyInitialState),
       this,
     );
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -218,6 +225,10 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
 
   @override
   Widget build(BuildContext context) {
+    DebugFlutterFlowModelContext.maybeOf(context)
+        ?.parentModelCallback
+        ?.call(_model);
+
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [
@@ -225,7 +236,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
           width: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x2C000000),
@@ -242,19 +253,19 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
             ),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 12.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 12.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           color: FlutterFlowTheme.of(context).primaryBackground,
@@ -263,7 +274,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(2.0),
+                            padding: EdgeInsets.all(2.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(12.0),
                               child: Image.asset(
@@ -294,7 +305,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                             ).animateOnPageLoad(
                                 animationsMap['textOnPageLoadAnimation1']!),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -331,7 +342,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'gamp8n19' /* Assigned To */,
@@ -343,10 +354,10 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
                   child: Container(
                     width: double.infinity,
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 430.0,
                     ),
                     decoration: BoxDecoration(
@@ -358,7 +369,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -375,7 +386,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(2.0),
+                              padding: EdgeInsets.all(2.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10.0),
                                 child: Image.network(
@@ -393,7 +404,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -408,7 +419,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 4.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -434,7 +445,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                               borderRadius: BorderRadius.circular(40.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(4.0),
+                              padding: EdgeInsets.all(4.0),
                               child: Icon(
                                 Icons.chevron_right_rounded,
                                 color:
@@ -470,7 +481,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                     Expanded(
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '8sktau69' /* Tuesday, 10:00am */,
@@ -494,9 +505,9 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                           width: 2.0,
                         ),
                       ),
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -520,7 +531,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
           child: Column(
             children: [
               Align(
-                alignment: const Alignment(-1.0, 0),
+                alignment: Alignment(-1.0, 0),
                 child: FlutterFlowButtonTabBar(
                   useToggleButtonStyle: false,
                   isScrollable: true,
@@ -529,10 +540,10 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
-                  unselectedLabelStyle: const TextStyle(),
+                  unselectedLabelStyle: TextStyle(),
                   labelColor: FlutterFlowTheme.of(context).primaryText,
                   unselectedLabelColor:
-                      FlutterFlowTheme.of(context).primaryText,
+                      FlutterFlowTheme.of(context).secondaryText,
                   backgroundColor: FlutterFlowTheme.of(context).accent1,
                   unselectedBackgroundColor:
                       FlutterFlowTheme.of(context).primaryBackground,
@@ -542,10 +553,10 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                   borderRadius: 12.0,
                   elevation: 0.0,
                   labelPadding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   buttonMargin:
-                      const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                  padding: const EdgeInsetsDirectional.fromSTEB(4.0, 12.0, 4.0, 12.0),
+                      EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(4.0, 12.0, 4.0, 12.0),
                   tabs: [
                     Tab(
                       text: FFLocalizations.of(context).getText(
@@ -584,16 +595,16 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                 .secondaryBackground,
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                                  alignment: AlignmentDirectional(-1.0, -1.0),
                                   child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 150),
+                                    duration: Duration(milliseconds: 150),
                                     curve: Curves.easeInOut,
                                     width: 36.0,
                                     height: 36.0,
@@ -608,7 +619,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Icon(
                                         Icons.document_scanner_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -620,7 +631,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                 ),
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -629,7 +640,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 12.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -663,7 +674,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                       .getText(
                                                     'n5ub587t' /*  Begin Work */,
                                                   ),
-                                                  style: const TextStyle(),
+                                                  style: TextStyle(),
                                                 )
                                               ],
                                               style:
@@ -678,7 +689,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                           ),
                                         ),
                                         AnimatedContainer(
-                                          duration: const Duration(milliseconds: 150),
+                                          duration: Duration(milliseconds: 150),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           decoration: BoxDecoration(
@@ -694,7 +705,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(12.0),
+                                            padding: EdgeInsets.all(12.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -721,7 +732,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -745,7 +756,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -775,16 +786,16 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                 .secondaryBackground,
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                                  alignment: AlignmentDirectional(-1.0, -1.0),
                                   child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 150),
+                                    duration: Duration(milliseconds: 150),
                                     curve: Curves.easeInOut,
                                     width: 36.0,
                                     height: 36.0,
@@ -799,7 +810,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Icon(
                                         Icons.document_scanner_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -811,7 +822,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                 ),
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -820,7 +831,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 12.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -854,7 +865,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                       .getText(
                                                     'g9h5nanl' /* accepted a request */,
                                                   ),
-                                                  style: const TextStyle(),
+                                                  style: TextStyle(),
                                                 )
                                               ],
                                               style:
@@ -877,7 +888,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(12.0),
+                                            padding: EdgeInsets.all(12.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -904,7 +915,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -923,7 +934,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 0.0),
                                                   child: Text(
@@ -947,7 +958,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -977,16 +988,16 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                 .secondaryBackground,
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                                  alignment: AlignmentDirectional(-1.0, -1.0),
                                   child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 150),
+                                    duration: Duration(milliseconds: 150),
                                     curve: Curves.easeInOut,
                                     width: 36.0,
                                     height: 36.0,
@@ -1001,7 +1012,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Icon(
                                         Icons.roundabout_right_outlined,
                                         color: FlutterFlowTheme.of(context)
@@ -1013,7 +1024,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                 ),
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -1022,7 +1033,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 12.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -1056,7 +1067,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                       .getText(
                                                     'b3k94yjl' /* sent a SOW Change Order for  */,
                                                   ),
-                                                  style: const TextStyle(),
+                                                  style: TextStyle(),
                                                 ),
                                                 TextSpan(
                                                   text: FFLocalizations.of(
@@ -1096,7 +1107,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(12.0),
+                                            padding: EdgeInsets.all(12.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -1123,7 +1134,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -1142,7 +1153,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 0.0),
                                                   child: Text(
@@ -1166,7 +1177,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1189,10 +1200,10 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(height: 1.0)),
+                      ].divide(SizedBox(height: 1.0)),
                     ),
                     ListView(
-                      padding: const EdgeInsets.fromLTRB(
+                      padding: EdgeInsets.fromLTRB(
                         0,
                         8.0,
                         0,
@@ -1202,20 +1213,20 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                       scrollDirection: Axis.vertical,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 100),
+                            duration: Duration(milliseconds: 100),
                             curve: Curves.easeInOut,
                             width: double.infinity,
-                            constraints: const BoxConstraints(
+                            constraints: BoxConstraints(
                               minHeight: 70.0,
                               maxWidth: 770.0,
                             ),
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -1232,7 +1243,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -1240,7 +1251,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 8.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -1256,7 +1267,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                         'textOnPageLoadAnimation3']!),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -1271,7 +1282,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1280,7 +1291,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -1288,7 +1299,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 24.0, 0.0),
                                                 child: Text(
@@ -1307,7 +1318,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 4.0, 24.0, 8.0),
                                                 child: Text(
@@ -1337,10 +1348,10 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                           ),
                                           options: FFButtonOptions(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1357,7 +1368,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1382,27 +1393,27 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 12.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 150.0,
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Container(
                                                   width: 28.0,
                                                   height: 28.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -1412,13 +1423,13 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -0.7, 0.0),
                                                 child: Container(
                                                   width: 28.0,
                                                   height: 28.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -1428,13 +1439,13 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -0.4, 0.0),
                                                 child: Container(
                                                   width: 28.0,
                                                   height: 28.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -1462,20 +1473,20 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                               animationsMap['containerOnPageLoadAnimation3']!),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 100),
+                            duration: Duration(milliseconds: 100),
                             curve: Curves.easeInOut,
                             width: double.infinity,
-                            constraints: const BoxConstraints(
+                            constraints: BoxConstraints(
                               minHeight: 70.0,
                               maxWidth: 770.0,
                             ),
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -1492,7 +1503,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -1500,7 +1511,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 8.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -1516,7 +1527,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                         'textOnPageLoadAnimation4']!),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -1531,7 +1542,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1540,7 +1551,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -1548,7 +1559,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 24.0, 0.0),
                                                 child: Text(
@@ -1567,7 +1578,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 4.0, 24.0, 8.0),
                                                 child: Text(
@@ -1597,10 +1608,10 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                           ),
                                           options: FFButtonOptions(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1617,7 +1628,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1642,27 +1653,27 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 12.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 150.0,
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Container(
                                                   width: 28.0,
                                                   height: 28.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -1672,13 +1683,13 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -0.7, 0.0),
                                                 child: Container(
                                                   width: 28.0,
                                                   height: 28.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -1688,13 +1699,13 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -0.4, 0.0),
                                                 child: Container(
                                                   width: 28.0,
                                                   height: 28.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -1721,7 +1732,7 @@ class _ProjectDetailsAltWidgetState extends State<ProjectDetailsAltWidget>
                           ).animateOnPageLoad(
                               animationsMap['containerOnPageLoadAnimation4']!),
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
+                      ].divide(SizedBox(height: 12.0)),
                     ),
                     Container(),
                   ],

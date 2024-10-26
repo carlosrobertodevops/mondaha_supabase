@@ -21,35 +21,50 @@ class DataTypesProcessosStruct extends BaseStruct {
   // "no_acao_penal" field.
   String? _noAcaoPenal;
   String get noAcaoPenal => _noAcaoPenal ?? '';
-  set noAcaoPenal(String? val) => _noAcaoPenal = val;
+  set noAcaoPenal(String? val) {
+    _noAcaoPenal = val;
+    debugLog();
+  }
 
   bool hasNoAcaoPenal() => _noAcaoPenal != null;
 
   // "vara" field.
   String? _vara;
   String get vara => _vara ?? '';
-  set vara(String? val) => _vara = val;
+  set vara(String? val) {
+    _vara = val;
+    debugLog();
+  }
 
   bool hasVara() => _vara != null;
 
   // "situacao_juridica" field.
   String? _situacaoJuridica;
   String get situacaoJuridica => _situacaoJuridica ?? '';
-  set situacaoJuridica(String? val) => _situacaoJuridica = val;
+  set situacaoJuridica(String? val) {
+    _situacaoJuridica = val;
+    debugLog();
+  }
 
   bool hasSituacaoJuridica() => _situacaoJuridica != null;
 
   // "regime" field.
   String? _regime;
   String get regime => _regime ?? '';
-  set regime(String? val) => _regime = val;
+  set regime(String? val) {
+    _regime = val;
+    debugLog();
+  }
 
   bool hasRegime() => _regime != null;
 
   // "situacao_reu" field.
   String? _situacaoReu;
   String get situacaoReu => _situacaoReu ?? '';
-  set situacaoReu(String? val) => _situacaoReu = val;
+  set situacaoReu(String? val) {
+    _situacaoReu = val;
+    debugLog();
+  }
 
   bool hasSituacaoReu() => _situacaoReu != null;
 
@@ -127,6 +142,39 @@ class DataTypesProcessosStruct extends BaseStruct {
           false,
         ),
       );
+  @override
+  Map<String, DebugDataField> toDebugSerializableMap() => {
+        'no_acao_penal': debugSerializeParam(
+          noAcaoPenal,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+        'vara': debugSerializeParam(
+          vara,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+        'situacao_juridica': debugSerializeParam(
+          situacaoJuridica,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+        'regime': debugSerializeParam(
+          regime,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+        'situacao_reu': debugSerializeParam(
+          situacaoReu,
+          ParamType.String,
+          name: 'String',
+          nullable: false,
+        ),
+      };
 
   @override
   String toString() => 'DataTypesProcessosStruct(${toMap()})';

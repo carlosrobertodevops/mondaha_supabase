@@ -9,7 +9,7 @@ class ValidacoesTable extends SupabaseTable<ValidacoesRow> {
 }
 
 class ValidacoesRow extends SupabaseDataRow {
-  ValidacoesRow(super.data);
+  ValidacoesRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ValidacoesTable();

@@ -21,8 +21,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="mondaha">
 
-  <script type="application/javascript" src="https://cdn.jsdelivr.net/gh/jasminder/flutter_preloader/proloader.js" defer> </script>
-
+  
 
   
 
@@ -49,6 +48,7 @@
 
   <link rel="manifest" href="manifest.json">
   
+  
 </head>
 <body>
   
@@ -57,7 +57,13 @@
   
   
   <script>
-    {{flutter_bootstrap_js}}
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=');
+      });
+    }
   </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+
 </body>
 </html>

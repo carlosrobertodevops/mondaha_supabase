@@ -9,7 +9,7 @@ class FaccoesTable extends SupabaseTable<FaccoesRow> {
 }
 
 class FaccoesRow extends SupabaseDataRow {
-  FaccoesRow(super.data);
+  FaccoesRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => FaccoesTable();
