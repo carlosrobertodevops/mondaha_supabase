@@ -267,6 +267,8 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                       logFirebaseEvent(
                                           'MODAL_MEMBROS_ADD_close_rounded_ICN_ON_T');
                                       Navigator.pop(context);
+
+                                      context.pushNamed('main_membros');
                                     },
                                   ),
                                 ],
@@ -2356,57 +2358,79 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             children:
                                                                                 [
                                                                               Expanded(
-                                                                                flex: 1,
-                                                                                child: FlutterFlowPlacePicker(
-                                                                                  iOSGoogleMapsApiKey: 'AIzaSyAXl9JxuELU_e72s3EGlFpYxDl9qYfBbhk',
-                                                                                  androidGoogleMapsApiKey: 'AIzaSyBcGx3xp4aFRIyFf4Y_XZkncYwgi0sz0wQ',
-                                                                                  webGoogleMapsApiKey: 'AIzaSyDHKjsC9REXC2lUer2xphTKmRXZNH2p00Q',
-                                                                                  onSelect: (place) async {
-                                                                                    safeSetState(() => _model.placePickerEnderecoValue = place);
-                                                                                  },
-                                                                                  defaultText: FFLocalizations.of(context).getText(
-                                                                                    'sc0bhfzq' /*  */,
-                                                                                  ),
-                                                                                  icon: Icon(
-                                                                                    Icons.place,
-                                                                                    color: FlutterFlowTheme.of(context).info,
-                                                                                    size: 24.0,
-                                                                                  ),
-                                                                                  buttonOptions: FFButtonOptions(
-                                                                                    width: 50.0,
-                                                                                    height: 60.0,
-                                                                                    color: FlutterFlowTheme.of(context).primary,
-                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                          color: FlutterFlowTheme.of(context).info,
-                                                                                          letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                        ),
-                                                                                    elevation: 0.0,
-                                                                                    borderSide: const BorderSide(
-                                                                                      color: Colors.transparent,
-                                                                                      width: 1.0,
+                                                                                flex: 2,
+                                                                                child: Container(
+                                                                                  decoration: BoxDecoration(
+                                                                                    borderRadius: BorderRadius.circular(12.0),
+                                                                                    border: Border.all(
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                      width: 2.0,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(100.0),
                                                                                   ),
-                                                                                ),
-                                                                              ),
-                                                                              InkWell(
-                                                                                splashColor: Colors.transparent,
-                                                                                focusColor: Colors.transparent,
-                                                                                hoverColor: Colors.transparent,
-                                                                                highlightColor: Colors.transparent,
-                                                                                onTap: () async {
-                                                                                  logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_xr7g9mod_ON_TAP');
-                                                                                  safeSetState(() {
-                                                                                    _model.txtMembrosEnderecosAddTextController?.text = _model.placePickerEnderecoValue.address;
-                                                                                    _model.txtMembrosEnderecosAddTextController?.selection = TextSelection.collapsed(offset: _model.txtMembrosEnderecosAddTextController!.text.length);
-                                                                                  });
-                                                                                },
-                                                                                child: Icon(
-                                                                                  Icons.arrow_forward_rounded,
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                  size: 36.0,
+                                                                                  child: SingleChildScrollView(
+                                                                                    scrollDirection: Axis.horizontal,
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                      children: [
+                                                                                        Expanded(
+                                                                                          flex: 10,
+                                                                                          child: FlutterFlowPlacePicker(
+                                                                                            iOSGoogleMapsApiKey: 'AIzaSyAXl9JxuELU_e72s3EGlFpYxDl9qYfBbhk',
+                                                                                            androidGoogleMapsApiKey: 'AIzaSyBcGx3xp4aFRIyFf4Y_XZkncYwgi0sz0wQ',
+                                                                                            webGoogleMapsApiKey: 'AIzaSyDHKjsC9REXC2lUer2xphTKmRXZNH2p00Q',
+                                                                                            onSelect: (place) async {
+                                                                                              safeSetState(() => _model.placePickerEnderecoValue = place);
+                                                                                            },
+                                                                                            defaultText: FFLocalizations.of(context).getText(
+                                                                                              'sc0bhfzq' /*  */,
+                                                                                            ),
+                                                                                            icon: Icon(
+                                                                                              Icons.place,
+                                                                                              color: FlutterFlowTheme.of(context).info,
+                                                                                              size: 24.0,
+                                                                                            ),
+                                                                                            buttonOptions: FFButtonOptions(
+                                                                                              width: 60.0,
+                                                                                              height: 60.0,
+                                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                                              textStyle: TextStyle(
+                                                                                                color: FlutterFlowTheme.of(context).info,
+                                                                                                fontWeight: FontWeight.w100,
+                                                                                              ),
+                                                                                              elevation: 0.0,
+                                                                                              borderSide: const BorderSide(
+                                                                                                color: Colors.transparent,
+                                                                                                width: 1.0,
+                                                                                              ),
+                                                                                              borderRadius: BorderRadius.circular(100.0),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          flex: 5,
+                                                                                          child: InkWell(
+                                                                                            splashColor: Colors.transparent,
+                                                                                            focusColor: Colors.transparent,
+                                                                                            hoverColor: Colors.transparent,
+                                                                                            highlightColor: Colors.transparent,
+                                                                                            onTap: () async {
+                                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_xr7g9mod_ON_TAP');
+                                                                                              safeSetState(() {
+                                                                                                _model.txtMembrosEnderecosAddTextController?.text = _model.placePickerEnderecoValue.address;
+                                                                                                _model.txtMembrosEnderecosAddTextController?.selection = TextSelection.collapsed(offset: _model.txtMembrosEnderecosAddTextController!.text.length);
+                                                                                              });
+                                                                                            },
+                                                                                            child: Icon(
+                                                                                              Icons.arrow_forward_rounded,
+                                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                                              size: 36.0,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ].divide(const SizedBox(width: 5.0)),
+                                                                                    ),
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                               Expanded(
