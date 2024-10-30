@@ -1706,7 +1706,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nvxntirq': {
       'en': 'History',
-      'pt': 'História',
+      'pt': 'Histórico',
+    },
+    'cwp7l7r2': {
+      'en': 'Nascido no Brasil',
+      'pt': 'Nascido no Brasil',
+    },
+    'tcv32o0m': {
+      'en': 'Nascido no Brasil',
+      'pt': 'Nascido no Brasil',
+    },
+    'p05w4mzf': {
+      'en': 'Naturalizado Brasileiro',
+      'pt': 'Naturalizado Brasileiro',
+    },
+    '78heuj7d': {
+      'en': 'Estrangeiro',
+      'pt': 'Estrangeiro',
+    },
+    'yc6rcmtz': {
+      'en': 'Estado',
+      'pt': 'Estado',
+    },
+    'f7rl31yp': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'fkmdz2kr': {
+      'en': 'Municipio',
+      'pt': 'Município',
+    },
+    's9xkiwbl': {
+      'en': 'Search...',
+      'pt': '',
+    },
+    'sc0bhfzq': {
+      'en': '',
+      'pt': '',
     },
     'uw8i01r5': {
       'en': 'Endereço Completo',
@@ -1716,42 +1752,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Endereço Completo',
       'pt': 'Endereço Completo',
     },
-    '8j1rka5p': {
-      'en': 'Option 1',
-      'pt': '',
-    },
-    'ob87x68k': {
-      'en': 'Nascido no Brasil',
-      'pt': 'Nascido no Brasil',
-    },
-    '7tegc2gd': {
-      'en': 'Nascido no Brasil',
-      'pt': 'Nascido no Brasil',
-    },
-    'j7uzqdk2': {
-      'en': 'Naturalizado Brasileiro',
-      'pt': 'Naturalizado Brasileiro',
-    },
-    'usfossjo': {
-      'en': 'Estrangeiro',
-      'pt': 'Estrangeiro',
-    },
-    'baq5xyzk': {
-      'en': 'Estado',
-      'pt': 'Estado',
-    },
-    '8h8sdizg': {
-      'en': 'Search...',
-      'pt': '',
-    },
-    'l7659gs2': {
-      'en': 'Municipio',
-      'pt': 'Município',
-    },
-    'd6sdnxoa': {
-      'en': 'Search...',
-      'pt': '',
-    },
     'awnrzzus': {
       'en': 'Histórico',
       'pt': 'Histórico',
@@ -1759,10 +1759,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'o7r2rdc8': {
       'en': 'Histórico',
       'pt': 'Histórico',
-    },
-    'lz0njodx': {
-      'en': 'Option 1',
-      'pt': '',
     },
     'zo5mhuuq': {
       'en': 'Facção',
@@ -1894,6 +1890,46 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Facção Inimiga',
       'pt': 'Facção Inimiga',
     },
+    'i2sj5hwa': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'lerrd27b': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'jgdeykjo': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'wkwcrq40': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    '6ms24pjq': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'e7y2gi52': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'u9b5zrd8': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    '51dgcn8o': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'bauzjvgj': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    'z10jh0v9': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
     'xeeiaebp': {
       'en': 'Procedimentos',
       'pt': 'Procedimentos',
@@ -2004,19 +2040,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Adicionar',
       'pt': 'Adicionar',
     },
-    'i2sj5hwa': {
+    'b2y5qt8s': {
       'en': 'Field is required',
       'pt': '',
     },
-    'lerrd27b': {
+    '7qwcyv6f': {
       'en': 'Please choose an option from the dropdown',
       'pt': '',
     },
-    'jgdeykjo': {
+    'jc4by7hx': {
       'en': 'Field is required',
       'pt': '',
     },
-    'wkwcrq40': {
+    'qahg5njj': {
       'en': 'Please choose an option from the dropdown',
       'pt': '',
     },
@@ -2190,10 +2226,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Atuação no Crime',
       'pt': 'Atuação no Crime',
     },
-    '18a7a4fk': {
-      'en': 'Option 1',
-      'pt': '',
-    },
     '8slh1eth': {
       'en': 'Alerta',
       'pt': 'Alerta',
@@ -2209,10 +2241,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'kx61gjir': {
       'en': 'Alerta',
       'pt': 'Alerta',
-    },
-    'taqpyut0': {
-      'en': 'Option 1',
-      'pt': '',
     },
     '2rc41m6r': {
       'en': 'Validação',
@@ -2277,10 +2305,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '0a8jmcbn': {
       'en': 'Observação(ões)',
       'pt': 'Observação(ões)',
-    },
-    'e34igmbj': {
-      'en': 'Option 1',
-      'pt': '',
     },
     'ld0rt7j2': {
       'en': 'Relations',

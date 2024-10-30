@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'main_messages_model.dart';
 export 'main_messages_model.dart';
 
@@ -95,9 +96,13 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                         'ym579y79' /* Dashboard */,
                       ),
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Outfit',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).displaySmallFamily,
                             color: Colors.white,
                             letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context)
+                                    .displaySmallFamily),
                           ),
                     ).animateOnPageLoad(
                         animationsMap['textOnPageLoadAnimation']!),
@@ -167,8 +172,16 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .displaySmall
                                               .override(
-                                                fontFamily: 'Outfit',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmallFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .displaySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -283,8 +296,16 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                         .labelMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily),
                                                           lineHeight: 0.5,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
@@ -292,8 +313,16 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                         .labelMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily),
                                                         ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
@@ -367,8 +396,16 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                   cursorColor:
                                                       FlutterFlowTheme.of(
@@ -504,8 +541,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                               ),
                                                                         ),
                                                                         Padding(
@@ -522,8 +560,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -542,8 +581,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                                 ),
                                                                                 textAlign: TextAlign.start,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -694,8 +734,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                               ),
                                                                         ),
                                                                         Padding(
@@ -712,8 +753,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -731,8 +773,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                                 ),
                                                                                 textAlign: TextAlign.start,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -883,8 +926,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                               ),
                                                                         ),
                                                                         Padding(
@@ -901,8 +945,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -920,8 +965,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                                 ),
                                                                                 textAlign: TextAlign.start,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1091,8 +1137,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                                 ),
                                                                                 textAlign: TextAlign.start,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       lineHeight: 1.5,
                                                                                     ),
                                                                               )),
@@ -1116,8 +1163,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1213,9 +1261,10 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                                     'it69akbs' /* Hey really love what you are d... */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -1238,8 +1287,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -1369,8 +1419,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                               ),
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     lineHeight: 1.5,
                                                                                   ),
                                                                             )),
@@ -1397,9 +1448,11 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                           .labelSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Plus Jakarta Sans',
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1515,9 +1568,10 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                                   '4lc34hro' /* Hey really love what you are d... */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                       color: FlutterFlowTheme.of(context).info,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                     ),
                                                                               )),
                                                                             ),
@@ -1540,8 +1594,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1649,9 +1704,10 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                                   'bbpyr9q4' /* Hey really love what you are d... */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                       color: FlutterFlowTheme.of(context).info,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                     ),
                                                                               )),
                                                                             ),
@@ -1674,8 +1730,9 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1775,9 +1832,11 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Plus Jakarta Sans',
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                       ),
                                                               hintText:
                                                                   FFLocalizations.of(
@@ -1791,9 +1850,11 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Plus Jakarta Sans',
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                       ),
                                                               enabledBorder:
                                                                   UnderlineInputBorder(
@@ -1863,10 +1924,16 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
                                                                 ),
                                                             maxLines: 12,
                                                             minLines: 1,

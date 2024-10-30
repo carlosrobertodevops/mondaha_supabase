@@ -6,7 +6,9 @@ import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
+import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -19,6 +21,8 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'modal_membros_add_model.dart';
 export 'modal_membros_add_model.dart';
@@ -77,8 +81,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
     _model.txtFiliacaoPaiFocusNode ??= FocusNode();
 
     _model.txtMembrosEnderecosAddTextController ??= TextEditingController();
+    _model.txtMembrosEnderecosAddFocusNode ??= FocusNode();
 
     _model.txtMembroHistoricoTextController ??= TextEditingController();
+    _model.txtMembroHistoricoFocusNode ??= FocusNode();
 
     _model.txtFaccaoBastismoTextController ??= TextEditingController();
 
@@ -104,11 +110,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
     _model.txtProcessoNoAcaoPenalFocusNode ??= FocusNode();
 
     _model.txtMembroAtuacaoTextController ??= TextEditingController();
+    _model.txtMembroAtuacaoFocusNode ??= FocusNode();
 
     _model.switchAlertaValue = false;
     _model.txtMembroAlertaTextController ??= TextEditingController();
+    _model.txtMembroAlertaFocusNode ??= FocusNode();
 
     _model.txtValidacoesObservacoesTextController ??= TextEditingController();
+    _model.txtValidacoesObservacoesFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'blurOnPageLoadAnimation': AnimationInfo(
@@ -225,8 +234,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .headlineMedium
                                                       .override(
-                                                        fontFamily: 'Outfit',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMediumFamily),
                                                       ),
                                             ),
                                           ],
@@ -311,20 +329,32 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                   context)
                                                               .titleMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily),
                                                               ),
                                                       unselectedLabelStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .titleMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily),
                                                               ),
                                                       indicatorColor:
                                                           FlutterFlowTheme.of(
@@ -457,9 +487,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           .labelMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Plus Jakarta Sans',
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -580,8 +612,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                     ),
                                                                                                     textAlign: TextAlign.center,
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                           letterSpacing: 0.0,
+                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -831,8 +864,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                     ),
                                                                                                     textAlign: TextAlign.center,
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                           letterSpacing: 0.0,
+                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -855,10 +889,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 'eivogkvw' /* ATENÇÃO : (1) Foto Frente, (2)... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -885,16 +920,18 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'npcbcpl9' /* Nome completo */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     alignLabelWithHint: true,
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       'eyhgaf81' /* Nome completo */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -942,8 +979,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtNomeCompletoTextControllerValidator.asValidator(context),
@@ -973,15 +1011,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'ikt0h50o' /* Alcunha */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       'jna6z2zu' /* Alcunha */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -1029,8 +1069,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtAlcunhaAddTextControllerValidator.asValidator(context),
@@ -1113,8 +1154,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                               tagAlcunhaItem,
                                                                                                               textAlign: TextAlign.center,
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                     letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                   ),
                                                                                                             )),
                                                                                                           ),
@@ -1175,16 +1217,18 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'deg0fdow' /* Naturalidade */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     alignLabelWithHint: true,
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       'o99a5cgx' /* Naturalidade */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -1231,8 +1275,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtMembroNaturalidadeTextControllerValidator.asValidator(context),
@@ -1251,10 +1296,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -1289,16 +1333,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwEstadoCivilValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         'ievjy8qu' /* Estado civil */,
@@ -1349,15 +1396,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       '2opj9i3o' /* Identidade */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       'v4bdomyi' /* Identidade */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -1405,8 +1454,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   keyboardType: TextInputType.number,
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
@@ -1426,10 +1476,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -1475,16 +1524,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwOrgaoExpedidorValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         'ia9zkanc' /* Órgão expedidor */,
@@ -1528,15 +1580,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'k3o15zmt' /* CPF */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       '1rai7wkj' /* CPF */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -1584,8 +1638,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   keyboardType: TextInputType.number,
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
@@ -1612,15 +1667,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'f434de4i' /* Cadastro Infopen */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       '1yyjhbj8' /* Cadastro Infopen */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -1667,8 +1724,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   keyboardType: TextInputType.number,
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
@@ -1700,15 +1758,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'cjy846zr' /* Nome da mãe */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       '7g88w199' /* Nome da mãe */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -1756,8 +1816,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtFiliacaoMaeTextControllerValidator.asValidator(context),
@@ -1784,16 +1845,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   onChanged: (val) => safeSetState(() => _model.ddwSituacaoMaeValue = val),
                                                                                   height: 60.0,
                                                                                   searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                       ),
                                                                                   searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   hintText: FFLocalizations.of(context).getText(
                                                                                     'gc3vbmj4' /* Situação da Mãe */,
@@ -1843,15 +1907,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'lbcdz337' /* Nome do pai */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       '35jyk488' /* Nome do pai */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -1899,8 +1965,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtFiliacaoPaiTextControllerValidator.asValidator(context),
@@ -1927,16 +1994,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   onChanged: (val) => safeSetState(() => _model.ddwSituacaoPaiValue = val),
                                                                                   height: 60.0,
                                                                                   searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                       ),
                                                                                   searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   hintText: FFLocalizations.of(context).getText(
                                                                                     'cnn9tddw' /* Situação do Pai */,
@@ -2004,16 +2074,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   onChanged: (val) => safeSetState(() => _model.ddwNivelInstrucaoValue = val),
                                                                                   height: 60.0,
                                                                                   searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                       ),
                                                                                   searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   hintText: FFLocalizations.of(context).getText(
                                                                                     '0wrilaus' /* Grau ou Nível de instruição */,
@@ -2095,170 +2168,373 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               MainAxisSize.max,
                                                                           children:
                                                                               [
-                                                                            Expanded(
-                                                                              child: SizedBox(
-                                                                                width: 200.0,
-                                                                                child: Autocomplete<String>(
-                                                                                  initialValue: const TextEditingValue(),
-                                                                                  optionsBuilder: (textEditingValue) {
-                                                                                    if (textEditingValue.text == '') {
-                                                                                      return const Iterable<String>.empty();
-                                                                                    }
-                                                                                    return [
-                                                                                      FFLocalizations.of(context).getText(
-                                                                                        '8j1rka5p' /* Option 1 */,
-                                                                                      )
-                                                                                    ].where((option) {
-                                                                                      final lowercaseOption = option.toLowerCase();
-                                                                                      return lowercaseOption.contains(textEditingValue.text.toLowerCase());
-                                                                                    });
-                                                                                  },
-                                                                                  optionsViewBuilder: (context, onSelected, options) {
-                                                                                    return AutocompleteOptionsList(
-                                                                                      textFieldKey: _model.txtMembrosEnderecosAddKey,
-                                                                                      textController: _model.txtMembrosEnderecosAddTextController!,
-                                                                                      options: options.toList(),
-                                                                                      onSelected: onSelected,
-                                                                                      textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      textHighlightStyle: const TextStyle(),
-                                                                                      elevation: 4.0,
-                                                                                      optionBackgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      optionHighlightColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      maxHeight: 200.0,
-                                                                                    );
-                                                                                  },
-                                                                                  onSelected: (String selection) {
-                                                                                    safeSetState(() => _model.txtMembrosEnderecosAddSelectedOption = selection);
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                  },
-                                                                                  fieldViewBuilder: (
-                                                                                    context,
-                                                                                    textEditingController,
-                                                                                    focusNode,
-                                                                                    onEditingComplete,
-                                                                                  ) {
-                                                                                    _model.txtMembrosEnderecosAddFocusNode = focusNode;
-
-                                                                                    _model.txtMembrosEnderecosAddTextController = textEditingController;
-                                                                                    return TextFormField(
-                                                                                      key: _model.txtMembrosEnderecosAddKey,
-                                                                                      controller: textEditingController,
-                                                                                      focusNode: focusNode,
-                                                                                      onEditingComplete: onEditingComplete,
-                                                                                      onChanged: (_) => EasyDebounce.debounce(
-                                                                                        '_model.txtMembrosEnderecosAddTextController',
-                                                                                        const Duration(milliseconds: 2000),
-                                                                                        () => safeSetState(() {}),
-                                                                                      ),
-                                                                                      autofocus: false,
-                                                                                      textCapitalization: TextCapitalization.sentences,
-                                                                                      obscureText: false,
-                                                                                      decoration: InputDecoration(
-                                                                                        isDense: true,
-                                                                                        labelText: FFLocalizations.of(context).getText(
-                                                                                          'uw8i01r5' /* Endereço Completo */,
-                                                                                        ),
-                                                                                        labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                        hintText: FFLocalizations.of(context).getText(
-                                                                                          '97izofel' /* Endereço Completo */,
-                                                                                        ),
-                                                                                        hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                        enabledBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(12.0),
-                                                                                        ),
-                                                                                        focusedBorder: OutlineInputBorder(
-                                                                                          borderSide: const BorderSide(
-                                                                                            color: Color(0x00000000),
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(12.0),
-                                                                                        ),
-                                                                                        errorBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).error,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(12.0),
-                                                                                        ),
-                                                                                        focusedErrorBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).error,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(12.0),
-                                                                                        ),
-                                                                                        filled: true,
-                                                                                        fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
-                                                                                        suffixIcon: _model.txtMembrosEnderecosAddTextController!.text.isNotEmpty
-                                                                                            ? InkWell(
-                                                                                                onTap: () async {
-                                                                                                  _model.txtMembrosEnderecosAddTextController?.clear();
-                                                                                                  safeSetState(() {});
-                                                                                                },
-                                                                                                child: Icon(
-                                                                                                  Icons.clear,
-                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                                  size: 24.0,
-                                                                                                ),
-                                                                                              )
-                                                                                            : null,
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                      validator: _model.txtMembrosEnderecosAddTextControllerValidator.asValidator(context),
-                                                                                    );
-                                                                                  },
+                                                                            FlutterFlowRadioButton(
+                                                                              options: [
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'tcv32o0m' /* Nascido no Brasil */,
                                                                                 ),
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'p05w4mzf' /* Naturalizado Brasileiro */,
+                                                                                ),
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  '78heuj7d' /* Estrangeiro */,
+                                                                                )
+                                                                              ].toList(),
+                                                                              onChanged: (val) => safeSetState(() {}),
+                                                                              controller: _model.rbNacionalidadeValueController ??= FormFieldController<String>(FFLocalizations.of(context).getText(
+                                                                                'cwp7l7r2' /* Nascido no Brasil */,
+                                                                              )),
+                                                                              optionHeight: 32.0,
+                                                                              textStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                  ),
+                                                                              selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
+                                                                              buttonPosition: RadioButtonPosition.left,
+                                                                              direction: Axis.horizontal,
+                                                                              radioButtonColor: FlutterFlowTheme.of(context).primary,
+                                                                              inactiveRadioButtonColor: FlutterFlowTheme.of(context).secondaryText,
+                                                                              toggleable: false,
+                                                                              horizontalAlignment: WrapAlignment.start,
+                                                                              verticalAlignment: WrapCrossAlignment.start,
+                                                                            ),
+                                                                            Expanded(
+                                                                              flex: 4,
+                                                                              child: FutureBuilder<List<EstadosRow>>(
+                                                                                future: EstadosTable().queryRows(
+                                                                                  queryFn: (q) => q.order('sigla', ascending: true),
+                                                                                ),
+                                                                                builder: (context, snapshot) {
+                                                                                  // Customize what your widget looks like when it's loading.
+                                                                                  if (!snapshot.hasData) {
+                                                                                    return Center(
+                                                                                      child: SizedBox(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        child: SpinKitFadingCircle(
+                                                                                          color: FlutterFlowTheme.of(context).tertiary,
+                                                                                          size: 50.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  }
+                                                                                  List<EstadosRow> ddwEstadoEstadosRowList = snapshot.data!;
+
+                                                                                  return FlutterFlowDropDown<int>(
+                                                                                    controller: _model.ddwEstadoValueController ??= FormFieldController<int>(
+                                                                                      _model.ddwEstadoValue ??= 0,
+                                                                                    ),
+                                                                                    options: List<int>.from(ddwEstadoEstadosRowList.map((e) => e.estadoId).toList()),
+                                                                                    optionLabels: ddwEstadoEstadosRowList.map((e) => e.sigla).withoutNulls.toList(),
+                                                                                    onChanged: (val) => safeSetState(() => _model.ddwEstadoValue = val),
+                                                                                    height: 60.0,
+                                                                                    searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                        ),
+                                                                                    searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        ),
+                                                                                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        ),
+                                                                                    hintText: FFLocalizations.of(context).getText(
+                                                                                      'yc6rcmtz' /* Estado */,
+                                                                                    ),
+                                                                                    searchHintText: FFLocalizations.of(context).getText(
+                                                                                      'f7rl31yp' /* Search... */,
+                                                                                    ),
+                                                                                    icon: Icon(
+                                                                                      Icons.keyboard_arrow_down_rounded,
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                      size: 24.0,
+                                                                                    ),
+                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    elevation: 2.0,
+                                                                                    borderColor: FlutterFlowTheme.of(context).alternate,
+                                                                                    borderWidth: 2.0,
+                                                                                    borderRadius: 8.0,
+                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                    hidesUnderline: true,
+                                                                                    isOverButton: false,
+                                                                                    isSearchable: true,
+                                                                                    isMultiSelect: false,
+                                                                                  );
+                                                                                },
                                                                               ),
                                                                             ),
-                                                                            FlutterFlowIconButton(
-                                                                              borderRadius: 30.0,
-                                                                              buttonSize: 40.0,
-                                                                              fillColor: FlutterFlowTheme.of(context).primary,
-                                                                              icon: Icon(
-                                                                                Icons.add_rounded,
-                                                                                color: FlutterFlowTheme.of(context).info,
-                                                                                size: 24.0,
-                                                                              ),
-                                                                              onPressed: () async {
-                                                                                logFirebaseEvent('MODAL_MEMBROS_ADD_add_rounded_ICN_ON_TAP');
-                                                                                if (_model.txtMembrosEnderecosAddTextController.text != '') {
-                                                                                  _model.addToMembrosEnderecos(_model.txtMembrosEnderecosAddTextController.text);
-                                                                                  safeSetState(() {});
-                                                                                } else {
-                                                                                  ScaffoldMessenger.of(context).showSnackBar(
-                                                                                    SnackBar(
-                                                                                      content: Text(
-                                                                                        'Informação de Endereço em branco !',
-                                                                                        style: TextStyle(
-                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                            Expanded(
+                                                                              flex: 4,
+                                                                              child: FutureBuilder<List<MunicipiosRow>>(
+                                                                                future: MunicipiosTable().queryRows(
+                                                                                  queryFn: (q) => q.eq(
+                                                                                    'estado_id',
+                                                                                    _model.ddwEstadoValue,
+                                                                                  ),
+                                                                                ),
+                                                                                builder: (context, snapshot) {
+                                                                                  // Customize what your widget looks like when it's loading.
+                                                                                  if (!snapshot.hasData) {
+                                                                                    return Center(
+                                                                                      child: SizedBox(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        child: SpinKitFadingCircle(
+                                                                                          color: FlutterFlowTheme.of(context).tertiary,
+                                                                                          size: 50.0,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
-                                                                                      backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                    );
+                                                                                  }
+                                                                                  List<MunicipiosRow> ddwMunicipioMunicipiosRowList = snapshot.data!;
+
+                                                                                  return FlutterFlowDropDown<int>(
+                                                                                    controller: _model.ddwMunicipioValueController ??= FormFieldController<int>(
+                                                                                      _model.ddwMunicipioValue ??= 0,
                                                                                     ),
+                                                                                    options: List<int>.from(ddwMunicipioMunicipiosRowList.map((e) => e.id).toList()),
+                                                                                    optionLabels: ddwMunicipioMunicipiosRowList.map((e) => e.nome).withoutNulls.toList(),
+                                                                                    onChanged: (val) => safeSetState(() => _model.ddwMunicipioValue = val),
+                                                                                    height: 60.0,
+                                                                                    searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                        ),
+                                                                                    searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        ),
+                                                                                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        ),
+                                                                                    hintText: FFLocalizations.of(context).getText(
+                                                                                      'fkmdz2kr' /* Municipio */,
+                                                                                    ),
+                                                                                    searchHintText: FFLocalizations.of(context).getText(
+                                                                                      's9xkiwbl' /* Search... */,
+                                                                                    ),
+                                                                                    icon: Icon(
+                                                                                      Icons.keyboard_arrow_down_rounded,
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                      size: 24.0,
+                                                                                    ),
+                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    elevation: 2.0,
+                                                                                    borderColor: FlutterFlowTheme.of(context).alternate,
+                                                                                    borderWidth: 2.0,
+                                                                                    borderRadius: 8.0,
+                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                    hidesUnderline: true,
+                                                                                    isOverButton: false,
+                                                                                    isSearchable: true,
+                                                                                    isMultiSelect: false,
                                                                                   );
-                                                                                }
-                                                                              },
+                                                                                },
+                                                                              ),
                                                                             ),
                                                                           ].divide(const SizedBox(width: 10.0)),
+                                                                        ),
+                                                                        Expanded(
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children:
+                                                                                [
+                                                                              Expanded(
+                                                                                flex: 1,
+                                                                                child: FlutterFlowPlacePicker(
+                                                                                  iOSGoogleMapsApiKey: 'AIzaSyAXl9JxuELU_e72s3EGlFpYxDl9qYfBbhk',
+                                                                                  androidGoogleMapsApiKey: 'AIzaSyBcGx3xp4aFRIyFf4Y_XZkncYwgi0sz0wQ',
+                                                                                  webGoogleMapsApiKey: 'AIzaSyDHKjsC9REXC2lUer2xphTKmRXZNH2p00Q',
+                                                                                  onSelect: (place) async {
+                                                                                    safeSetState(() => _model.placePickerEnderecoValue = place);
+                                                                                  },
+                                                                                  defaultText: FFLocalizations.of(context).getText(
+                                                                                    'sc0bhfzq' /*  */,
+                                                                                  ),
+                                                                                  icon: Icon(
+                                                                                    Icons.place,
+                                                                                    color: FlutterFlowTheme.of(context).info,
+                                                                                    size: 24.0,
+                                                                                  ),
+                                                                                  buttonOptions: FFButtonOptions(
+                                                                                    width: 50.0,
+                                                                                    height: 60.0,
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                          color: FlutterFlowTheme.of(context).info,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderSide: const BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 1.0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(100.0),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              InkWell(
+                                                                                splashColor: Colors.transparent,
+                                                                                focusColor: Colors.transparent,
+                                                                                hoverColor: Colors.transparent,
+                                                                                highlightColor: Colors.transparent,
+                                                                                onTap: () async {
+                                                                                  logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_xr7g9mod_ON_TAP');
+                                                                                  safeSetState(() {
+                                                                                    _model.txtMembrosEnderecosAddTextController?.text = _model.placePickerEnderecoValue.address;
+                                                                                    _model.txtMembrosEnderecosAddTextController?.selection = TextSelection.collapsed(offset: _model.txtMembrosEnderecosAddTextController!.text.length);
+                                                                                  });
+                                                                                },
+                                                                                child: Icon(
+                                                                                  Icons.arrow_forward_rounded,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  size: 36.0,
+                                                                                ),
+                                                                              ),
+                                                                              Expanded(
+                                                                                flex: 15,
+                                                                                child: SizedBox(
+                                                                                  width: 200.0,
+                                                                                  child: TextFormField(
+                                                                                    controller: _model.txtMembrosEnderecosAddTextController,
+                                                                                    focusNode: _model.txtMembrosEnderecosAddFocusNode,
+                                                                                    onChanged: (_) => EasyDebounce.debounce(
+                                                                                      '_model.txtMembrosEnderecosAddTextController',
+                                                                                      const Duration(milliseconds: 2000),
+                                                                                      () => safeSetState(() {}),
+                                                                                    ),
+                                                                                    autofocus: false,
+                                                                                    textCapitalization: TextCapitalization.sentences,
+                                                                                    obscureText: false,
+                                                                                    decoration: InputDecoration(
+                                                                                      isDense: true,
+                                                                                      labelText: FFLocalizations.of(context).getText(
+                                                                                        'uw8i01r5' /* Endereço Completo */,
+                                                                                      ),
+                                                                                      labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                          ),
+                                                                                      hintText: FFLocalizations.of(context).getText(
+                                                                                        '97izofel' /* Endereço Completo */,
+                                                                                      ),
+                                                                                      hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                          ),
+                                                                                      enabledBorder: OutlineInputBorder(
+                                                                                        borderSide: BorderSide(
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      focusedBorder: OutlineInputBorder(
+                                                                                        borderSide: const BorderSide(
+                                                                                          color: Color(0x00000000),
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      errorBorder: OutlineInputBorder(
+                                                                                        borderSide: BorderSide(
+                                                                                          color: FlutterFlowTheme.of(context).error,
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      focusedErrorBorder: OutlineInputBorder(
+                                                                                        borderSide: BorderSide(
+                                                                                          color: FlutterFlowTheme.of(context).error,
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      filled: true,
+                                                                                      fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                      contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                      suffixIcon: _model.txtMembrosEnderecosAddTextController!.text.isNotEmpty
+                                                                                          ? InkWell(
+                                                                                              onTap: () async {
+                                                                                                _model.txtMembrosEnderecosAddTextController?.clear();
+                                                                                                safeSetState(() {});
+                                                                                              },
+                                                                                              child: Icon(
+                                                                                                Icons.clear,
+                                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                size: 24.0,
+                                                                                              ),
+                                                                                            )
+                                                                                          : null,
+                                                                                    ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        ),
+                                                                                    cursorColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                    validator: _model.txtMembrosEnderecosAddTextControllerValidator.asValidator(context),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              FlutterFlowIconButton(
+                                                                                borderRadius: 30.0,
+                                                                                buttonSize: 40.0,
+                                                                                fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                icon: Icon(
+                                                                                  Icons.add_rounded,
+                                                                                  color: FlutterFlowTheme.of(context).info,
+                                                                                  size: 24.0,
+                                                                                ),
+                                                                                onPressed: () async {
+                                                                                  logFirebaseEvent('MODAL_MEMBROS_ADD_add_rounded_ICN_ON_TAP');
+                                                                                  if (_model.txtMembrosEnderecosAddTextController.text != '') {
+                                                                                    _model.addToMembrosEnderecos(_model.txtMembrosEnderecosAddTextController.text);
+                                                                                    _model.addToMembrosLatLng(_model.placePickerEnderecoValue.latLng);
+                                                                                    _model.updatePage(() {});
+                                                                                    await _model.googleMapsController.future.then(
+                                                                                      (c) => c.animateCamera(
+                                                                                        CameraUpdate.newLatLng(_model.membrosLatLng.last.toGoogleMaps()),
+                                                                                      ),
+                                                                                    );
+                                                                                  } else {
+                                                                                    ScaffoldMessenger.of(context).showSnackBar(
+                                                                                      SnackBar(
+                                                                                        content: Text(
+                                                                                          'Informação de Endereço em branco !',
+                                                                                          style: TextStyle(
+                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                          ),
+                                                                                        ),
+                                                                                        duration: const Duration(milliseconds: 4000),
+                                                                                        backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                      ),
+                                                                                    );
+                                                                                  }
+                                                                                },
+                                                                              ),
+                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                          ),
                                                                         ),
                                                                         Builder(
                                                                           builder:
@@ -2304,9 +2580,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                         child: Text(
                                                                                                           listMembrosEnderecosItem,
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -2321,6 +2598,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                         onTap: () async {
                                                                                                           logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_9l4zc2l7_ON_TAP');
                                                                                                           _model.removeAtIndexFromMembrosEnderecos(listMembrosEnderecosIndex);
+                                                                                                          _model.removeAtIndexFromMembrosLatLng(listMembrosEnderecosIndex);
                                                                                                           safeSetState(() {});
                                                                                                         },
                                                                                                         child: Icon(
@@ -2344,184 +2622,56 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             );
                                                                           },
                                                                         ),
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children:
-                                                                              [
-                                                                            FlutterFlowRadioButton(
-                                                                              options: [
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '7tegc2gd' /* Nascido no Brasil */,
-                                                                                ),
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'j7uzqdk2' /* Naturalizado Brasileiro */,
-                                                                                ),
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'usfossjo' /* Estrangeiro */,
-                                                                                )
-                                                                              ].toList(),
-                                                                              onChanged: (val) => safeSetState(() {}),
-                                                                              controller: _model.rbNacionalidadeValueController ??= FormFieldController<String>(FFLocalizations.of(context).getText(
-                                                                                'ob87x68k' /* Nascido no Brasil */,
-                                                                              )),
-                                                                              optionHeight: 32.0,
-                                                                              textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                    letterSpacing: 0.0,
+                                                                        SingleChildScrollView(
+                                                                          scrollDirection:
+                                                                              Axis.horizontal,
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children:
+                                                                                [
+                                                                              Expanded(
+                                                                                child: Container(
+                                                                                  width: 1084.0,
+                                                                                  height: 377.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    borderRadius: BorderRadius.circular(12.0),
+                                                                                    border: Border.all(
+                                                                                      color: FlutterFlowTheme.of(context).alternate,
+                                                                                      width: 2.0,
+                                                                                    ),
                                                                                   ),
-                                                                              selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                    letterSpacing: 0.0,
-                                                                                  ),
-                                                                              buttonPosition: RadioButtonPosition.left,
-                                                                              direction: Axis.horizontal,
-                                                                              radioButtonColor: FlutterFlowTheme.of(context).primary,
-                                                                              inactiveRadioButtonColor: FlutterFlowTheme.of(context).secondaryText,
-                                                                              toggleable: false,
-                                                                              horizontalAlignment: WrapAlignment.start,
-                                                                              verticalAlignment: WrapCrossAlignment.start,
-                                                                            ),
-                                                                            Expanded(
-                                                                              flex: 4,
-                                                                              child: FutureBuilder<List<EstadosRow>>(
-                                                                                future: EstadosTable().queryRows(
-                                                                                  queryFn: (q) => q.order('sigla', ascending: true),
-                                                                                ),
-                                                                                builder: (context, snapshot) {
-                                                                                  // Customize what your widget looks like when it's loading.
-                                                                                  if (!snapshot.hasData) {
-                                                                                    return Center(
-                                                                                      child: SizedBox(
-                                                                                        width: 50.0,
-                                                                                        height: 50.0,
-                                                                                        child: CircularProgressIndicator(
-                                                                                          valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                            FlutterFlowTheme.of(context).primary,
+                                                                                  child: FlutterFlowGoogleMap(
+                                                                                    controller: _model.googleMapsController,
+                                                                                    onCameraIdle: (latLng) => _model.googleMapsCenter = latLng,
+                                                                                    initialLocation: _model.googleMapsCenter ??= const LatLng(-8.77, -70.55),
+                                                                                    markers: _model.membrosLatLng
+                                                                                        .map(
+                                                                                          (marker) => FlutterFlowMarker(
+                                                                                            marker.serialize(),
+                                                                                            marker,
                                                                                           ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    );
-                                                                                  }
-                                                                                  List<EstadosRow> ddwEstadoEstadosRowList = snapshot.data!;
-
-                                                                                  return FlutterFlowDropDown<int>(
-                                                                                    controller: _model.ddwEstadoValueController ??= FormFieldController<int>(
-                                                                                      _model.ddwEstadoValue ??= 0,
-                                                                                    ),
-                                                                                    options: List<int>.from(ddwEstadoEstadosRowList.map((e) => e.estadoId).toList()),
-                                                                                    optionLabels: ddwEstadoEstadosRowList.map((e) => e.sigla).withoutNulls.toList(),
-                                                                                    onChanged: (val) => safeSetState(() => _model.ddwEstadoValue = val),
-                                                                                    height: 60.0,
-                                                                                    searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    hintText: FFLocalizations.of(context).getText(
-                                                                                      'baq5xyzk' /* Estado */,
-                                                                                    ),
-                                                                                    searchHintText: FFLocalizations.of(context).getText(
-                                                                                      '8h8sdizg' /* Search... */,
-                                                                                    ),
-                                                                                    icon: Icon(
-                                                                                      Icons.keyboard_arrow_down_rounded,
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                      size: 24.0,
-                                                                                    ),
-                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    elevation: 2.0,
-                                                                                    borderColor: FlutterFlowTheme.of(context).alternate,
-                                                                                    borderWidth: 2.0,
-                                                                                    borderRadius: 8.0,
-                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                    hidesUnderline: true,
-                                                                                    isOverButton: false,
-                                                                                    isSearchable: true,
-                                                                                    isMultiSelect: false,
-                                                                                  );
-                                                                                },
-                                                                              ),
-                                                                            ),
-                                                                            Expanded(
-                                                                              flex: 4,
-                                                                              child: FutureBuilder<List<MunicipiosRow>>(
-                                                                                future: MunicipiosTable().queryRows(
-                                                                                  queryFn: (q) => q.eq(
-                                                                                    'estado_id',
-                                                                                    _model.ddwEstadoValue,
+                                                                                        )
+                                                                                        .toList(),
+                                                                                    markerColor: GoogleMarkerColor.violet,
+                                                                                    mapType: MapType.normal,
+                                                                                    style: GoogleMapStyle.standard,
+                                                                                    initialZoom: 5.0,
+                                                                                    allowInteraction: true,
+                                                                                    allowZoom: true,
+                                                                                    showZoomControls: true,
+                                                                                    showLocation: true,
+                                                                                    showCompass: false,
+                                                                                    showMapToolbar: false,
+                                                                                    showTraffic: false,
+                                                                                    centerMapOnMarkerTap: true,
                                                                                   ),
                                                                                 ),
-                                                                                builder: (context, snapshot) {
-                                                                                  // Customize what your widget looks like when it's loading.
-                                                                                  if (!snapshot.hasData) {
-                                                                                    return Center(
-                                                                                      child: SizedBox(
-                                                                                        width: 50.0,
-                                                                                        height: 50.0,
-                                                                                        child: CircularProgressIndicator(
-                                                                                          valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                            FlutterFlowTheme.of(context).primary,
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    );
-                                                                                  }
-                                                                                  List<MunicipiosRow> ddwMunicipioMunicipiosRowList = snapshot.data!;
-
-                                                                                  return FlutterFlowDropDown<int>(
-                                                                                    controller: _model.ddwMunicipioValueController ??= FormFieldController<int>(
-                                                                                      _model.ddwMunicipioValue ??= 0,
-                                                                                    ),
-                                                                                    options: List<int>.from(ddwMunicipioMunicipiosRowList.map((e) => e.id).toList()),
-                                                                                    optionLabels: ddwMunicipioMunicipiosRowList.map((e) => e.nome).withoutNulls.toList(),
-                                                                                    onChanged: (val) => safeSetState(() => _model.ddwMunicipioValue = val),
-                                                                                    height: 60.0,
-                                                                                    searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    hintText: FFLocalizations.of(context).getText(
-                                                                                      'l7659gs2' /* Municipio */,
-                                                                                    ),
-                                                                                    searchHintText: FFLocalizations.of(context).getText(
-                                                                                      'd6sdnxoa' /* Search... */,
-                                                                                    ),
-                                                                                    icon: Icon(
-                                                                                      Icons.keyboard_arrow_down_rounded,
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                      size: 24.0,
-                                                                                    ),
-                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    elevation: 2.0,
-                                                                                    borderColor: FlutterFlowTheme.of(context).alternate,
-                                                                                    borderWidth: 2.0,
-                                                                                    borderRadius: 8.0,
-                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                    hidesUnderline: true,
-                                                                                    isOverButton: false,
-                                                                                    isSearchable: true,
-                                                                                    isMultiSelect: false,
-                                                                                  );
-                                                                                },
                                                                               ),
-                                                                            ),
-                                                                          ].divide(const SizedBox(width: 10.0)),
+                                                                            ].divide(const SizedBox(width: 10.0)),
+                                                                          ),
                                                                         ),
                                                                         Row(
                                                                           mainAxisSize:
@@ -2531,133 +2681,87 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             Expanded(
                                                                               child: SizedBox(
                                                                                 width: MediaQuery.sizeOf(context).width * 1.0,
-                                                                                child: Autocomplete<String>(
-                                                                                  initialValue: const TextEditingValue(),
-                                                                                  optionsBuilder: (textEditingValue) {
-                                                                                    if (textEditingValue.text == '') {
-                                                                                      return const Iterable<String>.empty();
-                                                                                    }
-                                                                                    return [
-                                                                                      FFLocalizations.of(context).getText(
-                                                                                        'lz0njodx' /* Option 1 */,
-                                                                                      )
-                                                                                    ].where((option) {
-                                                                                      final lowercaseOption = option.toLowerCase();
-                                                                                      return lowercaseOption.contains(textEditingValue.text.toLowerCase());
-                                                                                    });
-                                                                                  },
-                                                                                  optionsViewBuilder: (context, onSelected, options) {
-                                                                                    return AutocompleteOptionsList(
-                                                                                      textFieldKey: _model.txtMembroHistoricoKey,
-                                                                                      textController: _model.txtMembroHistoricoTextController!,
-                                                                                      options: options.toList(),
-                                                                                      onSelected: onSelected,
-                                                                                      textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      textHighlightStyle: const TextStyle(),
-                                                                                      elevation: 4.0,
-                                                                                      optionBackgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      optionHighlightColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      maxHeight: 200.0,
-                                                                                    );
-                                                                                  },
-                                                                                  onSelected: (String selection) {
-                                                                                    safeSetState(() => _model.txtMembroHistoricoSelectedOption = selection);
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                  },
-                                                                                  fieldViewBuilder: (
-                                                                                    context,
-                                                                                    textEditingController,
-                                                                                    focusNode,
-                                                                                    onEditingComplete,
-                                                                                  ) {
-                                                                                    _model.txtMembroHistoricoFocusNode = focusNode;
-
-                                                                                    _model.txtMembroHistoricoTextController = textEditingController;
-                                                                                    return TextFormField(
-                                                                                      key: _model.txtMembroHistoricoKey,
-                                                                                      controller: textEditingController,
-                                                                                      focusNode: focusNode,
-                                                                                      onEditingComplete: onEditingComplete,
-                                                                                      onChanged: (_) => EasyDebounce.debounce(
-                                                                                        '_model.txtMembroHistoricoTextController',
-                                                                                        const Duration(milliseconds: 2000),
-                                                                                        () => safeSetState(() {}),
+                                                                                child: TextFormField(
+                                                                                  controller: _model.txtMembroHistoricoTextController,
+                                                                                  focusNode: _model.txtMembroHistoricoFocusNode,
+                                                                                  onChanged: (_) => EasyDebounce.debounce(
+                                                                                    '_model.txtMembroHistoricoTextController',
+                                                                                    const Duration(milliseconds: 2000),
+                                                                                    () => safeSetState(() {}),
+                                                                                  ),
+                                                                                  autofocus: false,
+                                                                                  textCapitalization: TextCapitalization.words,
+                                                                                  obscureText: false,
+                                                                                  decoration: InputDecoration(
+                                                                                    labelText: FFLocalizations.of(context).getText(
+                                                                                      'awnrzzus' /* Histórico */,
+                                                                                    ),
+                                                                                    labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                        ),
+                                                                                    alignLabelWithHint: true,
+                                                                                    hintText: FFLocalizations.of(context).getText(
+                                                                                      'o7r2rdc8' /* Histórico */,
+                                                                                    ),
+                                                                                    hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                        ),
+                                                                                    enabledBorder: OutlineInputBorder(
+                                                                                      borderSide: BorderSide(
+                                                                                        color: FlutterFlowTheme.of(context).alternate,
+                                                                                        width: 2.0,
                                                                                       ),
-                                                                                      autofocus: false,
-                                                                                      textCapitalization: TextCapitalization.words,
-                                                                                      obscureText: false,
-                                                                                      decoration: InputDecoration(
-                                                                                        labelText: FFLocalizations.of(context).getText(
-                                                                                          'awnrzzus' /* Histórico */,
-                                                                                        ),
-                                                                                        labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                        alignLabelWithHint: true,
-                                                                                        hintText: FFLocalizations.of(context).getText(
-                                                                                          'o7r2rdc8' /* Histórico */,
-                                                                                        ),
-                                                                                        hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                        enabledBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(12.0),
-                                                                                        ),
-                                                                                        focusedBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(12.0),
-                                                                                        ),
-                                                                                        errorBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).error,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(12.0),
-                                                                                        ),
-                                                                                        focusedErrorBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).error,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(12.0),
-                                                                                        ),
-                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
-                                                                                        suffixIcon: _model.txtMembroHistoricoTextController!.text.isNotEmpty
-                                                                                            ? InkWell(
-                                                                                                onTap: () async {
-                                                                                                  _model.txtMembroHistoricoTextController?.clear();
-                                                                                                  safeSetState(() {});
-                                                                                                },
-                                                                                                child: Icon(
-                                                                                                  Icons.clear,
-                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                                  size: 24.0,
-                                                                                                ),
-                                                                                              )
-                                                                                            : null,
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    focusedBorder: OutlineInputBorder(
+                                                                                      borderSide: BorderSide(
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        width: 2.0,
                                                                                       ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      maxLines: 20,
-                                                                                      keyboardType: TextInputType.multiline,
-                                                                                      cursorColor: FlutterFlowTheme.of(context).primary,
-                                                                                      validator: _model.txtMembroHistoricoTextControllerValidator.asValidator(context),
-                                                                                    );
-                                                                                  },
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    errorBorder: OutlineInputBorder(
+                                                                                      borderSide: BorderSide(
+                                                                                        color: FlutterFlowTheme.of(context).error,
+                                                                                        width: 2.0,
+                                                                                      ),
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    focusedErrorBorder: OutlineInputBorder(
+                                                                                      borderSide: BorderSide(
+                                                                                        color: FlutterFlowTheme.of(context).error,
+                                                                                        width: 2.0,
+                                                                                      ),
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                                                                                    suffixIcon: _model.txtMembroHistoricoTextController!.text.isNotEmpty
+                                                                                        ? InkWell(
+                                                                                            onTap: () async {
+                                                                                              _model.txtMembroHistoricoTextController?.clear();
+                                                                                              safeSetState(() {});
+                                                                                            },
+                                                                                            child: Icon(
+                                                                                              Icons.clear,
+                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                              size: 24.0,
+                                                                                            ),
+                                                                                          )
+                                                                                        : null,
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                        letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                      ),
+                                                                                  maxLines: 3,
+                                                                                  keyboardType: TextInputType.multiline,
+                                                                                  cursorColor: FlutterFlowTheme.of(context).primary,
+                                                                                  validator: _model.txtMembroHistoricoTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -2719,9 +2823,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           .labelMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Plus Jakarta Sans',
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2767,10 +2873,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -2791,16 +2896,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwMembroFaccaoValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         'qrs0yx4b' /* Facções */,
@@ -2858,8 +2966,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       options: options.toList(),
                                                                                       onSelected: onSelected,
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textHighlightStyle: const TextStyle(),
                                                                                       elevation: 4.0,
@@ -2898,16 +3007,18 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           'wkak4lxs' /* Batismo */,
                                                                                         ),
                                                                                         labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                             ),
                                                                                         alignLabelWithHint: true,
                                                                                         hintText: FFLocalizations.of(context).getText(
                                                                                           'pm0rvser' /* Batismo */,
                                                                                         ),
                                                                                         hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                             ),
                                                                                         enabledBorder: OutlineInputBorder(
                                                                                           borderSide: BorderSide(
@@ -2954,8 +3065,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             : null,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                       validator: _model.txtFaccaoBastismoTextControllerValidator.asValidator(context),
@@ -2980,16 +3092,18 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'v5ktssho' /* Local do Batismo */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     alignLabelWithHint: true,
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       '344g39wc' /* Local do Batismo */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -3036,8 +3150,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtFacaoLocalBastismoTextControllerValidator.asValidator(context),
@@ -3067,16 +3182,18 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'cteddjhn' /* Padrinho */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     alignLabelWithHint: true,
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       'zntstdx4' /* Padrinho */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -3123,8 +3240,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtMembrosFaccaoPadrinhoTextControllerValidator.asValidator(context),
@@ -3147,16 +3265,18 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'uylgtxfb' /* Senha */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     alignLabelWithHint: true,
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       'h7acv992' /* Senha */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -3203,8 +3323,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtMembroFaccaoSenhaTextControllerValidator.asValidator(context),
@@ -3230,10 +3351,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -3249,16 +3369,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwMembroFaccaoCargoAtualValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         '5xrtyank' /* Cargo atual */,
@@ -3298,10 +3421,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -3317,16 +3439,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwMembroFaccaoCargoAnteriorValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         'uhi29t9v' /* Cargo anterior */,
@@ -3373,10 +3498,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -3392,16 +3516,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwFaccaoFuncaoAtualValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         '0c8h6wz9' /* Função atual */,
@@ -3441,10 +3568,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -3460,16 +3586,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwFaccaoFuncaoAnteriorValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         '8c2yoabs' /* Função anterior */,
@@ -3520,15 +3649,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'm25toomj' /* Três últimos locais onde estev... */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       'xroteapo' /* Três últimos locais onde estev... */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
@@ -3575,8 +3706,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         : null,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtFaccaoTresLocaisAddTextControllerValidator.asValidator(context),
@@ -3661,8 +3793,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                             childenTresLocaisItem,
                                                                                                             textAlign: TextAlign.center,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                 ),
                                                                                                           )),
                                                                                                         ),
@@ -3718,10 +3851,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -3737,16 +3869,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwFaccaoIntegrouValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         '8uf1jitv' /* Facção que integrou */,
@@ -3786,10 +3921,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -3805,16 +3939,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwFaccaoAliadaValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         '4i6g2oa6' /* Facção aliada */,
@@ -3861,10 +3998,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         child: SizedBox(
                                                                                           width: 50.0,
                                                                                           height: 50.0,
-                                                                                          child: CircularProgressIndicator(
-                                                                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                              FlutterFlowTheme.of(context).primary,
-                                                                                            ),
+                                                                                          child: SpinKitFadingCircle(
+                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -3880,16 +4016,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwFaccaoInimigaValue = val),
                                                                                       height: 60.0,
                                                                                       searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                       searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         '2rfuge4k' /* Facção Inimiga */,
@@ -3972,8 +4111,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -4009,16 +4149,18 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 'ehpi1bdt' /* Procedimento */,
                                                                               ),
                                                                               labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                               alignLabelWithHint: true,
                                                                               hintText: FFLocalizations.of(context).getText(
                                                                                 'cqb8a5yu' /* Procedimento */,
                                                                               ),
                                                                               hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                               enabledBorder: OutlineInputBorder(
                                                                                 borderSide: BorderSide(
@@ -4065,8 +4207,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   : null,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                             keyboardType:
                                                                                 TextInputType.number,
@@ -4102,16 +4245,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             height:
                                                                                 60.0,
                                                                             searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                 ),
                                                                             searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                             textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                             hintText:
                                                                                 FFLocalizations.of(context).getText(
@@ -4187,16 +4333,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             height:
                                                                                 60.0,
                                                                             searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                 ),
                                                                             searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                             textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                             hintText:
                                                                                 FFLocalizations.of(context).getText(
@@ -4266,16 +4415,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             height:
                                                                                 60.0,
                                                                             searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                 ),
                                                                             searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                             textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                             hintText:
                                                                                 FFLocalizations.of(context).getText(
@@ -4341,16 +4493,18 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 'kkjjfns6' /* Data do Procedimento */,
                                                                               ),
                                                                               labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                               alignLabelWithHint: true,
                                                                               hintText: FFLocalizations.of(context).getText(
                                                                                 'y539pnv4' /* Data do Procedimento */,
                                                                               ),
                                                                               hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                               enabledBorder: OutlineInputBorder(
                                                                                 borderSide: BorderSide(
@@ -4397,8 +4551,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   : null,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                             keyboardType:
                                                                                 TextInputType.datetime,
@@ -4442,10 +4597,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   headerBackgroundColor: FlutterFlowTheme.of(context).primary,
                                                                                   headerForegroundColor: FlutterFlowTheme.of(context).info,
                                                                                   headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                        fontFamily: 'Outfit',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                         fontSize: 32.0,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
                                                                                       ),
                                                                                   pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
@@ -4532,9 +4688,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).overlay0,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                             elevation:
                                                                                 0.0,
@@ -4587,9 +4744,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   color: Colors.white,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                             elevation:
                                                                                 0.0,
@@ -4669,8 +4827,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         'g3vpoxn0' /* Procedimento */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -4688,8 +4847,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         '6vsm4hcv' /* Unidade */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -4709,8 +4869,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           '1rnrt2ya' /* Tipo de Procedimento: */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -4731,8 +4892,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           '7esylq1a' /* Crime */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -4754,8 +4916,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           '8m6o6goq' /* Data */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -4822,8 +4985,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                         child: Text(
                                                                                                           childrenProcedimentosItem.procedimentoNo,
                                                                                                           style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -4847,8 +5011,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                             child: Text(
                                                                                                               childrenProcedimentosItem.unidade,
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                     letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                   ),
                                                                                                             ),
                                                                                                           ),
@@ -4866,9 +5031,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                           child: Text(
                                                                                                             childrenProcedimentosItem.procedimentoTipo,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ),
@@ -4884,9 +5050,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                           child: Text(
                                                                                                             childrenProcedimentosItem.crime,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ),
@@ -4917,8 +5084,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                                     locale: FFLocalizations.of(context).languageCode,
                                                                                                                   ),
                                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                         letterSpacing: 0.0,
+                                                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                       ),
                                                                                                                 ),
                                                                                                               ),
@@ -5017,8 +5185,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               '50bd7mi1' /* Informe os dados sobre os Proc... */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -5047,13 +5216,15 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   'ig1tpcu8' /* Nº da ação Penal */,
                                                                                 ),
                                                                                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                     ),
                                                                                 alignLabelWithHint: true,
                                                                                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                     ),
                                                                                 enabledBorder: OutlineInputBorder(
                                                                                   borderSide: BorderSide(
@@ -5101,8 +5272,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     : null,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               keyboardType: TextInputType.number,
                                                                               cursorColor: FlutterFlowTheme.of(context).primary,
@@ -5132,16 +5304,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               onChanged: (val) => safeSetState(() => _model.ddwProcessoVaraValue = val),
                                                                               height: 60.0,
                                                                               searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                               searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               hintText: FFLocalizations.of(context).getText(
                                                                                 '52tqxh7t' /* Vara */,
@@ -5196,16 +5371,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               onChanged: (val) => safeSetState(() => _model.ddwProcessoSituacaoJuridicaValue = val),
                                                                               height: 60.0,
                                                                               searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                               searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               hintText: FFLocalizations.of(context).getText(
                                                                                 'njzw806d' /* Situação jurídica */,
@@ -5250,16 +5428,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               onChanged: (val) => safeSetState(() => _model.ddwProcessoRegimeValue = val),
                                                                               height: 60.0,
                                                                               searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                               searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               hintText: FFLocalizations.of(context).getText(
                                                                                 'gjnab6i2' /* Regime */,
@@ -5308,16 +5489,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               onChanged: (val) => safeSetState(() => _model.ddwProcessoSituacaoReuValue = val),
                                                                               height: 60.0,
                                                                               searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                   ),
                                                                               searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               hintText: FFLocalizations.of(context).getText(
                                                                                 'whrvcs43' /* Situação réu */,
@@ -5374,9 +5558,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).overlay0,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
                                                                               elevation: 0.0,
                                                                               borderSide: BorderSide(
@@ -5415,9 +5600,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: Colors.white,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
                                                                               elevation: 0.0,
                                                                               borderRadius: BorderRadius.circular(12.0),
@@ -5495,8 +5681,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         'noufgwqe' /* Nº da ação Penal */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -5514,8 +5701,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         'xeuwwqlt' /* Vara */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -5535,8 +5723,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           '9t25cx0m' /* Situação jurídica */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -5557,8 +5746,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           'ptv8ms3l' /* Regime */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -5580,8 +5770,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           '670xv14p' /* Situação réu */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -5648,8 +5839,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                         child: Text(
                                                                                                           childrenProcessosItem.noAcaoPenal,
                                                                                                           style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -5673,8 +5865,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                             child: Text(
                                                                                                               childrenProcessosItem.vara,
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                     letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                   ),
                                                                                                             ),
                                                                                                           ),
@@ -5692,9 +5885,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                           child: Text(
                                                                                                             childrenProcessosItem.situacaoJuridica,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ),
@@ -5710,9 +5904,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                           child: Text(
                                                                                                             childrenProcessosItem.regime,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ),
@@ -5739,8 +5934,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                                   child: Text(
                                                                                                                     childrenProcessosItem.situacaoReu,
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                                           letterSpacing: 0.0,
+                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                         ),
                                                                                                                   ),
                                                                                                                 ),
@@ -5827,9 +6023,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Plus Jakarta Sans',
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                         ),
                                                                   ),
                                                                 ),
@@ -5847,211 +6045,161 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           .width *
                                                                       1.0,
                                                                   child:
-                                                                      Autocomplete<
-                                                                          String>(
-                                                                    initialValue:
-                                                                        const TextEditingValue(),
-                                                                    optionsBuilder:
-                                                                        (textEditingValue) {
-                                                                      if (textEditingValue
-                                                                              .text ==
-                                                                          '') {
-                                                                        return const Iterable<
-                                                                            String>.empty();
-                                                                      }
-                                                                      return [
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '18a7a4fk' /* Option 1 */,
-                                                                        )
-                                                                      ].where(
-                                                                          (option) {
-                                                                        final lowercaseOption =
-                                                                            option.toLowerCase();
-                                                                        return lowercaseOption.contains(textEditingValue
-                                                                            .text
-                                                                            .toLowerCase());
-                                                                      });
-                                                                    },
-                                                                    optionsViewBuilder:
-                                                                        (context,
-                                                                            onSelected,
-                                                                            options) {
-                                                                      return AutocompleteOptionsList(
-                                                                        textFieldKey:
-                                                                            _model.txtMembroAtuacaoKey,
-                                                                        textController:
-                                                                            _model.txtMembroAtuacaoTextController!,
-                                                                        options:
-                                                                            options.toList(),
-                                                                        onSelected:
-                                                                            onSelected,
-                                                                        textStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                        textHighlightStyle:
-                                                                            const TextStyle(),
-                                                                        elevation:
-                                                                            4.0,
-                                                                        optionBackgroundColor:
-                                                                            FlutterFlowTheme.of(context).primaryBackground,
-                                                                        optionHighlightColor:
-                                                                            FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        maxHeight:
-                                                                            200.0,
-                                                                      );
-                                                                    },
-                                                                    onSelected:
-                                                                        (String
-                                                                            selection) {
-                                                                      safeSetState(() =>
-                                                                          _model.txtMembroAtuacaoSelectedOption =
-                                                                              selection);
-                                                                      FocusScope.of(
+                                                                      TextFormField(
+                                                                    controller:
+                                                                        _model
+                                                                            .txtMembroAtuacaoTextController,
+                                                                    focusNode:
+                                                                        _model
+                                                                            .txtMembroAtuacaoFocusNode,
+                                                                    onChanged: (_) =>
+                                                                        EasyDebounce
+                                                                            .debounce(
+                                                                      '_model.txtMembroAtuacaoTextController',
+                                                                      const Duration(
+                                                                          milliseconds:
+                                                                              2000),
+                                                                      () => safeSetState(
+                                                                          () {}),
+                                                                    ),
+                                                                    autofocus:
+                                                                        false,
+                                                                    textCapitalization:
+                                                                        TextCapitalization
+                                                                            .words,
+                                                                    obscureText:
+                                                                        false,
+                                                                    decoration:
+                                                                        InputDecoration(
+                                                                      isDense:
+                                                                          true,
+                                                                      labelText:
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                        'ssjp267b' /* Atuação no Crime */,
+                                                                      ),
+                                                                      labelStyle: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .unfocus();
-                                                                    },
-                                                                    fieldViewBuilder:
-                                                                        (
-                                                                      context,
-                                                                      textEditingController,
-                                                                      focusNode,
-                                                                      onEditingComplete,
-                                                                    ) {
-                                                                      _model.txtMembroAtuacaoFocusNode =
-                                                                          focusNode;
-
-                                                                      _model.txtMembroAtuacaoTextController =
-                                                                          textEditingController;
-                                                                      return TextFormField(
-                                                                        key: _model
-                                                                            .txtMembroAtuacaoKey,
-                                                                        controller:
-                                                                            textEditingController,
-                                                                        focusNode:
-                                                                            focusNode,
-                                                                        onEditingComplete:
-                                                                            onEditingComplete,
-                                                                        onChanged:
-                                                                            (_) =>
-                                                                                EasyDebounce.debounce(
-                                                                          '_model.txtMembroAtuacaoTextController',
-                                                                          const Duration(
-                                                                              milliseconds: 2000),
-                                                                          () =>
-                                                                              safeSetState(() {}),
+                                                                          .labelMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                          ),
+                                                                      alignLabelWithHint:
+                                                                          true,
+                                                                      hintText:
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                        'dak0lg3s' /* Atuação no Crime */,
+                                                                      ),
+                                                                      hintStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                          ),
+                                                                      enabledBorder:
+                                                                          OutlineInputBorder(
+                                                                        borderSide:
+                                                                            BorderSide(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).alternate,
+                                                                          width:
+                                                                              2.0,
                                                                         ),
-                                                                        autofocus:
-                                                                            false,
-                                                                        textCapitalization:
-                                                                            TextCapitalization.words,
-                                                                        obscureText:
-                                                                            false,
-                                                                        decoration:
-                                                                            InputDecoration(
-                                                                          isDense:
-                                                                              true,
-                                                                          labelText:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            'ssjp267b' /* Atuação no Crime */,
-                                                                          ),
-                                                                          labelStyle: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                          alignLabelWithHint:
-                                                                              true,
-                                                                          hintText:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            'dak0lg3s' /* Atuação no Crime */,
-                                                                          ),
-                                                                          hintStyle: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                          enabledBorder:
-                                                                              OutlineInputBorder(
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).alternate,
-                                                                              width: 2.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          focusedBorder:
-                                                                              OutlineInputBorder(
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              width: 2.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          errorBorder:
-                                                                              OutlineInputBorder(
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                              width: 2.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          focusedErrorBorder:
-                                                                              OutlineInputBorder(
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                              width: 2.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              14.0,
-                                                                              24.0,
-                                                                              24.0,
-                                                                              24.0),
-                                                                          suffixIcon: _model.txtMembroAtuacaoTextController!.text.isNotEmpty
-                                                                              ? InkWell(
-                                                                                  onTap: () async {
-                                                                                    _model.txtMembroAtuacaoTextController?.clear();
-                                                                                    safeSetState(() {});
-                                                                                  },
-                                                                                  child: Icon(
-                                                                                    Icons.clear,
-                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                    size: 24.0,
-                                                                                  ),
-                                                                                )
-                                                                              : null,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(12.0),
+                                                                      ),
+                                                                      focusedBorder:
+                                                                          OutlineInputBorder(
+                                                                        borderSide:
+                                                                            BorderSide(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          width:
+                                                                              2.0,
                                                                         ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                        maxLines:
-                                                                            20,
-                                                                        keyboardType:
-                                                                            TextInputType.multiline,
-                                                                        cursorColor:
-                                                                            FlutterFlowTheme.of(context).primaryText,
-                                                                        validator: _model
-                                                                            .txtMembroAtuacaoTextControllerValidator
-                                                                            .asValidator(context),
-                                                                      );
-                                                                    },
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(12.0),
+                                                                      ),
+                                                                      errorBorder:
+                                                                          OutlineInputBorder(
+                                                                        borderSide:
+                                                                            BorderSide(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).error,
+                                                                          width:
+                                                                              2.0,
+                                                                        ),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(12.0),
+                                                                      ),
+                                                                      focusedErrorBorder:
+                                                                          OutlineInputBorder(
+                                                                        borderSide:
+                                                                            BorderSide(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).error,
+                                                                          width:
+                                                                              2.0,
+                                                                        ),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(12.0),
+                                                                      ),
+                                                                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          14.0,
+                                                                          24.0,
+                                                                          24.0,
+                                                                          24.0),
+                                                                      suffixIcon: _model
+                                                                              .txtMembroAtuacaoTextController!
+                                                                              .text
+                                                                              .isNotEmpty
+                                                                          ? InkWell(
+                                                                              onTap: () async {
+                                                                                _model.txtMembroAtuacaoTextController?.clear();
+                                                                                safeSetState(() {});
+                                                                              },
+                                                                              child: Icon(
+                                                                                Icons.clear,
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                            )
+                                                                          : null,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                        ),
+                                                                    maxLines:
+                                                                        20,
+                                                                    keyboardType:
+                                                                        TextInputType
+                                                                            .multiline,
+                                                                    cursorColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                    validator: _model
+                                                                        .txtMembroAtuacaoTextControllerValidator
+                                                                        .asValidator(
+                                                                            context),
                                                                   ),
                                                                 ),
                                                               ),
@@ -6104,13 +6252,15 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           .titleLarge
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Plus Jakarta Sans',
+                                                                                FlutterFlowTheme.of(context).titleLargeFamily,
                                                                             fontSize:
                                                                                 22.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                                                                           ),
                                                                     ),
                                                                     Align(
@@ -6147,237 +6297,166 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         .width *
                                                                     1.0,
                                                                 child:
-                                                                    Autocomplete<
-                                                                        String>(
-                                                                  initialValue:
-                                                                      const TextEditingValue(),
-                                                                  optionsBuilder:
-                                                                      (textEditingValue) {
-                                                                    if (textEditingValue
-                                                                            .text ==
-                                                                        '') {
-                                                                      return const Iterable<
-                                                                          String>.empty();
-                                                                    }
-                                                                    return [
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'taqpyut0' /* Option 1 */,
-                                                                      )
-                                                                    ].where(
-                                                                        (option) {
-                                                                      final lowercaseOption =
-                                                                          option
-                                                                              .toLowerCase();
-                                                                      return lowercaseOption.contains(textEditingValue
-                                                                          .text
-                                                                          .toLowerCase());
-                                                                    });
-                                                                  },
-                                                                  optionsViewBuilder:
-                                                                      (context,
-                                                                          onSelected,
-                                                                          options) {
-                                                                    return AutocompleteOptionsList(
-                                                                      textFieldKey:
-                                                                          _model
-                                                                              .txtMembroAlertaKey,
-                                                                      textController:
-                                                                          _model
-                                                                              .txtMembroAlertaTextController!,
-                                                                      options:
-                                                                          options
-                                                                              .toList(),
-                                                                      onSelected:
-                                                                          onSelected,
-                                                                      textStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Plus Jakarta Sans',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                      textHighlightStyle:
-                                                                          const TextStyle(),
-                                                                      elevation:
-                                                                          4.0,
-                                                                      optionBackgroundColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primaryBackground,
-                                                                      optionHighlightColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .secondaryBackground,
-                                                                      maxHeight:
-                                                                          200.0,
-                                                                    );
-                                                                  },
-                                                                  onSelected:
-                                                                      (String
-                                                                          selection) {
-                                                                    safeSetState(() =>
-                                                                        _model.txtMembroAlertaSelectedOption =
-                                                                            selection);
-                                                                    FocusScope.of(
+                                                                    TextFormField(
+                                                                  controller: _model
+                                                                      .txtMembroAlertaTextController,
+                                                                  focusNode: _model
+                                                                      .txtMembroAlertaFocusNode,
+                                                                  onChanged: (_) =>
+                                                                      EasyDebounce
+                                                                          .debounce(
+                                                                    '_model.txtMembroAlertaTextController',
+                                                                    const Duration(
+                                                                        milliseconds:
+                                                                            2000),
+                                                                    () => safeSetState(
+                                                                        () {}),
+                                                                  ),
+                                                                  autofocus:
+                                                                      false,
+                                                                  textCapitalization:
+                                                                      TextCapitalization
+                                                                          .words,
+                                                                  obscureText:
+                                                                      false,
+                                                                  decoration:
+                                                                      InputDecoration(
+                                                                    isDense:
+                                                                        true,
+                                                                    labelText: FFLocalizations.of(
                                                                             context)
-                                                                        .unfocus();
-                                                                  },
-                                                                  fieldViewBuilder:
-                                                                      (
-                                                                    context,
-                                                                    textEditingController,
-                                                                    focusNode,
-                                                                    onEditingComplete,
-                                                                  ) {
-                                                                    _model.txtMembroAlertaFocusNode =
-                                                                        focusNode;
-
-                                                                    _model.txtMembroAlertaTextController =
-                                                                        textEditingController;
-                                                                    return TextFormField(
-                                                                      key: _model
-                                                                          .txtMembroAlertaKey,
-                                                                      controller:
-                                                                          textEditingController,
-                                                                      focusNode:
-                                                                          focusNode,
-                                                                      onEditingComplete:
-                                                                          onEditingComplete,
-                                                                      onChanged:
-                                                                          (_) =>
-                                                                              EasyDebounce.debounce(
-                                                                        '_model.txtMembroAlertaTextController',
-                                                                        const Duration(
-                                                                            milliseconds:
-                                                                                2000),
-                                                                        () => safeSetState(
-                                                                            () {}),
+                                                                        .getText(
+                                                                      '29530mgy' /* Alerta */,
+                                                                    ),
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                        ),
+                                                                    alignLabelWithHint:
+                                                                        true,
+                                                                    hintText: FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'kx61gjir' /* Alerta */,
+                                                                    ),
+                                                                    hintStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                        ),
+                                                                    enabledBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .alternate,
+                                                                        width:
+                                                                            2.0,
                                                                       ),
-                                                                      autofocus:
-                                                                          false,
-                                                                      textCapitalization:
-                                                                          TextCapitalization
-                                                                              .words,
-                                                                      obscureText:
-                                                                          false,
-                                                                      decoration:
-                                                                          InputDecoration(
-                                                                        isDense:
-                                                                            true,
-                                                                        labelText:
-                                                                            FFLocalizations.of(context).getText(
-                                                                          '29530mgy' /* Alerta */,
-                                                                        ),
-                                                                        labelStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                        alignLabelWithHint:
-                                                                            true,
-                                                                        hintText:
-                                                                            FFLocalizations.of(context).getText(
-                                                                          'kx61gjir' /* Alerta */,
-                                                                        ),
-                                                                        hintStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                        enabledBorder:
-                                                                            OutlineInputBorder(
-                                                                          borderSide:
-                                                                              BorderSide(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).alternate,
-                                                                            width:
-                                                                                2.0,
-                                                                          ),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(12.0),
-                                                                        ),
-                                                                        focusedBorder:
-                                                                            OutlineInputBorder(
-                                                                          borderSide:
-                                                                              BorderSide(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            width:
-                                                                                2.0,
-                                                                          ),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(12.0),
-                                                                        ),
-                                                                        errorBorder:
-                                                                            OutlineInputBorder(
-                                                                          borderSide:
-                                                                              BorderSide(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).error,
-                                                                            width:
-                                                                                2.0,
-                                                                          ),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(12.0),
-                                                                        ),
-                                                                        focusedErrorBorder:
-                                                                            OutlineInputBorder(
-                                                                          borderSide:
-                                                                              BorderSide(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).error,
-                                                                            width:
-                                                                                2.0,
-                                                                          ),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(12.0),
-                                                                        ),
-                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              12.0),
+                                                                    ),
+                                                                    focusedBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        width:
+                                                                            2.0,
+                                                                      ),
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              12.0),
+                                                                    ),
+                                                                    errorBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .error,
+                                                                        width:
+                                                                            2.0,
+                                                                      ),
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              12.0),
+                                                                    ),
+                                                                    focusedErrorBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .error,
+                                                                        width:
+                                                                            2.0,
+                                                                      ),
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              12.0),
+                                                                    ),
+                                                                    contentPadding:
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             24.0,
                                                                             24.0,
                                                                             24.0),
-                                                                        suffixIcon: _model.txtMembroAlertaTextController!.text.isNotEmpty
-                                                                            ? InkWell(
-                                                                                onTap: () async {
-                                                                                  _model.txtMembroAlertaTextController?.clear();
-                                                                                  safeSetState(() {});
-                                                                                },
-                                                                                child: Icon(
-                                                                                  Icons.clear,
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  size: 24.0,
-                                                                                ),
-                                                                              )
-                                                                            : null,
+                                                                    suffixIcon: _model
+                                                                            .txtMembroAlertaTextController!
+                                                                            .text
+                                                                            .isNotEmpty
+                                                                        ? InkWell(
+                                                                            onTap:
+                                                                                () async {
+                                                                              _model.txtMembroAlertaTextController?.clear();
+                                                                              safeSetState(() {});
+                                                                            },
+                                                                            child:
+                                                                                Icon(
+                                                                              Icons.clear,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 24.0,
+                                                                            ),
+                                                                          )
+                                                                        : null,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                       ),
-                                                                      style: FlutterFlowTheme.of(
+                                                                  maxLines: 20,
+                                                                  keyboardType:
+                                                                      TextInputType
+                                                                          .multiline,
+                                                                  cursorColor:
+                                                                      FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Plus Jakarta Sans',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                      maxLines:
-                                                                          20,
-                                                                      keyboardType:
-                                                                          TextInputType
-                                                                              .multiline,
-                                                                      cursorColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primaryText,
-                                                                      validator: _model
-                                                                          .txtMembroAlertaTextControllerValidator
-                                                                          .asValidator(
-                                                                              context),
-                                                                    );
-                                                                  },
+                                                                          .primaryText,
+                                                                  validator: _model
+                                                                      .txtMembroAlertaTextControllerValidator
+                                                                      .asValidator(
+                                                                          context),
                                                                 ),
                                                               ),
                                                             ].divide(const SizedBox(
@@ -6433,10 +6512,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               'hg8tsf0e' /* Percentual  de validações dos ... */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   fontSize: 18.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.bold,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -6468,8 +6548,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     formatType: FormatType.percent,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                        fontFamily: 'Outfit',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -6519,10 +6600,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 'z911x2kd' /* Como foram validados os dados ... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     fontSize: 18.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6585,9 +6667,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   selectedChipStyle: ChipStyle(
                                                                                     backgroundColor: FlutterFlowTheme.of(context).primary,
                                                                                     textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                         ),
                                                                                     iconColor: FlutterFlowTheme.of(context).info,
                                                                                     iconSize: 16.0,
@@ -6597,9 +6680,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   unselectedChipStyle: ChipStyle(
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                     textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                         ),
                                                                                     iconColor: FlutterFlowTheme.of(context).secondaryText,
                                                                                     iconSize: 16.0,
@@ -6622,138 +6706,93 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
                                                                                     child: SizedBox(
                                                                                       width: MediaQuery.sizeOf(context).width * 1.0,
-                                                                                      child: Autocomplete<String>(
-                                                                                        initialValue: const TextEditingValue(),
-                                                                                        optionsBuilder: (textEditingValue) {
-                                                                                          if (textEditingValue.text == '') {
-                                                                                            return const Iterable<String>.empty();
-                                                                                          }
-                                                                                          return [
-                                                                                            FFLocalizations.of(context).getText(
-                                                                                              'e34igmbj' /* Option 1 */,
-                                                                                            )
-                                                                                          ].where((option) {
-                                                                                            final lowercaseOption = option.toLowerCase();
-                                                                                            return lowercaseOption.contains(textEditingValue.text.toLowerCase());
-                                                                                          });
-                                                                                        },
-                                                                                        optionsViewBuilder: (context, onSelected, options) {
-                                                                                          return AutocompleteOptionsList(
-                                                                                            textFieldKey: _model.txtValidacoesObservacoesKey,
-                                                                                            textController: _model.txtValidacoesObservacoesTextController!,
-                                                                                            options: options.toList(),
-                                                                                            onSelected: onSelected,
-                                                                                            textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
-                                                                                            textHighlightStyle: const TextStyle(),
-                                                                                            elevation: 4.0,
-                                                                                            optionBackgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                            optionHighlightColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            maxHeight: double.infinity,
-                                                                                          );
-                                                                                        },
-                                                                                        onSelected: (String selection) {
-                                                                                          safeSetState(() => _model.txtValidacoesObservacoesSelectedOption = selection);
-                                                                                          FocusScope.of(context).unfocus();
-                                                                                        },
-                                                                                        fieldViewBuilder: (
-                                                                                          context,
-                                                                                          textEditingController,
-                                                                                          focusNode,
-                                                                                          onEditingComplete,
-                                                                                        ) {
-                                                                                          _model.txtValidacoesObservacoesFocusNode = focusNode;
-
-                                                                                          _model.txtValidacoesObservacoesTextController = textEditingController;
-                                                                                          return TextFormField(
-                                                                                            key: _model.txtValidacoesObservacoesKey,
-                                                                                            controller: textEditingController,
-                                                                                            focusNode: focusNode,
-                                                                                            onEditingComplete: onEditingComplete,
-                                                                                            onChanged: (_) => EasyDebounce.debounce(
-                                                                                              '_model.txtValidacoesObservacoesTextController',
-                                                                                              const Duration(milliseconds: 2000),
-                                                                                              () => safeSetState(() {}),
+                                                                                      child: TextFormField(
+                                                                                        controller: _model.txtValidacoesObservacoesTextController,
+                                                                                        focusNode: _model.txtValidacoesObservacoesFocusNode,
+                                                                                        onChanged: (_) => EasyDebounce.debounce(
+                                                                                          '_model.txtValidacoesObservacoesTextController',
+                                                                                          const Duration(milliseconds: 2000),
+                                                                                          () => safeSetState(() {}),
+                                                                                        ),
+                                                                                        autofocus: false,
+                                                                                        obscureText: false,
+                                                                                        decoration: InputDecoration(
+                                                                                          isDense: true,
+                                                                                          labelText: FFLocalizations.of(context).getText(
+                                                                                            'hu7rwf8m' /* Observação(ões) */,
+                                                                                          ),
+                                                                                          labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                                letterSpacing: 0.0,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                                lineHeight: 5.0,
+                                                                                              ),
+                                                                                          hintText: FFLocalizations.of(context).getText(
+                                                                                            '0a8jmcbn' /* Observação(ões) */,
+                                                                                          ),
+                                                                                          hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                                letterSpacing: 0.0,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                              ),
+                                                                                          errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                color: FlutterFlowTheme.of(context).error,
+                                                                                                letterSpacing: 0.0,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                              ),
+                                                                                          enabledBorder: OutlineInputBorder(
+                                                                                            borderSide: BorderSide(
+                                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                                              width: 2.0,
                                                                                             ),
-                                                                                            autofocus: false,
-                                                                                            obscureText: false,
-                                                                                            decoration: InputDecoration(
-                                                                                              isDense: true,
-                                                                                              labelText: FFLocalizations.of(context).getText(
-                                                                                                'hu7rwf8m' /* Observação(ões) */,
-                                                                                              ),
-                                                                                              labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    lineHeight: 5.0,
-                                                                                                  ),
-                                                                                              hintText: FFLocalizations.of(context).getText(
-                                                                                                '0a8jmcbn' /* Observação(ões) */,
-                                                                                              ),
-                                                                                              hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                              errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: FlutterFlowTheme.of(context).error,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                              enabledBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                                  width: 2.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(12.0),
-                                                                                              ),
-                                                                                              focusedBorder: OutlineInputBorder(
-                                                                                                borderSide: const BorderSide(
-                                                                                                  color: Color(0x00000000),
-                                                                                                  width: 2.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(12.0),
-                                                                                              ),
-                                                                                              errorBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).error,
-                                                                                                  width: 2.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(12.0),
-                                                                                              ),
-                                                                                              focusedErrorBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).error,
-                                                                                                  width: 2.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(12.0),
-                                                                                              ),
-                                                                                              filled: true,
-                                                                                              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 24.0),
-                                                                                              suffixIcon: _model.txtValidacoesObservacoesTextController!.text.isNotEmpty
-                                                                                                  ? InkWell(
-                                                                                                      onTap: () async {
-                                                                                                        _model.txtValidacoesObservacoesTextController?.clear();
-                                                                                                        safeSetState(() {});
-                                                                                                      },
-                                                                                                      child: const Icon(
-                                                                                                        Icons.clear,
-                                                                                                        size: 24.0,
-                                                                                                      ),
-                                                                                                    )
-                                                                                                  : null,
+                                                                                            borderRadius: BorderRadius.circular(12.0),
+                                                                                          ),
+                                                                                          focusedBorder: OutlineInputBorder(
+                                                                                            borderSide: const BorderSide(
+                                                                                              color: Color(0x00000000),
+                                                                                              width: 2.0,
                                                                                             ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
-                                                                                            maxLines: 3,
-                                                                                            cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                            validator: _model.txtValidacoesObservacoesTextControllerValidator.asValidator(context),
-                                                                                          );
-                                                                                        },
+                                                                                            borderRadius: BorderRadius.circular(12.0),
+                                                                                          ),
+                                                                                          errorBorder: OutlineInputBorder(
+                                                                                            borderSide: BorderSide(
+                                                                                              color: FlutterFlowTheme.of(context).error,
+                                                                                              width: 2.0,
+                                                                                            ),
+                                                                                            borderRadius: BorderRadius.circular(12.0),
+                                                                                          ),
+                                                                                          focusedErrorBorder: OutlineInputBorder(
+                                                                                            borderSide: BorderSide(
+                                                                                              color: FlutterFlowTheme.of(context).error,
+                                                                                              width: 2.0,
+                                                                                            ),
+                                                                                            borderRadius: BorderRadius.circular(12.0),
+                                                                                          ),
+                                                                                          filled: true,
+                                                                                          fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 24.0),
+                                                                                          suffixIcon: _model.txtValidacoesObservacoesTextController!.text.isNotEmpty
+                                                                                              ? InkWell(
+                                                                                                  onTap: () async {
+                                                                                                    _model.txtValidacoesObservacoesTextController?.clear();
+                                                                                                    safeSetState(() {});
+                                                                                                  },
+                                                                                                  child: const Icon(
+                                                                                                    Icons.clear,
+                                                                                                    size: 24.0,
+                                                                                                  ),
+                                                                                                )
+                                                                                              : null,
+                                                                                        ),
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                        maxLines: 3,
+                                                                                        cursorColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                        validator: _model.txtValidacoesObservacoesTextControllerValidator.asValidator(context),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -6854,12 +6893,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     .headlineSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Outfit',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                               ),
                                                             ),
@@ -7017,12 +7061,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     .headlineSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Outfit',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                               ),
                                                             ),
@@ -7184,12 +7233,20 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
@@ -7639,12 +7696,20 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .info,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(

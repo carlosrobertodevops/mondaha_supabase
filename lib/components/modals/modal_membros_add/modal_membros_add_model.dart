@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'modal_membros_add_widget.dart' show ModalMembrosAddWidget;
@@ -115,6 +116,16 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
 
   DateTime? dataProcedimento;
 
+  List<LatLng> membrosLatLng = [];
+  void addToMembrosLatLng(LatLng item) => membrosLatLng.add(item);
+  void removeFromMembrosLatLng(LatLng item) => membrosLatLng.remove(item);
+  void removeAtIndexFromMembrosLatLng(int index) =>
+      membrosLatLng.removeAt(index);
+  void insertAtIndexInMembrosLatLng(int index, LatLng item) =>
+      membrosLatLng.insert(index, item);
+  void updateMembrosLatLngAtIndex(int index, Function(LatLng) updateFn) =>
+      membrosLatLng[index] = updateFn(membrosLatLng[index]);
+
   ///  State fields for stateful widgets in this component.
 
   final formKey3 = GlobalKey<FormState>();
@@ -186,13 +197,6 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   // State field(s) for ddw_nivel_instrucao widget.
   String? ddwNivelInstrucaoValue;
   FormFieldController<String>? ddwNivelInstrucaoValueController;
-  // State field(s) for txt_membros_enderecos_add widget.
-  final txtMembrosEnderecosAddKey = GlobalKey();
-  FocusNode? txtMembrosEnderecosAddFocusNode;
-  TextEditingController? txtMembrosEnderecosAddTextController;
-  String? txtMembrosEnderecosAddSelectedOption;
-  String? Function(BuildContext, String?)?
-      txtMembrosEnderecosAddTextControllerValidator;
   // State field(s) for rbNacionalidade widget.
   FormFieldController<String>? rbNacionalidadeValueController;
   // State field(s) for ddw_estado widget.
@@ -201,11 +205,19 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   // State field(s) for ddw_municipio widget.
   int? ddwMunicipioValue;
   FormFieldController<int>? ddwMunicipioValueController;
+  // State field(s) for PlacePickerEndereco widget.
+  FFPlace placePickerEnderecoValue = const FFPlace();
+  // State field(s) for txt_membros_enderecos_add widget.
+  FocusNode? txtMembrosEnderecosAddFocusNode;
+  TextEditingController? txtMembrosEnderecosAddTextController;
+  String? Function(BuildContext, String?)?
+      txtMembrosEnderecosAddTextControllerValidator;
+  // State field(s) for GoogleMap widget.
+  LatLng? googleMapsCenter;
+  final googleMapsController = Completer<GoogleMapController>();
   // State field(s) for txt_membro_historico widget.
-  final txtMembroHistoricoKey = GlobalKey();
   FocusNode? txtMembroHistoricoFocusNode;
   TextEditingController? txtMembroHistoricoTextController;
-  String? txtMembroHistoricoSelectedOption;
   String? Function(BuildContext, String?)?
       txtMembroHistoricoTextControllerValidator;
   // State field(s) for ddw_membro_faccao widget.
@@ -298,19 +310,15 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   String? ddwProcessoSituacaoReuValue;
   FormFieldController<String>? ddwProcessoSituacaoReuValueController;
   // State field(s) for txt_membro_atuacao widget.
-  final txtMembroAtuacaoKey = GlobalKey();
   FocusNode? txtMembroAtuacaoFocusNode;
   TextEditingController? txtMembroAtuacaoTextController;
-  String? txtMembroAtuacaoSelectedOption;
   String? Function(BuildContext, String?)?
       txtMembroAtuacaoTextControllerValidator;
   // State field(s) for SwitchAlerta widget.
   bool? switchAlertaValue;
   // State field(s) for txt_membro_alerta widget.
-  final txtMembroAlertaKey = GlobalKey();
   FocusNode? txtMembroAlertaFocusNode;
   TextEditingController? txtMembroAlertaTextController;
-  String? txtMembroAlertaSelectedOption;
   String? Function(BuildContext, String?)?
       txtMembroAlertaTextControllerValidator;
   // State field(s) for ChoiceChipsValidacoes widget.
@@ -320,10 +328,8 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   set choiceChipsValidacoesValues(List<String>? val) =>
       choiceChipsValidacoesValueController?.value = val;
   // State field(s) for txt_validacoes_observacoes widget.
-  final txtValidacoesObservacoesKey = GlobalKey();
   FocusNode? txtValidacoesObservacoesFocusNode;
   TextEditingController? txtValidacoesObservacoesTextController;
-  String? txtValidacoesObservacoesSelectedOption;
   String? Function(BuildContext, String?)?
       txtValidacoesObservacoesTextControllerValidator;
   bool isDataUploading2 = false;
@@ -368,8 +374,10 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
     txtFiliacaoPaiTextController?.dispose();
 
     txtMembrosEnderecosAddFocusNode?.dispose();
+    txtMembrosEnderecosAddTextController?.dispose();
 
     txtMembroHistoricoFocusNode?.dispose();
+    txtMembroHistoricoTextController?.dispose();
 
     txtFaccaoBastismoFocusNode?.dispose();
 
@@ -395,10 +403,13 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
     txtProcessoNoAcaoPenalTextController?.dispose();
 
     txtMembroAtuacaoFocusNode?.dispose();
+    txtMembroAtuacaoTextController?.dispose();
 
     txtMembroAlertaFocusNode?.dispose();
+    txtMembroAlertaTextController?.dispose();
 
     txtValidacoesObservacoesFocusNode?.dispose();
+    txtValidacoesObservacoesTextController?.dispose();
   }
 
   /// Additional helper methods.
