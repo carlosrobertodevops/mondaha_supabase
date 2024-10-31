@@ -767,7 +767,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                                 child: Padding(
                                                                                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                   child: FutureBuilder<List<FuncoesRow>>(
-                                                                                    future: FuncoesTable().queryRows(
+                                                                                    future: FuncoesTable().querySingleRow(
                                                                                       queryFn: (q) => q.eq(
                                                                                         'funcao_id',
                                                                                         listViewMembrosRow.funcaoId,
@@ -789,10 +789,12 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                                       }
                                                                                       List<FuncoesRow> textFuncoesRowList = snapshot.data!;
 
+                                                                                      final textFuncoesRow = textFuncoesRowList.isNotEmpty ? textFuncoesRowList.first : null;
+
                                                                                       return Text(
                                                                                         valueOrDefault<String>(
-                                                                                          listViewMembrosRow.funcaoId?.toString(),
-                                                                                          'funcao_id',
+                                                                                          textFuncoesRow?.descricao,
+                                                                                          'sem informação',
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -813,7 +815,7 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                                 child: Padding(
                                                                                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                   child: FutureBuilder<List<FaccoesRow>>(
-                                                                                    future: FaccoesTable().queryRows(
+                                                                                    future: FaccoesTable().querySingleRow(
                                                                                       queryFn: (q) => q.eq(
                                                                                         'faccao_id',
                                                                                         listViewMembrosRow.faccaoId,
@@ -835,10 +837,12 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                                       }
                                                                                       List<FaccoesRow> textFaccoesRowList = snapshot.data!;
 
+                                                                                      final textFaccoesRow = textFaccoesRowList.isNotEmpty ? textFaccoesRowList.first : null;
+
                                                                                       return Text(
                                                                                         valueOrDefault<String>(
-                                                                                          listViewMembrosRow.faccaoId?.toString(),
-                                                                                          'faccao_id',
+                                                                                          textFaccoesRow?.nome,
+                                                                                          'sem informação',
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,

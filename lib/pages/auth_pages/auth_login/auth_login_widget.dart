@@ -304,20 +304,22 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                         child: TabBarView(
                                           controller: _model.tabBarController,
                                           children: [
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Form(
-                                                key: _model.formKey1,
-                                                autovalidateMode:
-                                                    AutovalidateMode.disabled,
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 16.0,
-                                                          12.0, 16.0),
+                                            Form(
+                                              key: _model.formKey1,
+                                              autovalidateMode:
+                                                  AutovalidateMode.disabled,
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 16.0, 16.0, 16.0),
+                                                child: Container(
+                                                  decoration: const BoxDecoration(),
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, -1.0),
                                                   child: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        MainAxisSize.min,
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .start,
@@ -705,10 +707,26 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                     9,
                                                                   ),
                                                             );
-                                                            if (_model.usuarioDiferenteNove !=
-                                                                    null &&
-                                                                (_model.usuarioDiferenteNove)!
-                                                                    .isNotEmpty) {
+                                                            if ((_model.usuarioDiferenteNove !=
+                                                                        null &&
+                                                                    (_model.usuarioDiferenteNove)!
+                                                                        .isNotEmpty) ==
+                                                                false) {
+                                                              FFAppState()
+                                                                      .UsuarioLiberado =
+                                                                  true;
+                                                              safeSetState(
+                                                                  () {});
+                                                            } else {
+                                                              FFAppState()
+                                                                      .UsuarioLiberado =
+                                                                  false;
+                                                              safeSetState(
+                                                                  () {});
+                                                            }
+
+                                                            if (FFAppState()
+                                                                .UsuarioLiberado) {
                                                               context.pushNamedAuth(
                                                                   'main_home',
                                                                   context
@@ -894,24 +912,27 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        const SizedBox(height: 16.0)),
+                                                        const SizedBox(height: 13.0)),
                                                   ).animateOnPageLoad(animationsMap[
                                                       'columnOnPageLoadAnimation1']!),
                                                 ),
                                               ),
                                             ),
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Form(
-                                                key: _model.formKey2,
-                                                autovalidateMode:
-                                                    AutovalidateMode.disabled,
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(16.0, 16.0,
-                                                          16.0, 0.0),
+                                            Form(
+                                              key: _model.formKey2,
+                                              autovalidateMode:
+                                                  AutovalidateMode.disabled,
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 16.0),
+                                                child: Container(
+                                                  decoration: const BoxDecoration(),
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
                                                   child: SingleChildScrollView(
+                                                    primary: false,
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -920,7 +941,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                               .start,
                                                       crossAxisAlignment:
                                                           CrossAxisAlignment
-                                                              .start,
+                                                              .center,
                                                       children: [
                                                         Padding(
                                                           padding:
@@ -951,171 +972,6 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                           FlutterFlowTheme.of(context)
                                                                               .labelMediumFamily),
                                                                 ),
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      16.0,
-                                                                      0.0,
-                                                                      16.0,
-                                                                      0.0),
-                                                          child: FutureBuilder<
-                                                              List<
-                                                                  AgenciasRow>>(
-                                                            future:
-                                                                AgenciasTable()
-                                                                    .queryRows(
-                                                              queryFn: (q) =>
-                                                                  q.order(
-                                                                      'agencia_id',
-                                                                      ascending:
-                                                                          true),
-                                                            ),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    child:
-                                                                        SpinKitFadingCircle(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .tertiary,
-                                                                      size:
-                                                                          50.0,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-                                                              List<AgenciasRow>
-                                                                  dropAgenciaAgenciasRowList =
-                                                                  snapshot
-                                                                      .data!;
-
-                                                              return FlutterFlowDropDown<
-                                                                  int>(
-                                                                controller: _model
-                                                                        .dropAgenciaValueController ??=
-                                                                    FormFieldController<
-                                                                        int>(
-                                                                  _model.dropAgenciaValue ??=
-                                                                      dropAgenciaAgenciasRowList
-                                                                          .first
-                                                                          .agenciaId,
-                                                                ),
-                                                                options: List<
-                                                                        int>.from(
-                                                                    dropAgenciaAgenciasRowList
-                                                                        .map((e) =>
-                                                                            e.agenciaId)
-                                                                        .toList()),
-                                                                optionLabels:
-                                                                    dropAgenciaAgenciasRowList
-                                                                        .map((e) =>
-                                                                            valueOrDefault<String>(
-                                                                              e.nome,
-                                                                              'nome_agencia',
-                                                                            ))
-                                                                        .toList(),
-                                                                onChanged: (val) =>
-                                                                    safeSetState(() =>
-                                                                        _model.dropAgenciaValue =
-                                                                            val),
-                                                                height: 60.0,
-                                                                searchHintTextStyle:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                        ),
-                                                                searchTextStyle:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                        ),
-                                                                textStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                                hintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'h4i4bwp7' /* Select... */,
-                                                                ),
-                                                                searchHintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'ak53f3yr' /* Search agency... */,
-                                                                ),
-                                                                icon: Icon(
-                                                                  Icons
-                                                                      .keyboard_arrow_down_rounded,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                  size: 24.0,
-                                                                ),
-                                                                fillColor: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                elevation: 2.0,
-                                                                borderColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .alternate,
-                                                                borderWidth:
-                                                                    2.0,
-                                                                borderRadius:
-                                                                    12.0,
-                                                                margin: const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        24.0,
-                                                                        0.0,
-                                                                        12.0,
-                                                                        0.0),
-                                                                hidesUnderline:
-                                                                    true,
-                                                                isOverButton:
-                                                                    false,
-                                                                isSearchable:
-                                                                    true,
-                                                                isMultiSelect:
-                                                                    false,
-                                                              );
-                                                            },
                                                           ),
                                                         ),
                                                         Padding(
@@ -1289,6 +1145,171 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                   .txtSignupNomeTextControllerValidator
                                                                   .asValidator(
                                                                       context),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          decoration:
+                                                              const BoxDecoration(),
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        16.0,
+                                                                        0.0),
+                                                            child: FutureBuilder<
+                                                                List<
+                                                                    AgenciasRow>>(
+                                                              future:
+                                                                  AgenciasTable()
+                                                                      .queryRows(
+                                                                queryFn: (q) => q.order(
+                                                                    'agencia_id',
+                                                                    ascending:
+                                                                        true),
+                                                              ),
+                                                              builder: (context,
+                                                                  snapshot) {
+                                                                // Customize what your widget looks like when it's loading.
+                                                                if (!snapshot
+                                                                    .hasData) {
+                                                                  return Center(
+                                                                    child:
+                                                                        SizedBox(
+                                                                      width:
+                                                                          50.0,
+                                                                      height:
+                                                                          50.0,
+                                                                      child:
+                                                                          SpinKitFadingCircle(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                        size:
+                                                                            50.0,
+                                                                      ),
+                                                                    ),
+                                                                  );
+                                                                }
+                                                                List<AgenciasRow>
+                                                                    dropAgenciaAgenciasRowList =
+                                                                    snapshot
+                                                                        .data!;
+
+                                                                return FlutterFlowDropDown<
+                                                                    int>(
+                                                                  controller: _model
+                                                                          .dropAgenciaValueController ??=
+                                                                      FormFieldController<
+                                                                          int>(
+                                                                    _model.dropAgenciaValue ??=
+                                                                        dropAgenciaAgenciasRowList
+                                                                            .first
+                                                                            .agenciaId,
+                                                                  ),
+                                                                  options: List<
+                                                                          int>.from(
+                                                                      dropAgenciaAgenciasRowList
+                                                                          .map((e) =>
+                                                                              e.agenciaId)
+                                                                          .toList()),
+                                                                  optionLabels:
+                                                                      dropAgenciaAgenciasRowList
+                                                                          .map((e) =>
+                                                                              valueOrDefault<String>(
+                                                                                e.nome,
+                                                                                'nome_agencia',
+                                                                              ))
+                                                                          .toList(),
+                                                                  onChanged: (val) =>
+                                                                      safeSetState(() =>
+                                                                          _model.dropAgenciaValue =
+                                                                              val),
+                                                                  height: 60.0,
+                                                                  maxHeight:
+                                                                      60.0,
+                                                                  searchHintTextStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                      ),
+                                                                  searchTextStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                  hintText: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'h4i4bwp7' /* Select... */,
+                                                                  ),
+                                                                  searchHintText:
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                    'ak53f3yr' /* Search agency... */,
+                                                                  ),
+                                                                  icon: Icon(
+                                                                    Icons
+                                                                        .keyboard_arrow_down_rounded,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    size: 24.0,
+                                                                  ),
+                                                                  fillColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  elevation:
+                                                                      2.0,
+                                                                  borderColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .alternate,
+                                                                  borderWidth:
+                                                                      2.0,
+                                                                  borderRadius:
+                                                                      12.0,
+                                                                  margin: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          24.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
+                                                                  hidesUnderline:
+                                                                      true,
+                                                                  isOverButton:
+                                                                      false,
+                                                                  isSearchable:
+                                                                      true,
+                                                                  isMultiSelect:
+                                                                      false,
+                                                                );
+                                                              },
                                                             ),
                                                           ),
                                                         ),
@@ -1990,7 +2011,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                           ),
                                                         ),
                                                       ].divide(const SizedBox(
-                                                          height: 16.0)),
+                                                          height: 13.0)),
                                                     ),
                                                   ).animateOnPageLoad(animationsMap[
                                                       'columnOnPageLoadAnimation2']!),

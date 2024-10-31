@@ -232,8 +232,6 @@ dynamic deserializeParam<T>(
             return ProcessosRow(data);
           case CargosRow:
             return CargosRow(data);
-          case ValidacoesRow:
-            return ValidacoesRow(data);
           case UsuariosRow:
             return UsuariosRow(data);
           case MembrosRow:

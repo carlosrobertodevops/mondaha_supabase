@@ -16,6 +16,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/foundation.dart';
@@ -2416,10 +2417,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             highlightColor: Colors.transparent,
                                                                                             onTap: () async {
                                                                                               logFirebaseEvent('MODAL_MEMBROS_ADD_Icon_xr7g9mod_ON_TAP');
-                                                                                              safeSetState(() {
-                                                                                                _model.txtMembrosEnderecosAddTextController?.text = _model.placePickerEnderecoValue.address;
-                                                                                                _model.txtMembrosEnderecosAddTextController?.selection = TextSelection.collapsed(offset: _model.txtMembrosEnderecosAddTextController!.text.length);
-                                                                                              });
+                                                                                              if (_model.placePickerEnderecoValue.address != _model.txtMembrosEnderecosAddTextController.text) {
+                                                                                                safeSetState(() {
+                                                                                                  _model.txtMembrosEnderecosAddTextController?.text = _model.placePickerEnderecoValue.address;
+                                                                                                });
+                                                                                              }
                                                                                             },
                                                                                             child: Icon(
                                                                                               Icons.arrow_forward_rounded,
@@ -2534,6 +2536,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   logFirebaseEvent('MODAL_MEMBROS_ADD_add_rounded_ICN_ON_TAP');
                                                                                   if (_model.txtMembrosEnderecosAddTextController.text != '') {
                                                                                     _model.addToMembrosEnderecos(_model.txtMembrosEnderecosAddTextController.text);
+                                                                                    _model.updatePage(() {});
                                                                                     _model.addToMembrosLatLng(_model.placePickerEnderecoValue.latLng);
                                                                                     _model.updatePage(() {});
                                                                                     await _model.googleMapsController.future.then(
@@ -2782,7 +2785,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
-                                                                                  maxLines: 3,
+                                                                                  maxLines: 2,
                                                                                   keyboardType: TextInputType.multiline,
                                                                                   cursorColor: FlutterFlowTheme.of(context).primary,
                                                                                   validator: _model.txtMembroHistoricoTextControllerValidator.asValidator(context),
@@ -6684,7 +6687,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 0.10;
                                                                                       safeSetState(() {});
                                                                                     } else {
-                                                                                      _model.membrosPercetualValidacao = 1.0;
+                                                                                      _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 1.0;
                                                                                       safeSetState(() {});
                                                                                     }
                                                                                   },
@@ -6720,7 +6723,17 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   initialized: _model.choiceChipsValidacoesValues != null,
                                                                                   alignment: WrapAlignment.start,
                                                                                   controller: _model.choiceChipsValidacoesValueController ??= FormFieldController<List<String>>(
-                                                                                    [],
+                                                                                    [
+                                                                                      FFLocalizations.of(context).getText(
+                                                                                        '6ih49zhb' /* 0.1 */,
+                                                                                      ),
+                                                                                      FFLocalizations.of(context).getText(
+                                                                                        'rzxw9l15' /* 0.1 */,
+                                                                                      ),
+                                                                                      FFLocalizations.of(context).getText(
+                                                                                        'xwh5kchb' /* 0.1 */,
+                                                                                      )
+                                                                                    ],
                                                                                   ),
                                                                                   wrapped: true,
                                                                                 ),
@@ -7473,6 +7486,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                       ),
                                                       'validacoes': _model
                                                           .choiceChipsValidacoesValues,
+                                                      'coordenadas': functions
+                                                          .latLngListToStringList(
+                                                              _model
+                                                                  .membrosLatLng
+                                                                  .toList()),
                                                     });
                                                     shouldSetState = true;
                                                     await Future.delayed(

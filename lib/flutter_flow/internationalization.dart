@@ -694,6 +694,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Let\'s get started by filling out the form below.',
       'pt': 'Vamos começar preenchendo o formulário abaixo.',
     },
+    'rxvn7x0x': {
+      'en': 'Full name',
+      'pt': 'Nome completo',
+    },
     'x9n98tl7': {
       'en': 'Option 1',
       'pt': 'Opção 1',
@@ -713,10 +717,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ak53f3yr': {
       'en': 'Search agency...',
       'pt': 'Agência de busca...',
-    },
-    'rxvn7x0x': {
-      'en': 'Full name',
-      'pt': 'Nome completo',
     },
     'nyrv8tm0': {
       'en': 'Email',
@@ -2296,6 +2296,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'v0fvpqeq': {
       'en': '',
+      'pt': '',
+    },
+    '6ih49zhb': {
+      'en': '0.1',
+      'pt': '',
+    },
+    'rzxw9l15': {
+      'en': '0.1',
+      'pt': '',
+    },
+    'xwh5kchb': {
+      'en': '0.1',
       'pt': '',
     },
     'hu7rwf8m': {

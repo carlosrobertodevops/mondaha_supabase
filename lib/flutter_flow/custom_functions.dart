@@ -52,3 +52,10 @@ LatLng stringToLatLng(String coordinates) {
     throw FormatException('A string fornecida não está no formato correto.');
   }
 }
+
+List<String> latLngListToStringList(List<LatLng> locations) {
+  return locations
+      .map((location) =>
+          '${location.latitude.toStringAsFixed(6)}, ${location.longitude.toStringAsFixed(6)}')
+      .toList();
+}

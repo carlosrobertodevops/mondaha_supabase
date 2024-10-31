@@ -412,6 +412,11 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
     txtValidacoesObservacoesTextController?.dispose();
   }
 
+  /// Action blocks.
+  Future percentualValidado(BuildContext context) async {
+    await percentualValidado(context);
+  }
+
   /// Additional helper methods.
   String? get rbNacionalidadeValue => rbNacionalidadeValueController?.value;
 }

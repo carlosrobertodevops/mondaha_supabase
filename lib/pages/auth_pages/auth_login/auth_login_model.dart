@@ -26,13 +26,13 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
       txtLoginPasswordTextControllerValidator;
   // Stores action output result for [Backend Call - Query Rows] action in btn-login widget.
   List<UsuariosRow>? usuarioDiferenteNove;
-  // State field(s) for drop_agencia widget.
-  int? dropAgenciaValue;
-  FormFieldController<int>? dropAgenciaValueController;
   // State field(s) for txt_signup_nome widget.
   FocusNode? txtSignupNomeFocusNode;
   TextEditingController? txtSignupNomeTextController;
   String? Function(BuildContext, String?)? txtSignupNomeTextControllerValidator;
+  // State field(s) for drop_agencia widget.
+  int? dropAgenciaValue;
+  FormFieldController<int>? dropAgenciaValueController;
   // State field(s) for txt_signup_email widget.
   FocusNode? txtSignupEmailFocusNode;
   TextEditingController? txtSignupEmailTextController;
