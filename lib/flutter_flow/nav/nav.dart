@@ -85,10 +85,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? const NavBarPage() : const AuthLoginWidget(),
           routes: [
             FFRoute(
-              name: 'forgot_password',
-              path: 'forgotPassword',
+              name: 'auth_forgot_password',
+              path: 'authForgotPassword',
               requireAuth: true,
-              builder: (context, params) => const ForgotPasswordWidget(),
+              builder: (context, params) => const AuthForgotPasswordWidget(),
             ),
             FFRoute(
               name: 'main_home',

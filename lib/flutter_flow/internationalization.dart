@@ -144,7 +144,7 @@ bool _isSupportedLocale(Locale locale) {
 }
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // forgot_password
+  // auth_forgot_password
   {
     '3hcuc8v6': {
       'en': 'Forgot Password',
@@ -694,29 +694,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Let\'s get started by filling out the form below.',
       'pt': 'Vamos começar preenchendo o formulário abaixo.',
     },
+    't75e9ij9': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    'vo9bgffn': {
+      'en': 'Option 2',
+      'pt': '',
+    },
+    'pyt01uro': {
+      'en': 'Option 3',
+      'pt': '',
+    },
+    '2hy6hs2l': {
+      'en': 'Select...',
+      'pt': 'Selecione sua agência',
+    },
+    '7desldh9': {
+      'en': 'Search...',
+      'pt': 'Pesquisar agência',
+    },
     'rxvn7x0x': {
       'en': 'Full name',
       'pt': 'Nome completo',
-    },
-    'x9n98tl7': {
-      'en': 'Option 1',
-      'pt': 'Opção 1',
-    },
-    '0elh6q8n': {
-      'en': 'Option 2',
-      'pt': 'Opção 2',
-    },
-    'za9rr007': {
-      'en': 'Option 3',
-      'pt': 'Opção 3',
-    },
-    'h4i4bwp7': {
-      'en': 'Select...',
-      'pt': 'Selecione...',
-    },
-    'ak53f3yr': {
-      'en': 'Search agency...',
-      'pt': 'Agência de busca...',
     },
     'nyrv8tm0': {
       'en': 'Email',
@@ -2900,11 +2900,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hxsxj681': {
       'en': '',
-      'pt': '',
+      'pt':
+          'Para tirar uma foto ou gravar um vídeo, este aplicativo requer permissão para acessar a câmera.',
     },
     'e7agr7ys': {
       'en': '',
-      'pt': '',
+      'pt':
+          'Para carregar dados, este aplicativo requer permissão para acessar a biblioteca de fotos.',
     },
     '65e2tfs2': {
       'en': '',
@@ -2916,19 +2918,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'db03cpjj': {
       'en': '',
-      'pt': '',
+      'pt': 'Requer o email.',
     },
     'fdb9078p': {
       'en': '',
-      'pt': '',
+      'pt': 'Número do telefone requerido.',
     },
     '80ouzj9q': {
       'en': '',
-      'pt': '',
+      'pt': 'Senha incorreta.',
     },
     '6rzhptp9': {
       'en': '',
-      'pt': '',
+      'pt': 'Digite o código de verificação no SMS.',
     },
     'ce8c4ty0': {
       'en': '',
@@ -2944,7 +2946,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hirpbigs': {
       'en': '',
-      'pt': '',
+      'pt': 'email já existe no App',
     },
     'wj8451yf': {
       'en': '',

@@ -8,19 +8,20 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'forgot_password_model.dart';
-export 'forgot_password_model.dart';
+import 'auth_forgot_password_model.dart';
+export 'auth_forgot_password_model.dart';
 
-class ForgotPasswordWidget extends StatefulWidget {
-  const ForgotPasswordWidget({super.key});
+class AuthForgotPasswordWidget extends StatefulWidget {
+  const AuthForgotPasswordWidget({super.key});
 
   @override
-  State<ForgotPasswordWidget> createState() => _ForgotPasswordWidgetState();
+  State<AuthForgotPasswordWidget> createState() =>
+      _AuthForgotPasswordWidgetState();
 }
 
-class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget>
+class _AuthForgotPasswordWidgetState extends State<AuthForgotPasswordWidget>
     with TickerProviderStateMixin {
-  late ForgotPasswordModel _model;
+  late AuthForgotPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -29,10 +30,10 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ForgotPasswordModel());
+    _model = createModel(context, () => AuthForgotPasswordModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'forgot_password'});
+        parameters: {'screen_name': 'auth_forgot_password'});
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
@@ -117,7 +118,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget>
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'forgot_password',
+        title: 'auth_forgot_password',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: Scaffold(
           key: scaffoldKey,
@@ -136,7 +137,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget>
                 size: 30.0,
               ),
               onPressed: () async {
-                logFirebaseEvent('FORGOT_PASSWORD_arrow_back_rounded_ICN_O');
+                logFirebaseEvent('AUTH_FORGOT_PASSWORD_arrow_back_rounded_');
                 context.pop();
               },
             ),
@@ -290,7 +291,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget>
                         child: FFButtonWidget(
                           onPressed: () async {
                             logFirebaseEvent(
-                                'FORGOT_PASSWORD_PAGE_Button-Login_ON_TAP');
+                                'AUTH_FORGOT_PASSWORD_Button-Login_ON_TAP');
                             if (_model
                                 .emailAddressTextController.text.isEmpty) {
                               ScaffoldMessenger.of(context).showSnackBar(

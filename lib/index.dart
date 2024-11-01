@@ -1,6 +1,6 @@
 // Export pages
-export '/pages/auth_pages/forgot_password/forgot_password_widget.dart'
-    show ForgotPasswordWidget;
+export '/pages/auth_pages/auth_forgot_password/auth_forgot_password_widget.dart'
+    show AuthForgotPasswordWidget;
 export '/pages/main_pages/main_home/main_home_widget.dart' show MainHomeWidget;
 export '/pages/main_pages/main_membros/main_membros_widget.dart'
     show MainMembrosWidget;

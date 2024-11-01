@@ -516,8 +516,8 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                               logFirebaseEvent(
                                                   'MAIN_PROFILE_Container_geiuas93_ON_TAP');
 
-                                              context
-                                                  .pushNamed('forgot_password');
+                                              context.pushNamed(
+                                                  'auth_forgot_password');
                                             },
                                             child: AnimatedContainer(
                                               duration:

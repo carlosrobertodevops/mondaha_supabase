@@ -1,9 +1,10 @@
 import '/components/logos/main_logo_small/main_logo_small_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'forgot_password_widget.dart' show ForgotPasswordWidget;
+import 'auth_forgot_password_widget.dart' show AuthForgotPasswordWidget;
 import 'package:flutter/material.dart';
 
-class ForgotPasswordModel extends FlutterFlowModel<ForgotPasswordWidget> {
+class AuthForgotPasswordModel
+    extends FlutterFlowModel<AuthForgotPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for main_logo_small component.

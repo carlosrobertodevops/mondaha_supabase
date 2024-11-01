@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class FFDevEnvironmentValues {
-  static const String currentEnvironment = 'Production';
+  static const String currentEnvironment = 'Development';
   static const String environmentValuesPath =
-      'assets/environment_values/production.json';
+      'assets/environment_values/development.json';
 
   static final FFDevEnvironmentValues _instance =
       FFDevEnvironmentValues._internal();

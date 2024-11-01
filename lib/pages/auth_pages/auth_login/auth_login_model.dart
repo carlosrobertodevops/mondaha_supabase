@@ -1,6 +1,8 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/request_manager.dart';
+
 import 'auth_login_widget.dart' show AuthLoginWidget;
 import 'package:flutter/material.dart';
 
@@ -26,13 +28,13 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
       txtLoginPasswordTextControllerValidator;
   // Stores action output result for [Backend Call - Query Rows] action in btn-login widget.
   List<UsuariosRow>? usuarioDiferenteNove;
+  // State field(s) for ddw_agencias widget.
+  int? ddwAgenciasValue;
+  FormFieldController<int>? ddwAgenciasValueController;
   // State field(s) for txt_signup_nome widget.
   FocusNode? txtSignupNomeFocusNode;
   TextEditingController? txtSignupNomeTextController;
   String? Function(BuildContext, String?)? txtSignupNomeTextControllerValidator;
-  // State field(s) for drop_agencia widget.
-  int? dropAgenciaValue;
-  FormFieldController<int>? dropAgenciaValueController;
   // State field(s) for txt_signup_email widget.
   FocusNode? txtSignupEmailFocusNode;
   TextEditingController? txtSignupEmailTextController;
@@ -50,6 +52,23 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
   late bool txtSignupConfirmVisibility;
   String? Function(BuildContext, String?)?
       txtSignupConfirmTextControllerValidator;
+
+  /// Query cache managers for this widget.
+
+  final _cacheAgenciasManager = FutureRequestManager<List<AgenciasRow>>();
+  Future<List<AgenciasRow>> cacheAgencias({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<AgenciasRow>> Function() requestFn,
+  }) =>
+      _cacheAgenciasManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearCacheAgenciasCache() => _cacheAgenciasManager.clear();
+  void clearCacheAgenciasCacheKey(String? uniqueKey) =>
+      _cacheAgenciasManager.clearRequest(uniqueKey);
 
   @override
   void initState(BuildContext context) {
@@ -78,5 +97,9 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
 
     txtSignupConfirmFocusNode?.dispose();
     txtSignupConfirmTextController?.dispose();
+
+    /// Dispose query cache managers for this widget.
+
+    clearCacheAgenciasCache();
   }
 }
