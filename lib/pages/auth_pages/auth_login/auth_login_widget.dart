@@ -1034,9 +1034,9 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                         width:
                                                                             410.0,
                                                                         height:
-                                                                            60.0,
+                                                                            62.0,
                                                                         maxHeight:
-                                                                            60.0,
+                                                                            62.0,
                                                                         searchHintTextStyle: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
