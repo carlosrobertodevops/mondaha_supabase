@@ -136,6 +136,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
+          _model.txtFiliacaoPaiTextController?.text =
+              FFLocalizations.of(context).getText(
+            'l5vrftgu' /*  */,
+          );
           _model.txtProcedimentoDataTextController?.text = dateTimeFormat(
             "d/M/y",
             _model.dataProcedimento,
@@ -398,28 +402,28 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            '0v0s6s8e' /* Processos */,
+                                                            '0v0s6s8e' /* Procedures */,
                                                           ),
                                                         ),
                                                         Tab(
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            'xaeljp2r' /* Atuação */,
+                                                            'xaeljp2r' /* Performance */,
                                                           ),
                                                         ),
                                                         Tab(
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            '8slh1eth' /* Alerta */,
+                                                            '8slh1eth' /* Alert */,
                                                           ),
                                                         ),
                                                         Tab(
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            '2rc41m6r' /* Validação */,
+                                                            '2rc41m6r' /* Validation */,
                                                           ),
                                                         ),
                                                       ],
@@ -1521,7 +1525,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           'lhjvkfqm' /* SSP-RN */,
                                                                                         ),
                                                                                         FFLocalizations.of(context).getText(
-                                                                                          'ryqcnfe0' /* Nenhuma das opções */,
+                                                                                          'ryqcnfe0' /* None of the options */,
                                                                                         )
                                                                                       ],
                                                                                       onChanged: (val) => safeSetState(() => _model.ddwOrgaoExpedidorValue = val),
@@ -1542,10 +1546,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
-                                                                                        'ia9zkanc' /* Órgão expedidor */,
+                                                                                        'ia9zkanc' /* Issuing body */,
                                                                                       ),
                                                                                       searchHintText: FFLocalizations.of(context).getText(
-                                                                                        'h3ykxfak' /* Órgão expedidor */,
+                                                                                        'h3ykxfak' /* Issuing body */,
                                                                                       ),
                                                                                       icon: Icon(
                                                                                         Icons.keyboard_arrow_down_rounded,
@@ -1667,7 +1671,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   obscureText: false,
                                                                                   decoration: InputDecoration(
                                                                                     labelText: FFLocalizations.of(context).getText(
-                                                                                      'f434de4i' /* Cadastro Infopen */,
+                                                                                      'f434de4i' /* Infopen Registration */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -1675,7 +1679,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
-                                                                                      '1yyjhbj8' /* Cadastro Infopen */,
+                                                                                      '1yyjhbj8' /* Infopen Registration */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -1758,7 +1762,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   obscureText: false,
                                                                                   decoration: InputDecoration(
                                                                                     labelText: FFLocalizations.of(context).getText(
-                                                                                      'cjy846zr' /* Nome da mãe */,
+                                                                                      'cjy846zr' /* Mother's name */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -1766,7 +1770,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
-                                                                                      '7g88w199' /* Nome da mãe */,
+                                                                                      '7g88w199' /* Mother's name */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -1833,16 +1837,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   controller: _model.ddwSituacaoMaeValueController ??= FormFieldController<String>(null),
                                                                                   options: [
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      '4ebn7u9d' /* Viva */,
+                                                                                      '4ebn7u9d' /* Alive */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'vte6onee' /* Falecida */,
+                                                                                      'vte6onee' /* Deceased */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      '188nb78m' /* Cadeirante */,
+                                                                                      '188nb78m' /* Wheelchair user */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'aw1z7gel' /* Sem informação */,
+                                                                                      'aw1z7gel' /* No information */,
                                                                                     )
                                                                                   ],
                                                                                   onChanged: (val) => safeSetState(() => _model.ddwSituacaoMaeValue = val),
@@ -1863,10 +1867,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   hintText: FFLocalizations.of(context).getText(
-                                                                                    'gc3vbmj4' /* Situação da Mãe */,
+                                                                                    'gc3vbmj4' /* Mother's situation */,
                                                                                   ),
                                                                                   searchHintText: FFLocalizations.of(context).getText(
-                                                                                    'bj72hiw8' /* Situação da Mãe */,
+                                                                                    'bj72hiw8' /* Mother's situation */,
                                                                                   ),
                                                                                   icon: Icon(
                                                                                     Icons.keyboard_arrow_down_rounded,
@@ -1907,7 +1911,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   obscureText: false,
                                                                                   decoration: InputDecoration(
                                                                                     labelText: FFLocalizations.of(context).getText(
-                                                                                      'lbcdz337' /* Nome do pai */,
+                                                                                      'lbcdz337' /* Father's name */,
                                                                                     ),
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -1915,7 +1919,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
-                                                                                      '35jyk488' /* Nome do pai */,
+                                                                                      '35jyk488' /* Father's name */,
                                                                                     ),
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -1982,16 +1986,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   controller: _model.ddwSituacaoPaiValueController ??= FormFieldController<String>(null),
                                                                                   options: [
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'qyc8q0st' /* Vivo */,
+                                                                                      'qyc8q0st' /* Alive */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      '7ygxf6rh' /* Falecido */,
+                                                                                      '7ygxf6rh' /* Deceased */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'wmbvp74d' /* Cadeirante */,
+                                                                                      'wmbvp74d' /* Wheelchair user */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'r9rah6gc' /* Sem informação */,
+                                                                                      'r9rah6gc' /* No information */,
                                                                                     )
                                                                                   ],
                                                                                   onChanged: (val) => safeSetState(() => _model.ddwSituacaoPaiValue = val),
@@ -2012,10 +2016,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   hintText: FFLocalizations.of(context).getText(
-                                                                                    'cnn9tddw' /* Situação do Pai */,
+                                                                                    'cnn9tddw' /* Father's situation */,
                                                                                   ),
                                                                                   searchHintText: FFLocalizations.of(context).getText(
-                                                                                    'bsvzf3cx' /* Father's Situation */,
+                                                                                    'bsvzf3cx' /* Father's situation */,
                                                                                   ),
                                                                                   icon: Icon(
                                                                                     Icons.keyboard_arrow_down_rounded,
@@ -2050,28 +2054,28 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       'r2g2yo2p' /* Alfabetizado */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'y7i4eicy' /* Não alfabetizado */,
+                                                                                      'y7i4eicy' /* illiterate */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'xmduvdwh' /* Ensino fundamental completo */,
+                                                                                      'xmduvdwh' /* Completed elementary education */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'lvynt86i' /* Ensino médiio completo */,
+                                                                                      'lvynt86i' /* Completed high school */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'eur8h0kh' /* Ensino superior completo */,
+                                                                                      'eur8h0kh' /* Completed higher education */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'm10ha0nj' /* Ensino fundamental incompleto */,
+                                                                                      'm10ha0nj' /* Incomplete elementary educatio... */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'csrvq6pn' /* Ensino médio incompleto */,
+                                                                                      'csrvq6pn' /* Incomplete high school */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'tb0j8o1f' /* Ensino superior incompleto */,
+                                                                                      'tb0j8o1f' /* Incomplete higher education */,
                                                                                     ),
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'm23r6x4v' /* Sem informação */,
+                                                                                      'm23r6x4v' /* No information */,
                                                                                     )
                                                                                   ],
                                                                                   onChanged: (val) => safeSetState(() => _model.ddwNivelInstrucaoValue = val),
@@ -2092,7 +2096,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   hintText: FFLocalizations.of(context).getText(
-                                                                                    '0wrilaus' /* Grau ou Nível de instruição */,
+                                                                                    '0wrilaus' /* Degree or Level of Education */,
                                                                                   ),
                                                                                   searchHintText: FFLocalizations.of(context).getText(
                                                                                     '4thgagtf' /* Father's Situation */,
@@ -4173,7 +4177,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             decoration:
                                                                                 InputDecoration(
                                                                               labelText: FFLocalizations.of(context).getText(
-                                                                                'ehpi1bdt' /* Procedimento */,
+                                                                                'ehpi1bdt' /* Procedure */,
                                                                               ),
                                                                               labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -4182,7 +4186,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   ),
                                                                               alignLabelWithHint: true,
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                'cqb8a5yu' /* Procedimento */,
+                                                                                'cqb8a5yu' /* Procedure */,
                                                                               ),
                                                                               hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -4255,16 +4259,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 FormFieldController<String>(null),
                                                                             options: [
                                                                               FFLocalizations.of(context).getText(
-                                                                                'a1mq04vz' /* Nenhuma das opções */,
+                                                                                'a1mq04vz' /* None of the options */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                'ptm9fsnl' /* Delegacia Local */,
+                                                                                'ptm9fsnl' /* Local Police Station */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                'ewv0wp4u' /* Delegacia Especializada */,
+                                                                                'ewv0wp4u' /* Specialized Police Station */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                'tfba3ok1' /* Delegacia Regional */,
+                                                                                'tfba3ok1' /* Regional Police Station */,
                                                                               )
                                                                             ],
                                                                             onChanged: (val) =>
@@ -4288,7 +4292,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 ),
                                                                             hintText:
                                                                                 FFLocalizations.of(context).getText(
-                                                                              'p4l0yjdk' /* Unidade */,
+                                                                              'p4l0yjdk' /* Unit */,
                                                                             ),
                                                                             searchHintText:
                                                                                 FFLocalizations.of(context).getText(
@@ -4343,13 +4347,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 FormFieldController<String>(null),
                                                                             options: [
                                                                               FFLocalizations.of(context).getText(
-                                                                                '2oi2gd2o' /* Nenhuma das opções */,
+                                                                                '2oi2gd2o' /* None of the options */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                'fqtt5evw' /* IPL. Portaria */,
+                                                                                'fqtt5evw' /* IPL. Ordinance */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                'nlsyfr82' /* IPL. Flagrante */,
+                                                                                'nlsyfr82' /* IPL. Flagrant */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
                                                                                 '1sk13k9j' /* T.C.O */,
@@ -4376,7 +4380,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 ),
                                                                             hintText:
                                                                                 FFLocalizations.of(context).getText(
-                                                                              'z4wg64u9' /* Tipo do procedimento */,
+                                                                              'z4wg64u9' /* Type of procedure */,
                                                                             ),
                                                                             searchHintText:
                                                                                 FFLocalizations.of(context).getText(
@@ -4422,19 +4426,19 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 FormFieldController<String>(null),
                                                                             options: [
                                                                               FFLocalizations.of(context).getText(
-                                                                                'sgflhc8f' /* Nenhuma das opções */,
+                                                                                'sgflhc8f' /* None of the options */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                '6pi3pms7' /* Tráfico de drogas */,
+                                                                                '6pi3pms7' /* Drug trafficking */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                '5zqnvie0' /* Roubo Qualificado */,
+                                                                                '5zqnvie0' /* Qualified Robbery */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                'ohxl9bc7' /* Lesão Corporal */,
+                                                                                'ohxl9bc7' /* Bodily Injury */,
                                                                               ),
                                                                               FFLocalizations.of(context).getText(
-                                                                                '1zj80s5y' /* Homicídio */,
+                                                                                '1zj80s5y' /* Murder */,
                                                                               )
                                                                             ],
                                                                             onChanged: (val) =>
@@ -4517,7 +4521,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             decoration:
                                                                                 InputDecoration(
                                                                               labelText: FFLocalizations.of(context).getText(
-                                                                                'kkjjfns6' /* Data do Procedimento */,
+                                                                                'kkjjfns6' /* Procedure Date */,
                                                                               ),
                                                                               labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -4526,7 +4530,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   ),
                                                                               alignLabelWithHint: true,
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                'y539pnv4' /* Data do Procedimento */,
+                                                                                'y539pnv4' /* Procedure Date */,
                                                                               ),
                                                                               hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -4683,14 +4687,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
-                                                                            logFirebaseEvent('MODAL_MEMBROS_ADD_LIMPAR_PROCEDIMENTOS_A');
+                                                                            logFirebaseEvent('MODAL_MEMBROS_ADD_CLEAR_PROCEDURES_BELOW');
                                                                             _model.membrosProcedimentos =
                                                                                 [];
                                                                             safeSetState(() {});
                                                                           },
                                                                           text:
                                                                               FFLocalizations.of(context).getText(
-                                                                            '5mm0nr5l' /* Limpar procedimentos abaixo */,
+                                                                            '5mm0nr5l' /* Clear procedures below */,
                                                                           ),
                                                                           icon:
                                                                               const Icon(
@@ -4734,7 +4738,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
-                                                                            logFirebaseEvent('MODAL_MEMBROS_ADD_ADICIONAR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('MODAL_MEMBROS_ADD_COMP_TO_ADD_BTN_ON_TAP');
                                                                             _model.addToMembrosProcedimentos(DataTypesProcedimentosStruct(
                                                                               procedimentoNo: _model.txtProcedimentoNoTextController.text,
                                                                               procedimentoTipo: _model.ddwProcedimentoTipoValue,
@@ -4746,7 +4750,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           },
                                                                           text:
                                                                               FFLocalizations.of(context).getText(
-                                                                            '8pxnhql5' /* Adicionar */,
+                                                                            '8pxnhql5' /* To add */,
                                                                           ),
                                                                           icon:
                                                                               const Icon(
@@ -4851,7 +4855,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
-                                                                                        'g3vpoxn0' /* Procedimento */,
+                                                                                        'g3vpoxn0' /* Procedure */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -4871,7 +4875,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
-                                                                                        '6vsm4hcv' /* Unidade */,
+                                                                                        '6vsm4hcv' /* Unit */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -4893,7 +4897,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
-                                                                                          '1rnrt2ya' /* Tipo de Procedimento: */,
+                                                                                          '1rnrt2ya' /* Type of procedure: */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -5209,7 +5213,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              '50bd7mi1' /* Informe os dados sobre os Proc... */,
+                                                                              '50bd7mi1' /* Provide information about the ... */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -5240,7 +5244,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               obscureText: false,
                                                                               decoration: InputDecoration(
                                                                                 labelText: FFLocalizations.of(context).getText(
-                                                                                  'ig1tpcu8' /* Nº da ação Penal */,
+                                                                                  'ig1tpcu8' /* Criminal action number */,
                                                                                 ),
                                                                                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -5316,16 +5320,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               controller: _model.ddwProcessoVaraValueController ??= FormFieldController<String>(null),
                                                                               options: [
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  'on8d1j5b' /* Nenhuma das opções */,
+                                                                                  'on8d1j5b' /* None of the options */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '3y3arw03' /* 1ª VARA PENAL */,
+                                                                                  '3y3arw03' /* 1st CRIMINAL COURT */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '2ad97h60' /* 2ª VARA PENAL */,
+                                                                                  '2ad97h60' /* 2nd CRIMINAL COURT */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '62uy1ula' /* 3ª VARA PENAL */,
+                                                                                  '62uy1ula' /* 3rd CRIMINAL COURT */,
                                                                                 )
                                                                               ],
                                                                               onChanged: (val) => safeSetState(() => _model.ddwProcessoVaraValue = val),
@@ -5346,7 +5350,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                '52tqxh7t' /* Vara */,
+                                                                                '52tqxh7t' /* Stick */,
                                                                               ),
                                                                               searchHintText: FFLocalizations.of(context).getText(
                                                                                 'f81efpi5' /* Search ... */,
@@ -5383,16 +5387,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               controller: _model.ddwProcessoSituacaoJuridicaValueController ??= FormFieldController<String>(null),
                                                                               options: [
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '9ntgj4nz' /* Nenhuma das opções */,
+                                                                                  '9ntgj4nz' /* None of the options */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '9krzgpyy' /* Condenado */,
+                                                                                  '9krzgpyy' /* Convicted */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  'veeirmiy' /* Provisório */,
+                                                                                  'veeirmiy' /* Provisional */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '85dco8ds' /* Aguardando Sentença */,
+                                                                                  '85dco8ds' /* Awaiting sentence */,
                                                                                 )
                                                                               ],
                                                                               onChanged: (val) => safeSetState(() => _model.ddwProcessoSituacaoJuridicaValue = val),
@@ -5413,7 +5417,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                'njzw806d' /* Situação jurídica */,
+                                                                                'njzw806d' /* Legal status */,
                                                                               ),
                                                                               searchHintText: FFLocalizations.of(context).getText(
                                                                                 'p7i3qgzk' /* Search... */,
@@ -5443,13 +5447,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               controller: _model.ddwProcessoRegimeValueController ??= FormFieldController<String>(null),
                                                                               options: [
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  'eskukxtn' /* Nenhuma das opções */,
+                                                                                  'eskukxtn' /* None of the options */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '3ucnkzsn' /* Fechado */,
+                                                                                  '3ucnkzsn' /* Closed */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '9ogzdq4x' /* Semi-aberto */,
+                                                                                  '9ogzdq4x' /* Semi-open */,
                                                                                 )
                                                                               ],
                                                                               onChanged: (val) => safeSetState(() => _model.ddwProcessoRegimeValue = val),
@@ -5507,10 +5511,10 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   'tn9os876' /* Nenhuma das opções */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '6f4ajcmk' /* Preso */,
+                                                                                  '6f4ajcmk' /* Arrested */,
                                                                                 ),
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  'wjr32pf6' /* Solto */,
+                                                                                  'wjr32pf6' /* Loose */,
                                                                                 )
                                                                               ],
                                                                               onChanged: (val) => safeSetState(() => _model.ddwProcessoSituacaoReuValue = val),
@@ -5531,7 +5535,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                'whrvcs43' /* Situação réu */,
+                                                                                'whrvcs43' /* Defendant situation */,
                                                                               ),
                                                                               searchHintText: FFLocalizations.of(context).getText(
                                                                                 'dquf2f18' /* Search... */,
@@ -5565,13 +5569,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_COMP_LIMPAR_BTN_ON_TAP');
+                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_TO_CLEAN_BTN_ON_TAP');
                                                                               _model.membrosProcessos = [];
                                                                               safeSetState(() {});
                                                                             },
                                                                             text:
                                                                                 FFLocalizations.of(context).getText(
-                                                                              'tveo07et' /* Limpar */,
+                                                                              'tveo07et' /* To clean */,
                                                                             ),
                                                                             icon:
                                                                                 const Icon(
@@ -5601,7 +5605,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_ADICIONAR_BTN_ON_TAP');
+                                                                              logFirebaseEvent('MODAL_MEMBROS_ADD_COMP_TO_ADD_BTN_ON_TAP');
                                                                               _model.addToMembrosProcessos(DataTypesProcessosStruct(
                                                                                 noAcaoPenal: _model.txtProcessoNoAcaoPenalTextController.text,
                                                                                 vara: _model.ddwProcessoVaraValue,
@@ -5613,7 +5617,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             },
                                                                             text:
                                                                                 FFLocalizations.of(context).getText(
-                                                                              'vm7t0n6u' /* Adicionar */,
+                                                                              'vm7t0n6u' /* To add */,
                                                                             ),
                                                                             icon:
                                                                                 const Icon(
@@ -5705,7 +5709,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
-                                                                                        'noufgwqe' /* Nº da ação Penal */,
+                                                                                        'noufgwqe' /* Criminal action number */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -5725,7 +5729,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
-                                                                                        'xeuwwqlt' /* Vara */,
+                                                                                        'xeuwwqlt' /* Stick */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -5747,7 +5751,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
-                                                                                          '9t25cx0m' /* Situação jurídica */,
+                                                                                          '9t25cx0m' /* Legal status */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -5794,7 +5798,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
-                                                                                          '670xv14p' /* Situação réu */,
+                                                                                          '670xv14p' /* Defendant situation */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -6043,7 +6047,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '7v3qtjj2' /* Faça um resumo das principais ... */,
+                                                                      '7v3qtjj2' /* Make a summary of the main cri... */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -6103,7 +6107,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                       labelText:
                                                                           FFLocalizations.of(context)
                                                                               .getText(
-                                                                        'ssjp267b' /* Atuação no Crime */,
+                                                                        'ssjp267b' /* Crime Action */,
                                                                       ),
                                                                       labelStyle: FlutterFlowTheme.of(
                                                                               context)
@@ -6121,7 +6125,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                       hintText:
                                                                           FFLocalizations.of(context)
                                                                               .getText(
-                                                                        'dak0lg3s' /* Atuação no Crime */,
+                                                                        'dak0lg3s' /* Crime Action */,
                                                                       ),
                                                                       hintStyle: FlutterFlowTheme.of(
                                                                               context)
@@ -6272,7 +6276,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        '3etmnyzt' /* Ativar alerta */,
+                                                                        '3etmnyzt' /* Enable alert */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -6353,7 +6357,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     labelText: FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '29530mgy' /* Alerta */,
+                                                                      '29530mgy' /* Alert */,
                                                                     ),
                                                                     labelStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -6371,7 +6375,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     hintText: FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'kx61gjir' /* Alerta */,
+                                                                      'kx61gjir' /* Alert */,
                                                                     ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -6536,7 +6540,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'hg8tsf0e' /* Percentual  de validações dos ... */,
+                                                                              'hg8tsf0e' /* Percentage of data validations */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -6624,7 +6628,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'z911x2kd' /* Como foram validados os dados ... */,
+                                                                                'z911x2kd' /* How were the data and informat... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -6647,25 +6651,25 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 FlutterFlowChoiceChips(
                                                                                   options: [
                                                                                     ChipData(FFLocalizations.of(context).getText(
-                                                                                      'udriebg5' /* Validação Local ou área de atu... */,
+                                                                                      'udriebg5' /* Local validation or area of ​​... */,
                                                                                     )),
                                                                                     ChipData(FFLocalizations.of(context).getText(
-                                                                                      'ekk2ybut' /* Apenas  atráves de fontes aber... */,
+                                                                                      'ekk2ybut' /* Only through open sources */,
                                                                                     )),
                                                                                     ChipData(FFLocalizations.of(context).getText(
-                                                                                      'jq3rovfo' /* Apenas através de fontes restr... */,
+                                                                                      'jq3rovfo' /* Only through restricted source... */,
                                                                                     )),
                                                                                     ChipData(FFLocalizations.of(context).getText(
-                                                                                      'si112iv5' /* Através de outra(s) agência de... */,
+                                                                                      'si112iv5' /* Through other intelligence age... */,
                                                                                     )),
                                                                                     ChipData(FFLocalizations.of(context).getText(
-                                                                                      'ucqyj1ot' /* Atráves de  outro(s) órgãos co... */,
+                                                                                      'ucqyj1ot' /* Through other bodies such as: ... */,
                                                                                     )),
                                                                                     ChipData(FFLocalizations.of(context).getText(
-                                                                                      'qd88nb62' /* Apenas  através de informe(s)  */,
+                                                                                      'qd88nb62' /* Only through report(s) */,
                                                                                     )),
                                                                                     ChipData(FFLocalizations.of(context).getText(
-                                                                                      'gq42kahm' /* Dentro de um Estabelecimento P... */,
+                                                                                      'gq42kahm' /* Inside a State Prison Facility */,
                                                                                     )),
                                                                                     ChipData(FFLocalizations.of(context).getText(
                                                                                       'ma9rbpmx' /* Dentro de um Estabelecimento P... */,

@@ -73,6 +73,10 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _CountMaps = prefs.getInt('ff_CountMaps') ?? _CountMaps;
     });
+    _safeInit(() {
+      _UsuarioFotoPadrao =
+          prefs.getString('ff_UsuarioFotoPadrao') ?? _UsuarioFotoPadrao;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -203,6 +207,14 @@ class FFAppState extends ChangeNotifier {
   int get ParAgenciaId => _ParAgenciaId;
   set ParAgenciaId(int value) {
     _ParAgenciaId = value;
+  }
+
+  String _UsuarioFotoPadrao =
+      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png';
+  String get UsuarioFotoPadrao => _UsuarioFotoPadrao;
+  set UsuarioFotoPadrao(String value) {
+    _UsuarioFotoPadrao = value;
+    prefs.setString('ff_UsuarioFotoPadrao', value);
   }
 }
 

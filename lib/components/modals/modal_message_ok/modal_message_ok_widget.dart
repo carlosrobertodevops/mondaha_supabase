@@ -257,8 +257,10 @@ class _ModalMessageOkWidgetState extends State<ModalMessageOkWidget>
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  logFirebaseEvent(
+                                      'MODAL_MESSAGE_OK_COMP_OK_BTN_ON_TAP');
+                                  Navigator.pop(context);
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'khrk3bz2' /* Ok */,

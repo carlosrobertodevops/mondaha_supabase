@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'auth_login_widget.dart' show AuthLoginWidget;
@@ -55,22 +54,6 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
   FocusNode? txtSignupNomeFocusNode;
   TextEditingController? txtSignupNomeTextController;
   String? Function(BuildContext, String?)? txtSignupNomeTextControllerValidator;
-  String? _txtSignupNomeTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'bauzjvgj' /* Field is required */,
-      );
-    }
-
-    if (!RegExp(kTextValidatorUsernameRegex).hasMatch(val)) {
-      return FFLocalizations.of(context).getText(
-        'jhqn2e6f' /* Invalid username ! */,
-      );
-    }
-    return null;
-  }
-
   // State field(s) for txt_signup_email widget.
   FocusNode? txtSignupEmailFocusNode;
   TextEditingController? txtSignupEmailTextController;
@@ -126,8 +109,8 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
     return null;
   }
 
-  // Stores action output result for [Backend Call - API (UsuarioAdd)] action in btn-signin widget.
-  ApiCallResponse? outputCreateAccount;
+  // Stores action output result for [Backend Call - Insert Row] action in btn-signin widget.
+  UsuariosRow? outputUsuarioAdd;
 
   @override
   void initState(BuildContext context) {
@@ -136,8 +119,6 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
     txtLoginPasswordVisibility = false;
     txtLoginPasswordTextControllerValidator =
         _txtLoginPasswordTextControllerValidator;
-    txtSignupNomeTextControllerValidator =
-        _txtSignupNomeTextControllerValidator;
     txtSignupEmailTextControllerValidator =
         _txtSignupEmailTextControllerValidator;
     txtSignupPasswordVisibility = false;

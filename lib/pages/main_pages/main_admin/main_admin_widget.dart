@@ -740,18 +740,18 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                 BoxShape.circle,
                                                                           ),
                                                                           child:
-                                                                              CachedNetworkImage(
-                                                                            fadeInDuration:
-                                                                                const Duration(milliseconds: 100),
-                                                                            fadeOutDuration:
-                                                                                const Duration(milliseconds: 100),
-                                                                            imageUrl:
-                                                                                valueOrDefault<String>(
-                                                                              listViewUsuariosRow.fotoPath,
+                                                                              Image.network(
+                                                                            valueOrDefault<String>(
+                                                                              listViewUsuariosRow.fotoPath == '' ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png' : listViewUsuariosRow.fotoPath,
                                                                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
                                                                             ),
                                                                             fit:
                                                                                 BoxFit.cover,
+                                                                            errorBuilder: (context, error, stackTrace) =>
+                                                                                Image.asset(
+                                                                              'assets/images/error_image.png',
+                                                                              fit: BoxFit.cover,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                         Expanded(

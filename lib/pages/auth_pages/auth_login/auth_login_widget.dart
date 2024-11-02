@@ -1,5 +1,4 @@
 import '/auth/supabase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/modals/modal_message_ok/modal_message_ok_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -997,7 +996,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                  'rxvn7x0x' /* Full name */,
+                                                                  'rxvn7x0x' /* User name */,
                                                                 ),
                                                                 labelStyle: FlutterFlowTheme.of(
                                                                         context)
@@ -1646,30 +1645,23 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                     return;
                                                                   }
 
-                                                                  if ((_model
-                                                                          .outputCreateAccount
-                                                                          ?.succeeded ??
-                                                                      true)) {
-                                                                    await Future.delayed(const Duration(
-                                                                        milliseconds:
-                                                                            4000));
-                                                                    _model.outputCreateAccount =
-                                                                        await UsuarioAddCall
-                                                                            .call(
-                                                                      email: _model
-                                                                          .txtSignupEmailTextController
-                                                                          .text,
-                                                                      userId:
+                                                                  if (loggedIn ==
+                                                                      true) {
+                                                                    _model.outputUsuarioAdd =
+                                                                        await UsuariosTable()
+                                                                            .insert({
+                                                                      'user_id':
                                                                           currentUserUid,
-                                                                      nomeCompleto: _model
+                                                                      'email':
+                                                                          currentUserEmail,
+                                                                      'nome_completo': _model
                                                                           .txtSignupNomeTextController
                                                                           .text,
-                                                                      agenciaId:
-                                                                          26,
-                                                                      tipoUsuarioId:
+                                                                      'tipo_usuario_id':
                                                                           9,
-                                                                    );
-
+                                                                      'agencia_id':
+                                                                          26,
+                                                                    });
                                                                     await showDialog(
                                                                       context:
                                                                           context,
