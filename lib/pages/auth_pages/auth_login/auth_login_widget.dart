@@ -1,16 +1,14 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/modals_extras/modal_agencia_pesquisa/modal_agencia_pesquisa_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'auth_login_model.dart';
@@ -247,7 +245,9 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               labelPadding:
-                                                  const EdgeInsets.all(16.0),
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(16.0, 16.0,
+                                                          16.0, 0.0),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
@@ -963,148 +963,6 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                               .labelMediumFamily),
                                                                 ),
                                                           ),
-                                                          Expanded(
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .min,
-                                                              children: [
-                                                                Expanded(
-                                                                  child: FutureBuilder<
-                                                                      List<
-                                                                          AgenciasRow>>(
-                                                                    future: _model
-                                                                        .cacheAgencias(
-                                                                      requestFn:
-                                                                          () =>
-                                                                              AgenciasTable().queryRows(
-                                                                        queryFn:
-                                                                            (q) =>
-                                                                                q.order('agencia_id'),
-                                                                      ),
-                                                                    ),
-                                                                    builder:
-                                                                        (context,
-                                                                            snapshot) {
-                                                                      // Customize what your widget looks like when it's loading.
-                                                                      if (!snapshot
-                                                                          .hasData) {
-                                                                        return Center(
-                                                                          child:
-                                                                              SizedBox(
-                                                                            width:
-                                                                                50.0,
-                                                                            height:
-                                                                                50.0,
-                                                                            child:
-                                                                                SpinKitFadingCircle(
-                                                                              color: FlutterFlowTheme.of(context).tertiary,
-                                                                              size: 50.0,
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      }
-                                                                      List<AgenciasRow>
-                                                                          ddwAgenciasAgenciasRowList =
-                                                                          snapshot
-                                                                              .data!;
-
-                                                                      return FlutterFlowDropDown<
-                                                                          int>(
-                                                                        controller:
-                                                                            _model.ddwAgenciasValueController ??=
-                                                                                FormFieldController<int>(
-                                                                          _model.ddwAgenciasValue ??=
-                                                                              0,
-                                                                        ),
-                                                                        options: List<int>.from(ddwAgenciasAgenciasRowList
-                                                                            .map((e) => valueOrDefault<int>(
-                                                                                  e.agenciaId,
-                                                                                  26,
-                                                                                ))
-                                                                            .toList()),
-                                                                        optionLabels: ddwAgenciasAgenciasRowList
-                                                                            .map((e) =>
-                                                                                e.nome)
-                                                                            .withoutNulls
-                                                                            .toList(),
-                                                                        onChanged:
-                                                                            (val) =>
-                                                                                safeSetState(() => _model.ddwAgenciasValue = val),
-                                                                        width:
-                                                                            410.0,
-                                                                        height:
-                                                                            62.0,
-                                                                        maxHeight:
-                                                                            62.0,
-                                                                        searchHintTextStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                              letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                            ),
-                                                                        searchTextStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                        textStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                        hintText:
-                                                                            FFLocalizations.of(context).getText(
-                                                                          '2hy6hs2l' /* Select... */,
-                                                                        ),
-                                                                        searchHintText:
-                                                                            FFLocalizations.of(context).getText(
-                                                                          '7desldh9' /* Search... */,
-                                                                        ),
-                                                                        icon:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .keyboard_arrow_down_rounded,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                          size:
-                                                                              24.0,
-                                                                        ),
-                                                                        fillColor:
-                                                                            FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        elevation:
-                                                                            2.0,
-                                                                        borderColor:
-                                                                            FlutterFlowTheme.of(context).alternate,
-                                                                        borderWidth:
-                                                                            2.0,
-                                                                        borderRadius:
-                                                                            12.0,
-                                                                        margin: const EdgeInsetsDirectional.fromSTEB(
-                                                                            24.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                        hidesUnderline:
-                                                                            true,
-                                                                        isOverButton:
-                                                                            false,
-                                                                        isSearchable:
-                                                                            true,
-                                                                        isMultiSelect:
-                                                                            false,
-                                                                      );
-                                                                    },
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                           SizedBox(
                                                             width:
                                                                 double.infinity,
@@ -1742,146 +1600,199 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                             alignment:
                                                                 const AlignmentDirectional(
                                                                     0.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          16.0),
-                                                              child:
+                                                            child: Builder(
+                                                              builder: (context) =>
                                                                   FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
                                                                   logFirebaseEvent(
                                                                       'AUTH_LOGIN_PAGE_btn-signin_ON_TAP');
-                                                                  GoRouter.of(
-                                                                          context)
-                                                                      .prepareAuthEvent();
-                                                                  if (_model
-                                                                          .txtSignupPasswordTextController
-                                                                          .text !=
-                                                                      _model
-                                                                          .txtSignupConfirmTextController
-                                                                          .text) {
-                                                                    ScaffoldMessenger.of(
-                                                                            context)
-                                                                        .showSnackBar(
-                                                                      const SnackBar(
-                                                                        content:
-                                                                            Text(
-                                                                          'Passwords don\'t match!',
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                    return;
-                                                                  }
-
-                                                                  final user =
-                                                                      await authManager
-                                                                          .createAccountWithEmail(
-                                                                    context,
-                                                                    _model
-                                                                        .txtSignupEmailTextController
-                                                                        .text,
-                                                                    _model
-                                                                        .txtSignupPasswordTextController
-                                                                        .text,
-                                                                  );
-                                                                  if (user ==
-                                                                      null) {
-                                                                    return;
-                                                                  }
-
-                                                                  await Future.delayed(
-                                                                      const Duration(
-                                                                          milliseconds:
-                                                                              1000));
-                                                                  await UsuariosTable()
-                                                                      .insert({
-                                                                    'user_id':
-                                                                        currentUserUid,
-                                                                    'email':
-                                                                        currentUserEmail,
-                                                                    'nome_completo':
-                                                                        _model
-                                                                            .txtSignupNomeTextController
-                                                                            .text,
-                                                                    'agencia_id':
-                                                                        _model
-                                                                            .ddwAgenciasValue,
-                                                                    'tipo_usuario_id':
-                                                                        9,
-                                                                  });
-                                                                  ScaffoldMessenger.of(
-                                                                          context)
-                                                                      .showSnackBar(
-                                                                    SnackBar(
-                                                                      content:
-                                                                          Text(
-                                                                        'Cadastro realizado com sucesso!',
-                                                                        style:
-                                                                            TextStyle(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                        ),
-                                                                      ),
-                                                                      duration: const Duration(
-                                                                          milliseconds:
-                                                                              4000),
-                                                                      backgroundColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .success,
-                                                                    ),
-                                                                  );
-                                                                  safeSetState(
-                                                                      () {
-                                                                    _model
-                                                                        .ddwAgenciasValueController
-                                                                        ?.reset();
-                                                                  });
-                                                                  safeSetState(
-                                                                      () {
-                                                                    _model
-                                                                        .txtSignupConfirmTextController
-                                                                        ?.clear();
-                                                                    _model
-                                                                        .txtSignupPasswordTextController
-                                                                        ?.clear();
-                                                                    _model
-                                                                        .txtSignupEmailTextController
-                                                                        ?.clear();
-                                                                    _model
-                                                                        .txtSignupNomeTextController
-                                                                        ?.clear();
-                                                                  });
                                                                   await showDialog(
                                                                     context:
                                                                         context,
                                                                     builder:
-                                                                        (alertDialogContext) {
-                                                                      return AlertDialog(
-                                                                        title: const Text(
-                                                                            'Informação'),
-                                                                        content:
-                                                                            const Text('Cadastro realizado com SUCESSO !!! Aguarde liberação do Gestor de sua agência.'),
-                                                                        actions: [
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext),
-                                                                            child:
-                                                                                const Text('Ok'),
-                                                                          ),
-                                                                        ],
+                                                                        (dialogContext) {
+                                                                      return Dialog(
+                                                                        elevation:
+                                                                            0,
+                                                                        insetPadding:
+                                                                            EdgeInsets.zero,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        alignment:
+                                                                            const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                        child:
+                                                                            GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(dialogContext).unfocus(),
+                                                                          child:
+                                                                              const ModalAgenciaPesquisaWidget(),
+                                                                        ),
                                                                       );
                                                                     },
                                                                   );
 
-                                                                  context.pushNamedAuth(
-                                                                      'auth_login',
-                                                                      context
-                                                                          .mounted);
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                title: const Text('Confirmar dados'),
+                                                                                content: const Text('Deseja  realizar o cadatro com os dados informador ?'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: const Text('Cancelar'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: const Text('Confirmar'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    GoRouter.of(
+                                                                            context)
+                                                                        .prepareAuthEvent();
+                                                                    if (_model
+                                                                            .txtSignupPasswordTextController
+                                                                            .text !=
+                                                                        _model
+                                                                            .txtSignupConfirmTextController
+                                                                            .text) {
+                                                                      ScaffoldMessenger.of(
+                                                                              context)
+                                                                          .showSnackBar(
+                                                                        const SnackBar(
+                                                                          content:
+                                                                              Text(
+                                                                            'Passwords don\'t match!',
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                      return;
+                                                                    }
+
+                                                                    final user =
+                                                                        await authManager
+                                                                            .createAccountWithEmail(
+                                                                      context,
+                                                                      _model
+                                                                          .txtSignupEmailTextController
+                                                                          .text,
+                                                                      _model
+                                                                          .txtSignupPasswordTextController
+                                                                          .text,
+                                                                    );
+                                                                    if (user ==
+                                                                        null) {
+                                                                      return;
+                                                                    }
+
+                                                                    await Future.delayed(const Duration(
+                                                                        milliseconds:
+                                                                            1000));
+                                                                    await UsuariosTable()
+                                                                        .insert({
+                                                                      'user_id':
+                                                                          currentUserUid,
+                                                                      'email':
+                                                                          currentUserEmail,
+                                                                      'nome_completo': _model
+                                                                          .txtSignupNomeTextController
+                                                                          .text,
+                                                                      'agencia_id':
+                                                                          FFAppState()
+                                                                              .ParAgenciaId,
+                                                                      'tipo_usuario_id':
+                                                                          9,
+                                                                    });
+                                                                    ScaffoldMessenger.of(
+                                                                            context)
+                                                                        .showSnackBar(
+                                                                      SnackBar(
+                                                                        content:
+                                                                            Text(
+                                                                          'Cadastro realizado com sucesso!',
+                                                                          style:
+                                                                              TextStyle(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
+                                                                        ),
+                                                                        duration:
+                                                                            const Duration(milliseconds: 4000),
+                                                                        backgroundColor:
+                                                                            FlutterFlowTheme.of(context).success,
+                                                                      ),
+                                                                    );
+                                                                    safeSetState(
+                                                                        () {
+                                                                      _model
+                                                                          .txtSignupConfirmTextController
+                                                                          ?.clear();
+                                                                      _model
+                                                                          .txtSignupPasswordTextController
+                                                                          ?.clear();
+                                                                      _model
+                                                                          .txtSignupEmailTextController
+                                                                          ?.clear();
+                                                                      _model
+                                                                          .txtSignupNomeTextController
+                                                                          ?.clear();
+                                                                    });
+                                                                    await showDialog(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          title:
+                                                                              const Text('Informação'),
+                                                                          content:
+                                                                              const Text('Cadastro realizado com SUCESSO !!! Aguarde liberação do Gestor de sua agência.'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: const Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    );
+
+                                                                    context.pushNamedAuth(
+                                                                        'auth_login',
+                                                                        context
+                                                                            .mounted);
+                                                                  } else {
+                                                                    safeSetState(
+                                                                        () {
+                                                                      _model
+                                                                          .txtSignupNomeTextController
+                                                                          ?.clear();
+                                                                      _model
+                                                                          .txtSignupEmailTextController
+                                                                          ?.clear();
+                                                                      _model
+                                                                          .txtSignupPasswordTextController
+                                                                          ?.clear();
+                                                                      _model
+                                                                          .txtSignupConfirmTextController
+                                                                          ?.clear();
+                                                                    });
+
+                                                                    context.pushNamedAuth(
+                                                                        'auth_login',
+                                                                        context
+                                                                            .mounted);
+                                                                  }
                                                                 },
                                                                 text: FFLocalizations.of(
                                                                         context)

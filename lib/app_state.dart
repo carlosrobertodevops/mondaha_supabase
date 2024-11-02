@@ -203,6 +203,12 @@ class FFAppState extends ChangeNotifier {
     _UsuarioLiberado = value;
     prefs.setBool('ff_UsuarioLiberado', value);
   }
+
+  int _ParAgenciaId = 0;
+  int get ParAgenciaId => _ParAgenciaId;
+  set ParAgenciaId(int value) {
+    _ParAgenciaId = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

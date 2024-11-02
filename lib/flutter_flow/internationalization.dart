@@ -694,26 +694,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Let\'s get started by filling out the form below.',
       'pt': 'Vamos começar preenchendo o formulário abaixo.',
     },
-    't75e9ij9': {
-      'en': 'Option 1',
-      'pt': '',
-    },
-    'vo9bgffn': {
-      'en': 'Option 2',
-      'pt': '',
-    },
-    'pyt01uro': {
-      'en': 'Option 3',
-      'pt': '',
-    },
-    '2hy6hs2l': {
-      'en': 'Select...',
-      'pt': 'Selecione sua agência',
-    },
-    '7desldh9': {
-      'en': 'Search...',
-      'pt': 'Pesquisar agência',
-    },
     'rxvn7x0x': {
       'en': 'Full name',
       'pt': 'Nome completo',
@@ -2736,6 +2716,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Salvar alterações',
     },
   },
+  // modal_agencia_pesquisa
+  {
+    'kgdwkq27': {
+      'en': 'Select your agency',
+      'pt': 'Selecione sua agência',
+    },
+    'gcsoddpb': {
+      'en': 'Search for your intelligence agency below',
+      'pt': 'Procure abaixo sua agência de inteligência',
+    },
+    'ibal8767': {
+      'en': 'Search members...',
+      'pt': 'Pesquisar membros...',
+    },
+    'yqk8o466': {
+      'en': '',
+      'pt': '',
+    },
+    '8j1rka5p': {
+      'en': 'Option 1',
+      'pt': '',
+    },
+    'p38jip18': {
+      'en': 'Save',
+      'pt': 'Salvar',
+    },
+  },
   // Miscellaneous
   {
     '0nwoj0kc': {
@@ -2910,11 +2917,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '65e2tfs2': {
       'en': '',
-      'pt': '',
+      'pt': 'Aconteceu um Erro: [error]',
     },
     'ddazihx4': {
       'en': '',
-      'pt': '',
+      'pt': 'Seu email de redefinição de senha foi enviado!',
     },
     'db03cpjj': {
       'en': '',
@@ -2934,39 +2941,42 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ce8c4ty0': {
       'en': '',
-      'pt': '',
+      'pt':
+          'Já foi muito tempo desde o último login. Entre novamente antes de excluir sua conta.',
     },
     'ehb9j2eu': {
       'en': '',
-      'pt': '',
+      'pt':
+          'Já foi muito tempo desde o último login. Entre novamente antes de atualizar seu e-mail.',
     },
     '91bvb462': {
       'en': '',
-      'pt': '',
+      'pt': 'E-mail de confirmação de alteração de e-mail enviado!',
     },
     'hirpbigs': {
       'en': '',
-      'pt': 'email já existe no App',
+      'pt': 'Este email já esta em uso por outra conta.',
     },
     'wj8451yf': {
       'en': '',
-      'pt': '',
+      'pt':
+          'Sua credencal de acesso fornecida está incorreta, mal informada ou expirou.',
     },
     'kcvqa08x': {
       'en': '',
-      'pt': '',
+      'pt': 'Formato de arquivo inválido',
     },
     'dqrzd6sq': {
       'en': '',
-      'pt': '',
+      'pt': 'Baixando arquivo ...',
     },
     'dpqtohyf': {
       'en': '',
-      'pt': '',
+      'pt': 'Sucesso !',
     },
     'v01vf71s': {
       'en': '',
-      'pt': '',
+      'pt': 'Failha ao fazer o Upload do dado',
     },
     'gcv6def1': {
       'en': '',
@@ -2974,23 +2984,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'um9es99m': {
       'en': '',
-      'pt': '',
+      'pt': 'Escolha a fonte',
     },
     'o4enbz4j': {
       'en': '',
-      'pt': '',
+      'pt': 'Galéria ',
     },
     '8z4tvfh7': {
       'en': '',
-      'pt': '',
+      'pt': 'Galéria (Foto)',
     },
     '2ybzla8x': {
       'en': '',
-      'pt': '',
+      'pt': 'Galéria (Vídeo)',
     },
     'd1wdf5i1': {
       'en': '',
-      'pt': '',
+      'pt': 'Câmera',
     },
     'f4rdu9en': {
       'en': '',
