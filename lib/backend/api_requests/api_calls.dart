@@ -9,15 +9,6 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-/// Start Test APIs Group Code
-
-class TestAPIsGroup {
-  static String getBaseUrl() => 'https://google.com';
-  static Map<String, String> headers = {};
-}
-
-/// End Test APIs Group Code
-
 class DeletarUserAuthNoSUPABASECall {
   static Future<ApiCallResponse> call({
     String? email = '',
@@ -91,6 +82,79 @@ class LoginNoSUPABASECall {
         'Content-Type': 'application/json',
         'apikey':
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SignupNoSUPABASECall {
+  static Future<ApiCallResponse> call({
+    String? email = 'tenroberto2011@gmail.com',
+    String? password = '@CRneto04',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "email": "$email",
+  "password": "$password"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Signup no SUPABASE',
+      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/auth/v1/signup',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UsuarioAddCall {
+  static Future<ApiCallResponse> call({
+    String? email = '',
+    String? userId = '',
+    String? nomeCompleto = '',
+    int? agenciaId = 26,
+    int? tipoUsuarioId = 9,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "email": "$email",
+  "user_id": "$userId",
+  "nome_completo": "$nomeCompleto",
+  "agencia_id": "$agenciaId",
+  "usuario_tipo_id": "$tipoUsuarioId"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'UsuarioAdd',
+      apiUrl: 'https://lwbmyeixfxysrddcvnjo.supabase.co/rest/v1/usuarios',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Ym15ZWl4Znh5c3JkZGN2bmpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjc2MzMzMiwiZXhwIjoyMDQyMzM5MzMyfQ.Uom252e4X1AS-QOiL3LpHtE_nuqFWelhjcEDnfTn1L8',
+        'Prefer': 'return=minimal',
       },
       params: {},
       body: ffApiRequestBody,

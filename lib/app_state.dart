@@ -73,10 +73,6 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _CountMaps = prefs.getInt('ff_CountMaps') ?? _CountMaps;
     });
-    _safeInit(() {
-      _UsuarioLiberado =
-          prefs.getBool('ff_UsuarioLiberado') ?? _UsuarioLiberado;
-    });
   }
 
   void update(VoidCallback callback) {
@@ -201,7 +197,6 @@ class FFAppState extends ChangeNotifier {
   bool get UsuarioLiberado => _UsuarioLiberado;
   set UsuarioLiberado(bool value) {
     _UsuarioLiberado = value;
-    prefs.setBool('ff_UsuarioLiberado', value);
   }
 
   int _ParAgenciaId = 0;

@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'auth_login_widget.dart' show AuthLoginWidget;
@@ -17,41 +18,134 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
   FocusNode? txtLoginEmailFocusNode;
   TextEditingController? txtLoginEmailTextController;
   String? Function(BuildContext, String?)? txtLoginEmailTextControllerValidator;
+  String? _txtLoginEmailTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '6ms24pjq' /* Field is required */,
+      );
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'Has to be a valid email address.';
+    }
+    return null;
+  }
+
   // State field(s) for txt_login_password widget.
   FocusNode? txtLoginPasswordFocusNode;
   TextEditingController? txtLoginPasswordTextController;
   late bool txtLoginPasswordVisibility;
   String? Function(BuildContext, String?)?
       txtLoginPasswordTextControllerValidator;
+  String? _txtLoginPasswordTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'u9b5zrd8' /* Field is required */,
+      );
+    }
+
+    return null;
+  }
+
   // Stores action output result for [Backend Call - Query Rows] action in btn-login widget.
   List<UsuariosRow>? usuarioDiferenteNove;
   // State field(s) for txt_signup_nome widget.
   FocusNode? txtSignupNomeFocusNode;
   TextEditingController? txtSignupNomeTextController;
   String? Function(BuildContext, String?)? txtSignupNomeTextControllerValidator;
+  String? _txtSignupNomeTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'bauzjvgj' /* Field is required */,
+      );
+    }
+
+    if (!RegExp(kTextValidatorUsernameRegex).hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'jhqn2e6f' /* Invalid username ! */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for txt_signup_email widget.
   FocusNode? txtSignupEmailFocusNode;
   TextEditingController? txtSignupEmailTextController;
   String? Function(BuildContext, String?)?
       txtSignupEmailTextControllerValidator;
+  String? _txtSignupEmailTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '9lz7n6fv' /* Field is required */,
+      );
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'dw2vhjan' /* Invalid email! */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for txt_signup_password widget.
   FocusNode? txtSignupPasswordFocusNode;
   TextEditingController? txtSignupPasswordTextController;
   late bool txtSignupPasswordVisibility;
   String? Function(BuildContext, String?)?
       txtSignupPasswordTextControllerValidator;
+  String? _txtSignupPasswordTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'fyc3auc8' /* Field is required */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for txt_signup_confirm widget.
   FocusNode? txtSignupConfirmFocusNode;
   TextEditingController? txtSignupConfirmTextController;
   late bool txtSignupConfirmVisibility;
   String? Function(BuildContext, String?)?
       txtSignupConfirmTextControllerValidator;
+  String? _txtSignupConfirmTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'obaog0sx' /* Field is required */,
+      );
+    }
+
+    return null;
+  }
+
+  // Stores action output result for [Backend Call - API (UsuarioAdd)] action in btn-signin widget.
+  ApiCallResponse? outputCreateAccount;
 
   @override
   void initState(BuildContext context) {
+    txtLoginEmailTextControllerValidator =
+        _txtLoginEmailTextControllerValidator;
     txtLoginPasswordVisibility = false;
+    txtLoginPasswordTextControllerValidator =
+        _txtLoginPasswordTextControllerValidator;
+    txtSignupNomeTextControllerValidator =
+        _txtSignupNomeTextControllerValidator;
+    txtSignupEmailTextControllerValidator =
+        _txtSignupEmailTextControllerValidator;
     txtSignupPasswordVisibility = false;
+    txtSignupPasswordTextControllerValidator =
+        _txtSignupPasswordTextControllerValidator;
     txtSignupConfirmVisibility = false;
+    txtSignupConfirmTextControllerValidator =
+        _txtSignupConfirmTextControllerValidator;
   }
 
   @override
