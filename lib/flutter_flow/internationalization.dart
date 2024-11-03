@@ -1717,8 +1717,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Grau ou Nível de instrução',
     },
     '4thgagtf': {
-      'en': 'Father\'s Situation',
-      'pt': 'Situação do Pai',
+      'en': 'Degree or Level of Education',
+      'pt': 'Grau ou nível de educação',
     },
     'qjj69k8u': {
       'en': 'Field is required',
@@ -2652,6 +2652,50 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Short Description',
       'pt': 'Descrição curta',
     },
+    'nus7z38o': {
+      'en': 'Alfabetizado',
+      'pt': 'Alfabetizado',
+    },
+    'o7m2i6p2': {
+      'en': 'illiterate',
+      'pt': 'Não alfabetizado',
+    },
+    'l7wk3lrd': {
+      'en': 'Completed elementary education',
+      'pt': 'Ensino fundamental completo',
+    },
+    'qos44j9c': {
+      'en': 'Completed high school',
+      'pt': 'Ensino médio completo',
+    },
+    'heufihw9': {
+      'en': 'Completed higher education',
+      'pt': 'Ensino superior completo',
+    },
+    '49xtgad1': {
+      'en': 'Incomplete elementary education',
+      'pt': 'Ensino fundamental incompleto',
+    },
+    'y0ndai12': {
+      'en': 'Incomplete high school',
+      'pt': 'Ensino médio incompleto',
+    },
+    'vmuw50q5': {
+      'en': 'Incomplete higher education',
+      'pt': 'Ensino superior incompleto',
+    },
+    'jo2xcd1b': {
+      'en': 'No information',
+      'pt': 'Sem informação',
+    },
+    '3krya23z': {
+      'en': 'Agency',
+      'pt': 'Agência',
+    },
+    '65au9781': {
+      'en': 'Agency',
+      'pt': 'Agência',
+    },
     'p1lquhce': {
       'en': 'The email associated with this account is:',
       'pt': 'O e-mail associado a esta conta é:',
@@ -2794,6 +2838,50 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'pfhfmd7v': {
       'en': 'Short Description',
       'pt': 'Descrição curta',
+    },
+    '0hv6f27h': {
+      'en': 'Alfabetizado',
+      'pt': 'Alfabetizado',
+    },
+    'jaq1pg5i': {
+      'en': 'illiterate',
+      'pt': 'Não alfabetizado',
+    },
+    'xkozcld7': {
+      'en': 'Completed elementary education',
+      'pt': 'Ensino fundamental completo',
+    },
+    '0amisaxj': {
+      'en': 'Completed high school',
+      'pt': 'Ensino médio completo',
+    },
+    '3x5xz1gl': {
+      'en': 'Completed higher education',
+      'pt': 'Ensino superior completo',
+    },
+    'p688eovk': {
+      'en': 'Incomplete elementary education',
+      'pt': 'Ensino fundamental incompleto',
+    },
+    '9lucsqoc': {
+      'en': 'Incomplete high school',
+      'pt': 'Ensino médio incompleto',
+    },
+    'tirtb0ds': {
+      'en': 'Incomplete higher education',
+      'pt': 'Ensino superior incompleto',
+    },
+    'ru0e2ck4': {
+      'en': 'No information',
+      'pt': 'Sem informação',
+    },
+    '81ibx6co': {
+      'en': 'Agency',
+      'pt': 'Agência',
+    },
+    'o5rqoote': {
+      'en': 'Agency',
+      'pt': 'Agência',
     },
     'orq2ygjx': {
       'en': 'The email associated with this account is:',

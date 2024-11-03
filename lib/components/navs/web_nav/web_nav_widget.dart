@@ -1393,9 +1393,9 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                             BorderRadius.circular(50.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
-                                              const Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 10),
                                           fadeOutDuration:
-                                              const Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 10),
                                           imageUrl: valueOrDefault<String>(
                                             FFAppState().UsuarioAtualFoto,
                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',

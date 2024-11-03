@@ -212,9 +212,9 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   TextEditingController? txtMembrosEnderecosAddTextController;
   String? Function(BuildContext, String?)?
       txtMembrosEnderecosAddTextControllerValidator;
-  // State field(s) for GoogleMap widget.
-  LatLng? googleMapsCenter;
-  final googleMapsController = Completer<GoogleMapController>();
+  // State field(s) for GoogleMapMembro widget.
+  LatLng? googleMapMembrosCenter;
+  final googleMapMembrosController = Completer<GoogleMapController>();
   // State field(s) for txt_membro_historico widget.
   FocusNode? txtMembroHistoricoFocusNode;
   TextEditingController? txtMembroHistoricoTextController;

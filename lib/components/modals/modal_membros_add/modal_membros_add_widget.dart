@@ -2099,7 +2099,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     '0wrilaus' /* Degree or Level of Education */,
                                                                                   ),
                                                                                   searchHintText: FFLocalizations.of(context).getText(
-                                                                                    '4thgagtf' /* Father's Situation */,
+                                                                                    '4thgagtf' /* Degree or Level of Education */,
                                                                                   ),
                                                                                   icon: Icon(
                                                                                     Icons.keyboard_arrow_down_rounded,
@@ -2543,7 +2543,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     _model.updatePage(() {});
                                                                                     _model.addToMembrosLatLng(_model.placePickerEnderecoValue.latLng);
                                                                                     _model.updatePage(() {});
-                                                                                    await _model.googleMapsController.future.then(
+                                                                                    await _model.googleMapMembrosController.future.then(
                                                                                       (c) => c.animateCamera(
                                                                                         CameraUpdate.newLatLng(_model.membrosLatLng.last.toGoogleMaps()),
                                                                                       ),
@@ -2675,9 +2675,9 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     ),
                                                                                   ),
                                                                                   child: FlutterFlowGoogleMap(
-                                                                                    controller: _model.googleMapsController,
-                                                                                    onCameraIdle: (latLng) => _model.googleMapsCenter = latLng,
-                                                                                    initialLocation: _model.googleMapsCenter ??= const LatLng(-8.77, -70.55),
+                                                                                    controller: _model.googleMapMembrosController,
+                                                                                    onCameraIdle: (latLng) => _model.googleMapMembrosCenter = latLng,
+                                                                                    initialLocation: _model.googleMapMembrosCenter ??= const LatLng(-8.77, -70.55),
                                                                                     markers: _model.membrosLatLng
                                                                                         .map(
                                                                                           (marker) => FlutterFlowMarker(

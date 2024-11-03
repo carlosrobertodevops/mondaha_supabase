@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'modal_profile_edit_admin_widget.dart' show ModalProfileEditAdminWidget;
 import 'package:flutter/material.dart';
 
@@ -21,10 +22,13 @@ class ModalProfileEditAdminModel
   TextEditingController? txtNomeCompletoTextController;
   String? Function(BuildContext, String?)?
       txtNomeCompletoTextControllerValidator;
-  // State field(s) for txt_descricap widget.
-  FocusNode? txtDescricapFocusNode;
-  TextEditingController? txtDescricapTextController;
-  String? Function(BuildContext, String?)? txtDescricapTextControllerValidator;
+  // State field(s) for txt_descricao widget.
+  FocusNode? txtDescricaoFocusNode;
+  TextEditingController? txtDescricaoTextController;
+  String? Function(BuildContext, String?)? txtDescricaoTextControllerValidator;
+  // State field(s) for ddw_agencia widget.
+  int? ddwAgenciaValue;
+  FormFieldController<int>? ddwAgenciaValueController;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -41,7 +45,7 @@ class ModalProfileEditAdminModel
     txtNomeCompletoFocusNode?.dispose();
     txtNomeCompletoTextController?.dispose();
 
-    txtDescricapFocusNode?.dispose();
-    txtDescricapTextController?.dispose();
+    txtDescricaoFocusNode?.dispose();
+    txtDescricaoTextController?.dispose();
   }
 }

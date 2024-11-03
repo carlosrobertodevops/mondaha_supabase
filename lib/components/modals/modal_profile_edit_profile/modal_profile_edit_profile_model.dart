@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'modal_profile_edit_profile_widget.dart'
     show ModalProfileEditProfileWidget;
 import 'package:flutter/material.dart';
@@ -26,6 +27,9 @@ class ModalProfileEditProfileModel
   FocusNode? txtDescricapFocusNode;
   TextEditingController? txtDescricapTextController;
   String? Function(BuildContext, String?)? txtDescricapTextControllerValidator;
+  // State field(s) for ddw_agencia widget.
+  int? ddwAgenciaValue;
+  FormFieldController<int>? ddwAgenciaValueController;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));

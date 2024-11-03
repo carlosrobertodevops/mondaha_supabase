@@ -1,14 +1,17 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'modal_profile_edit_admin_model.dart';
@@ -48,9 +51,9 @@ class _ModalProfileEditAdminWidgetState
         TextEditingController(text: widget.usuarioid?.nomeCompleto);
     _model.txtNomeCompletoFocusNode ??= FocusNode();
 
-    _model.txtDescricapTextController ??=
+    _model.txtDescricaoTextController ??=
         TextEditingController(text: widget.usuarioid?.descricao);
-    _model.txtDescricapFocusNode ??= FocusNode();
+    _model.txtDescricaoFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -485,8 +488,8 @@ class _ModalProfileEditAdminWidgetState
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.txtDescricapTextController,
-                                  focusNode: _model.txtDescricapFocusNode,
+                                  controller: _model.txtDescricaoTextController,
+                                  focusNode: _model.txtDescricaoFocusNode,
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -573,9 +576,152 @@ class _ModalProfileEditAdminWidgetState
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primary,
                                   validator: _model
-                                      .txtDescricapTextControllerValidator
+                                      .txtDescricaoTextControllerValidator
                                       .asValidator(context),
                                 ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 16.0, 16.0, 0.0),
+                                      child: FutureBuilder<List<AgenciasRow>>(
+                                        future: AgenciasTable().queryRows(
+                                          queryFn: (q) => q.order('agencia_id',
+                                              ascending: true),
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child: SpinKitFadingCircle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .tertiary,
+                                                  size: 50.0,
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<AgenciasRow>
+                                              ddwAgenciaAgenciasRowList =
+                                              snapshot.data!;
+
+                                          return FlutterFlowDropDown<int>(
+                                            controller: _model
+                                                    .ddwAgenciaValueController ??=
+                                                FormFieldController<int>(
+                                              _model.ddwAgenciaValue ??=
+                                                  valueOrDefault<int>(
+                                                widget.usuarioid?.agenciaId,
+                                                0,
+                                              ),
+                                            ),
+                                            options: List<int>.from(
+                                                ddwAgenciaAgenciasRowList
+                                                    .map((e) => e.agenciaId)
+                                                    .toList()),
+                                            optionLabels:
+                                                ddwAgenciaAgenciasRowList
+                                                    .map((e) => e.nome)
+                                                    .withoutNulls
+                                                    .toList(),
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.ddwAgenciaValue =
+                                                    val),
+                                            height: 60.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily),
+                                                    ),
+                                            searchTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '81ibx6co' /* Agency */,
+                                            ),
+                                            searchHintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'o5rqoote' /* Agency */,
+                                            ),
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              size: 24.0,
+                                            ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            elevation: 2.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 12.0, 0.0),
+                                            hidesUnderline: true,
+                                            isOverButton: false,
+                                            isSearchable: true,
+                                            isMultiSelect: false,
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -903,53 +1049,112 @@ class _ModalProfileEditAdminWidgetState
                                         }
                                       }
 
-                                      _model.outputUsuarioUpdate =
-                                          await UsuariosTable().update(
-                                        data: {
-                                          'nome_completo': _model
-                                              .txtNomeCompletoTextController
-                                              .text,
-                                          'foto_path': _model.uploadedFileUrl2,
-                                          'descricao': _model
-                                              .txtDescricapTextController.text,
-                                          'acesso_at': supaSerialize<DateTime>(
-                                              getCurrentTimestamp),
-                                        },
-                                        matchingRows: (rows) => rows.eq(
-                                          'user_id',
-                                          widget.usuarioid?.userId,
-                                        ),
-                                        returnRows: true,
-                                      );
-                                      FFAppState().UsuarioAtualNomeCompleto =
-                                          _model.outputUsuarioUpdate!.first
-                                              .nomeCompleto!;
-                                      FFAppState().UsuarioAtualFoto =
-                                          _model.uploadedFileUrl2;
-                                      FFAppState().update(() {});
-                                      Navigator.pop(context);
-                                      Navigator.pop(context);
-
-                                      context.pushNamed('main_admin');
-
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Daddos  atualizados com sucesso !',
-                                            style: TextStyle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
+                                      var confirmDialogResponse =
+                                          await showDialog<bool>(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: const Text('SALVAR'),
+                                                    content: const Text(
+                                                        'Deseja SALVAR os dados alterados ?'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                false),
+                                                        child: const Text('Cancelar'),
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                true),
+                                                        child:
+                                                            const Text('Confirmar'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ) ??
+                                              false;
+                                      if (confirmDialogResponse) {
+                                        _model.outputUsuarioUpdate =
+                                            await UsuariosTable().update(
+                                          data: {
+                                            'nome_completo': _model
+                                                .txtNomeCompletoTextController
+                                                .text,
+                                            'foto_path':
+                                                _model.uploadedFileUrl2,
+                                            'descricao': _model
+                                                .txtDescricaoTextController
+                                                .text,
+                                            'acesso_at':
+                                                supaSerialize<DateTime>(
+                                                    getCurrentTimestamp),
+                                            'agencia_id':
+                                                _model.ddwAgenciaValue,
+                                          },
+                                          matchingRows: (rows) => rows.eq(
+                                            'user_id',
+                                            widget.usuarioid?.userId,
                                           ),
-                                          duration:
-                                              const Duration(milliseconds: 1000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .success,
-                                        ),
-                                      );
+                                          returnRows: true,
+                                        );
+                                        FFAppState().UsuarioAtualNomeCompleto =
+                                            _model.txtNomeCompletoTextController
+                                                .text;
+                                        FFAppState().UsuarioAtualFoto =
+                                            _model.uploadedFileUrl2;
+                                        FFAppState().update(() {});
+                                        Navigator.pop(context);
+                                        Navigator.pop(context);
+
+                                        context.pushNamed('main_admin');
+
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Dados  atualizados com sucesso !',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                const Duration(milliseconds: 1000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .success,
+                                          ),
+                                        );
+                                      } else {
+                                        Navigator.pop(context);
+
+                                        context.pushNamed('main_profile');
+
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Daddos  atualizados com sucesso !',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                const Duration(milliseconds: 1000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .success,
+                                          ),
+                                        );
+                                      }
 
                                       safeSetState(() {});
                                     },
