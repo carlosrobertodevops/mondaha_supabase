@@ -708,7 +708,7 @@ class _ModalProfileEditAdminWidgetState
                                                 FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderWidth: 2.0,
-                                            borderRadius: 8.0,
+                                            borderRadius: 12.0,
                                             margin:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
@@ -1006,49 +1006,6 @@ class _ModalProfileEditAdminWidgetState
                                     onPressed: () async {
                                       logFirebaseEvent(
                                           'MODAL_PROFILE_EDIT_ADMIN_SAVE_CHANGES_BT');
-                                      {
-                                        safeSetState(() =>
-                                            _model.isDataUploading2 = true);
-                                        var selectedUploadedFiles =
-                                            <FFUploadedFile>[];
-                                        var selectedMedia = <SelectedFile>[];
-                                        var downloadUrls = <String>[];
-                                        try {
-                                          selectedUploadedFiles = _model
-                                                  .uploadedLocalFile1
-                                                  .bytes!
-                                                  .isNotEmpty
-                                              ? [_model.uploadedLocalFile1]
-                                              : <FFUploadedFile>[];
-                                          selectedMedia =
-                                              selectedFilesFromUploadedFiles(
-                                            selectedUploadedFiles,
-                                            storageFolderPath: 'usuarios',
-                                          );
-                                          downloadUrls =
-                                              await uploadSupabaseStorageFiles(
-                                            bucketName: 'uploads',
-                                            selectedFiles: selectedMedia,
-                                          );
-                                        } finally {
-                                          _model.isDataUploading2 = false;
-                                        }
-                                        if (selectedUploadedFiles.length ==
-                                                selectedMedia.length &&
-                                            downloadUrls.length ==
-                                                selectedMedia.length) {
-                                          safeSetState(() {
-                                            _model.uploadedLocalFile2 =
-                                                selectedUploadedFiles.first;
-                                            _model.uploadedFileUrl2 =
-                                                downloadUrls.first;
-                                          });
-                                        } else {
-                                          safeSetState(() {});
-                                          return;
-                                        }
-                                      }
-
                                       var confirmDialogResponse =
                                           await showDialog<bool>(
                                                 context: context,
@@ -1079,6 +1036,49 @@ class _ModalProfileEditAdminWidgetState
                                               ) ??
                                               false;
                                       if (confirmDialogResponse) {
+                                        {
+                                          safeSetState(() =>
+                                              _model.isDataUploading2 = true);
+                                          var selectedUploadedFiles =
+                                              <FFUploadedFile>[];
+                                          var selectedMedia = <SelectedFile>[];
+                                          var downloadUrls = <String>[];
+                                          try {
+                                            selectedUploadedFiles = _model
+                                                    .uploadedLocalFile1
+                                                    .bytes!
+                                                    .isNotEmpty
+                                                ? [_model.uploadedLocalFile1]
+                                                : <FFUploadedFile>[];
+                                            selectedMedia =
+                                                selectedFilesFromUploadedFiles(
+                                              selectedUploadedFiles,
+                                              storageFolderPath: 'usuarios',
+                                            );
+                                            downloadUrls =
+                                                await uploadSupabaseStorageFiles(
+                                              bucketName: 'uploads',
+                                              selectedFiles: selectedMedia,
+                                            );
+                                          } finally {
+                                            _model.isDataUploading2 = false;
+                                          }
+                                          if (selectedUploadedFiles.length ==
+                                                  selectedMedia.length &&
+                                              downloadUrls.length ==
+                                                  selectedMedia.length) {
+                                            safeSetState(() {
+                                              _model.uploadedLocalFile2 =
+                                                  selectedUploadedFiles.first;
+                                              _model.uploadedFileUrl2 =
+                                                  downloadUrls.first;
+                                            });
+                                          } else {
+                                            safeSetState(() {});
+                                            return;
+                                          }
+                                        }
+
                                         _model.outputUsuarioUpdate =
                                             await UsuariosTable().update(
                                           data: {
@@ -1102,22 +1102,16 @@ class _ModalProfileEditAdminWidgetState
                                           ),
                                           returnRows: true,
                                         );
-                                        FFAppState().UsuarioAtualNomeCompleto =
-                                            _model.txtNomeCompletoTextController
-                                                .text;
-                                        FFAppState().UsuarioAtualFoto =
-                                            _model.uploadedFileUrl2;
-                                        FFAppState().update(() {});
-                                        Navigator.pop(context);
-                                        Navigator.pop(context);
 
+                                        context.pushNamed('main_admin');
+                                      } else {
                                         context.pushNamed('main_admin');
 
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              'Dados  atualizados com sucesso !',
+                                              'Dados NÃO atualizados com sucesso !',
                                               style: TextStyle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -1128,30 +1122,7 @@ class _ModalProfileEditAdminWidgetState
                                                 const Duration(milliseconds: 1000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .success,
-                                          ),
-                                        );
-                                      } else {
-                                        Navigator.pop(context);
-
-                                        context.pushNamed('main_profile');
-
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Daddos  atualizados com sucesso !',
-                                              style: TextStyle(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
-                                            ),
-                                            duration:
-                                                const Duration(milliseconds: 1000),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .success,
+                                                    .error,
                                           ),
                                         );
                                       }

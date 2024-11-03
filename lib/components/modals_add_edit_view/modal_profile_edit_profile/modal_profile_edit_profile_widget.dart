@@ -804,7 +804,7 @@ class _ModalProfileEditProfileWidgetState
                                                               context)
                                                           .alternate,
                                                   borderWidth: 2.0,
-                                                  borderRadius: 8.0,
+                                                  borderRadius: 12.0,
                                                   margin: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
@@ -1218,6 +1218,9 @@ class _ModalProfileEditProfileWidgetState
                                                 overlayUsuariosRow.userId,
                                               ),
                                             );
+
+                                            context.pushNamed('main_profile');
+
                                             FFAppState()
                                                     .UsuarioAtualNomeCompleto =
                                                 _model
@@ -1226,15 +1229,11 @@ class _ModalProfileEditProfileWidgetState
                                             FFAppState().UsuarioAtualFoto =
                                                 _model.uploadedFileUrl2;
                                             FFAppState().update(() {});
-                                            Navigator.pop(context);
-
-                                            context.pushNamed('main_profile');
-
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(
                                                 content: Text(
-                                                  'Daddos  atualizados com sucesso !',
+                                                  'Dados atualizados com sucesso !',
                                                   style: TextStyle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1249,15 +1248,13 @@ class _ModalProfileEditProfileWidgetState
                                               ),
                                             );
                                           } else {
-                                            Navigator.pop(context);
-
                                             context.pushNamed('main_profile');
 
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(
                                                 content: Text(
-                                                  'Daddos  atualizados com sucesso !',
+                                                  'Dados NÃO atualizados com sucesso !',
                                                   style: TextStyle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1268,7 +1265,7 @@ class _ModalProfileEditProfileWidgetState
                                                     milliseconds: 1000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .success,
+                                                        .secondary,
                                               ),
                                             );
                                           }
