@@ -1370,7 +1370,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -1882,7 +1882,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                   borderWidth: 2.0,
                                                                                   borderRadius: 8.0,
-                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                   hidesUnderline: true,
                                                                                   isOverButton: false,
                                                                                   isSearchable: true,
@@ -2031,7 +2031,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                   borderWidth: 2.0,
                                                                                   borderRadius: 8.0,
-                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                   hidesUnderline: true,
                                                                                   isOverButton: false,
                                                                                   isSearchable: true,
@@ -2111,7 +2111,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                   borderWidth: 2.0,
                                                                                   borderRadius: 12.0,
-                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                   hidesUnderline: true,
                                                                                   isOverButton: false,
                                                                                   isSearchable: true,
@@ -2271,7 +2271,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                     borderWidth: 2.0,
                                                                                     borderRadius: 12.0,
-                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                     hidesUnderline: true,
                                                                                     isOverButton: false,
                                                                                     isSearchable: true,
@@ -2344,7 +2344,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                     borderWidth: 2.0,
                                                                                     borderRadius: 12.0,
-                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                     hidesUnderline: true,
                                                                                     isOverButton: false,
                                                                                     isSearchable: true,
@@ -2957,7 +2957,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3430,7 +3430,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3500,7 +3500,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3577,7 +3577,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3647,7 +3647,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -3930,7 +3930,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -4000,7 +4000,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -4077,7 +4077,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                       borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 2.0,
                                                                                       borderRadius: 12.0,
-                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                                       hidesUnderline: true,
                                                                                       isOverButton: false,
                                                                                       isSearchable: true,
@@ -4315,7 +4315,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             borderRadius:
                                                                                 12.0,
                                                                             margin: const EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
+                                                                                18.0,
                                                                                 0.0,
                                                                                 12.0,
                                                                                 0.0),
@@ -4403,7 +4403,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             borderRadius:
                                                                                 12.0,
                                                                             margin: const EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
+                                                                                18.0,
                                                                                 0.0,
                                                                                 12.0,
                                                                                 0.0),
@@ -4485,7 +4485,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             borderRadius:
                                                                                 12.0,
                                                                             margin: const EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
+                                                                                18.0,
                                                                                 0.0,
                                                                                 12.0,
                                                                                 0.0),
@@ -5365,7 +5365,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 12.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
@@ -5432,7 +5432,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 12.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
@@ -5489,7 +5489,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 12.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
@@ -5550,7 +5550,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               borderColor: FlutterFlowTheme.of(context).alternate,
                                                                               borderWidth: 2.0,
                                                                               borderRadius: 12.0,
-                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                              margin: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 12.0, 0.0),
                                                                               hidesUnderline: true,
                                                                               isOverButton: false,
                                                                               isSearchable: true,
@@ -6187,7 +6187,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             BorderRadius.circular(12.0),
                                                                       ),
                                                                       contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          14.0,
+                                                                          24.0,
                                                                           24.0,
                                                                           24.0,
                                                                           24.0),
@@ -6741,101 +6741,95 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   ),
                                                                                   wrapped: true,
                                                                                 ),
-                                                                                Align(
-                                                                                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                  child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
-                                                                                    child: SizedBox(
-                                                                                      width: MediaQuery.sizeOf(context).width * 1.0,
-                                                                                      child: TextFormField(
-                                                                                        controller: _model.txtValidacoesObservacoesTextController,
-                                                                                        focusNode: _model.txtValidacoesObservacoesFocusNode,
-                                                                                        onChanged: (_) => EasyDebounce.debounce(
-                                                                                          '_model.txtValidacoesObservacoesTextController',
-                                                                                          const Duration(milliseconds: 2000),
-                                                                                          () => safeSetState(() {}),
-                                                                                        ),
-                                                                                        autofocus: false,
-                                                                                        obscureText: false,
-                                                                                        decoration: InputDecoration(
-                                                                                          isDense: true,
-                                                                                          labelText: FFLocalizations.of(context).getText(
-                                                                                            'hu7rwf8m' /* Observação(ões) */,
-                                                                                          ),
-                                                                                          labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                                                letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                                                lineHeight: 5.0,
-                                                                                              ),
-                                                                                          hintText: FFLocalizations.of(context).getText(
-                                                                                            '0a8jmcbn' /* Observação(ões) */,
-                                                                                          ),
-                                                                                          hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                                                letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                                              ),
-                                                                                          errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                color: FlutterFlowTheme.of(context).error,
-                                                                                                letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                              ),
-                                                                                          enabledBorder: OutlineInputBorder(
-                                                                                            borderSide: BorderSide(
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              width: 2.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                          ),
-                                                                                          focusedBorder: OutlineInputBorder(
-                                                                                            borderSide: const BorderSide(
-                                                                                              color: Color(0x00000000),
-                                                                                              width: 2.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                          ),
-                                                                                          errorBorder: OutlineInputBorder(
-                                                                                            borderSide: BorderSide(
-                                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                                              width: 2.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                          ),
-                                                                                          focusedErrorBorder: OutlineInputBorder(
-                                                                                            borderSide: BorderSide(
-                                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                                              width: 2.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                          ),
-                                                                                          filled: true,
-                                                                                          fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 24.0),
-                                                                                          suffixIcon: _model.txtValidacoesObservacoesTextController!.text.isNotEmpty
-                                                                                              ? InkWell(
-                                                                                                  onTap: () async {
-                                                                                                    _model.txtValidacoesObservacoesTextController?.clear();
-                                                                                                    safeSetState(() {});
-                                                                                                  },
-                                                                                                  child: const Icon(
-                                                                                                    Icons.clear,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                )
-                                                                                              : null,
-                                                                                        ),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                              letterSpacing: 0.0,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                            ),
-                                                                                        maxLines: 6,
-                                                                                        cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                        validator: _model.txtValidacoesObservacoesTextControllerValidator.asValidator(context),
-                                                                                      ),
+                                                                                SizedBox(
+                                                                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                                                                  child: TextFormField(
+                                                                                    controller: _model.txtValidacoesObservacoesTextController,
+                                                                                    focusNode: _model.txtValidacoesObservacoesFocusNode,
+                                                                                    onChanged: (_) => EasyDebounce.debounce(
+                                                                                      '_model.txtValidacoesObservacoesTextController',
+                                                                                      const Duration(milliseconds: 2000),
+                                                                                      () => safeSetState(() {}),
                                                                                     ),
+                                                                                    autofocus: false,
+                                                                                    obscureText: false,
+                                                                                    decoration: InputDecoration(
+                                                                                      isDense: true,
+                                                                                      labelText: FFLocalizations.of(context).getText(
+                                                                                        'hu7rwf8m' /* Observação(ões) */,
+                                                                                      ),
+                                                                                      labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                            lineHeight: 5.0,
+                                                                                          ),
+                                                                                      hintText: FFLocalizations.of(context).getText(
+                                                                                        '0a8jmcbn' /* Observação(ões) */,
+                                                                                      ),
+                                                                                      hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                                          ),
+                                                                                      errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: FlutterFlowTheme.of(context).error,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
+                                                                                      enabledBorder: OutlineInputBorder(
+                                                                                        borderSide: BorderSide(
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      focusedBorder: OutlineInputBorder(
+                                                                                        borderSide: const BorderSide(
+                                                                                          color: Color(0x00000000),
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      errorBorder: OutlineInputBorder(
+                                                                                        borderSide: BorderSide(
+                                                                                          color: FlutterFlowTheme.of(context).error,
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      focusedErrorBorder: OutlineInputBorder(
+                                                                                        borderSide: BorderSide(
+                                                                                          color: FlutterFlowTheme.of(context).error,
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      filled: true,
+                                                                                      fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                      contentPadding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 20.0, 24.0),
+                                                                                      suffixIcon: _model.txtValidacoesObservacoesTextController!.text.isNotEmpty
+                                                                                          ? InkWell(
+                                                                                              onTap: () async {
+                                                                                                _model.txtValidacoesObservacoesTextController?.clear();
+                                                                                                safeSetState(() {});
+                                                                                              },
+                                                                                              child: const Icon(
+                                                                                                Icons.clear,
+                                                                                                size: 24.0,
+                                                                                              ),
+                                                                                            )
+                                                                                          : null,
+                                                                                    ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        ),
+                                                                                    maxLines: 5,
+                                                                                    cursorColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                    validator: _model.txtValidacoesObservacoesTextControllerValidator.asValidator(context),
                                                                                   ),
                                                                                 ),
                                                                               ].divide(const SizedBox(height: 16.0)),

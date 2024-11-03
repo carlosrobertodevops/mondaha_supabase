@@ -149,6 +149,20 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   TextEditingController? txtNomeCompletoTextController;
   String? Function(BuildContext, String?)?
       txtNomeCompletoTextControllerValidator;
+  String? _txtNomeCompletoTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'qjj69k8u' /* Field is required */,
+      );
+    }
+
+    if (!RegExp(kTextValidatorUsernameRegex).hasMatch(val)) {
+      return 'Must start with a letter and can only contain letters, digits and - or _.';
+    }
+    return null;
+  }
+
   // State field(s) for txt_alcunha_add widget.
   FocusNode? txtAlcunhaAddFocusNode;
   TextEditingController? txtAlcunhaAddTextController;
@@ -344,7 +358,10 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   ApiCallResponse? apiResultProcessos;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    txtNomeCompletoTextControllerValidator =
+        _txtNomeCompletoTextControllerValidator;
+  }
 
   @override
   void dispose() {

@@ -1036,82 +1036,104 @@ class _ModalProfileEditAdminWidgetState
                                               ) ??
                                               false;
                                       if (confirmDialogResponse) {
-                                        {
-                                          safeSetState(() =>
-                                              _model.isDataUploading2 = true);
-                                          var selectedUploadedFiles =
-                                              <FFUploadedFile>[];
-                                          var selectedMedia = <SelectedFile>[];
-                                          var downloadUrls = <String>[];
-                                          try {
-                                            selectedUploadedFiles = _model
-                                                    .uploadedLocalFile1
-                                                    .bytes!
-                                                    .isNotEmpty
-                                                ? [_model.uploadedLocalFile1]
-                                                : <FFUploadedFile>[];
-                                            selectedMedia =
-                                                selectedFilesFromUploadedFiles(
-                                              selectedUploadedFiles,
-                                              storageFolderPath: 'usuarios',
-                                            );
-                                            downloadUrls =
-                                                await uploadSupabaseStorageFiles(
-                                              bucketName: 'uploads',
-                                              selectedFiles: selectedMedia,
-                                            );
-                                          } finally {
-                                            _model.isDataUploading2 = false;
+                                        if (_model.uploadimagemTemp == true) {
+                                          await deleteSupabaseFileFromPublicUrl(
+                                              widget.usuarioid!.fotoPath!);
+                                          {
+                                            safeSetState(() =>
+                                                _model.isDataUploading2 = true);
+                                            var selectedUploadedFiles =
+                                                <FFUploadedFile>[];
+                                            var selectedMedia =
+                                                <SelectedFile>[];
+                                            var downloadUrls = <String>[];
+                                            try {
+                                              selectedUploadedFiles = _model
+                                                      .uploadedLocalFile1
+                                                      .bytes!
+                                                      .isNotEmpty
+                                                  ? [_model.uploadedLocalFile1]
+                                                  : <FFUploadedFile>[];
+                                              selectedMedia =
+                                                  selectedFilesFromUploadedFiles(
+                                                selectedUploadedFiles,
+                                                storageFolderPath: 'usuarios',
+                                              );
+                                              downloadUrls =
+                                                  await uploadSupabaseStorageFiles(
+                                                bucketName: 'uploads',
+                                                selectedFiles: selectedMedia,
+                                              );
+                                            } finally {
+                                              _model.isDataUploading2 = false;
+                                            }
+                                            if (selectedUploadedFiles.length ==
+                                                    selectedMedia.length &&
+                                                downloadUrls.length ==
+                                                    selectedMedia.length) {
+                                              safeSetState(() {
+                                                _model.uploadedLocalFile2 =
+                                                    selectedUploadedFiles.first;
+                                                _model.uploadedFileUrl2 =
+                                                    downloadUrls.first;
+                                              });
+                                            } else {
+                                              safeSetState(() {});
+                                              return;
+                                            }
                                           }
-                                          if (selectedUploadedFiles.length ==
-                                                  selectedMedia.length &&
-                                              downloadUrls.length ==
-                                                  selectedMedia.length) {
-                                            safeSetState(() {
-                                              _model.uploadedLocalFile2 =
-                                                  selectedUploadedFiles.first;
-                                              _model.uploadedFileUrl2 =
-                                                  downloadUrls.first;
-                                            });
-                                          } else {
-                                            safeSetState(() {});
-                                            return;
-                                          }
-                                        }
 
-                                        await UsuariosTable().update(
-                                          data: {
-                                            'nome_completo': _model
-                                                .txtNomeCompletoTextController
-                                                .text,
-                                            'foto_path':
-                                                _model.uploadedFileUrl2,
-                                            'descricao': _model
-                                                .txtDescricaoTextController
-                                                .text,
-                                            'agencia_id':
-                                                _model.ddwAgenciaValue,
-                                            'acesso_at':
-                                                supaSerialize<DateTime>(
-                                                    getCurrentTimestamp),
-                                          },
-                                          matchingRows: (rows) => rows.eq(
-                                            'usuario_id',
-                                            widget.usuarioid?.usuarioId,
-                                          ),
-                                        );
+                                          await UsuariosTable().update(
+                                            data: {
+                                              'nome_completo': _model
+                                                  .txtNomeCompletoTextController
+                                                  .text,
+                                              'foto_path':
+                                                  _model.uploadedFileUrl2,
+                                              'descricao': _model
+                                                  .txtDescricaoTextController
+                                                  .text,
+                                              'agencia_id':
+                                                  _model.ddwAgenciaValue,
+                                              'acesso_at':
+                                                  supaSerialize<DateTime>(
+                                                      getCurrentTimestamp),
+                                            },
+                                            matchingRows: (rows) => rows.eq(
+                                              'usuario_id',
+                                              widget.usuarioid?.usuarioId,
+                                            ),
+                                          );
+                                        } else {
+                                          await UsuariosTable().update(
+                                            data: {
+                                              'nome_completo': _model
+                                                  .txtNomeCompletoTextController
+                                                  .text,
+                                              'descricao': _model
+                                                  .txtDescricaoTextController
+                                                  .text,
+                                              'agencia_id':
+                                                  _model.ddwAgenciaValue,
+                                              'acesso_at':
+                                                  supaSerialize<DateTime>(
+                                                      getCurrentTimestamp),
+                                            },
+                                            matchingRows: (rows) => rows.eq(
+                                              'usuario_id',
+                                              widget.usuarioid?.usuarioId,
+                                            ),
+                                          );
+                                        }
 
                                         context.pushNamed('main_admin');
 
                                         Navigator.pop(context);
-                                      } else {
-                                        context.pushNamed('main_admin');
-
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              'Dados NÃO atualizados com sucesso !',
+                                              'Dados ATUALIZADOS com sucesso !',
                                               style: TextStyle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -1119,12 +1141,16 @@ class _ModalProfileEditAdminWidgetState
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 1000),
+                                                const Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .error,
+                                                    .success,
                                           ),
                                         );
+                                      } else {
+                                        context.pushNamed('main_admin');
+
+                                        Navigator.pop(context);
                                       }
 
                                       safeSetState(() {});
