@@ -1,5 +1,5 @@
 import '/backend/supabase/supabase.dart';
-import '/components/dropdowns/dropdown_admin_edit/dropdown_admin_edit_widget.dart';
+import '/components/dropdowns/dropdown_usuario_admin_edit/dropdown_usuario_admin_edit_widget.dart';
 import '/components/modals_extras/modal_command_palette/modal_command_palette_widget.dart';
 import '/components/navs/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -979,7 +979,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                       color: Colors.transparent,
                                                                                       child: GestureDetector(
                                                                                         onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                        child: DropdownAdminEditWidget(
+                                                                                        child: DropdownUsuarioAdminEditWidget(
                                                                                           usuarioid: listViewUsuariosRow,
                                                                                         ),
                                                                                       ),
@@ -1611,7 +1611,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                     color: Colors.transparent,
                                                                                     child: GestureDetector(
                                                                                       onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                      child: DropdownAdminEditWidget(
+                                                                                      child: DropdownUsuarioAdminEditWidget(
                                                                                         usuarioid: listViewUsuariosRow,
                                                                                       ),
                                                                                     ),
@@ -2243,7 +2243,7 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                     color: Colors.transparent,
                                                                                     child: GestureDetector(
                                                                                       onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                      child: DropdownAdminEditWidget(
+                                                                                      child: DropdownUsuarioAdminEditWidget(
                                                                                         usuarioid: listViewUsuariosRow,
                                                                                       ),
                                                                                     ),

@@ -1194,8 +1194,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Ver empresa',
     },
   },
-  // dropdown_admin_edit
+  // dropdown_usuario_admin_edit
   {
+    'vqk7im3j': {
+      'en': 'Options',
+      'pt': 'Opções',
+    },
+    'ufasy4ju': {
+      'en': 'Edit',
+      'pt': 'Editar',
+    },
+    'w1jtn19u': {
+      'en': 'View',
+      'pt': 'Visualizar',
+    },
+    '9qkfsg85': {
+      'en': 'Delete',
+      'pt': 'Excluir',
+    },
     'pnpighuj': {
       'en': 'Atribuir acessos',
       'pt': 'Atribuir acessos',
@@ -1212,29 +1228,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Gestor',
       'pt': 'Gestor',
     },
-    '08tfqij4': {
-      'en': 'Desenvolvedor',
-      'pt': 'Desenvolvedor',
-    },
     'nkugovnf': {
       'en': 'Administrador',
       'pt': 'Administrador',
     },
-    'vqk7im3j': {
-      'en': 'Options',
-      'pt': 'Opções',
-    },
-    'ufasy4ju': {
-      'en': 'Edit',
-      'pt': 'Editar',
-    },
-    'w1jtn19u': {
-      'en': 'View',
-      'pt': 'Visualizar',
-    },
-    '9qkfsg85': {
-      'en': 'Delete',
-      'pt': 'Excluir',
+    '08tfqij4': {
+      'en': 'Desenvolvedor',
+      'pt': 'Desenvolvedor',
     },
   },
   // modal_faccao_add

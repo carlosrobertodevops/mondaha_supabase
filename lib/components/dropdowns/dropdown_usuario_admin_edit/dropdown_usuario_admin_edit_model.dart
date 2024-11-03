@@ -1,8 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dropdown_admin_edit_widget.dart' show DropdownAdminEditWidget;
+import 'dropdown_usuario_admin_edit_widget.dart'
+    show DropdownUsuarioAdminEditWidget;
 import 'package:flutter/material.dart';
 
-class DropdownAdminEditModel extends FlutterFlowModel<DropdownAdminEditWidget> {
+class DropdownUsuarioAdminEditModel
+    extends FlutterFlowModel<DropdownUsuarioAdminEditWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for MouseRegion widget.

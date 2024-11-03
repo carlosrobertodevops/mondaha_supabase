@@ -45,7 +45,7 @@ class _ModalProfileEditProfileWidgetState
 
     _model.txtNomeCompletoFocusNode ??= FocusNode();
 
-    _model.txtDescricapFocusNode ??= FocusNode();
+    _model.txtDescricaoFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -556,11 +556,11 @@ class _ModalProfileEditProfileWidgetState
                                         16.0, 16.0, 16.0, 0.0),
                                     child: TextFormField(
                                       controller:
-                                          _model.txtDescricapTextController ??=
+                                          _model.txtDescricaoTextController ??=
                                               TextEditingController(
                                         text: overlayUsuariosRow?.descricao,
                                       ),
-                                      focusNode: _model.txtDescricapFocusNode,
+                                      focusNode: _model.txtDescricaoFocusNode,
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -656,7 +656,7 @@ class _ModalProfileEditProfileWidgetState
                                       cursorColor:
                                           FlutterFlowTheme.of(context).primary,
                                       validator: _model
-                                          .txtDescricapTextControllerValidator
+                                          .txtDescricaoTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -1205,7 +1205,7 @@ class _ModalProfileEditProfileWidgetState
                                                 'foto_path':
                                                     _model.uploadedFileUrl2,
                                                 'descricao': _model
-                                                    .txtDescricapTextController
+                                                    .txtDescricaoTextController
                                                     .text,
                                                 'acesso_at':
                                                     supaSerialize<DateTime>(

@@ -23,10 +23,10 @@ class ModalProfileEditProfileModel
   TextEditingController? txtNomeCompletoTextController;
   String? Function(BuildContext, String?)?
       txtNomeCompletoTextControllerValidator;
-  // State field(s) for txt_descricap widget.
-  FocusNode? txtDescricapFocusNode;
-  TextEditingController? txtDescricapTextController;
-  String? Function(BuildContext, String?)? txtDescricapTextControllerValidator;
+  // State field(s) for txt_descricao widget.
+  FocusNode? txtDescricaoFocusNode;
+  TextEditingController? txtDescricaoTextController;
+  String? Function(BuildContext, String?)? txtDescricaoTextControllerValidator;
   // State field(s) for ddw_agencia widget.
   int? ddwAgenciaValue;
   FormFieldController<int>? ddwAgenciaValueController;
@@ -46,7 +46,7 @@ class ModalProfileEditProfileModel
     txtNomeCompletoFocusNode?.dispose();
     txtNomeCompletoTextController?.dispose();
 
-    txtDescricapFocusNode?.dispose();
-    txtDescricapTextController?.dispose();
+    txtDescricaoFocusNode?.dispose();
+    txtDescricaoTextController?.dispose();
   }
 }
