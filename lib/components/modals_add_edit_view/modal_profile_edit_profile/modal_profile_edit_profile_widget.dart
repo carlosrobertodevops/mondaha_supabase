@@ -703,11 +703,8 @@ class _ModalProfileEditProfileWidgetState
                                                           .ddwAgenciaValueController ??=
                                                       FormFieldController<int>(
                                                     _model.ddwAgenciaValue ??=
-                                                        valueOrDefault<int>(
-                                                      overlayUsuariosRow
-                                                          ?.usuarioId,
-                                                      0,
-                                                    ),
+                                                        overlayUsuariosRow
+                                                            ?.agenciaId,
                                                   ),
                                                   options: List<int>.from(
                                                       ddwAgenciaAgenciasRowList
@@ -1207,15 +1204,15 @@ class _ModalProfileEditProfileWidgetState
                                                 'descricao': _model
                                                     .txtDescricaoTextController
                                                     .text,
+                                                'agencia_id':
+                                                    _model.ddwAgenciaValue,
                                                 'acesso_at':
                                                     supaSerialize<DateTime>(
                                                         getCurrentTimestamp),
-                                                'agencia_id':
-                                                    _model.ddwAgenciaValue,
                                               },
                                               matchingRows: (rows) => rows.eq(
-                                                'user_id',
-                                                overlayUsuariosRow.userId,
+                                                'usuario_id',
+                                                overlayUsuariosRow.usuarioId,
                                               ),
                                             );
                                             FFAppState()
@@ -1229,6 +1226,7 @@ class _ModalProfileEditProfileWidgetState
 
                                             context.pushNamed('main_profile');
 
+                                            Navigator.pop(context);
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(

@@ -1079,8 +1079,7 @@ class _ModalProfileEditAdminWidgetState
                                           }
                                         }
 
-                                        _model.outputUpdateUsuarioAdmin =
-                                            await UsuariosTable().update(
+                                        await UsuariosTable().update(
                                           data: {
                                             'nome_completo': _model
                                                 .txtNomeCompletoTextController
@@ -1090,20 +1089,21 @@ class _ModalProfileEditAdminWidgetState
                                             'descricao': _model
                                                 .txtDescricaoTextController
                                                 .text,
+                                            'agencia_id':
+                                                _model.ddwAgenciaValue,
                                             'acesso_at':
                                                 supaSerialize<DateTime>(
                                                     getCurrentTimestamp),
-                                            'agencia_id':
-                                                _model.ddwAgenciaValue,
                                           },
                                           matchingRows: (rows) => rows.eq(
-                                            'user_id',
-                                            widget.usuarioid?.userId,
+                                            'usuario_id',
+                                            widget.usuarioid?.usuarioId,
                                           ),
-                                          returnRows: true,
                                         );
 
                                         context.pushNamed('main_admin');
+
+                                        Navigator.pop(context);
                                       } else {
                                         context.pushNamed('main_admin');
 
