@@ -1218,9 +1218,6 @@ class _ModalProfileEditProfileWidgetState
                                                 overlayUsuariosRow.userId,
                                               ),
                                             );
-
-                                            context.pushNamed('main_profile');
-
                                             FFAppState()
                                                     .UsuarioAtualNomeCompleto =
                                                 _model
@@ -1229,6 +1226,9 @@ class _ModalProfileEditProfileWidgetState
                                             FFAppState().UsuarioAtualFoto =
                                                 _model.uploadedFileUrl2;
                                             FFAppState().update(() {});
+
+                                            context.pushNamed('main_profile');
+
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(

@@ -36,7 +36,7 @@ class ModalProfileEditProfileModel
   String uploadedFileUrl2 = '';
 
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<UsuariosRow>? outputUsuarioUpdate;
+  List<UsuariosRow>? outputUpdateUsuarioPerfil;
 
   @override
   void initState(BuildContext context) {}

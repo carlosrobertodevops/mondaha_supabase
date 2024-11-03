@@ -1079,7 +1079,7 @@ class _ModalProfileEditAdminWidgetState
                                           }
                                         }
 
-                                        _model.outputUsuarioUpdate =
+                                        _model.outputUpdateUsuarioAdmin =
                                             await UsuariosTable().update(
                                           data: {
                                             'nome_completo': _model
