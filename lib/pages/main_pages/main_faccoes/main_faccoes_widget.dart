@@ -636,14 +636,14 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                               Image.network(
                                                                             valueOrDefault<String>(
                                                                               listViewFaccoesRow.imagemPath,
-                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/jcagf9ktjnd8/imagem_(2).png',
+                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/k2puotwwtose/icone-agencia-white-01.png',
                                                                             ),
                                                                             width:
                                                                                 70.0,
                                                                             height:
                                                                                 70.0,
                                                                             fit:
-                                                                                BoxFit.cover,
+                                                                                BoxFit.none,
                                                                           ),
                                                                         ),
                                                                         Expanded(
