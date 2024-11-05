@@ -1121,7 +1121,7 @@ class _ModalProfileEditProfileWidgetState
                                                       return AlertDialog(
                                                         title: const Text('SALVAR'),
                                                         content: const Text(
-                                                            'Deseja SALVAR os dados alterados ?'),
+                                                            'Deseja SALVAR os dados  ?'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
@@ -1145,10 +1145,14 @@ class _ModalProfileEditProfileWidgetState
                                                   ) ??
                                                   false;
                                           if (confirmDialogResponse) {
-                                            if (_model.uploadImagemTemp) {
+                                            if (_model.isDataUploading1) {
                                               await deleteSupabaseFileFromPublicUrl(
                                                   overlayUsuariosRow
-                                                      .fotoPath!);
+                                                              .fotoPath !=
+                                                          ''
+                                                      ? overlayUsuariosRow
+                                                          .fotoPath!
+                                                      : '');
                                               {
                                                 safeSetState(() => _model
                                                     .isDataUploading2 = true);
@@ -1222,6 +1226,17 @@ class _ModalProfileEditProfileWidgetState
                                                   overlayUsuariosRow.usuarioId,
                                                 ),
                                               );
+                                              // Atualizar o Peril no App I
+                                              FFAppState()
+                                                      .UsuarioAtualNomeCompleto =
+                                                  _model
+                                                      .txtNomeCompletoTextController
+                                                      .text;
+                                              FFAppState().UsuarioAtualFoto =
+                                                  _model.uploadedFileUrl2;
+                                              FFAppState().UsuarioAtualAgencia =
+                                                  _model.ddwAgenciaValue!;
+                                              FFAppState().update(() {});
                                             } else {
                                               await UsuariosTable().update(
                                                 data: {
@@ -1242,6 +1257,18 @@ class _ModalProfileEditProfileWidgetState
                                                   overlayUsuariosRow.usuarioId,
                                                 ),
                                               );
+                                              // Atualizar o Peril no App II
+                                              FFAppState()
+                                                      .UsuarioAtualNomeCompleto =
+                                                  _model
+                                                      .outputUpdateUsuarioPerfil2!
+                                                      .first
+                                                      .nomeCompleto!;
+                                              FFAppState().UsuarioAtualAgencia =
+                                                  _model.ddwAgenciaValue!;
+                                              FFAppState().update(() {});
+                                              _model.uploadImagemTemp = false;
+                                              safeSetState(() {});
                                             }
 
                                             context.pushNamed('main_profile');

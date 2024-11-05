@@ -1036,9 +1036,11 @@ class _ModalProfileEditAdminWidgetState
                                               ) ??
                                               false;
                                       if (confirmDialogResponse) {
-                                        if (_model.uploadimagemTemp == true) {
+                                        if (_model.isDataUploading1) {
                                           await deleteSupabaseFileFromPublicUrl(
-                                              widget.usuarioid!.fotoPath!);
+                                              widget.usuarioid?.fotoPath != ''
+                                                  ? widget.usuarioid!.fotoPath!
+                                                  : '');
                                           {
                                             safeSetState(() =>
                                                 _model.isDataUploading2 = true);
