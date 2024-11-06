@@ -74,8 +74,28 @@ class FFAppState extends ChangeNotifier {
       _CountMaps = prefs.getInt('ff_CountMaps') ?? _CountMaps;
     });
     _safeInit(() {
-      _UsuarioFotoPadrao =
-          prefs.getString('ff_UsuarioFotoPadrao') ?? _UsuarioFotoPadrao;
+      _UsuariosImagePathLight = prefs.getString('ff_UsuariosImagePathLight') ??
+          _UsuariosImagePathLight;
+    });
+    _safeInit(() {
+      _UsuariosImagePathDark =
+          prefs.getString('ff_UsuariosImagePathDark') ?? _UsuariosImagePathDark;
+    });
+    _safeInit(() {
+      _MembrosImagePathLight =
+          prefs.getString('ff_MembrosImagePathLight') ?? _MembrosImagePathLight;
+    });
+    _safeInit(() {
+      _MembrosImagePathDark =
+          prefs.getString('ff_MembrosImagePathDark') ?? _MembrosImagePathDark;
+    });
+    _safeInit(() {
+      _FaccoesImagePathLight =
+          prefs.getString('ff_FaccoesImagePathLight') ?? _FaccoesImagePathLight;
+    });
+    _safeInit(() {
+      _FaccoesImagePathDark =
+          prefs.getString('ff_FaccoesImagePathDark') ?? _FaccoesImagePathDark;
     });
   }
 
@@ -209,12 +229,52 @@ class FFAppState extends ChangeNotifier {
     _ParAgenciaId = value;
   }
 
-  String _UsuarioFotoPadrao =
-      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png';
-  String get UsuarioFotoPadrao => _UsuarioFotoPadrao;
-  set UsuarioFotoPadrao(String value) {
-    _UsuarioFotoPadrao = value;
-    prefs.setString('ff_UsuarioFotoPadrao', value);
+  String _UsuariosImagePathLight =
+      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png';
+  String get UsuariosImagePathLight => _UsuariosImagePathLight;
+  set UsuariosImagePathLight(String value) {
+    _UsuariosImagePathLight = value;
+    prefs.setString('ff_UsuariosImagePathLight', value);
+  }
+
+  String _UsuariosImagePathDark =
+      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/z72pv79eas1j/account_circle_96dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png';
+  String get UsuariosImagePathDark => _UsuariosImagePathDark;
+  set UsuariosImagePathDark(String value) {
+    _UsuariosImagePathDark = value;
+    prefs.setString('ff_UsuariosImagePathDark', value);
+  }
+
+  String _MembrosImagePathLight =
+      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/rgxzhoyu6nbx/groups_96dp_99999_FILL0_wght400_GRAD0_opsz48.png';
+  String get MembrosImagePathLight => _MembrosImagePathLight;
+  set MembrosImagePathLight(String value) {
+    _MembrosImagePathLight = value;
+    prefs.setString('ff_MembrosImagePathLight', value);
+  }
+
+  String _MembrosImagePathDark =
+      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/3b2gr4avkyl7/groups_96dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png';
+  String get MembrosImagePathDark => _MembrosImagePathDark;
+  set MembrosImagePathDark(String value) {
+    _MembrosImagePathDark = value;
+    prefs.setString('ff_MembrosImagePathDark', value);
+  }
+
+  String _FaccoesImagePathLight =
+      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/gqts8womzdbd/account_tree_96dp_99999_FILL0_wght400_GRAD0_opsz48.png';
+  String get FaccoesImagePathLight => _FaccoesImagePathLight;
+  set FaccoesImagePathLight(String value) {
+    _FaccoesImagePathLight = value;
+    prefs.setString('ff_FaccoesImagePathLight', value);
+  }
+
+  String _FaccoesImagePathDark =
+      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/tbkdcsazoiiq/account_tree_96dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png';
+  String get FaccoesImagePathDark => _FaccoesImagePathDark;
+  set FaccoesImagePathDark(String value) {
+    _FaccoesImagePathDark = value;
+    prefs.setString('ff_FaccoesImagePathDark', value);
   }
 }
 

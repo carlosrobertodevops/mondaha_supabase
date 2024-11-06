@@ -18,6 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'main_membros_model.dart';
 export 'main_membros_model.dart';
 
@@ -89,6 +90,8 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Title(
         title: 'main_membros',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -725,13 +728,15 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                             .network(
                                                                           valueOrDefault<
                                                                               String>(
-                                                                            listViewMembrosRow.fotosPath.first,
-                                                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/qnyn81gei5hu/group_3085481.png',
+                                                                            listViewMembrosRow.fotosPath.first != ''
+                                                                                ? listViewMembrosRow.fotosPath.first
+                                                                                : (Theme.of(context).brightness == Brightness.light ? FFAppState().MembrosImagePathLight : FFAppState().MembrosImagePathDark),
+                                                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/rgxzhoyu6nbx/groups_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
                                                                           ),
                                                                           width:
-                                                                              70.0,
+                                                                              50.0,
                                                                           height:
-                                                                              70.0,
+                                                                              50.0,
                                                                           fit: BoxFit
                                                                               .contain,
                                                                         ),

@@ -347,7 +347,8 @@ class _ModalProfileEditProfileWidgetState
                                               }
                                             }
 
-                                            _model.uploadImagemTemp = true;
+                                            _model.uploadPerfilImagemTemp =
+                                                true;
                                             _model.updatePage(() {});
                                           },
                                           child: Container(
@@ -367,7 +368,8 @@ class _ModalProfileEditProfileWidgetState
                                             ),
                                             child: Stack(
                                               children: [
-                                                if (_model.uploadImagemTemp ==
+                                                if (_model
+                                                        .uploadPerfilImagemTemp ==
                                                     false)
                                                   Padding(
                                                     padding:
@@ -407,7 +409,8 @@ class _ModalProfileEditProfileWidgetState
                                                       ),
                                                     ),
                                                   ),
-                                                if (_model.uploadImagemTemp ==
+                                                if (_model
+                                                        .uploadPerfilImagemTemp ==
                                                     true)
                                                   Padding(
                                                     padding:
@@ -1145,7 +1148,7 @@ class _ModalProfileEditProfileWidgetState
                                                   ) ??
                                                   false;
                                           if (confirmDialogResponse) {
-                                            if (_model.isDataUploading1) {
+                                            if (_model.uploadPerfilImagemTemp) {
                                               await deleteSupabaseFileFromPublicUrl(
                                                   overlayUsuariosRow
                                                               .fotoPath !=
@@ -1267,8 +1270,6 @@ class _ModalProfileEditProfileWidgetState
                                               FFAppState().UsuarioAtualAgencia =
                                                   _model.ddwAgenciaValue!;
                                               FFAppState().update(() {});
-                                              _model.uploadImagemTemp = false;
-                                              safeSetState(() {});
                                             }
 
                                             context.pushNamed('main_profile');

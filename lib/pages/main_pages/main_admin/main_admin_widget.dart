@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'main_admin_model.dart';
 export 'main_admin_model.dart';
 
@@ -130,6 +131,8 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Title(
         title: 'main_admin',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -727,35 +730,35 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                           CrossAxisAlignment
                                                                               .center,
                                                                       children: [
-                                                                        Container(
-                                                                          width:
-                                                                              60.0,
-                                                                          height:
-                                                                              60.0,
-                                                                          clipBehavior:
-                                                                              Clip.antiAlias,
-                                                                          decoration:
-                                                                              const BoxDecoration(
-                                                                            shape:
-                                                                                BoxShape.circle,
-                                                                          ),
+                                                                        Align(
+                                                                          alignment: const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
-                                                                              CachedNetworkImage(
-                                                                            fadeInDuration:
-                                                                                const Duration(milliseconds: 10),
-                                                                            fadeOutDuration:
-                                                                                const Duration(milliseconds: 10),
-                                                                            imageUrl:
-                                                                                valueOrDefault<String>(
-                                                                              listViewUsuariosRow.fotoPath == '' ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png' : listViewUsuariosRow.fotoPath,
-                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
+                                                                              Container(
+                                                                            width:
+                                                                                50.0,
+                                                                            height:
+                                                                                50.0,
+                                                                            clipBehavior:
+                                                                                Clip.antiAlias,
+                                                                            decoration:
+                                                                                const BoxDecoration(
+                                                                              shape: BoxShape.circle,
                                                                             ),
-                                                                            fit:
-                                                                                BoxFit.cover,
-                                                                            errorWidget: (context, error, stackTrace) =>
-                                                                                Image.asset(
-                                                                              'assets/images/error_image.png',
+                                                                            child:
+                                                                                CachedNetworkImage(
+                                                                              fadeInDuration: const Duration(milliseconds: 10),
+                                                                              fadeOutDuration: const Duration(milliseconds: 10),
+                                                                              imageUrl: valueOrDefault<String>(
+                                                                                listViewUsuariosRow.fotoPath == '' ? (Theme.of(context).brightness == Brightness.light ? FFAppState().UsuariosImagePathLight : FFAppState().UsuariosImagePathDark) : listViewUsuariosRow.fotoPath,
+                                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
+                                                                              ),
                                                                               fit: BoxFit.cover,
+                                                                              errorWidget: (context, error, stackTrace) => Image.asset(
+                                                                                'assets/images/error_image.png',
+                                                                                fit: BoxFit.cover,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),

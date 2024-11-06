@@ -8,7 +8,7 @@ class ModalProfileEditAdminModel
     extends FlutterFlowModel<ModalProfileEditAdminWidget> {
   ///  Local state fields for this component.
 
-  bool uploadimagemTemp = false;
+  bool uploadiAdminImagemTemp = false;
 
   ///  State fields for stateful widgets in this component.
 

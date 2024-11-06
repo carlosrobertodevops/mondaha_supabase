@@ -670,7 +670,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.login_outlined,
+                                  Icons.logout_outlined,
                                   color: widget.selectedNav == 7
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -768,8 +768,8 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                     width: 50.0,
                                     height: 50.0,
                                     decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).accent1,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
                                       borderRadius: BorderRadius.circular(50.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
@@ -1306,7 +1306,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.login_outlined,
+                                  Icons.logout_sharp,
                                   color: widget.selectedNav == 7
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -1378,8 +1378,8 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                     width: 50.0,
                                     height: 50.0,
                                     decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).accent1,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
                                       borderRadius: BorderRadius.circular(50.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)

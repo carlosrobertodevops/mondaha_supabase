@@ -306,7 +306,7 @@ class _ModalProfileEditAdminWidgetState
                                           }
                                         }
 
-                                        _model.uploadimagemTemp = true;
+                                        _model.uploadiAdminImagemTemp = true;
                                         _model.updatePage(() {});
                                       },
                                       child: Container(
@@ -324,7 +324,7 @@ class _ModalProfileEditAdminWidgetState
                                         ),
                                         child: Stack(
                                           children: [
-                                            if (_model.uploadimagemTemp ==
+                                            if (_model.uploadiAdminImagemTemp ==
                                                 false)
                                               Padding(
                                                 padding: const EdgeInsets.all(2.0),
@@ -357,7 +357,8 @@ class _ModalProfileEditAdminWidgetState
                                                   ),
                                                 ),
                                               ),
-                                            if (_model.uploadimagemTemp == true)
+                                            if (_model.uploadiAdminImagemTemp ==
+                                                true)
                                               Padding(
                                                 padding: const EdgeInsets.all(2.0),
                                                 child: Container(
@@ -1013,7 +1014,7 @@ class _ModalProfileEditAdminWidgetState
                                                   return AlertDialog(
                                                     title: const Text('SALVAR'),
                                                     content: const Text(
-                                                        'Deseja SALVAR os dados alterados ?'),
+                                                        'Deseja SALVAR os dados ?'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
@@ -1036,7 +1037,7 @@ class _ModalProfileEditAdminWidgetState
                                               ) ??
                                               false;
                                       if (confirmDialogResponse) {
-                                        if (_model.isDataUploading1) {
+                                        if (_model.uploadiAdminImagemTemp) {
                                           await deleteSupabaseFileFromPublicUrl(
                                               widget.usuarioid?.fotoPath != ''
                                                   ? widget.usuarioid!.fotoPath!

@@ -1661,6 +1661,10 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                                           9,
                                                                       'agencia_id':
                                                                           26,
+                                                                      'foto_path': (Theme.of(context).brightness == Brightness.light) ==
+                                                                              false
+                                                                          ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png'
+                                                                          : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/wvfh9ab6exyb/botao-redondo-da-conta-com-o-usuario-dentro.png',
                                                                     });
                                                                     await showDialog(
                                                                       context:

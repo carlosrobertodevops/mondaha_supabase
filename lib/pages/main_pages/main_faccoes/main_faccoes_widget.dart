@@ -13,6 +13,7 @@ import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'main_faccoes_model.dart';
 export 'main_faccoes_model.dart';
 
@@ -53,6 +54,8 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Title(
         title: 'main_faccoes',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -635,15 +638,15 @@ class _MainFaccoesWidgetState extends State<MainFaccoesWidget>
                                                                           child:
                                                                               Image.network(
                                                                             valueOrDefault<String>(
-                                                                              listViewFaccoesRow.imagemPath,
-                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/k2puotwwtose/icone-agencia-white-01.png',
+                                                                              listViewFaccoesRow.imagemPath != '' ? listViewFaccoesRow.imagemPath : (Theme.of(context).brightness == Brightness.light ? FFAppState().FaccoesImagePathLight : FFAppState().FaccoesImagePathDark),
+                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/gqts8womzdbd/account_tree_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
                                                                             ),
                                                                             width:
-                                                                                70.0,
+                                                                                50.0,
                                                                             height:
-                                                                                70.0,
+                                                                                50.0,
                                                                             fit:
-                                                                                BoxFit.none,
+                                                                                BoxFit.contain,
                                                                           ),
                                                                         ),
                                                                         Expanded(
