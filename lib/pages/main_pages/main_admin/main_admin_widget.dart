@@ -751,7 +751,12 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                               fadeInDuration: const Duration(milliseconds: 10),
                                                                               fadeOutDuration: const Duration(milliseconds: 10),
                                                                               imageUrl: valueOrDefault<String>(
-                                                                                listViewUsuariosRow.fotoPath == '' ? (Theme.of(context).brightness == Brightness.light ? FFAppState().UsuariosImagePathLight : FFAppState().UsuariosImagePathDark) : listViewUsuariosRow.fotoPath,
+                                                                                listViewUsuariosRow.fotoPath != ''
+                                                                                    ? listViewUsuariosRow.fotoPath
+                                                                                    : valueOrDefault<String>(
+                                                                                        (Theme.of(context).brightness == Brightness.light) == true ? FFAppState().UsuariosImagePathLight : FFAppState().UsuariosImagePathDark,
+                                                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
+                                                                                      ),
                                                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
                                                                               ),
                                                                               fit: BoxFit.cover,
