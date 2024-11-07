@@ -754,7 +754,15 @@ class _MainAdminWidgetState extends State<MainAdminWidget>
                                                                                 listViewUsuariosRow.fotoPath != ''
                                                                                     ? listViewUsuariosRow.fotoPath
                                                                                     : valueOrDefault<String>(
-                                                                                        (Theme.of(context).brightness == Brightness.light) == true ? FFAppState().UsuariosImagePathLight : FFAppState().UsuariosImagePathDark,
+                                                                                        (Theme.of(context).brightness == Brightness.light) == true
+                                                                                            ? valueOrDefault<String>(
+                                                                                                FFAppState().UsuariosImagePathLight,
+                                                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
+                                                                                              )
+                                                                                            : valueOrDefault<String>(
+                                                                                                FFAppState().UsuariosImagePathDark,
+                                                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/z72pv79eas1j/account_circle_96dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png',
+                                                                                              ),
                                                                                         'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
                                                                                       ),
                                                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',

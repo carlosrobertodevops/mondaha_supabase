@@ -314,8 +314,7 @@ class _AuthForgotPasswordWidgetState extends State<AuthForgotPasswordWidget>
                           options: FFButtonOptions(
                             width: 230.0,
                             height: 50.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
+                            padding: const EdgeInsets.all(12.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,

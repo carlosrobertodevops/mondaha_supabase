@@ -743,7 +743,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Selecione uma opção no menu suspenso',
     },
     '9lz7n6fv': {
-      'en': 'Field is required',
+      'en': 'Field is required!',
       'pt': '',
     },
     'dw2vhjan': {
@@ -1478,15 +1478,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add Photos',
       'pt': 'Adicionar fotos',
     },
+    '26cfzci7': {
+      'en':
+          'Add one or more images about the Member.\nMaximum of 6 (six) images.',
+      'pt':
+          'Adicione uma ou mais imagens sobre o Membro. \nNo máximo de 6 (seis) imagens.',
+    },
     'szzdveit': {
       'en': 'Apagar Fotos',
       'pt': 'Apagar Fotos',
     },
     'eivogkvw': {
       'en':
-          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . No total de 6 imagens (200px por 200px cada).',
+          'ATTENTION: (1) Front Photo, (2) Left Side Photo, (3) Right Side Photo and (4) Tattoos. Maximum of 6 images (200px by 200px each).',
       'pt':
-          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . Não há um total de 6 imagens (200px por 200px cada).',
+          'ATENÇÃO : (1) Foto Frente, (2) Foto Lateral Esquerda, (3) Foto Lateral Direira e (4) Tatuagens . No máximo de 6 imagens (200px por 200px cada).',
     },
     'npcbcpl9': {
       'en': 'Nome completo',
@@ -1980,7 +1986,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jgdeykjo': {
       'en': 'Field is required',
-      'pt': 'Campo é obrigatório!',
+      'pt': 'Campo obrigatório!',
     },
     'wkwcrq40': {
       'en': 'Please choose an option from the dropdown',
@@ -2130,7 +2136,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jc4by7hx': {
       'en': 'Field is required',
-      'pt': 'Campo é obrigatório!',
+      'pt': 'Campo obrigatório!',
     },
     'qahg5njj': {
       'en': 'Please choose an option from the dropdown',

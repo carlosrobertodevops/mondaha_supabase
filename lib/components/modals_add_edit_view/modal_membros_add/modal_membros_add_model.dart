@@ -157,9 +157,6 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
       );
     }
 
-    if (!RegExp(kTextValidatorUsernameRegex).hasMatch(val)) {
-      return 'Must start with a letter and can only contain letters, digits and - or _.';
-    }
     return null;
   }
 

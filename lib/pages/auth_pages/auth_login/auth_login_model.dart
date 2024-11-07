@@ -79,7 +79,7 @@ class AuthLoginModel extends FlutterFlowModel<AuthLoginWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '9lz7n6fv' /* Field is required */,
+        '9lz7n6fv' /* Field is required! */,
       );
     }
 

@@ -14,6 +14,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart'
     show TutorialCoachMark;
 import 'package:aligned_dialog/aligned_dialog.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -426,31 +427,23 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                     const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
-                                                                child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'haes0r2l' /* Full Name */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                        ),
+                                                                child: Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'haes0r2l' /* Full Name */,
                                                                   ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ),
@@ -629,11 +622,15 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                     ),
                                                     content: FutureBuilder<
                                                         List<MembrosRow>>(
-                                                      future: MembrosTable()
-                                                          .queryRows(
-                                                        queryFn: (q) => q.order(
-                                                            'nome_completo',
-                                                            ascending: true),
+                                                      future:
+                                                          _model.qryMembrosMain(
+                                                        requestFn: () =>
+                                                            MembrosTable()
+                                                                .queryRows(
+                                                          queryFn: (q) => q.order(
+                                                              'nome_completo',
+                                                              ascending: true),
+                                                        ),
                                                       ),
                                                       builder:
                                                           (context, snapshot) {
@@ -724,10 +721,14 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                       ClipRRect(
                                                                         borderRadius:
                                                                             BorderRadius.circular(8.0),
-                                                                        child: Image
-                                                                            .network(
-                                                                          valueOrDefault<
-                                                                              String>(
+                                                                        child:
+                                                                            CachedNetworkImage(
+                                                                          fadeInDuration:
+                                                                              const Duration(milliseconds: 10),
+                                                                          fadeOutDuration:
+                                                                              const Duration(milliseconds: 10),
+                                                                          imageUrl:
+                                                                              valueOrDefault<String>(
                                                                             listViewMembrosRow.fotosPath.first != ''
                                                                                 ? listViewMembrosRow.fotosPath.first
                                                                                 : (Theme.of(context).brightness == Brightness.light ? FFAppState().MembrosImagePathLight : FFAppState().MembrosImagePathDark),
@@ -752,7 +753,12 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   valueOrDefault<String>(
-                                                                                    listViewMembrosRow.nomeCompleto,
+                                                                                    listViewMembrosRow.nomeCompleto == ''
+                                                                                        ? 'sem informação'
+                                                                                        : valueOrDefault<String>(
+                                                                                            listViewMembrosRow.nomeCompleto,
+                                                                                            'sem informação',
+                                                                                          ),
                                                                                     'sem informação',
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -870,7 +876,16 @@ class _MainMembrosWidgetState extends State<MainMembrosWidget>
                                                                                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     valueOrDefault<String>(
-                                                                                      listViewMembrosRow.alcunha.first,
+                                                                                      listViewMembrosRow.alcunha.first ==
+                                                                                              valueOrDefault<String>(
+                                                                                                '',
+                                                                                                'sem informação',
+                                                                                              )
+                                                                                          ? 'sem informação'
+                                                                                          : valueOrDefault<String>(
+                                                                                              listViewMembrosRow.alcunha.first,
+                                                                                              'sem informação',
+                                                                                            ),
                                                                                       'sem informação',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(

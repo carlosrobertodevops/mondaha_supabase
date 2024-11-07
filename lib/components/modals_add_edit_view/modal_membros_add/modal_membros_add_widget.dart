@@ -17,6 +17,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/foundation.dart';
@@ -513,7 +514,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                         .formKey3,
                                                                     autovalidateMode:
                                                                         AutovalidateMode
-                                                                            .disabled,
+                                                                            .always,
                                                                     child:
                                                                         SingleChildScrollView(
                                                                       primary:
@@ -535,101 +536,128 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
-                                                                                    if (_model.uploadedLocalFiles1.isEmpty)
-                                                                                      InkWell(
-                                                                                        splashColor: Colors.transparent,
-                                                                                        focusColor: Colors.transparent,
-                                                                                        hoverColor: Colors.transparent,
-                                                                                        highlightColor: Colors.transparent,
-                                                                                        onTap: () async {
-                                                                                          logFirebaseEvent('MODAL_MEMBROS_ADD_Container_we8qkkgn_ON_');
-                                                                                          final selectedMedia = await selectMedia(
-                                                                                            maxWidth: 200.00,
-                                                                                            maxHeight: 200.00,
-                                                                                            mediaSource: MediaSource.photoGallery,
-                                                                                            multiImage: true,
-                                                                                          );
-                                                                                          if (selectedMedia != null && selectedMedia.every((m) => validateFileFormat(m.storagePath, context))) {
-                                                                                            safeSetState(() => _model.isDataUploading1 = true);
-                                                                                            var selectedUploadedFiles = <FFUploadedFile>[];
-
-                                                                                            try {
-                                                                                              showUploadMessage(
-                                                                                                context,
-                                                                                                'Uploading file...',
-                                                                                                showLoading: true,
-                                                                                              );
-                                                                                              selectedUploadedFiles = selectedMedia
-                                                                                                  .map((m) => FFUploadedFile(
-                                                                                                        name: m.storagePath.split('/').last,
-                                                                                                        bytes: m.bytes,
-                                                                                                        height: m.dimensions?.height,
-                                                                                                        width: m.dimensions?.width,
-                                                                                                        blurHash: m.blurHash,
-                                                                                                      ))
-                                                                                                  .toList();
-                                                                                            } finally {
-                                                                                              ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                                                                              _model.isDataUploading1 = false;
-                                                                                            }
-                                                                                            if (selectedUploadedFiles.length == selectedMedia.length) {
-                                                                                              safeSetState(() {
-                                                                                                _model.uploadedLocalFiles1 = selectedUploadedFiles;
-                                                                                              });
-                                                                                              showUploadMessage(context, 'Success!');
-                                                                                            } else {
-                                                                                              safeSetState(() {});
-                                                                                              showUploadMessage(context, 'Failed to upload data');
-                                                                                              return;
-                                                                                            }
-                                                                                          }
-
-                                                                                          _model.membrosFotosTemp = _model.uploadedLocalFiles1.toList().cast<FFUploadedFile>();
-                                                                                          _model.updatePage(() {});
-                                                                                        },
-                                                                                        child: Container(
-                                                                                          width: 100.0,
-                                                                                          height: 100.0,
-                                                                                          decoration: BoxDecoration(
-                                                                                            color: FlutterFlowTheme.of(context).accent1,
-                                                                                            borderRadius: BorderRadius.circular(12.0),
-                                                                                            border: Border.all(
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              width: 2.0,
-                                                                                            ),
+                                                                                    AlignedTooltip(
+                                                                                      content: Padding(
+                                                                                        padding: const EdgeInsets.all(4.0),
+                                                                                        child: Text(
+                                                                                          FFLocalizations.of(context).getText(
+                                                                                            '26cfzci7' /* Add one or more images about t... */,
                                                                                           ),
-                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                          child: SingleChildScrollView(
-                                                                                            child: Column(
-                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                              children: [
-                                                                                                Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                  child: Icon(
-                                                                                                    Icons.add_outlined,
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                ),
-                                                                                                Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                  child: Text(
-                                                                                                    FFLocalizations.of(context).getText(
-                                                                                                      'n7bo970y' /* Add Photos */,
+                                                                                          style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                letterSpacing: 0.0,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      offset: 1.0,
+                                                                                      preferredDirection: AxisDirection.up,
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                      backgroundColor: FlutterFlowTheme.of(context).background,
+                                                                                      elevation: 4.0,
+                                                                                      tailBaseWidth: 34.0,
+                                                                                      tailLength: 18.0,
+                                                                                      waitDuration: const Duration(milliseconds: 10),
+                                                                                      showDuration: const Duration(milliseconds: 100),
+                                                                                      triggerMode: TooltipTriggerMode.tap,
+                                                                                      child: Visibility(
+                                                                                        visible: _model.uploadedLocalFiles1.isEmpty,
+                                                                                        child: InkWell(
+                                                                                          splashColor: Colors.transparent,
+                                                                                          focusColor: Colors.transparent,
+                                                                                          hoverColor: Colors.transparent,
+                                                                                          highlightColor: Colors.transparent,
+                                                                                          onTap: () async {
+                                                                                            logFirebaseEvent('MODAL_MEMBROS_ADD_Container_we8qkkgn_ON_');
+                                                                                            final selectedMedia = await selectMedia(
+                                                                                              maxWidth: 200.00,
+                                                                                              maxHeight: 200.00,
+                                                                                              mediaSource: MediaSource.photoGallery,
+                                                                                              multiImage: true,
+                                                                                            );
+                                                                                            if (selectedMedia != null && selectedMedia.every((m) => validateFileFormat(m.storagePath, context))) {
+                                                                                              safeSetState(() => _model.isDataUploading1 = true);
+                                                                                              var selectedUploadedFiles = <FFUploadedFile>[];
+
+                                                                                              try {
+                                                                                                showUploadMessage(
+                                                                                                  context,
+                                                                                                  'Uploading file...',
+                                                                                                  showLoading: true,
+                                                                                                );
+                                                                                                selectedUploadedFiles = selectedMedia
+                                                                                                    .map((m) => FFUploadedFile(
+                                                                                                          name: m.storagePath.split('/').last,
+                                                                                                          bytes: m.bytes,
+                                                                                                          height: m.dimensions?.height,
+                                                                                                          width: m.dimensions?.width,
+                                                                                                          blurHash: m.blurHash,
+                                                                                                        ))
+                                                                                                    .toList();
+                                                                                              } finally {
+                                                                                                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                                                                                _model.isDataUploading1 = false;
+                                                                                              }
+                                                                                              if (selectedUploadedFiles.length == selectedMedia.length) {
+                                                                                                safeSetState(() {
+                                                                                                  _model.uploadedLocalFiles1 = selectedUploadedFiles;
+                                                                                                });
+                                                                                                showUploadMessage(context, 'Success!');
+                                                                                              } else {
+                                                                                                safeSetState(() {});
+                                                                                                showUploadMessage(context, 'Failed to upload data');
+                                                                                                return;
+                                                                                              }
+                                                                                            }
+
+                                                                                            _model.membrosFotosTemp = _model.uploadedLocalFiles1.toList().cast<FFUploadedFile>();
+                                                                                            _model.updatePage(() {});
+                                                                                          },
+                                                                                          child: Container(
+                                                                                            width: 100.0,
+                                                                                            height: 100.0,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: FlutterFlowTheme.of(context).accent1,
+                                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                                              border: Border.all(
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                width: 2.0,
+                                                                                              ),
+                                                                                            ),
+                                                                                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                            child: SingleChildScrollView(
+                                                                                              child: Column(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                children: [
+                                                                                                  Align(
+                                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                    child: Icon(
+                                                                                                      Icons.add_outlined,
+                                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                      size: 24.0,
                                                                                                     ),
-                                                                                                    textAlign: TextAlign.center,
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                                        ),
                                                                                                   ),
-                                                                                                ),
-                                                                                              ],
+                                                                                                  Align(
+                                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                    child: Text(
+                                                                                                      FFLocalizations.of(context).getText(
+                                                                                                        'n7bo970y' /* Add Photos */,
+                                                                                                      ),
+                                                                                                      textAlign: TextAlign.center,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
                                                                                             ),
                                                                                           ),
                                                                                         ),
                                                                                       ),
+                                                                                    ),
                                                                                     Container(
                                                                                       decoration: const BoxDecoration(),
                                                                                       child: Column(
@@ -893,7 +921,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'eivogkvw' /* ATENÇÃO : (1) Foto Frente, (2)... */,
+                                                                                'eivogkvw' /* ATTENTION: (1) Front Photo, (2... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
@@ -1135,7 +1163,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                             ),
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                              borderRadius: BorderRadius.circular(16.0),
+                                                                                              borderRadius: BorderRadius.circular(12.0),
                                                                                               border: Border.all(
                                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                                 width: 2.0,
@@ -2406,7 +2434,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                               elevation: 0.0,
                                                                                               borderSide: const BorderSide(
                                                                                                 color: Colors.transparent,
-                                                                                                width: 1.0,
+                                                                                                width: 0.0,
                                                                                               ),
                                                                                               borderRadius: BorderRadius.circular(100.0),
                                                                                             ),

@@ -370,7 +370,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.groups_3_outlined,
+                                  Icons.groups_outlined,
                                   color: widget.selectedNav == 3
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
@@ -1110,7 +1110,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.groups_3_outlined,
+                                  Icons.groups_outlined,
                                   color: widget.selectedNav == 3
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
