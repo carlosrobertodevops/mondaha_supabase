@@ -48,7 +48,7 @@ class _ToolTipHelpWidgetState extends State<ToolTipHelpWidget> {
             padding: const EdgeInsets.all(12.0),
             child: Text(
               FFLocalizations.of(context).getText(
-                'qsa63jz1' /* To add the address(es) you nee... */,
+                'qsa63jz1' /*  */,
               ),
               style: FlutterFlowTheme.of(context).bodySmall.override(
                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,

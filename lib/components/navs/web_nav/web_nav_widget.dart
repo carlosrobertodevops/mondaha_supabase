@@ -788,7 +788,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                               const Duration(milliseconds: 500),
                                           imageUrl: valueOrDefault<String>(
                                             FFAppState().UsuarioAtualFoto,
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
                                           ),
                                           width: 44.0,
                                           height: 44.0,
@@ -1398,7 +1398,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                               const Duration(milliseconds: 10),
                                           imageUrl: valueOrDefault<String>(
                                             FFAppState().UsuarioAtualFoto,
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/fg8v0c6ta78d/account_circle_outline_icon_140062.png',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mondaha-be2293/assets/79wfovohiaq7/account_circle_96dp_99999_FILL0_wght400_GRAD0_opsz48.png',
                                           ),
                                           width: 44.0,
                                           height: 44.0,

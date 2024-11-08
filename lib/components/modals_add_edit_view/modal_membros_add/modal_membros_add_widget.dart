@@ -2433,13 +2433,16 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               Expanded(
                                                                                 flex: 2,
                                                                                 child: Container(
+                                                                                  height: 60.0,
                                                                                   decoration: BoxDecoration(
                                                                                     borderRadius: BorderRadius.circular(12.0),
+                                                                                    shape: BoxShape.rectangle,
                                                                                     border: Border.all(
                                                                                       color: FlutterFlowTheme.of(context).primary,
                                                                                       width: 2.0,
                                                                                     ),
                                                                                   ),
+                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                   child: SingleChildScrollView(
                                                                                     scrollDirection: Axis.horizontal,
                                                                                     child: Row(
@@ -2464,14 +2467,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                               size: 24.0,
                                                                                             ),
                                                                                             buttonOptions: FFButtonOptions(
-                                                                                              width: 60.0,
-                                                                                              height: 60.0,
+                                                                                              width: 40.0,
+                                                                                              height: 40.0,
                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                               textStyle: TextStyle(
                                                                                                 color: FlutterFlowTheme.of(context).info,
                                                                                                 fontWeight: FontWeight.w100,
                                                                                               ),
-                                                                                              elevation: 0.0,
+                                                                                              elevation: 1.0,
                                                                                               borderSide: const BorderSide(
                                                                                                 color: Colors.transparent,
                                                                                                 width: 0.0,

@@ -2961,8 +2961,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // ToolTipHelp
   {
     'qsa63jz1': {
-      'en':
-          'To add the address(es) you need to fill in the \nAddress Field and click on the (+) Button.',
+      'en': '',
       'pt': '',
     },
   },
