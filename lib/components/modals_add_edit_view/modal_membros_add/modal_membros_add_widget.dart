@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/tool_tip_help_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
@@ -538,13 +539,14 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   children: [
                                                                                     AlignedTooltip(
                                                                                       content: Padding(
-                                                                                        padding: const EdgeInsets.all(4.0),
+                                                                                        padding: const EdgeInsets.all(12.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             '26cfzci7' /* Add one or more images about t... */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                color: FlutterFlowTheme.of(context).info,
                                                                                                 letterSpacing: 0.0,
                                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                               ),
@@ -1142,6 +1144,44 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     );
                                                                                   }
                                                                                 },
+                                                                              ),
+                                                                              Align(
+                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                child: AlignedTooltip(
+                                                                                  content: Padding(
+                                                                                    padding: const EdgeInsets.all(12.0),
+                                                                                    child: Text(
+                                                                                      FFLocalizations.of(context).getText(
+                                                                                        't455vcot' /* To add nickname(s) you need to... */,
+                                                                                      ),
+                                                                                      textAlign: TextAlign.justify,
+                                                                                      style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                            color: FlutterFlowTheme.of(context).info,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  offset: 1.0,
+                                                                                  preferredDirection: AxisDirection.up,
+                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  backgroundColor: FlutterFlowTheme.of(context).background,
+                                                                                  elevation: 1.0,
+                                                                                  tailBaseWidth: 24.0,
+                                                                                  tailLength: 12.0,
+                                                                                  waitDuration: const Duration(milliseconds: 10),
+                                                                                  showDuration: const Duration(milliseconds: 100),
+                                                                                  triggerMode: TooltipTriggerMode.tap,
+                                                                                  child: Align(
+                                                                                    alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                    child: Icon(
+                                                                                      Icons.help_outline_rounded,
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      size: 12.0,
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
                                                                               ),
                                                                               Expanded(
                                                                                 flex: 16,
@@ -2592,6 +2632,11 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   }
                                                                                 },
                                                                               ),
+                                                                              wrapWithModel(
+                                                                                model: _model.toolTipHelpModel,
+                                                                                updateCallback: () => safeSetState(() {}),
+                                                                                child: const ToolTipHelpWidget(),
+                                                                              ),
                                                                             ].divide(const SizedBox(width: 10.0)),
                                                                           ),
                                                                         ),
@@ -3806,6 +3851,43 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     );
                                                                                   }
                                                                                 },
+                                                                              ),
+                                                                              Flex(
+                                                                                direction: Axis.vertical,
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  AlignedTooltip(
+                                                                                    content: Padding(
+                                                                                      padding: const EdgeInsets.all(12.0),
+                                                                                      child: Text(
+                                                                                        FFLocalizations.of(context).getText(
+                                                                                          '6mn9o1ts' /* To add the name of the Prison(... */,
+                                                                                        ),
+                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                              color: FlutterFlowTheme.of(context).info,
+                                                                                              letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    offset: 4.0,
+                                                                                    preferredDirection: AxisDirection.up,
+                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    backgroundColor: FlutterFlowTheme.of(context).background,
+                                                                                    elevation: 4.0,
+                                                                                    tailBaseWidth: 24.0,
+                                                                                    tailLength: 12.0,
+                                                                                    waitDuration: const Duration(milliseconds: 10),
+                                                                                    showDuration: const Duration(milliseconds: 100),
+                                                                                    triggerMode: TooltipTriggerMode.tap,
+                                                                                    child: Icon(
+                                                                                      Icons.help_outline_rounded,
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      size: 12.0,
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
                                                                               ),
                                                                               Expanded(
                                                                                 flex: 7,
@@ -6716,8 +6798,13 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     safeSetState(() => _model.choiceChipsValidacoesValues = val);
                                                                                     logFirebaseEvent('MODAL_MEMBROS_ADD_ChoiceChipsValidacoes_');
                                                                                     if (_model.membrosPercetualValidacao <= 1.0) {
-                                                                                      _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 0.10;
-                                                                                      safeSetState(() {});
+                                                                                      if (_model.choiceChipsValidacoesValues != null && (_model.choiceChipsValidacoesValues)!.isNotEmpty ? true : false) {
+                                                                                        _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 0.10;
+                                                                                        safeSetState(() {});
+                                                                                      } else {
+                                                                                        _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + -0.10;
+                                                                                        safeSetState(() {});
+                                                                                      }
                                                                                     } else {
                                                                                       _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 1.0;
                                                                                       safeSetState(() {});
@@ -6758,12 +6845,6 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     [
                                                                                       FFLocalizations.of(context).getText(
                                                                                         '6ih49zhb' /* 0.1 */,
-                                                                                      ),
-                                                                                      FFLocalizations.of(context).getText(
-                                                                                        'rzxw9l15' /* 0.1 */,
-                                                                                      ),
-                                                                                      FFLocalizations.of(context).getText(
-                                                                                        'xwh5kchb' /* 0.1 */,
                                                                                       )
                                                                                     ],
                                                                                   ),

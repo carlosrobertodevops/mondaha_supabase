@@ -1510,6 +1510,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Alcunha',
       'pt': 'Alcunha',
     },
+    't455vcot': {
+      'en':
+          'To add nickname(s) you need to fill in the Nickname Field and click on the (+) Button',
+      'pt':
+          'Para adicionar à(s) alcunha(s) precisa preencher o Campo Alcunha e clicar no Botão (+) ',
+    },
     'deg0fdow': {
       'en': 'Naturalidade',
       'pt': 'Naturalidade',
@@ -1952,6 +1958,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Três últimos locais onde esteve preso',
       'pt': 'Três últimos locais onde esteve preso',
     },
+    '6mn9o1ts': {
+      'en':
+          'To add the name of the Prison(s) you need to fill in the \nlast three locations and click on the (+) button.',
+      'pt':
+          'Para adicionar o(s) nome de Presídio (s) precisa preencher \nos Três últimos locais e clicar no Botão (+) ',
+    },
     '8uf1jitv': {
       'en': 'Facção que integrou',
       'pt': 'Facção que integrou',
@@ -2385,14 +2397,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     '6ih49zhb': {
-      'en': '0.1',
-      'pt': '0,1',
-    },
-    'rzxw9l15': {
-      'en': '0.1',
-      'pt': '0,1',
-    },
-    'xwh5kchb': {
       'en': '0.1',
       'pt': '0,1',
     },
@@ -2952,6 +2956,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'khrk3bz2': {
       'en': 'Ok',
       'pt': 'Ok',
+    },
+  },
+  // ToolTipHelp
+  {
+    'qsa63jz1': {
+      'en':
+          'To add the address(es) you need to fill in the \nAddress Field and click on the (+) Button.',
+      'pt': '',
     },
   },
   // Miscellaneous
