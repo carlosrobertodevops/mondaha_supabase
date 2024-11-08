@@ -1844,6 +1844,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Endereço Completo',
       'pt': 'Endereço Completo',
     },
+    'd56blqb1': {
+      'en':
+          'To add the address(es) you need to fill in the Address field and click on the (+) button.',
+      'pt':
+          'Para adicionar o(s) endereço(s) precisa preencher o campo Endereço e clicar no Botão (+) ',
+    },
     'awnrzzus': {
       'en': 'Histórico',
       'pt': 'Histórico',

@@ -1,7 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/tool_tip_help_widget.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -224,8 +223,6 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   TextEditingController? txtMembrosEnderecosAddTextController;
   String? Function(BuildContext, String?)?
       txtMembrosEnderecosAddTextControllerValidator;
-  // Model for ToolTipHelp component.
-  late ToolTipHelpModel toolTipHelpModel;
   // State field(s) for GoogleMapMembro widget.
   LatLng? googleMapMembrosCenter;
   final googleMapMembrosController = Completer<GoogleMapController>();
@@ -361,7 +358,6 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   void initState(BuildContext context) {
     txtNomeCompletoTextControllerValidator =
         _txtNomeCompletoTextControllerValidator;
-    toolTipHelpModel = createModel(context, () => ToolTipHelpModel());
   }
 
   @override
@@ -394,7 +390,6 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
     txtMembrosEnderecosAddFocusNode?.dispose();
     txtMembrosEnderecosAddTextController?.dispose();
 
-    toolTipHelpModel.dispose();
     txtMembroHistoricoFocusNode?.dispose();
     txtMembroHistoricoTextController?.dispose();
 

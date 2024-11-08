@@ -1,7 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/tool_tip_help_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
@@ -2635,10 +2634,42 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                   }
                                                                                 },
                                                                               ),
-                                                                              wrapWithModel(
-                                                                                model: _model.toolTipHelpModel,
-                                                                                updateCallback: () => safeSetState(() {}),
-                                                                                child: const ToolTipHelpWidget(),
+                                                                              Flex(
+                                                                                direction: Axis.vertical,
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  AlignedTooltip(
+                                                                                    content: Padding(
+                                                                                      padding: const EdgeInsets.all(12.0),
+                                                                                      child: Text(
+                                                                                        FFLocalizations.of(context).getText(
+                                                                                          'd56blqb1' /* To add the address(es) you nee... */,
+                                                                                        ),
+                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                              color: FlutterFlowTheme.of(context).info,
+                                                                                              letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    offset: 4.0,
+                                                                                    preferredDirection: AxisDirection.up,
+                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    backgroundColor: FlutterFlowTheme.of(context).background,
+                                                                                    elevation: 4.0,
+                                                                                    tailBaseWidth: 24.0,
+                                                                                    tailLength: 12.0,
+                                                                                    waitDuration: const Duration(milliseconds: 10),
+                                                                                    showDuration: const Duration(milliseconds: 100),
+                                                                                    triggerMode: TooltipTriggerMode.tap,
+                                                                                    child: Icon(
+                                                                                      Icons.help_outline_rounded,
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      size: 12.0,
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
                                                                               ),
                                                                             ].divide(const SizedBox(width: 10.0)),
                                                                           ),
@@ -6801,7 +6832,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                     safeSetState(() => _model.choiceChipsValidacoesValues = val);
                                                                                     logFirebaseEvent('MODAL_MEMBROS_ADD_ChoiceChipsValidacoes_');
                                                                                     if (_model.membrosPercetualValidacao <= 1.0) {
-                                                                                      if (_model.choiceChipsValidacoesValues != null && (_model.choiceChipsValidacoesValues)!.isNotEmpty ? true : false) {
+                                                                                      if (!_model.choiceChipsValidacoesValues!.contains('') ? true : false) {
                                                                                         _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 0.10;
                                                                                         safeSetState(() {});
                                                                                       } else {
