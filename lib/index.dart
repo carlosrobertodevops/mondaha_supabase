@@ -23,3 +23,4 @@ export '/pages/main_pages/main_admin/main_admin_widget.dart'
     show MainAdminWidget;
 export '/pages/main_pages/main_faccoes/main_faccoes_widget.dart'
     show MainFaccoesWidget;
+export '/buscar_c_e_p/buscar_c_e_p_widget.dart' show BuscarCEPWidget;

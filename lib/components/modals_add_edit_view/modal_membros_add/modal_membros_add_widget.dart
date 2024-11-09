@@ -2473,7 +2473,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                                 color: FlutterFlowTheme.of(context).info,
                                                                                                 fontWeight: FontWeight.w100,
                                                                                               ),
-                                                                                              elevation: 1.0,
+                                                                                              elevation: 0.0,
                                                                                               borderSide: const BorderSide(
                                                                                                 color: Colors.transparent,
                                                                                                 width: 0.0,
@@ -6840,7 +6840,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                                         safeSetState(() {});
                                                                                       }
                                                                                     } else {
-                                                                                      _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 1.0;
+                                                                                      _model.membrosPercetualValidacao = _model.membrosPercetualValidacao + 0.0;
                                                                                       safeSetState(() {});
                                                                                     }
                                                                                   },

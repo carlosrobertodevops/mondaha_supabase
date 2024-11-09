@@ -905,6 +905,133 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '__',
     },
   },
+  // BuscarCEP
+  {
+    '3mirzv3t': {
+      'en': 'Consultar CEP',
+      'pt': 'Consultar CEP',
+    },
+    '1taqs12t': {
+      'en': '',
+      'pt': 'Endereço de email',
+    },
+    'k02pm4o5': {
+      'en': 'CEP',
+      'pt': 'CEP',
+    },
+    '6exfy16y': {
+      'en': 'Buscar CEP',
+      'pt': 'Buscar CEP',
+    },
+    'l6amd7pf': {
+      'en': 'Rua/Av',
+      'pt': 'Rua/Av',
+    },
+    '2q32u6g1': {
+      'en': '',
+      'pt': '',
+    },
+    'lavqtfem': {
+      'en': 'Número',
+      'pt': 'Número',
+    },
+    'yg9xg60p': {
+      'en': '',
+      'pt': '',
+    },
+    'fnhklntj': {
+      'en': 'Complemento',
+      'pt': 'Complemento',
+    },
+    'aui7h421': {
+      'en': '',
+      'pt': '',
+    },
+    '408h1ras': {
+      'en': 'Bairro',
+      'pt': 'Bairro',
+    },
+    'a08w4pf9': {
+      'en': '',
+      'pt': '',
+    },
+    '9xnmcp3s': {
+      'en': 'Cidade',
+      'pt': 'Cidade',
+    },
+    '51bcqbj4': {
+      'en': '',
+      'pt': '',
+    },
+    'a6e4eubm': {
+      'en': 'Estado',
+      'pt': 'Estado',
+    },
+    's7syj8n3': {
+      'en': '',
+      'pt': '',
+    },
+    'y02h64py': {
+      'en': 'Campo obrigatório',
+      'pt': '',
+    },
+    'v50nrh94': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'o2saz5hd': {
+      'en': 'Field is required',
+      'pt': 'Campo é obrigatório!',
+    },
+    'jbr74cl8': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção no menu suspenso',
+    },
+    'g9phgimm': {
+      'en': 'Field is required',
+      'pt': 'Campo obrigatório!',
+    },
+    '3mdgoxwf': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção no menu suspenso',
+    },
+    'zdm5barf': {
+      'en': 'Field is required',
+      'pt': 'Campo é obrigatório!',
+    },
+    'vkre1ltk': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção no menu suspenso',
+    },
+    'cmb3bj3a': {
+      'en': 'Field is required',
+      'pt': 'Campo é obrigatório!',
+    },
+    'fisiyofp': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção no menu suspenso',
+    },
+    'yla4vwvu': {
+      'en': 'Field is required',
+      'pt': 'Campo é obrigatório',
+    },
+    'z5yjq8i8': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção no menu suspenso',
+    },
+    'mt85wjgb': {
+      'en': 'Field is required',
+      'pt': '',
+    },
+    '91qggjq8': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'z7p3pi6i': {
+      'en': '__',
+      'pt': '',
+    },
+  },
   // modal_success
   {
     'kred63vb': {
@@ -1846,9 +1973,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'd56blqb1': {
       'en':
-          'To add the address(es) you need to fill in the Address field and click on the (+) button.',
+          'To add the address(es) you need to fill in\nthe Address field and click on the (+) button.',
       'pt':
-          'Para adicionar o(s) endereço(s) precisa preencher o campo Endereço e clicar no Botão (+) ',
+          'Para adicionar o(s) endereço(s) precisa preencher \no campo Endereço e clicar no Botão (+) ',
     },
     'awnrzzus': {
       'en': 'Histórico',
@@ -2962,13 +3089,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'khrk3bz2': {
       'en': 'Ok',
       'pt': 'Ok',
-    },
-  },
-  // ToolTipHelp
-  {
-    'qsa63jz1': {
-      'en': '',
-      'pt': '',
     },
   },
   // Miscellaneous

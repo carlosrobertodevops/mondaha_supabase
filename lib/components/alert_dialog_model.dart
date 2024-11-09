@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'tool_tip_help_widget.dart' show ToolTipHelpWidget;
+import 'alert_dialog_widget.dart' show AlertDialogWidget;
 import 'package:flutter/material.dart';
 
-class ToolTipHelpModel extends FlutterFlowModel<ToolTipHelpWidget> {
+class AlertDialogModel extends FlutterFlowModel<AlertDialogWidget> {
   @override
   void initState(BuildContext context) {}
 

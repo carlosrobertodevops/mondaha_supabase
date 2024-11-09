@@ -177,6 +177,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'main_faccoes')
                   : const MainFaccoesWidget(),
+            ),
+            FFRoute(
+              name: 'BuscarCEP',
+              path: 'buscarCEP',
+              requireAuth: true,
+              builder: (context, params) => const BuscarCEPWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

@@ -365,6 +365,78 @@ class CountFaccoesViewCall {
       ));
 }
 
+class ApiViaCEPCall {
+  static Future<ApiCallResponse> call({
+    String? cep = '57023890',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'apiViaCEP',
+      apiUrl: 'viacep.com.br/ws/$cep/json/',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Max-Age': 'max-age=3600',
+        'Access-Control-Allow-Credentials': 'true',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? logradouro(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.logradouro''',
+      ));
+  static String? complemento(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.complemento''',
+      ));
+  static String? bairro(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bairro''',
+      ));
+  static String? localidade(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.localidade''',
+      ));
+  static String? uf(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.uf''',
+      ));
+  static String? estado(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.estado''',
+      ));
+  static String? regiao(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.regiao''',
+      ));
+  static String? ibge(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.ibge''',
+      ));
+  static String? ddd(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.ddd''',
+      ));
+  static String? siafi(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.siafi''',
+      ));
+  static String? cep(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cep''',
+      ));
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;
