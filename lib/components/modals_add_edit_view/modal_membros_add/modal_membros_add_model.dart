@@ -226,11 +226,6 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   // State field(s) for GoogleMapMembro widget.
   LatLng? googleMapMembrosCenter;
   final googleMapMembrosController = Completer<GoogleMapController>();
-  // State field(s) for txt_membro_historico widget.
-  FocusNode? txtMembroHistoricoFocusNode;
-  TextEditingController? txtMembroHistoricoTextController;
-  String? Function(BuildContext, String?)?
-      txtMembroHistoricoTextControllerValidator;
   // State field(s) for ddw_membro_faccao widget.
   int? ddwMembroFaccaoValue;
   FormFieldController<int>? ddwMembroFaccaoValueController;
@@ -320,6 +315,10 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
   // State field(s) for ddw_processo_situacao_reu widget.
   String? ddwProcessoSituacaoReuValue;
   FormFieldController<String>? ddwProcessoSituacaoReuValueController;
+  // State field(s) for txt_historico widget.
+  FocusNode? txtHistoricoFocusNode;
+  TextEditingController? txtHistoricoTextController;
+  String? Function(BuildContext, String?)? txtHistoricoTextControllerValidator;
   // State field(s) for txt_membro_atuacao widget.
   FocusNode? txtMembroAtuacaoFocusNode;
   TextEditingController? txtMembroAtuacaoTextController;
@@ -390,9 +389,6 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
     txtMembrosEnderecosAddFocusNode?.dispose();
     txtMembrosEnderecosAddTextController?.dispose();
 
-    txtMembroHistoricoFocusNode?.dispose();
-    txtMembroHistoricoTextController?.dispose();
-
     txtFaccaoBastismoFocusNode?.dispose();
 
     txtFacaoLocalBastismoFocusNode?.dispose();
@@ -415,6 +411,9 @@ class ModalMembrosAddModel extends FlutterFlowModel<ModalMembrosAddWidget> {
 
     txtProcessoNoAcaoPenalFocusNode?.dispose();
     txtProcessoNoAcaoPenalTextController?.dispose();
+
+    txtHistoricoFocusNode?.dispose();
+    txtHistoricoTextController?.dispose();
 
     txtMembroAtuacaoFocusNode?.dispose();
     txtMembroAtuacaoTextController?.dispose();

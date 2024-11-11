@@ -1189,6 +1189,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Logout',
       'pt': 'Sair',
     },
+    'kmbyse66': {
+      'en': 'Light Mode',
+      'pt': '',
+    },
+    'jcne973r': {
+      'en': 'Dark Mode',
+      'pt': '',
+    },
   },
   // modal_command_palette
   {
@@ -1924,8 +1932,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'nvxntirq': {
-      'en': 'History',
-      'pt': 'História',
+      'en': 'Localization',
+      'pt': 'Localização',
     },
     'cwp7l7r2': {
       'en': 'Nascido no Brasil',
@@ -1976,14 +1984,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'To add the address(es) you need to fill in\nthe Address field and click on the (+) button.',
       'pt':
           'Para adicionar o(s) endereço(s) precisa preencher \no campo Endereço e clicar no Botão (+) ',
-    },
-    'awnrzzus': {
-      'en': 'Histórico',
-      'pt': 'Histórico',
-    },
-    'o7r2rdc8': {
-      'en': 'Histórico',
-      'pt': 'Histórico',
     },
     'zo5mhuuq': {
       'en': 'Facção',
@@ -2449,11 +2449,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Make a summary of the main criminal actions of this member.',
       'pt': 'Faça um resumo das principais atuações criminais deste membro.',
     },
-    'ssjp267b': {
+    'q663z63w': {
+      'en': 'Historic',
+      'pt': 'Histórico',
+    },
+    'dpwi4x3z': {
+      'en': 'Historic',
+      'pt': 'Histórico',
+    },
+    'n1o81u1k': {
       'en': 'Crime Action',
       'pt': 'Atuação no Crime',
     },
-    'dak0lg3s': {
+    'bc31iq3e': {
       'en': 'Crime Action',
       'pt': 'Atuação no Crime',
     },
