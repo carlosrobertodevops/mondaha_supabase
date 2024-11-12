@@ -840,8 +840,10 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                           Brightness.light
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primary
-                                                      : const Color(0xFF57636C),
+                                                          .primaryText
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
                                                   size: 16.0,
                                                 ),
                                                 Padding(
@@ -914,7 +916,7 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                           Brightness.dark
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .info
+                                                          .primary
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .info,
@@ -939,8 +941,10 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                           Brightness.dark
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primary
-                                                      : const Color(0xFF57636C),
+                                                          .secondaryBackground
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
                                                   size: 16.0,
                                                 ),
                                                 Padding(
