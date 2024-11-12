@@ -1,4 +1,4 @@
-import '/components/modal_sections/user_details_main/user_details_main_widget.dart';
+import '/components/modall/user_details_main/user_details_main_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'modal_user_widget.dart' show ModalUserWidget;
 import 'package:flutter/material.dart';

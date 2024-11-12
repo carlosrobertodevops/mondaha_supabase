@@ -149,7 +149,7 @@ class _WebNavWidgetState extends State<WebNavWidget>
                         children: [
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(1.0, 0.0),
                               child: wrapWithModel(
                                 model: _model.mainLogoBarModel,
                                 updateCallback: () => safeSetState(() {}),
@@ -764,11 +764,17 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                 width: 250.0,
                                 height: 50.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  color: Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? FlutterFlowTheme.of(context).background
+                                      : const Color(0xFFF1F4F8),
                                   borderRadius: BorderRadius.circular(20.0),
                                   border: Border.all(
-                                    color: const Color(0xFFE0E3E7),
+                                    color: Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? FlutterFlowTheme.of(context)
+                                            .background
+                                        : const Color(0xFFF1F4F8),
                                     width: 1.0,
                                   ),
                                 ),
@@ -786,7 +792,7 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             logFirebaseEvent(
-                                                'WEB_NAV_COMP_Container_817ppj2l_ON_TAP');
+                                                'WEB_NAV_COMP_Container_zfguxvdb_ON_TAP');
                                             setDarkModeSetting(
                                                 context, ThemeMode.light);
                                           },
@@ -797,12 +803,11 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                               color: Theme.of(context)
                                                           .brightness ==
                                                       Brightness.light
-                                                  ? FlutterFlowTheme.of(context)
-                                                      .secondaryBackground
+                                                  ? Colors.white
                                                   : FlutterFlowTheme.of(context)
                                                       .background,
                                               borderRadius:
-                                                  BorderRadius.circular(18.0),
+                                                  BorderRadius.circular(20.0),
                                               border: Border.all(
                                                 color: valueOrDefault<Color>(
                                                   Theme.of(context)
@@ -810,13 +815,17 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                           Brightness.light
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .secondaryBackground
+                                                          .primary
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .background,
                                                   const Color(0xFFE0E3E7),
                                                 ),
-                                                width: 1.0,
+                                                width: Theme.of(context)
+                                                            .brightness ==
+                                                        Brightness.light
+                                                    ? 2.0
+                                                    : 1.0,
                                               ),
                                             ),
                                             child: Row(
@@ -828,11 +837,11 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                   Icons.wb_sunny_rounded,
                                                   color: Theme.of(context)
                                                               .brightness ==
-                                                          Brightness.dark
-                                                      ? const Color(0xFF57636C)
-                                                      : FlutterFlowTheme.of(
+                                                          Brightness.light
+                                                      ? FlutterFlowTheme.of(
                                                               context)
-                                                          .background,
+                                                          .primary
+                                                      : const Color(0xFF57636C),
                                                   size: 16.0,
                                                 ),
                                                 Padding(
@@ -882,7 +891,7 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             logFirebaseEvent(
-                                                'WEB_NAV_COMP_Container_xbylgn2a_ON_TAP');
+                                                'WEB_NAV_COMP_Container_zzf5zs63_ON_TAP');
                                             setDarkModeSetting(
                                                 context, ThemeMode.dark);
                                           },
@@ -894,22 +903,28 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                           .brightness ==
                                                       Brightness.dark
                                                   ? FlutterFlowTheme.of(context)
-                                                      .secondaryBackground
-                                                  : FlutterFlowTheme.of(context)
-                                                      .background,
+                                                      .background
+                                                  : const Color(0xFFF1F4F8),
                                               borderRadius:
-                                                  BorderRadius.circular(18.0),
+                                                  BorderRadius.circular(20.0),
                                               border: Border.all(
-                                                color: Theme.of(context)
+                                                color: valueOrDefault<Color>(
+                                                  Theme.of(context)
+                                                              .brightness ==
+                                                          Brightness.dark
+                                                      ? FlutterFlowTheme.of(
+                                                              context)
+                                                          .info
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .info,
+                                                  const Color(0xFFF1F4F8),
+                                                ),
+                                                width: Theme.of(context)
                                                             .brightness ==
                                                         Brightness.dark
-                                                    ? FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground
-                                                    : FlutterFlowTheme.of(
-                                                            context)
-                                                        .background,
-                                                width: 1.0,
+                                                    ? 2.0
+                                                    : 1.0,
                                               ),
                                             ),
                                             child: Row(
@@ -922,10 +937,10 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                   color: Theme.of(context)
                                                               .brightness ==
                                                           Brightness.dark
-                                                      ? const Color(0xFF57636C)
-                                                      : FlutterFlowTheme.of(
+                                                      ? FlutterFlowTheme.of(
                                                               context)
-                                                          .background,
+                                                          .primary
+                                                      : const Color(0xFF57636C),
                                                   size: 16.0,
                                                 ),
                                                 Padding(
@@ -1682,7 +1697,9 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                     color: Theme.of(context)
                                                                 .brightness ==
                                                             Brightness.dark
-                                                        ? const Color(0xFF57636C)
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary
                                                         : FlutterFlowTheme.of(
                                                                 context)
                                                             .background,
@@ -1704,7 +1721,7 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                             Brightness.dark
                                                         ? FlutterFlowTheme.of(
                                                                 context)
-                                                            .primaryText
+                                                            .primary
                                                         : FlutterFlowTheme.of(
                                                                 context)
                                                             .background,
@@ -1719,7 +1736,15 @@ class _WebNavWidgetState extends State<WebNavWidget>
                                                   width: 21.0,
                                                   height: 21.0,
                                                   decoration: BoxDecoration(
-                                                    color: Colors.white,
+                                                    color: Theme.of(context)
+                                                                .brightness ==
+                                                            Brightness.dark
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .info
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .background,
                                                     boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 4.0,

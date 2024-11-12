@@ -1,4 +1,4 @@
-import '/components/modals_add_edit_view/modal_faccao_add/modal_faccao_add_widget.dart';
+import '/components/modall/modal_faccao_add/modal_faccao_add_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

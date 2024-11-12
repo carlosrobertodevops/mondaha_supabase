@@ -760,7 +760,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jrjtliei': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Selecione uma opção no menu suspenso',
     },
     'obaog0sx': {
       'en': 'Field is required',
@@ -768,7 +768,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3ob34e6b': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Selecione uma opção no menu suspenso',
     },
     'rnyra7iu': {
       'en': 'Home',
@@ -3097,6 +3097,69 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'khrk3bz2': {
       'en': 'Ok',
       'pt': 'Ok',
+    },
+  },
+  // TagsLabels
+  {
+    'e6lp9ftz': {
+      'en': '#website',
+      'pt': '#site',
+    },
+    '4yftwnmx': {
+      'en': '#ux',
+      'pt': '#ux',
+    },
+    'kcyxvmvp': {
+      'en': '#flutterflow',
+      'pt': '#flutterflow',
+    },
+  },
+  // Toast01
+  {
+    'i5mt0ma9': {
+      'en': 'Notification Title',
+      'pt': 'Título da notificação',
+    },
+    'o0kn8k8l': {
+      'en': 'Some body copy that is present in this small notification.',
+      'pt':
+          'Alguma cópia do corpo que está presente nesta pequena notificação.',
+    },
+  },
+  // Toast04
+  {
+    'ozz9h0eu': {
+      'en': 'Notification Title',
+      'pt': 'Título da notificação',
+    },
+    'a87zklx8': {
+      'en': 'Some body copy that is present in this small notification.',
+      'pt':
+          'Alguma cópia do corpo que está presente nesta pequena notificação.',
+    },
+  },
+  // Toast02
+  {
+    'rve5awza': {
+      'en': 'Notification Title',
+      'pt': 'Título da notificação',
+    },
+    'u3tbuddm': {
+      'en': 'Some body copy that is present in this small notification.',
+      'pt':
+          'Alguma cópia do corpo que está presente nesta pequena notificação.',
+    },
+  },
+  // Toast03
+  {
+    'm0rvoply': {
+      'en': 'Notification Title',
+      'pt': 'Título da notificação',
+    },
+    'bxe9e2xt': {
+      'en': 'Some body copy that is present in this small notification.',
+      'pt':
+          'Alguma cópia do corpo que está presente nesta pequena notificação.',
     },
   },
   // Miscellaneous

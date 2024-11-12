@@ -6775,14 +6775,45 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                           ),
                                                         ),
                                                         Expanded(
-                                                          child: Builder(
-                                                            builder: (context) {
-                                                              final childrenColMembrosRelacoes =
-                                                                  _model
-                                                                      .membrosRelacoes
-                                                                      .toList()
-                                                                      .take(9)
-                                                                      .toList();
+                                                          child: FutureBuilder<
+                                                              List<MembrosRow>>(
+                                                            future:
+                                                                MembrosTable()
+                                                                    .queryRows(
+                                                              queryFn: (q) =>
+                                                                  q.eq(
+                                                                'faccao_id',
+                                                                _model
+                                                                    .retMembrosAdd
+                                                                    ?.faccaoId,
+                                                              ),
+                                                            ),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
+                                                                    child:
+                                                                        SpinKitFadingCircle(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .tertiary,
+                                                                      size:
+                                                                          50.0,
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              }
+                                                              List<MembrosRow>
+                                                                  columnMembrosRowList =
+                                                                  snapshot
+                                                                      .data!;
 
                                                               return Column(
                                                                 mainAxisSize:
@@ -6795,12 +6826,12 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                     CrossAxisAlignment
                                                                         .center,
                                                                 children: List.generate(
-                                                                    childrenColMembrosRelacoes
+                                                                    columnMembrosRowList
                                                                         .length,
-                                                                    (childrenColMembrosRelacoesIndex) {
-                                                                  final childrenColMembrosRelacoesItem =
-                                                                      childrenColMembrosRelacoes[
-                                                                          childrenColMembrosRelacoesIndex];
+                                                                    (columnIndex) {
+                                                                  final columnMembrosRow =
+                                                                      columnMembrosRowList[
+                                                                          columnIndex];
                                                                   return Expanded(
                                                                     child:
                                                                         Align(
@@ -6814,6 +6845,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                             (context) {
                                                                           final childrenRolMembrosRelacoes = _model
                                                                               .membrosRelacoes
+                                                                              .map((e) => e)
                                                                               .toList()
                                                                               .take(3)
                                                                               .toList();
@@ -6843,7 +6875,7 @@ class _ModalMembrosAddWidgetState extends State<ModalMembrosAddWidget>
                                                                               return ClipRRect(
                                                                                 borderRadius: BorderRadius.circular(12.0),
                                                                                 child: Image.network(
-                                                                                  'https://picsum.photos/seed/379/600',
+                                                                                  columnMembrosRow.fotosPath.first,
                                                                                   width: 200.0,
                                                                                   height: 200.0,
                                                                                   fit: BoxFit.cover,
